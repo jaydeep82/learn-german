@@ -44,6 +44,10 @@ Each day contains: an intro, vocabulary with audio, grammar pointers,
 
 * **Spaced repetition** — daily quiz items reappear in weekly reviews and the final exam.
 * **Pimsleur-style audio recall** — every German term has a 🔊 button.
+* **Phonetic guides** — every German word displays an English-friendly
+  pronunciation in brackets, e.g. `Schule [Shuluh]`. The transliterator
+  lives in `src/lib/pronounce.js` and the legend appears at the top of
+  the Grammar page.
 * **Comprehensible input** — English glosses and visual emojis everywhere.
 * **Contextual learning** — restaurant, shopping and travel scenarios.
 * **Adaptive feedback** — wrong answers are tracked and surfaced in the

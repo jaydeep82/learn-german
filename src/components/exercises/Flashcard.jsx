@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AudioButton from '../AudioButton.jsx';
+import Pron from '../Pron.jsx';
 
 export default function Flashcard({ items, onDone }) {
   const [i, setI] = useState(0);
@@ -25,6 +26,7 @@ export default function Flashcard({ items, onDone }) {
         aria-label="Flip card"
       >
         <div className="text-3xl sm:text-5xl font-bold tracking-tight">{flipped ? item.en : item.de}</div>
+        {!flipped && <Pron de={item.de} size="md" />}
         {item.hint && flipped && (
           <div className="text-sm text-slate-500 italic">{item.hint}</div>
         )}

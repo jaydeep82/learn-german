@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { vocabByTopic, allVocab } from '../data/vocabulary.js';
 import AudioButton from '../components/AudioButton.jsx';
+import Pron from '../components/Pron.jsx';
 
 export default function Vocabulary() {
   const [q, setQ] = useState('');
@@ -39,6 +40,7 @@ export default function Vocabulary() {
                 <AudioButton text={v.de} size="sm" />
                 <div className="flex-1 min-w-0">
                   <div className="font-semibold truncate">{v.de}</div>
+                  <Pron de={v.de} />
                   <div className="text-sm text-slate-500 truncate">{v.en}</div>
                 </div>
                 <Link to={`/day/${v.day}`} className="text-xs text-brand-600 hover:underline">D{v.day}</Link>

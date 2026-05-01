@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { days, CONJ } from '../data/curriculum.js';
+import { pronounce, PRONUNCIATION_KEY } from '../lib/pronounce.js';
 
 export default function Grammar() {
   const grammarDays = days.filter((d) => d.grammar?.length);
@@ -10,6 +11,22 @@ export default function Grammar() {
         <h1 className="text-2xl sm:text-3xl font-extrabold">Grammar reference</h1>
         <p className="text-slate-500">Bookmark this page — every rule introduced in the 30-day course.</p>
       </header>
+
+      <section className="card" aria-labelledby="pron-key">
+        <h2 id="pron-key" className="font-bold mb-2">How to read the pronunciation guide</h2>
+        <p className="text-sm text-slate-500 mb-3">
+          Throughout the app you&rsquo;ll see brackets like <em>[ikh]</em> under each German word.
+          Read the brackets like English — these are the symbols we use:
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {PRONUNCIATION_KEY.map(([sym, desc]) => (
+            <div key={sym} className="flex items-baseline gap-2 text-sm">
+              <code className="font-mono text-brand-700 dark:text-brand-300">[{sym}]</code>
+              <span className="text-slate-600 dark:text-slate-300">{desc}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {grammarDays.map((d) => (
         <section key={d.id} className="card" aria-labelledby={`g-${d.id}`}>
@@ -34,12 +51,18 @@ export default function Grammar() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {Object.entries(CONJ).map(([verb, rows]) => (
             <table key={verb} className="w-full text-sm">
-              <caption className="font-semibold text-left pb-1">{verb}</caption>
+              <caption className="font-semibold text-left pb-1">
+                {verb}
+                <span className="block text-xs italic text-slate-500 dark:text-slate-400 font-normal">[{pronounce(verb)}]</span>
+              </caption>
               <tbody>
                 {rows.map(([p, f]) => (
                   <tr key={p} className="border-t border-slate-200 dark:border-slate-800">
                     <td className="py-1 pr-2 text-slate-500">{p}</td>
-                    <td className="py-1 font-mono">{f}</td>
+                    <td className="py-1">
+                      <span className="font-mono">{f}</span>
+                      <span className="ml-2 text-xs italic text-slate-500 dark:text-slate-400">[{pronounce(f)}]</span>
+                    </td>
                   </tr>
                 ))}
               </tbody>

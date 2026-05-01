@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AudioButton from '../AudioButton.jsx';
+import Pron from '../Pron.jsx';
 
 export default function Dialogue({ lines, onDone }) {
   const [revealed, setRevealed] = useState(() => lines.map(() => false));
@@ -25,7 +26,10 @@ export default function Dialogue({ lines, onDone }) {
               }`}>
                 <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">{l.speaker}</div>
                 <div className="flex items-start gap-2">
-                  <p className="font-semibold text-lg flex-1">{l.de}</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-lg">{l.de}</p>
+                    <Pron de={l.de} />
+                  </div>
                   <AudioButton text={l.de} size="sm" />
                 </div>
                 <button

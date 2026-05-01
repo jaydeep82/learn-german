@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AudioButton from '../AudioButton.jsx';
+import Pron from '../Pron.jsx';
 
 const norm = (s) => (s || '').trim().toLowerCase()
   .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss');
@@ -19,9 +20,12 @@ export default function ConjugationTable({ verb, en, rows, onDone }) {
     <div className="space-y-4">
       <div className="card">
         <div className="flex items-center gap-3">
-          <h3 className="text-2xl font-bold flex-1">
-            {verb} <span className="text-slate-500 font-medium">— {en}</span>
-          </h3>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-2xl font-bold">
+              {verb} <span className="text-slate-500 font-medium">— {en}</span>
+            </h3>
+            <Pron de={verb} size="md" />
+          </div>
           <AudioButton text={verb} />
         </div>
       </div>
@@ -40,8 +44,11 @@ export default function ConjugationTable({ verb, en, rows, onDone }) {
                 <td className="py-2 pr-2 font-semibold whitespace-nowrap">{r.pronoun}</td>
                 <td className="py-2">
                   {submitted ? (
-                    <span className={`font-mono ${ok ? 'text-emerald-600' : 'text-rose-600 line-through'}`}>
-                      {answers[i] || '—'}{!ok && <span className="ml-2 text-emerald-600 no-underline">→ {r.form}</span>}
+                    <span className="flex items-baseline gap-3 flex-wrap">
+                      <span className={`font-mono ${ok ? 'text-emerald-600' : 'text-rose-600 line-through'}`}>
+                        {answers[i] || '—'}{!ok && <span className="ml-2 text-emerald-600 no-underline">→ {r.form}</span>}
+                      </span>
+                      <Pron de={r.form} />
                     </span>
                   ) : (
                     <input
