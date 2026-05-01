@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 import AudioButton from '../AudioButton.jsx';
 
 const shuffle = (arr) => arr.map((v) => [Math.random(), v]).sort((a, b) => a[0] - b[0]).map(([, v]) => v);
@@ -17,12 +17,10 @@ export default function DragDropMatch({ pairs, onDone }) {
   const total = pairs.length;
   const done = Object.keys(matched).length === total;
 
-  useEffect(() => {
-    if (done) {
-      const correct = total - wrong; // approximate — counts attempts
-      setTimeout(() => onDone?.({ correct: Math.max(0, correct), total }), 600);
-    }
-  }, [done]); // eslint-disable-line
+  const finish = () => {
+    const correct = total - wrong;
+    onDone?.({ correct: Math.max(0, correct), total });
+  };
 
   const tryMatch = (leftId, rightId) => {
     if (leftId === rightId) {
@@ -84,6 +82,11 @@ export default function DragDropMatch({ pairs, onDone }) {
           })}
         </div>
       </div>
+      {done && (
+        <button className="btn-primary w-full mt-4" onClick={finish}>
+          ✅ All matched — Next →
+        </button>
+      )}
     </div>
   );
 }

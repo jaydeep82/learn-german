@@ -12,8 +12,11 @@ export default function ConjugationTable({ verb, en, rows, onDone }) {
   const submit = () => {
     if (submitted) return;
     setSubmitted(true);
+  };
+
+  const finish = () => {
     const correct = answers.filter((a, i) => norm(a) === norm(rows[i].form)).length;
-    setTimeout(() => onDone?.({ correct, total: rows.length }), 800);
+    onDone?.({ correct, total: rows.length });
   };
 
   return (
@@ -67,7 +70,9 @@ export default function ConjugationTable({ verb, en, rows, onDone }) {
           })}
         </tbody>
       </table>
-      {!submitted && <button className="btn-primary w-full" onClick={submit}>Check table</button>}
+      {!submitted
+        ? <button className="btn-primary w-full" onClick={submit}>Check table</button>
+        : <button className="btn-primary w-full" onClick={finish}>Next →</button>}
     </div>
   );
 }

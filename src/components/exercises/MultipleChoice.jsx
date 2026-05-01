@@ -8,8 +8,10 @@ export default function MultipleChoice({ q, options, answer, explain, onDone }) 
   const choose = (opt) => {
     if (decided) return;
     setPicked(opt);
-    const correct = opt === answer;
-    setTimeout(() => onDone?.({ correct: correct ? 1 : 0, total: 1 }), 700);
+  };
+
+  const next = () => {
+    onDone?.({ correct: picked === answer ? 1 : 0, total: 1 });
   };
 
   return (
@@ -52,6 +54,9 @@ export default function MultipleChoice({ q, options, answer, explain, onDone }) 
         <div className="card bg-amber-50 border-amber-200 dark:bg-amber-900/20 dark:border-amber-700">
           <strong>Why:</strong> {explain}
         </div>
+      )}
+      {decided && (
+        <button className="btn-primary w-full" onClick={next}>Next →</button>
       )}
     </div>
   );

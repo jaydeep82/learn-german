@@ -18,8 +18,8 @@ export default function FillInBlank({ sentence, answer, hint, onDone }) {
     e?.preventDefault();
     if (submitted || !input.trim()) return;
     setSubmitted(true);
-    setTimeout(() => onDone?.({ correct: correct ? 1 : 0, total: 1 }), 800);
   };
+  const next = () => onDone?.({ correct: correct ? 1 : 0, total: 1 });
 
   // visualise the blank with the user's input or a slot
   const display = sentence.replace('__', submitted ? answer : (input || '_____'));
@@ -47,12 +47,15 @@ export default function FillInBlank({ sentence, answer, hint, onDone }) {
         <button type="submit" className="btn-primary" disabled={submitted || !input.trim()}>Check</button>
       </div>
       {submitted && (
-        <div className={`card ${correct ? 'bg-emerald-50 border-emerald-300 dark:bg-emerald-900/30 dark:border-emerald-700'
-                                       : 'bg-rose-50 border-rose-300 dark:bg-rose-900/30 dark:border-rose-700 animate-shake'}`}>
-          {correct
-            ? <span>✅ <strong>Genau!</strong></span>
-            : <span>❌ <strong>Almost!</strong> The correct answer was <em>{answer}</em>.</span>}
-        </div>
+        <>
+          <div className={`card ${correct ? 'bg-emerald-50 border-emerald-300 dark:bg-emerald-900/30 dark:border-emerald-700'
+                                         : 'bg-rose-50 border-rose-300 dark:bg-rose-900/30 dark:border-rose-700 animate-shake'}`}>
+            {correct
+              ? <span>✅ <strong>Genau!</strong></span>
+              : <span>❌ <strong>Almost!</strong> The correct answer was <em>{answer}</em>.</span>}
+          </div>
+          <button type="button" className="btn-primary w-full" onClick={next}>Next →</button>
+        </>
       )}
     </form>
   );
