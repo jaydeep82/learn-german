@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { dayById, days } from '../data/curriculum.js';
 import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
@@ -40,6 +40,15 @@ export default function DayLesson() {
   const { completeDay, isUnlocked } = useApp();
   const [stage, setStage] = useState('intro'); // intro | exercises | done
   const [result, setResult] = useState(null);
+
+  // Reset to the intro screen whenever the user navigates to a different
+  // day — otherwise React Router reuses this component and we'd still be
+  // showing the previous day's result/exercises.
+  useEffect(() => {
+    setStage('intro');
+    setResult(null);
+    window.scrollTo({ top: 0 });
+  }, [dayId]);
 
   if (!day) {
     return <div className="card">Day not found. <Link to="/" className="text-brand-600">Back home</Link></div>;
