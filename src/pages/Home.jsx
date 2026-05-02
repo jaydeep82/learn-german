@@ -82,6 +82,21 @@ export default function Home() {
                 />
               ))}
             </div>
+            {w.n === 1 && (
+              <Link
+                to="/cheatsheet/aux-verbs"
+                className="mt-3 block card bg-gradient-to-br from-brand-50 to-amber-50 dark:from-slate-900 dark:to-slate-900 hover:shadow-md transition"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="text-3xl" aria-hidden>📋</div>
+                  <div className="flex-1">
+                    <div className="font-bold">Cheatsheet · sein · haben · werden</div>
+                    <div className="text-sm text-slate-500">Side-by-side table, examples, the three "sies" decoded, common mistakes — print or save as PDF.</div>
+                  </div>
+                  <span aria-hidden className="text-xl">→</span>
+                </div>
+              </Link>
+            )}
             {w.n < 5 && (
               <div className="mt-3">
                 <Link to={`/review/week-${w.n}`} className="text-sm font-semibold text-brand-700 dark:text-brand-300 hover:underline">

@@ -168,6 +168,21 @@ function Result({ day, result, onContinue }) {
           {day.id < 30 ? 'Next day →' : 'Back home'}
         </button>
       </div>
+      {passed && day.id === 7 && (
+        <Link
+          to="/cheatsheet/aux-verbs"
+          className="block card bg-gradient-to-br from-brand-50 to-amber-50 dark:from-slate-900 dark:to-slate-900 hover:shadow-md transition"
+        >
+          <div className="flex items-center gap-3">
+            <div className="text-3xl" aria-hidden>📋</div>
+            <div className="flex-1">
+              <div className="font-bold">Before Week 2 — review the cheatsheet</div>
+              <div className="text-sm text-slate-500">sein · haben · werden side-by-side, with examples and the three "sies" decoded.</div>
+            </div>
+            <span aria-hidden className="text-xl">→</span>
+          </div>
+        </Link>
+      )}
     </div>
   );
 }
