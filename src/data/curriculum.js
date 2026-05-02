@@ -38,6 +38,59 @@ const conjEx = (verb, en) => ({
   rows: CONJ[verb].map(([pronoun, form]) => ({ pronoun, form })),
 });
 
+/**
+ * Per-pronoun English glosses + example sentences keyed by verb. Used by
+ * Days 5–7 (sein/haben/werden) — the high-confusion week-1 auxiliaries —
+ * so each row of the conjugation table makes the I/he/she/it/we/they/you
+ * mapping unmistakable.
+ */
+const PRONOUN_LABELS = [
+  ['ich',       'I'],
+  ['du',        'you (1 person you know)'],
+  ['er/sie/es', 'he / she / it'],
+  ['wir',       'we'],
+  ['ihr',       'you all (group of friends)'],
+  ['sie / Sie', 'they / you (formal)'],
+];
+
+const RICH_EXAMPLES = {
+  sein: [
+    { de: 'Ich bin müde.',         en: 'I am tired.' },
+    { de: 'Du bist hier.',         en: 'You (1 friend) are here.' },
+    { de: 'Er ist Lehrer.',        en: 'He is a teacher.' },
+    { de: 'Wir sind Kollegen.',    en: 'We are colleagues.' },
+    { de: 'Ihr seid spät.',        en: 'You all are late.' },
+    { de: 'Sie sind glücklich.',   en: '"Sie sind" = both "they are" AND "you (formal) are".' },
+  ],
+  haben: [
+    { de: 'Ich habe Hunger.',          en: 'I have hunger → I am hungry.' },
+    { de: 'Du hast Zeit.',             en: 'You (1 friend) have time.' },
+    { de: 'Sie hat eine Idee.',        en: 'She has an idea.  (sie + hat → "she")' },
+    { de: 'Wir haben Stress.',         en: 'We have stress.' },
+    { de: 'Ihr habt Probleme.',        en: 'You all (group) have problems.' },
+    { de: 'Sie haben einen Termin.',   en: '"Sie haben" = "they have" OR "you (formal) have".' },
+  ],
+  werden: [
+    { de: 'Ich werde müde.',           en: 'I am becoming tired.' },
+    { de: 'Du wirst schneller.',       en: 'You (1 friend) are getting faster.' },
+    { de: 'Es wird besser.',           en: 'It is getting better.' },
+    { de: 'Wir werden ruhig.',         en: 'We are becoming calm.' },
+    { de: 'Ihr werdet nervös.',        en: 'You all are getting nervous.' },
+    { de: 'Sie werden langsamer.',     en: '"Sie werden" = "they are" / "you (formal) are" becoming slower.' },
+  ],
+};
+
+const richConjEx = (verb, en) => ({
+  type: 'conjugation',
+  verb, en,
+  rows: CONJ[verb].map(([pronoun, form], i) => ({
+    pronoun,
+    form,
+    english: PRONOUN_LABELS[i][1],
+    example: RICH_EXAMPLES[verb]?.[i],
+  })),
+});
+
 export const days = [
   /* ===================== WEEK 1: foundations ===================== */
   {
@@ -221,7 +274,7 @@ export const days = [
       { rule: 'Verb in 2nd position', body: 'Main clauses always have the conjugated verb in slot 2: "Ich bin müde."' },
     ],
     exercises: [
-      conjEx('sein', 'to be'),
+      richConjEx('sein', 'to be'),
       { type: 'fill-blank', sentence: 'Ich __ Softwareentwickler.',  answer: 'bin' },
       { type: 'fill-blank', sentence: 'Wir __ Kollegen.',            answer: 'sind' },
       { type: 'fill-blank', sentence: 'Er __ hier.',                 answer: 'ist' },
@@ -250,9 +303,24 @@ export const days = [
     grammar: [
       { rule: 'haben conjugation', body: 'ich habe · du hast · er/sie/es hat · wir haben · ihr habt · sie/Sie haben' },
       { rule: 'Hunger/Durst', body: 'Use "Ich habe Hunger" — literally "I have hunger" — not "Ich bin hungrig" (which means I am the hungry type).' },
+      {
+        rule: '⚠ The three "sies" — don\'t panic',
+        body:
+          'German has THREE words spelled "sie/Sie". The verb form tells you which one:\n' +
+          '• sie hat / sie ist  → "she" (singular)\n' +
+          '• sie haben / sie sind → "they" (plural, lowercase)\n' +
+          '• Sie haben / Sie sind → "you" formal (capital S, used with bosses, strangers, officials).\n' +
+          'Trick: if the verb ending is the singular one ("hat", "ist"), it must be "she". If it is the plural form ("haben", "sind"), it is either "they" or formal "you" — context tells you which.',
+      },
+      {
+        rule: 'Quick pronoun map',
+        body:
+          'ich = I  |  du = you (1 friend)  |  er = he  |  sie = she  |  es = it\n' +
+          'wir = we  |  ihr = you all (group of friends)  |  sie = they  |  Sie = you (formal)',
+      },
     ],
     exercises: [
-      conjEx('haben', 'to have'),
+      richConjEx('haben', 'to have'),
       { type: 'fill-blank', sentence: 'Ich __ Hunger.',   answer: 'habe' },
       { type: 'fill-blank', sentence: 'Sie __ eine Idee.', answer: 'hat' },
       { type: 'fill-blank', sentence: 'Wir __ Zeit.',      answer: 'haben' },
@@ -282,7 +350,7 @@ export const days = [
       { rule: 'Rule 2 — capitalise nouns', body: 'EVERY noun starts with a capital letter, no matter where it sits in the sentence.' },
     ],
     exercises: [
-      conjEx('werden', 'to become'),
+      richConjEx('werden', 'to become'),
       { type: 'fill-blank', sentence: 'Ich __ müde.',     answer: 'werde' },
       { type: 'fill-blank', sentence: 'Es __ besser.',    answer: 'wird' },
       { type: 'multiple-choice',

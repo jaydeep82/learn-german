@@ -43,16 +43,35 @@ export default function ConjugationTable({ verb, en, rows, onDone }) {
           {rows.map((r, i) => {
             const ok = norm(answers[i]) === norm(r.form);
             return (
-              <tr key={r.pronoun} className="border-t border-slate-200 dark:border-slate-800">
-                <td className="py-2 pr-2 font-semibold whitespace-nowrap">{r.pronoun}</td>
-                <td className="py-2">
+              <tr key={r.pronoun} className="border-t border-slate-200 dark:border-slate-800 align-top">
+                <td className="py-3 pr-2 whitespace-nowrap">
+                  <div className="font-semibold">{r.pronoun}</div>
+                  {r.english && (
+                    <div className="text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">
+                      = {r.english}
+                    </div>
+                  )}
+                </td>
+                <td className="py-3">
                   {submitted ? (
-                    <span className="flex items-baseline gap-3 flex-wrap">
-                      <span className={`font-mono ${ok ? 'text-emerald-600' : 'text-rose-600 line-through'}`}>
-                        {answers[i] || '—'}{!ok && <span className="ml-2 text-emerald-600 no-underline">→ {r.form}</span>}
-                      </span>
-                      <Pron de={r.form} />
-                    </span>
+                    <div className="space-y-1">
+                      <div className="flex items-baseline gap-3 flex-wrap">
+                        <span className={`font-mono ${ok ? 'text-emerald-600' : 'text-rose-600 line-through'}`}>
+                          {answers[i] || '—'}{!ok && <span className="ml-2 text-emerald-600 no-underline">→ {r.form}</span>}
+                        </span>
+                        <Pron de={r.form} />
+                      </div>
+                      {r.example && (
+                        <div className="mt-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-sm">
+                          <div className="flex items-start gap-2">
+                            <span className="font-semibold flex-1">{r.example.de}</span>
+                            <AudioButton text={r.example.de} size="sm" />
+                          </div>
+                          <Pron de={r.example.de} />
+                          <div className="text-slate-600 dark:text-slate-300 mt-1">{r.example.en}</div>
+                        </div>
+                      )}
+                    </div>
                   ) : (
                     <input
                       value={answers[i]}
@@ -61,7 +80,7 @@ export default function ConjugationTable({ verb, en, rows, onDone }) {
                       }}
                       className="w-full rounded-lg border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5"
                       placeholder="…"
-                      aria-label={`Form for ${r.pronoun}`}
+                      aria-label={`Form for ${r.pronoun} (${r.english || ''})`}
                     />
                   )}
                 </td>

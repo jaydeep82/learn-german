@@ -39,7 +39,7 @@ export default function Grammar() {
             {d.grammar.map((g) => (
               <li key={g.rule}>
                 <div className="font-semibold text-brand-700 dark:text-brand-300">{g.rule}</div>
-                <p className="text-slate-700 dark:text-slate-200">{g.body}</p>
+                <p className="text-slate-700 dark:text-slate-200 whitespace-pre-line">{g.body}</p>
               </li>
             ))}
           </ul>

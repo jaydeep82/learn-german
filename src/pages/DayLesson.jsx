@@ -112,7 +112,7 @@ function Intro({ day, onStart }) {
             {day.grammar.map((g) => (
               <div key={g.rule} className="card">
                 <div className="text-sm font-bold text-brand-700 dark:text-brand-300">{g.rule}</div>
-                <p className="mt-1 text-slate-700 dark:text-slate-200">{g.body}</p>
+                <p className="mt-1 text-slate-700 dark:text-slate-200 whitespace-pre-line">{g.body}</p>
               </div>
             ))}
           </div>
