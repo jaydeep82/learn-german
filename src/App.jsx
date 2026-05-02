@@ -6,6 +6,7 @@ import Review from './pages/Review.jsx';
 import Vocabulary from './pages/Vocabulary.jsx';
 import Grammar from './pages/Grammar.jsx';
 import Cheatsheet from './pages/Cheatsheet.jsx';
+import About from './pages/About.jsx';
 import Settings from './pages/Settings.jsx';
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/vocabulary" element={<Vocabulary />} />
         <Route path="/grammar" element={<Grammar />} />
         <Route path="/cheatsheet/:slug" element={<Cheatsheet />} />
+        <Route path="/about" element={<About />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

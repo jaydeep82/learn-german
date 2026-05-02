@@ -1,7 +1,7 @@
 {
   "name": "deutsch30",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.5.0",
   "description": "Interactive 30-day German learning web app for beginners (ages 5-50).",
   "type": "module",
   "scripts": {

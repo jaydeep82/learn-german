@@ -1,6 +1,7 @@
 import { NavLink, Link } from 'react-router-dom';
 import { XPBadge, StreakIndicator } from './ProgressUI.jsx';
 import { useApp } from '../store/AppContext.jsx';
+import { VERSION } from '../data/release.js';
 
 const navCls = ({ isActive }) =>
   `px-3 py-1.5 rounded-lg text-sm font-medium transition ${
@@ -75,6 +76,17 @@ export default function Layout({ children }) {
       <footer className="border-t border-slate-200 dark:border-slate-800 py-6 text-center text-sm text-slate-500">
         <div>Deutsch30 · 30 days from absolute beginner to confident self-introduction.</div>
         <div className="mt-1">Audio uses your browser&rsquo;s speech engine — install a German voice for best quality.</div>
+        <div className="mt-3 flex items-center justify-center gap-3 flex-wrap">
+          <Link
+            to="/about"
+            className="pill bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+            aria-label={`About Deutsch30, version ${VERSION}`}
+          >
+            About · v{VERSION}
+          </Link>
+          <Link to="/settings" className="hover:underline">Settings</Link>
+          <Link to="/grammar" className="hover:underline">Grammar</Link>
+        </div>
       </footer>
     </div>
   );
