@@ -1,7 +1,7 @@
 /**
  * Badges are awarded server-less from progress state. Each predicate
  * receives the current state object and returns a boolean. Day-id
- * ranges below mirror the 40-day curriculum (v2.0.0+).
+ * ranges below mirror the 50-day curriculum (v3.0.0+).
  */
 export const BADGES = [
   {
@@ -56,18 +56,23 @@ export const BADGES = [
   },
   {
     id: 'week-4',        emoji: '🥇',
-    title: 'Cases Crusher', desc: 'Pass every Week 4 lesson (Akkusativ + Dativ).',
-    when: (s) => [21,22,23,24,25,26,27].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
+    title: 'Cases Crusher', desc: 'Pass every Week 4 lesson (Akkusativ, Dativ, pronouns).',
+    when: (s) => [21,22,23,24,25,26,27,28,29,30].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
   },
   {
     id: 'week-5',        emoji: '👨‍👩‍👧',
-    title: 'People & Life', desc: 'Pass every Week 5 lesson.',
-    when: (s) => [28,29,30,31,32,33].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
+    title: 'People & Glue', desc: 'Pass every Week 5 lesson (life topics + conjunctions).',
+    when: (s) => [31,32,33,34,35,36,37,38].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
   },
   {
     id: 'week-6',        emoji: '🎖️',
-    title: 'Real-Life Ready', desc: 'Pass every Week 6 lesson (scenarios + negation).',
-    when: (s) => [34,35,36,37,38].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
+    title: 'Real-Life Ready', desc: 'Pass every Week 6 lesson (scenarios + A2 mid-review).',
+    when: (s) => [39,40,41,42,43,44].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
+  },
+  {
+    id: 'week-7',        emoji: '⏪',
+    title: 'Time Traveller', desc: 'Pass every Week 7 lesson (past tenses & polite forms).',
+    when: (s) => [45,46,47,48].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
   },
   {
     id: 'perfect-day',   emoji: '💎',
@@ -76,7 +81,7 @@ export const BADGES = [
   },
   {
     id: 'graduate',      emoji: '🎓',
-    title: 'Deutsch30 Graduate', desc: 'Pass the final exam ≥ 80%.',
-    when: (s) => (s.completed?.[40]?.score ?? 0) >= 0.8,
+    title: 'Deutsch30 Graduate', desc: 'Pass the final exam ≥ 80% (Day 50).',
+    when: (s) => (s.completed?.[50]?.score ?? 0) >= 0.8,
   },
 ];

@@ -32,7 +32,7 @@ export default function About() {
               Deutsch<span className="text-amber-200">30</span>
             </h1>
             <p className="mt-2 max-w-prose opacity-90">
-              An interactive 40-day German learning app for absolute beginners,
+              An interactive 50-day German learning app for absolute beginners,
               built around proven techniques: spaced repetition, comprehensible
               input, contextual learning and instant audio feedback.
             </p>

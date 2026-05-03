@@ -74,7 +74,7 @@ export default function Layout({ children }) {
       </main>
 
       <footer className="border-t border-slate-200 dark:border-slate-800 py-6 text-center text-sm text-slate-500">
-        <div>Deutsch30 · 40 days from absolute beginner to confident self-introduction.</div>
+        <div>Deutsch30 · 50 days from absolute beginner to confident A1.2 / early A2.</div>
         <div className="mt-1">Audio uses your browser&rsquo;s speech engine — install a German voice for best quality.</div>
         <div className="mt-3 flex items-center justify-center gap-3 flex-wrap">
           <Link

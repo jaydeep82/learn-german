@@ -142,6 +142,18 @@ export const days = [
           '5. Imagine a hair in your throat — soft clearing sound.\n' +
           '6. Strong whisper — push the "h" backward.',
       },
+      { rule: 'Unlocking the "ö" — front-rounded vowel',
+        body:
+          'Eight tricks to find the umlauted ö:\n' +
+          '1. Say "e" (like in "bed"), then ROUND your lips → becomes ö.\n' +
+          '2. Think of English "bird" — similar but shorter and clearer.\n' +
+          '3. Start with "e", then move your lips forward and round them.\n' +
+          '4. Tongue stays relaxed in the middle (not high, not low).\n' +
+          '5. Round your lips gently (like saying "o", but not too strong).\n' +
+          '6. The sound sits in the middle of your mouth — not deep in the throat.\n' +
+          '7. Keep it short and clean, not stretched.\n' +
+          '8. Listen for ö in: schön, hören, möchte, Brötchen, Öl.',
+      },
       { rule: 'Umlauts ä ö ü', body: 'On a US keyboard you may type ae, oe, ue.' },
       { rule: 'Long compound words — break them up',
         body:
@@ -200,6 +212,15 @@ export const days = [
           { speaker: 'Soft CH text',de: 'Ich bin im Restaurant und ich möchte einen Kaffee mit Milch.', en: 'I am at the restaurant and I would like a coffee with milk.' },
           { speaker: 'Soft CH',     de: 'Ich bin hungrig, aber ich esse nicht viel.',                 en: 'I am hungry, but I don\'t eat much.' },
           { speaker: 'Soft CH',     de: 'Ich spreche mit dem Kellner und ich frage: „Wie viel kostet das?"', en: 'I speak with the waiter and I ask: "How much does that cost?"' },
+        ],
+      },
+      {
+        type: 'dialogue',
+        lines: [
+          { speaker: 'ö-text',  de: 'Ich höre Musik und ich möchte ein Brötchen essen.',  en: 'I am listening to music and I would like to eat a bread roll.' },
+          { speaker: 'ö-text',  de: 'Der Bäcker ist schön und ich spreche mit dem Verkäufer.', en: 'The bakery is beautiful and I speak with the salesperson.' },
+          { speaker: 'ö-text',  de: 'Ich kaufe ein Brötchen und ein Öl.',                 en: 'I buy a bread roll and an oil.' },
+          { speaker: 'ö-text',  de: 'Der Verkäufer ist höflich und ich sage: „Danke schön!"', en: 'The salesperson is polite and I say: "Thank you very much!"' },
         ],
       },
     ],
@@ -938,7 +959,7 @@ export const days = [
   },
 
   {
-    id: 28, week: 5,
+    id: 31, week: 5,
     title: 'Family',
     titleDe: 'Die Familie',
     emoji: '👨‍👩‍👧',
@@ -1010,7 +1031,7 @@ export const days = [
   },
 
   {
-    id: 29, week: 5,
+    id: 32, week: 5,
     title: 'Daily routine',
     titleDe: 'Der Tagesablauf',
     emoji: '🌅',
@@ -1044,7 +1065,7 @@ export const days = [
 
   /* ===================== WEEK 4: modals + scenarios ===================== */
   {
-    id: 32, week: 5,
+    id: 35, week: 5,
     title: 'Modals: können · müssen · wollen',
     titleDe: 'Modalverben I',
     emoji: '🛠️',
@@ -1072,7 +1093,7 @@ export const days = [
   },
 
   {
-    id: 33, week: 5,
+    id: 36, week: 5,
     title: 'Modals: dürfen · sollen · mögen',
     titleDe: 'Modalverben II',
     emoji: '🧰',
@@ -1124,7 +1145,7 @@ export const days = [
   },
 
   {
-    id: 34, week: 6,
+    id: 39, week: 6,
     title: 'At the restaurant',
     titleDe: 'Im Restaurant',
     emoji: '🍽️',
@@ -1174,7 +1195,7 @@ export const days = [
   },
 
   {
-    id: 35, week: 6,
+    id: 40, week: 6,
     title: 'Shopping',
     titleDe: 'Einkaufen',
     emoji: '🛒',
@@ -1208,7 +1229,7 @@ export const days = [
   },
 
   {
-    id: 37, week: 6,
+    id: 42, week: 6,
     title: 'Negation: nicht & kein',
     titleDe: 'Verneinung',
     emoji: '🚫',
@@ -1255,7 +1276,7 @@ export const days = [
   },
 
   {
-    id: 36, week: 6,
+    id: 41, week: 6,
     title: 'Travel',
     titleDe: 'Reisen',
     emoji: '✈️',
@@ -1290,7 +1311,7 @@ export const days = [
   },
 
   {
-    id: 38, week: 6,
+    id: 43, week: 6,
     title: 'Week 4-6 review',
     titleDe: 'Wiederholung Woche 4-6',
     emoji: '📚',
@@ -1332,7 +1353,7 @@ export const days = [
 
   /* ===================== WEEK 7: review + final ===================== */
   {
-    id: 39, week: 7,
+    id: 49, week: 8,
     title: 'Mega review · Say it back',
     titleDe: 'Großes Review · Mündlich',
     emoji: '🧠',
@@ -1395,7 +1416,7 @@ export const days = [
   },
 
   {
-    id: 40, week: 7,
+    id: 50, week: 8,
     title: 'Final exam · Schlussprüfung',
     titleDe: 'Schlussprüfung',
     emoji: '🏆',
@@ -1908,7 +1929,7 @@ export const days = [
 
   /* ----- Day 30: Hobbies — dedicated (slide 66 expansion) ----- */
   {
-    id: 30, week: 5,
+    id: 33, week: 5,
     title: 'Hobbies & free time',
     titleDe: 'Hobbys & Freizeit',
     emoji: '🎮',
@@ -1968,7 +1989,7 @@ export const days = [
 
   /* ----- Day 31: Reading practice (slides 111, 146-147, 183) ----- */
   {
-    id: 31, week: 5,
+    id: 34, week: 5,
     title: 'Reading practice',
     titleDe: 'Leseverständnis',
     emoji: '📖',
@@ -2015,6 +2036,643 @@ export const days = [
     ],
     quiz: [],
   },
+
+  /* ===================== v3.0.0 — A2 expansion (presentation 0205.pptx) ===================== */
+
+  /* ----- Day 28: Akkusativ pronouns ----- */
+  {
+    id: 28, week: 4,
+    title: 'Akkusativ pronouns',
+    titleDe: 'Akkusativ-Pronomen',
+    emoji: '👀',
+    objective: 'Replace any direct-object noun with the right Akkusativ pronoun.',
+    intro: 'You have already met "ich · du · er · sie · es · wir · ihr · sie/Sie" as subjects. When the SAME person becomes the direct object, most of them shape-shift: ich → mich, du → dich, er → ihn, and so on.',
+    vocabulary: [
+      { de: 'mich',  en: 'me' },
+      { de: 'dich',  en: 'you (1 friend)' },
+      { de: 'ihn',   en: 'him' },
+      { de: 'sie',   en: 'her / them (unchanged)' },
+      { de: 'es',    en: 'it (unchanged)' },
+      { de: 'uns',   en: 'us' },
+      { de: 'euch',  en: 'you all (group of friends)' },
+      { de: 'Sie',   en: 'you (formal)' },
+    ],
+    grammar: [
+      { rule: 'The full Akkusativ-pronoun table',
+        body:
+          '              Subject (Nom)   →   Direct object (Akk)\n' +
+          '   1st sg     ich              →   mich\n' +
+          '   2nd sg     du               →   dich\n' +
+          '   3rd m      er               →   ihn\n' +
+          '   3rd f      sie              →   sie     (unchanged)\n' +
+          '   3rd n      es               →   es      (unchanged)\n' +
+          '   1st pl     wir              →   uns\n' +
+          '   2nd pl     ihr              →   euch\n' +
+          '   3rd pl     sie / Sie        →   sie / Sie  (unchanged)',
+      },
+      { rule: 'When to use them',
+        body:
+          'After verbs that take Akkusativ — sehen, haben, kaufen, lieben, treffen, besuchen, einladen…\n' +
+          '  Wrong: „Ich sehe du!"\n' +
+          '  Right: „Ich sehe dich!"\n' +
+          '  Wrong: „Er liebt ich."\n' +
+          '  Right: „Er liebt mich."',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: '"He loves me." → Er liebt __.',                  answer: 'mich' },
+      { type: 'fill-blank', sentence: '"I call you (1 friend)." → Ich rufe __ an.',     answer: 'dich' },
+      { type: 'fill-blank', sentence: '"She meets him." → Sie trifft __.',              answer: 'ihn' },
+      { type: 'fill-blank', sentence: '"I visit her." → Ich besuche __.',               answer: 'sie' },
+      { type: 'fill-blank', sentence: '"I buy it." → Ich kaufe __.',                    answer: 'es' },
+      { type: 'fill-blank', sentence: '"They help us." → Sie helfen __ . (uns works in both Akk and Dat)', answer: 'uns' },
+      { type: 'fill-blank', sentence: '"We invite you (group)." → Wir laden __ ein.',   answer: 'euch' },
+      { type: 'fill-blank', sentence: '"I see you (formal)." → Ich sehe __.',           answer: 'Sie' },
+      { type: 'multiple-choice', q: '"He sees me." =',
+        options: ['Er sieht ich.', 'Er sieht mir.', 'Er sieht mich.', 'Er sieht mein.'],
+        answer: 'Er sieht mich.', explain: 'Subject: er (Nom). Object: ich → mich (Akk).' },
+      { type: 'match', pairs: [
+        { de: 'mich',  en: 'me' },
+        { de: 'dich',  en: 'you (1 friend)' },
+        { de: 'ihn',   en: 'him' },
+        { de: 'uns',   en: 'us' },
+        { de: 'euch',  en: 'you all' },
+      ]},
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: '"She invites him." → Sie lädt __ ein.', answer: 'ihn' },
+      { type: 'multiple-choice', q: 'Which pronoun is the same in Nom and Akk?',
+        options: ['ich','du','er','sie/es'], answer: 'sie/es', explain: 'sie (her/them) and es (it) keep the same form.' },
+    ],
+  },
+
+  /* ----- Day 29: Dativ pronouns ----- */
+  {
+    id: 29, week: 4,
+    title: 'Dativ pronouns',
+    titleDe: 'Dativ-Pronomen',
+    emoji: '🤲',
+    objective: 'Use the Dativ pronoun set after Dativ verbs and Dativ prepositions.',
+    intro: 'Same idea as yesterday, different case. After verbs like helfen, danken, geben — and after prepositions like mit, bei, zu — pronouns shift again: ich → mir, du → dir, er → ihm…',
+    vocabulary: [
+      { de: 'mir',     en: 'to / for me' },
+      { de: 'dir',     en: 'to / for you (1 friend)' },
+      { de: 'ihm',     en: 'to / for him / it' },
+      { de: 'ihr',     en: 'to / for her' },
+      { de: 'uns',     en: 'to / for us' },
+      { de: 'euch',    en: 'to / for you all' },
+      { de: 'ihnen',   en: 'to / for them' },
+      { de: 'Ihnen',   en: 'to / for you (formal — capital I)' },
+    ],
+    grammar: [
+      { rule: 'The full Dativ-pronoun table',
+        body:
+          '              Subject (Nom)   →   Indirect object (Dat)\n' +
+          '   1st sg     ich              →   mir\n' +
+          '   2nd sg     du               →   dir\n' +
+          '   3rd m      er               →   ihm\n' +
+          '   3rd f      sie              →   ihr\n' +
+          '   3rd n      es               →   ihm\n' +
+          '   1st pl     wir              →   uns\n' +
+          '   2nd pl     ihr              →   euch\n' +
+          '   3rd pl     sie              →   ihnen\n' +
+          '   formal     Sie              →   Ihnen  (capital I)',
+      },
+      { rule: 'When to use them',
+        body:
+          'After Dativ-only verbs: helfen, danken, geben, gehören, gefallen, antworten, glauben.\n' +
+          'After Dativ prepositions: mit, bei, zu, von, nach, aus, seit, gegenüber.\n' +
+          '  Wrong: „Das Buch gehört ich!"\n' +
+          '  Right: „Das Buch gehört mir!"\n' +
+          '  Wrong: „Er kommt mit du."\n' +
+          '  Right: „Er kommt mit dir."',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: '"He helps me." → Er hilft __.',                       answer: 'mir' },
+      { type: 'fill-blank', sentence: '"I help you (1 friend)." → Ich helfe __.',            answer: 'dir' },
+      { type: 'fill-blank', sentence: '"She gives him the book." → Sie gibt __ das Buch.',   answer: 'ihm' },
+      { type: 'fill-blank', sentence: '"I give her the book." → Ich gebe __ das Buch.',      answer: 'ihr' },
+      { type: 'fill-blank', sentence: '"We help you (group)." → Wir helfen __.',             answer: 'euch' },
+      { type: 'fill-blank', sentence: '"They give us a computer." → Sie geben __ einen Computer.', answer: 'uns' },
+      { type: 'fill-blank', sentence: '"I help you (group)." → Ich helfe __.',               answer: 'euch' },
+      { type: 'fill-blank', sentence: '"He comes with me." → Er kommt mit __.',              answer: 'mir' },
+      { type: 'fill-blank', sentence: '"The book belongs to her." → Das Buch gehört __.',    answer: 'ihr' },
+      { type: 'multiple-choice', q: 'Akk pronoun for "her" vs Dat pronoun for "her" — pick the Dat one.',
+        options: ['sie','ihr','ihn','ihnen'], answer: 'ihr',
+        explain: 'Akk = sie (unchanged). Dat = ihr.' },
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: '"I am thanking you (formal)." → Ich danke __.', answer: 'Ihnen', hint: 'capital I — formal you' },
+    ],
+  },
+
+  /* ----- Day 30: Akkusativ + Wechsel prepositions ----- */
+  {
+    id: 30, week: 4,
+    title: 'More prepositions: Akk + Wechsel',
+    titleDe: 'Mehr Präpositionen',
+    emoji: '🧭',
+    objective: 'Master the Akkusativ-only prepositions AND the "two-way" prepositions that switch case.',
+    intro: 'On Day 25 you met the eight always-Dativ prepositions. Today: the three always-Akkusativ ones (für · um · ohne) and the trickiest group — Wechselpräpositionen (in, an, auf) — which switch between Dat and Akk depending on the question they answer.',
+    vocabulary: [
+      { de: 'für',    en: 'for (always Akk)' },
+      { de: 'um',     en: 'at (time) / around (always Akk)' },
+      { de: 'ohne',   en: 'without (always Akk)' },
+      { de: 'in',     en: 'in / into (Wechsel)' },
+      { de: 'an',     en: 'at / on (Wechsel)' },
+      { de: 'auf',    en: 'on / onto (Wechsel)' },
+    ],
+    grammar: [
+      { rule: '3 always-Akkusativ prepositions',
+        body:
+          'für · um · ohne — every noun after these is Akkusativ:\n' +
+          '  Ich kaufe Kaffee FÜR den Freund.\n' +
+          '  Ich esse UM 18 Uhr.\n' +
+          '  Ich gehe OHNE den Schlüssel weg.',
+      },
+      { rule: 'Wechselpräpositionen — the case depends on the QUESTION',
+        body:
+          'in · an · auf (and a few more later) take EITHER case.\n' +
+          '  "Wo?" (location, no movement) → DATIV.    Ich bin IN der Stadt.\n' +
+          '  "Wohin?" (movement INTO/ONTO) → AKKUSATIV. Ich gehe IN die Stadt.\n' +
+          'Same trick for an + auf:\n' +
+          '  Wo? → Das Bild hängt AN DER Wand.   (Dat — no movement)\n' +
+          '  Wohin? → Ich hänge das Bild AN DIE Wand. (Akk — movement)',
+      },
+      { rule: 'New short forms',
+        body:
+          'Akkusativ contractions (less common but you\'ll see them):\n' +
+          '  in + das  → ins    "Ich gehe ins Restaurant."\n' +
+          '  an + das  → ans    "Ich gehe ans Fenster."',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: 'Akk-only: Ich kaufe Kaffee für __ Freund. (the, masc.)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Akk-only: Wir essen um __ Uhr. (eight)',                 answer: 'acht' },
+      { type: 'fill-blank', sentence: 'Akk-only: Ich gehe ohne __ Schlüssel. (a, masc.)',       answer: 'einen' },
+      { type: 'fill-blank', sentence: 'Wechsel "wo?": Ich bin in __ Stadt. (the, fem. → Dat)',  answer: 'der' },
+      { type: 'fill-blank', sentence: 'Wechsel "wohin?": Ich gehe in __ Stadt. (the, fem. → Akk)', answer: 'die' },
+      { type: 'fill-blank', sentence: 'Wechsel "wohin?": Ich gehe __ Restaurant. (in + das contraction)', answer: 'ins' },
+      { type: 'fill-blank', sentence: 'Wechsel "wo?": Das Buch ist auf __ Tisch. (the, masc. → Dat)', answer: 'dem' },
+      { type: 'multiple-choice', q: '"in / an / auf" choose the case based on…',
+        options: ['Always Dativ', 'Always Akkusativ', 'The question (Wo? → Dat, Wohin? → Akk)', 'Whichever sounds better'],
+        answer: 'The question (Wo? → Dat, Wohin? → Akk)' },
+      { type: 'multiple-choice', q: 'Which preposition is NOT Akkusativ-only?',
+        options: ['für','um','mit','ohne'], answer: 'mit',
+        explain: '"mit" is in the always-Dativ group from Day 25.' },
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: '"I work for the company." → Ich arbeite für __ Firma. (the, fem. — Akk fem = die)', answer: 'die' },
+    ],
+  },
+
+  /* ----- Day 37: Sentence connections ----- */
+  {
+    id: 37, week: 5,
+    title: 'Sentence connections',
+    titleDe: 'Konnektoren',
+    emoji: '🔗',
+    objective: 'Glue two sentences together — and know when the verb stays in slot 2 vs jumps to the end.',
+    intro: 'Two flavours of conjunction. Coordinating ones (und, oder, aber, denn, dann) leave word order ALONE. Subordinating ones (weil, wenn) push the verb to the very END of the second clause.',
+    vocabulary: [
+      { de: 'und',   en: 'and' },
+      { de: 'oder',  en: 'or' },
+      { de: 'aber',  en: 'but' },
+      { de: 'denn',  en: 'because (coordinating — verb stays slot 2)' },
+      { de: 'dann',  en: 'then' },
+      { de: 'weil',  en: 'because (subordinating — verb to end)' },
+      { de: 'wenn',  en: 'if / when' },
+      { de: 'dass',  en: 'that (subordinating — verb to end)' },
+    ],
+    grammar: [
+      { rule: 'Group 1 — verb still in slot 2',
+        body:
+          'und · oder · aber · denn · dann\n' +
+          '  Ich lerne Deutsch UND ich arbeite viel.\n' +
+          '  Ich trinke Kaffee ODER ich trinke Tee.\n' +
+          '  Das ist lecker, ABER es ist teuer.\n' +
+          '  Ich gehe ins Restaurant, DENN ich bin hungrig.\n' +
+          '  Ich lerne Deutsch, DANN gehe ich nach Hause.   (note: "dann" pulls subject after verb)',
+      },
+      { rule: 'Group 2 — verb JUMPS to the end',
+        body:
+          'weil · wenn · dass\n' +
+          '  Ich lerne Deutsch, WEIL ich in Deutschland ARBEITE.\n' +
+          '  Ich komme, WENN ich Zeit HABE.\n' +
+          '  Ich denke, DASS er müde IST.\n' +
+          'Comma BEFORE the conjunction. Conjugated verb at the very end of the sub-clause.',
+      },
+      { rule: 'denn vs weil — same meaning, different word order',
+        body:
+          'Both mean "because". Pick the word order you want:\n' +
+          '  Ich gehe, DENN ich bin hungrig.   (verb stays slot 2)\n' +
+          '  Ich gehe, WEIL ich hungrig BIN.   (verb to end)\n' +
+          'Speakers tend to use "weil" more often in modern German.',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: 'Ich lerne Deutsch __ ich arbeite viel. (and)',                       answer: 'und' },
+      { type: 'fill-blank', sentence: 'Ich trinke Kaffee __ ich trinke Tee. (or)',                          answer: 'oder' },
+      { type: 'fill-blank', sentence: 'Das ist lecker, __ es ist teuer. (but)',                             answer: 'aber' },
+      { type: 'fill-blank', sentence: 'Ich gehe ins Restaurant, __ ich bin hungrig. (because — verb in slot 2)', answer: 'denn' },
+      { type: 'fill-blank', sentence: 'Ich lerne Deutsch, weil ich in Deutschland __. (arbeiten — verb at END)', answer: 'arbeite' },
+      { type: 'fill-blank', sentence: 'Ich komme, wenn ich Zeit __. (haben — verb at END)',                  answer: 'habe' },
+      { type: 'multiple-choice', q: 'Which conjunction sends the verb to the END?',
+        options: ['und','aber','denn','weil'], answer: 'weil',
+        explain: 'weil, wenn, dass are subordinating — verb jumps to the end of the clause.' },
+      { type: 'multiple-choice', q: 'Pick the correct word order:',
+        options: [
+          'Ich bin müde, weil ich arbeite viel.',
+          'Ich bin müde, weil ich viel arbeite.',
+          'Ich bin müde, weil arbeite ich viel.',
+          'Ich bin müde, viel weil ich arbeite.',
+        ],
+        answer: 'Ich bin müde, weil ich viel arbeite.',
+        explain: 'After "weil", the conjugated verb (arbeite) goes to the very end.' },
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: '"I think that he is tired." → Ich denke, dass er müde __.', answer: 'ist' },
+    ],
+  },
+
+  /* ----- Day 38: Demonstrative articles + Indefinite pronouns ----- */
+  {
+    id: 38, week: 5,
+    title: 'Demonstratives & indefinites',
+    titleDe: 'Demonstrativ + Indefinit',
+    emoji: '👉',
+    objective: 'Point at "this one" with dieser/diese/dieses; talk about "someone/nobody/something/nothing/everyone".',
+    intro: 'Two small but high-frequency word groups. "dieser" replaces der/die/das to mean "THIS particular one". Indefinite pronouns let you say "someone is here" or "nobody knows" without naming names.',
+    vocabulary: [
+      { de: 'dieser',   en: 'this (m, der-words)' },
+      { de: 'diese',    en: 'this (f) / these (pl)' },
+      { de: 'dieses',   en: 'this (n)' },
+      { de: 'jemand',   en: 'someone' },
+      { de: 'niemand',  en: 'nobody' },
+      { de: 'etwas',    en: 'something' },
+      { de: 'nichts',   en: 'nothing' },
+      { de: 'alles',    en: 'everything' },
+      { de: 'man',      en: 'one / people (impersonal)' },
+    ],
+    grammar: [
+      { rule: 'Demonstrative articles — same endings as der/die/das',
+        body:
+          '         der → dieser     dieser Mann\n' +
+          '         die → diese      diese Frau\n' +
+          '         das → dieses     dieses Kind\n' +
+          '   plural die → diese     diese Leute\n' +
+          'They take the same case endings as der/die/das. Just swap "d" for "dies-" plus the original ending.',
+      },
+      { rule: 'Indefinite pronouns — quick map',
+        body:
+          'jemand   = someone   "Jemand ist hier."     (Nom)  / "Ich sehe jemanden." (Akk — note +en)\n' +
+          'niemand  = nobody    "Niemand ist da."      (Nom)  / "Ich sehe niemanden." (Akk)\n' +
+          'etwas    = something "Hast du etwas?"        (no change)\n' +
+          'nichts   = nothing   "Ich habe nichts."      (no change)\n' +
+          'alles    = everything "Alles ist gut."        (no change)\n' +
+          'man      = one/people "Man arbeitet viel."    (always subject — uses 3rd-singular verb)',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: '__ Mann arbeitet heute. (this, masc.)',     answer: 'Dieser' },
+      { type: 'fill-blank', sentence: '__ Frau kocht sehr gut. (this, fem.)',      answer: 'Diese' },
+      { type: 'fill-blank', sentence: '__ Restaurant ist sehr gut. (this, neuter)', answer: 'Dieses' },
+      { type: 'fill-blank', sentence: '__ Tasche ist sehr schön. (this, fem.)',     answer: 'Diese' },
+      { type: 'fill-blank', sentence: 'Indef: __ ist hier. (someone)',              answer: 'Jemand' },
+      { type: 'fill-blank', sentence: 'Indef: Ich sehe __. (someone — Akk gets +en)', answer: 'jemanden' },
+      { type: 'fill-blank', sentence: 'Indef: __ ist bei der Arbeit. (nobody)',     answer: 'Niemand' },
+      { type: 'fill-blank', sentence: 'Indef: Ich habe __. (nothing)',              answer: 'nichts' },
+      { type: 'fill-blank', sentence: 'Indef: __ arbeitet viel. (one / people)',    answer: 'Man' },
+      { type: 'multiple-choice', q: '"man" takes which verb form?',
+        options: ['1st singular (ich)','2nd singular (du)','3rd singular (er/sie/es)','plural (wir)'],
+        answer: '3rd singular (er/sie/es)',
+        explain: 'man arbeitet, man trinkt, man sagt — like er/sie/es.' },
+    ],
+    quiz: [
+      { type: 'multiple-choice', q: '"This child" — pick the article.',
+        options: ['dieser','diese','dieses','das'], answer: 'dieses' },
+    ],
+  },
+
+  /* ----- Day 44: A2 mid-review ----- */
+  {
+    id: 44, week: 6,
+    title: 'A2 mid-review',
+    titleDe: 'A2 Zwischenwiederholung',
+    emoji: '🎯',
+    objective: 'Lock in pronouns, prepositions, conjunctions and demonstratives before tackling past tenses.',
+    intro: 'Mixed pass through everything new from Days 28-38. Aim for ≥ 80%.',
+    vocabulary: [],
+    grammar: [],
+    exercises: [
+      { type: 'fill-blank', sentence: 'Akk pronoun: "She loves him." → Sie liebt __.',     answer: 'ihn' },
+      { type: 'fill-blank', sentence: 'Dat pronoun: "He helps me." → Er hilft __.',        answer: 'mir' },
+      { type: 'fill-blank', sentence: 'Wechsel: Ich gehe __ Restaurant. (in + das)',       answer: 'ins' },
+      { type: 'fill-blank', sentence: 'Wechsel: Ich bin __ Stadt. (in + the, fem. → Dat)', answer: 'in der' },
+      { type: 'fill-blank', sentence: 'Konnektor (verb at end): Ich lerne, weil ich Deutsch sprechen __. (wollen)', answer: 'will' },
+      { type: 'fill-blank', sentence: 'Konnektor (verb in slot 2): Ich lerne, denn ich __ Deutsch sprechen. (wollen)', answer: 'will' },
+      { type: 'fill-blank', sentence: 'Demonstrativ: __ Buch ist gut. (this, neuter)',     answer: 'Dieses' },
+      { type: 'fill-blank', sentence: 'Indefinit: __ ist hier. (nobody)',                  answer: 'Niemand' },
+      { type: 'multiple-choice', q: 'Which preposition takes Akkusativ?',
+        options: ['mit','bei','für','von'], answer: 'für' },
+      { type: 'multiple-choice', q: 'In "Er kommt mit dir.", what is "dir"?',
+        options: ['Akk pronoun','Dat pronoun','Possessive','Demonstrative'], answer: 'Dat pronoun' },
+    ],
+    quiz: [],
+  },
+
+  /* ----- Day 45: Perfekt I — haben + Partizip II ----- */
+  {
+    id: 45, week: 7,
+    title: 'Perfekt I — haben + Partizip II',
+    titleDe: 'Perfekt I (haben)',
+    emoji: '⏪',
+    objective: 'Speak about the past using haben + Partizip II — the everyday way.',
+    intro: 'In spoken German, the Perfekt is THE past tense for nearly every verb. Two ingredients: a conjugated form of haben (or sein — tomorrow) plus the past participle of the main verb at the END of the sentence.',
+    vocabulary: [
+      { de: 'gearbeitet',  en: 'worked  (Part. II of arbeiten — regular: ge___t)' },
+      { de: 'gelernt',     en: 'learned (Part. II of lernen)' },
+      { de: 'gemacht',     en: 'done (Part. II of machen)' },
+      { de: 'gespielt',    en: 'played (Part. II of spielen)' },
+      { de: 'gekauft',     en: 'bought (Part. II of kaufen)' },
+      { de: 'gewohnt',     en: 'lived (Part. II of wohnen)' },
+      { de: 'getrunken',   en: 'drunk (Part. II of trinken — irregular)' },
+      { de: 'gegessen',    en: 'eaten (Part. II of essen — irregular)' },
+      { de: 'gelesen',     en: 'read (Part. II of lesen — irregular)' },
+      { de: 'gesehen',     en: 'seen (Part. II of sehen — irregular)' },
+      { de: 'geschrieben', en: 'written (Part. II of schreiben — irregular)' },
+      { de: 'gesprochen',  en: 'spoken (Part. II of sprechen — irregular)' },
+    ],
+    grammar: [
+      { rule: 'The Perfekt formula',
+        body:
+          'subject + haben (slot 2) + … + Partizip II (sentence end)\n' +
+          '  Ich HABE gestern Deutsch GELERNT.\n' +
+          '  Wir HABEN viel Kaffee GETRUNKEN.\n' +
+          '  Du HAST das Buch GELESEN.',
+      },
+      { rule: 'Building Partizip II — regular verbs',
+        body:
+          'ge + verb-stem + t.\n' +
+          '  arbeit-en → gearbeitet\n' +
+          '  lern-en   → gelernt\n' +
+          '  mach-en   → gemacht\n' +
+          '  kauf-en   → gekauft',
+      },
+      { rule: 'Irregular Partizip II — memorise',
+        body:
+          'Many common verbs change the stem vowel and end in -en:\n' +
+          '  trinken  → getrunken\n' +
+          '  essen    → gegessen\n' +
+          '  lesen    → gelesen\n' +
+          '  sehen    → gesehen\n' +
+          '  schreiben → geschrieben\n' +
+          '  sprechen → gesprochen\n' +
+          'Pattern is irregular — learn the participle alongside the verb.',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: 'Ich __ gestern __. (regular: arbeiten → present perfect)', answer: 'habe gearbeitet', hint: 'two words: helper + participle' },
+      { type: 'fill-blank', sentence: 'Wir __ Kaffee __. (irregular: trinken)',                   answer: 'haben getrunken' },
+      { type: 'fill-blank', sentence: 'Du __ ein Buch __. (irregular: lesen)',                    answer: 'hast gelesen' },
+      { type: 'fill-blank', sentence: 'Sie (she) __ ein Brot __. (regular: kaufen)',              answer: 'hat gekauft' },
+      { type: 'fill-blank', sentence: 'Ich __ Deutsch __. (regular: lernen)',                     answer: 'habe gelernt' },
+      { type: 'fill-blank', sentence: 'Ihr __ Pizza __. (irregular: essen)',                      answer: 'habt gegessen' },
+      { type: 'multiple-choice', q: 'Where does the Partizip II go?',
+        options: ['Position 1','Position 2','Right after the helper','At the very end of the sentence'],
+        answer: 'At the very end of the sentence' },
+      { type: 'multiple-choice', q: 'Pick the right Partizip II for "spielen".',
+        options: ['gespielen','gespielt','spielt','gespielen'], answer: 'gespielt',
+        explain: 'Regular verb → ge + stem + t.' },
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: '"I have spoken German." → Ich habe Deutsch __.', answer: 'gesprochen' },
+    ],
+  },
+
+  /* ----- Day 46: Perfekt II — sein + motion verbs ----- */
+  {
+    id: 46, week: 7,
+    title: 'Perfekt II — sein + motion verbs',
+    titleDe: 'Perfekt II (sein)',
+    emoji: '🚶',
+    objective: 'Switch the helper from haben to sein for verbs of motion or change of state.',
+    intro: 'A small group of verbs use SEIN (not haben) as their Perfekt helper — almost always verbs of MOVEMENT (gehen, fahren, kommen) or CHANGE OF STATE (werden, bleiben). The rule of thumb: did the subject move or change? Use sein.',
+    vocabulary: [
+      { de: 'gegangen',  en: 'gone (Part. II of gehen)' },
+      { de: 'gefahren',  en: 'driven / travelled (Part. II of fahren)' },
+      { de: 'gekommen',  en: 'come (Part. II of kommen)' },
+      { de: 'geblieben', en: 'stayed (Part. II of bleiben — change of state-ish)' },
+      { de: 'geflogen',  en: 'flown (Part. II of fliegen)' },
+      { de: 'aufgestanden', en: 'got up (Part. II of aufstehen — separable!)' },
+      { de: 'geworden',  en: 'become (Part. II of werden)' },
+    ],
+    grammar: [
+      { rule: 'sein-helper rule',
+        body:
+          'Use sein + Partizip II for:\n' +
+          '• verbs of MOTION from A to B: gehen, fahren, kommen, fliegen, laufen, reisen\n' +
+          '• verbs of CHANGE OF STATE: werden (become), aufstehen (get up), einschlafen (fall asleep)\n' +
+          '• exceptions: bleiben (to stay), sein (to be), passieren (to happen)\n' +
+          'Everything else uses haben.',
+      },
+      { rule: 'Examples',
+        body:
+          '  Ich BIN nach Hause GEGANGEN.\n' +
+          '  Wir SIND in die Stadt GEFAHREN.\n' +
+          '  Du BIST aus der Schule GEKOMMEN.\n' +
+          '  Sie IST im Restaurant GEBLIEBEN.\n' +
+          '  Ich BIN um 7 Uhr AUFGESTANDEN.   (separable verb! prefix glues to participle)',
+      },
+      { rule: 'Separable verbs in Perfekt',
+        body:
+          'For separable verbs the prefix re-attaches AND the "ge-" goes BETWEEN them:\n' +
+          '  aufstehen   → aufgestanden    (ich bin aufgestanden)\n' +
+          '  einkaufen   → eingekauft      (ich habe eingekauft)\n' +
+          '  anrufen     → angerufen       (ich habe angerufen)',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: 'Ich __ nach Hause __. (gehen)',                       answer: 'bin gegangen' },
+      { type: 'fill-blank', sentence: 'Wir __ in die Stadt __. (fahren)',                    answer: 'sind gefahren' },
+      { type: 'fill-blank', sentence: 'Du __ aus der Stadt __. (kommen)',                    answer: 'bist gekommen' },
+      { type: 'fill-blank', sentence: 'Er __ im Restaurant __. (bleiben)',                   answer: 'ist geblieben' },
+      { type: 'fill-blank', sentence: 'Ich __ um 7 Uhr __. (aufstehen — separable!)',        answer: 'bin aufgestanden' },
+      { type: 'fill-blank', sentence: 'Ich __ am Samstag __. (einkaufen — separable, but takes haben!)', answer: 'habe eingekauft', hint: 'einkaufen is not motion — uses haben' },
+      { type: 'multiple-choice', q: '"to drive / travel" → which helper?',
+        options: ['haben','sein','either works','depends on subject'], answer: 'sein',
+        explain: 'fahren is motion → sein.' },
+      { type: 'multiple-choice', q: '"to drink" → which helper?',
+        options: ['haben','sein','either works','depends on subject'], answer: 'haben',
+        explain: 'No motion, no change of state → haben.' },
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: '"I have flown to Berlin." → Ich __ nach Berlin __.', answer: 'bin geflogen' },
+    ],
+  },
+
+  /* ----- Day 47: Präteritum (sein + haben) ----- */
+  {
+    id: 47, week: 7,
+    title: 'Präteritum — war & hatte',
+    titleDe: 'Präteritum (sein + haben)',
+    emoji: '📜',
+    objective: 'Use the simple past of sein and haben — the only Präteritum forms you need at A1.',
+    intro: 'Most past-tense verbs use Perfekt in spoken German. EXCEPT sein and haben — those almost always use the Präteritum (war / hatte) even in conversation. "Ich war müde" sounds natural; "Ich bin müde gewesen" sounds odd.',
+    vocabulary: [
+      // sein
+      { de: 'war',     en: 'was (ich / er / sie / es)' },
+      { de: 'warst',   en: 'were (du)' },
+      { de: 'waren',   en: 'were (wir / sie / Sie)' },
+      { de: 'wart',    en: 'were (ihr)' },
+      // haben
+      { de: 'hatte',   en: 'had (ich / er / sie / es)' },
+      { de: 'hattest', en: 'had (du)' },
+      { de: 'hatten',  en: 'had (wir / sie / Sie)' },
+      { de: 'hattet',  en: 'had (ihr)' },
+    ],
+    grammar: [
+      { rule: 'sein → war (Präteritum)',
+        body:
+          'ich  war\n' +
+          'du   warst\n' +
+          'er/sie/es  war\n' +
+          'wir  waren\n' +
+          'ihr  wart\n' +
+          'sie / Sie  waren',
+      },
+      { rule: 'haben → hatte (Präteritum)',
+        body:
+          'ich  hatte\n' +
+          'du   hattest\n' +
+          'er/sie/es  hatte\n' +
+          'wir  hatten\n' +
+          'ihr  hattet\n' +
+          'sie / Sie  hatten',
+      },
+      { rule: 'When to use Präteritum vs Perfekt',
+        body:
+          '• sein + haben → Präteritum (war / hatte) is normal even in speech.\n' +
+          '• Modal verbs → Präteritum is also natural (musste, konnte, wollte).\n' +
+          '• All other verbs → use Perfekt in conversation. Reserve their Präteritum for written stories.',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      // sein translations — slide
+      { type: 'fill-blank', sentence: '"I was tired." → Ich __ müde.',                  answer: 'war' },
+      { type: 'fill-blank', sentence: '"We were in the restaurant." → Wir __ im Restaurant.', answer: 'waren' },
+      { type: 'fill-blank', sentence: '"He was in the office." → Er __ im Büro.',       answer: 'war' },
+      { type: 'fill-blank', sentence: '"She was not there." → Sie __ nicht da.',        answer: 'war' },
+      { type: 'fill-blank', sentence: '"You (1) were late." → Du __ spät.',             answer: 'warst' },
+      { type: 'fill-blank', sentence: '"You (group) were in the park." → Ihr __ im Park.', answer: 'wart' },
+      { type: 'fill-blank', sentence: '"They were in Germany." → Sie __ in Deutschland.', answer: 'waren' },
+      // haben translations — slide
+      { type: 'fill-blank', sentence: '"I had time." → Ich __ Zeit.',                   answer: 'hatte' },
+      { type: 'fill-blank', sentence: '"We had a meeting." → Wir __ ein Meeting.',      answer: 'hatten' },
+      { type: 'fill-blank', sentence: '"He had a question." → Er __ eine Frage.',       answer: 'hatte' },
+      { type: 'fill-blank', sentence: '"You (1) had a lot of work." → Du __ viel Arbeit.', answer: 'hattest' },
+      { type: 'fill-blank', sentence: '"You (group) had a break." → Ihr __ eine Pause.', answer: 'hattet' },
+      { type: 'multiple-choice', q: 'Most verbs in spoken German use which past tense?',
+        options: ['Präteritum','Perfekt','Konjunktiv','Plusquamperfekt'], answer: 'Perfekt',
+        explain: 'Reserve Präteritum for sein, haben, and modal verbs in speech.' },
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: '"They had a bus." → Sie __ einen Bus.', answer: 'hatten' },
+    ],
+  },
+
+  /* ----- Day 48: Konjunktiv II + Imperative ----- */
+  {
+    id: 48, week: 7,
+    title: 'Konjunktiv II + Imperative',
+    titleDe: 'Konjunktiv II + Imperativ',
+    emoji: '🙏',
+    objective: 'Sound polite with möchte/würde, and bark (kindly) commands with the Imperativ.',
+    intro: 'Two unrelated tools that you already half-know. "möchte" and "würde" are the two Konjunktiv II forms you need at A1 — they make wishes and polite requests. The Imperativ is for commands: Komm! Iss! Ruf an!',
+    vocabulary: [
+      // Konjunktiv II — möchten
+      { de: 'möchte',     en: 'would like (ich / er / sie / es)' },
+      { de: 'möchtest',   en: 'would like (du)' },
+      { de: 'möchten',    en: 'would like (wir / sie / Sie)' },
+      { de: 'möchtet',    en: 'would like (ihr)' },
+      // Konjunktiv II — würden
+      { de: 'würde',      en: 'would (ich / er / sie / es)' },
+      { de: 'würdest',    en: 'would (du)' },
+      { de: 'würden',     en: 'would (wir / sie / Sie)' },
+      { de: 'würdet',     en: 'would (ihr)' },
+      // Imperative samples
+      { de: 'Komm!',      en: 'Come!' },
+      { de: 'Geh!',       en: 'Go!' },
+      { de: 'Iss!',       en: 'Eat!' },
+      { de: 'Ruf an!',    en: 'Call (someone)!' },
+      { de: 'Kauf ein!',  en: 'Go shopping!' },
+    ],
+    grammar: [
+      { rule: 'Konjunktiv II — what it is',
+        body:
+          'NOT a tense (not past). It expresses politeness, wishes, hypotheticals.\n' +
+          'At A1 you only need TWO verbs:\n' +
+          '  möchten — Konjunktiv II of mögen → "would like"\n' +
+          '  würden  — Konjunktiv II of werden → "would"\n' +
+          '  Ich MÖCHTE einen Kaffee (haben).\n' +
+          '  Ich WÜRDE später essen.',
+      },
+      { rule: 'möchten conjugation',
+        body:
+          'ich  möchte\n' +
+          'du   möchtest\n' +
+          'er/sie/es  möchte\n' +
+          'wir  möchten\n' +
+          'ihr  möchtet\n' +
+          'sie / Sie  möchten',
+      },
+      { rule: 'würden conjugation',
+        body:
+          'ich  würde\n' +
+          'du   würdest\n' +
+          'er/sie/es  würde\n' +
+          'wir  würden\n' +
+          'ihr  würdet\n' +
+          'sie / Sie  würden',
+      },
+      { rule: 'The Imperativ — talking to one person (du-form)',
+        body:
+          'Take the du-present-tense, drop the -st ending, drop the pronoun:\n' +
+          '  du kommst → Komm!\n' +
+          '  du gehst  → Geh!\n' +
+          '  du isst   → Iss!\n' +
+          '  du rufst an → Ruf an!   (separable: prefix to end)\n' +
+          '  du kaufst ein → Kauf ein!\n' +
+          '"Sei!" is the irregular du-form for sein.',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: 'Polite: Ich __ einen Kaffee, bitte. (would like)',           answer: 'möchte' },
+      { type: 'fill-blank', sentence: 'Polite: Du __ später essen. (would)',                        answer: 'würdest' },
+      { type: 'fill-blank', sentence: 'Polite: Wir __ ins Restaurant gehen. (would like)',          answer: 'möchten' },
+      { type: 'fill-blank', sentence: 'Polite: Ihr __ am Samstag arbeiten. (would)',                answer: 'würdet' },
+      { type: 'fill-blank', sentence: 'Imperativ (du): "Come into the office!" → __ in die Arbeit!', answer: 'Komm' },
+      { type: 'fill-blank', sentence: 'Imperativ (du): "Eat the soup!" → __ die Suppe!',            answer: 'Iss' },
+      { type: 'fill-blank', sentence: 'Imperativ (du, separable): "Call your friend!" → __ deinen Freund __!', answer: 'Ruf an', hint: 'two words separated by a space — prefix to end' },
+      { type: 'multiple-choice', q: 'Konjunktiv II is used to express…',
+        options: ['the past','the future','politeness / wishes','negation'], answer: 'politeness / wishes' },
+      { type: 'multiple-choice', q: '"möchten" is the Konjunktiv II form of which verb?',
+        options: ['mögen','machen','müssen','möcht'], answer: 'mögen' },
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: 'Imperativ: "Buy the bread!" → __ das Brot __!', answer: 'Kauf ein' },
+    ],
+  },
 ];
 
 /* Sort once on export so days inserted out of order still render in numeric order. */
@@ -2024,10 +2682,11 @@ export const weeks = [
   { n: 1, title: 'Foundations',         tagline: 'Sounds, numbers, pronouns, sein/haben/werden' },
   { n: 2, title: 'Building sentences',  tagline: 'Numbers 30-100, S-V-O, regular & separable verbs' },
   { n: 3, title: 'Questions & numbers', tagline: 'Yes/No · W-questions · numbers 100-1000+' },
-  { n: 4, title: 'Cases',               tagline: 'Akkusativ, Dativ, possessives' },
-  { n: 5, title: 'People & life',       tagline: 'Family, routine, hobbies, reading, modals' },
-  { n: 6, title: 'Real-life scenarios', tagline: 'Restaurant, shopping, travel, negation' },
-  { n: 7, title: 'Mastery',             tagline: 'Mega review and final exam' },
+  { n: 4, title: 'Cases & pronouns',    tagline: 'Akkusativ, Dativ, Wechsel, pronouns' },
+  { n: 5, title: 'People, life, glue',  tagline: 'Family, hobbies, modals, conjunctions, demonstratives' },
+  { n: 6, title: 'Real-life scenarios', tagline: 'Restaurant, shopping, travel, negation, A2 mid-review' },
+  { n: 7, title: 'Past tenses & polite forms', tagline: 'Perfekt · Präteritum · Konjunktiv II · Imperativ' },
+  { n: 8, title: 'Mastery',             tagline: 'Mega review and final exam' },
 ];
 
 export const dayById = (id) => days.find((d) => d.id === Number(id));

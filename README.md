@@ -1,13 +1,13 @@
-# Deutsch30 — Learn German in 40 Days
+# Deutsch30 — Learn German in 50 Days
 
 An interactive, fully responsive web app that teaches German to absolute
-beginners (ages 5–50) through a structured 40-day curriculum, mapped
-from the source `big Revision Powerpoint.pptx` (~95% coverage as of
-v2.0.0).
+beginners (ages 5–50) through a structured 50-day curriculum, mapped
+from two source decks: `big Revision Powerpoint.pptx` (Days 1–43) and
+`presentation 0205.pptx` (Days 28–30, 37–38, 44–48).
 
-> The brand kept its original "Deutsch30" name; the curriculum was
-> extended to 40 days in v2.0.0 to fully cover the source material
-> without dropping any content.
+> The brand keeps its original "Deutsch30" name; the curriculum was
+> extended to 40 days in v2.0.0 and to 50 days in v3.0.0 to cover an
+> additional A2-level deck without dropping any earlier content.
 
 ## Run it
 
@@ -32,17 +32,18 @@ For best pronunciation install a German voice:
 * **Windows / Chrome**: voices are downloaded automatically
 * **Linux**: install `speech-dispatcher` + a German voice (e.g. mbrola-de)
 
-## Curriculum (40 days, 7 weeks)
+## Curriculum (50 days, 8 weeks)
 
 | Week | Days  | Focus                                                                |
 |------|-------|----------------------------------------------------------------------|
-| 1    | 1–7   | Sounds, numbers 0–29, pronouns, articles, sein/haben/werden          |
-| 2    | 8–15  | Numbers 30–100, S-V-O, regular & **separable verbs**, time, intro, review |
-| 3    | 16–20 | **Yes/No questions · W-questions · Numbers 100–1000+ · Big numbers & prices · review** |
-| 4    | 21–27 | Akkusativ (m/f/n/pl, verbs) + **Dativ prepositions** + **Dativ verbs** + cases review |
-| 5    | 28–33 | Family + Possessivpronomen, daily routine, **hobbies, reading practice**, modals (×2)  |
-| 6    | 34–38 | Restaurant, shopping, travel, negation, Week 4-6 review              |
-| 7    | 39–40 | Mega review and final exam + certificate                             |
+| 1    | 1–7   | Sounds (incl. **ö rescue**), numbers 0-29, pronouns, articles, sein/haben/werden |
+| 2    | 8–15  | Numbers 30-100, S-V-O, regular & separable verbs, time, intro, review |
+| 3    | 16–20 | Yes/No questions · W-questions · Numbers 100-1000+ · Big numbers & prices · review |
+| 4    | 21–30 | Akkusativ + Dativ + cases review + **Akk pronouns** + **Dat pronouns** + **Wechsel prepositions** |
+| 5    | 31–38 | Family + Possessivpronomen, routine, hobbies, reading, modals + **conjunctions** + **demonstratives & indefinites** |
+| 6    | 39–44 | Restaurant, shopping, travel, negation, Week 4-6 review, **A2 mid-review** |
+| 7    | 45–48 | **Perfekt I (haben)** · **Perfekt II (sein)** · **Präteritum (war/hatte)** · **Konjunktiv II + Imperativ** |
+| 8    | 49–50 | Mega review · Say it back · Final exam + certificate                  |
 
 Each day contains: an intro, vocabulary with audio, grammar pointers,
 4–8 mixed exercises, and a quiz. A score ≥ 70% unlocks the next day.

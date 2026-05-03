@@ -11,10 +11,34 @@
  * in sync.
  */
 
-export const VERSION = '2.1.0';
+export const VERSION = '3.0.0';
 export const RELEASE_DATE = '2026-05-03';
 
 export const RELEASES = [
+  {
+    version: '3.0.0',
+    date: '2026-05-03',
+    type: 'feature',
+    title: 'Deutsch50 — A2 expansion from presentation 0205.pptx',
+    notes: [
+      'BREAKING: curriculum extended from 40 → 50 days. localStorage key bumped to deutsch50:v1, so any in-progress saves reset on first load. App brand stays "Deutsch30".',
+      'Ported the entire second source deck (presentation 0205.pptx, 41 slides) — A2-bridge content that builds on top of v2.x.',
+      'Day 1 enriched: 8-tip ö-rescue toolkit + ö reading text (Brötchen / Bäcker / Verkäufer).',
+      'NEW Day 28 — Akkusativ pronouns: full mich/dich/ihn/sie/es/uns/euch/Sie table + 8 translation drills.',
+      'NEW Day 29 — Dativ pronouns: full mir/dir/ihm/ihr/uns/euch/ihnen/Ihnen table, used after Dativ verbs and Dativ prepositions.',
+      'NEW Day 30 — More prepositions: Akkusativ-only (für · um · ohne) + Wechselpräpositionen (in / an / auf — Wo? = Dat, Wohin? = Akk) + ins / ans contractions.',
+      'NEW Day 37 — Sentence connections: coordinating (und · oder · aber · denn · dann — verb stays slot 2) vs subordinating (weil · wenn · dass — verb to end), with the denn-vs-weil comparison.',
+      'NEW Day 38 — Demonstrative articles (dieser / diese / dieses) + indefinite pronouns (jemand / niemand / etwas / nichts / alles / man).',
+      'NEW Day 44 — A2 mid-review covering all the new pronouns, prepositions, conjunctions and demonstratives.',
+      'NEW Day 45 — Perfekt I: haben + Partizip II for regular and irregular verbs (gearbeitet, gelernt, getrunken, gegessen, gelesen, geschrieben, gesprochen).',
+      'NEW Day 46 — Perfekt II: sein + Partizip II for motion / change-of-state verbs (gegangen, gefahren, gekommen, geblieben, geflogen, aufgestanden) plus the separable-verb Perfekt rule.',
+      'NEW Day 47 — Präteritum: complete sein (war/warst/...) and haben (hatte/hattest/...) tables, plus the rule that for everything else you use Perfekt in speech.',
+      'NEW Day 48 — Konjunktiv II + Imperativ: möchten + würden conjugations, plus du-form Imperative (Komm! Iss! Ruf an! Kauf ein!).',
+      'New 8-week structure: Foundations · Building sentences · Questions & numbers · Cases & pronouns · People, life & glue · Real-life scenarios · Past tenses & polite forms · Mastery.',
+      'Badges: added week-7 "Time Traveller" badge; week-4 + week-5 + week-6 ranges expanded; graduate now requires Day 50 ≥ 80%.',
+      'Combined coverage of both source decks: ~95-100%. The "Adjectives" topic listed in deck 2\'s agenda has no actual content slides and is intentionally not implemented.',
+    ],
+  },
   {
     version: '2.1.0',
     date: '2026-05-03',
