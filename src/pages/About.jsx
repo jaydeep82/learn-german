@@ -29,7 +29,7 @@ export default function About() {
             <p className="uppercase tracking-widest text-xs opacity-90">About this app</p>
             <h1 className="text-3xl sm:text-4xl font-extrabold mt-1 flex items-center gap-2">
               <span aria-hidden>🇩🇪</span>
-              Deutsch<span className="text-amber-200">40</span>
+              Deutsch<span className="text-amber-200">30</span>
             </h1>
             <p className="mt-2 max-w-prose opacity-90">
               An interactive 40-day German learning app for absolute beginners,

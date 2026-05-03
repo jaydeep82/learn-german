@@ -76,7 +76,7 @@ export const BADGES = [
   },
   {
     id: 'graduate',      emoji: '🎓',
-    title: 'Deutsch40 Graduate', desc: 'Pass the final exam ≥ 80%.',
+    title: 'Deutsch30 Graduate', desc: 'Pass the final exam ≥ 80%.',
     when: (s) => (s.completed?.[40]?.score ?? 0) >= 0.8,
   },
 ];

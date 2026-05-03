@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '2.0.0';
+export const VERSION = '2.0.1';
 export const RELEASE_DATE = '2026-05-03';
 
 export const RELEASES = [
+  {
+    version: '2.0.1',
+    date: '2026-05-03',
+    type: 'improvement',
+    title: 'Brand renamed back to Deutsch30',
+    notes: [
+      'Brand mark restored to "Deutsch30" across the header, footer, About hero, page title, README, package name and the graduate badge.',
+      'Curriculum stays at 40 days — the brand is now a name, not a day-count claim. Body copy ("Learn German in 40 days") still reflects the actual curriculum length.',
+      'localStorage key intentionally NOT changed (still deutsch40:v1) so existing in-progress saves survive this rename.',
+    ],
+  },
   {
     version: '2.0.0',
     date: '2026-05-03',

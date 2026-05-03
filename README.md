@@ -1,9 +1,13 @@
-# Deutsch40 — Learn German in 40 Days
+# Deutsch30 — Learn German in 40 Days
 
 An interactive, fully responsive web app that teaches German to absolute
 beginners (ages 5–50) through a structured 40-day curriculum, mapped
 from the source `big Revision Powerpoint.pptx` (~95% coverage as of
 v2.0.0).
+
+> The brand kept its original "Deutsch30" name; the curriculum was
+> extended to 40 days in v2.0.0 to fully cover the source material
+> without dropping any content.
 
 ## Run it
 
