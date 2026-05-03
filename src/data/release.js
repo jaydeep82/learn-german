@@ -11,10 +11,32 @@
  * in sync.
  */
 
-export const VERSION = '1.5.0';
-export const RELEASE_DATE = '2026-05-02';
+export const VERSION = '1.6.0';
+export const RELEASE_DATE = '2026-05-03';
 
 export const RELEASES = [
+  {
+    version: '1.6.0',
+    date: '2026-05-03',
+    type: 'content',
+    title: 'Phase A — port the missing PPT drills',
+    notes: [
+      'Audit of the source PowerPoint vs the app revealed only ~60% of the deck\'s pedagogical content was ported. v1.6.0 closes the largest content gaps without changing the 30-day arc.',
+      'Day 1: ch-rescue toolkit (6 tricks), hard-vs-soft ch reading texts, compound-word breaking strategy with worked examples (Wochenende, Hausaufgabe, Softwareentwicklung).',
+      'Days 5/6/7: ported ~24 missing aux-verb fill-blanks from PPT slides 32-41 (sein/haben/werden + a mixed-auxiliary challenge).',
+      'Day 9: added "find subject/object" multi-choice challenges from slide 49 + the question test in grammar pointers.',
+      'Day 10: added trinken/wohnen/arbeiten conjugation drills (slides 62-64), including the stem-ends-in-t rule with arbeitet / arbeitest examples.',
+      'Day 11: added 8 missing common verbs to vocabulary (besuchen, zeigen, benutzen, erklären, wiederholen, üben, suchen, schicken) plus the slide 89 mini-challenge.',
+      'Day 12: ported the full hobby vocabulary list from slide 66 — 5 hobby verbs, 11 hobby objects, 4 time expressions, 2 frequency, 2 preference — plus hobby-sentence builders.',
+      'Day 13: added the Moritz self-introduction translation drill (slides 167-168) — 9 English→German fill-blanks.',
+      'Days 16-19: added 14 article-choice fill-blanks across definite/indefinite × Nom/Akk (slides 107, 109, 123-126, 160-161); added "one sentence — four meanings" + "first mention vs second mention" grammar rules (slides 156, 162).',
+      'Day 20: expanded Possessivpronomen from mein/meine only to the full 8-form table (mein/dein/sein/ihr/unser/euer/ihr/Ihr) with declension grammar; added 6 cross-person drills + 4 sentences from the slide 291 translation challenge.',
+      'Day 23: added the politeness ladder (slides 258-259) — möchte → möchte gerne → möchte sehr gerne → mit Milch → hätte gerne — with grammar callout on den vs einen.',
+      'Day 24: added 12 sentences from the 21-sentence restaurant translation challenge (slide 254).',
+      'Day 26: imported the full kein declension table (slide 271) + the 4-line restaurant kein dialog + the 5-item challenge (slide 272).',
+      'Net effect: estimated PPT coverage rises from ~60% to ~75-80%. ~80 additional drill items, ~25 new vocabulary entries, ~8 new grammar callouts.',
+    ],
+  },
   {
     version: '1.5.0',
     date: '2026-05-02',

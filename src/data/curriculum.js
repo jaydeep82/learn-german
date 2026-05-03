@@ -105,11 +105,19 @@ export const days = [
       { de: 'Wasser',  en: 'water',    hint: 'W sounds like soft V' },
       { de: 'Zeit',    en: 'time',     hint: 'Z sounds like ts' },
       { de: 'ja',      en: 'yes',      hint: 'J sounds like Y' },
-      { de: 'Bach',    en: 'stream',   hint: 'ch — let air flow' },
+      { de: 'Bach',    en: 'stream',   hint: 'hard ch — back of throat' },
+      { de: 'kochen',  en: 'to cook',  hint: 'hard ch (after a/o/u)' },
+      { de: 'machen',  en: 'to do',    hint: 'hard ch' },
+      { de: 'ich',     en: 'I',        hint: 'soft ch — front of mouth' },
+      { de: 'nicht',   en: 'not',      hint: 'soft ch (after i/e/consonants)' },
+      { de: 'Milch',   en: 'milk',     hint: 'soft ch' },
       { de: 'Schule',  en: 'school',   hint: 'sch = English sh' },
       { de: 'Bär',     en: 'bear',     hint: 'ä = open eh' },
       { de: 'schön',   en: 'beautiful',hint: 'ö = round lips, say er' },
       { de: 'müde',    en: 'tired',    hint: 'ü = lips for oo, say ee' },
+      { de: 'Wochenende',     en: 'weekend',     hint: 'Wo-chen-en-de' },
+      { de: 'Hausaufgabe',    en: 'homework',    hint: 'Haus-auf-ga-be' },
+      { de: 'Softwareentwicklung', en: 'software development', hint: 'Soft-ware-ent-wick-lung' },
     ],
     grammar: [
       { rule: 'V → F', body: 'Vater, Vogel, viel — the V is pronounced like English F.' },
@@ -117,7 +125,33 @@ export const days = [
       { rule: 'Z → ts', body: 'Zeit, Zoo, zehn — never like English Z.' },
       { rule: 'J → Y', body: 'ja, Jahr, Junge — never like English J.' },
       { rule: 'ch / sch', body: 'ch = airy sound (Bach). sch = English sh (Schule).' },
+      { rule: 'Hard ch vs soft ch',
+        body:
+          'German has TWO "ch" sounds — same spelling, different mouth position:\n' +
+          '• Hard ch (after a / o / u / au): Bach, kochen, machen, lachen, Buch — air from the BACK of the throat. Like Scottish "loch".\n' +
+          '• Soft ch (after e / i / ä / ö / ü / consonants): ich, nicht, Milch, möchte, Mädchen — air from the FRONT, near the roof of the mouth. Almost a hiss.\n' +
+          'If you can\'t produce the hard ch yet, that\'s normal — it sits deeper than any English sound.',
+      },
+      { rule: 'Unlocking the hard "ch"',
+        body:
+          'Six tricks to find the sound:\n' +
+          '1. Imagine a cat hissing — but deeper in the throat.\n' +
+          '2. A quiet "k" without closing the mouth — air flows, but no full "k".\n' +
+          '3. Pretend your glasses are dirty — breathe on them: "hhh…" then push it deeper.\n' +
+          '4. Like fogging up a mirror — long warm air, then stronger.\n' +
+          '5. Imagine a hair in your throat — soft clearing sound.\n' +
+          '6. Strong whisper — push the "h" backward.',
+      },
       { rule: 'Umlauts ä ö ü', body: 'On a US keyboard you may type ae, oe, ue.' },
+      { rule: 'Long compound words — break them up',
+        body:
+          'German loves to glue nouns together. Don\'t try to say the whole word at once — chunk it:\n' +
+          '• Softwareentwicklung → Soft-ware-ent-wick-lung\n' +
+          '• Wochenende → Wo-chen-en-de\n' +
+          '• Hausaufgabe → Haus-auf-ga-be\n' +
+          '• Verkäufer → Ver-käu-fer\n' +
+          'Reading hint: most compounds are stressed on the FIRST chunk.',
+      },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
@@ -143,10 +177,36 @@ export const days = [
           { de: 'müde',   en: 'tired' },
         ],
       },
+      {
+        type: 'multiple-choice',
+        q: 'Which word uses the HARD ch (back of the throat)?',
+        options: ['ich', 'nicht', 'machen', 'Milch'],
+        answer: 'machen',
+        explain: 'After a / o / u / au, ch is hard: machen, Bach, kochen, auch.',
+      },
+      {
+        type: 'multiple-choice',
+        q: 'Which word uses the SOFT ch (front of the mouth)?',
+        options: ['Bach', 'kochen', 'lachen', 'Milch'],
+        answer: 'Milch',
+        explain: 'After i / e / ä / ö / ü / consonants, ch is soft: ich, Milch, nicht, möchte.',
+      },
+      {
+        type: 'dialogue',
+        lines: [
+          { speaker: 'Hard CH text', de: 'Ich bin im Restaurant und der Koch kocht heute frisch.', en: 'I am at the restaurant and the cook is cooking fresh today.' },
+          { speaker: 'Hard CH',     de: 'Ich mache eine Pause und ich lache.',                       en: 'I take a break and I laugh.' },
+          { speaker: 'Hard CH',     de: 'Das Essen ist gut und ich mache ein Foto.',                  en: 'The food is good and I take a photo.' },
+          { speaker: 'Soft CH text',de: 'Ich bin im Restaurant und ich möchte einen Kaffee mit Milch.', en: 'I am at the restaurant and I would like a coffee with milk.' },
+          { speaker: 'Soft CH',     de: 'Ich bin hungrig, aber ich esse nicht viel.',                 en: 'I am hungry, but I don\'t eat much.' },
+          { speaker: 'Soft CH',     de: 'Ich spreche mit dem Kellner und ich frage: „Wie viel kostet das?"', en: 'I speak with the waiter and I ask: "How much does that cost?"' },
+        ],
+      },
     ],
     quiz: [
       { type: 'multiple-choice', q: 'German "W" sounds most like…', options: ['English W', 'English soft V', 'F', 'Silent'], answer: 'English soft V' },
       { type: 'multiple-choice', q: 'Pick the correct umlaut spelling for "schoen".', options: ['schön','schon','schoen','schøn'], answer: 'schön' },
+      { type: 'multiple-choice', q: 'Break "Wochenende" into chunks.', options: ['Wo-che-nen-de', 'Wo-chen-en-de', 'Woc-hen-ende', 'Wochen-en-de'], answer: 'Wo-chen-en-de' },
     ],
   },
 
@@ -276,8 +336,17 @@ export const days = [
     exercises: [
       richConjEx('sein', 'to be'),
       { type: 'fill-blank', sentence: 'Ich __ Softwareentwickler.',  answer: 'bin' },
+      { type: 'fill-blank', sentence: 'Du __ Softwareentwickler.',   answer: 'bist' },
+      { type: 'fill-blank', sentence: 'Er __ in einer Firma.',       answer: 'ist' },
+      { type: 'fill-blank', sentence: 'Sie __ in einer Firma.',      answer: 'ist', hint: 'sie = she (singular)' },
+      { type: 'fill-blank', sentence: 'Es __ deutsch.',              answer: 'ist' },
+      { type: 'fill-blank', sentence: 'Wir __ ein Team.',            answer: 'sind' },
+      { type: 'fill-blank', sentence: 'Ihr __ in einer Stadt.',      answer: 'seid' },
+      { type: 'fill-blank', sentence: 'Sie __ Kollegen.',            answer: 'sind', hint: 'Kollegen is plural → sie = they' },
       { type: 'fill-blank', sentence: 'Wir __ Kollegen.',            answer: 'sind' },
       { type: 'fill-blank', sentence: 'Er __ hier.',                 answer: 'ist' },
+      { type: 'fill-blank', sentence: 'Ich __ aus Indien.',          answer: 'bin' },
+      { type: 'fill-blank', sentence: 'Es __ ein Moment.',           answer: 'ist' },
       { type: 'multiple-choice', q: 'Pick the correct form: "Ihr __ spät."', options: ['bin','bist','seid','sind'], answer: 'seid' },
     ],
     quiz: [
@@ -321,9 +390,17 @@ export const days = [
     ],
     exercises: [
       richConjEx('haben', 'to have'),
-      { type: 'fill-blank', sentence: 'Ich __ Hunger.',   answer: 'habe' },
-      { type: 'fill-blank', sentence: 'Sie __ eine Idee.', answer: 'hat' },
-      { type: 'fill-blank', sentence: 'Wir __ Zeit.',      answer: 'haben' },
+      { type: 'fill-blank', sentence: 'Ich __ ein Moment.',   answer: 'habe' },
+      { type: 'fill-blank', sentence: 'Du __ eine Firma.',    answer: 'hast' },
+      { type: 'fill-blank', sentence: 'Er __ ein Meeting.',   answer: 'hat' },
+      { type: 'fill-blank', sentence: 'Sie __ ein Team.',     answer: 'hat', hint: 'sie + hat → "she" (singular)' },
+      { type: 'fill-blank', sentence: 'Es __ einen Namen.',   answer: 'hat' },
+      { type: 'fill-blank', sentence: 'Wir __ ein Meeting.',  answer: 'haben' },
+      { type: 'fill-blank', sentence: 'Ihr __ eine Firma.',   answer: 'habt' },
+      { type: 'fill-blank', sentence: 'Sie __ ein Team.',     answer: 'haben', hint: 'sie + haben → "they" (plural)' },
+      { type: 'fill-blank', sentence: 'Ich __ Hunger.',       answer: 'habe' },
+      { type: 'fill-blank', sentence: 'Wir __ Zeit.',         answer: 'haben' },
+      { type: 'fill-blank', sentence: 'Sie __ eine Idee.',    answer: 'hat', hint: 'singular subject "she"' },
       { type: 'multiple-choice', q: '"Ihr __ Stress." — pick the form.', options: ['habe','hast','habt','haben'], answer: 'habt' },
     ],
     quiz: [
@@ -351,8 +428,21 @@ export const days = [
     ],
     exercises: [
       richConjEx('werden', 'to become'),
-      { type: 'fill-blank', sentence: 'Ich __ müde.',     answer: 'werde' },
-      { type: 'fill-blank', sentence: 'Es __ besser.',    answer: 'wird' },
+      { type: 'fill-blank', sentence: 'Ich __ Softwareentwickler.',  answer: 'werde', hint: 'becoming — future direction' },
+      { type: 'fill-blank', sentence: 'Du __ Softwareentwickler.',   answer: 'wirst' },
+      { type: 'fill-blank', sentence: 'Er __ Softwareentwickler.',   answer: 'wird' },
+      { type: 'fill-blank', sentence: 'Es __ ein Meeting.',          answer: 'wird' },
+      { type: 'fill-blank', sentence: 'Wir __ ein Team.',            answer: 'werden' },
+      { type: 'fill-blank', sentence: 'Ihr __ ein Team.',            answer: 'werdet' },
+      { type: 'fill-blank', sentence: 'Sie __ Kollegen.',            answer: 'werden', hint: 'plural subject' },
+      { type: 'fill-blank', sentence: 'Ich __ müde.',                answer: 'werde' },
+      { type: 'fill-blank', sentence: 'Es __ besser.',               answer: 'wird' },
+      { type: 'fill-blank', sentence: 'Sie __ eine Kollegin.',       answer: 'wird', hint: 'sie (singular) + wird → "she"' },
+      // Mixed challenge — pick whichever auxiliary fits the meaning. Slide 41.
+      { type: 'fill-blank', sentence: 'Ich __ Softwareentwickler. (right now)',     answer: 'bin' },
+      { type: 'fill-blank', sentence: 'Du __ einen Moment.',                        answer: 'hast' },
+      { type: 'fill-blank', sentence: 'Sie __ ein Team. (development — future)',    answer: 'werden' },
+      { type: 'fill-blank', sentence: 'Wir __ Kollegen. (development — future)',    answer: 'werden' },
       { type: 'multiple-choice',
         q: 'Which sentence is correct?',
         options: ['ich habe hunger.','Ich Habe Hunger.','Ich habe Hunger.','Ich habe hunger'],
@@ -416,11 +506,24 @@ export const days = [
     grammar: [
       { rule: 'S-V-O', body: '"Der Student schreibt den Satz." — Student (S) writes (V) the sentence (O).' },
       { rule: 'Verb still 2nd', body: 'Even if the object comes first for emphasis, the verb stays in position 2.' },
+      { rule: 'Question test',
+        body:
+          'To find the subject, ask "Wer / Was?" (Who / What is doing the action?).\n' +
+          'To find the object, ask "Wen / Was?" (Whom / What is being acted on?).\n' +
+          'Example: "Heute habe ich Hunger." Wer hat Hunger? → ich (subject). Was hat ich? → Hunger (object).',
+      },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'multiple-choice', q: 'In "Der Lehrer erklärt das Wort", what is the subject?', options: ['Der Lehrer','erklärt','das Wort','Wort'], answer: 'Der Lehrer' },
-      { type: 'multiple-choice', q: 'And the object?', options: ['Der Lehrer','erklärt','das Wort','das'], answer: 'das Wort' },
+      { type: 'multiple-choice', q: 'In "Der Lehrer erklärt das Wort", what is the SUBJECT?', options: ['Der Lehrer','erklärt','das Wort','Wort'], answer: 'Der Lehrer' },
+      { type: 'multiple-choice', q: 'And the OBJECT?', options: ['Der Lehrer','erklärt','das Wort','das'], answer: 'das Wort' },
+      { type: 'multiple-choice', q: '"Heute habe ich Hunger." — what is the subject?', options: ['Heute','habe','ich','Hunger'], answer: 'ich' },
+      { type: 'multiple-choice', q: '"Heute habe ich Hunger." — what is the object?', options: ['Heute','habe','ich','Hunger'], answer: 'Hunger' },
+      { type: 'multiple-choice', q: '"Wir haben eine Idee." — subject?', options: ['Wir','haben','eine Idee','—'], answer: 'Wir' },
+      { type: 'multiple-choice', q: '"Wir haben eine Idee." — object?', options: ['Wir','haben','eine Idee','—'], answer: 'eine Idee' },
+      { type: 'multiple-choice', q: '"Im Team haben wir Aufgaben." — subject?', options: ['Im Team','haben','wir','Aufgaben'], answer: 'wir' },
+      { type: 'multiple-choice', q: '"Im Team haben wir Aufgaben." — object?', options: ['Im Team','haben','wir','Aufgaben'], answer: 'Aufgaben' },
+      { type: 'multiple-choice', q: '"Morgen wird das Lernen besser." — subject?', options: ['Morgen','wird','das Lernen','besser'], answer: 'das Lernen' },
       { type: 'fill-blank', sentence: 'Der Student __ den Satz. (writes)', answer: 'schreibt' },
     ],
     quiz: [
@@ -451,6 +554,24 @@ export const days = [
       { type: 'fill-blank', sentence: 'Ich __ Deutsch. (lernen)', answer: 'lerne' },
       { type: 'fill-blank', sentence: 'Wir __ Fußball. (spielen)', answer: 'spielen' },
       { type: 'fill-blank', sentence: 'Er __ in Berlin. (wohnen)', answer: 'wohnt' },
+      // trinken drill — slide 62. Multiple subjects, same verb.
+      { type: 'fill-blank', sentence: 'Ich __ Rotwein. (trinken)',                       answer: 'trinke' },
+      { type: 'fill-blank', sentence: 'Du __ Weißwein. (trinken)',                       answer: 'trinkst' },
+      { type: 'fill-blank', sentence: 'Robert und Sabine __ Bier. (trinken)',            answer: 'trinken', hint: 'two people = plural' },
+      { type: 'fill-blank', sentence: 'Der Hund __ Wasser. (trinken)',                   answer: 'trinkt', hint: 'der Hund → er → -t' },
+      { type: 'fill-blank', sentence: 'Celina und ich __ Sprite. (trinken)',             answer: 'trinken', hint: '"… and I" = wir' },
+      { type: 'fill-blank', sentence: 'Ihr __ Tee. (trinken)',                           answer: 'trinkt' },
+      // wohnen drill — slide 63
+      { type: 'fill-blank', sentence: 'Ich __ in Berlin. (wohnen)',                      answer: 'wohne' },
+      { type: 'fill-blank', sentence: 'Du __ auch in Berlin. (wohnen)',                  answer: 'wohnst' },
+      { type: 'fill-blank', sentence: 'Celina und ich __ in meiner Wohnung. (wohnen)',   answer: 'wohnen' },
+      { type: 'fill-blank', sentence: 'Ihr __ in Indien. (wohnen)',                      answer: 'wohnt' },
+      // arbeiten drill — slide 64. Stem ends in -t, takes -et / -est.
+      { type: 'fill-blank', sentence: 'Mein Team und ich __ in Indien. (arbeiten)',      answer: 'arbeiten' },
+      { type: 'fill-blank', sentence: 'Die Kollegin __ in unserem Team. (arbeiten)',     answer: 'arbeitet', hint: 'stem ends in t → -et' },
+      { type: 'fill-blank', sentence: 'Der Chef __ in unserem Büro. (arbeiten)',         answer: 'arbeitet' },
+      { type: 'fill-blank', sentence: 'Die Kunden __ auch in der IT. (arbeiten)',        answer: 'arbeiten' },
+      { type: 'fill-blank', sentence: 'Du __ als Deutschlehrer. (arbeiten)',             answer: 'arbeitest', hint: 'stem ends in t → -est, not -st' },
     ],
     quiz: [
       { type: 'multiple-choice', q: '"du lernen" → ?', options: ['lerne','lernst','lernt','lernen'], answer: 'lernst' },
@@ -470,6 +591,17 @@ export const days = [
       { de: 'essen',     en: 'to eat (irreg.)' }, { de: 'trinken',  en: 'to drink' },
       { de: 'sehen',     en: 'to see (irreg.)' }, { de: 'schreiben',en: 'to write' },
       { de: 'lesen',     en: 'to read (irreg.)' }, { de: 'sprechen', en: 'to speak (irreg.)' },
+      { de: 'besuchen',    en: 'to visit' },
+      { de: 'zeigen',      en: 'to show' },
+      { de: 'benutzen',    en: 'to use' },
+      { de: 'erklären',    en: 'to explain' },
+      { de: 'wiederholen', en: 'to repeat' },
+      { de: 'üben',        en: 'to practise' },
+      { de: 'suchen',      en: 'to search / look for' },
+      { de: 'schicken',    en: 'to send' },
+      { de: 'erzählen',    en: 'to tell (a story)' },
+      { de: 'fragen',      en: 'to ask' },
+      { de: 'warten',      en: 'to wait' },
     ],
     grammar: [
       { rule: 'Stem-changers', body: 'essen → ich esse, du isst, er isst. sehen → du siehst, er sieht. The change happens only in du / er / sie / es.' },
@@ -479,6 +611,16 @@ export const days = [
       { type: 'fill-blank', sentence: 'Du __ einen Apfel. (essen)', answer: 'isst' },
       { type: 'fill-blank', sentence: 'Sie (she) __ ein Buch. (lesen)', answer: 'liest' },
       { type: 'multiple-choice', q: '"er sprechen" → ?', options: ['sprecht','sprechst','spricht','spreche'], answer: 'spricht' },
+      // Slide 89 challenge — the visit/show/use mini-set.
+      { type: 'fill-blank', sentence: 'Der Student __ den Freund. (besuchen)',                answer: 'besucht' },
+      { type: 'fill-blank', sentence: 'Ich __ den Studenten. (besuchen)',                     answer: 'besuche' },
+      { type: 'fill-blank', sentence: 'Die Lehrerin __ den Studenten das Buch. (zeigen)',     answer: 'zeigt' },
+      { type: 'fill-blank', sentence: 'Wir __ den Computer. (benutzen)',                      answer: 'benutzen' },
+      // Mixed practice with the new verbs
+      { type: 'fill-blank', sentence: 'Der Lehrer __ die Grammatik. (erklären)',              answer: 'erklärt' },
+      { type: 'fill-blank', sentence: 'Wir __ jeden Tag. (üben)',                             answer: 'üben' },
+      { type: 'fill-blank', sentence: 'Du __ deinen Schlüssel. (suchen)',                     answer: 'suchst' },
+      { type: 'fill-blank', sentence: 'Sie (they) __ eine E-Mail. (schicken)',                answer: 'schicken' },
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Wir __ Wasser. (trinken)', answer: 'trinken' },
@@ -494,11 +636,40 @@ export const days = [
     objective: 'Drop time- and frequency-words into a sentence in the right order.',
     intro: 'Order: Subject → Verb → Time → (Frequency) → (Preference) → Object. "Ich lerne heute oft gerne Deutsch."',
     vocabulary: [
-      { de: 'heute',     en: 'today' },        { de: 'morgen',    en: 'tomorrow' },
-      { de: 'jetzt',     en: 'now' },          { de: 'oft',       en: 'often' },
-      { de: 'manchmal',  en: 'sometimes' },    { de: 'immer',     en: 'always' },
-      { de: 'nie',       en: 'never' },        { de: 'gerne',     en: 'gladly (like to)' },
-      { de: 'jeden Tag', en: 'every day' },    { de: 'am Wochenende', en: 'on the weekend' },
+      // Time
+      { de: 'heute',         en: 'today' },
+      { de: 'morgen',        en: 'tomorrow' },
+      { de: 'jetzt',         en: 'now' },
+      { de: 'jeden Tag',     en: 'every day' },
+      { de: 'am Wochenende', en: 'on the weekend' },
+      { de: 'nach der Arbeit', en: 'after work' },
+      { de: 'in meiner Freizeit', en: 'in my free time' },
+      // Frequency
+      { de: 'oft',           en: 'often' },
+      { de: 'manchmal',      en: 'sometimes' },
+      { de: 'immer',         en: 'always' },
+      { de: 'nie',           en: 'never' },
+      // Preference
+      { de: 'gerne',         en: 'gladly (like to)' },
+      { de: 'sehr gerne',    en: 'very much (like to)' },
+      // Hobby verbs (slide 66)
+      { de: 'reisen',        en: 'to travel' },
+      { de: 'kochen',        en: 'to cook' },
+      { de: 'schauen',       en: 'to watch' },
+      { de: 'hören',         en: 'to listen' },
+      { de: 'programmieren', en: 'to program' },
+      // Hobby objects (slide 66)
+      { de: 'Bücher',        en: 'books' },
+      { de: 'Filme',         en: 'movies' },
+      { de: 'Musik',         en: 'music' },
+      { de: 'Sport',         en: 'sport' },
+      { de: 'Freunde',       en: 'friends' },
+      { de: 'Kollegen',      en: 'colleagues' },
+      { de: 'Code',          en: 'code' },
+      { de: 'Spiele',        en: 'games' },
+      { de: 'Rezepte',       en: 'recipes' },
+      { de: 'Länder',        en: 'countries' },
+      { de: 'Städte',        en: 'cities' },
     ],
     grammar: [
       { rule: 'TeKaMoLo (light)', body: 'Time first, then place. "Ich lerne heute zu Hause Deutsch."' },
@@ -507,6 +678,12 @@ export const days = [
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
       { type: 'fill-blank', sentence: 'Ich lerne __ Deutsch. (every day)', answer: 'jeden Tag' },
+      // Hobby-sentence builders — apply S + V + Time + Frequency + Preference + Object
+      { type: 'fill-blank', sentence: 'Ich __ jeden Tag gerne Musik. (listen)',          answer: 'höre' },
+      { type: 'fill-blank', sentence: 'Wir __ am Wochenende oft Fußball. (play)',        answer: 'spielen' },
+      { type: 'fill-blank', sentence: 'Sie (she) __ in ihrer Freizeit gerne. (cook)',    answer: 'kocht' },
+      { type: 'fill-blank', sentence: 'Du __ nach der Arbeit Bücher. (read)',            answer: 'liest', hint: 'lesen, irreg.: du liest' },
+      { type: 'fill-blank', sentence: 'Ich __ sehr gerne Code. (program)',               answer: 'programmiere' },
       { type: 'multiple-choice',
         q: 'Which sentence is in the right order?',
         options: [
@@ -516,6 +693,16 @@ export const days = [
           'Heute Deutsch ich lerne.',
         ],
         answer: 'Ich lerne heute Deutsch.' },
+      { type: 'multiple-choice',
+        q: 'Pick the natural order: subject + verb + Time + Frequency + Preference + Object.',
+        options: [
+          'Ich Musik höre jeden Tag oft gerne.',
+          'Ich höre jeden Tag oft gerne Musik.',
+          'Jeden Tag oft gerne Musik ich höre.',
+          'Ich höre Musik jeden Tag oft gerne.',
+        ],
+        answer: 'Ich höre jeden Tag oft gerne Musik.',
+        explain: 'Time → Frequency → Preference → Object. The verb stays in slot 2.' },
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Wir spielen __ Fußball. (often)', answer: 'oft' },
@@ -551,6 +738,16 @@ export const days = [
       ]},
       { type: 'fill-blank', sentence: 'Ich __ Anna. (am called)', answer: 'heiße' },
       { type: 'fill-blank', sentence: 'Ich __ aus Indien. (come)', answer: 'komme' },
+      // Moritz translation drill — slide 167-168. Translate one sentence at a time.
+      { type: 'fill-blank', sentence: '"My name is Moritz." → Mein Name __ Moritz.',     answer: 'ist' },
+      { type: 'fill-blank', sentence: '"I am 27 years old." → Ich __ 27 Jahre alt.',     answer: 'bin' },
+      { type: 'fill-blank', sentence: '"I come from Germany." → Ich komme __ Deutschland.', answer: 'aus' },
+      { type: 'fill-blank', sentence: '"I live in Dorfen." → Ich __ in Dorfen.',         answer: 'wohne', hint: 'wohnen / leben both work — use wohnen' },
+      { type: 'fill-blank', sentence: '"I am a teacher." → Ich __ Lehrer.',              answer: 'bin' },
+      { type: 'fill-blank', sentence: '"I work in a school." → Ich __ in einer Schule.', answer: 'arbeite' },
+      { type: 'fill-blank', sentence: '"I have a friend." → Ich __ einen Freund.',       answer: 'habe' },
+      { type: 'fill-blank', sentence: '"In my free time, I play football." → In meiner Freizeit __ ich Fußball.', answer: 'spiele', hint: 'time-phrase first → verb still position 2 → subject after verb' },
+      { type: 'fill-blank', sentence: '"On Saturday, I sometimes play a game." → Am Samstag __ ich manchmal ein Spiel.', answer: 'spiele' },
     ],
     quiz: [
       { type: 'multiple-choice', q: 'Which is most formal?', options: ['Hallo','Servus','Guten Tag','Hi'], answer: 'Guten Tag' },
@@ -623,9 +820,17 @@ export const days = [
       { type: 'fill-blank', sentence: 'Ich sehe __ Mann. (the)', answer: 'den' },
       { type: 'fill-blank', sentence: 'Wir kaufen __ Tisch. (a)', answer: 'einen' },
       { type: 'multiple-choice', q: 'Which is correct?', options: ['Ich trinke der Kaffee.','Ich trinke den Kaffee.','Ich trinke dem Kaffee.','Ich trinke des Kaffees.'], answer: 'Ich trinke den Kaffee.' },
+      // Akkusativ masculine drill — slide 125 (definite) + 126 (indefinite)
+      { type: 'fill-blank', sentence: 'Der Freund besucht __ Student. (the, masc. Akk.)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Der Student benutzt __ Computer. (the, masc. Akk.)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Der Student kauft __ Buch. (a, neuter Akk.)', answer: 'ein' },
+      { type: 'fill-blank', sentence: 'Der Freund besucht __ Studentin. (a, fem. Akk.)', answer: 'eine' },
+      { type: 'fill-blank', sentence: 'Der Student erzählt __ Geschichte. (a, fem. Akk.)', answer: 'eine' },
+      { type: 'fill-blank', sentence: 'Die Freunde kaufen __ Buch. (a, neuter Akk.)', answer: 'ein' },
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Er hat __ Hund. (a, masc.)', answer: 'einen' },
+      { type: 'fill-blank', sentence: 'Der Kollege besucht __ Freunde. (no article — already plural)', answer: 'die', hint: 'die for plural Akk' },
     ],
   },
 
@@ -649,6 +854,14 @@ export const days = [
       { type: 'fill-blank', sentence: 'Ich kaufe __ Tasche. (the)', answer: 'die' },
       { type: 'fill-blank', sentence: 'Wir lesen __ Buch. (the)', answer: 'das' },
       { type: 'fill-blank', sentence: 'Sie hat __ Bücher. (the, pl)', answer: 'die' },
+      // Definite Nominativ drill — slide 123
+      { type: 'fill-blank', sentence: '__ Studenten benutzen das Buch. (the, plural)', answer: 'Die' },
+      { type: 'fill-blank', sentence: '__ Geschichte ist interessant. (the, fem.)', answer: 'Die' },
+      { type: 'fill-blank', sentence: 'Am Wochenende erzählt __ Kollege eine Geschichte. (the, masc.)', answer: 'der' },
+      // Indefinite Nominativ drill — slide 124
+      { type: 'fill-blank', sentence: '__ Studentin arbeitet in der Firma. (a, fem.)', answer: 'Eine' },
+      { type: 'fill-blank', sentence: '__ Freund besucht den Studenten. (a, masc.)', answer: 'Ein' },
+      { type: 'fill-blank', sentence: 'Am Wochenende besucht __ Freund den Studenten. (a, masc.)', answer: 'ein' },
     ],
     quiz: [
       { type: 'multiple-choice', q: '"Ich habe __ Idee." (a, fem.)', options: ['einen','eine','ein','einer'], answer: 'eine' },
@@ -665,11 +878,25 @@ export const days = [
     vocabulary: [],
     grammar: [
       { rule: 'Question test', body: 'Ask "Wer/Was?" → subject. Ask "Wen/Was?" → object.' },
+      { rule: 'One sentence — four meanings',
+        body:
+          'The same verb + nouns can shift meaning depending on definite (der/die/das) vs indefinite (ein/eine):\n' +
+          '• Ein Freund besucht eine Studentin. — any friend visits any student\n' +
+          '• Der Freund besucht eine Studentin. — the (specific) friend visits any student\n' +
+          '• Ein Freund besucht die Studentin. — any friend visits the (specific) student\n' +
+          '• Die Freundin besucht die Studentin. — the friend visits the student\n' +
+          'The article does NOT change the grammatical role — Freund stays the subject.',
+      },
     ],
     exercises: [
       { type: 'multiple-choice', q: 'In "Der Hund sieht den Mann", what is in the Akkusativ?', options: ['Der Hund','sieht','den Mann','—'], answer: 'den Mann' },
       { type: 'fill-blank', sentence: '__ Mann sieht den Hund. (the)', answer: 'Der' },
       { type: 'fill-blank', sentence: 'Der Mann sieht __ Hund. (the)', answer: 'den' },
+      // Mixed Nom-vs-Akk article drill — slides 107, 109, 160, 161
+      { type: 'fill-blank', sentence: '__ Freund besucht __ Studentin. — specific male friend visits any female student.', answer: 'Der eine', hint: 'two words separated by a space: subject article, then object article' },
+      { type: 'fill-blank', sentence: '__ Freund besucht __ Studentin. — any male friend visits the specific female student.', answer: 'Ein die' },
+      { type: 'fill-blank', sentence: '__ Freundin besucht __ Freund. — any female friend visits any male friend.', answer: 'Eine einen' },
+      { type: 'fill-blank', sentence: '__ Freunde besuchen __ Freund. — specific friends visit the specific male friend.', answer: 'Die den' },
     ],
     quiz: [
       { type: 'multiple-choice', q: 'Which sentence is wrong?', options: ['Ich sehe den Tisch.','Der Tisch ist groß.','Ich sehe der Tisch.','Wir kaufen den Tisch.'], answer: 'Ich sehe der Tisch.' },
@@ -690,7 +917,16 @@ export const days = [
       { de: 'schreiben',en:'to write' },{ de: 'hören',  en: 'to hear' },
       { de: 'fragen',  en: 'to ask' },  { de: 'suchen', en: 'to search' },
     ],
-    grammar: [{ rule: 'Default to Akkusativ', body: 'When in doubt with these verbs, use the Akkusativ for their object.' }],
+    grammar: [
+      { rule: 'Default to Akkusativ', body: 'When in doubt with these verbs, use the Akkusativ for their object.' },
+      { rule: 'First mention vs second mention',
+        body:
+          'In a story or paragraph:\n' +
+          '• First time you mention something → ein / eine / einen (introducing it).\n' +
+          '• Every time after → der / die / das (we already know which one).\n' +
+          'Example: „Ich habe ein Buch. Das Buch ist gut." — first time = ein, second time = das.',
+      },
+    ],
     exercises: [
       { type: 'fill-blank', sentence: 'Ich suche __ Schlüssel. (the, masc.)', answer: 'den' },
       { type: 'fill-blank', sentence: 'Wir hören __ Musik. (the, fem.)', answer: 'die' },
@@ -709,24 +945,67 @@ export const days = [
     objective: 'Talk about your family with possessives.',
     intro: 'Family vocab plus the possessive "mein" (my). It declines just like "ein".',
     vocabulary: [
+      // Family nouns
       { de: 'die Familie',  en: 'the family' },
-      { de: 'der Vater',    en: 'the father' },   { de: 'die Mutter', en: 'the mother' },
-      { de: 'der Bruder',   en: 'the brother' },  { de: 'die Schwester', en: 'the sister' },
-      { de: 'der Sohn',     en: 'the son' },      { de: 'die Tochter', en: 'the daughter' },
+      { de: 'der Vater',    en: 'the father' },     { de: 'die Mutter', en: 'the mother' },
+      { de: 'der Bruder',   en: 'the brother' },    { de: 'die Schwester', en: 'the sister' },
+      { de: 'der Sohn',     en: 'the son' },        { de: 'die Tochter',   en: 'the daughter' },
       { de: 'die Eltern',   en: 'the parents (pl)' },
       { de: 'die Großeltern', en: 'the grandparents (pl)' },
+      // Full possessive pronoun set — slide 290
+      { de: 'mein',  en: 'my' },
+      { de: 'dein',  en: 'your (1 friend)' },
+      { de: 'sein',  en: 'his / its' },
+      { de: 'ihr',   en: 'her' },
+      { de: 'unser', en: 'our' },
+      { de: 'euer',  en: 'your (group of friends)' },
+      { de: 'ihr',   en: 'their' },
+      { de: 'Ihr',   en: 'your (formal — capital I)' },
     ],
     grammar: [
-      { rule: 'mein / meine', body: 'Use "mein" for masculine + neuter, "meine" for feminine + plural. Akkusativ-m: meinen.' },
+      { rule: 'Possessivpronomen — full table',
+        body:
+          'Each subject pronoun has its own possessive. They decline like "ein/eine":\n' +
+          '• ich → mein (my)\n' +
+          '• du → dein (your, one friend)\n' +
+          '• er → sein (his)  ·  es → sein (its)\n' +
+          '• sie → ihr (her)\n' +
+          '• wir → unser (our)\n' +
+          '• ihr → euer (your, group of friends)\n' +
+          '• sie → ihr (their)\n' +
+          '• Sie → Ihr (your, formal — always capital)',
+      },
+      { rule: 'Endings (Nominativ → Akkusativ)',
+        body:
+          'mein behaves exactly like ein:\n' +
+          '• masc.: mein → meinen (Akk.)   "mein Bruder" → "meinen Bruder"\n' +
+          '• fem.:  meine → meine          "meine Schwester" → "meine Schwester"\n' +
+          '• neut.: mein → mein            "mein Kind" → "mein Kind"\n' +
+          '• plural: meine → meine         "meine Eltern" → "meine Eltern"\n' +
+          'Replace "m" with d/s/uns/eu/ihr to get the same six endings for the other persons.',
+      },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
       { type: 'fill-blank', sentence: '__ Vater ist Lehrer. (my)', answer: 'Mein' },
       { type: 'fill-blank', sentence: 'Ich sehe __ Bruder. (my, Akk.)', answer: 'meinen' },
       { type: 'fill-blank', sentence: '__ Mutter heißt Anna. (my)', answer: 'Meine' },
+      // Full-table drills — one item per person
+      { type: 'fill-blank', sentence: '__ Bruder spielt Fußball. (your, 1 friend)',           answer: 'Dein' },
+      { type: 'fill-blank', sentence: '__ Schwester wohnt in Berlin. (his)',                  answer: 'Seine' },
+      { type: 'fill-blank', sentence: '__ Vater arbeitet in der Firma. (her)',                answer: 'Ihr' },
+      { type: 'fill-blank', sentence: '__ Familie ist groß. (our)',                           answer: 'Unsere' },
+      { type: 'fill-blank', sentence: '__ Eltern sind nett. (your, plural — group of friends)', answer: 'Eure', hint: 'euer drops the e before -e: eure, euren' },
+      { type: 'fill-blank', sentence: '__ Sohn lernt Deutsch. (their)',                       answer: 'Ihr' },
+      // Slide 291 translation drill — translate each line
+      { type: 'fill-blank', sentence: '"My friend (m) sees my colleague (f)." → __ Freund sieht meine Kollegin.', answer: 'Mein' },
+      { type: 'fill-blank', sentence: '"My boss (m) works on the weekend." → __ Chef arbeitet am Wochenende.',    answer: 'Mein' },
+      { type: 'fill-blank', sentence: '"The teacher (f) sees my friend (m) tomorrow." → Die Lehrerin sieht __ Freund morgen.', answer: 'meinen', hint: 'Akkusativ masculine' },
+      { type: 'fill-blank', sentence: '"My friends go to my restaurant in the evening." → __ Freunde gehen zu meinem Restaurant am Abend.', answer: 'Meine' },
     ],
     quiz: [
       { type: 'multiple-choice', q: '"Ich liebe __ Schwester." (my, Akk.)', options: ['mein','meinen','meine','meiner'], answer: 'meine' },
+      { type: 'multiple-choice', q: '"Where is YOUR coffee?" (1 friend, masc.)', options: ['mein','dein','sein','euer'], answer: 'dein' },
     ],
   },
 
@@ -807,6 +1086,22 @@ export const days = [
     ],
     grammar: [
       { rule: 'möchte vs will', body: '"Ich möchte einen Kaffee" is polite. "Ich will einen Kaffee" sounds demanding.' },
+      { rule: 'The politeness ladder',
+        body:
+          'Climb the ladder to sound natural in cafés, shops and offices:\n' +
+          '1. Ich möchte einen Kaffee bestellen.            (basic polite — "I would like to order")\n' +
+          '2. Ich möchte gerne einen Kaffee bestellen.      (warmer — "gladly")\n' +
+          '3. Ich möchte sehr gerne einen Kaffee bestellen, bitte.   (very polite)\n' +
+          '4. Ich möchte einen Kaffee mit Milch, bitte.     (specifying preferences)\n' +
+          '5. Ich hätte gerne einen Kaffee mit Milch.       (most natural in restaurants)\n' +
+          'Add "bitte" anywhere — it always softens.',
+      },
+      { rule: '"den" vs "einen" — does it matter?',
+        body:
+          'Ich möchte EINEN Fisch bestellen. — "any fish" (you are choosing).\n' +
+          'Ich möchte DEN Fisch bestellen. — "the (specific) fish" (you are pointing at it on the menu).\n' +
+          'Both are correct German — meaning shifts.',
+      },
     ],
     exercises: [
       conjEx('dürfen', 'be allowed'),
@@ -814,6 +1109,14 @@ export const days = [
       conjEx('mögen', 'to like'),
       { type: 'fill-blank', sentence: 'Ich __ ein Bier, bitte. (would like)', answer: 'möchte' },
       { type: 'fill-blank', sentence: 'Du __ nicht rauchen. (be allowed, neg.)', answer: 'darfst' },
+      // Politeness ladder drills — slide 258
+      { type: 'fill-blank', sentence: 'Ich möchte __ einen Kaffee bestellen. (gladly)', answer: 'gerne' },
+      { type: 'fill-blank', sentence: 'Ich möchte sehr __ einen Kaffee bestellen, bitte.', answer: 'gerne' },
+      { type: 'fill-blank', sentence: 'Ich möchte einen Kaffee __ Milch, bitte. (with)', answer: 'mit' },
+      { type: 'fill-blank', sentence: 'Ich __ gerne einen Kaffee mit Milch. (most natural restaurant phrasing)', answer: 'hätte', hint: '"hätte gerne" = "would like to have"' },
+      { type: 'multiple-choice', q: 'Most natural restaurant order:',
+        options: ['Ich will einen Kaffee.', 'Gib mir einen Kaffee.', 'Ich hätte gerne einen Kaffee, bitte.', 'Kaffee jetzt!'],
+        answer: 'Ich hätte gerne einen Kaffee, bitte.' },
     ],
     quiz: [
       { type: 'multiple-choice', q: 'Polite restaurant order:', options: ['Ich will eine Pizza.','Ich möchte eine Pizza.','Ich muss eine Pizza.','Ich kann eine Pizza.'], answer: 'Ich möchte eine Pizza.' },
@@ -851,6 +1154,19 @@ export const days = [
       ]},
       { type: 'fill-blank', sentence: 'Ich __ einen Kaffee, bitte.', answer: 'möchte' },
       { type: 'fill-blank', sentence: 'Wie viel __ das?', answer: 'kostet' },
+      // Restaurant translation challenge — selected sentences from slide 254
+      { type: 'fill-blank', sentence: '"I come from India and work in a company." → Ich __ aus Indien und arbeite in einer Firma.', answer: 'komme' },
+      { type: 'fill-blank', sentence: '"I would like to order a coffee with milk." → Ich möchte einen Kaffee __ Milch bestellen.', answer: 'mit' },
+      { type: 'fill-blank', sentence: '"I see the waiter and I speak with him." → Ich sehe den Kellner und ich __ mit ihm.', answer: 'spreche' },
+      { type: 'fill-blank', sentence: '"I must work today, but I want to eat in the restaurant." → Ich muss heute arbeiten, __ ich will im Restaurant essen.', answer: 'aber' },
+      { type: 'fill-blank', sentence: '"I would like a table, please." → Ich __ gerne einen Tisch, bitte.', answer: 'hätte' },
+      { type: 'fill-blank', sentence: '"How much does that cost?" → Wie viel __ das?', answer: 'kostet' },
+      { type: 'fill-blank', sentence: '"I would like to pay, please." → Ich möchte __, bitte.', answer: 'zahlen' },
+      { type: 'fill-blank', sentence: '"I always pay with card." → Ich zahle __ mit Karte.', answer: 'immer' },
+      { type: 'fill-blank', sentence: '"I want to learn German and I speak a little German." → Ich will Deutsch lernen und ich __ ein bisschen Deutsch.', answer: 'spreche' },
+      { type: 'fill-blank', sentence: '"I sometimes drink coffee with milk." → Ich trinke __ Kaffee mit Milch.', answer: 'manchmal' },
+      { type: 'fill-blank', sentence: '"I read the menu and I order a soup." → Ich lese die Speisekarte und ich __ eine Suppe.', answer: 'bestelle' },
+      { type: 'fill-blank', sentence: '"I meet my friends on the weekend." → Ich treffe meine Freunde __ Wochenende.', answer: 'am' },
     ],
     quiz: [
       { type: 'multiple-choice', q: 'How do you ask for the bill?', options: ['Was kostet das?','Wo ist die Toilette?','Zahlen, bitte.','Guten Appetit!'], answer: 'Zahlen, bitte.' },
@@ -906,12 +1222,32 @@ export const days = [
     grammar: [
       { rule: 'Pick the right one', body: 'Use "kein" if the positive sentence has "ein"/no article. Use "nicht" otherwise.' },
       { rule: 'Position of nicht', body: '"nicht" goes near the end, before the part you negate. "Ich arbeite heute nicht."' },
+      { rule: 'Full kein declension table',
+        body:
+          '"kein" takes the same endings as "ein" — and adds them in plural too:\n' +
+          '• masc. (der Kaffee)   → keinen   "Ich möchte keinen Kaffee."\n' +
+          '• fem.  (die Milch)    → keine    "Ich möchte keine Milch."\n' +
+          '• neuter (das Glas)    → kein     "Ich möchte kein Glas Wasser."\n' +
+          '• plural (die Kellner) → keine    "Ich habe keine Freunde im Restaurant."\n' +
+          'Same Akkusativ rule as ein: only the masculine changes.',
+      },
     ],
     exercises: [
       { type: 'fill-blank', sentence: 'Ich habe __ Zeit. (no, fem.)', answer: 'keine' },
       { type: 'fill-blank', sentence: 'Er trinkt __ Bier. (no, n.)', answer: 'kein' },
       { type: 'fill-blank', sentence: 'Wir arbeiten heute __.', answer: 'nicht' },
       { type: 'multiple-choice', q: 'Which is wrong?', options: ['Ich habe keine Idee.','Ich habe nicht eine Idee.','Ich bin nicht müde.','Ich kaufe das Buch nicht.'], answer: 'Ich habe nicht eine Idee.' },
+      // Slide 271 — restaurant kein dialog
+      { type: 'fill-blank', sentence: 'Kellner: „Möchtest du einen Kaffee?" Du: „Nein, ich möchte __ Kaffee."', answer: 'keinen' },
+      { type: 'fill-blank', sentence: 'Kellner: „Möchtest du Milch?" Du: „Nein, ich möchte __ Milch."', answer: 'keine' },
+      { type: 'fill-blank', sentence: 'Kellner: „Möchtest du ein Glas Wasser?" Du: „Nein, ich möchte __ Glas Wasser."', answer: 'kein' },
+      { type: 'fill-blank', sentence: 'Kellner: „Hast du Freunde im Restaurant?" Du: „Nein, ich habe __ Freunde."', answer: 'keine' },
+      // Slide 272 challenge — five fill-blanks
+      { type: 'fill-blank', sentence: 'Ich möchte __ Kaffee. (kein, masc. Akk.)', answer: 'keinen' },
+      { type: 'fill-blank', sentence: 'Ich habe __ Schwester. (kein, fem.)', answer: 'keine' },
+      { type: 'fill-blank', sentence: 'Ich kaufe __ Brot. (kein, neuter)', answer: 'kein' },
+      { type: 'fill-blank', sentence: 'Ich habe __ Freunde. (kein, plural)', answer: 'keine' },
+      { type: 'fill-blank', sentence: 'Ich sehe __ Hund. (kein, masc. Akk.)', answer: 'keinen' },
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Ich habe __ Hund. (no, masc.)', answer: 'keinen' },
