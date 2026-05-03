@@ -777,7 +777,7 @@ export const days = [
   },
 
   {
-    id: 15, week: 2,
+    id: 15, week: 3,
     title: 'Week 1+2 review',
     titleDe: 'Wiederholung Woche 1+2',
     emoji: '🏁',
@@ -820,7 +820,7 @@ export const days = [
   },
 
   {
-    id: 21, week: 4,
+    id: 21, week: 3,
     title: 'Akkusativ — masculine flips',
     titleDe: 'Akkusativ (m)',
     emoji: '➡️',
@@ -1093,7 +1093,7 @@ export const days = [
   },
 
   {
-    id: 36, week: 5,
+    id: 36, week: 6,
     title: 'Modals: dürfen · sollen · mögen',
     titleDe: 'Modalverben II',
     emoji: '🧰',
@@ -1311,7 +1311,7 @@ export const days = [
   },
 
   {
-    id: 43, week: 6,
+    id: 43, week: 7,
     title: 'Week 4-6 review',
     titleDe: 'Wiederholung Woche 4-6',
     emoji: '📚',
@@ -2109,7 +2109,7 @@ export const days = [
 
   /* ----- Day 29: Dativ pronouns ----- */
   {
-    id: 29, week: 4,
+    id: 29, week: 5,
     title: 'Dativ pronouns',
     titleDe: 'Dativ-Pronomen',
     emoji: '🤲',
@@ -2171,7 +2171,7 @@ export const days = [
 
   /* ----- Day 30: Akkusativ + Wechsel prepositions ----- */
   {
-    id: 30, week: 4,
+    id: 30, week: 5,
     title: 'More prepositions: Akk + Wechsel',
     titleDe: 'Mehr Präpositionen',
     emoji: '🧭',
@@ -2232,7 +2232,7 @@ export const days = [
 
   /* ----- Day 37: Sentence connections ----- */
   {
-    id: 37, week: 5,
+    id: 37, week: 6,
     title: 'Sentence connections',
     titleDe: 'Konnektoren',
     emoji: '🔗',
@@ -2302,7 +2302,7 @@ export const days = [
 
   /* ----- Day 38: Demonstrative articles + Indefinite pronouns ----- */
   {
-    id: 38, week: 5,
+    id: 38, week: 6,
     title: 'Demonstratives & indefinites',
     titleDe: 'Demonstrativ + Indefinit',
     emoji: '👉',
@@ -2362,7 +2362,7 @@ export const days = [
 
   /* ----- Day 44: A2 mid-review ----- */
   {
-    id: 44, week: 6,
+    id: 44, week: 7,
     title: 'A2 mid-review',
     titleDe: 'A2 Zwischenwiederholung',
     emoji: '🎯',
@@ -2679,14 +2679,14 @@ export const days = [
 days.sort((a, b) => a.id - b.id);
 
 export const weeks = [
-  { n: 1, title: 'Foundations',         tagline: 'Sounds, numbers, pronouns, sein/haben/werden' },
-  { n: 2, title: 'Building sentences',  tagline: 'Numbers 30-100, S-V-O, regular & separable verbs' },
-  { n: 3, title: 'Questions & numbers', tagline: 'Yes/No · W-questions · numbers 100-1000+' },
-  { n: 4, title: 'Cases & pronouns',    tagline: 'Akkusativ, Dativ, Wechsel, pronouns' },
-  { n: 5, title: 'People, life, glue',  tagline: 'Family, hobbies, modals, conjunctions, demonstratives' },
-  { n: 6, title: 'Real-life scenarios', tagline: 'Restaurant, shopping, travel, negation, A2 mid-review' },
-  { n: 7, title: 'Past tenses & polite forms', tagline: 'Perfekt · Präteritum · Konjunktiv II · Imperativ' },
-  { n: 8, title: 'Mastery',             tagline: 'Mega review and final exam' },
+  { n: 1, title: 'Foundations',                  tagline: 'Sounds, numbers 0-29, pronouns, articles, sein/haben/werden' },
+  { n: 2, title: 'Building sentences',           tagline: 'Numbers 30-100, S-V-O, regular & separable verbs, time, self-intro' },
+  { n: 3, title: 'Questions & numbers',          tagline: 'Mid-review, yes/no & W-questions, numbers 100-1000+, into cases' },
+  { n: 4, title: 'Cases — articles',             tagline: 'Akkusativ + Dativ articles & verbs + cases review + Akk pronouns' },
+  { n: 5, title: 'Pronouns & people',            tagline: 'Dat pronouns, Wechsel prepositions, family, routine, hobbies, reading' },
+  { n: 6, title: 'Modals, glue & scenarios',     tagline: 'Modals, conjunctions, demonstratives, restaurant, shopping, travel, negation' },
+  { n: 7, title: 'Past tenses & polite forms',   tagline: 'Reviews, Perfekt I/II, Präteritum, Konjunktiv II + Imperativ' },
+  { n: 8, title: 'Mastery',                      tagline: 'Mega review · Say it back · final exam' },
 ];
 
 export const dayById = (id) => days.find((d) => d.id === Number(id));

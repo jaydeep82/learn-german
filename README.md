@@ -32,18 +32,18 @@ For best pronunciation install a German voice:
 * **Windows / Chrome**: voices are downloaded automatically
 * **Linux**: install `speech-dispatcher` + a German voice (e.g. mbrola-de)
 
-## Curriculum (50 days, 8 weeks)
+## Curriculum (50 days, 8 weeks — max 7 days per week)
 
-| Week | Days  | Focus                                                                |
-|------|-------|----------------------------------------------------------------------|
-| 1    | 1–7   | Sounds (incl. **ö rescue**), numbers 0-29, pronouns, articles, sein/haben/werden |
-| 2    | 8–15  | Numbers 30-100, S-V-O, regular & separable verbs, time, intro, review |
-| 3    | 16–20 | Yes/No questions · W-questions · Numbers 100-1000+ · Big numbers & prices · review |
-| 4    | 21–30 | Akkusativ + Dativ + cases review + **Akk pronouns** + **Dat pronouns** + **Wechsel prepositions** |
-| 5    | 31–38 | Family + Possessivpronomen, routine, hobbies, reading, modals + **conjunctions** + **demonstratives & indefinites** |
-| 6    | 39–44 | Restaurant, shopping, travel, negation, Week 4-6 review, **A2 mid-review** |
-| 7    | 45–48 | **Perfekt I (haben)** · **Perfekt II (sein)** · **Präteritum (war/hatte)** · **Konjunktiv II + Imperativ** |
-| 8    | 49–50 | Mega review · Say it back · Final exam + certificate                  |
+| Week | Days  | Count | Focus                                                          |
+|------|-------|-------|----------------------------------------------------------------|
+| 1    | 1–7   | 7     | Sounds (ch + ö rescue), numbers 0-29, pronouns, articles, sein/haben/werden |
+| 2    | 8–14  | 7     | Numbers 30-100, S-V-O, regular & separable verbs, time, self-intro |
+| 3    | 15–21 | 7     | Wk1+2 review, yes/no & W-questions, numbers 100-1000+, into Akkusativ |
+| 4    | 22–28 | 7     | Akk f/n/pl, Nom vs Akk, Akk verbs, Dativ I & II, cases review, Akk pronouns |
+| 5    | 29–35 | 7     | Dat pronouns, Wechsel prepositions, family, routine, hobbies, reading, Modals I |
+| 6    | 36–42 | 7     | Modals II, conjunctions, demonstratives, restaurant, shopping, travel, negation |
+| 7    | 43–48 | 6     | Wk4-6 review, A2 mid-review, Perfekt I/II, Präteritum, Konjunktiv II + Imperativ |
+| 8    | 49–50 | 2     | Mega review · Say it back · Final exam + certificate           |
 
 Each day contains: an intro, vocabulary with audio, grammar pointers,
 4–8 mixed exercises, and a quiz. A score ≥ 70% unlocks the next day.

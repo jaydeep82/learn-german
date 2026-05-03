@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.0.0';
+export const VERSION = '3.0.1';
 export const RELEASE_DATE = '2026-05-03';
 
 export const RELEASES = [
+  {
+    version: '3.0.1',
+    date: '2026-05-03',
+    type: 'improvement',
+    title: 'Rebalanced weeks — max 7 days each',
+    notes: [
+      'Re-grouped the 50-day curriculum so no week exceeds 7 days. v3.0.0 had Week 4 with 10 days and Weeks 2 & 5 with 8 — too heavy for a sustainable weekly cadence.',
+      'New distribution: Wk1=7 · Wk2=7 · Wk3=7 · Wk4=7 · Wk5=7 · Wk6=7 · Wk7=6 · Wk8=2.',
+      'Nine days were re-tagged with their new week (Days 15, 21, 29, 30, 36, 37, 38, 43, 44). Day numbering and content are unchanged — same lesson, different week pill.',
+      'Updated week titles + taglines + Week-2…Week-7 badge ranges to match the new groupings. Mid-review (Day 15) now anchors Week 3; Akk pronouns (Day 28) closes Week 4; Modals I (Day 35) closes Week 5; Modals II (Day 36) opens Week 6.',
+      'No content added or removed; localStorage progress is preserved (key still deutsch50:v1).',
+    ],
+  },
   {
     version: '3.0.0',
     date: '2026-05-03',

@@ -47,32 +47,32 @@ export const BADGES = [
   {
     id: 'week-2',        emoji: '🥈',
     title: 'Sentence Builder', desc: 'Pass every Week 2 lesson.',
-    when: (s) => [8,9,10,11,12,13,14,15].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
+    when: (s) => [8,9,10,11,12,13,14].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
   },
   {
     id: 'week-3',        emoji: '❓',
-    title: 'Question Master', desc: 'Pass every Week 3 lesson (questions + numbers).',
-    when: (s) => [16,17,18,19,20].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
+    title: 'Question Master', desc: 'Pass every Week 3 lesson (review, questions, numbers).',
+    when: (s) => [15,16,17,18,19,20,21].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
   },
   {
     id: 'week-4',        emoji: '🥇',
-    title: 'Cases Crusher', desc: 'Pass every Week 4 lesson (Akkusativ, Dativ, pronouns).',
-    when: (s) => [21,22,23,24,25,26,27,28,29,30].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
+    title: 'Cases Crusher', desc: 'Pass every Week 4 lesson (Akkusativ + Dativ articles & verbs).',
+    when: (s) => [22,23,24,25,26,27,28].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
   },
   {
     id: 'week-5',        emoji: '👨‍👩‍👧',
-    title: 'People & Glue', desc: 'Pass every Week 5 lesson (life topics + conjunctions).',
-    when: (s) => [31,32,33,34,35,36,37,38].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
+    title: 'Pronouns & People', desc: 'Pass every Week 5 lesson (pronouns + life topics).',
+    when: (s) => [29,30,31,32,33,34,35].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
   },
   {
     id: 'week-6',        emoji: '🎖️',
-    title: 'Real-Life Ready', desc: 'Pass every Week 6 lesson (scenarios + A2 mid-review).',
-    when: (s) => [39,40,41,42,43,44].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
+    title: 'Modals & Scenarios', desc: 'Pass every Week 6 lesson (modals, glue, scenarios).',
+    when: (s) => [36,37,38,39,40,41,42].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
   },
   {
     id: 'week-7',        emoji: '⏪',
     title: 'Time Traveller', desc: 'Pass every Week 7 lesson (past tenses & polite forms).',
-    when: (s) => [45,46,47,48].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
+    when: (s) => [43,44,45,46,47,48].every((d) => (s.completed?.[d]?.score ?? 0) >= 0.7),
   },
   {
     id: 'perfect-day',   emoji: '💎',
