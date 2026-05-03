@@ -23,7 +23,7 @@ export default function Layout({ children }) {
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
           <Link to="/" className="flex items-center gap-2 font-bold text-lg">
             <span aria-hidden>🇩🇪</span>
-            <span>Deutsch<span className="text-brand-600">30</span></span>
+            <span>Deutsch<span className="text-brand-600">40</span></span>
           </Link>
 
           <nav aria-label="Primary" className="hidden md:flex items-center gap-1 ml-4">
@@ -74,13 +74,13 @@ export default function Layout({ children }) {
       </main>
 
       <footer className="border-t border-slate-200 dark:border-slate-800 py-6 text-center text-sm text-slate-500">
-        <div>Deutsch30 · 30 days from absolute beginner to confident self-introduction.</div>
+        <div>Deutsch40 · 40 days from absolute beginner to confident self-introduction.</div>
         <div className="mt-1">Audio uses your browser&rsquo;s speech engine — install a German voice for best quality.</div>
         <div className="mt-3 flex items-center justify-center gap-3 flex-wrap">
           <Link
             to="/about"
             className="pill bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
-            aria-label={`About Deutsch30, version ${VERSION}`}
+            aria-label={`About Deutsch40, version ${VERSION}`}
           >
             About · v{VERSION}
           </Link>

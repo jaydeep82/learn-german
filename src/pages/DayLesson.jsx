@@ -165,7 +165,7 @@ function Result({ day, result, onContinue }) {
       <div className="grid grid-cols-2 gap-3">
         <Link to={`/day/${day.id}`} reloadDocument className="btn-secondary">Try again</Link>
         <button onClick={onContinue} className="btn-primary" disabled={!passed}>
-          {day.id < 30 ? 'Next day →' : 'Back home'}
+          {day.id < days.length ? 'Next day →' : 'Back home'}
         </button>
       </div>
       {passed && day.id === 7 && (

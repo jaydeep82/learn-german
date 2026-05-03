@@ -40,10 +40,10 @@ export default function Home() {
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
             <p className="uppercase tracking-widest text-xs opacity-80">Willkommen!</p>
-            <h1 className="text-3xl sm:text-5xl font-extrabold mt-1">Learn German in 30 days</h1>
+            <h1 className="text-3xl sm:text-5xl font-extrabold mt-1">Learn German in 40 days</h1>
             <p className="mt-2 max-w-prose opacity-90">
               Daily 10–15-minute lessons with audio, flashcards, mini-games and quizzes —
-              from the alphabet on Day 1 to a full restaurant conversation by Day 30.
+              from the alphabet on Day 1 to a full restaurant conversation by Day 40.
             </p>
           </div>
           <div className="flex flex-col items-end gap-2">
@@ -97,7 +97,7 @@ export default function Home() {
                 </div>
               </Link>
             )}
-            {w.n < 5 && (
+            {w.n < 7 && (
               <div className="mt-3">
                 <Link to={`/review/week-${w.n}`} className="text-sm font-semibold text-brand-700 dark:text-brand-300 hover:underline">
                   → Take the Week {w.n} review quiz

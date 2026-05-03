@@ -1,8 +1,9 @@
-# Deutsch30 — Learn German in 30 Days
+# Deutsch40 — Learn German in 40 Days
 
 An interactive, fully responsive web app that teaches German to absolute
-beginners (ages 5–50) through a structured 30-day curriculum, mapped from
-the source `big Revision Powerpoint.pptx`.
+beginners (ages 5–50) through a structured 40-day curriculum, mapped
+from the source `big Revision Powerpoint.pptx` (~95% coverage as of
+v2.0.0).
 
 ## Run it
 
@@ -27,15 +28,17 @@ For best pronunciation install a German voice:
 * **Windows / Chrome**: voices are downloaded automatically
 * **Linux**: install `speech-dispatcher` + a German voice (e.g. mbrola-de)
 
-## Curriculum (30 days)
+## Curriculum (40 days, 7 weeks)
 
-| Week | Days  | Focus                                                   |
-|------|-------|---------------------------------------------------------|
-| 1    | 1–7   | Sounds, numbers 0–29, pronouns, articles, sein/haben/werden |
-| 2    | 8–14  | Numbers 30–100, S-V-O, regular verbs, time, self-intro  |
-| 3    | 15–21 | Numbers 100–1000, Akkusativ, family, daily routine      |
-| 4    | 22–28 | Modal verbs, restaurant, shopping, negation, travel     |
-| 5    | 29–30 | Mega review and final exam                              |
+| Week | Days  | Focus                                                                |
+|------|-------|----------------------------------------------------------------------|
+| 1    | 1–7   | Sounds, numbers 0–29, pronouns, articles, sein/haben/werden          |
+| 2    | 8–15  | Numbers 30–100, S-V-O, regular & **separable verbs**, time, intro, review |
+| 3    | 16–20 | **Yes/No questions · W-questions · Numbers 100–1000+ · Big numbers & prices · review** |
+| 4    | 21–27 | Akkusativ (m/f/n/pl, verbs) + **Dativ prepositions** + **Dativ verbs** + cases review |
+| 5    | 28–33 | Family + Possessivpronomen, daily routine, **hobbies, reading practice**, modals (×2)  |
+| 6    | 34–38 | Restaurant, shopping, travel, negation, Week 4-6 review              |
+| 7    | 39–40 | Mega review and final exam + certificate                             |
 
 Each day contains: an intro, vocabulary with audio, grammar pointers,
 4–8 mixed exercises, and a quiz. A score ≥ 70% unlocks the next day.

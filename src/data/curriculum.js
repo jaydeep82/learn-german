@@ -629,7 +629,7 @@ export const days = [
   },
 
   {
-    id: 12, week: 2,
+    id: 13, week: 2,
     title: 'Time, frequency, preference',
     titleDe: 'Zeit · Häufigkeit · Präferenz',
     emoji: '🕒',
@@ -711,7 +711,7 @@ export const days = [
   },
 
   {
-    id: 13, week: 2,
+    id: 14, week: 2,
     title: 'Introducing yourself',
     titleDe: 'Sich vorstellen',
     emoji: '👋',
@@ -756,7 +756,7 @@ export const days = [
   },
 
   {
-    id: 14, week: 2,
+    id: 15, week: 2,
     title: 'Week 1+2 review',
     titleDe: 'Wiederholung Woche 1+2',
     emoji: '🏁',
@@ -777,7 +777,7 @@ export const days = [
 
   /* ===================== WEEK 3: numbers + Akkusativ ===================== */
   {
-    id: 15, week: 3,
+    id: 18, week: 3,
     title: 'Numbers 100–1000',
     titleDe: 'Zahlen 100–1000',
     emoji: '🧮',
@@ -799,7 +799,7 @@ export const days = [
   },
 
   {
-    id: 16, week: 3,
+    id: 21, week: 4,
     title: 'Akkusativ — masculine flips',
     titleDe: 'Akkusativ (m)',
     emoji: '➡️',
@@ -835,7 +835,7 @@ export const days = [
   },
 
   {
-    id: 17, week: 3,
+    id: 22, week: 4,
     title: 'Akkusativ — f / n / plural',
     titleDe: 'Akkusativ (f, n, pl)',
     emoji: '🔄',
@@ -869,7 +869,7 @@ export const days = [
   },
 
   {
-    id: 18, week: 3,
+    id: 23, week: 4,
     title: 'Nominativ vs Akkusativ',
     titleDe: 'Nominativ vs Akkusativ',
     emoji: '⚖️',
@@ -904,7 +904,7 @@ export const days = [
   },
 
   {
-    id: 19, week: 3,
+    id: 24, week: 4,
     title: 'Verbs that take Akkusativ',
     titleDe: 'Verben mit Akkusativ',
     emoji: '🎯',
@@ -938,7 +938,7 @@ export const days = [
   },
 
   {
-    id: 20, week: 3,
+    id: 28, week: 5,
     title: 'Family',
     titleDe: 'Die Familie',
     emoji: '👨‍👩‍👧',
@@ -1010,7 +1010,7 @@ export const days = [
   },
 
   {
-    id: 21, week: 3,
+    id: 29, week: 5,
     title: 'Daily routine',
     titleDe: 'Der Tagesablauf',
     emoji: '🌅',
@@ -1044,7 +1044,7 @@ export const days = [
 
   /* ===================== WEEK 4: modals + scenarios ===================== */
   {
-    id: 22, week: 4,
+    id: 32, week: 5,
     title: 'Modals: können · müssen · wollen',
     titleDe: 'Modalverben I',
     emoji: '🛠️',
@@ -1072,7 +1072,7 @@ export const days = [
   },
 
   {
-    id: 23, week: 4,
+    id: 33, week: 5,
     title: 'Modals: dürfen · sollen · mögen',
     titleDe: 'Modalverben II',
     emoji: '🧰',
@@ -1124,7 +1124,7 @@ export const days = [
   },
 
   {
-    id: 24, week: 4,
+    id: 34, week: 6,
     title: 'At the restaurant',
     titleDe: 'Im Restaurant',
     emoji: '🍽️',
@@ -1174,7 +1174,7 @@ export const days = [
   },
 
   {
-    id: 25, week: 4,
+    id: 35, week: 6,
     title: 'Shopping',
     titleDe: 'Einkaufen',
     emoji: '🛒',
@@ -1208,7 +1208,7 @@ export const days = [
   },
 
   {
-    id: 26, week: 4,
+    id: 37, week: 6,
     title: 'Negation: nicht & kein',
     titleDe: 'Verneinung',
     emoji: '🚫',
@@ -1255,7 +1255,7 @@ export const days = [
   },
 
   {
-    id: 27, week: 4,
+    id: 36, week: 6,
     title: 'Travel',
     titleDe: 'Reisen',
     emoji: '✈️',
@@ -1290,9 +1290,9 @@ export const days = [
   },
 
   {
-    id: 28, week: 4,
-    title: 'Week 4 review',
-    titleDe: 'Wiederholung Woche 4',
+    id: 38, week: 6,
+    title: 'Week 4-6 review',
+    titleDe: 'Wiederholung Woche 4-6',
     emoji: '📚',
     objective: 'Cement modals, Akkusativ, scenarios, negation.',
     intro: 'Review pass before the final stretch.',
@@ -1310,7 +1310,7 @@ export const days = [
 
   /* ===================== WEEK 5: review + final ===================== */
   {
-    id: 29, week: 5,
+    id: 39, week: 7,
     title: 'Mega review',
     titleDe: 'Großes Review',
     emoji: '🧠',
@@ -1332,7 +1332,7 @@ export const days = [
   },
 
   {
-    id: 30, week: 5,
+    id: 40, week: 7,
     title: 'Final exam · Schlussprüfung',
     titleDe: 'Schlussprüfung',
     emoji: '🏆',
@@ -1364,14 +1364,607 @@ export const days = [
       { type: 'multiple-choice', q: 'Asking for the bill:', options: ['Bitte schön.','Zahlen, bitte.','Guten Appetit.','Auf Wiedersehen.'], answer: 'Zahlen, bitte.' },
     ],
   },
+
+  /* ===================== v2.0.0 — Phase B + C inserted days ===================== */
+
+  /* ----- Day 12: Separable verbs (slides 188-204, 225-241) ----- */
+  {
+    id: 12, week: 2,
+    title: 'Separable verbs',
+    titleDe: 'Trennbare Verben',
+    emoji: '🧩',
+    objective: 'Recognise and use German verbs that split apart in a sentence.',
+    intro: 'Many common German verbs are written as one word in the dictionary (aufstehen, einkaufen) but BREAK in a real sentence: the prefix moves to the end. "Ich stehe um 7 Uhr AUF."',
+    vocabulary: [
+      { de: 'aufstehen',  en: 'to get up' },
+      { de: 'einkaufen',  en: 'to shop / buy groceries' },
+      { de: 'mitkommen',  en: 'to come along' },
+      { de: 'aufmachen',  en: 'to open' },
+      { de: 'zumachen',   en: 'to close' },
+      { de: 'ausfüllen',  en: 'to fill out (a form)' },
+      { de: 'anrufen',    en: 'to call (on the phone)' },
+      { de: 'fernsehen',  en: 'to watch TV' },
+      { de: 'abholen',    en: 'to pick up' },
+      { de: 'anfangen',   en: 'to begin' },
+      { de: 'einladen',   en: 'to invite' },
+      { de: 'aufhören',   en: 'to stop' },
+    ],
+    grammar: [
+      { rule: 'How separable verbs work',
+        body:
+          'Dictionary form: aufstehen (one word).\n' +
+          'In a main sentence: the verb stem stays in position 2; the prefix jumps to the very end.\n' +
+          '  Ich STEHE um 7 Uhr AUF.\n' +
+          '  Wir KAUFEN am Samstag EIN.\n' +
+          '  Du MACHST das Fenster AUF.',
+      },
+      { rule: 'How to spot one',
+        body:
+          'A separable verb is written together in the infinitive; the STRESS sits on the prefix.\n' +
+          'Common prefixes: auf-, an-, ein-, aus-, mit-, ab-, fern-, zu-, nach-.\n' +
+          'Compare: BEsuchen / verSTEHen → these are NOT separable (stress on the stem, no split).',
+      },
+      { rule: 'With a modal verb — no split',
+        body:
+          'When a modal verb takes over slot 2, the separable verb goes to the end as a SINGLE infinitive:\n' +
+          '  Ich muss um 7 Uhr aufstehen. (no split)\n' +
+          '  Wir wollen am Samstag einkaufen.',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: 'Ich __ um sieben Uhr __. (aufstehen) — present tense, splits!', answer: 'stehe auf', hint: 'two words separated by a space' },
+      { type: 'fill-blank', sentence: 'Wir __ am Samstag __. (einkaufen)', answer: 'kaufen ein' },
+      { type: 'fill-blank', sentence: 'Du __ das Fenster __. (aufmachen)', answer: 'machst auf' },
+      { type: 'fill-blank', sentence: 'Er __ seine Freundin __. (anrufen)', answer: 'ruft an' },
+      { type: 'fill-blank', sentence: 'Ich __ am Abend __. (fernsehen)', answer: 'sehe fern' },
+      { type: 'fill-blank', sentence: 'Wir __ unsere Freunde __. (einladen) — present tense', answer: 'laden ein' },
+      { type: 'fill-blank', sentence: 'Mit modal: "Ich muss um 7 Uhr __." (aufstehen — no split!)', answer: 'aufstehen' },
+      { type: 'fill-blank', sentence: 'Mit modal: "Wir wollen am Samstag __." (einkaufen)', answer: 'einkaufen' },
+      { type: 'multiple-choice',
+        q: 'Which sentence is correct?',
+        options: [
+          'Ich aufstehe um 7 Uhr.',
+          'Ich stehe um 7 Uhr auf.',
+          'Ich stehe auf um 7 Uhr.',
+          'Auf ich stehe um 7 Uhr.',
+        ],
+        answer: 'Ich stehe um 7 Uhr auf.',
+        explain: 'In the present tense the stem (stehe) sits in slot 2 and the prefix (auf) jumps to the very end.',
+      },
+      { type: 'match', pairs: [
+        { de: 'aufstehen', en: 'to get up' },
+        { de: 'einkaufen', en: 'to shop' },
+        { de: 'mitkommen', en: 'to come along' },
+        { de: 'anrufen',   en: 'to phone' },
+      ]},
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: 'Ich __ den Kollegen __. (abholen)', answer: 'hole ab' },
+      { type: 'multiple-choice', q: 'Where does the prefix go in present tense?', options: ['Position 1','Position 2','At the very end','Anywhere'], answer: 'At the very end' },
+    ],
+  },
+
+  /* ----- Day 16: Yes/No questions (slides 71-77, 128-131) ----- */
+  {
+    id: 16, week: 3,
+    title: 'Yes/No questions',
+    titleDe: 'Ja/Nein-Fragen',
+    emoji: '❓',
+    objective: 'Turn any statement into a yes/no question by flipping word order.',
+    intro: 'Yes/no questions in German are easy: just put the conjugated verb FIRST. "Du bist müde." → "Bist du müde?" Add a question mark — done.',
+    vocabulary: [
+      { de: 'ja',         en: 'yes' },
+      { de: 'nein',       en: 'no' },
+      { de: 'doch',       en: 'yes (contradicting a negative)' },
+      { de: 'vielleicht', en: 'maybe' },
+      { de: 'natürlich',  en: 'of course' },
+      { de: 'sicher',     en: 'sure / certainly' },
+    ],
+    grammar: [
+      { rule: 'Word-order flip',
+        body:
+          'Statement → question = swap subject and verb:\n' +
+          '  Du bist müde.            → Bist du müde?\n' +
+          '  Sie hat Hunger.          → Hat sie Hunger?\n' +
+          '  Wir wohnen in Berlin.    → Wohnen wir in Berlin?\n' +
+          'No "do" required — German has no helper for questions.',
+      },
+      { rule: 'Three ways to answer',
+        body:
+          'Ja — yes (positive answer to a positive question).\n' +
+          'Nein — no.\n' +
+          'Doch — yes! (used to contradict a negative question)\n' +
+          '  Bist du nicht müde? — Doch! (yes I am — contradicting "not")',
+      },
+      { rule: 'Separable verbs in a question',
+        body:
+          'The prefix STILL goes to the end:\n' +
+          '  Stehst du um 7 Uhr auf?\n' +
+          '  Kaufen wir am Samstag ein?',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: 'Statement: "Du bist müde." → Question: "__ du müde?"', answer: 'Bist' },
+      { type: 'fill-blank', sentence: 'Statement: "Sie hat Hunger." → Question: "__ sie Hunger?"', answer: 'Hat' },
+      { type: 'fill-blank', sentence: 'Statement: "Wir wohnen in Berlin." → Question: "__ wir in Berlin?"', answer: 'Wohnen' },
+      { type: 'fill-blank', sentence: 'Statement: "Er kommt aus Indien." → Question: "__ er aus Indien?"', answer: 'Kommt' },
+      { type: 'fill-blank', sentence: 'Statement: "Ich kann Deutsch." → Question: "__ du Deutsch?"', answer: 'Kannst' },
+      { type: 'fill-blank', sentence: 'With separable verb: "Du stehst um 7 Uhr auf." → Question: "__ du um 7 Uhr __?"', answer: 'Stehst auf' },
+      { type: 'multiple-choice', q: '"Bist du nicht müde?" — Yes I am! (contradicting). Pick the right answer.',
+        options: ['Ja!','Nein!','Doch!','Vielleicht!'], answer: 'Doch!' },
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Hast du Zeit am Wochenende?',          en: 'Do you have time on the weekend?' },
+        { speaker: 'B', de: 'Ja, ich habe Zeit.',                   en: 'Yes, I have time.' },
+        { speaker: 'A', de: 'Möchtest du ins Restaurant gehen?',    en: 'Would you like to go to the restaurant?' },
+        { speaker: 'B', de: 'Vielleicht. Bist du nicht müde?',      en: 'Maybe. Are you not tired?' },
+        { speaker: 'A', de: 'Doch, aber ich möchte trotzdem essen.', en: 'Yes (I am), but I still want to eat.' },
+      ]},
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: 'Make the question: "Sie spricht Deutsch." → "__ sie Deutsch?"', answer: 'Spricht' },
+      { type: 'multiple-choice', q: 'Where does the verb go in a yes/no question?', options: ['Position 1','Position 2','Position 3','At the end'], answer: 'Position 1' },
+    ],
+  },
+
+  /* ----- Day 17: W-questions (slide 76 — 10 W-words) ----- */
+  {
+    id: 17, week: 3,
+    title: 'W-questions',
+    titleDe: 'W-Fragen',
+    emoji: '🔍',
+    objective: 'Ask questions starting with WHO, WHAT, WHERE, WHEN, WHY, HOW.',
+    intro: 'A W-question opens with a question word, then the verb, then everything else. "Wer bist du? Wo wohnst du? Wann kommst du?"',
+    vocabulary: [
+      { de: 'wer',     en: 'who' },
+      { de: 'was',     en: 'what' },
+      { de: 'wo',      en: 'where (at)' },
+      { de: 'wohin',   en: 'where to' },
+      { de: 'woher',   en: 'where from' },
+      { de: 'wann',    en: 'when' },
+      { de: 'warum',   en: 'why' },
+      { de: 'wie',     en: 'how' },
+      { de: 'welcher', en: 'which (m / der-words)' },
+      { de: 'wie viel',  en: 'how much' },
+      { de: 'wie viele', en: 'how many' },
+    ],
+    grammar: [
+      { rule: 'Pattern: W-word · verb · subject · …',
+        body:
+          'Wer ist das?           — Who is that?\n' +
+          'Wo wohnst du?          — Where do you live?\n' +
+          'Wann kommst du?        — When are you coming?\n' +
+          'Warum lernst du Deutsch? — Why are you learning German?\n' +
+          'Wie heißt du?          — What is your name?',
+      },
+      { rule: 'wo / wohin / woher',
+        body:
+          'wo = where (location, no movement): "Wo ist der Bahnhof?"\n' +
+          'wohin = where TO (movement away from speaker): "Wohin gehst du?"\n' +
+          'woher = where FROM (origin): "Woher kommst du?"',
+      },
+      { rule: '"Wie heißt du?" not "Wie ist dein Name?"',
+        body: 'Both are correct. "Wie heißt du?" sounds more natural.',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: '__ ist das? (who)', answer: 'Wer' },
+      { type: 'fill-blank', sentence: '__ heißt du? (how / what)', answer: 'Wie' },
+      { type: 'fill-blank', sentence: '__ wohnst du? (where at)', answer: 'Wo' },
+      { type: 'fill-blank', sentence: '__ kommst du? (where from)', answer: 'Woher' },
+      { type: 'fill-blank', sentence: '__ gehst du? (where to)', answer: 'Wohin' },
+      { type: 'fill-blank', sentence: '__ kommst du nach Hause? (when)', answer: 'Wann' },
+      { type: 'fill-blank', sentence: '__ lernst du Deutsch? (why)', answer: 'Warum' },
+      { type: 'fill-blank', sentence: '__ kostet das? (how much)', answer: 'Wie viel' },
+      { type: 'multiple-choice', q: '"Where do you live?" =', options: ['Wo wohnst du?','Wohin wohnst du?','Wer wohnst du?','Was wohnst du?'], answer: 'Wo wohnst du?' },
+      { type: 'multiple-choice', q: '"Where are you going?" =', options: ['Wo gehst du?','Wohin gehst du?','Woher gehst du?','Was gehst du?'], answer: 'Wohin gehst du?' },
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Wie heißt du?',          en: 'What is your name?' },
+        { speaker: 'B', de: 'Ich heiße Anna.',         en: 'My name is Anna.' },
+        { speaker: 'A', de: 'Woher kommst du?',        en: 'Where are you from?' },
+        { speaker: 'B', de: 'Ich komme aus Indien.',   en: 'I come from India.' },
+        { speaker: 'A', de: 'Wo wohnst du jetzt?',     en: 'Where do you live now?' },
+        { speaker: 'B', de: 'Jetzt wohne ich in Berlin.', en: 'Now I live in Berlin.' },
+        { speaker: 'A', de: 'Warum lernst du Deutsch?', en: 'Why are you learning German?' },
+        { speaker: 'B', de: 'Ich arbeite hier.',        en: 'I work here.' },
+      ]},
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: '"What is that?" → __ ist das?', answer: 'Was' },
+      { type: 'multiple-choice', q: 'How many W-words start with W in German?', options: ['5','7','10','It varies — at least 10 common ones.'], answer: 'It varies — at least 10 common ones.' },
+    ],
+  },
+
+  /* ----- Day 19: Big numbers & prices (slides 143-145, 186-187, 256) ----- */
+  {
+    id: 19, week: 3,
+    title: 'Big numbers & prices',
+    titleDe: 'Große Zahlen & Preise',
+    emoji: '💶',
+    objective: 'Read 4–6 digit numbers and handle prices in euros.',
+    intro: 'After 1000, German numbers can look terrifying — but the building blocks are the same. Plus you\'ll need them for shopping, salaries and bills.',
+    vocabulary: [
+      { de: 'tausend',          en: '1 000' },
+      { de: 'zweitausend',      en: '2 000' },
+      { de: 'zehntausend',      en: '10 000' },
+      { de: 'hunderttausend',   en: '100 000' },
+      { de: 'eine Million',     en: '1 000 000' },
+      { de: 'der Euro',         en: 'euro' },
+      { de: 'der Cent',         en: 'cent' },
+      { de: 'kosten',           en: 'to cost' },
+      { de: 'der Preis',        en: 'price' },
+      { de: 'teuer',            en: 'expensive' },
+      { de: 'billig',           en: 'cheap' },
+      { de: 'günstig',          en: 'good value' },
+    ],
+    grammar: [
+      { rule: 'Building any number',
+        body:
+          'Read it like Lego — biggest unit first:\n' +
+          '• 365   = drei-hundert-fünf-und-sechzig\n' +
+          '• 1 234 = ein-tausend-zwei-hundert-vier-und-dreißig\n' +
+          '• 9 876 = neun-tausend-acht-hundert-sechs-und-siebzig\n' +
+          '• 24 499 = vier-und-zwanzigtausend-vier-hundert-neun-und-neunzig',
+      },
+      { rule: 'Decimals use a COMMA, thousands use a DOT',
+        body:
+          'German money: 1.234,56 € (English: 1,234.56)\n' +
+          'Spoken: "ein-tausend-zwei-hundert-vier-und-dreißig Euro sechs-und-fünfzig (Cent)"\n' +
+          'Or just: "ein-tausend-zwei-hundert-vier-und-dreißig Euro fünfzig" (Cents often dropped).',
+      },
+      { rule: 'Asking and giving a price',
+        body:
+          'Q: "Wie viel kostet das?"  /  "Was kostet …?"\n' +
+          'A: "Das kostet 13 Euro."  /  "13 Euro fünfzig."',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: '1000 = __', answer: 'tausend' },
+      { type: 'fill-blank', sentence: '10 000 = __', answer: 'zehntausend' },
+      { type: 'fill-blank', sentence: '1 234 = ein__zweihundertvierunddreißig', answer: 'tausend' },
+      { type: 'fill-blank', sentence: '"How much does it cost?" → Wie viel __ das?', answer: 'kostet' },
+      { type: 'fill-blank', sentence: '"That costs 13 euros." → Das __ dreizehn Euro.', answer: 'kostet' },
+      { type: 'multiple-choice', q: '982 = ?',
+        options: ['neunhundertachtzigzwei','neunhundertzweiundachtzig','neunhundertachtundzwei','neuhundertzweiundachtzig'],
+        answer: 'neunhundertzweiundachtzig' },
+      { type: 'multiple-choice', q: 'In German, 1.234,56 € reads as…',
+        options: ['one point two three four, fifty-six','one thousand two hundred thirty-four euros fifty-six','one comma two three four','twelve hundred and thirty-four'],
+        answer: 'one thousand two hundred thirty-four euros fifty-six' },
+      { type: 'dialogue', lines: [
+        { speaker: 'Kunde',     de: 'Wie viel kostet das Smartphone?',     en: 'How much does the smartphone cost?' },
+        { speaker: 'Verkäufer', de: 'Das Smartphone kostet 982 Euro.',     en: 'The smartphone costs 982 euros.' },
+        { speaker: 'Kunde',     de: 'Und das Auto?',                       en: 'And the car?' },
+        { speaker: 'Verkäufer', de: 'Das Auto kostet 24 499 Euro.',         en: 'The car costs 24,499 euros.' },
+        { speaker: 'Kunde',     de: 'Das ist sehr teuer!',                 en: 'That is very expensive!' },
+      ]},
+    ],
+    quiz: [
+      { type: 'multiple-choice', q: '13 € (spoken) =', options: ['drei Euro','dreizehn Euro','dreißig Euro','dreihundert Euro'], answer: 'dreizehn Euro' },
+      { type: 'fill-blank', sentence: '1 000 000 = eine __', answer: 'Million' },
+    ],
+  },
+
+  /* ----- Day 20: Week 3 review (questions + numbers) ----- */
+  {
+    id: 20, week: 3,
+    title: 'Week 3 review',
+    titleDe: 'Wiederholung Woche 3',
+    emoji: '🔁',
+    objective: 'Lock in questions, big numbers, and the politeness ladder before tackling cases.',
+    intro: 'Mixed pass through Yes/No questions, W-questions, big numbers and prices.',
+    vocabulary: [],
+    grammar: [],
+    exercises: [
+      { type: 'fill-blank', sentence: 'Statement: "Sie kommt aus Indien." → Question: "__ sie aus Indien?"', answer: 'Kommt' },
+      { type: 'fill-blank', sentence: 'Asking origin: "__ kommst du?"', answer: 'Woher' },
+      { type: 'fill-blank', sentence: 'Asking destination: "__ gehst du?"', answer: 'Wohin' },
+      { type: 'fill-blank', sentence: '"Bist du nicht müde?" — Yes (contradicting). → "__!"', answer: 'Doch' },
+      { type: 'fill-blank', sentence: '"How much does the menu cost?" → __ kostet die Speisekarte?', answer: 'Wie viel' },
+      { type: 'fill-blank', sentence: 'Separable verb question: "__ du um 7 Uhr __?" (aufstehen)', answer: 'Stehst auf' },
+      { type: 'multiple-choice', q: 'Pick the natural German order for "Why are you learning German?".', options: ['Du lernst warum Deutsch?','Warum du lernst Deutsch?','Warum lernst du Deutsch?','Lernst du warum Deutsch?'], answer: 'Warum lernst du Deutsch?' },
+      { type: 'multiple-choice', q: '24 499 = ?', options: ['vierundzwanzigtausendvierhundertneunundneunzig','zweiundvierzigtausend…','vierundzwanzighundertneunundvierzig','vierundzwanzigtausendvierneunneun'], answer: 'vierundzwanzigtausendvierhundertneunundneunzig' },
+    ],
+    quiz: [],
+  },
+
+  /* ----- Day 25: Dativ I — prepositions (slides 277-280) ----- */
+  {
+    id: 25, week: 4,
+    title: 'Dativ I — prepositions',
+    titleDe: 'Dativ I — Präpositionen',
+    emoji: '🅿️',
+    objective: 'Use the Dativ case after the eight everyday "always-Dativ" prepositions.',
+    intro: 'After mastering Akkusativ (object), meet the third case: Dativ. It marks the indirect object ("to whom") AND is forced by certain prepositions like mit, bei, zu.',
+    vocabulary: [
+      { de: 'mit',        en: 'with' },
+      { de: 'bei',        en: 'at / near / with (a person)' },
+      { de: 'zu',         en: 'to (a place / person)' },
+      { de: 'von',        en: 'from / of' },
+      { de: 'nach',       en: 'to (city/country) / after' },
+      { de: 'aus',        en: 'out of / from (origin)' },
+      { de: 'seit',       en: 'since / for' },
+      { de: 'gegenüber',  en: 'opposite' },
+    ],
+    grammar: [
+      { rule: 'Dativ article table',
+        body:
+          'masc.   der → dem    "mit dem Auto"\n' +
+          'fem.    die → der    "mit der Frau"\n' +
+          'neuter  das → dem    "bei dem Kind" (often → beim Kind)\n' +
+          'plural  die → den + ADD -n to the noun if missing  "mit den Kindern"',
+      },
+      { rule: 'Indefinite & possessive',
+        body:
+          'ein → einem (m, n)  /  eine → einer (f)  /  no plural form for ein.\n' +
+          'mein → meinem / meiner / meinem / meinen.\n' +
+          '  "Ich fahre mit meinem Auto."\n' +
+          '  "Ich wohne bei meiner Mutter."',
+      },
+      { rule: 'The 8 always-Dativ prepositions',
+        body:
+          'mit · bei · zu · von · nach · aus · seit · gegenüber.\n' +
+          'Memorise them as one block — every noun after one of these uses Dativ.',
+      },
+      { rule: 'Common contractions',
+        body:
+          'bei + dem  → beim    "beim Bäcker"\n' +
+          'von + dem  → vom     "vom Bahnhof"\n' +
+          'zu + dem   → zum     "zum Arzt"\n' +
+          'zu + der   → zur     "zur Schule"',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: 'Ich fahre mit __ Auto. (the, masc.)',          answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Wir wohnen bei __ Eltern. (the, plural)',      answer: 'den', hint: 'don\'t forget — plural Dativ noun adds -n if missing: Eltern already ends in n' },
+      { type: 'fill-blank', sentence: 'Ich gehe zu __ Bahnhof. (the, masc.)',          answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Sie kommt aus __ Schule. (the, fem.)',         answer: 'der' },
+      { type: 'fill-blank', sentence: 'Er arbeitet seit __ Jahr. (a, neuter)',        answer: 'einem' },
+      { type: 'fill-blank', sentence: 'Wir fahren nach __ . (Berlin — no article!)',  answer: 'Berlin', hint: 'cities and most countries take no article' },
+      { type: 'fill-blank', sentence: 'Ich fahre mit __ Mutter. (my, fem.)',          answer: 'meiner' },
+      { type: 'fill-blank', sentence: 'Contraction: "bei + dem" = __',                answer: 'beim' },
+      { type: 'fill-blank', sentence: 'Contraction: "zu + der" = __',                 answer: 'zur' },
+      { type: 'multiple-choice', q: 'Which preposition does NOT take Dativ?',
+        options: ['mit', 'bei', 'für', 'zu'],
+        answer: 'für',
+        explain: '"für" takes Akkusativ. The eight always-Dativ prepositions are mit, bei, zu, von, nach, aus, seit, gegenüber.',
+      },
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: 'Ich gehe zu __ Arzt. (the, masc. — use the contraction)', answer: 'zum' },
+      { type: 'multiple-choice', q: 'Plural Dativ for "die Bücher" =', options: ['die Bücher','der Bücher','dem Bücher','den Büchern'], answer: 'den Büchern', explain: 'Plural Dativ: article = den, and the noun adds -n.' },
+    ],
+  },
+
+  /* ----- Day 26: Dativ II — verbs (slides 281-287) ----- */
+  {
+    id: 26, week: 4,
+    title: 'Dativ II — verbs',
+    titleDe: 'Dativ II — Verben',
+    emoji: '🤝',
+    objective: 'Spot the verbs that demand a Dativ object — and use them.',
+    intro: 'Some verbs take a direct object in the Dativ rather than the Akkusativ. They are common ones — helfen, danken, gefallen, gehören, antworten, glauben.',
+    vocabulary: [
+      { de: 'helfen',     en: 'to help (someone)' },
+      { de: 'danken',     en: 'to thank' },
+      { de: 'gefallen',   en: 'to please / to be liked by' },
+      { de: 'gehören',    en: 'to belong to' },
+      { de: 'antworten',  en: 'to answer (someone)' },
+      { de: 'glauben',    en: 'to believe (someone)' },
+      { de: 'gratulieren',en: 'to congratulate' },
+      { de: 'passen',     en: 'to fit / suit' },
+    ],
+    grammar: [
+      { rule: 'Dativ-only verbs',
+        body:
+          'These verbs take their human object in Dativ:\n' +
+          '• helfen, danken, antworten, gratulieren, glauben (jdm.)\n' +
+          '• gefallen, gehören, passen (jdm.)\n' +
+          'Examples:\n' +
+          '  Ich helfe DEM Vater.       I help the father.\n' +
+          '  Ich danke DER Frau.         I thank the woman.\n' +
+          '  Das Buch gehört DEM Kind.   The book belongs to the child.\n' +
+          '  Die Stadt gefällt MIR.      I like the city. (lit. "the city pleases me")',
+      },
+      { rule: 'gefallen — flipped meaning',
+        body:
+          'In English: "I like X." (subject = I)\n' +
+          'In German: "X gefällt mir." (subject = X — what is liked!)\n' +
+          'Memorise the swap: the THING is the subject, the PERSON is in Dativ.',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: 'Ich helfe __ Vater. (the, masc.)',          answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Wir danken __ Lehrerin. (the, fem.)',       answer: 'der' },
+      { type: 'fill-blank', sentence: 'Das Buch gehört __ Kind. (the, neuter)',    answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Du antwortest __ Kollegen. (the, plural)',  answer: 'den' },
+      { type: 'fill-blank', sentence: 'Die Stadt gefällt __ . (me — Dativ of ich)', answer: 'mir' },
+      { type: 'fill-blank', sentence: 'Das Auto gehört __ . (you, 1 friend — Dativ of du)', answer: 'dir' },
+      { type: 'fill-blank', sentence: 'Ich glaube __ Frau. (the, fem.)',           answer: 'der' },
+      { type: 'multiple-choice', q: '"I like the city." in German is…',
+        options: ['Ich mag die Stadt.', 'Die Stadt gefällt mir.', 'Both are correct.', 'Neither.'],
+        answer: 'Both are correct.',
+        explain: 'Both work. "gefallen" + Dativ is the more idiomatic phrasing.' },
+      { type: 'multiple-choice', q: 'Which verb does NOT take Dativ?',
+        options: ['helfen','danken','sehen','gefallen'],
+        answer: 'sehen',
+        explain: '"sehen" takes Akkusativ: Ich sehe DEN Mann.' },
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: 'Wir gratulieren __ Chef. (the, masc.)', answer: 'dem' },
+    ],
+  },
+
+  /* ----- Day 27: Cases review (Nom · Akk · Dat) ----- */
+  {
+    id: 27, week: 4,
+    title: 'Cases review',
+    titleDe: 'Kasus-Wiederholung',
+    emoji: '📐',
+    objective: 'Tell Nominativ, Akkusativ and Dativ apart in any sentence.',
+    intro: 'Three cases, one cheat-sheet. Once this clicks, half of German grammar is yours.',
+    vocabulary: [],
+    grammar: [
+      { rule: 'Article cheat-sheet',
+        body:
+          '              masc.   fem.   neuter  plural\n' +
+          'Nominativ     der     die    das     die\n' +
+          'Akkusativ     den     die    das     die\n' +
+          'Dativ         dem     der    dem     den +n\n' +
+          'Indef. Nom.   ein     eine   ein     —\n' +
+          'Indef. Akk.   einen   eine   ein     —\n' +
+          'Indef. Dat.   einem   einer  einem   —',
+      },
+      { rule: 'Decision tree',
+        body:
+          '1. Is the noun the subject (who does it)? → Nominativ.\n' +
+          '2. Is it the direct object (what is being verbed)? → Akkusativ.\n' +
+          '3. After mit / bei / zu / von / nach / aus / seit / gegenüber? → Dativ.\n' +
+          '4. After helfen / danken / gehören / gefallen / antworten / glauben? → Dativ.\n' +
+          '5. None of the above? Default to Akkusativ.',
+      },
+    ],
+    exercises: [
+      { type: 'fill-blank', sentence: 'Subject: "__ Mann arbeitet hier." (the, masc., Nom.)', answer: 'Der' },
+      { type: 'fill-blank', sentence: 'Object: "Ich sehe __ Mann." (the, masc., Akk.)',       answer: 'den' },
+      { type: 'fill-blank', sentence: 'Dativ prep: "Ich gehe mit __ Mann." (the, masc.)',      answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Subject: "__ Frau ist hier." (the, fem., Nom.)',       answer: 'Die' },
+      { type: 'fill-blank', sentence: 'Object: "Ich sehe __ Frau." (the, fem., Akk.)',         answer: 'die' },
+      { type: 'fill-blank', sentence: 'Dativ verb: "Ich helfe __ Frau." (the, fem.)',          answer: 'der' },
+      { type: 'fill-blank', sentence: 'Plural Dativ: "Ich spreche mit __ Studenten."',         answer: 'den' },
+      { type: 'multiple-choice', q: 'What case after "mit"?', options: ['Nom.','Akk.','Dat.','Gen.'], answer: 'Dat.' },
+      { type: 'multiple-choice', q: '"Das Buch gefällt ___ ." — pick.', options: ['ich','mich','mir','meinen'], answer: 'mir' },
+      { type: 'multiple-choice', q: '"Ich kaufe ___ Buch." (a, neuter)', options: ['ein','einen','einem','eine'], answer: 'ein' },
+    ],
+    quiz: [],
+  },
+
+  /* ----- Day 30: Hobbies — dedicated (slide 66 expansion) ----- */
+  {
+    id: 30, week: 5,
+    title: 'Hobbies & free time',
+    titleDe: 'Hobbys & Freizeit',
+    emoji: '🎮',
+    objective: 'Talk about what you do for fun, with the right time and frequency words.',
+    intro: 'You already met the hobby vocab on Day 13. Today: build long, natural sentences and hold a 60-second conversation about your free time.',
+    vocabulary: [
+      { de: 'das Hobby',     en: 'hobby' },
+      { de: 'die Freizeit',  en: 'free time' },
+      { de: 'reisen',        en: 'to travel' },
+      { de: 'kochen',        en: 'to cook' },
+      { de: 'tanzen',        en: 'to dance' },
+      { de: 'singen',        en: 'to sing' },
+      { de: 'malen',         en: 'to paint' },
+      { de: 'fotografieren', en: 'to take photos' },
+      { de: 'wandern',       en: 'to hike' },
+      { de: 'schwimmen',     en: 'to swim' },
+      { de: 'Fahrrad fahren',en: 'to ride a bike' },
+      { de: 'Yoga machen',   en: 'to do yoga' },
+      { de: 'der Sport',     en: 'sport' },
+      { de: 'die Musik',     en: 'music' },
+      { de: 'die Kunst',     en: 'art' },
+    ],
+    grammar: [
+      { rule: 'Sentence template',
+        body:
+          'Subject + Verb + Time + Frequency + Preference + Object\n' +
+          '  Ich   höre  am Wochenende  oft  gerne  Musik.\n' +
+          '  Wir   spielen jeden Tag  manchmal — Fußball.',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+      { type: 'fill-blank', sentence: 'In meiner Freizeit __ ich gerne. (cook)',                  answer: 'koche' },
+      { type: 'fill-blank', sentence: 'Wir __ am Wochenende oft. (hike)',                          answer: 'wandern' },
+      { type: 'fill-blank', sentence: 'Sie (she) __ jeden Tag. (sing)',                            answer: 'singt' },
+      { type: 'fill-blank', sentence: 'Du __ in deiner Freizeit Bücher. (read)',                   answer: 'liest' },
+      { type: 'fill-blank', sentence: 'Ich __ sehr gerne Yoga. (machen — irreg. modal-like idiom)', answer: 'mache' },
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Was machst du in deiner Freizeit?',         en: 'What do you do in your free time?' },
+        { speaker: 'B', de: 'Ich spiele gerne Videospiele und ich koche.', en: 'I like playing video games and I cook.' },
+        { speaker: 'A', de: 'Was kochst du?',                            en: 'What do you cook?' },
+        { speaker: 'B', de: 'Indisches Essen. Magst du indisches Essen?', en: 'Indian food. Do you like Indian food?' },
+        { speaker: 'A', de: 'Ja, sehr gerne!',                           en: 'Yes, very much!' },
+      ]},
+    ],
+    quiz: [
+      { type: 'multiple-choice', q: '"In my free time, I gladly travel." Pick the order.',
+        options: [
+          'Ich reise in meiner Freizeit gerne.',
+          'In meiner Freizeit ich reise gerne.',
+          'Reise ich in meiner Freizeit gerne.',
+          'Gerne ich reise in meiner Freizeit.',
+        ],
+        answer: 'Ich reise in meiner Freizeit gerne.' },
+    ],
+  },
+
+  /* ----- Day 31: Reading practice (slides 111, 146-147, 183) ----- */
+  {
+    id: 31, week: 5,
+    title: 'Reading practice',
+    titleDe: 'Leseverständnis',
+    emoji: '📖',
+    objective: 'Read short German paragraphs and answer comprehension questions.',
+    intro: 'You have built enough vocabulary and grammar to read real beginner-level paragraphs. Read each text aloud (use the 🔊), then answer the questions.',
+    vocabulary: [],
+    grammar: [
+      { rule: 'Reading strategy',
+        body:
+          '1. Read the whole paragraph once for the gist — do NOT translate every word.\n' +
+          '2. Highlight the verbs (they tell you who does what).\n' +
+          '3. On the second read, look up only words you actually need.\n' +
+          '4. Answer the questions IN GERMAN if you can — match grammar from the text.',
+      },
+    ],
+    exercises: [
+      { type: 'dialogue', lines: [
+        { speaker: 'Text 1', de: 'Der Student ist dreiundzwanzig Jahre alt.', en: 'The student is 23 years old.' },
+        { speaker: 'Text 1', de: 'Heute arbeitet er in der Firma.',           en: 'Today he works in the company.' },
+        { speaker: 'Text 1', de: 'Jetzt schreibt er einen Satz und sucht ein Wort.', en: 'Now he writes a sentence and looks up a word.' },
+        { speaker: 'Text 1', de: 'Danach zeigt der Lehrer ein Buch und erklärt eine Geschichte.', en: 'Afterwards the teacher shows a book and explains a story.' },
+        { speaker: 'Text 1', de: 'Der Student hört und wiederholt das Wort.', en: 'The student listens and repeats the word.' },
+      ]},
+      { type: 'multiple-choice', q: 'Text 1: How old is the student?', options: ['13', '23', '33', '43'], answer: '23' },
+      { type: 'multiple-choice', q: 'Text 1: Who shows the book?', options: ['the student', 'the teacher', 'the friend', 'the colleague'], answer: 'the teacher' },
+      { type: 'multiple-choice', q: 'Text 1: What does the student do at the end?', options: ['writes a sentence', 'works in the company', 'listens and repeats', 'reads a book'], answer: 'listens and repeats' },
+      { type: 'dialogue', lines: [
+        { speaker: 'Text 2', de: 'Anna kommt aus Indien und wohnt jetzt in Berlin.', en: 'Anna comes from India and lives now in Berlin.' },
+        { speaker: 'Text 2', de: 'Sie ist Softwareentwicklerin und arbeitet in einer Firma.', en: 'She is a software developer and works in a company.' },
+        { speaker: 'Text 2', de: 'Am Wochenende kocht Anna gerne und besucht ihre Freunde.', en: 'On the weekend, Anna likes to cook and visits her friends.' },
+        { speaker: 'Text 2', de: 'Heute hat sie keine Zeit — sie muss arbeiten.', en: 'Today she has no time — she has to work.' },
+      ]},
+      { type: 'multiple-choice', q: 'Text 2: Where is Anna from?', options: ['Berlin', 'Germany', 'India', 'Frankfurt'], answer: 'India' },
+      { type: 'multiple-choice', q: 'Text 2: What is Anna\'s profession?', options: ['teacher', 'software developer', 'cook', 'doctor'], answer: 'software developer' },
+      { type: 'multiple-choice', q: 'Text 2: Why does Anna have no time today?', options: ['She is sick.', 'She has to work.', 'She is travelling.', 'She is cooking.'], answer: 'She has to work.' },
+      { type: 'dialogue', lines: [
+        { speaker: 'Text 3', de: 'Im Restaurant bestellt Tom einen Kaffee mit Milch und eine Suppe.', en: 'At the restaurant Tom orders a coffee with milk and a soup.' },
+        { speaker: 'Text 3', de: 'Der Kellner bringt das Essen schnell.', en: 'The waiter brings the food quickly.' },
+        { speaker: 'Text 3', de: 'Tom isst und liest ein Buch.', en: 'Tom eats and reads a book.' },
+        { speaker: 'Text 3', de: 'Danach fragt er: „Wie viel kostet das?" — und zahlt mit Karte.', en: 'Afterwards he asks: "How much does that cost?" — and pays with card.' },
+      ]},
+      { type: 'multiple-choice', q: 'Text 3: What does Tom order?', options: ['tea and a salad', 'coffee with milk and a soup', 'water and bread', 'beer and pizza'], answer: 'coffee with milk and a soup' },
+      { type: 'multiple-choice', q: 'Text 3: How does Tom pay?', options: ['cash', 'card', 'phone', 'cheque'], answer: 'card' },
+    ],
+    quiz: [],
+  },
 ];
 
+/* Sort once on export so days inserted out of order still render in numeric order. */
+days.sort((a, b) => a.id - b.id);
+
 export const weeks = [
-  { n: 1, title: 'Foundations', tagline: 'Sounds, numbers, pronouns, sein/haben/werden' },
-  { n: 2, title: 'Building sentences', tagline: 'Numbers 30–100, S-V-O, regular verbs, time' },
-  { n: 3, title: 'Cases & people', tagline: 'Bigger numbers, Akkusativ, family' },
-  { n: 4, title: 'Real life', tagline: 'Modals, restaurant, shopping, negation, travel' },
-  { n: 5, title: 'Mastery', tagline: 'Mega review and final exam' },
+  { n: 1, title: 'Foundations',         tagline: 'Sounds, numbers, pronouns, sein/haben/werden' },
+  { n: 2, title: 'Building sentences',  tagline: 'Numbers 30-100, S-V-O, regular & separable verbs' },
+  { n: 3, title: 'Questions & numbers', tagline: 'Yes/No · W-questions · numbers 100-1000+' },
+  { n: 4, title: 'Cases',               tagline: 'Akkusativ, Dativ, possessives' },
+  { n: 5, title: 'People & life',       tagline: 'Family, routine, hobbies, reading, modals' },
+  { n: 6, title: 'Real-life scenarios', tagline: 'Restaurant, shopping, travel, negation' },
+  { n: 7, title: 'Mastery',             tagline: 'Mega review and final exam' },
 ];
 
 export const dayById = (id) => days.find((d) => d.id === Number(id));

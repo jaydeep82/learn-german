@@ -11,10 +11,33 @@
  * in sync.
  */
 
-export const VERSION = '1.6.0';
+export const VERSION = '2.0.0';
 export const RELEASE_DATE = '2026-05-03';
 
 export const RELEASES = [
+  {
+    version: '2.0.0',
+    date: '2026-05-03',
+    type: 'feature',
+    title: 'Deutsch40 — Phase B + C complete (~95% PPT coverage)',
+    notes: [
+      'BREAKING: app renamed Deutsch30 → Deutsch40. Curriculum extended from 30 → 40 days. localStorage key bumped to deutsch40:v1, so any in-progress saves reset on first load.',
+      'Added 10 new lesson days closing the three biggest pedagogical gaps from the audit (Phase B) plus reading practice and big numbers (Phase C).',
+      'NEW Day 12 — Separable verbs: aufstehen/einkaufen/mitkommen/aufmachen/anrufen/fernsehen + the prefix-jumps-to-end rule, plus modal-verb interaction.',
+      'NEW Day 16 — Yes/No questions: word-order flip, ja/nein/doch trio, dialogues.',
+      'NEW Day 17 — W-questions: 11 W-words including the wo / wohin / woher trio, full dialogue practice.',
+      'NEW Day 19 — Big numbers & prices: thousands, millions, decimal-comma rule, restaurant pricing dialog.',
+      'NEW Day 20 — Week 3 review.',
+      'NEW Day 25 — Dativ I (prepositions): the eight always-Dativ prepositions (mit, bei, zu, von, nach, aus, seit, gegenüber), full article table, contractions (beim, vom, zum, zur).',
+      'NEW Day 26 — Dativ II (verbs): helfen/danken/gehören/gefallen/antworten/glauben + the gefallen flipped-meaning rule.',
+      'NEW Day 27 — Cases review: Nom · Akk · Dat decision tree + cheat-sheet table.',
+      'NEW Day 30 — Hobbies (dedicated): expanded vocab, sentence-template practice.',
+      'NEW Day 31 — Reading practice: three short paragraphs from PPT slides 111, 146-147, 183 with comprehension questions.',
+      'Reshuffle: Days 12-30 from v1.6.0 renumbered to fit the new arc; nothing was removed. The dashboard week structure is now 7 weeks: Foundations · Building sentences · Questions & numbers · Cases · People & life · Real-life scenarios · Mastery.',
+      'Updated 14 badges (new week ranges, week-5 + week-6 added, graduate now requires Day 40 ≥ 80%, new XP-1000 badge).',
+      'Estimated PPT coverage: ~80% (v1.6.0) → ~95% (v2.0.0).',
+    ],
+  },
   {
     version: '1.6.0',
     date: '2026-05-03',

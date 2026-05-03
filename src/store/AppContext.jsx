@@ -16,7 +16,12 @@ import { BADGES } from '../data/badges.js';
  *  }
  */
 
-const KEY = 'deutsch30:v1';
+/**
+ * v2.0.0 reshape (Deutsch30 → Deutsch40) renumbered every day past 11,
+ * so a saved progress map keyed under deutsch30:v1 would now point at
+ * the wrong lessons. Bumping the storage key forces a clean slate.
+ */
+const KEY = 'deutsch40:v1';
 
 const defaults = {
   xp: 0,
