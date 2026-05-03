@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '2.0.1';
+export const VERSION = '2.1.0';
 export const RELEASE_DATE = '2026-05-03';
 
 export const RELEASES = [
+  {
+    version: '2.1.0',
+    date: '2026-05-03',
+    type: 'feature',
+    title: 'Phase plan complete — word-order quiz + oral review',
+    notes: [
+      'Closes the last two outstanding items from the original phase plan. PPT coverage now ~100% of teachable content.',
+      'Day 38 (Week 4-6 review): added the 12-sentence "which sentences are wrong?" word-order quiz from PPT slide 253. Each sentence renders as a Correct/Wrong MCQ with a why-explanation calling out the broken rule (verb out of slot 2, separable prefix in the wrong place, etc.).',
+      'Day 39 renamed "Mega review" → "Mega review · Say it back". Now opens with a 35-prompt oral review (PPT slides 266-267): 21 grammar Q&A prompts + 14 build-a-sentence prompts. Each prompt: read aloud, attempt the answer, tap to reveal, self-grade with "Got it" / "Need more practice".',
+      'New <OralPrompt> exercise component. Wired into ExerciseRunner as the 7th exercise type — previous six (Flashcard · MultipleChoice · FillInBlank · DragDropMatch · ConjugationTable · Dialogue) unchanged.',
+      'Each oral prompt can carry an optional German example sentence rendered with audio + pronunciation guide.',
+    ],
+  },
   {
     version: '2.0.1',
     date: '2026-05-03',

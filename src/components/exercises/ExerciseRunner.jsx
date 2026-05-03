@@ -5,6 +5,7 @@ import FillInBlank from './FillInBlank.jsx';
 import DragDropMatch from './DragDropMatch.jsx';
 import ConjugationTable from './ConjugationTable.jsx';
 import Dialogue from './Dialogue.jsx';
+import OralPrompt from './OralPrompt.jsx';
 import { ProgressBar } from '../ProgressUI.jsx';
 import { useApp } from '../../store/AppContext.jsx';
 
@@ -63,6 +64,8 @@ export default function ExerciseRunner({ exercises, vocabulary = [], dayId, onFi
         return <ConjugationTable key={idx} {...current} onDone={handleDone} />;
       case 'dialogue':
         return <Dialogue key={idx} lines={current.lines} onDone={handleDone} />;
+      case 'oral-prompt':
+        return <OralPrompt key={idx} prompts={current.prompts} onDone={handleDone} />;
       default:
         return <div className="card">Unknown exercise: {String(current.type)}</div>;
     }
