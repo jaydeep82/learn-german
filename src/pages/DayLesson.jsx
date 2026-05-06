@@ -183,6 +183,21 @@ function Result({ day, result, onContinue }) {
           </div>
         </Link>
       )}
+      {passed && day.id === 14 && (
+        <Link
+          to="/cheatsheet/regular-verbs"
+          className="block card bg-gradient-to-br from-emerald-50 to-brand-50 dark:from-slate-900 dark:to-slate-900 hover:shadow-md transition"
+        >
+          <div className="flex items-center gap-3">
+            <div className="text-3xl" aria-hidden>🧰</div>
+            <div className="flex-1">
+              <div className="font-bold">Before Week 3 — review the Week 2 cheatsheet</div>
+              <div className="text-sm text-slate-500">Regular endings, the -t/-d rule, stem-changers, separable sandwich rule, TFP order and a self-intro template.</div>
+            </div>
+            <span aria-hidden className="text-xl">→</span>
+          </div>
+        </Link>
+      )}
     </div>
   );
 }

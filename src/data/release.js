@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.0.1';
-export const RELEASE_DATE = '2026-05-03';
+export const VERSION = '3.1.0';
+export const RELEASE_DATE = '2026-05-06';
 
 export const RELEASES = [
+  {
+    version: '3.1.0',
+    date: '2026-05-06',
+    type: 'feature',
+    title: 'Week 2 cheatsheet — regular & separable verbs · TFP order',
+    notes: [
+      'Added a printable Week 2 cheatsheet at /cheatsheet/regular-verbs, mirroring the structure of the Week 1 (sein/haben/werden) sheet.',
+      'Sections: the six regular endings at-a-glance · the -t/-d stem rule · side-by-side conjugation table for machen / lernen / spielen / arbeiten · stem-change irregulars (essen / sehen / lesen / sprechen / fahren) with the changed forms highlighted · separable-verb sandwich rule (with-modal vs without) · TFP word-order table with worked examples · self-introduction template · 5 common mistakes · 6 memory hooks.',
+      'Cheatsheet.jsx refactored to a slug router so future weeks can add their own page (aux-verbs · regular-verbs so far).',
+      'Each cheatsheet now ends with a cross-reference card linking to the others.',
+      'Discoverable from the dashboard (new card under the Week 2 day grid) and from the Day 14 (self-intro) result screen on a passing score.',
+    ],
+  },
   {
     version: '3.0.1',
     date: '2026-05-03',

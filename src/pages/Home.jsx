@@ -98,6 +98,21 @@ export default function Home() {
                 </div>
               </Link>
             )}
+            {w.n === 2 && (
+              <Link
+                to="/cheatsheet/regular-verbs"
+                className="mt-3 block card bg-gradient-to-br from-emerald-50 to-brand-50 dark:from-slate-900 dark:to-slate-900 hover:shadow-md transition"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="text-3xl" aria-hidden>🧰</div>
+                  <div className="flex-1">
+                    <div className="font-bold">Cheatsheet · regular & separable verbs · TFP order</div>
+                    <div className="text-sm text-slate-500">Six endings, the -t/-d rule, stem-changers, sandwich rule for separables, TFP word order, self-intro template.</div>
+                  </div>
+                  <span aria-hidden className="text-xl">→</span>
+                </div>
+              </Link>
+            )}
             {w.n < 8 && (
               <div className="mt-3">
                 <Link to={`/review/week-${w.n}`} className="text-sm font-semibold text-brand-700 dark:text-brand-300 hover:underline">
