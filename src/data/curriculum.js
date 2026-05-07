@@ -101,23 +101,39 @@ export const days = [
     objective: 'Master the pronunciation traps that trip up English speakers.',
     intro: 'German uses the Latin alphabet but several letters sound very different from English. Learn these "traps" first — they unlock correct pronunciation for everything that follows.',
     vocabulary: [
-      { de: 'Vater',   en: 'father',   hint: 'V sounds like F' },
-      { de: 'Wasser',  en: 'water',    hint: 'W sounds like soft V' },
-      { de: 'Zeit',    en: 'time',     hint: 'Z sounds like ts' },
-      { de: 'ja',      en: 'yes',      hint: 'J sounds like Y' },
-      { de: 'Bach',    en: 'stream',   hint: 'hard ch — back of throat' },
-      { de: 'kochen',  en: 'to cook',  hint: 'hard ch (after a/o/u)' },
-      { de: 'machen',  en: 'to do',    hint: 'hard ch' },
-      { de: 'ich',     en: 'I',        hint: 'soft ch — front of mouth' },
-      { de: 'nicht',   en: 'not',      hint: 'soft ch (after i/e/consonants)' },
-      { de: 'Milch',   en: 'milk',     hint: 'soft ch' },
-      { de: 'Schule',  en: 'school',   hint: 'sch = English sh' },
-      { de: 'Bär',     en: 'bear',     hint: 'ä = open eh' },
-      { de: 'schön',   en: 'beautiful',hint: 'ö = round lips, say er' },
-      { de: 'müde',    en: 'tired',    hint: 'ü = lips for oo, say ee' },
-      { de: 'Wochenende',     en: 'weekend',     hint: 'Wo-chen-en-de' },
-      { de: 'Hausaufgabe',    en: 'homework',    hint: 'Haus-auf-ga-be' },
-      { de: 'Softwareentwicklung', en: 'software development', hint: 'Soft-ware-ent-wick-lung' },
+      // V sounds like F
+      { de: 'Vater',   en: 'father',   hint: 'V → F   say "FAH-tuh"' },
+      { de: 'Vogel',   en: 'bird',     hint: 'V → F   say "FOH-gel"' },
+      { de: 'viel',    en: 'much / a lot', hint: 'V → F   say "feel"' },
+      // W sounds like soft V
+      { de: 'Wasser',  en: 'water',    hint: 'W → soft V   say "VAH-sser"' },
+      { de: 'Wein',    en: 'wine',     hint: 'W → soft V   say "vine" (rhymes with "shine")' },
+      // Z sounds like ts
+      { de: 'Zeit',    en: 'time',     hint: 'Z → ts   say "tsait" (rhymes with "kite")' },
+      { de: 'Zoo',     en: 'zoo',      hint: 'Z → ts   say "tso"' },
+      // J sounds like Y
+      { de: 'ja',      en: 'yes',      hint: 'J → Y   say "ya"' },
+      { de: 'Jahr',    en: 'year',     hint: 'J → Y   say "yar"' },
+      { de: 'Junge',   en: 'boy',      hint: 'J → Y   say "YOONG-uh"' },
+      // Hard ch — back of throat
+      { de: 'Bach',    en: 'stream',   hint: 'hard ch — air from the back of the throat' },
+      { de: 'kochen',  en: 'to cook',  hint: 'hard ch (after a / o / u): "KOKH-en"' },
+      { de: 'machen',  en: 'to do',    hint: 'hard ch: "MAKH-en"' },
+      // Soft ch — front of mouth
+      { de: 'ich',     en: 'I',        hint: 'soft ch (after i / e / consonants): "ikh"' },
+      { de: 'nicht',   en: 'not',      hint: 'soft ch: "nikht"' },
+      { de: 'Milch',   en: 'milk',     hint: 'soft ch: "milkh"' },
+      // sch = English sh
+      { de: 'Schule',  en: 'school',   hint: 'sch = English "sh": "SHOO-luh"' },
+      // Umlauts
+      { de: 'Bär',     en: 'bear',     hint: 'ä = open "eh" (like English "bed", lips wider)' },
+      { de: 'schön',   en: 'beautiful',hint: 'ö = lips for "oh", tongue says "eh"' },
+      { de: 'Öl',      en: 'oil',      hint: 'ö stand-alone: "url" (lips rounded, no R sound)' },
+      { de: 'müde',    en: 'tired',    hint: 'ü = lips for "oo", tongue says "ee": "MUE-duh"' },
+      // Compound words
+      { de: 'Wochenende',     en: 'weekend',     hint: 'chunk it: Wo-chen-en-de' },
+      { de: 'Hausaufgabe',    en: 'homework',    hint: 'chunk it: Haus-auf-ga-be' },
+      { de: 'Softwareentwicklung', en: 'software development', hint: 'chunk it: Soft-ware-ent-wick-lung' },
     ],
     grammar: [
       { rule: 'V → F', body: 'Vater, Vogel, viel — the V is pronounced like English F.' },
@@ -155,6 +171,14 @@ export const days = [
           '8. Listen for ö in: schön, hören, möchte, Brötchen, Öl.',
       },
       { rule: 'Umlauts ä ö ü', body: 'On a US keyboard you may type ae, oe, ue.' },
+      { rule: 'English loan words keep English sounds',
+        body:
+          'Some everyday German words are imported from English and KEEP their English pronunciation:\n' +
+          '• Software, Sport, Service — start with English "S" (not the German Z-sound).\n' +
+          '• Computer — sounds like English "computer".\n' +
+          '• Job, Manager — pronounced English-style.\n' +
+          'When you see one of these inside a compound (e.g. Softwareentwicklung), pronounce the loan part as English, the rest as German.',
+      },
       { rule: 'Long compound words — break them up',
         body:
           'German loves to glue nouns together. Don\'t try to say the whole word at once — chunk it:\n' +
@@ -167,18 +191,34 @@ export const days = [
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
+      // Letter → sound pairing — locks in the four core swaps
+      {
+        type: 'match',
+        pairs: [
+          { de: 'V',  en: 'sounds like English F' },
+          { de: 'W',  en: 'sounds like English soft V' },
+          { de: 'Z',  en: 'sounds like English "ts"' },
+          { de: 'J',  en: 'sounds like English Y' },
+        ],
+      },
       {
         type: 'multiple-choice',
         q: 'Which letter is pronounced like English "Y"?',
         options: ['V', 'J', 'Z', 'W'],
         answer: 'J',
-        explain: '"ja" is said "ya".',
+        explain: '"ja" is said "ya". "Jahr" → "yar". "Junge" → "YOONG-uh".',
       },
       {
         type: 'multiple-choice',
         q: 'How is "Zeit" pronounced?',
-        options: ['Zait (English Z)', 'Tsait', 'Sait', 'Yait'],
-        answer: 'Tsait',
+        options: [
+          'Like English "zeyt" (English Z sound)',
+          'Like English "tsayt" — rhymes with "kite", but with a "ts" at the start',
+          'Like English "sayt" (English S sound)',
+          'Like English "yayt" (Y sound)',
+        ],
+        answer: 'Like English "tsayt" — rhymes with "kite", but with a "ts" at the start',
+        explain: 'Z always = ts. The diphthong "ei" sounds like the English word "eye".',
       },
       {
         type: 'match',
@@ -204,6 +244,20 @@ export const days = [
         explain: 'After i / e / ä / ö / ü / consonants, ch is soft: ich, Milch, nicht, möchte.',
       },
       {
+        type: 'multiple-choice',
+        q: 'Which letter combination does NOT exist in standard German?',
+        options: ['sch', 'ch', 'tsch', 'dsch'],
+        answer: 'dsch',
+        explain: 'sch = English "sh". ch = the air sound. tsch = English "ch" (Deutsch). "dsch" is not a standard German cluster.',
+      },
+      {
+        type: 'multiple-choice',
+        q: 'On a US keyboard, how can you type ä, ö, ü?',
+        options: ['ah / oh / uh', 'ae / oe / ue', 'a- / o- / u-', "a' / o' / u'"],
+        answer: 'ae / oe / ue',
+        explain: 'Mädchen ↔ Maedchen, schön ↔ schoen, müde ↔ muede. Recognised by all Germans.',
+      },
+      {
         type: 'dialogue',
         lines: [
           { speaker: 'Hard CH text', de: 'Ich bin im Restaurant und der Koch kocht heute frisch.', en: 'I am at the restaurant and the cook is cooking fresh today.' },
@@ -223,11 +277,37 @@ export const days = [
           { speaker: 'ö-text',  de: 'Der Verkäufer ist höflich und ich sage: „Danke schön!"', en: 'The salesperson is polite and I say: "Thank you very much!"' },
         ],
       },
+      // Comprehension on the ö passage — proves you decoded it, not just listened to it
+      {
+        type: 'multiple-choice',
+        q: 'In the ö-text: what does the speaker buy?',
+        options: ['a coffee and milk', 'a bread roll and an oil', 'a book and a song', 'a cake and a tea'],
+        answer: 'a bread roll and an oil',
+        explain: '"Ich kaufe ein Brötchen und ein Öl." — Brötchen = bread roll, Öl = oil.',
+      },
+      {
+        type: 'multiple-choice',
+        q: 'How many ö-sounds appear in: „Der Verkäufer ist höflich"?',
+        options: ['0', '1', '2', '3'],
+        answer: '2',
+        explain: 'Verkäufer (äu — diphthong, sounds like English "oy") · höflich (ö — front-rounded vowel). Two umlaut sounds, but only one is the pure ö.',
+      },
     ],
     quiz: [
       { type: 'multiple-choice', q: 'German "W" sounds most like…', options: ['English W', 'English soft V', 'F', 'Silent'], answer: 'English soft V' },
+      { type: 'multiple-choice', q: 'German "V" sounds most like…', options: ['English V', 'English F', 'English W', 'Silent'], answer: 'English F' },
       { type: 'multiple-choice', q: 'Pick the correct umlaut spelling for "schoen".', options: ['schön','schon','schoen','schøn'], answer: 'schön' },
       { type: 'multiple-choice', q: 'Break "Wochenende" into chunks.', options: ['Wo-che-nen-de', 'Wo-chen-en-de', 'Woc-hen-ende', 'Wochen-en-de'], answer: 'Wo-chen-en-de' },
+      { type: 'multiple-choice', q: '"Junge" is pronounced…', options: ['"JUNG-eh" (English J)', '"YOONG-uh" (Y sound)', '"DZHOONG-uh" (English J)', '"GOONG-eh" (G sound)'], answer: '"YOONG-uh" (Y sound)' },
+      { type: 'multiple-choice', q: 'Why does "Software" in "Softwareentwicklung" start with an English S, not the German Z-sound?',
+        options: [
+          'It is irregular.',
+          'It is a loan word from English — keeps its English pronunciation.',
+          'Because of the silent T after S.',
+          'No reason — both pronunciations are correct.',
+        ],
+        answer: 'It is a loan word from English — keeps its English pronunciation.',
+      },
     ],
   },
 

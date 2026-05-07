@@ -11,10 +11,26 @@
  * in sync.
  */
 
-export const VERSION = '3.2.0';
+export const VERSION = '3.2.1';
 export const RELEASE_DATE = '2026-05-06';
 
 export const RELEASES = [
+  {
+    version: '3.2.1',
+    date: '2026-05-06',
+    type: 'improvement',
+    title: 'Day 1 review — vocab, hints, exercises tightened',
+    notes: [
+      'Reviewed Day 1 (Sounds of German). Added 6 missing vocabulary items mentioned in the grammar rules but absent from the list: Vogel · viel · Wein · Zoo · Jahr · Junge · Öl. Reordered the vocab to group items by rule (V→F · W→V · Z→ts · J→Y · hard ch · soft ch · sch · umlauts · compound).',
+      'Rewrote every hint to include a concrete English-phonetic cue (e.g. "FAH-tuh", "VAH-sser", "tsait — rhymes with kite") so the hint text plus the auto-generated [Pron] guide reinforce each other.',
+      'Replaced the misleading MC option "Tsait" with a fuller description: "Like English tsayt — rhymes with kite, but with a ts at the start". Now consistent with the in-app phonetic notation.',
+      'New exercises: a "letter → sound" match (V/W/Z/J), a non-existent-cluster MCQ ("dsch"), an umlaut-typing MCQ (ae/oe/ue), and two comprehension MCQs on the ö reading text.',
+      'New grammar rule callout: "English loan words keep English sounds" — explains why Software / Sport / Computer don\'t use the German Z-sound.',
+      'Quiz expanded from 3 → 6 items: added V→F, J→Y test, and a loan-word reasoning question.',
+      'Improved the "ö" hint: "lips for oh, tongue says eh" is less ambiguous than the old "round lips, say er".',
+      'Known limitation flagged for follow-up: the transliterator drops silent-h after a vowel (e.g. zehn → [tsen] instead of [tsayn]). Doesn\'t affect Day 1 vocab but is on the list to fix in a future patch.',
+    ],
+  },
   {
     version: '3.2.0',
     date: '2026-05-06',
