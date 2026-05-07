@@ -11,10 +11,27 @@
  * in sync.
  */
 
-export const VERSION = '3.2.2';
+export const VERSION = '3.2.3';
 export const RELEASE_DATE = '2026-05-07';
 
 export const RELEASES = [
+  {
+    version: '3.2.3',
+    date: '2026-05-07',
+    type: 'improvement',
+    title: 'Day 2 review + transliterator fixes (chs → ks, silent-h vowel length)',
+    notes: [
+      'Reviewed Week 1 · Day 2 (Numbers 0-29) end-to-end, mirroring the Day 1 polish from v3.2.1.',
+      'Vocabulary expanded 24 → 30 items: completed the 21-29 range (was missing 23, 24, 26, 27, 28). Every number now carries a phonetic hint with the right English-friendly cue (e.g. "sechs → zeks", "zehn → tsayn", "zwölf → tsvurlf").',
+      'Three new grammar callouts: the three building blocks (0-12 unique · 13-19 unit+zehn · 20-29 flip), pronunciation traps in numbers (chs cluster, silent-h length, -ig endings), and "where you\'ll use these" (age, phone numbers, time).',
+      'Exercises expanded from 4 → 11: added pronunciation MCQs for the sechs and zehn traps, spelling-trap MCQs for 16 / 17 / 26 / 27 (where the rule flips), 5 fill-blanks for real-world contexts (age, week, year, classroom), and a 5-pair match.',
+      'Quiz expanded 2 → 7 items.',
+      'TRANSLITERATOR FIX (affects all days): "chs" inside a word now correctly renders as [ks], so sechs → zeks (was zekhs), wachsen → vaksen, nächste → nehkstuh.',
+      'TRANSLITERATOR FIX (affects all days): silent h after a vowel now expands to a long-vowel digraph: eh → ay, ih → ee, uh → oo. So zehn → tsayn (was tsen), sehen → zayen (was zeen), gehen → gayen (was geen), Uhr → Oor, Schuh → Shoo.',
+      'PRONUNCIATION_KEY legend updated with the new "ay" and "oo" entries.',
+      'Verified Day 1 vocab and Days 5/6/7 aux verbs unchanged or improved. No regressions.',
+    ],
+  },
   {
     version: '3.2.2',
     date: '2026-05-07',

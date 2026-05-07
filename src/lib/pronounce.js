@@ -22,17 +22,27 @@ function transliterate(word) {
   const wasCap = /^[A-ZÄÖÜ]/.test(word);
   let s = word.toLowerCase();
 
-  // 1. Multi-char clusters first (longest match wins)
+  // 1. Multi-char clusters first (longest match wins).
   s = s.replace(/sch/g, 'sh');
   s = s.replace(/^sp/, 'shp');
   s = s.replace(/^st/, 'sht');
 
+  // 1a. "chs" is pronounced like English [ks] — sechs, wachsen, nächste.
+  //     Must run BEFORE the ch→kh rule so the cluster is captured intact.
+  s = s.replace(/chs/g, 'ks');
+
   // 2. ch → kh (breathy)
   s = s.replace(/ch/g, 'kh');
 
-  // 3. Silent h that lengthens the preceding vowel — drop it BEFORE we
-  //    introduce new "h"s for umlauts/diphthongs (eh, oy, etc.)
-  s = s.replace(/([aeiou])h/g, '$1');
+  // 3. Silent h after a vowel lengthens that vowel — expand to a digraph
+  //    so the English reader gets the right vowel quality.
+  //      eh → ay   (zehn → tsayn, sehen → zayen, mehr → mayr)
+  //      ih → ee   (ihn → een, ihm → eem)
+  //      uh → oo   (Uhr → oor, Schuh → shoo)
+  //      ah → a    (Jahr → yar — German long /aː/ already reads right)
+  //      oh → oh   (Sohn → zohn — English "oh" works)
+  const SILENT_H_MAP = { a: 'a', e: 'ay', i: 'ee', o: 'oh', u: 'oo' };
+  s = s.replace(/([aeiou])h/g, (_, v) => SILENT_H_MAP[v]);
 
   // 4. Final unstressed -er / -e → -uh. Run BEFORE diphthong expansion so
   //    that "ei → eye" doesn't create a phantom trailing "e".
@@ -82,9 +92,11 @@ export const PRONUNCIATION_KEY = [
   ['sh',   'English sh, as in "ship"'],
   ['ts',   'ts as in "cats"'],
   ['eye',  'long i, as in "eye"'],
+  ['ay',   'long ay, as in "say" (German long e — zehn, sehen)'],
   ['oy',   'oy as in "boy"'],
   ['ow',   'ow as in "cow"'],
-  ['ee',   'long e, as in "see"'],
+  ['ee',   'long ee, as in "see" (also for ie + long i)'],
+  ['oo',   'long oo, as in "soon" (German long u — Uhr, Schuh)'],
   ['eh',   'open eh, as in "bed" (ä)'],
   ['ur',   'round lips, say "er" (ö)'],
   ['ue',   'lips for "oo", say "ee" (ü)'],

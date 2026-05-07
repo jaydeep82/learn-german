@@ -316,35 +316,142 @@ export const days = [
     title: 'Numbers 0–29',
     titleDe: 'Zahlen 0–29',
     emoji: '🔢',
-    objective: 'Count from zero to twenty-nine.',
-    intro: 'After 20, German flips the order: 21 is "ein-und-zwanzig" — literally "one-and-twenty".',
+    objective: 'Count from zero to twenty-nine — and pronounce the tricky ones (sechs, sieben, zwölf) right.',
+    intro: 'Numbers are everywhere — age, phone, prices, times. German has three patterns: 0-12 are unique words, 13-19 is "unit + zehn", and 21-29 FLIPS to "unit-and-twenty" (einundzwanzig = "one-and-twenty").',
     vocabulary: [
-      { de: 'null', en: '0' }, { de: 'eins', en: '1' }, { de: 'zwei', en: '2' },
-      { de: 'drei', en: '3' }, { de: 'vier', en: '4' }, { de: 'fünf', en: '5' },
-      { de: 'sechs', en: '6' }, { de: 'sieben', en: '7' }, { de: 'acht', en: '8' },
-      { de: 'neun', en: '9' }, { de: 'zehn', en: '10' }, { de: 'elf', en: '11' },
-      { de: 'zwölf', en: '12' }, { de: 'dreizehn', en: '13' }, { de: 'vierzehn', en: '14' },
-      { de: 'fünfzehn', en: '15' }, { de: 'sechzehn', en: '16' }, { de: 'siebzehn', en: '17' },
-      { de: 'achtzehn', en: '18' }, { de: 'neunzehn', en: '19' }, { de: 'zwanzig', en: '20' },
-      { de: 'einundzwanzig', en: '21' }, { de: 'zweiundzwanzig', en: '22' },
-      { de: 'fünfundzwanzig', en: '25' }, { de: 'neunundzwanzig', en: '29' },
+      // 0-12 — unique words, all to be memorised
+      { de: 'null',   en: '0',  hint: 'simple "nool"' },
+      { de: 'eins',   en: '1',  hint: 'rhymes with English "rhinos" (start)' },
+      { de: 'zwei',   en: '2',  hint: 'tsv-eye — kids often say "zwo" on the phone to avoid confusion with drei' },
+      { de: 'drei',   en: '3',  hint: 'rhymes with English "fly"' },
+      { de: 'vier',   en: '4',  hint: 'V→F: "feer", same as English "fear"' },
+      { de: 'fünf',   en: '5',  hint: 'ü = lips for oo, say ee → "fuenf"' },
+      { de: 'sechs',  en: '6',  hint: '⚠ "chs" sounds like English [ks]: "zeks" (not "zekh-s")' },
+      { de: 'sieben', en: '7',  hint: '"ZEE-ben" — long e, soft b' },
+      { de: 'acht',   en: '8',  hint: 'hard ch: "akht"' },
+      { de: 'neun',   en: '9',  hint: 'eu = oy: "noyn"' },
+      { de: 'zehn',   en: '10', hint: 'silent h = long e: "tsayn"' },
+      { de: 'elf',    en: '11', hint: 'just "elf" — same as the English word' },
+      { de: 'zwölf',  en: '12', hint: 'ö = lips for oh, tongue says eh: "tsvurlf"' },
+      // 13-19 — unit + zehn
+      { de: 'dreizehn',  en: '13', hint: 'drei + zehn: "DRYE-tsayn"' },
+      { de: 'vierzehn',  en: '14', hint: 'vier + zehn: "FEER-tsayn"' },
+      { de: 'fünfzehn',  en: '15', hint: 'fünf + zehn: "FUENF-tsayn"' },
+      { de: 'sechzehn',  en: '16', hint: '⚠ NO -s- (not sechszehn): "ZEKH-tsayn"' },
+      { de: 'siebzehn',  en: '17', hint: '⚠ NO -en- (not siebenzehn): "ZEEP-tsayn"' },
+      { de: 'achtzehn',  en: '18', hint: 'acht + zehn: "AKH-tsayn"' },
+      { de: 'neunzehn',  en: '19', hint: 'neun + zehn: "NOYN-tsayn"' },
+      // 20 + flips
+      { de: 'zwanzig',           en: '20', hint: 'final -ig sounds like soft "ich" / "ik": "TSVAN-tsikh"' },
+      { de: 'einundzwanzig',     en: '21', hint: '⚠ EIN- not eins-: drops the s before "und"' },
+      { de: 'zweiundzwanzig',    en: '22', hint: 'two-and-twenty' },
+      { de: 'dreiundzwanzig',    en: '23', hint: 'three-and-twenty' },
+      { de: 'vierundzwanzig',    en: '24', hint: 'four-and-twenty' },
+      { de: 'fünfundzwanzig',    en: '25', hint: 'five-and-twenty' },
+      { de: 'sechsundzwanzig',   en: '26', hint: 'six-and-twenty (full sechs — NOT sechundzwanzig)' },
+      { de: 'siebenundzwanzig',  en: '27', hint: 'seven-and-twenty (full sieben — NOT siebundzwanzig)' },
+      { de: 'achtundzwanzig',    en: '28', hint: 'eight-and-twenty' },
+      { de: 'neunundzwanzig',    en: '29', hint: 'nine-and-twenty' },
     ],
     grammar: [
-      { rule: 'The "and-twenty" pattern', body: 'For 21–29 use [unit] + und + zwanzig. Note: 21 drops the "s" → einundzwanzig (not einsundzwanzig).' },
-      { rule: 'Spelling oddities', body: 'sechzehn (no -s-), siebzehn (no -en-), dreißig (with ß) at 30.' },
+      { rule: 'Three building blocks for any 0-29 number',
+        body:
+          '• 0-12   — unique words, just memorise them.\n' +
+          '• 13-19  — UNIT + zehn, written as ONE word: drei-zehn, vier-zehn, fünf-zehn …\n' +
+          '• 20     — zwanzig, then 21-29 FLIP: UNIT + und + zwanzig (einundzwanzig).\n' +
+          '21 drops the -s of "eins" → ein-und-zwanzig (not eins-und-zwanzig).',
+      },
+      { rule: 'Pronunciation traps in numbers',
+        body:
+          '• sechs (6) — the "chs" cluster sounds like English [ks]. Say "zeks", NOT "zekh-s".\n' +
+          '• sechzehn (16) — drops the -s- before zehn: sech-zehn (zekh-tsayn).\n' +
+          '• siebzehn (17) — drops the -en- of sieben before zehn: sieb-zehn (zeep-tsayn).\n' +
+          '  But sechsundzwanzig (26) and siebenundzwanzig (27) keep the FULL form (sechs-, sieben-).\n' +
+          '• zehn (10) — silent h lengthens the e: "tsayn", not "tsen".\n' +
+          '• -ig endings — zwanzig is pronounced "TSVAN-tsikh" in northern German, "TSVAN-tsig" in the south. Both fine.',
+      },
+      { rule: 'Where you\'ll use these every day',
+        body:
+          '• Age: "Ich bin 25 Jahre alt." → "Ich bin fünfundzwanzig Jahre alt."\n' +
+          '• Phone numbers: spoken as pairs — 0151 → null-eins-fünf-eins.\n' +
+          '• Prices and time come in Days 18-19; today\'s numbers are the foundation.',
+      },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'multiple-choice', q: 'How do you say 21?', options: ['zwanzigeins','einundzwanzig','einszwanzig','zwanzigundeins'], answer: 'einundzwanzig' },
-      { type: 'fill-blank', sentence: 'Ich bin __ Jahre alt. (25)', answer: 'fünfundzwanzig' },
-      { type: 'match', pairs: [
-        { de: 'sieben', en: '7' }, { de: 'zwölf', en: '12' },
-        { de: 'achtzehn', en: '18' }, { de: 'zweiundzwanzig', en: '22' },
-      ]},
+      // Pronunciation drills — specifically targeting the traps
+      {
+        type: 'multiple-choice',
+        q: 'How is "sechs" (6) pronounced?',
+        options: [
+          'Zekh-s (kh + s separately)',
+          'Zeks — "chs" sounds like English [ks]',
+          'Sex (English S sound)',
+          'Sekhs (English S + kh)',
+        ],
+        answer: 'Zeks — "chs" sounds like English [ks]',
+        explain: 'In German, "chs" inside a word merges to [ks]. Sechs, wachsen, nächste all use this rule.',
+      },
+      {
+        type: 'multiple-choice',
+        q: 'How is "zehn" (10) pronounced?',
+        options: [
+          '"Tsen" — short e (rhymes with "den")',
+          '"Tsayn" — long e (rhymes with "main")',
+          '"Zayn" — English Z',
+          '"Tsen-h" — pronounce the h',
+        ],
+        answer: '"Tsayn" — long e (rhymes with "main")',
+        explain: 'A silent h after a vowel makes that vowel LONG. zehn = "tsayn".',
+      },
+      {
+        type: 'multiple-choice',
+        q: 'How do you say 21?',
+        options: ['zwanzigeins','einsundzwanzig','einundzwanzig','zwanzigundeins'],
+        answer: 'einundzwanzig',
+        explain: 'Unit-und-tens, AND drop the -s of eins → ein-und-zwanzig.',
+      },
+      // Spelling traps
+      {
+        type: 'multiple-choice',
+        q: 'Pick the correct spelling of 16.',
+        options: ['sechszehn', 'sechzehn', 'sechs-zehn', 'sechtzehn'],
+        answer: 'sechzehn',
+        explain: '16 drops the -s of sechs before zehn. But 26 (sechsundzwanzig) keeps the full sechs.',
+      },
+      {
+        type: 'multiple-choice',
+        q: 'Pick the correct spelling of 17.',
+        options: ['siebenzehn', 'siebzehn', 'sieb-zehn', 'siebnzehn'],
+        answer: 'siebzehn',
+        explain: '17 drops the -en of sieben. But 27 (siebenundzwanzig) keeps it.',
+      },
+      // Real-world fill-blanks
+      { type: 'fill-blank', sentence: 'Ich bin __ Jahre alt. (25)',                     answer: 'fünfundzwanzig' },
+      { type: 'fill-blank', sentence: 'Mein Bruder ist __ Jahre alt. (16)',              answer: 'sechzehn' },
+      { type: 'fill-blank', sentence: 'Die Klasse hat __ Studenten. (29)',                answer: 'neunundzwanzig' },
+      { type: 'fill-blank', sentence: 'Eine Woche hat __ Tage. (7)',                      answer: 'sieben' },
+      { type: 'fill-blank', sentence: 'Ein Jahr hat __ Monate. (12)',                     answer: 'zwölf' },
+      // Match
+      {
+        type: 'match',
+        pairs: [
+          { de: 'sieben',          en: '7' },
+          { de: 'zwölf',           en: '12' },
+          { de: 'achtzehn',        en: '18' },
+          { de: 'zweiundzwanzig',  en: '22' },
+          { de: 'sechsundzwanzig', en: '26' },
+        ],
+      },
     ],
     quiz: [
       { type: 'multiple-choice', q: 'Which number is "fünfzehn"?', options: ['5','15','50','55'], answer: '15' },
+      { type: 'multiple-choice', q: 'Which number is "neunundzwanzig"?', options: ['9','19','29','99'], answer: '29' },
+      { type: 'multiple-choice', q: 'Which spelling is correct for 16?', options: ['sechszehn','sechzehn','sechtzehn','sex-zehn'], answer: 'sechzehn' },
+      { type: 'multiple-choice', q: 'How does "sechs" sound?', options: ['ZEX (chs = ks)','ZEKH-S','SEX','SEKH-S'], answer: 'ZEX (chs = ks)' },
       { type: 'fill-blank', sentence: '13 = __', answer: 'dreizehn' },
+      { type: 'fill-blank', sentence: '21 = __', answer: 'einundzwanzig' },
+      { type: 'fill-blank', sentence: '"My phone number ends with 27." = … endet mit __ .', answer: 'siebenundzwanzig' },
     ],
   },
 
