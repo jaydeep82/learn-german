@@ -11,10 +11,24 @@
  * in sync.
  */
 
-export const VERSION = '3.2.3';
+export const VERSION = '3.2.4';
 export const RELEASE_DATE = '2026-05-07';
 
 export const RELEASES = [
+  {
+    version: '3.2.4',
+    date: '2026-05-07',
+    type: 'improvement',
+    title: 'Day 3 review — pronouns, the three "sies" decoded, register guide',
+    notes: [
+      'Reviewed Week 1 · Day 3 (Personal pronouns) end-to-end, mirroring the Day 1 / Day 2 polish.',
+      'Vocabulary expanded 8 → 9 entries: replaced the shared PRONOUNS reference with a richer day-local list. Each pronoun gets a phonetic hint ("ikh", "doo", "ehr", "zee", "ess", "veer", "eer"). Added a separate "sie (plural — they)" entry to break the singular / plural / formal ambiguity.',
+      'Five new grammar callouts (was 3): the 6 grammatical persons table · ⚠ THE THREE "SIES" decoder (the most-asked Week 1 question) · du-vs-Sie register guide (with concrete contexts) · article-driven pronoun rule including the das-Mädchen=es trap · capitalised Sie / Ihr.',
+      'Exercises expanded 3 → 16 items: 4 du-vs-Sie scenario MCQs (manager, niece, friends, stranger), 4 article-to-pronoun MCQs including the Mädchen trap, 3 disambiguation MCQs for the three sies, 4 fill-blank pronoun replacements, and a 6-pair English↔German match.',
+      'Quiz expanded 2 → 7 items: register checks, formal-you spelling, article-to-pronoun, basic mappings.',
+      'No transliterator changes this release.',
+    ],
+  },
   {
     version: '3.2.3',
     date: '2026-05-07',

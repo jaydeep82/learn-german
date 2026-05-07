@@ -460,26 +460,121 @@ export const days = [
     title: 'Personal pronouns',
     titleDe: 'Personalpronomen',
     emoji: '👤',
-    objective: 'Use the six person pronouns to refer to yourself and others.',
-    intro: 'German has formal "Sie" for strangers and informal "du" for friends. Children always get "du".',
-    vocabulary: PRONOUNS,
+    objective: 'Use the eight personal pronouns confidently — and decode the THREE different "sie" / "Sie" forms.',
+    intro: 'German has more pronouns than English: TWO ways to say "you" (informal du / formal Sie), and the same word "sie" means three different things (she / they / formal you) — the verb form tells them apart. Master these eight today and every sentence in the rest of Week 1 falls into place.',
+    vocabulary: [
+      // Singular
+      { de: 'ich',  en: 'I',                  hint: '"ikh" — soft ch (front of mouth)' },
+      { de: 'du',   en: 'you (1 friend)',     hint: '"doo" — informal singular' },
+      { de: 'er',   en: 'he / it (m)',        hint: '"ehr" (rhymes with "air")' },
+      { de: 'sie',  en: 'she / it (f)',       hint: '"zee" — short, lowercase' },
+      { de: 'es',   en: 'it (n)',             hint: '"ess" — short, like English' },
+      // Plural
+      { de: 'wir',  en: 'we',                  hint: '"veer" — w → soft V, long i' },
+      { de: 'ihr',  en: 'you all (group of friends)', hint: '"eer" — silent h, long e' },
+      { de: 'sie',  en: 'they  (plural — same spelling as "she")', hint: '"zee" — verb form distinguishes from singular sie' },
+      // Formal
+      { de: 'Sie',  en: 'you (formal — singular OR plural)', hint: '"Zee" — ALWAYS capital S, even mid-sentence' },
+    ],
     grammar: [
-      { rule: 'Singular vs plural', body: 'ich/du/er/sie/es are singular. wir/ihr/sie are plural.' },
-      { rule: 'Capitalised Sie', body: 'Formal "Sie" is always capitalised — even mid-sentence.' },
-      { rule: 'er/sie/es match the article', body: 'der Laptop → er, die Tasche → sie, das Handy → es.' },
+      { rule: 'The 6 grammatical persons',
+        body:
+          'Three singular + three plural — every verb conjugates across all six:\n' +
+          '• 1st singular   ich       I\n' +
+          '• 2nd singular   du        you (one friend)\n' +
+          '• 3rd singular   er/sie/es he / she / it\n' +
+          '• 1st plural     wir       we\n' +
+          '• 2nd plural     ihr       you all (group of friends)\n' +
+          '• 3rd plural     sie       they\n' +
+          'Plus the formal "Sie" — always capital, used as a singular OR plural "you" with the same conjugation as 3rd plural.',
+      },
+      { rule: '⚠ The three "sies" — verb form decodes them',
+        body:
+          'Three different words share the spelling sie / Sie. The verb form tells you which:\n' +
+          '• "Sie ist Lehrerin."          ist (singular)  →  she\n' +
+          '• "Sie sind Kollegen."          sind (plural)  →  they  (or formal you — context decides)\n' +
+          '• "Sie haben einen Termin."     haben (plural) →  formal you  (or they — context decides)\n' +
+          'Capital "S" only ever marks the formal you; lower-case "sie" is she or they.',
+      },
+      { rule: 'du vs Sie — choosing the register',
+        body:
+          'Use du with: family, close friends, children, animals, God in prayer, between students or young colleagues, on most social media.\n' +
+          'Use Sie with: strangers, customer service, doctors, professors (until invited otherwise), in formal business settings.\n' +
+          'Switching from Sie to du is a small ceremony — let the older / more senior person offer it first ("Wir können uns duzen").',
+      },
+      { rule: 'er / sie / es match the noun\'s ARTICLE — not its meaning',
+        body:
+          'Replace any noun with its pronoun by looking at the article, NOT what the thing is in real life:\n' +
+          '• der Laptop → er\n' +
+          '• die Tasche → sie    (a bag, but feminine article → sie)\n' +
+          '• das Mädchen → es    (a girl, but neuter article → es!)\n' +
+          'Plural always becomes sie:  die Bücher → sie.',
+      },
+      { rule: 'Capitalised Sie',
+        body:
+          'Formal "Sie" — and its possessive "Ihr" / "Ihnen" — keep the capital wherever they appear: "Wie heißen Sie?", "Können Sie mir helfen?". Inside a sentence, capital "Sie" is your reliable cue that the speaker means formal "you".',
+      },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'multiple-choice', q: 'You meet your manager for the first time. Use…', options: ['du','ihr','Sie','es'], answer: 'Sie' },
+      // English ↔ German match
+      {
+        type: 'match',
+        pairs: [
+          { de: 'ich', en: 'I' },
+          { de: 'wir', en: 'we' },
+          { de: 'ihr', en: 'you all (group of friends)' },
+          { de: 'Sie', en: 'you (formal)' },
+          { de: 'er',  en: 'he' },
+          { de: 'es',  en: 'it' },
+        ],
+      },
+      // du vs Sie scenarios
+      { type: 'multiple-choice', q: 'You meet your new manager for the first time. Use…',
+        options: ['du','ihr','Sie','es'], answer: 'Sie',
+        explain: 'Workplace + first meeting = formal Sie. Switch to du only if invited.' },
+      { type: 'multiple-choice', q: 'You\'re talking to your six-year-old niece. Use…',
+        options: ['du','ihr','Sie','es'], answer: 'du',
+        explain: 'Children always get du, regardless of how well you know them.' },
+      { type: 'multiple-choice', q: 'You\'re addressing a group of three friends together. Use…',
+        options: ['du','ihr','Sie','sie'], answer: 'ihr',
+        explain: 'ihr = "you all" for a group of friends. Sie would be the formal version (e.g. addressing a board).' },
+      { type: 'multiple-choice', q: 'You ask a stranger on the street for directions. Use…',
+        options: ['du','ihr','Sie','sie'], answer: 'Sie',
+        explain: 'Strangers in public default to formal Sie.' },
+      // Article → pronoun
       { type: 'multiple-choice', q: 'Replace "der Laptop" with a pronoun.', options: ['es','er','sie','das'], answer: 'er' },
-      { type: 'match', pairs: [
-        { de: 'ich', en: 'I' }, { de: 'wir', en: 'we' },
-        { de: 'ihr', en: 'you (plural)' }, { de: 'Sie', en: 'you (formal)' },
-      ]},
+      { type: 'multiple-choice', q: 'Replace "die Tasche" with a pronoun.', options: ['er','sie','es','das'], answer: 'sie' },
+      { type: 'multiple-choice', q: 'Replace "das Mädchen" with a pronoun.', options: ['er','sie','es','sie (plural)'], answer: 'es',
+        explain: 'das Mädchen has a neuter article (because of the -chen suffix), so the pronoun is es — even though a Mädchen is a girl in real life.' },
+      { type: 'multiple-choice', q: 'Replace "die Bücher" (plural) with a pronoun.', options: ['er','sie','es','das'], answer: 'sie',
+        explain: 'Plural always uses sie — same spelling as "she" / "they", different verb forms.' },
+      // The three sies decoder
+      { type: 'multiple-choice', q: 'In "Sie ist Lehrerin", what does sie mean?',
+        options: ['she', 'they', 'formal you', 'it'], answer: 'she',
+        explain: 'Singular verb "ist" → singular subject → she.' },
+      { type: 'multiple-choice', q: 'In "Sie haben einen Termin", what does Sie mean?',
+        options: ['she', 'they (plural)', 'formal you (singular or plural)', 'it'], answer: 'formal you (singular or plural)',
+        explain: 'Capital S + plural verb form "haben" — most likely formal you. Could also be "they"; context decides. Either way, NOT "she".' },
+      { type: 'multiple-choice', q: 'In "sie sind Kollegen", what does sie mean?',
+        options: ['she', 'they (plural)', 'formal you', 'it'], answer: 'they (plural)',
+        explain: 'Lower-case "sie" + plural verb "sind" → they. (Capital "Sie" with the same verb form would be formal you.)' },
+      // Fill-in-blank for replacement
+      { type: 'fill-blank', sentence: 'der Hund → __  (replace with a pronoun)', answer: 'er', hint: 'der → er' },
+      { type: 'fill-blank', sentence: 'die Frau → __  (replace with a pronoun)', answer: 'sie' },
+      { type: 'fill-blank', sentence: 'das Kind → __  (replace with a pronoun)', answer: 'es' },
+      { type: 'fill-blank', sentence: 'die Studenten → __  (replace with a pronoun, plural)', answer: 'sie' },
     ],
     quiz: [
       { type: 'multiple-choice', q: 'Which pronoun is for "she"?', options: ['er','sie','es','ihr'], answer: 'sie' },
+      { type: 'multiple-choice', q: 'Which pronoun is for a group of friends ("you all")?', options: ['Sie','sie','ihr','wir'], answer: 'ihr' },
+      { type: 'multiple-choice', q: 'A bakery customer wants to address the salesperson. Use…',
+        options: ['du','ihr','Sie','sie'], answer: 'Sie' },
+      { type: 'multiple-choice', q: 'Which is the FORMAL "you", written correctly?',
+        options: ['sie','Sie','ihr','Ihr'], answer: 'Sie' },
+      { type: 'multiple-choice', q: '"das Buch" → which pronoun?', options: ['er','sie','es','der'], answer: 'es' },
       { type: 'fill-blank', sentence: '____ sind eine Lehrerin. (formal you)', answer: 'Sie' },
+      { type: 'fill-blank', sentence: '__ ist mein Bruder. (he)', answer: 'Er' },
     ],
   },
 
