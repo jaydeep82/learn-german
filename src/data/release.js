@@ -11,13 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.2.1';
-export const RELEASE_DATE = '2026-05-06';
+export const VERSION = '3.2.2';
+export const RELEASE_DATE = '2026-05-07';
 
 export const RELEASES = [
   {
+    version: '3.2.2',
+    date: '2026-05-07',
+    type: 'fix',
+    title: 'Correct release dates for v3.2.0 and v3.2.1',
+    notes: [
+      'v3.2.0 (Week 3 cheatsheet) and v3.2.1 (Day 1 review) were both committed on 2026-05-07 but recorded as 2026-05-06 in release.js. Verified against git log and corrected.',
+      'No code change beyond the date strings + this entry. Versioning rule going forward: copy the date from git log immediately after committing, not from a stale system reminder.',
+    ],
+  },
+  {
     version: '3.2.1',
-    date: '2026-05-06',
+    date: '2026-05-07',
     type: 'improvement',
     title: 'Day 1 review — vocab, hints, exercises tightened',
     notes: [
@@ -33,7 +43,7 @@ export const RELEASES = [
   },
   {
     version: '3.2.0',
-    date: '2026-05-06',
+    date: '2026-05-07',
     type: 'feature',
     title: 'Week 3 cheatsheet — questions · numbers · prices',
     notes: [
