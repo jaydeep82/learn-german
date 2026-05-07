@@ -113,6 +113,21 @@ export default function Home() {
                 </div>
               </Link>
             )}
+            {w.n === 3 && (
+              <Link
+                to="/cheatsheet/questions-numbers"
+                className="mt-3 block card bg-gradient-to-br from-rose-50 to-amber-50 dark:from-slate-900 dark:to-slate-900 hover:shadow-md transition"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="text-3xl" aria-hidden>❓</div>
+                  <div className="flex-1">
+                    <div className="font-bold">Cheatsheet · questions · numbers · prices</div>
+                    <div className="text-sm text-slate-500">Yes/No vs W-question shapes, all 11 W-words, the wo/wohin/woher trio, the ja/nein/doch trio, big-number recipes, comma-vs-dot.</div>
+                  </div>
+                  <span aria-hidden className="text-xl">→</span>
+                </div>
+              </Link>
+            )}
             {w.n < 8 && (
               <div className="mt-3">
                 <Link to={`/review/week-${w.n}`} className="text-sm font-semibold text-brand-700 dark:text-brand-300 hover:underline">

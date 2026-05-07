@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.1.0';
+export const VERSION = '3.2.0';
 export const RELEASE_DATE = '2026-05-06';
 
 export const RELEASES = [
+  {
+    version: '3.2.0',
+    date: '2026-05-06',
+    type: 'feature',
+    title: 'Week 3 cheatsheet — questions · numbers · prices',
+    notes: [
+      'Third printable cheatsheet at /cheatsheet/questions-numbers, completing the per-week revision pages for Weeks 1, 2 and 3.',
+      'Sections: two question shapes side-by-side (Yes/No verb-first vs W-question W-then-verb) · all 11 W-words with audio + pronunciation + an example each · the wo / wohin / woher trio decoded · ja / nein / doch answer trio · number building blocks (units · teens · tens · big) · 8 worked number recipes from 21 → 1 000 000 · comma-vs-dot decimal trap · 8 price phrases · 5 common mistakes · 7 memory hooks.',
+      'Discoverable from the dashboard (card under the Week 3 day grid) and from the Day 21 result screen on a passing score.',
+      'Cross-reference card on every cheatsheet now includes the third entry.',
+      'Dedicated rose / orange / amber colour palette to distinguish from Week 1 (sky/blue) and Week 2 (emerald/brand).',
+    ],
+  },
   {
     version: '3.1.0',
     date: '2026-05-06',

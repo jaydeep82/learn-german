@@ -9,8 +9,9 @@ import Pron from '../components/Pron.jsx';
 export default function Cheatsheet() {
   const { slug = 'aux-verbs' } = useParams();
 
-  if (slug === 'aux-verbs')      return <AuxVerbsCheatsheet />;
-  if (slug === 'regular-verbs')  return <RegularVerbsCheatsheet />;
+  if (slug === 'aux-verbs')          return <AuxVerbsCheatsheet />;
+  if (slug === 'regular-verbs')      return <RegularVerbsCheatsheet />;
+  if (slug === 'questions-numbers')  return <QuestionsNumbersCheatsheet />;
 
   return (
     <div className="card">
@@ -22,8 +23,9 @@ export default function Cheatsheet() {
 /* Cross-reference card linking to other cheatsheets — shown at the foot of each. */
 function OtherCheatsheets({ except }) {
   const all = [
-    { slug: 'aux-verbs',     emoji: '📋', title: 'Week 1 · sein · haben · werden' },
-    { slug: 'regular-verbs', emoji: '🧰', title: 'Week 2 · regular & separable verbs · TFP order' },
+    { slug: 'aux-verbs',         emoji: '📋', title: 'Week 1 · sein · haben · werden' },
+    { slug: 'regular-verbs',     emoji: '🧰', title: 'Week 2 · regular & separable verbs · TFP order' },
+    { slug: 'questions-numbers', emoji: '❓', title: 'Week 3 · questions · numbers · prices' },
   ];
   const others = all.filter((c) => c.slug !== except);
   if (!others.length) return null;
@@ -658,6 +660,328 @@ function RegularVerbsCheatsheet() {
 
       <footer className="text-center text-sm text-slate-500 pb-4">
         Ready for Week 3? <Link to="/day/15" className="font-semibold text-emerald-700 dark:text-emerald-300 hover:underline">→ Go to Day 15 (Week 1+2 review)</Link>
+      </footer>
+    </div>
+  );
+}
+
+/* ===================== WEEK 3 — questions · numbers · prices ===================== */
+
+const WK3_W_WORDS = [
+  { de: 'wer',       en: 'who',           example: 'Wer ist das?',                  exEn: 'Who is that?' },
+  { de: 'was',       en: 'what',          example: 'Was machst du?',                exEn: 'What are you doing?' },
+  { de: 'wo',        en: 'where (at)',    example: 'Wo wohnst du?',                 exEn: 'Where do you live?' },
+  { de: 'wohin',     en: 'where to',      example: 'Wohin gehst du?',               exEn: 'Where are you going?' },
+  { de: 'woher',     en: 'where from',    example: 'Woher kommst du?',              exEn: 'Where are you from?' },
+  { de: 'wann',      en: 'when',          example: 'Wann kommst du nach Hause?',    exEn: 'When are you coming home?' },
+  { de: 'warum',     en: 'why',           example: 'Warum lernst du Deutsch?',      exEn: 'Why are you learning German?' },
+  { de: 'wie',       en: 'how / what',    example: 'Wie heißt du?',                 exEn: 'What is your name?' },
+  { de: 'welcher',   en: 'which (m)',     example: 'Welcher Tag ist heute?',        exEn: 'Which day is it today?' },
+  { de: 'wie viel',  en: 'how much',      example: 'Wie viel kostet das?',          exEn: 'How much does it cost?' },
+  { de: 'wie viele', en: 'how many',      example: 'Wie viele Bücher hast du?',     exEn: 'How many books do you have?' },
+];
+
+const WK3_NUMBER_BLOCKS = [
+  { range: 'Units 0-12',     items: ['null','eins','zwei','drei','vier','fünf','sechs','sieben','acht','neun','zehn','elf','zwölf'] },
+  { range: 'Teens 13-19',    items: ['dreizehn','vierzehn','fünfzehn','sechzehn','siebzehn','achtzehn','neunzehn'] },
+  { range: 'Tens 20-90',     items: ['zwanzig','dreißig','vierzig','fünfzig','sechzig','siebzig','achtzig','neunzig'] },
+  { range: 'Big',            items: ['hundert','tausend','Million'] },
+];
+
+const WK3_NUMBER_RECIPES = [
+  { num: '21',         spelled: 'einundzwanzig',                                  note: 'unit + UND + ten — drop the "s" of eins' },
+  { num: '47',         spelled: 'siebenundvierzig',                               note: '"seven-and-forty"' },
+  { num: '99',         spelled: 'neunundneunzig',                                 note: '' },
+  { num: '125',        spelled: 'einhundertfünfundzwanzig',                       note: 'hundred + remaining tens, all one word' },
+  { num: '365',        spelled: 'dreihundertfünfundsechzig',                      note: '' },
+  { num: '1 234',      spelled: 'eintausendzweihundertvierunddreißig',            note: 'thousand + hundreds + flipped tens' },
+  { num: '24 499',     spelled: 'vierundzwanzigtausendvierhundertneunundneunzig', note: 'still one word in classical style' },
+  { num: '1 000 000',  spelled: 'eine Million',                                    note: 'feminine — eine Million, capital M' },
+];
+
+const WK3_PRICE_PHRASES = [
+  { de: 'Wie viel kostet das?',         en: 'How much does it cost?' },
+  { de: 'Was kostet das?',              en: 'What does that cost? (informal alt.)' },
+  { de: 'Das kostet 13 Euro.',          en: 'That costs €13.' },
+  { de: 'Das kostet 13 Euro fünfzig.',  en: 'That costs €13.50.' },
+  { de: 'Ich möchte das kaufen.',       en: 'I would like to buy that.' },
+  { de: 'Ich zahle mit Karte.',         en: 'I pay with card.' },
+  { de: 'Das ist (zu) teuer.',          en: 'That is (too) expensive.' },
+  { de: 'Das ist günstig.',             en: 'That is good value.' },
+];
+
+const WK3_COMMON_MISTAKES = [
+  {
+    wrong: '✗ Wo gehst du?',
+    right: '✓ Wohin gehst du?',
+    why:   '"wo" = where AT (no movement). Use "wohin" for where TO (movement).',
+  },
+  {
+    wrong: '✗ Bist du nicht müde? — Ja!',
+    right: '✓ Bist du nicht müde? — Doch! (yes, I am — contradicting)',
+    why:   'After a NEGATIVE question, "doch" is the contradiction. "Ja" would mean "no, you\'re right, I\'m not tired".',
+  },
+  {
+    wrong: '✗ einsundzwanzig',
+    right: '✓ einundzwanzig',
+    why:   '21 drops the -s of "eins" before -und. Same pattern at 31, 41, 51, 61, 71, 81, 91.',
+  },
+  {
+    wrong: '✗ "1.234,56" reads as "one comma two three four"',
+    right: '✓ "1.234,56" = "eintausendzweihundertvierunddreißig Euro sechsundfünfzig"',
+    why:   'In German the DOT is the thousands separator and the COMMA is the decimal point — the opposite of English.',
+  },
+  {
+    wrong: '✗ Du heißt wie?',
+    right: '✓ Wie heißt du?',
+    why:   'A W-question opens with the W-word; the verb stays in slot 2; the subject moves after the verb.',
+  },
+];
+
+function QuestionsNumbersCheatsheet() {
+  return (
+    <div className="space-y-6">
+      <Link to="/" className="text-sm text-slate-500 hover:underline">← Back to dashboard</Link>
+
+      <header className="rounded-3xl bg-gradient-to-br from-rose-600 via-orange-500 to-amber-500 text-white p-6 sm:p-8 shadow-md">
+        <p className="uppercase tracking-widest text-xs opacity-90">Week 3 · Revision</p>
+        <h1 className="text-3xl sm:text-4xl font-extrabold mt-1">
+          Cheatsheet: <span className="font-mono">questions · numbers · prices</span>
+        </h1>
+        <p className="mt-2 max-w-2xl opacity-90">
+          Two ways to ask anything in German, eleven W-words, every number from
+          0 to a million, and the comma-vs-dot rule that catches every English speaker.
+        </p>
+        <div className="mt-4 flex gap-2 flex-wrap">
+          <button onClick={() => window.print()} className="btn bg-white text-rose-700 hover:bg-rose-50">
+            🖨️ Print / Save as PDF
+          </button>
+          <Link to="/day/16" className="btn bg-white/10 text-white hover:bg-white/20">Practise Yes/No</Link>
+          <Link to="/day/17" className="btn bg-white/10 text-white hover:bg-white/20">Practise W-questions</Link>
+          <Link to="/day/18" className="btn bg-white/10 text-white hover:bg-white/20">Practise 100-1000</Link>
+          <Link to="/day/19" className="btn bg-white/10 text-white hover:bg-white/20">Practise prices</Link>
+        </div>
+      </header>
+
+      {/* Two question shapes */}
+      <section aria-labelledby="q-shapes" className="card">
+        <h2 id="q-shapes" className="font-bold mb-3">Two question shapes</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="rounded-xl border border-rose-200 dark:border-rose-700/50 p-4 bg-gradient-to-br from-rose-50 to-white dark:from-slate-900 dark:to-slate-950">
+            <div className="text-xs uppercase tracking-wide text-rose-700 dark:text-rose-300 mb-1">Yes / No question</div>
+            <p className="font-bold">Verb in slot 1.</p>
+            <p className="font-mono mt-2 text-sm">Bist du müde?</p>
+            <p className="font-mono text-sm">Hat sie Hunger?</p>
+            <p className="font-mono text-sm">Wohnst du in Berlin?</p>
+            <p className="text-xs text-slate-500 mt-2">Answer with ja / nein / doch.</p>
+          </div>
+          <div className="rounded-xl border border-amber-200 dark:border-amber-700/50 p-4 bg-gradient-to-br from-amber-50 to-white dark:from-slate-900 dark:to-slate-950">
+            <div className="text-xs uppercase tracking-wide text-amber-700 dark:text-amber-300 mb-1">W-question</div>
+            <p className="font-bold">W-word slot 1 · verb slot 2 · subject slot 3.</p>
+            <p className="font-mono mt-2 text-sm">Wer ist das?</p>
+            <p className="font-mono text-sm">Wo wohnst du?</p>
+            <p className="font-mono text-sm">Warum lernst du Deutsch?</p>
+            <p className="text-xs text-slate-500 mt-2">Answer with full information.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* All 11 W-words */}
+      <section aria-labelledby="w-words" className="card overflow-x-auto">
+        <h2 id="w-words" className="font-bold mb-3">All 11 W-words at a glance</h2>
+        <table className="w-full text-left text-sm border-collapse min-w-[640px]">
+          <thead>
+            <tr className="text-xs uppercase tracking-wide text-slate-500">
+              <th className="py-2 pr-3">W-word</th>
+              <th className="py-2 pr-3">Meaning</th>
+              <th className="py-2">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            {WK3_W_WORDS.map((w) => (
+              <tr key={w.de} className="border-t border-slate-200 dark:border-slate-800 align-top">
+                <td className="py-2 pr-3 whitespace-nowrap">
+                  <div className="font-mono font-bold">{w.de}</div>
+                  <Pron de={w.de} />
+                </td>
+                <td className="py-2 pr-3 text-slate-600 dark:text-slate-300">{w.en}</td>
+                <td className="py-2">
+                  <div className="flex items-start gap-2">
+                    <span className="font-medium flex-1">{w.example}</span>
+                    <AudioButton text={w.example} size="sm" />
+                  </div>
+                  <Pron de={w.example} />
+                  <div className="text-xs text-slate-500">{w.exEn}</div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      {/* wo / wohin / woher trio */}
+      <section aria-labelledby="wo-trio" className="card bg-amber-50 border-amber-200 dark:bg-amber-900/20 dark:border-amber-700">
+        <h2 id="wo-trio" className="font-bold mb-2">⚠ The wo / wohin / woher trio</h2>
+        <table className="w-full text-left text-sm">
+          <thead>
+            <tr className="text-xs uppercase tracking-wide text-slate-500">
+              <th className="py-2 pr-3">Word</th>
+              <th className="py-2 pr-3">Meaning</th>
+              <th className="py-2">When you ask…</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-t border-amber-200 dark:border-amber-800">
+              <td className="py-2 pr-3 font-mono font-bold">wo</td>
+              <td className="py-2 pr-3">where (at)</td>
+              <td className="py-2">no movement: "Wo ist der Bahnhof?"</td>
+            </tr>
+            <tr className="border-t border-amber-200 dark:border-amber-800">
+              <td className="py-2 pr-3 font-mono font-bold">wohin</td>
+              <td className="py-2 pr-3">where TO</td>
+              <td className="py-2">movement away: "Wohin gehst du?"</td>
+            </tr>
+            <tr className="border-t border-amber-200 dark:border-amber-800">
+              <td className="py-2 pr-3 font-mono font-bold">woher</td>
+              <td className="py-2 pr-3">where FROM</td>
+              <td className="py-2">origin: "Woher kommst du?"</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      {/* Yes/No answer trio */}
+      <section aria-labelledby="answer-trio" className="card">
+        <h2 id="answer-trio" className="font-bold mb-2">Answering Yes/No: ja · nein · doch</h2>
+        <ul className="space-y-2 text-sm">
+          <li><strong className="font-mono">ja</strong> — yes, to a positive question. <em>Bist du müde? — Ja!</em></li>
+          <li><strong className="font-mono">nein</strong> — no. <em>Bist du müde? — Nein!</em></li>
+          <li><strong className="font-mono">doch</strong> — YES (contradicting a negative). <em>Bist du nicht müde? — Doch!</em> ("Yes I am — you assumed wrong.")</li>
+        </ul>
+        <div className="mt-3 rounded-xl bg-rose-50 dark:bg-rose-900/20 border border-rose-200 dark:border-rose-700 p-3 text-sm">
+          <strong>Hard fact:</strong> English has no "doch" — speakers usually emphasise "yes I AM!".
+          German has the dedicated word; use it after every negative question.
+        </div>
+      </section>
+
+      {/* Number building blocks */}
+      <section aria-labelledby="num-blocks" className="card">
+        <h2 id="num-blocks" className="font-bold mb-3">Number building blocks</h2>
+        <div className="grid gap-3">
+          {WK3_NUMBER_BLOCKS.map((b) => (
+            <div key={b.range} className="rounded-xl border border-slate-200 dark:border-slate-700 p-3">
+              <div className="text-xs uppercase tracking-wide text-slate-500 mb-2">{b.range}</div>
+              <div className="flex flex-wrap gap-x-3 gap-y-1 font-mono text-sm">
+                {b.items.map((it) => <span key={it}>{it}</span>)}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-3 rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 p-3 text-sm">
+          <strong>The flip rule (21+):</strong> read units BEFORE tens. 21 = <em>einundzwanzig</em> ("one-and-twenty"),
+          76 = <em>sechsundsiebzig</em> ("six-and-seventy"). German keeps this even at 1234.
+        </div>
+      </section>
+
+      {/* Number recipes */}
+      <section aria-labelledby="num-recipes" className="card overflow-x-auto">
+        <h2 id="num-recipes" className="font-bold mb-3">How big numbers are built</h2>
+        <table className="w-full text-left text-sm border-collapse min-w-[640px]">
+          <thead>
+            <tr className="text-xs uppercase tracking-wide text-slate-500">
+              <th className="py-2 pr-3">Number</th>
+              <th className="py-2 pr-3">Spoken</th>
+              <th className="py-2">Pattern note</th>
+            </tr>
+          </thead>
+          <tbody>
+            {WK3_NUMBER_RECIPES.map((n) => (
+              <tr key={n.num} className="border-t border-slate-200 dark:border-slate-800 align-top">
+                <td className="py-2 pr-3 font-mono font-bold tabular-nums whitespace-nowrap">{n.num}</td>
+                <td className="py-2 pr-3">
+                  <div className="flex items-start gap-2">
+                    <span className="font-mono text-sm flex-1">{n.spelled}</span>
+                    <AudioButton text={n.spelled} size="sm" />
+                  </div>
+                  <Pron de={n.spelled} />
+                </td>
+                <td className="py-2 text-xs text-slate-500">{n.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      {/* Comma vs dot */}
+      <section aria-labelledby="comma-dot" className="card bg-amber-50 border-amber-200 dark:bg-amber-900/20 dark:border-amber-700">
+        <h2 id="comma-dot" className="font-bold mb-2">⚠ Comma vs dot — opposite of English</h2>
+        <div className="grid sm:grid-cols-2 gap-3 text-sm">
+          <div className="rounded-xl bg-white dark:bg-slate-900 border border-amber-300 dark:border-amber-700 p-3">
+            <div className="text-xs uppercase tracking-wide text-slate-500">English</div>
+            <p className="font-mono text-base mt-1">1,234.56</p>
+            <p className="text-xs text-slate-500 mt-1">comma = thousands · dot = decimal</p>
+          </div>
+          <div className="rounded-xl bg-white dark:bg-slate-900 border border-amber-300 dark:border-amber-700 p-3">
+            <div className="text-xs uppercase tracking-wide text-slate-500">German</div>
+            <p className="font-mono text-base mt-1">1.234,56</p>
+            <p className="text-xs text-slate-500 mt-1">DOT = thousands · COMMA = decimal</p>
+          </div>
+        </div>
+        <p className="mt-3 text-sm">
+          1.234,56 € reads as <em>"eintausendzweihundertvierunddreißig Euro sechsundfünfzig"</em>
+          (or just <em>"…fünfzig"</em> — Cents are usually dropped in speech).
+        </p>
+      </section>
+
+      {/* Price phrases */}
+      <section aria-labelledby="prices" className="card">
+        <h2 id="prices" className="font-bold mb-3">Asking and giving prices</h2>
+        <ul className="space-y-2 text-sm">
+          {WK3_PRICE_PHRASES.map((p) => (
+            <li key={p.de} className="border-t border-slate-200 dark:border-slate-800 pt-2 first:border-0 first:pt-0">
+              <div className="flex items-start gap-2">
+                <span className="font-semibold flex-1">{p.de}</span>
+                <AudioButton text={p.de} size="sm" />
+              </div>
+              <Pron de={p.de} />
+              <div className="text-xs text-slate-500">{p.en}</div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Common mistakes */}
+      <section aria-labelledby="wk3-mistakes" className="card">
+        <h2 id="wk3-mistakes" className="font-bold mb-3">Common mistakes</h2>
+        <ul className="space-y-3">
+          {WK3_COMMON_MISTAKES.map((m) => (
+            <li key={m.right} className="border-t border-slate-200 dark:border-slate-800 pt-3 first:border-0 first:pt-0">
+              <div className="text-rose-600 dark:text-rose-400 font-mono">{m.wrong}</div>
+              <div className="text-emerald-700 dark:text-emerald-400 font-mono">{m.right}</div>
+              <div className="text-sm text-slate-600 dark:text-slate-300 mt-1">{m.why}</div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Memory hooks */}
+      <section aria-labelledby="wk3-hooks" className="card">
+        <h2 id="wk3-hooks" className="font-bold mb-2">Memory hooks</h2>
+        <ul className="list-disc pl-5 space-y-1 text-slate-700 dark:text-slate-200">
+          <li><strong>Yes/No = verb forward.</strong> The verb walks to slot 1 and asks the question itself — no helper word needed.</li>
+          <li><strong>W-word = priority pass.</strong> Whatever info you want most goes first; the verb still keeps slot 2.</li>
+          <li><strong>wo / wohin / woher</strong> form a movement triangle: AT · TO · FROM. Picture an arrow.</li>
+          <li><strong>doch</strong> only fires after a NEGATIVE question. Default to ja for everything else.</li>
+          <li><strong>Numbers flip in the tens:</strong> 21 = "one and twenty", 99 = "nine and ninety". Units come before tens once you cross 20.</li>
+          <li><strong>Big numbers are LEGO:</strong> hundreds + tens-flip, written as ONE word in classical style. Modern usage allows spaces for readability.</li>
+          <li><strong>Decimal trap:</strong> a German comma is what an American calls a decimal point.</li>
+        </ul>
+      </section>
+
+      <OtherCheatsheets except="questions-numbers" />
+
+      <footer className="text-center text-sm text-slate-500 pb-4">
+        Ready for Week 4? <Link to="/day/22" className="font-semibold text-rose-700 dark:text-rose-300 hover:underline">→ Go to Day 22 (Akkusativ — feminine, neuter, plural)</Link>
       </footer>
     </div>
   );
