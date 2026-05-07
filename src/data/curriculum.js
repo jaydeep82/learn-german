@@ -723,39 +723,132 @@ export const days = [
     title: 'sein — to be',
     titleDe: 'Das Verb „sein"',
     emoji: '🟦',
-    objective: 'Conjugate "sein" and use it in basic sentences.',
-    intro: '"sein" is the most important verb in German. It is irregular — memorise all six forms today.',
+    objective: 'Conjugate "sein" across all six persons and use it for state, profession, place and origin.',
+    intro: '"sein" is the most important German verb. It is fully irregular — none of the six forms look like the infinitive — so memorise all six today. With sein you can already say where you are, how you feel, what you do for a living, and where you come from.',
     vocabulary: [
-      { de: 'müde',     en: 'tired' },     { de: 'hungrig',  en: 'hungry' },
-      { de: 'durstig',  en: 'thirsty' },   { de: 'fertig',   en: 'finished' },
-      { de: 'spät',     en: 'late' },      { de: 'früh',     en: 'early' },
-      { de: 'glücklich',en: 'happy' },     { de: 'krank',    en: 'sick' },
-      { de: 'hier',     en: 'here' },      { de: 'da',       en: 'there' },
-      { de: 'gut',      en: 'good' },      { de: 'bereit',   en: 'ready' },
+      // adjectives describing state
+      { de: 'müde',      en: 'tired',     hint: '"MUE-duh" — long ü, soft d' },
+      { de: 'hungrig',   en: 'hungry',    hint: '"HOON-grikh" — final -ig sounds like soft ich' },
+      { de: 'durstig',   en: 'thirsty',   hint: '"DOOR-stikh"' },
+      { de: 'fertig',    en: 'finished / done', hint: '"FAIR-tikh"' },
+      { de: 'glücklich', en: 'happy',     hint: '"GLUEK-likh" — ü + soft ch' },
+      { de: 'krank',     en: 'sick',      hint: '"krahnk"' },
+      { de: 'bereit',    en: 'ready',     hint: '"buh-RYE-t" — ei = eye' },
+      { de: 'gut',       en: 'good',      hint: '"goot" — long u' },
+      // time markers
+      { de: 'spät',      en: 'late',      hint: '"shpeht" — ä = open eh, st-start = sht' },
+      { de: 'früh',      en: 'early',     hint: '"frue" — silent h lengthens ü' },
+      // place markers
+      { de: 'hier',      en: 'here',      hint: '"heer" — long ee' },
+      { de: 'da',        en: 'there',     hint: '"dah" — short' },
+      // origin / profession (used in patterns below)
+      { de: 'aus Indien', en: 'from India',  hint: 'Ich bin aus Indien.' },
+      { de: 'aus Deutschland', en: 'from Germany', hint: 'aus = from / out of' },
+      { de: 'Lehrer',    en: 'teacher (m)',   hint: 'no article needed: "Ich bin Lehrer."' },
+      { de: 'Lehrerin',  en: 'teacher (f)',   hint: '-in suffix → female form' },
+      { de: 'Softwareentwickler', en: 'software developer', hint: 'compound — break up: Soft-ware-ent-wick-ler' },
     ],
     grammar: [
-      { rule: 'sein conjugation', body: 'ich bin · du bist · er/sie/es ist · wir sind · ihr seid · sie/Sie sind' },
-      { rule: 'Verb in 2nd position', body: 'Main clauses always have the conjugated verb in slot 2: "Ich bin müde."' },
+      { rule: 'sein — full conjugation table',
+        body:
+          'sein is irregular — none of the forms look like the infinitive:\n' +
+          '   ich        bin     I am\n' +
+          '   du         bist    you (1 friend) are\n' +
+          '   er/sie/es  ist     he / she / it is\n' +
+          '   wir        sind    we are\n' +
+          '   ihr        seid    you all (group of friends) are\n' +
+          '   sie / Sie  sind    they / formal you are',
+      },
+      { rule: 'Three patterns you can already build',
+        body:
+          'STATE / FEELING:    Subject + sein + adjective\n' +
+          '  "Ich bin müde."  /  "Du bist krank."  /  "Wir sind bereit."\n' +
+          'PROFESSION:         Subject + sein + Beruf  (no article!)\n' +
+          '  "Ich bin Lehrer."  /  "Sie ist Softwareentwicklerin."\n' +
+          'PLACE / ORIGIN:     Subject + sein + place\n' +
+          '  "Ich bin hier."  /  "Wir sind in Berlin."  /  "Ich bin aus Indien."',
+      },
+      { rule: 'Verb in slot 2',
+        body:
+          'In a main sentence, the conjugated verb ALWAYS sits in position 2.\n' +
+          '  "Ich bin müde."     subject (slot 1) + verb (slot 2) + rest.\n' +
+          '  "Heute bin ich müde."   time (slot 1) + verb (slot 2) + subject moves to slot 3.',
+      },
+      { rule: 'sein vs haben for body states',
+        body:
+          'English uses "to be" for hunger / thirst / fear: "I AM hungry."\n' +
+          'German uses "haben" instead: "Ich HABE Hunger." (literally "I have hunger" — Day 6).\n' +
+          'But for tired / sick / happy / ready, German keeps sein: "Ich BIN müde / krank / glücklich / bereit".',
+      },
     ],
     exercises: [
       richConjEx('sein', 'to be'),
-      { type: 'fill-blank', sentence: 'Ich __ Softwareentwickler.',  answer: 'bin' },
-      { type: 'fill-blank', sentence: 'Du __ Softwareentwickler.',   answer: 'bist' },
-      { type: 'fill-blank', sentence: 'Er __ in einer Firma.',       answer: 'ist' },
-      { type: 'fill-blank', sentence: 'Sie __ in einer Firma.',      answer: 'ist', hint: 'sie = she (singular)' },
-      { type: 'fill-blank', sentence: 'Es __ deutsch.',              answer: 'ist' },
-      { type: 'fill-blank', sentence: 'Wir __ ein Team.',            answer: 'sind' },
-      { type: 'fill-blank', sentence: 'Ihr __ in einer Stadt.',      answer: 'seid' },
-      { type: 'fill-blank', sentence: 'Sie __ Kollegen.',            answer: 'sind', hint: 'Kollegen is plural → sie = they' },
-      { type: 'fill-blank', sentence: 'Wir __ Kollegen.',            answer: 'sind' },
-      { type: 'fill-blank', sentence: 'Er __ hier.',                 answer: 'ist' },
-      { type: 'fill-blank', sentence: 'Ich __ aus Indien.',          answer: 'bin' },
-      { type: 'fill-blank', sentence: 'Es __ ein Moment.',           answer: 'ist' },
+      // Forms ↔ pronouns match — locks the table by matching, not just filling
+      {
+        type: 'match',
+        pairs: [
+          { de: 'bin',  en: 'ich' },
+          { de: 'bist', en: 'du' },
+          { de: 'ist',  en: 'er / sie / es' },
+          { de: 'sind', en: 'wir / sie / Sie' },
+          { de: 'seid', en: 'ihr' },
+        ],
+      },
+      // State / feeling pattern
+      { type: 'fill-blank', sentence: 'Ich __ müde.',                                  answer: 'bin' },
+      { type: 'fill-blank', sentence: 'Du __ krank.',                                  answer: 'bist' },
+      { type: 'fill-blank', sentence: 'Wir __ bereit.',                                answer: 'sind' },
+      // Profession pattern
+      { type: 'fill-blank', sentence: 'Ich __ Softwareentwickler. (no article!)',      answer: 'bin' },
+      { type: 'fill-blank', sentence: 'Sie (she) __ Lehrerin.',                        answer: 'ist' },
+      { type: 'fill-blank', sentence: 'Du __ Softwareentwickler.',                     answer: 'bist' },
+      // Place / origin pattern
+      { type: 'fill-blank', sentence: 'Ich __ aus Indien.',                            answer: 'bin' },
+      { type: 'fill-blank', sentence: 'Wir __ in Berlin.',                             answer: 'sind' },
+      { type: 'fill-blank', sentence: 'Er __ hier.',                                   answer: 'ist' },
+      { type: 'fill-blank', sentence: 'Ihr __ in einer Stadt.',                        answer: 'seid' },
+      // Disambiguation
+      { type: 'fill-blank', sentence: 'Sie __ in einer Firma.',                        answer: 'ist',  hint: 'sie + ist → she (singular)' },
+      { type: 'fill-blank', sentence: 'Sie __ Kollegen.',                              answer: 'sind', hint: 'Kollegen is plural → sie = they' },
+      { type: 'fill-blank', sentence: 'Es __ ein Moment.',                             answer: 'ist' },
+      { type: 'fill-blank', sentence: 'Es __ deutsch.',                                answer: 'ist' },
+      // Word-order awareness
+      { type: 'multiple-choice',
+        q: 'Pick the correct word order:',
+        options: [
+          'Heute ich bin müde.',
+          'Heute bin ich müde.',
+          'Ich heute bin müde.',
+          'Bin ich heute müde.',
+        ],
+        answer: 'Heute bin ich müde.',
+        explain: 'When time leads, the verb still keeps slot 2 — so the subject moves AFTER the verb.',
+      },
       { type: 'multiple-choice', q: 'Pick the correct form: "Ihr __ spät."', options: ['bin','bist','seid','sind'], answer: 'seid' },
+      { type: 'multiple-choice', q: 'Polite "Are you ready?" (formal you).',
+        options: ['Bist du bereit?','Seid ihr bereit?','Sind Sie bereit?','Ist sie bereit?'],
+        answer: 'Sind Sie bereit?',
+        explain: 'Formal Sie always uses the plural form "sind" + capital S.' },
+      // Mini dialogue
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Hallo! Ich bin Tom.',                          en: 'Hello! I am Tom.' },
+        { speaker: 'B', de: 'Hallo Tom! Ich bin Anna.',                     en: 'Hi Tom! I am Anna.' },
+        { speaker: 'A', de: 'Woher bist du?',                                en: 'Where are you from?' },
+        { speaker: 'B', de: 'Ich bin aus Deutschland. Und du?',              en: 'I am from Germany. And you?' },
+        { speaker: 'A', de: 'Ich bin aus Indien. Bist du Lehrerin?',         en: 'I am from India. Are you a teacher?' },
+        { speaker: 'B', de: 'Nein, ich bin Softwareentwicklerin.',           en: 'No, I am a software developer.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Du __ müde.', answer: 'bist' },
+      { type: 'fill-blank', sentence: 'Wir __ Kollegen.', answer: 'sind' },
+      { type: 'fill-blank', sentence: 'Ihr __ glücklich.', answer: 'seid' },
+      { type: 'fill-blank', sentence: 'Heute __ ich krank. (slot 2!)', answer: 'bin' },
       { type: 'multiple-choice', q: 'Which is correct?', options: ['Ich ist hier.','Ich bin hier.','Ich sind hier.','Ich seid hier.'], answer: 'Ich bin hier.' },
+      { type: 'multiple-choice', q: 'Which is correct for "She is from Germany"?',
+        options: ['Sie bin aus Deutschland.','Sie ist aus Deutschland.','Sie sind aus Deutschland.','Sie ist von Deutschland.'],
+        answer: 'Sie ist aus Deutschland.',
+        explain: 'singular sie → ist · "from a country" = "aus" + country.' },
     ],
   },
 
@@ -764,18 +857,57 @@ export const days = [
     title: 'haben — to have',
     titleDe: 'Das Verb „haben"',
     emoji: '🟩',
-    objective: 'Conjugate "haben" and talk about possessions and feelings.',
-    intro: '"haben" is used for ownership AND for body states like hunger and thirst (where English uses "to be").',
+    objective: 'Conjugate "haben" and use it for possession, abstract things, and the body-state expressions where English would say "I AM …".',
+    intro: '"haben" is your second power tool. It is used for OWNERSHIP (Ich habe ein Buch), ABSTRACT things (Ich habe eine Idee, Ich habe Zeit), and — crucially — BODY STATES where English uses "to be": Ich habe Hunger / Durst / Angst (I am hungry / thirsty / afraid).',
     vocabulary: [
-      { de: 'die Zeit',     en: 'time' },        { de: 'der Hunger', en: 'hunger' },
-      { de: 'der Durst',    en: 'thirst' },      { de: 'der Stress', en: 'stress' },
-      { de: 'die Arbeit',   en: 'work' },        { de: 'die Frage',  en: 'question' },
-      { de: 'das Problem',  en: 'problem' },     { de: 'die Pause',  en: 'break' },
-      { de: 'die Idee',     en: 'idea' },        { de: 'der Termin', en: 'appointment' },
+      // body states — the ones that surprise English speakers
+      { de: 'der Hunger',  en: 'hunger',     hint: '⚠ "Ich habe Hunger" = "I am hungry" — never "Ich bin Hunger"!' },
+      { de: 'der Durst',   en: 'thirst',     hint: '"Ich habe Durst" = "I am thirsty"' },
+      { de: 'die Angst',   en: 'fear',       hint: '"Ich habe Angst" = "I am afraid"' },
+      { de: 'die Lust',    en: 'desire / want to', hint: '"Ich habe Lust auf …" = "I feel like (having) …"' },
+      // abstract / time
+      { de: 'die Zeit',    en: 'time',       hint: '"Ich habe Zeit" = "I have time / I am free"' },
+      { de: 'die Pause',   en: 'break',      hint: '"Ich habe Pause" = "I have a break / I\'m on break"' },
+      { de: 'die Idee',    en: 'idea',       hint: '"Ich habe eine Idee" = "I have an idea"' },
+      { de: 'die Frage',   en: 'question',   hint: '"Ich habe eine Frage" = "I have a question"' },
+      { de: 'das Problem', en: 'problem',    hint: '"Ich habe ein Problem" — pronounced English-style "problayme"' },
+      { de: 'der Stress',  en: 'stress',     hint: '"Ich habe Stress" — start with English "sht-"' },
+      // work-life
+      { de: 'die Arbeit',  en: 'work',       hint: '"Ich habe viel Arbeit" — long opening A' },
+      { de: 'der Termin',  en: 'appointment',hint: '"Ich habe einen Termin um 10 Uhr"' },
+      // possessions
+      { de: 'das Buch',    en: 'a book',     hint: 'neuter → "Ich habe ein Buch"' },
+      { de: 'der Hund',    en: 'a dog',      hint: 'masc. — Akk. preview: "Ich habe EINEN Hund" (Week 4)' },
     ],
     grammar: [
-      { rule: 'haben conjugation', body: 'ich habe · du hast · er/sie/es hat · wir haben · ihr habt · sie/Sie haben' },
-      { rule: 'Hunger/Durst', body: 'Use "Ich habe Hunger" — literally "I have hunger" — not "Ich bin hungrig" (which means I am the hungry type).' },
+      { rule: 'haben — full conjugation table',
+        body:
+          '   ich        habe   I have\n' +
+          '   du         hast   you (1 friend) have\n' +
+          '   er/sie/es  hat    he / she / it has\n' +
+          '   wir        haben  we have\n' +
+          '   ihr        habt   you all (group of friends) have\n' +
+          '   sie / Sie  haben  they / formal you have\n' +
+          'Pattern: du and er/sie/es DROP the "b" (du HAST not du habst, er HAT not er habt). Whisper "ha-st, ha-t, ha-ben" three times — it sticks.',
+      },
+      { rule: '⚠ haben (not sein!) for body states',
+        body:
+          'English says "I am hungry / thirsty / afraid". German uses haben:\n' +
+          '  ✗ Ich bin Hunger.       ✓ Ich habe Hunger.        I am hungry.\n' +
+          '  ✗ Ich bin Durst.        ✓ Ich habe Durst.          I am thirsty.\n' +
+          '  ✗ Ich bin Angst.        ✓ Ich habe Angst.          I am afraid.\n' +
+          'The German nouns Hunger / Durst / Angst are LITERAL feelings you POSSESS.\n' +
+          'If you instead want to describe yourself as a TYPE, use sein + adjective: "Ich bin hungrig / durstig / ängstlich" — but this sounds less natural in conversation.',
+      },
+      { rule: 'Common haben patterns',
+        body:
+          'POSSESSION:    Ich habe + ein/einen/eine + noun.\n' +
+          '  "Ich habe ein Buch."  /  "Wir haben einen Hund."\n' +
+          'ABSTRACT:      Ich habe + bare noun (often no article).\n' +
+          '  "Ich habe Hunger."  /  "Sie hat Stress."  /  "Wir haben Zeit."\n' +
+          'QUESTION:      Hast du …?  /  Haben Sie …?\n' +
+          '  "Hast du Zeit am Wochenende?"  /  "Haben Sie eine Frage?"',
+      },
       {
         rule: '⚠ The three "sies" — don\'t panic',
         body:
@@ -794,22 +926,66 @@ export const days = [
     ],
     exercises: [
       richConjEx('haben', 'to have'),
-      { type: 'fill-blank', sentence: 'Ich __ ein Moment.',   answer: 'habe' },
-      { type: 'fill-blank', sentence: 'Du __ eine Firma.',    answer: 'hast' },
-      { type: 'fill-blank', sentence: 'Er __ ein Meeting.',   answer: 'hat' },
-      { type: 'fill-blank', sentence: 'Sie __ ein Team.',     answer: 'hat', hint: 'sie + hat → "she" (singular)' },
-      { type: 'fill-blank', sentence: 'Es __ einen Namen.',   answer: 'hat' },
-      { type: 'fill-blank', sentence: 'Wir __ ein Meeting.',  answer: 'haben' },
-      { type: 'fill-blank', sentence: 'Ihr __ eine Firma.',   answer: 'habt' },
-      { type: 'fill-blank', sentence: 'Sie __ ein Team.',     answer: 'haben', hint: 'sie + haben → "they" (plural)' },
-      { type: 'fill-blank', sentence: 'Ich __ Hunger.',       answer: 'habe' },
-      { type: 'fill-blank', sentence: 'Wir __ Zeit.',         answer: 'haben' },
-      { type: 'fill-blank', sentence: 'Sie __ eine Idee.',    answer: 'hat', hint: 'singular subject "she"' },
+      // Forms ↔ pronouns match
+      {
+        type: 'match',
+        pairs: [
+          { de: 'habe',  en: 'ich' },
+          { de: 'hast',  en: 'du' },
+          { de: 'hat',   en: 'er / sie / es' },
+          { de: 'haben', en: 'wir / sie / Sie' },
+          { de: 'habt',  en: 'ihr' },
+        ],
+      },
+      // Body-state pattern (the killer English-vs-German contrast)
+      { type: 'fill-blank', sentence: '"I am hungry." → Ich __ Hunger.',                  answer: 'habe' },
+      { type: 'fill-blank', sentence: '"He is thirsty." → Er __ Durst.',                   answer: 'hat' },
+      { type: 'fill-blank', sentence: '"We are afraid." → Wir __ Angst.',                  answer: 'haben' },
+      { type: 'fill-blank', sentence: '"Do you (1 friend) have time?" → __ du Zeit?',      answer: 'Hast' },
+      // Possession + abstract
+      { type: 'fill-blank', sentence: 'Ich __ ein Buch.',                                  answer: 'habe' },
+      { type: 'fill-blank', sentence: 'Du __ eine Firma.',                                 answer: 'hast' },
+      { type: 'fill-blank', sentence: 'Er __ ein Meeting.',                                answer: 'hat' },
+      { type: 'fill-blank', sentence: 'Wir __ ein Meeting.',                               answer: 'haben' },
+      { type: 'fill-blank', sentence: 'Ihr __ eine Firma.',                                answer: 'habt' },
+      { type: 'fill-blank', sentence: 'Es __ einen Namen.',                                answer: 'hat' },
+      // sie disambiguation
+      { type: 'fill-blank', sentence: 'Sie __ ein Team.', answer: 'hat',  hint: 'sie + hat → "she" (singular)' },
+      { type: 'fill-blank', sentence: 'Sie __ ein Team.', answer: 'haben',hint: 'sie + haben → "they" (plural)  — same sentence, different verb!' },
+      { type: 'fill-blank', sentence: 'Sie __ eine Idee.', answer: 'hat', hint: 'singular subject "she"' },
+      // sein vs haben — the choice is the test
+      { type: 'multiple-choice',
+        q: 'Pick the natural German for "I am hungry":',
+        options: ['Ich bin Hunger.', 'Ich habe Hunger.', 'Ich Hunger bin.', 'Ich bin hungrig haben.'],
+        answer: 'Ich habe Hunger.',
+        explain: 'Body states use HABEN in German, not sein.',
+      },
+      { type: 'multiple-choice',
+        q: 'Pick the natural German for "She is sick":',
+        options: ['Sie hat krank.', 'Sie ist krank.', 'Sie hat Krankheit.', 'Sie krank.'],
+        answer: 'Sie ist krank.',
+        explain: 'krank is an adjective describing a state — use SEIN. Body NEEDS like Hunger/Durst use haben; ADJECTIVE descriptions use sein.',
+      },
       { type: 'multiple-choice', q: '"Ihr __ Stress." — pick the form.', options: ['habe','hast','habt','haben'], answer: 'habt' },
+      { type: 'multiple-choice', q: 'Polite "Do you have a question?" (formal you).',
+        options: ['Hast du eine Frage?','Habt ihr eine Frage?','Haben Sie eine Frage?','Hat sie eine Frage?'],
+        answer: 'Haben Sie eine Frage?' },
+      // Mini dialogue
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Hast du Zeit am Wochenende?',                  en: 'Do you have time on the weekend?' },
+        { speaker: 'B', de: 'Ja, ich habe Zeit. Warum?',                    en: 'Yes, I have time. Why?' },
+        { speaker: 'A', de: 'Ich habe Hunger und ich habe eine Idee — ein Restaurant!', en: 'I am hungry and I have an idea — a restaurant!' },
+        { speaker: 'B', de: 'Sehr gerne! Ich habe auch Durst.',              en: 'Gladly! I am also thirsty.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Du __ einen Termin.', answer: 'hast' },
+      { type: 'fill-blank', sentence: 'Wir __ keine Zeit.',  answer: 'haben' },
+      { type: 'fill-blank', sentence: 'Ihr __ Hunger.',      answer: 'habt' },
+      { type: 'fill-blank', sentence: 'Sie __ eine Frage. (singular — she)', answer: 'hat' },
       { type: 'multiple-choice', q: 'How do Germans say "I am thirsty"?', options: ['Ich bin Durst.','Ich habe Durst.','Ich Durst bin.','Ich durstig.'], answer: 'Ich habe Durst.' },
+      { type: 'multiple-choice', q: 'Pick the right verb: "Ich __ ein Problem."', options: ['bin','ist','habe','hast'], answer: 'habe' },
+      { type: 'multiple-choice', q: 'Pick the right verb: "Ich __ müde." (sein/haben)?', options: ['bin','habe','hat','sind'], answer: 'bin', explain: 'müde is an adjective → SEIN.' },
     ],
   },
 

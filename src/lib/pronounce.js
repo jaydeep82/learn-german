@@ -41,8 +41,11 @@ function transliterate(word) {
   //      uh → oo   (Uhr → oor, Schuh → shoo)
   //      ah → a    (Jahr → yar — German long /aː/ already reads right)
   //      oh → oh   (Sohn → zohn — English "oh" works)
-  const SILENT_H_MAP = { a: 'a', e: 'ay', i: 'ee', o: 'oh', u: 'oo' };
-  s = s.replace(/([aeiou])h/g, (_, v) => SILENT_H_MAP[v]);
+  const SILENT_H_MAP = {
+    a: 'a',  e: 'ay', i: 'ee', o: 'oh', u: 'oo',
+    ä: 'eh', ö: 'ur', ü: 'ue',
+  };
+  s = s.replace(/([aeiouäöü])h/g, (_, v) => SILENT_H_MAP[v]);
 
   // 4. Final unstressed -er / -e → -uh. Run BEFORE diphthong expansion so
   //    that "ei → eye" doesn't create a phantom trailing "e".

@@ -11,10 +11,28 @@
  * in sync.
  */
 
-export const VERSION = '3.2.5';
+export const VERSION = '3.2.6';
 export const RELEASE_DATE = '2026-05-07';
 
 export const RELEASES = [
+  {
+    version: '3.2.6',
+    date: '2026-05-07',
+    type: 'improvement',
+    title: 'Days 5 & 6 review — sein, haben, sentence patterns',
+    notes: [
+      'Reviewed Week 1 · Day 5 (sein) and Day 6 (haben) end-to-end, parallel to the Day 1-4 polishes. Two days bundled because they teach matched concepts.',
+      'Day 5 vocabulary 12 → 17 items. Added profession nouns (Lehrer, Lehrerin, Softwareentwickler) and origin phrases (aus Indien, aus Deutschland) so learners can build the three sein-patterns directly. Every entry has a phonetic hint with English-friendly cue ("MUE-duh", "shpeht", "buh-RYE-t").',
+      'Day 5 grammar (was 2, now 4): full conjugation table · ⭐ Three sein-patterns (state + profession + place/origin) with worked examples · slot-2 verb rule with the time-leading variant · sein-vs-haben decision rule.',
+      'Day 5 exercises (was 13, now 19): forms↔pronouns match, three-pattern fill-blanks (state, profession, origin), word-order MCQ, formal-Sie MCQ, and a self-introduction dialogue with profession + origin.',
+      'Day 5 quiz 2 → 6 items.',
+      'Day 6 vocabulary 10 → 14 items. Reorganised into body-states (Hunger, Durst, Angst, Lust), abstract/time, work-life, possessions. Added der Hund + das Buch for the possession pattern. Every entry shows the haben-vs-sein contrast in its hint.',
+      'Day 6 grammar (was 4, now 5): full conjugation table with the "hast / hat drops the b" mnemonic · ⭐ ⚠ haben-not-sein for body states with three contrast lines (Hunger / Durst / Angst) · three haben-patterns (possession / abstract / question).',
+      'Day 6 exercises (was 13, now 21): forms↔pronouns match, body-state contrast fill-blanks, possession + abstract fill-blanks, sie-disambiguation pair where the SAME sentence "Sie __ ein Team" tests both hat (she) and haben (they), sein-vs-haben decision MCQs (krank uses sein, Hunger uses haben), formal-Sie MCQ, and a hungry-friends dialogue.',
+      'Day 6 quiz 2 → 7 items including a new sein-vs-haben decision item.',
+      'TRANSLITERATOR FIX (helps every day): silent h after an UMLAUT now expands properly: äh → eh (näher → nehuh), öh → ur (höher → huruh), üh → ue (früh → frue, Bühne → Buenuh). Was leaving a stray "h" mid-word.',
+    ],
+  },
   {
     version: '3.2.5',
     date: '2026-05-07',
