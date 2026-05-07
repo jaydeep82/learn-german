@@ -46,8 +46,11 @@ function transliterate(word) {
 
   // 4. Final unstressed -er / -e → -uh. Run BEFORE diphthong expansion so
   //    that "ei → eye" doesn't create a phantom trailing "e".
-  s = s.replace(/([^aeiouäöü])er$/, '$1uh');
-  s = s.replace(/([^aeiouäöü])e$/, '$1uh');
+  //    Require 2+ chars BEFORE the final consonant + ending so we only
+  //    reduce multi-syllable words. Stand-alone der / wer / her / Tee
+  //    keep their full pronunciation.
+  s = s.replace(/(.{2,})([^aeiouäöü])er$/, '$1$2uh');
+  s = s.replace(/(.{2,})([^aeiouäöü])e$/, '$1$2uh');
 
   // 5. Single-letter swaps. Done BEFORE diphthongs so that the "w" we
   //    later introduce in "au→ow" / "y" in "ei→eye" can't collide with

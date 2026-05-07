@@ -11,10 +11,24 @@
  * in sync.
  */
 
-export const VERSION = '3.2.4';
+export const VERSION = '3.2.5';
 export const RELEASE_DATE = '2026-05-07';
 
 export const RELEASES = [
+  {
+    version: '3.2.5',
+    date: '2026-05-07',
+    type: 'improvement',
+    title: 'Day 4 review — articles, suffix clues, and a transliterator polish',
+    notes: [
+      'Reviewed Week 1 · Day 4 (Articles: der/die/das) end-to-end, parallel to the Day 1-3 polishes.',
+      'Vocabulary expanded 10 → 21 items, grouped by gender (masc · fem · neuter · plural · indefinite preview). Added Mann, Hund, Tag, Wohnung, Zeitung, Brötchen, Bücher, Kinder, ein, eine. Each entry now carries a phonetic hint plus a gender-cue tag.',
+      'Six grammar callouts (was 3): the four article slots table (def + indef) · iron rule "learn the article WITH the noun" · article→pronoun map · ⭐ NEW suffix gender clues (-ung/-chen/-lein/-heit/-keit/-tion/-tät/-er) · trust-the-article rule · plurals collapse to die.',
+      'Exercises expanded 3 → 17 items: 5-row article-category match · 5 article-picking MCQs (incl. Mädchen + Wohnung traps) · 3 pronoun-replacement MCQs · 2 indefinite-article MCQs · 3 ⭐ suffix-clue MCQs (Information / Brötchen / Lehrer — guess the article from the ending alone) · 4 fill-blanks plus an ein-fill.',
+      'Quiz expanded 2 → 7 items including suffix-clue tests and plural-article rule.',
+      'TRANSLITERATOR POLISH (helps every day): tightened the final-er and final-e reduction rules to require 2+ chars before the consonant. Result: stand-alone short words keep their full pronunciation. der → der (was duh), wer → ver (was vuh), her → her (was huh), Tee → Tee. Multi-syllable words still reduce correctly: Vater → Fatuh, Tasche → Tashuh, Wasser → Vassuh.',
+    ],
+  },
   {
     version: '3.2.4',
     date: '2026-05-07',

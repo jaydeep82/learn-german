@@ -583,37 +583,138 @@ export const days = [
     title: 'Articles: der, die, das',
     titleDe: 'Artikel: der, die, das',
     emoji: '🪪',
-    objective: 'Recognise the three genders and pick the right pronoun.',
-    intro: 'Every German noun has a gender. Learn the article with the noun — never separately.',
+    objective: 'Pick the right article for any noun, recognise the four article slots, and replace nouns with pronouns.',
+    intro: 'Every German noun has a gender — masculine (der), feminine (die) or neuter (das). Plurals always use die. The gender often has nothing to do with real-life logic, so the iron rule is: ALWAYS learn the article TOGETHER with the noun. Never memorise just "Tisch" — memorise "der Tisch".',
     vocabulary: [
-      { de: 'der Tisch',  en: 'the table (m)' },
-      { de: 'der Stuhl',  en: 'the chair (m)' },
-      { de: 'der Laptop', en: 'the laptop (m)' },
-      { de: 'die Lampe',  en: 'the lamp (f)' },
-      { de: 'die Tasche', en: 'the bag (f)' },
-      { de: 'die Frau',   en: 'the woman (f)' },
-      { de: 'das Buch',   en: 'the book (n)' },
-      { de: 'das Handy',  en: 'the mobile (n)' },
-      { de: 'das Kind',   en: 'the child (n)' },
-      { de: 'die Leute',  en: 'the people (pl)' },
+      // Masculine — der
+      { de: 'der Tisch',   en: 'the table',   hint: 'masc. → der · "der Tish"' },
+      { de: 'der Stuhl',   en: 'the chair',   hint: 'masc. → der · "der Shtool"' },
+      { de: 'der Laptop',  en: 'the laptop',  hint: 'masc. → der · loan word, English-style "lap-top"' },
+      { de: 'der Mann',    en: 'the man',     hint: 'masc. → der · "der Mann"' },
+      { de: 'der Hund',    en: 'the dog',     hint: 'masc. → der · "der Hoont"' },
+      { de: 'der Tag',     en: 'the day',     hint: 'masc. → der · most days/months are masc.' },
+      // Feminine — die
+      { de: 'die Lampe',   en: 'the lamp',    hint: 'fem. → die · ends in -e, often a feminine clue' },
+      { de: 'die Tasche',  en: 'the bag',     hint: 'fem. → die · "dee Tashuh"' },
+      { de: 'die Frau',    en: 'the woman',   hint: 'fem. → die · "dee Frow"' },
+      { de: 'die Wohnung', en: 'the apartment', hint: 'fem. → die · ALL -ung nouns are feminine' },
+      { de: 'die Zeitung', en: 'the newspaper', hint: 'fem. → die · -ung again' },
+      // Neuter — das
+      { de: 'das Buch',    en: 'the book',    hint: 'neuter → das · "das Bukh"' },
+      { de: 'das Handy',   en: 'the mobile phone', hint: 'neuter → das · pseudo-English loan, neuter in German' },
+      { de: 'das Kind',    en: 'the child',   hint: 'neuter → das · "das Kint"' },
+      { de: 'das Mädchen', en: 'the girl',    hint: '⚠ neuter → das · -chen ALWAYS makes a noun neuter, even though a girl is feminine in life' },
+      { de: 'das Brötchen',en: 'the bread roll',hint: 'neuter → das · -chen again' },
+      // Plural — die
+      { de: 'die Leute',   en: 'the people (pl)', hint: 'pl. → die · only exists in plural — no singular' },
+      { de: 'die Bücher',  en: 'the books (pl)',  hint: 'pl. → die · plural of das Buch' },
+      { de: 'die Kinder',  en: 'the children (pl)',hint: 'pl. → die · plural of das Kind' },
+      // Indefinite preview
+      { de: 'ein',  en: 'a / an  (masc. + neuter)', hint: 'indefinite → ein · for der + das nouns' },
+      { de: 'eine', en: 'a / an  (fem.)',           hint: 'indefinite → eine · for die nouns' },
     ],
     grammar: [
-      { rule: 'Three genders', body: 'der = masculine, die = feminine, das = neuter. Plurals always use die.' },
-      { rule: 'Article → pronoun', body: 'der → er, die → sie, das → es. die (plural) → sie.' },
-      { rule: 'Trust the article, not logic', body: '"das Mädchen" (the girl) is neuter because of the -chen suffix.' },
+      { rule: 'The four article slots',
+        body:
+          'Definite (the):    der · die · das · die\n' +
+          '                  masc. fem. neut. plural\n' +
+          'Indefinite (a):    ein · eine · ein · — (no plural)\n' +
+          'In the dative and accusative cases the forms change — that\'s Week 4. Today, just learn the four basic slots.',
+      },
+      { rule: 'Iron rule — learn the article WITH the noun',
+        body:
+          'Memorise "der Tisch", not "Tisch". Memorise "die Tasche", not "Tasche".\n' +
+          'In flashcards, write the article in the SAME COLOUR as the noun — they belong together.\n' +
+          'When you guess the article wrong, fix the WHOLE pair in your mind, not just the article.',
+      },
+      { rule: 'Article → pronoun map',
+        body:
+          'Replace any noun with its pronoun by reading the article:\n' +
+          '• der → er    "der Laptop ist neu." → "Er ist neu."\n' +
+          '• die → sie   "die Tasche ist groß." → "Sie ist groß."\n' +
+          '• das → es    "das Buch ist gut." → "Es ist gut."\n' +
+          '• die (pl) → sie  "die Bücher sind neu." → "Sie sind neu."',
+      },
+      { rule: 'Suffix gender clues — when the ending TELLS you the article',
+        body:
+          'Some endings have a 100% reliable gender:\n' +
+          '• -ung → die (Wohnung, Zeitung, Übung, Achtung)\n' +
+          '• -chen → das (Mädchen, Brötchen, Hähnchen, Kätzchen) — diminutives are neuter\n' +
+          '• -lein → das (Fräulein, Büchlein) — same diminutive rule\n' +
+          '• -heit / -keit → die (Freiheit, Möglichkeit)\n' +
+          '• -tion / -tät → die (Information, Universität)\n' +
+          '• -er denoting a profession or doer → der (Lehrer, Bäcker, Verkäufer)\n' +
+          'Spot the suffix → guess the article instantly.',
+      },
+      { rule: 'Trust the article, not real-life logic',
+        body:
+          '"das Mädchen" (the girl) is NEUTER because the -chen suffix forces it.\n' +
+          '"die Person" (the person, any gender) is FEMININE.\n' +
+          'When the German word\'s gender disagrees with English logic, the GERMAN gender wins for grammar.',
+      },
+      { rule: 'Plurals collapse to "die"',
+        body:
+          'der Tisch → die Tische (the tables)\n' +
+          'die Tasche → die Taschen (the bags)\n' +
+          'das Buch → die Bücher (the books)\n' +
+          'No matter the singular gender, every plural noun uses "die" + a plural pronoun "sie".',
+      },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'multiple-choice', q: 'Which article goes with "Tisch"?', options: ['der','die','das'], answer: 'der' },
+      // Article ↔ category match
+      {
+        type: 'match',
+        pairs: [
+          { de: 'der',      en: 'masculine' },
+          { de: 'die',      en: 'feminine OR plural' },
+          { de: 'das',      en: 'neuter' },
+          { de: 'ein',      en: 'a / an  — masc. + neuter' },
+          { de: 'eine',     en: 'a / an  — feminine' },
+        ],
+      },
+      // Pick the article for common nouns
+      { type: 'multiple-choice', q: 'Which article goes with "Tisch"?',  options: ['der','die','das'], answer: 'der' },
+      { type: 'multiple-choice', q: 'Which article goes with "Tasche"?', options: ['der','die','das'], answer: 'die' },
+      { type: 'multiple-choice', q: 'Which article goes with "Buch"?',   options: ['der','die','das'], answer: 'das' },
+      { type: 'multiple-choice', q: 'Which article goes with "Wohnung"?',options: ['der','die','das'], answer: 'die',
+        explain: 'EVERY -ung noun is feminine.' },
+      { type: 'multiple-choice', q: 'Which article goes with "Mädchen"?',options: ['der','die','das'], answer: 'das',
+        explain: '-chen always makes the noun neuter — even when meaning a girl.' },
+      // Pronoun replacement
       { type: 'multiple-choice', q: '"die Tasche" → which pronoun?', options: ['er','sie','es'], answer: 'sie' },
-      { type: 'match', pairs: [
-        { de: 'der', en: 'masculine' }, { de: 'die', en: 'feminine' },
-        { de: 'das', en: 'neuter' }, { de: 'die (pl)', en: 'plural' },
-      ]},
+      { type: 'multiple-choice', q: '"das Buch" → which pronoun?',   options: ['er','sie','es'], answer: 'es' },
+      { type: 'multiple-choice', q: '"die Bücher" (plural) → which pronoun?', options: ['er','sie','es'], answer: 'sie' },
+      // Indefinite article
+      { type: 'multiple-choice', q: 'Pick the indefinite article: "Ich habe ___ Hund." (a dog, masc.)',
+        options: ['ein','eine','das','der'], answer: 'ein' },
+      { type: 'multiple-choice', q: 'Pick the indefinite article: "Ich habe ___ Tasche." (a bag, fem.)',
+        options: ['ein','eine','der','das'], answer: 'eine' },
+      // Suffix-clue MCQs
+      { type: 'multiple-choice', q: 'Without knowing the word: "Information" — pick the article.',
+        options: ['der','die','das'], answer: 'die',
+        explain: '-tion is always feminine.' },
+      { type: 'multiple-choice', q: 'Without knowing the word: "Brötchen" — pick the article.',
+        options: ['der','die','das'], answer: 'das',
+        explain: '-chen makes it neuter.' },
+      { type: 'multiple-choice', q: 'Without knowing the word: "Lehrer" (teacher, male) — pick the article.',
+        options: ['der','die','das'], answer: 'der',
+        explain: '-er for a profession/doer is masculine.' },
+      // Fill-blanks
+      { type: 'fill-blank', sentence: '__ Tisch ist groß. (the table)',  answer: 'Der' },
+      { type: 'fill-blank', sentence: '__ Lampe ist neu. (the lamp)',     answer: 'Die' },
+      { type: 'fill-blank', sentence: '__ Handy ist hier. (the mobile)',   answer: 'Das' },
+      { type: 'fill-blank', sentence: '__ Kinder spielen. (the children, pl.)', answer: 'Die' },
+      { type: 'fill-blank', sentence: 'Ich habe __ Buch. (a book, neuter)', answer: 'ein' },
     ],
     quiz: [
       { type: 'multiple-choice', q: 'Pick the correct article for "Buch".', options: ['der','die','das'], answer: 'das' },
       { type: 'multiple-choice', q: '"das Handy" is referred to as…', options: ['er','sie','es'], answer: 'es' },
+      { type: 'multiple-choice', q: 'Pick the article for "Übung" (exercise).', options: ['der','die','das'], answer: 'die', explain: '-ung → feminine, always.' },
+      { type: 'multiple-choice', q: 'Pick the article for "Hähnchen" (small chicken).', options: ['der','die','das'], answer: 'das', explain: '-chen → neuter, always.' },
+      { type: 'multiple-choice', q: 'Plural of any noun takes which article?', options: ['der','die','das','varies'], answer: 'die' },
+      { type: 'fill-blank', sentence: '____ Frau ist Lehrerin. (the woman)', answer: 'Die' },
+      { type: 'fill-blank', sentence: '____ Stuhl ist neu. (the chair, masc.)', answer: 'Der' },
     ],
   },
 
