@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.2.7';
+export const VERSION = '3.3.0';
 export const RELEASE_DATE = '2026-05-08';
 
 export const RELEASES = [
+  {
+    version: '3.3.0',
+    date: '2026-05-08',
+    type: 'feature',
+    title: 'Week 4 cheatsheet — cases · Akkusativ · Dativ · pronouns',
+    notes: [
+      'Fourth printable cheatsheet at /cheatsheet/cases. Mirrors the structure of the W1 / W2 / W3 sheets but covers the most decisive Week 4 topic — the case system.',
+      'Sections: 12-slot article table (Nom · Akk · Dat × m / f / n / pl, definite + indefinite, with per-row "what changes" notes) · ⭐ 5-step decision tree (which case do I need?) · Akkusativ pronouns table (mich/dich/ihn/sie/es/uns/euch/sie-Sie) with the "no-change" forms flagged · 8 always-Dativ prepositions card · 7 Dativ verbs card with example sentences · 6 common contractions (im, am, beim, vom, zum, zur) with example sentences · ⭐ ⚠ "I like X is BACKWARDS" callout for gefallen / schmecken / passen / gehören · 6 common mistakes (sehen → den Tisch, helfen → dem Vater, mit → dem Auto, sehe dich, gefallen flip, time-leading word order) · 7 memory hooks.',
+      'Discoverable from the dashboard (violet/indigo card under the Week 4 day grid) and from the Day 28 result screen on a passing score.',
+      'Cross-reference list (OtherCheatsheets) updated to include the new entry — every cheatsheet now lists all four.',
+      'Distinct violet / indigo / brand colour palette so the four sheets are visually separable: W1 sky/blue · W2 emerald/brand · W3 rose/orange/amber · W4 violet/indigo.',
+    ],
+  },
   {
     version: '3.2.7',
     date: '2026-05-08',

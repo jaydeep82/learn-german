@@ -12,6 +12,7 @@ export default function Cheatsheet() {
   if (slug === 'aux-verbs')          return <AuxVerbsCheatsheet />;
   if (slug === 'regular-verbs')      return <RegularVerbsCheatsheet />;
   if (slug === 'questions-numbers')  return <QuestionsNumbersCheatsheet />;
+  if (slug === 'cases')              return <CasesCheatsheet />;
 
   return (
     <div className="card">
@@ -26,6 +27,7 @@ function OtherCheatsheets({ except }) {
     { slug: 'aux-verbs',         emoji: '📋', title: 'Week 1 · sein · haben · werden' },
     { slug: 'regular-verbs',     emoji: '🧰', title: 'Week 2 · regular & separable verbs · TFP order' },
     { slug: 'questions-numbers', emoji: '❓', title: 'Week 3 · questions · numbers · prices' },
+    { slug: 'cases',             emoji: '📐', title: 'Week 4 · cases — Akkusativ · Dativ · pronouns' },
   ];
   const others = all.filter((c) => c.slug !== except);
   if (!others.length) return null;
@@ -982,6 +984,349 @@ function QuestionsNumbersCheatsheet() {
 
       <footer className="text-center text-sm text-slate-500 pb-4">
         Ready for Week 4? <Link to="/day/22" className="font-semibold text-rose-700 dark:text-rose-300 hover:underline">→ Go to Day 22 (Akkusativ — feminine, neuter, plural)</Link>
+      </footer>
+    </div>
+  );
+}
+
+/* ===================== WEEK 4 — cases · Akkusativ · Dativ · pronouns ===================== */
+
+/* Big article table — rows are gender, columns are Nom / Akk / Dat. */
+const WK4_ARTICLE_ROWS = [
+  {
+    label: 'masculine (der)',
+    accent: 'from-violet-500/15 to-violet-500/5',
+    examples: 'der Mann · der Tisch · der Hund',
+    def:   { Nom: 'der',  Akk: 'den',  Dat: 'dem'   },
+    indef: { Nom: 'ein',  Akk: 'einen', Dat: 'einem' },
+    flag: 'Akk + Dat both change. The masculine column is the busiest in German.',
+  },
+  {
+    label: 'feminine (die)',
+    accent: 'from-rose-500/15 to-rose-500/5',
+    examples: 'die Frau · die Tasche · die Stadt',
+    def:   { Nom: 'die', Akk: 'die', Dat: 'der' },
+    indef: { Nom: 'eine', Akk: 'eine', Dat: 'einer' },
+    flag: 'Akk = Nom (no change). Only Dat changes (die → der).',
+  },
+  {
+    label: 'neuter (das)',
+    accent: 'from-amber-500/15 to-amber-500/5',
+    examples: 'das Buch · das Kind · das Handy',
+    def:   { Nom: 'das', Akk: 'das', Dat: 'dem' },
+    indef: { Nom: 'ein', Akk: 'ein', Dat: 'einem' },
+    flag: 'Akk = Nom (no change). Only Dat changes (das → dem).',
+  },
+  {
+    label: 'plural (die)',
+    accent: 'from-emerald-500/15 to-emerald-500/5',
+    examples: 'die Bücher · die Kinder · die Leute',
+    def:   { Nom: 'die', Akk: 'die', Dat: 'den + n' },
+    indef: { Nom: '—', Akk: '—', Dat: '—' },
+    flag: 'Plural Dat: article = den, AND the noun adds -n if it doesn\'t already end in one (Bücher → den Büchern).',
+  },
+];
+
+const WK4_AKK_PRONOUNS = [
+  { nom: 'ich',     akk: 'mich',  en: 'me' },
+  { nom: 'du',      akk: 'dich',  en: 'you (1 friend)' },
+  { nom: 'er',      akk: 'ihn',   en: 'him' },
+  { nom: 'sie',     akk: 'sie',   en: 'her  (unchanged)' },
+  { nom: 'es',      akk: 'es',    en: 'it  (unchanged)' },
+  { nom: 'wir',     akk: 'uns',   en: 'us' },
+  { nom: 'ihr',     akk: 'euch',  en: 'you all' },
+  { nom: 'sie/Sie', akk: 'sie/Sie', en: 'them / formal you  (unchanged)' },
+];
+
+const WK4_DATIV_PREPS = [
+  { de: 'mit',        en: 'with' },
+  { de: 'bei',        en: 'at / near / with (a person)' },
+  { de: 'zu',         en: 'to (a place / person)' },
+  { de: 'von',        en: 'from / of' },
+  { de: 'nach',       en: 'to (city / country) · after' },
+  { de: 'aus',        en: 'out of / from (origin)' },
+  { de: 'seit',       en: 'since / for (a duration)' },
+  { de: 'gegenüber',  en: 'opposite' },
+];
+
+const WK4_DATIV_VERBS = [
+  { de: 'helfen',     en: 'to help (someone)',         example: 'Ich helfe dem Vater.' },
+  { de: 'danken',     en: 'to thank',                  example: 'Wir danken der Lehrerin.' },
+  { de: 'gehören',    en: 'to belong to',              example: 'Das Buch gehört dem Kind.' },
+  { de: 'gefallen',   en: 'to please / to be liked by', example: 'Die Stadt gefällt mir.' },
+  { de: 'antworten',  en: 'to answer (someone)',       example: 'Du antwortest den Kollegen.' },
+  { de: 'glauben',    en: 'to believe (someone)',      example: 'Ich glaube der Frau.' },
+  { de: 'gratulieren',en: 'to congratulate',            example: 'Wir gratulieren dem Chef.' },
+];
+
+const WK4_CONTRACTIONS = [
+  { combo: 'in + dem', short: 'im',   case: 'Dat',    example: 'Ich bin im Restaurant.' },
+  { combo: 'an + dem', short: 'am',   case: 'Dat',    example: 'Ich arbeite am Wochenende.' },
+  { combo: 'bei + dem',short: 'beim', case: 'Dat',    example: 'Ich bin beim Bäcker.' },
+  { combo: 'von + dem',short: 'vom',  case: 'Dat',    example: 'Ich komme vom Bahnhof.' },
+  { combo: 'zu + dem', short: 'zum',  case: 'Dat',    example: 'Ich gehe zum Arzt.' },
+  { combo: 'zu + der', short: 'zur',  case: 'Dat',    example: 'Ich gehe zur Schule.' },
+];
+
+const WK4_COMMON_MISTAKES = [
+  {
+    wrong: '✗ Ich sehe der Tisch.',
+    right: '✓ Ich sehe den Tisch.',
+    why:   'sehen takes Akkusativ, and masculine der → den. (sehen-mistakes are the #1 case error.)',
+  },
+  {
+    wrong: '✗ Ich helfe den Vater.',
+    right: '✓ Ich helfe dem Vater.',
+    why:   'helfen takes Dativ. Masculine Dat = dem. Memorise: helfen / danken / gefallen / gehören / antworten / glauben → all Dativ.',
+  },
+  {
+    wrong: '✗ Ich fahre mit das Auto.',
+    right: '✓ Ich fahre mit dem Auto.',
+    why:   '"mit" is one of the eight always-Dativ prepositions. Neuter Dat = dem.',
+  },
+  {
+    wrong: '✗ Ich sehe du.',
+    right: '✓ Ich sehe dich.',
+    why:   'After an Akk verb, pronouns shape-shift: du → dich. (mich/dich/ihn → Akk pronouns.)',
+  },
+  {
+    wrong: '✗ Ich liebe die Stadt — die Stadt gefällt mich.',
+    right: '✓ Die Stadt gefällt mir.',
+    why:   'gefallen + DATIV. The thing is the subject; the person is in Dat. "I like X" → "X gefällt mir".',
+  },
+  {
+    wrong: '✗ Ich gehe in den Bahnhof am Wochenende.   (a sentence-ending nest of cases)',
+    right: '✓ Am Wochenende gehe ich zum Bahnhof.',
+    why:   'zu (always Dat) + dem → zum. Plus: when time leads (Am Wochenende) the verb keeps slot 2 — subject moves after.',
+  },
+];
+
+function CasesCheatsheet() {
+  return (
+    <div className="space-y-6">
+      <Link to="/" className="text-sm text-slate-500 hover:underline">← Back to dashboard</Link>
+
+      <header className="rounded-3xl bg-gradient-to-br from-violet-600 via-indigo-500 to-brand-500 text-white p-6 sm:p-8 shadow-md">
+        <p className="uppercase tracking-widest text-xs opacity-90">Week 4 · Revision</p>
+        <h1 className="text-3xl sm:text-4xl font-extrabold mt-1">
+          Cheatsheet: <span className="font-mono">cases — Akkusativ · Dativ · pronouns</span>
+        </h1>
+        <p className="mt-2 max-w-2xl opacity-90">
+          The single most decisive revision in Week 4. Twelve article slots, eight always-Dativ
+          prepositions, seven Dativ verbs, eight Akkusativ pronouns — and a decision tree that
+          tells you which case to use in 5 seconds.
+        </p>
+        <div className="mt-4 flex gap-2 flex-wrap">
+          <button onClick={() => window.print()} className="btn bg-white text-violet-700 hover:bg-violet-50">
+            🖨️ Print / Save as PDF
+          </button>
+          <Link to="/day/22" className="btn bg-white/10 text-white hover:bg-white/20">Practise Akk f/n/pl</Link>
+          <Link to="/day/25" className="btn bg-white/10 text-white hover:bg-white/20">Practise Dat preps</Link>
+          <Link to="/day/26" className="btn bg-white/10 text-white hover:bg-white/20">Practise Dat verbs</Link>
+          <Link to="/day/28" className="btn bg-white/10 text-white hover:bg-white/20">Practise Akk pronouns</Link>
+        </div>
+      </header>
+
+      {/* The big article table */}
+      <section aria-labelledby="big-table" className="card overflow-x-auto">
+        <h2 id="big-table" className="font-bold mb-3">The 12 article slots — definite & indefinite × Nom / Akk / Dat</h2>
+        <table className="w-full text-left text-sm border-collapse min-w-[760px]">
+          <thead>
+            <tr className="text-xs uppercase tracking-wide text-slate-500">
+              <th className="py-2 pr-3 border-b-2 border-slate-200 dark:border-slate-700">Gender</th>
+              <th className="py-2 px-2 border-b-2 border-slate-200 dark:border-slate-700">Nom</th>
+              <th className="py-2 px-2 border-b-2 border-slate-200 dark:border-slate-700">Akk</th>
+              <th className="py-2 px-2 border-b-2 border-slate-200 dark:border-slate-700">Dat</th>
+              <th className="py-2 px-2 border-b-2 border-slate-200 dark:border-slate-700">Indef.&nbsp;Nom</th>
+              <th className="py-2 px-2 border-b-2 border-slate-200 dark:border-slate-700">Indef.&nbsp;Akk</th>
+              <th className="py-2 pl-2 border-b-2 border-slate-200 dark:border-slate-700">Indef.&nbsp;Dat</th>
+            </tr>
+          </thead>
+          <tbody>
+            {WK4_ARTICLE_ROWS.map((row) => (
+              <tr key={row.label} className={`border-b border-slate-100 dark:border-slate-800 align-top bg-gradient-to-br ${row.accent}`}>
+                <td className="py-3 pr-3">
+                  <div className="font-semibold whitespace-nowrap">{row.label}</div>
+                  <div className="text-[11px] text-slate-500 dark:text-slate-400 italic">{row.examples}</div>
+                  <div className="mt-1 text-xs text-slate-600 dark:text-slate-300">{row.flag}</div>
+                </td>
+                {['Nom','Akk','Dat'].map((c) => (
+                  <td key={`d-${c}`} className="py-3 px-2 font-mono font-bold">{row.def[c]}</td>
+                ))}
+                {['Nom','Akk','Dat'].map((c) => (
+                  <td key={`i-${c}`} className="py-3 px-2 font-mono">{row.indef[c]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="text-xs text-slate-500 mt-3">
+          The masculine column does ALL the case work. Feminine + neuter only change in the Dativ.
+        </p>
+      </section>
+
+      {/* The decision tree */}
+      <section aria-labelledby="decision-tree" className="card">
+        <h2 id="decision-tree" className="font-bold mb-3">Decision tree — which case do I need?</h2>
+        <ol className="list-decimal pl-5 space-y-2 text-slate-700 dark:text-slate-200">
+          <li><strong>Is the noun the subject (the doer)?</strong> → Nominativ.   Ask "<em>Wer / Was?</em>".</li>
+          <li><strong>Is it the direct object (what is being verbed)?</strong> → Akkusativ.   Ask "<em>Wen / Was?</em>".</li>
+          <li><strong>Is it after one of the 8 Dativ prepositions?</strong>  (<em>mit · bei · zu · von · nach · aus · seit · gegenüber</em>) → Dativ.</li>
+          <li><strong>Is it the object of a Dativ verb?</strong>  (<em>helfen · danken · gehören · gefallen · antworten · glauben · gratulieren</em>) → Dativ.</li>
+          <li>Otherwise → Akkusativ is the safer default at A1.</li>
+        </ol>
+      </section>
+
+      {/* Akkusativ pronouns */}
+      <section aria-labelledby="akk-pronouns" className="card overflow-x-auto">
+        <h2 id="akk-pronouns" className="font-bold mb-3">Akkusativ pronouns — most change shape</h2>
+        <table className="w-full text-left text-sm border-collapse min-w-[520px]">
+          <thead>
+            <tr className="text-xs uppercase tracking-wide text-slate-500">
+              <th className="py-2 pr-3">Subject (Nom)</th>
+              <th className="py-2 pr-3">Object (Akk)</th>
+              <th className="py-2">Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            {WK4_AKK_PRONOUNS.map((row) => (
+              <tr key={row.nom} className="border-t border-slate-200 dark:border-slate-800">
+                <td className="py-2 pr-3 font-mono">{row.nom}</td>
+                <td className="py-2 pr-3 font-mono font-bold text-violet-700 dark:text-violet-300">{row.akk}</td>
+                <td className="py-2 text-slate-600 dark:text-slate-300">{row.en}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="text-xs text-slate-500 mt-2">
+          sie / es / sie(pl) / Sie keep the same form across cases. Everything else shape-shifts.
+        </p>
+      </section>
+
+      {/* Dativ — preps + verbs */}
+      <section aria-labelledby="dativ" className="grid md:grid-cols-2 gap-4">
+        <h2 id="dativ" className="sr-only">Dativ — prepositions and verbs</h2>
+        <div className="card">
+          <h3 className="font-bold mb-2">8 always-Dativ prepositions</h3>
+          <p className="text-sm text-slate-500 mb-2">Every noun after these is in Dativ. Memorise as one block.</p>
+          <ul className="space-y-2 text-sm">
+            {WK4_DATIV_PREPS.map((p) => (
+              <li key={p.de} className="border-t border-slate-200 dark:border-slate-800 pt-2 first:border-0 first:pt-0">
+                <div className="flex items-start gap-2">
+                  <span className="font-mono font-bold flex-1">{p.de}</span>
+                  <AudioButton text={p.de} size="sm" />
+                </div>
+                <Pron de={p.de} />
+                <div className="text-xs text-slate-500">{p.en}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="card">
+          <h3 className="font-bold mb-2">7 Dativ verbs</h3>
+          <p className="text-sm text-slate-500 mb-2">Their human object goes in Dativ — not Akkusativ.</p>
+          <ul className="space-y-2 text-sm">
+            {WK4_DATIV_VERBS.map((v) => (
+              <li key={v.de} className="border-t border-slate-200 dark:border-slate-800 pt-2 first:border-0 first:pt-0">
+                <div className="flex items-start gap-2">
+                  <span className="font-mono font-bold flex-1">{v.de}</span>
+                  <AudioButton text={v.de} size="sm" />
+                </div>
+                <Pron de={v.de} />
+                <div className="text-xs text-slate-500">{v.en}</div>
+                <div className="mt-1 text-xs italic text-slate-600 dark:text-slate-300">e.g. „{v.example}"</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Contractions */}
+      <section aria-labelledby="contractions" className="card">
+        <h2 id="contractions" className="font-bold mb-3">Common contractions you'll hear every day</h2>
+        <table className="w-full text-left text-sm border-collapse">
+          <thead>
+            <tr className="text-xs uppercase tracking-wide text-slate-500">
+              <th className="py-2 pr-3">Combo</th>
+              <th className="py-2 pr-3">Short form</th>
+              <th className="py-2 pr-3">Case</th>
+              <th className="py-2">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            {WK4_CONTRACTIONS.map((c) => (
+              <tr key={c.short} className="border-t border-slate-200 dark:border-slate-800">
+                <td className="py-2 pr-3 font-mono">{c.combo}</td>
+                <td className="py-2 pr-3 font-mono font-bold text-violet-700 dark:text-violet-300">{c.short}</td>
+                <td className="py-2 pr-3 text-xs">{c.case}</td>
+                <td className="py-2">
+                  <div className="flex items-start gap-2">
+                    <span className="font-medium flex-1">{c.example}</span>
+                    <AudioButton text={c.example} size="sm" />
+                  </div>
+                  <Pron de={c.example} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="text-xs text-slate-500 mt-3">
+          Wechselpräpositionen (in / an / auf with switching cases) and their Akk-side contractions
+          ins / ans land in Week 5.
+        </p>
+      </section>
+
+      {/* gefallen — flipped meaning callout */}
+      <section aria-labelledby="gefallen" className="card bg-amber-50 border-amber-200 dark:bg-amber-900/20 dark:border-amber-700">
+        <h2 id="gefallen" className="font-bold mb-2">⚠ "I like X" in German is BACKWARDS</h2>
+        <p className="text-sm text-slate-700 dark:text-slate-200 mb-2">
+          English: "<em>I like the city.</em>" — subject is "I".
+          <br />
+          German:&nbsp; "<em>Die Stadt gefällt mir.</em>" — literally <strong>"The city pleases me."</strong>
+        </p>
+        <ul className="text-sm space-y-1">
+          <li><span className="font-mono">Die Stadt</span> = subject (Nominativ)</li>
+          <li><span className="font-mono">gefällt</span> = verb (3rd singular agreeing with Stadt)</li>
+          <li><span className="font-mono">mir</span> = the person being pleased (Dativ)</li>
+        </ul>
+        <p className="mt-2 text-sm">
+          Same shape for <em>schmecken</em> (to taste good), <em>passen</em> (to fit), <em>gehören</em> (to belong).
+          The THING is the subject, the PERSON is in Dativ.
+        </p>
+      </section>
+
+      {/* Common mistakes */}
+      <section aria-labelledby="wk4-mistakes" className="card">
+        <h2 id="wk4-mistakes" className="font-bold mb-3">Common mistakes</h2>
+        <ul className="space-y-3">
+          {WK4_COMMON_MISTAKES.map((m) => (
+            <li key={m.right} className="border-t border-slate-200 dark:border-slate-800 pt-3 first:border-0 first:pt-0">
+              <div className="text-rose-600 dark:text-rose-400 font-mono">{m.wrong}</div>
+              <div className="text-emerald-700 dark:text-emerald-400 font-mono">{m.right}</div>
+              <div className="text-sm text-slate-600 dark:text-slate-300 mt-1">{m.why}</div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Memory hooks */}
+      <section aria-labelledby="wk4-hooks" className="card">
+        <h2 id="wk4-hooks" className="font-bold mb-2">Memory hooks</h2>
+        <ul className="list-disc pl-5 space-y-1 text-slate-700 dark:text-slate-200">
+          <li><strong>Masculine carries the load.</strong> Only der/ein change in Akk. Only der/ein/das change in Dat. Feminine + plural Nom and Akk are identical — that's why most of German feels easier than expected.</li>
+          <li><strong>Dat plural = den + n.</strong> "Ich spreche mit den Studenten." Always add the -n if the noun doesn't already have one.</li>
+          <li><strong>Sing the eight Dativ preps</strong> as one breath: <em>mit · bei · zu · von · nach · aus · seit · gegenüber</em>. Once they're a chant, you never miss them in a sentence.</li>
+          <li><strong>Helfen, danken, gehören, gefallen, antworten, glauben, gratulieren</strong> — all Dativ. The trick: most of them have a HUMAN as the indirect object — you help / thank / answer / believe / congratulate <em>someone</em>.</li>
+          <li><strong>Akk-pronoun shortcut:</strong> three end in <em>-ich</em> (mich, dich), three drop to schwa-y forms (ihn, uns, euch). sie / es / Sie don't move.</li>
+          <li><strong>Contractions are habits, not exceptions.</strong> Native speakers always say "im / am / beim / vom / zum / zur" — never "in dem / an dem". Pick one a day to use.</li>
+          <li><strong>"I like X" lives in your bones.</strong> Don't translate word for word — flip it: <em>X gefällt mir</em>.</li>
+        </ul>
+      </section>
+
+      <OtherCheatsheets except="cases" />
+
+      <footer className="text-center text-sm text-slate-500 pb-4">
+        Ready for Week 5? <Link to="/day/29" className="font-semibold text-violet-700 dark:text-violet-300 hover:underline">→ Go to Day 29 (Dativ pronouns)</Link>
       </footer>
     </div>
   );

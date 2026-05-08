@@ -213,6 +213,21 @@ function Result({ day, result, onContinue }) {
           </div>
         </Link>
       )}
+      {passed && day.id === 28 && (
+        <Link
+          to="/cheatsheet/cases"
+          className="block card bg-gradient-to-br from-violet-50 to-indigo-50 dark:from-slate-900 dark:to-slate-900 hover:shadow-md transition"
+        >
+          <div className="flex items-center gap-3">
+            <div className="text-3xl" aria-hidden>📐</div>
+            <div className="flex-1">
+              <div className="font-bold">Before Week 5 — review the Week 4 cheatsheet</div>
+              <div className="text-sm text-slate-500">All 12 article slots, decision tree (Nom · Akk · Dat), 8 Dativ preps, 7 Dativ verbs, Akk-pronoun shape-shift, contractions and the gefallen-flip.</div>
+            </div>
+            <span aria-hidden className="text-xl">→</span>
+          </div>
+        </Link>
+      )}
     </div>
   );
 }
