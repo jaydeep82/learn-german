@@ -11,10 +11,24 @@
  * in sync.
  */
 
-export const VERSION = '3.2.6';
-export const RELEASE_DATE = '2026-05-07';
+export const VERSION = '3.2.7';
+export const RELEASE_DATE = '2026-05-08';
 
 export const RELEASES = [
+  {
+    version: '3.2.7',
+    date: '2026-05-08',
+    type: 'improvement',
+    title: 'Day 7 review — werden, the two iron rules, Week 1 recap',
+    notes: [
+      'Reviewed Week 1 · Day 7 (werden + sentence rules) end-to-end, parallel to the Day 1-6 polishes. This day closes Week 1, so the polish doubles as a recap.',
+      'Vocabulary 6 → 16 items: kept the existing change-of-state adjectives (ruhig, nervös, besser, langsamer, schneller, müde) and added contextual companions (kalt, warm, heiß, dunkel, hell, alt, jung, reich) plus future-trajectory professions (Arzt, Ärztin). Every entry has a phonetic hint.',
+      'Grammar (was 3, now 6): full werden conjugation with the e→i singular vowel-change explained · ⭐ what werden ACTUALLY means at A1 (change-of-state · profession trajectory · future preview) · sein-vs-werden STATE-vs-BECOMING contrast with worked examples · ⭐ Iron rule 1 (verb in slot 2) with the time-leading variant · ⭐ Iron rule 2 (capitalise EVERY noun) · ⭐ Week 1 recap: sein / haben / werden side-by-side conjugation table.',
+      'Exercises (was 17, now 23): forms↔pronouns match for werden · 11 becoming-pattern fill-blanks · 2 sein-vs-werden state-vs-becoming MCQs ("Es ist kalt" vs "Es wird kalt") · 4 three-aux disambiguation fill-blanks · 2 capitalisation MCQs (one tests recognising a wrongly-lowercased noun mid-sentence) · 1 verb-2nd word-order MCQ · weather/change-of-state dialogue.',
+      'Quiz expanded 2 → 7 items: conjugation, capitalisation, verb-position, ist-vs-wird semantic decision.',
+      'No transliterator changes this release.',
+    ],
+  },
   {
     version: '3.2.6',
     date: '2026-05-07',

@@ -994,44 +994,180 @@ export const days = [
     title: 'werden + sentence rules',
     titleDe: '„werden" + Satzregeln',
     emoji: '🟨',
-    objective: 'Conjugate "werden" and apply the two basic German sentence rules.',
-    intro: '"werden" means "to become" or, paired with another verb, expresses the future. We end Week 1 with two iron rules of word order.',
+    objective: 'Conjugate "werden", talk about CHANGING STATE, and lock in the two iron word-order rules that close Week 1.',
+    intro: '"werden" is the third Week-1 power verb. It means "to become" — describing CHANGE OF STATE (Es WIRD kalt = "It is getting cold"). Paired with another verb it forms the future tense (Day 45). Today closes Week 1 with werden + the two rules every German sentence obeys: VERB IN SLOT 2 and CAPITALISE EVERY NOUN.',
     vocabulary: [
-      { de: 'ruhig',     en: 'calm' },      { de: 'nervös',   en: 'nervous' },
-      { de: 'besser',    en: 'better' },    { de: 'langsamer', en: 'slower' },
-      { de: 'schneller', en: 'faster' },    { de: 'müde',      en: 'tired' },
+      // adjectives describing change-of-state
+      { de: 'müde',      en: 'tired',         hint: '"MUE-duh" — Ich werde müde = I am getting tired' },
+      { de: 'ruhig',     en: 'calm',          hint: '"ROO-ikh" — final -ig sounds like soft ich' },
+      { de: 'nervös',    en: 'nervous',       hint: '"nair-VURS" — long ö' },
+      { de: 'besser',    en: 'better',        hint: '"BESS-uh" — comparative of gut' },
+      { de: 'langsamer', en: 'slower',        hint: '"LANG-zam-uh" — comparative of langsam' },
+      { de: 'schneller', en: 'faster',        hint: '"SHNELL-uh" — sch + final -er reduces' },
+      { de: 'kalt',      en: 'cold',          hint: '"kahlt"' },
+      { de: 'warm',      en: 'warm',          hint: '"vahrm" — w → v' },
+      { de: 'heiß',      en: 'hot',           hint: '"hyess" — ei = eye, ß = ss' },
+      { de: 'dunkel',    en: 'dark',          hint: '"DOON-kel"' },
+      { de: 'hell',      en: 'bright',        hint: '"hell"' },
+      { de: 'alt',       en: 'old',           hint: '"ahlt"' },
+      { de: 'jung',      en: 'young',         hint: '"yoong" — j → y' },
+      { de: 'reich',     en: 'rich',          hint: '"ryekh" — ei = eye, soft ch' },
+      // future-trajectory profession examples
+      { de: 'Arzt',      en: 'doctor (m)',    hint: '"artst" — rz = rts' },
+      { de: 'Ärztin',    en: 'doctor (f)',    hint: '"EHRTS-tin" — -in suffix = female form' },
     ],
     grammar: [
-      { rule: 'werden conjugation', body: 'ich werde · du wirst · er/sie/es wird · wir werden · ihr werdet · sie/Sie werden' },
-      { rule: 'Rule 1 — verb second', body: 'In a main clause, the conjugated verb sits in position 2.' },
-      { rule: 'Rule 2 — capitalise nouns', body: 'EVERY noun starts with a capital letter, no matter where it sits in the sentence.' },
+      { rule: 'werden — full conjugation (vowel changes in singular)',
+        body:
+          '   ich        werde    I become / am becoming\n' +
+          '   du         wirst    you become      ⚠ vowel changes e → i\n' +
+          '   er/sie/es  wird     he / she / it becomes  ⚠ also e → i\n' +
+          '   wir        werden   we become       (e returns)\n' +
+          '   ihr        werdet   you all become\n' +
+          '   sie / Sie  werden   they / formal you become\n' +
+          'Pattern: e → i ONLY in the singular du/er/sie/es. Plural goes back to e.',
+      },
+      { rule: 'What werden actually means at A1',
+        body:
+          '1. CHANGE OF STATE (today): something is becoming X — "Es wird kalt" (It IS GETTING cold).\n' +
+          '2. PROFESSION you are TRAINING TOWARDS — "Ich werde Arzt" (I am becoming a doctor).\n' +
+          '3. FUTURE TENSE (preview, full lesson Day 45): werden + infinitive at the end.\n' +
+          '   "Ich werde morgen lernen" (I will study tomorrow).\n' +
+          'For everyday spoken German, native speakers usually skip future-werden and use the present tense + a time word: "Morgen lerne ich" works fine.',
+      },
+      { rule: 'sein vs werden — STATE vs BECOMING',
+        body:
+          'sein   = describes a current state.        "Es IST kalt."     It is cold (now).\n' +
+          'werden = describes change towards a state. "Es WIRD kalt."    It is getting cold.\n' +
+          'Same drill for adjectives:\n' +
+          '  Ich BIN müde.        I am tired.\n' +
+          '  Ich WERDE müde.      I am getting tired (felt fresh five minutes ago).',
+      },
+      { rule: '⭐ Iron rule 1 — the conjugated verb sits in position 2',
+        body:
+          'In a main clause, the conjugated verb is ALWAYS the second slot — even if the time / place / object leads.\n' +
+          '  "Ich werde müde."        slot 1 = ich, slot 2 = werde.\n' +
+          '  "Heute werde ich müde."   slot 1 = heute, slot 2 = werde, subject moved to slot 3.\n' +
+          'NEVER "Heute ich werde müde" — that puts the verb in slot 3 and is wrong.',
+      },
+      { rule: '⭐ Iron rule 2 — every noun starts with a capital letter',
+        body:
+          'EVERY noun, anywhere in the sentence, starts with a capital. The first word of a sentence also gets a capital (regardless of word class).\n' +
+          '  "Ich habe Hunger."  — Hunger capitalised.\n' +
+          '  "Heute werde ich Lehrer." — Lehrer capitalised.\n' +
+          '  "Wir kaufen das Buch." — Buch capitalised.\n' +
+          'If you skip capitalisation, your sentence still parses but reads "wrong" to every German.',
+      },
+      { rule: 'Week 1 recap — three aux verbs side by side',
+        body:
+          '              sein            haben           werden\n' +
+          '   ich        bin             habe            werde\n' +
+          '   du         bist            hast            wirst\n' +
+          '   er/sie/es  ist             hat             wird\n' +
+          '   wir        sind            haben           werden\n' +
+          '   ihr        seid            habt            werdet\n' +
+          '   sie/Sie    sind            haben           werden\n' +
+          'sein = state + identity · haben = possession + body needs · werden = becoming + future.',
+      },
     ],
     exercises: [
       richConjEx('werden', 'to become'),
-      { type: 'fill-blank', sentence: 'Ich __ Softwareentwickler.',  answer: 'werde', hint: 'becoming — future direction' },
-      { type: 'fill-blank', sentence: 'Du __ Softwareentwickler.',   answer: 'wirst' },
-      { type: 'fill-blank', sentence: 'Er __ Softwareentwickler.',   answer: 'wird' },
-      { type: 'fill-blank', sentence: 'Es __ ein Meeting.',          answer: 'wird' },
-      { type: 'fill-blank', sentence: 'Wir __ ein Team.',            answer: 'werden' },
-      { type: 'fill-blank', sentence: 'Ihr __ ein Team.',            answer: 'werdet' },
-      { type: 'fill-blank', sentence: 'Sie __ Kollegen.',            answer: 'werden', hint: 'plural subject' },
-      { type: 'fill-blank', sentence: 'Ich __ müde.',                answer: 'werde' },
-      { type: 'fill-blank', sentence: 'Es __ besser.',               answer: 'wird' },
-      { type: 'fill-blank', sentence: 'Sie __ eine Kollegin.',       answer: 'wird', hint: 'sie (singular) + wird → "she"' },
-      // Mixed challenge — pick whichever auxiliary fits the meaning. Slide 41.
-      { type: 'fill-blank', sentence: 'Ich __ Softwareentwickler. (right now)',     answer: 'bin' },
-      { type: 'fill-blank', sentence: 'Du __ einen Moment.',                        answer: 'hast' },
-      { type: 'fill-blank', sentence: 'Sie __ ein Team. (development — future)',    answer: 'werden' },
-      { type: 'fill-blank', sentence: 'Wir __ Kollegen. (development — future)',    answer: 'werden' },
+      // Forms ↔ pronouns match
+      {
+        type: 'match',
+        pairs: [
+          { de: 'werde',  en: 'ich' },
+          { de: 'wirst',  en: 'du' },
+          { de: 'wird',   en: 'er / sie / es' },
+          { de: 'werden', en: 'wir / sie / Sie' },
+          { de: 'werdet', en: 'ihr' },
+        ],
+      },
+      // Becoming-pattern fill-blanks
+      { type: 'fill-blank', sentence: 'Ich __ müde.',                                answer: 'werde' },
+      { type: 'fill-blank', sentence: 'Du __ Softwareentwickler. (training towards)', answer: 'wirst' },
+      { type: 'fill-blank', sentence: 'Er __ Softwareentwickler.',                    answer: 'wird' },
+      { type: 'fill-blank', sentence: 'Es __ ein Meeting.',                           answer: 'wird' },
+      { type: 'fill-blank', sentence: 'Wir __ ein Team.',                             answer: 'werden' },
+      { type: 'fill-blank', sentence: 'Ihr __ ein Team.',                             answer: 'werdet' },
+      { type: 'fill-blank', sentence: 'Sie __ Kollegen.',                             answer: 'werden', hint: 'plural subject' },
+      { type: 'fill-blank', sentence: 'Es __ besser.',                                answer: 'wird' },
+      { type: 'fill-blank', sentence: 'Sie __ eine Kollegin.',                        answer: 'wird', hint: 'sie (singular) + wird → "she"' },
+      { type: 'fill-blank', sentence: 'Es __ kalt. (it is getting)',                  answer: 'wird' },
+      { type: 'fill-blank', sentence: 'Ich __ Arzt. (training towards)',              answer: 'werde' },
+      // sein vs werden
       { type: 'multiple-choice',
-        q: 'Which sentence is correct?',
+        q: '"It IS cold (right now)." in German is…',
+        options: ['Es wird kalt.', 'Es ist kalt.', 'Es hat kalt.', 'Es kalt.'],
+        answer: 'Es ist kalt.',
+        explain: 'Current state → sein → ist.' },
+      { type: 'multiple-choice',
+        q: '"It is GETTING cold." in German is…',
+        options: ['Es wird kalt.', 'Es ist kalt.', 'Es hat kalt.', 'Es kalt wird.'],
+        answer: 'Es wird kalt.',
+        explain: 'Change of state → werden → wird.' },
+      // Mixed three-aux disambiguation (slide 41)
+      { type: 'fill-blank', sentence: 'Three aux: "Ich __ Softwareentwickler." (right now)',     answer: 'bin' },
+      { type: 'fill-blank', sentence: 'Three aux: "Du __ einen Moment." (possession)',           answer: 'hast' },
+      { type: 'fill-blank', sentence: 'Three aux: "Sie __ ein Team." (development → future)',    answer: 'werden' },
+      { type: 'fill-blank', sentence: 'Three aux: "Wir __ Kollegen." (development → future)',    answer: 'werden' },
+      // Capitalisation drill
+      { type: 'multiple-choice',
+        q: 'Which sentence is correctly capitalised?',
         options: ['ich habe hunger.','Ich Habe Hunger.','Ich habe Hunger.','Ich habe hunger'],
         answer: 'Ich habe Hunger.',
         explain: 'Capitalise the first word AND every noun — Hunger.' },
+      { type: 'multiple-choice',
+        q: 'Spot the sentence that MIS-capitalises a noun.',
+        options: [
+          'Wir kaufen das Buch.',
+          'Heute werde ich Lehrer.',
+          'Sie hat eine idee.',
+          'Es ist kalt.',
+        ],
+        answer: 'Sie hat eine idee.',
+        explain: '"Idee" is a noun — it MUST be capitalised, even mid-sentence.',
+      },
+      // Verb-second drill
+      { type: 'multiple-choice',
+        q: 'Pick the correct word order:',
+        options: [
+          'Heute ich werde müde.',
+          'Heute werde ich müde.',
+          'Ich heute werde müde.',
+          'Werde heute ich müde.',
+        ],
+        answer: 'Heute werde ich müde.',
+        explain: 'When time leads, the verb still keeps slot 2 — subject moves to slot 3.',
+      },
+      // Mini dialogue — change-of-state in real conversation
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Es wird kalt heute.',                   en: 'It is getting cold today.' },
+        { speaker: 'B', de: 'Ja, und ich werde müde.',                en: 'Yes, and I am getting tired.' },
+        { speaker: 'A', de: 'Wir werden schneller nach Hause gehen.', en: 'We will go home faster.' },
+        { speaker: 'B', de: 'Gute Idee. Morgen wird es besser.',       en: 'Good idea. Tomorrow it will get better.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Wir __ ruhig.', answer: 'werden' },
-      { type: 'multiple-choice', q: 'Which word MUST be capitalised in "ich kaufe ein buch"?', options: ['ich','kaufe','ein','buch'], answer: 'buch' },
+      { type: 'fill-blank', sentence: 'Du __ schneller. (you are getting)', answer: 'wirst' },
+      { type: 'fill-blank', sentence: 'Heute __ es kalt. (slot 2 — it is getting)', answer: 'wird' },
+      { type: 'multiple-choice', q: 'Which word MUST be capitalised in "ich kaufe ein buch"?',
+        options: ['ich','kaufe','ein','buch'], answer: 'buch' },
+      { type: 'multiple-choice', q: 'Which sentence is wrong?',
+        options: [
+          'Ich werde Arzt.',
+          'Heute werde ich müde.',
+          'Es wird kalt.',
+          'Heute ich werde müde.',
+        ],
+        answer: 'Heute ich werde müde.',
+        explain: 'Verb must be in slot 2 — the subject moves AFTER the verb when time leads.',
+      },
+      { type: 'multiple-choice', q: 'Pick the right verb: "Es __ kalt." (it is — current state)',
+        options: ['ist','wird','hat','sein'], answer: 'ist' },
+      { type: 'multiple-choice', q: 'Pick the right verb: "Es __ kalt." (it is GETTING — change)',
+        options: ['ist','wird','hat','wirst'], answer: 'wird' },
     ],
   },
 
