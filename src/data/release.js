@@ -11,10 +11,31 @@
  * in sync.
  */
 
-export const VERSION = '3.3.1';
+export const VERSION = '3.3.2';
 export const RELEASE_DATE = '2026-05-08';
 
 export const RELEASES = [
+  {
+    version: '3.3.2',
+    date: '2026-05-08',
+    type: 'improvement',
+    title: 'Day 9 review — S-V-O made interactive (tag, build, invert)',
+    notes: [
+      'Reviewed Week 2 · Day 9 (Subject · Verb · Object) end-to-end. The previous version was 11 multiple-choice questions in a row with the same format — fast to write, dull to do. Replaced with a varied, interactive flow.',
+      'Vocabulary 5 → 16 items. Added the role labels themselves (das Subjekt · das Verb · das Objekt) so the lesson can reference them, plus 5 common action verbs that take objects (schreiben · lesen · erklären · kaufen · fragen) and 4 common object nouns (das Buch · der Kaffee · die Lehrerin · ...). Every entry has a colour-coded role hint (🟦 / 🟧 / 🟩).',
+      'Grammar 3 → 5 callouts: ⭐ The three sentence roles with a worked colour-coded example (Der Student / schreibt / den Satz) · ⭐ The two-question test in 5 seconds (Wer/Was → S, Wen/Was → O) with full step-by-step worked example · ⭐ The verb is GLUED to slot 2 with a 4-row position table showing what slot 1 can be (subject · time · place · object) · "Not every sentence has an object" so learners stop hunting for one in "Ich bin müde" · 🚦 Common pitfalls (Heute ich lerne ✗).',
+      'Exercises completely reshaped (10 MCQs → 17 mixed):',
+      '• 3 ⭐ ROLE-TAGGING match exercises — drag each word in a sentence onto its 🟦/🟧/🟩 label. The first interactive way to "see" sentence structure.',
+      '• A Wer/Was vs Wen/Was match for the two-question test.',
+      '• 3 S-V-O identification MCQs on a single sentence (one for each role) — fewer sentences, deeper analysis.',
+      '• 2 V2-inversion word-order MCQs (time leads, place leads).',
+      '• 4 ⭐ "BUILD THE SENTENCE" fill-blanks where you compose the full S-V-O from given parts — including 2 inversions where time/place leads.',
+      '• 4 verb-in-slot-2 fill-blanks with real meaning (schreibt, lesen, hat, lerne).',
+      '• Mini dialogue between Lehrer + Student that explicitly names "Subjekt" / "Objekt" while modelling the question test in real conversation.',
+      '• 5 mixed S/V/O identification MCQs across varied sentences as a quick sweep.',
+      'Quiz 1 → 8 items including build-the-sentence and Subjekt/Objekt fill-ins.',
+    ],
+  },
   {
     version: '3.3.1',
     date: '2026-05-08',

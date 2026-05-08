@@ -1308,40 +1308,197 @@ export const days = [
     title: 'Subject · Verb · Object',
     titleDe: 'Subjekt · Verb · Objekt',
     emoji: '🧩',
-    objective: 'Spot the subject, verb and object in any simple sentence.',
-    intro: 'A German sentence usually follows S-V-O — like English. The subject does the action; the object receives it.',
+    objective: 'Spot the three sentence roles, apply the Wer/Wen test, and keep the verb glued in slot 2 — even when the sentence starts with time or place.',
+    intro: 'A German sentence has three jobs to fill: 🟦 SUBJECT (the doer), 🟧 VERB (the action), 🟩 OBJECT (the receiver). The simplest order is S-V-O — same as English. But German has ONE iron rule that English doesn\'t: the conjugated verb ALWAYS sits in position 2. If you start with anything else (time, place, emphasis), the subject moves to position 3. Once you see this, every sentence in the rest of the course makes sense.',
     vocabulary: [
-      { de: 'der Lehrer',  en: 'the teacher' },
-      { de: 'der Student', en: 'the student' },
-      { de: 'das Wort',    en: 'the word' },
-      { de: 'der Satz',    en: 'the sentence' },
-      { de: 'die Frage',   en: 'the question' },
+      // Role labels (so the lesson talks about them)
+      { de: 'das Subjekt', en: 'the subject (the doer)',     hint: '🟦 Wer / Was? (Who / What is doing it?)' },
+      { de: 'das Verb',    en: 'the verb (the action)',      hint: '🟧 ALWAYS slot 2 in a main sentence' },
+      { de: 'das Objekt',  en: 'the object (the receiver)',  hint: '🟩 Wen / Was? (Whom / What is being verbed?)' },
+      // People (common subjects)
+      { de: 'der Lehrer',  en: 'the teacher',  hint: 'masc. — common subject' },
+      { de: 'der Student', en: 'the student',  hint: 'masc. — common subject' },
+      { de: 'die Lehrerin',en: 'the teacher (f)',hint: 'fem. — -in suffix → female form' },
+      // Things (common objects)
+      { de: 'das Wort',    en: 'the word',     hint: 'neuter — das Wort' },
+      { de: 'der Satz',    en: 'the sentence', hint: 'masc. — der Satz' },
+      { de: 'die Frage',   en: 'the question', hint: 'fem. — die Frage' },
+      { de: 'das Buch',    en: 'the book',     hint: 'common object — das Buch' },
+      { de: 'der Kaffee',  en: 'the coffee',   hint: 'common object — der Kaffee' },
+      // Action verbs (S-V-O machinery)
+      { de: 'schreiben',   en: 'to write',     hint: 'takes an object: schreibt + den Satz' },
+      { de: 'lesen',       en: 'to read',      hint: 'takes an object: liest + ein Buch' },
+      { de: 'erklären',    en: 'to explain',   hint: 'takes an object: erklärt + das Wort' },
+      { de: 'kaufen',      en: 'to buy',       hint: 'takes an object: kauft + den Kaffee' },
+      { de: 'fragen',      en: 'to ask',       hint: 'takes an object: fragt + den Lehrer' },
     ],
     grammar: [
-      { rule: 'S-V-O', body: '"Der Student schreibt den Satz." — Student (S) writes (V) the sentence (O).' },
-      { rule: 'Verb still 2nd', body: 'Even if the object comes first for emphasis, the verb stays in position 2.' },
-      { rule: 'Question test',
+      { rule: 'The three sentence roles',
         body:
-          'To find the subject, ask "Wer / Was?" (Who / What is doing the action?).\n' +
-          'To find the object, ask "Wen / Was?" (Whom / What is being acted on?).\n' +
-          'Example: "Heute habe ich Hunger." Wer hat Hunger? → ich (subject). Was hat ich? → Hunger (object).',
+          '🟦 SUBJECT — who or what does the action.\n' +
+          '🟧 VERB    — the action itself, conjugated to match the subject.\n' +
+          '🟩 OBJECT  — who or what receives the action.\n' +
+          'Worked example:\n' +
+          '   Der Student        schreibt        den Satz.\n' +
+          '   🟦 SUBJECT            🟧 VERB            🟩 OBJECT\n' +
+          '   "The student writes the sentence."',
+      },
+      { rule: '⭐ The two-question test — find S and O in 5 seconds',
+        body:
+          'Step 1: find the verb (the action).\n' +
+          'Step 2: ask "Wer / Was [verb]?" (Who / What is doing it?) — that\'s the SUBJECT.\n' +
+          'Step 3: ask "Wen / Was [verb] der Subjekt?" (Whom / What does the subject verb?) — that\'s the OBJECT.\n' +
+          '\n' +
+          'Worked example: "Der Lehrer erklärt das Wort."\n' +
+          '   verb = erklärt.\n' +
+          '   Wer erklärt? → der Lehrer.   🟦 subject\n' +
+          '   Was erklärt der Lehrer? → das Wort.   🟩 object',
+      },
+      { rule: '⭐ The verb is GLUED to slot 2',
+        body:
+          'No matter what you put first, the conjugated verb stays in position 2.\n' +
+          '   Position 1     Position 2 (verb)   Position 3+\n' +
+          '   Ich            lerne                Deutsch.\n' +
+          '   Heute          lerne                ich Deutsch.   ← time leads, subject moves to 3\n' +
+          '   In Berlin      lernt                er Deutsch.    ← place leads, subject moves to 3\n' +
+          '   Deutsch        lerne                ich heute.     ← object leads, subject still after verb\n' +
+          'This "verb-second" rule (V2) is the single most important word-order law in German.',
+      },
+      { rule: 'Not every sentence has an object',
+        body:
+          'Some sentences have no object — just subject and verb (with maybe an adjective or a time/place):\n' +
+          '   Ich bin müde.        🟦 ich · 🟧 bin · adjective.\n' +
+          '   Wir arbeiten heute.  🟦 wir · 🟧 arbeiten · time.\n' +
+          'These verbs don\'t need a receiver. The Wer/Was test still finds the subject; there\'s simply no Wen/Was answer.',
+      },
+      { rule: '🚦 Common pitfalls',
+        body:
+          '✗ Heute ich lerne Deutsch.   ← verb in slot 3, broken.\n' +
+          '✓ Heute lerne ich Deutsch.   ← verb in slot 2, subject in slot 3.\n' +
+          '✗ Ich lerne heute Deutsch und ich arbeite heute.   ← double "heute", awkward.\n' +
+          '✓ Ich lerne heute Deutsch und arbeite viel.\n' +
+          'When two clauses share a subject, you can drop the second "ich".',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'multiple-choice', q: 'In "Der Lehrer erklärt das Wort", what is the SUBJECT?', options: ['Der Lehrer','erklärt','das Wort','Wort'], answer: 'Der Lehrer' },
-      { type: 'multiple-choice', q: 'And the OBJECT?', options: ['Der Lehrer','erklärt','das Wort','das'], answer: 'das Wort' },
-      { type: 'multiple-choice', q: '"Heute habe ich Hunger." — what is the subject?', options: ['Heute','habe','ich','Hunger'], answer: 'ich' },
-      { type: 'multiple-choice', q: '"Heute habe ich Hunger." — what is the object?', options: ['Heute','habe','ich','Hunger'], answer: 'Hunger' },
-      { type: 'multiple-choice', q: '"Wir haben eine Idee." — subject?', options: ['Wir','haben','eine Idee','—'], answer: 'Wir' },
-      { type: 'multiple-choice', q: '"Wir haben eine Idee." — object?', options: ['Wir','haben','eine Idee','—'], answer: 'eine Idee' },
-      { type: 'multiple-choice', q: '"Im Team haben wir Aufgaben." — subject?', options: ['Im Team','haben','wir','Aufgaben'], answer: 'wir' },
-      { type: 'multiple-choice', q: '"Im Team haben wir Aufgaben." — object?', options: ['Im Team','haben','wir','Aufgaben'], answer: 'Aufgaben' },
-      { type: 'multiple-choice', q: '"Morgen wird das Lernen besser." — subject?', options: ['Morgen','wird','das Lernen','besser'], answer: 'das Lernen' },
-      { type: 'fill-blank', sentence: 'Der Student __ den Satz. (writes)', answer: 'schreibt' },
+
+      // ⭐ INTERACTIVE — match each word in a sentence to its S / V / O role
+      {
+        type: 'match',
+        pairs: [
+          { de: 'Der Lehrer',  en: '🟦 subject (S)' },
+          { de: 'erklärt',     en: '🟧 verb (V)' },
+          { de: 'das Wort',    en: '🟩 object (O)' },
+        ],
+      },
+      {
+        type: 'match',
+        pairs: [
+          { de: 'Der Student', en: '🟦 subject (does the action)' },
+          { de: 'schreibt',    en: '🟧 verb (the action)' },
+          { de: 'den Satz',    en: '🟩 object (receives the action)' },
+          { de: 'heute',       en: 'time — flexible position' },
+        ],
+      },
+      // Wer/Was vs Wen/Was test
+      {
+        type: 'match',
+        pairs: [
+          { de: 'Wer / Was …?',  en: 'finds the SUBJECT' },
+          { de: 'Wen / Was …?',  en: 'finds the OBJECT' },
+        ],
+      },
+
+      // S/V/O identification — but cleaner format with sentence shown once
+      { type: 'multiple-choice', q: '"Der Lehrer erklärt das Wort." — what is the 🟦 SUBJECT?',
+        options: ['Der Lehrer','erklärt','das Wort','Wort'], answer: 'Der Lehrer' },
+      { type: 'multiple-choice', q: '"Der Lehrer erklärt das Wort." — what is the 🟧 VERB?',
+        options: ['Der Lehrer','erklärt','das Wort','das'], answer: 'erklärt' },
+      { type: 'multiple-choice', q: '"Der Lehrer erklärt das Wort." — what is the 🟩 OBJECT?',
+        options: ['Der Lehrer','erklärt','das Wort','das'], answer: 'das Wort' },
+
+      // V2 inversion practice
+      { type: 'multiple-choice',
+        q: 'Which sentence is correct?',
+        options: [
+          'Heute ich lerne Deutsch.',
+          'Heute lerne ich Deutsch.',
+          'Heute Deutsch ich lerne.',
+          'Ich heute Deutsch lerne.',
+        ],
+        answer: 'Heute lerne ich Deutsch.',
+        explain: 'When time leads, the verb still keeps slot 2 — subject moves to slot 3.',
+      },
+      { type: 'multiple-choice',
+        q: 'Which sentence is correct?',
+        options: [
+          'In Berlin er arbeitet als Lehrer.',
+          'In Berlin arbeitet er als Lehrer.',
+          'Er in Berlin arbeitet als Lehrer.',
+          'Arbeitet er in Berlin als Lehrer.',
+        ],
+        answer: 'In Berlin arbeitet er als Lehrer.',
+        explain: 'Place in slot 1 → verb in slot 2 → subject in slot 3.',
+      },
+
+      // 🛠 Build the sentence from given subject + verb + object
+      { type: 'fill-blank',
+        sentence: '🛠 Build the sentence: subject = "Der Student", verb = schreiben, object = "den Satz" → __',
+        answer: 'Der Student schreibt den Satz',
+        hint: 'S + V (slot 2!) + O' },
+      { type: 'fill-blank',
+        sentence: '🛠 Build the sentence: subject = "Wir", verb = haben, object = "eine Idee" → __',
+        answer: 'Wir haben eine Idee' },
+      { type: 'fill-blank',
+        sentence: '🛠 Same words, but TIME leads: "Heute" + Wir + haben + Hunger → __',
+        answer: 'Heute haben wir Hunger',
+        hint: 'time slot 1 · verb slot 2 · subject slot 3' },
+      { type: 'fill-blank',
+        sentence: '🛠 PLACE leads: "Im Team" + wir + haben + Aufgaben → __',
+        answer: 'Im Team haben wir Aufgaben' },
+
+      // Verb-fill (verb in slot 2)
+      { type: 'fill-blank', sentence: 'Der Student __ den Satz. (schreiben)',           answer: 'schreibt' },
+      { type: 'fill-blank', sentence: 'Wir __ ein Buch. (lesen)',                       answer: 'lesen' },
+      { type: 'fill-blank', sentence: 'Der Lehrer __ eine Frage. (haben)',              answer: 'hat' },
+      { type: 'fill-blank', sentence: 'Heute __ ich Deutsch. (lernen — V2 inversion)',  answer: 'lerne' },
+
+      // Mini dialogue showing S, V, O in real conversation
+      { type: 'dialogue', lines: [
+        { speaker: 'Lehrer',  de: 'Der Student schreibt den Satz.',                       en: 'The student writes the sentence.' },
+        { speaker: 'Student', de: 'Was schreibt der Student?',                              en: 'What does the student write?' },
+        { speaker: 'Lehrer',  de: 'Den Satz! Der Satz ist das Objekt.',                    en: 'The sentence! "Den Satz" is the object.' },
+        { speaker: 'Student', de: 'Und wer schreibt?',                                       en: 'And who writes?' },
+        { speaker: 'Lehrer',  de: 'Der Student. Der Student ist das Subjekt.',              en: 'The student. "Der Student" is the subject.' },
+      ]},
+
+      // Real-content S/V/O — short sweep of mixed examples
+      { type: 'multiple-choice', q: '"Heute habe ich Hunger." — subject?',     options: ['Heute','habe','ich','Hunger'], answer: 'ich' },
+      { type: 'multiple-choice', q: '"Heute habe ich Hunger." — object?',      options: ['Heute','habe','ich','Hunger'], answer: 'Hunger' },
+      { type: 'multiple-choice', q: '"Wir haben eine Idee." — object?',        options: ['Wir','haben','eine Idee','—'], answer: 'eine Idee' },
+      { type: 'multiple-choice', q: '"Im Team haben wir Aufgaben." — subject?',options: ['Im Team','haben','wir','Aufgaben'], answer: 'wir' },
+      { type: 'multiple-choice', q: '"Morgen wird das Lernen besser." — subject?',
+        options: ['Morgen','wird','das Lernen','besser'], answer: 'das Lernen',
+        explain: '"Morgen" is in slot 1 (time), the verb "wird" is in slot 2, and "das Lernen" — the THING that becomes better — is the subject sitting in slot 3. When in doubt, ask: WHO/WHAT is doing the action of "becoming"?' },
     ],
     quiz: [
-      { type: 'multiple-choice', q: 'Which is the verb in "Wir lernen Deutsch"?', options: ['Wir','lernen','Deutsch','—'], answer: 'lernen' },
+      { type: 'multiple-choice', q: 'Which is the VERB in "Wir lernen Deutsch"?',
+        options: ['Wir','lernen','Deutsch','—'], answer: 'lernen' },
+      { type: 'multiple-choice', q: 'Which is the SUBJECT in "Der Lehrer kauft den Kaffee"?',
+        options: ['Der Lehrer','kauft','den Kaffee','—'], answer: 'Der Lehrer' },
+      { type: 'multiple-choice', q: 'Which is the OBJECT in "Ich lese ein Buch"?',
+        options: ['Ich','lese','ein Buch','—'], answer: 'ein Buch' },
+      { type: 'multiple-choice', q: 'Where does the conjugated verb live in a main sentence?',
+        options: ['Always position 1','Always position 2','Always at the end','Wherever fits'],
+        answer: 'Always position 2' },
+      { type: 'multiple-choice', q: 'Pick the correct order: time + verb + subject + adjective.',
+        options: ['Heute ich bin müde.','Müde ich bin heute.','Heute bin ich müde.','Bin ich heute müde.'],
+        answer: 'Heute bin ich müde.' },
+      { type: 'fill-blank', sentence: '🛠 "Today the student writes the sentence." → Heute __ der Student den Satz.',
+        answer: 'schreibt' },
+      { type: 'fill-blank', sentence: '"Wer / Was?" finds the __ .', answer: 'Subjekt' },
+      { type: 'fill-blank', sentence: '"Wen / Was?" finds the __ .', answer: 'Objekt' },
     ],
   },
 
