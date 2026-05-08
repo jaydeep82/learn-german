@@ -11,10 +11,24 @@
  * in sync.
  */
 
-export const VERSION = '3.3.0';
+export const VERSION = '3.3.1';
 export const RELEASE_DATE = '2026-05-08';
 
 export const RELEASES = [
+  {
+    version: '3.3.1',
+    date: '2026-05-08',
+    type: 'improvement',
+    title: 'Day 8 review — numbers 30-100, three spelling traps, real-world contexts',
+    notes: [
+      'Reviewed Week 2 · Day 8 (Numbers 30-100) end-to-end, parallel to the Day 1-7 polishes.',
+      'Vocabulary 10 → 20 items. Added the FULL set of tens (30-100), more flip examples (31, 42, 55, 66, 77, 88, 99), the 100-with-ein form, and 4 real-world support words: das Jahr, das Alter, die Nummer, das Prozent. Every entry now carries a phonetic hint with the right English-friendly cue.',
+      'Five grammar callouts (was 2): ⭐ the THREE spelling oddities (dreißig with ß · sechzig drops -s · siebzig drops -en) explicitly contrasted with the unit-side (66 = sechs-und-sechzig — full sechs in unit slot, drops -s in tens slot — same trick for 77) · the flip rule still works 21-99 with worked examples · ⭐ -ig endings sound like soft ich (with the southern-German hard-g variant noted) · hundert vs einhundert · "where you\'ll use these every day" (age, year, price preview, phone numbers).',
+      'Exercises 4 → 13: spelling-trap MCQs for 30/60/70, flip-vs-no-flip MCQs (76 vs 67), the 66/77 unit-keeps-full pair, 4 real-world fill-blanks (age, classroom size, car price), and a 6-pair match.',
+      'Quiz 2 → 7 items including all three spelling traps tested.',
+      'No transliterator changes this release.',
+    ],
+  },
   {
     version: '3.3.0',
     date: '2026-05-08',

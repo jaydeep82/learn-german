@@ -1177,31 +1177,129 @@ export const days = [
     title: 'Numbers 30–100',
     titleDe: 'Zahlen 30–100',
     emoji: '💯',
-    objective: 'Count up to one hundred.',
-    intro: 'The tens follow the same pattern as zwanzig — but watch out for "dreißig" (with ß, no -z-).',
+    objective: 'Read and write any number 30-100 and use them for age, year, and price.',
+    intro: 'Most tens just add -zig to the unit (vier → vierzig, sechs → sechzig). Watch out for THREE oddities: 30 is dreißig (with ß, no -z-), 60 drops the -s- of sechs, 70 drops the -en- of sieben. The unit-flip rule from 21-29 keeps working all the way to 99: 67 = sieben-und-sechzig.',
     vocabulary: [
-      { de: 'dreißig', en: '30' }, { de: 'vierzig', en: '40' },
-      { de: 'fünfzig', en: '50' }, { de: 'sechzig', en: '60' },
-      { de: 'siebzig', en: '70' }, { de: 'achtzig', en: '80' },
-      { de: 'neunzig', en: '90' }, { de: 'hundert', en: '100' },
-      { de: 'einundvierzig', en: '41' }, { de: 'siebenundsechzig', en: '67' },
+      // The tens
+      { de: 'dreißig',   en: '30',   hint: '⚠ ß instead of -zig: "DRY-sikh" — note the ß, NOT a -z- ending' },
+      { de: 'vierzig',   en: '40',   hint: '"FEER-tsikh"' },
+      { de: 'fünfzig',   en: '50',   hint: '"FUENF-tsikh" — long ü' },
+      { de: 'sechzig',   en: '60',   hint: '⚠ drops -s- of sechs: "ZEKH-tsikh"' },
+      { de: 'siebzig',   en: '70',   hint: '⚠ drops -en- of sieben: "ZEEP-tsikh"' },
+      { de: 'achtzig',   en: '80',   hint: '"AKH-tsikh"' },
+      { de: 'neunzig',   en: '90',   hint: '"NOYN-tsikh"' },
+      { de: 'hundert',   en: '100',  hint: '"HOON-dert" — short u' },
+      { de: 'einhundert',en: '100 (longer form)', hint: 'one-hundred — used to disambiguate over the phone' },
+      // Flip examples
+      { de: 'einunddreißig',  en: '31', hint: 'unit + und + tens, all one word' },
+      { de: 'zweiundvierzig', en: '42', hint: 'two-and-forty' },
+      { de: 'fünfundfünfzig', en: '55', hint: 'five-and-fifty' },
+      { de: 'sechsundsechzig',en: '66', hint: '⚠ FULL sechs in the unit slot, drops -s- in the tens slot' },
+      { de: 'siebenundsiebzig', en: '77', hint: '⚠ FULL sieben in the unit slot, drops -en- in the tens slot' },
+      { de: 'achtundachtzig', en: '88', hint: 'eight-and-eighty' },
+      { de: 'neunundneunzig', en: '99', hint: 'nine-and-ninety' },
+      // Real-world support words
+      { de: 'das Jahr',     en: 'the year',         hint: '"yar" — used after the number: "Ich bin 35 Jahre alt"' },
+      { de: 'das Alter',    en: 'the age',          hint: '"AHL-tuh"' },
+      { de: 'die Nummer',   en: 'the number',       hint: '"NOO-muh" — the cardinal/identifier sense' },
+      { de: 'das Prozent',  en: 'percent',          hint: '"pro-TSENT"' },
     ],
     grammar: [
-      { rule: '30 is special', body: 'dreißig — written with ß and without a -z- in the stem.' },
-      { rule: 'Same flip rule', body: '67 = sieben-und-sechzig. Read units before tens.' },
+      { rule: 'Three spelling oddities you must memorise',
+        body:
+          '• 30 → dreißig.   ß instead of -zig, NOT "dreizig".\n' +
+          '• 60 → sechzig.   sechs LOSES its -s- before -zig.\n' +
+          '• 70 → siebzig.   sieben LOSES its -en- before -zig.\n' +
+          'BUT in the flip-numbers, the UNIT side keeps the full word: 66 = sechs-und-sechzig (full sechs, dropped -s- sechzig). 77 = sieben-und-siebzig (full sieben, dropped -en- siebzig).',
+      },
+      { rule: 'The flip rule keeps working — read units before tens',
+        body:
+          'Like 21-29, every two-digit number 21-99 puts the UNIT first, then "und", then the tens — written as ONE WORD:\n' +
+          '  31 = ein-und-dreißig   (no -s of eins)\n' +
+          '  42 = zwei-und-vierzig\n' +
+          '  67 = sieben-und-sechzig\n' +
+          '  99 = neun-und-neunzig\n' +
+          'It feels backwards because English reads tens first ("sixty-seven"); German reads units first ("seven-and-sixty"). Your brain re-wires after about 50 reps.',
+      },
+      { rule: '-ig endings sound like soft ich',
+        body:
+          'Final -ig is pronounced like the soft ch in "ich" — "ikh" — in standard / northern German:\n' +
+          '  zwanzig → "TSVAN-tsikh"\n' +
+          '  fünfzig → "FUENF-tsikh"\n' +
+          '  hungrig → "HOON-grikh"\n' +
+          'In southern Germany, Austria and Switzerland it is often pronounced as a hard "g": "TSVAN-tsig". Both are accepted; northern is the standard taught at A1.',
+      },
+      { rule: 'hundert: with or without "ein"',
+        body:
+          '100 = hundert  /  einhundert  — both correct.\n' +
+          '"Einhundert" is the safer form on the phone or when you must avoid being misheard.\n' +
+          'Bigger 3-digit numbers ALWAYS need "hundert" before, then the flipped 2-digit suffix:\n' +
+          '  125 = ein-hundert-fünf-und-zwanzig.\n' +
+          '  365 = drei-hundert-fünf-und-sechzig.\n' +
+          'These bigger numbers come back on Day 18 (Numbers 100-1000).',
+      },
+      { rule: 'Where you\'ll use these every day',
+        body:
+          '• Age: "Ich bin 35 Jahre alt." → "Ich bin fünfunddreißig Jahre alt."\n' +
+          '• Year: "Ich bin 1991 geboren" — read in pairs (no flip): "neunzehn-hundert-ein-und-neunzig" (years up to 1999 use the special "hundred" reading).\n' +
+          '• Price: "60 Euro" → "sechzig Euro"  (full pricing pattern arrives on Day 19).\n' +
+          '• Phone numbers: speak each digit OR each pair separately. "0151" → "null-eins-fünf-eins".',
+      },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: '67 = __', answer: 'siebenundsechzig' },
-      { type: 'multiple-choice', q: 'How is 30 written?', options: ['dreizig','dreißig','dreissig','dreizen'], answer: 'dreißig' },
+      // Spelling traps
+      { type: 'multiple-choice', q: 'How is 30 written?',
+        options: ['dreizig','dreißig','dreissig','dreizen'], answer: 'dreißig',
+        explain: 'Special form — ß instead of -zig.' },
+      { type: 'multiple-choice', q: 'How is 60 written?',
+        options: ['sechszig','sechzig','sextig','sechsig'], answer: 'sechzig',
+        explain: 'sechs LOSES its -s- before -zig in the tens form.' },
+      { type: 'multiple-choice', q: 'How is 70 written?',
+        options: ['siebenzig','siebnzig','siebzig','sieptzig'], answer: 'siebzig',
+        explain: 'sieben LOSES its -en- before -zig in the tens form.' },
+      // Flip-vs-no-flip
+      { type: 'multiple-choice', q: 'Pick 76.',
+        options: ['siebenundsechzig','sechsundsiebzig','siebzigsechs','siebzigundsechs'], answer: 'sechsundsiebzig',
+        explain: '76 = six-and-seventy. Unit (sechs) first, then und, then siebzig.' },
+      { type: 'multiple-choice', q: 'Pick 67.',
+        options: ['siebenundsechzig','sechsundsiebzig','sechzigundsieben','siebzigsechs'], answer: 'siebenundsechzig',
+        explain: '67 = seven-and-sixty. Unit (sieben — FULL) first, then und, then sechzig (drops -s-).' },
+      // 66 + 77 — the "keep full unit, drop in tens" pair
+      { type: 'fill-blank', sentence: '66 = __',  answer: 'sechsundsechzig',
+        hint: 'unit slot keeps full sechs · tens slot drops -s-' },
+      { type: 'fill-blank', sentence: '77 = __',  answer: 'siebenundsiebzig',
+        hint: 'unit slot keeps full sieben · tens slot drops -en-' },
+      // Real-world fill-blanks
+      { type: 'fill-blank', sentence: 'Ich bin __ Jahre alt. (35)',                  answer: 'fünfunddreißig' },
+      { type: 'fill-blank', sentence: 'Mein Vater ist __ Jahre alt. (60)',            answer: 'sechzig' },
+      { type: 'fill-blank', sentence: 'Die Klasse hat __ Studenten. (44)',           answer: 'vierundvierzig' },
+      { type: 'fill-blank', sentence: 'Das Auto kostet __ Euro. (95)',                answer: 'fünfundneunzig' },
+      { type: 'fill-blank', sentence: '99 = neunund__',                                 answer: 'neunzig' },
+      { type: 'fill-blank', sentence: '100 = __',                                       answer: 'hundert' },
+      // Match
       { type: 'match', pairs: [
-        { de: 'fünfzig', en: '50' }, { de: 'achtzig', en: '80' },
-        { de: 'einundvierzig', en: '41' }, { de: 'hundert', en: '100' },
+        { de: 'dreißig',         en: '30' },
+        { de: 'fünfzig',         en: '50' },
+        { de: 'achtzig',         en: '80' },
+        { de: 'einundvierzig',   en: '41' },
+        { de: 'sechsundsechzig', en: '66' },
+        { de: 'hundert',         en: '100' },
       ]},
     ],
     quiz: [
+      { type: 'multiple-choice', q: 'Which spelling is correct for 30?',
+        options: ['dreizig','dreißig','dreissig','dreizen'], answer: 'dreißig' },
+      { type: 'multiple-choice', q: 'Which spelling is correct for 60?',
+        options: ['sechszig','sechzig','sextzig','sechsig'], answer: 'sechzig' },
+      { type: 'multiple-choice', q: 'Which spelling is correct for 70?',
+        options: ['siebzig','siebenzig','sieptzig','siebnzig'], answer: 'siebzig' },
+      { type: 'multiple-choice', q: '88 = ?',
+        options: ['achtundachtzig','achtzigundacht','achtzigacht','achtundzig'], answer: 'achtundachtzig' },
       { type: 'fill-blank', sentence: '99 = neunund__', answer: 'neunzig' },
-      { type: 'multiple-choice', q: 'Pick 76.', options: ['siebenundsechzig','sechsundsiebzig','siebzigsechs','siebzigundsechs'], answer: 'sechsundsiebzig' },
+      { type: 'fill-blank', sentence: '53 = __', answer: 'dreiundfünfzig' },
+      { type: 'fill-blank', sentence: '"My grandma is 80 years old." → Meine Oma ist __ Jahre alt.',
+        answer: 'achtzig' },
     ],
   },
 
