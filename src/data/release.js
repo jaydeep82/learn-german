@@ -11,10 +11,34 @@
  * in sync.
  */
 
-export const VERSION = '3.3.3';
+export const VERSION = '3.3.4';
 export const RELEASE_DATE = '2026-05-09';
 
 export const RELEASES = [
+  {
+    version: '3.3.4',
+    date: '2026-05-09',
+    type: 'improvement',
+    title: 'Day 11 review — stem-changers (the THREE patterns) made interactive',
+    notes: [
+      'Reviewed Week 2 · Day 11 (renamed "Common verbs in action" → "Stem-changing verbs"). The previous version mixed regular and stem-changing verbs in one bag with a single one-line grammar callout. Reshaped to teach the stem-change PATTERN, then drill it.',
+      'Renamed: "Common verbs in action" → "Stem-changing verbs" (titleDe: "Verben mit Vokalwechsel"). The day now has a clear single focus.',
+      'Added 8 stem-changers to the shared CONJ table so they can be rendered as full conjugation tables: essen · lesen · sehen · sprechen · nehmen · geben · fahren · schlafen.',
+      'Vocabulary 18 → 25 items, regrouped: pattern label (der Vokalwechsel) → 5 e→i verbs (essen, sprechen, nehmen, geben, helfen) → 2 e→ie verbs (sehen, lesen) → 3 a→ä verbs (fahren, schlafen, tragen) → 4 regulars they LOOK like (kommen, gehen, schreiben, trinken) → 11 bonus regulars from v1.6.0 (besuchen, zeigen, benutzen, erklären, wiederholen, üben, suchen, schicken, erzählen, fragen, warten — preserved from earlier enrichment). Every entry shows its pattern: 🔁 e→i / 🔁 e→ie / 🔁 a→ä / ✓ regular.',
+      'Grammar 1 → 5 callouts: ⭐ THE THREE STEM-CHANGE PATTERNS (e→i · e→ie · a→ä) with the grouped verb lists · ⭐ ⚠ The change happens in TWO forms only (du + er/sie/es) with all six rows shown so learners stop saying "ich isse" · ⚠ Two extra-quirk verbs (nehmen doubles m, lesen merges s+st) · same V2 word-order rule · "How to spot one — the honest answer" (you can\'t, learn the du-form alongside).',
+      'Exercises completely reshaped (10 → 24 mixed):',
+      '• 2 ⭐ INTERACTIVE matches: verb → pattern (e→i / e→ie / a→ä / regular), AND form → pronoun.',
+      '• 2 conjugation tables: essen (e→i) and sehen (e→ie).',
+      '• 10 ⭐ BUILD-THE-FORM fill-blanks covering all three patterns AND the "no change in ich/wir/ihr" reminder cases.',
+      '• 3 ⚠ SPOT-THE-ERROR MCQs (wir issen ✗, ich siehe ✗, du nimst ✗ — typos that learners actually make).',
+      '• 9 mixed real-context fill-blanks.',
+      '• V2 inversion MCQ with a stem-changer.',
+      '• Mini dialogue (food + travel + book + sleep) using six different stem-changers in real conversation.',
+      '• Final regular-vs-stem-changer match.',
+      '• Bonus regular-verb drill (8 items from the v1.6.0 slide-89 enrichment) preserved at the end so the high-frequency vocabulary isn\'t lost.',
+      'Quiz 2 → 7 items (was previously bugged with a duplicate option — fixed): 4 conjugate-the-pronoun MCQs, 1 word-order MCQ, 2 fill-blanks including a regular-verb anchor.',
+    ],
+  },
   {
     version: '3.3.3',
     date: '2026-05-09',

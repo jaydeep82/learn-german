@@ -30,6 +30,15 @@ export const CONJ = {
   dürfen: [['ich','darf'],['du','darfst'],['er/sie/es','darf'],['wir','dürfen'],['ihr','dürft'],['sie/Sie','dürfen']],
   sollen: [['ich','soll'],['du','sollst'],['er/sie/es','soll'],['wir','sollen'],['ihr','sollt'],['sie/Sie','sollen']],
   mögen:  [['ich','mag'],['du','magst'],['er/sie/es','mag'],['wir','mögen'],['ihr','mögt'],['sie/Sie','mögen']],
+  // Stem-changing verbs (Day 11). Vowel shifts in du / er / sie / es only.
+  essen:    [['ich','esse'],   ['du','isst'],    ['er/sie/es','isst'],   ['wir','essen'],   ['ihr','esst'],   ['sie/Sie','essen']],   // e → i
+  lesen:    [['ich','lese'],   ['du','liest'],   ['er/sie/es','liest'],  ['wir','lesen'],   ['ihr','lest'],   ['sie/Sie','lesen']],   // e → ie  (s + st merges to st)
+  sehen:    [['ich','sehe'],   ['du','siehst'],  ['er/sie/es','sieht'],  ['wir','sehen'],   ['ihr','seht'],   ['sie/Sie','sehen']],   // e → ie
+  sprechen: [['ich','spreche'],['du','sprichst'],['er/sie/es','spricht'],['wir','sprechen'],['ihr','sprecht'],['sie/Sie','sprechen']], // e → i
+  nehmen:   [['ich','nehme'],  ['du','nimmst'],  ['er/sie/es','nimmt'],  ['wir','nehmen'],  ['ihr','nehmt'],  ['sie/Sie','nehmen']],   // e → i  (+ doubled m)
+  geben:    [['ich','gebe'],   ['du','gibst'],   ['er/sie/es','gibt'],   ['wir','geben'],   ['ihr','gebt'],   ['sie/Sie','geben']],    // e → i
+  fahren:   [['ich','fahre'],  ['du','fährst'],  ['er/sie/es','fährt'],  ['wir','fahren'],  ['ihr','fahrt'],  ['sie/Sie','fahren']],   // a → ä
+  schlafen: [['ich','schlafe'],['du','schläfst'],['er/sie/es','schläft'],['wir','schlafen'],['ihr','schlaft'],['sie/Sie','schlafen']], // a → ä
 };
 
 const conjEx = (verb, en) => ({
@@ -1686,50 +1695,221 @@ export const days = [
 
   {
     id: 11, week: 2,
-    title: 'Common verbs in action',
-    titleDe: 'Häufige Verben',
+    title: 'Stem-changing verbs',
+    titleDe: 'Verben mit Vokalwechsel',
     emoji: '⚡',
-    objective: 'Use eight everyday verbs in real sentences.',
-    intro: 'You already know the conjugation pattern. Today we lock in eight high-frequency verbs.',
+    objective: 'Spot the three stem-change patterns (e→i, e→ie, a→ä) and apply them in du/er/sie/es — only.',
+    intro: 'A small group of high-frequency verbs LOOK regular but secretly switch their stem vowel in TWO forms: du and er/sie/es. Three patterns cover almost all of them: 🔁 e→i (essen → du isst), 🔁 e→ie (sehen → du siehst), 🔁 a→ä (fahren → du fährst). The other four forms (ich · wir · ihr · sie/Sie) stay regular. Today: lock in the pattern, then drill ten of the most useful stem-changers.',
     vocabulary: [
-      { de: 'kommen',    en: 'to come' },     { de: 'gehen',     en: 'to go' },
-      { de: 'essen',     en: 'to eat (irreg.)' }, { de: 'trinken',  en: 'to drink' },
-      { de: 'sehen',     en: 'to see (irreg.)' }, { de: 'schreiben',en: 'to write' },
-      { de: 'lesen',     en: 'to read (irreg.)' }, { de: 'sprechen', en: 'to speak (irreg.)' },
-      { de: 'besuchen',    en: 'to visit' },
-      { de: 'zeigen',      en: 'to show' },
-      { de: 'benutzen',    en: 'to use' },
-      { de: 'erklären',    en: 'to explain' },
-      { de: 'wiederholen', en: 'to repeat' },
-      { de: 'üben',        en: 'to practise' },
-      { de: 'suchen',      en: 'to search / look for' },
-      { de: 'schicken',    en: 'to send' },
-      { de: 'erzählen',    en: 'to tell (a story)' },
-      { de: 'fragen',      en: 'to ask' },
-      { de: 'warten',      en: 'to wait' },
+      // Pattern labels
+      { de: 'der Vokalwechsel', en: 'vowel change',         hint: 'the swap that happens in du / er / sie / es only' },
+      // e → i  (short i)
+      { de: 'essen',    en: 'to eat',     hint: '🔁 e→i  ·  du isst, er isst' },
+      { de: 'sprechen', en: 'to speak',   hint: '🔁 e→i  ·  du sprichst, er spricht' },
+      { de: 'nehmen',   en: 'to take',    hint: '🔁 e→i  ·  du nimmst, er nimmt  (+ doubled m!)' },
+      { de: 'geben',    en: 'to give',    hint: '🔁 e→i  ·  du gibst, er gibt' },
+      { de: 'helfen',   en: 'to help',    hint: '🔁 e→i  ·  du hilfst, er hilft  (Dativ verb — Day 26)' },
+      // e → ie  (long ee)
+      { de: 'sehen',    en: 'to see',     hint: '🔁 e→ie ·  du siehst, er sieht' },
+      { de: 'lesen',    en: 'to read',    hint: '🔁 e→ie ·  du liest, er liest  (s+st merges to st)' },
+      // a → ä
+      { de: 'fahren',   en: 'to drive / travel', hint: '🔁 a→ä  ·  du fährst, er fährt' },
+      { de: 'schlafen', en: 'to sleep',         hint: '🔁 a→ä  ·  du schläfst, er schläft' },
+      { de: 'tragen',   en: 'to wear / carry',   hint: '🔁 a→ä  ·  du trägst, er trägt' },
+      // The three regulars they look like
+      { de: 'kommen',    en: 'to come',           hint: '✓ regular — no stem change' },
+      { de: 'gehen',     en: 'to go',             hint: '✓ regular — no stem change' },
+      { de: 'schreiben', en: 'to write',          hint: '✓ regular — no stem change' },
+      { de: 'trinken',   en: 'to drink',          hint: '✓ regular — no stem change' },
+      // Bonus regulars — high-frequency verbs from earlier enrichment
+      { de: 'besuchen',    en: 'to visit',                hint: '✓ regular bonus · besucht' },
+      { de: 'zeigen',      en: 'to show',                 hint: '✓ regular bonus · zeigt' },
+      { de: 'benutzen',    en: 'to use',                  hint: '✓ regular bonus · benutzt' },
+      { de: 'erklären',    en: 'to explain',              hint: '✓ regular bonus · erklärt' },
+      { de: 'wiederholen', en: 'to repeat',               hint: '✓ regular bonus · wiederholt' },
+      { de: 'üben',        en: 'to practise',             hint: '✓ regular bonus · übt' },
+      { de: 'suchen',      en: 'to search / look for',    hint: '✓ regular bonus · sucht' },
+      { de: 'schicken',    en: 'to send',                 hint: '✓ regular bonus · schickt' },
+      { de: 'erzählen',    en: 'to tell (a story)',       hint: '✓ regular bonus · erzählt' },
+      { de: 'fragen',      en: 'to ask',                  hint: '✓ regular bonus · fragt' },
+      { de: 'warten',      en: 'to wait',                 hint: '✓ regular bonus · stem ends in -t → wartet' },
     ],
     grammar: [
-      { rule: 'Stem-changers', body: 'essen → ich esse, du isst, er isst. sehen → du siehst, er sieht. The change happens only in du / er / sie / es.' },
+      { rule: '⭐ The three stem-change patterns',
+        body:
+          'Three vowel swaps cover ~90% of stem-changers:\n' +
+          '🔁 e → i    essen → du isst, er isst    (sprechen, nehmen, geben, helfen)\n' +
+          '🔁 e → ie   sehen → du siehst, er sieht (lesen)\n' +
+          '🔁 a → ä    fahren → du fährst, er fährt (schlafen, tragen, laufen)\n' +
+          'You CANNOT predict which verb takes which pattern from the infinitive — you have to memorise. But once you know a verb, the pattern is rock-solid.',
+      },
+      { rule: '⭐ The change happens in TWO forms only',
+        body:
+          'Only du and er / sie / es switch the vowel. The other four forms stay regular:\n' +
+          '   ich       esse        ✓ no change\n' +
+          '   du        ISST        🔁 e → i\n' +
+          '   er/sie/es ISST        🔁 e → i\n' +
+          '   wir       essen       ✓ no change\n' +
+          '   ihr       esst        ✓ no change  (uses normal stem)\n' +
+          '   sie/Sie   essen       ✓ no change\n' +
+          'So: if you ever say "ich isse" or "wir issen" — that\'s wrong. Only du / er-sie-es flip.',
+      },
+      { rule: '⚠ Two extra-quirk verbs',
+        body:
+          '• nehmen — e→i + the consonant DOUBLES: du nimmst, er nimmt. The "h" disappears.\n' +
+          '• lesen — the stem ends in -s. When -st gets added, "s + st" merges into just "-st": du LIEST (not "liesst"), er LIEST. Same trick as essen → du isst (not isst-st).',
+      },
+      { rule: 'Same V2 word-order rule',
+        body:
+          'Stem-changers still obey position 2:\n' +
+          '   Heute      isst       er Pizza.\n' +
+          '   Am Morgen  fährt      sie nach Berlin.\n' +
+          '   Im Buch    sieht      er ein Bild.',
+      },
+      { rule: 'How to spot one — the honest answer',
+        body:
+          'You can\'t spot a stem-changer from the infinitive alone. The trick: when you learn a NEW verb, learn the du-form alongside it. If du-form differs from the regular pattern, mark the verb as a stem-changer in your flashcards. Most stem-changers are everyday verbs (eat, sleep, drive, see, speak) — by Day 20 you\'ll know them all.',
+      },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: 'Du __ einen Apfel. (essen)', answer: 'isst' },
-      { type: 'fill-blank', sentence: 'Sie (she) __ ein Buch. (lesen)', answer: 'liest' },
-      { type: 'multiple-choice', q: '"er sprechen" → ?', options: ['sprecht','sprechst','spricht','spreche'], answer: 'spricht' },
-      // Slide 89 challenge — the visit/show/use mini-set.
+
+      // ⭐ INTERACTIVE — match each verb to its stem-change pattern
+      {
+        type: 'match',
+        pairs: [
+          { de: 'essen',    en: '🔁 e → i' },
+          { de: 'sehen',    en: '🔁 e → ie' },
+          { de: 'fahren',   en: '🔁 a → ä' },
+          { de: 'kommen',   en: '✓ regular (no change)' },
+          { de: 'sprechen', en: '🔁 e → i' },
+          { de: 'schlafen', en: '🔁 a → ä' },
+        ],
+      },
+      // ⭐ Match — verb form to its pronoun
+      {
+        type: 'match',
+        pairs: [
+          { de: 'esse',    en: 'ich' },
+          { de: 'isst',    en: 'du / er / sie / es' },
+          { de: 'essen',   en: 'wir / sie / Sie  (or infinitive)' },
+          { de: 'esst',    en: 'ihr' },
+        ],
+      },
+
+      // 2 conjugation tables — one e→i and one e→ie
+      conjEx('essen', 'to eat'),
+      conjEx('sehen', 'to see'),
+
+      // 🛠 Build-the-form for stem-changers (the diagnostic test)
+      { type: 'fill-blank', sentence: '🛠 du + essen → __',                              answer: 'isst' },
+      { type: 'fill-blank', sentence: '🛠 er + sprechen → __',                            answer: 'spricht' },
+      { type: 'fill-blank', sentence: '🛠 du + nehmen → __  (extra m!)',                  answer: 'nimmst' },
+      { type: 'fill-blank', sentence: '🛠 sie (she) + lesen → __',                        answer: 'liest' },
+      { type: 'fill-blank', sentence: '🛠 du + fahren → __',                              answer: 'fährst' },
+      { type: 'fill-blank', sentence: '🛠 er + schlafen → __',                            answer: 'schläft' },
+      { type: 'fill-blank', sentence: '🛠 ich + essen → __  (no change in ich!)',         answer: 'esse' },
+      { type: 'fill-blank', sentence: '🛠 wir + sehen → __  (no change in wir!)',         answer: 'sehen' },
+      { type: 'fill-blank', sentence: '🛠 ihr + fahren → __  (no change in ihr!)',        answer: 'fahrt' },
+      { type: 'fill-blank', sentence: '🛠 du + helfen → __',                               answer: 'hilfst' },
+
+      // ⚠ Spot-the-error
+      {
+        type: 'multiple-choice',
+        q: '⚠ Which is WRONG?',
+        options: ['ich esse', 'du isst', 'er isst', 'wir issen'],
+        answer: 'wir issen',
+        explain: 'Only du / er / sie / es flip the vowel. wir keeps the regular stem: wir essen.',
+      },
+      {
+        type: 'multiple-choice',
+        q: '⚠ Which is WRONG?',
+        options: ['du siehst', 'er sieht', 'ich siehe', 'wir sehen'],
+        answer: 'ich siehe',
+        explain: 'ich keeps the regular stem — ich sehe (not siehe).',
+      },
+      {
+        type: 'multiple-choice',
+        q: '⚠ Which is WRONG?',
+        options: ['du nimmst', 'er nimmt', 'wir nehmen', 'du nimst'],
+        answer: 'du nimst',
+        explain: 'nehmen has DOUBLED m in stem-change: du nimmst (with two m\'s), er nimmt.',
+      },
+
+      // Mixed real-context fill-blanks — focus on the high-yield stem-changers
+      { type: 'fill-blank', sentence: 'Du __ einen Apfel. (essen)',          answer: 'isst' },
+      { type: 'fill-blank', sentence: 'Sie (she) __ ein Buch. (lesen)',       answer: 'liest' },
+      { type: 'fill-blank', sentence: 'Er __ Deutsch. (sprechen)',            answer: 'spricht' },
+      { type: 'fill-blank', sentence: 'Du __ einen Kaffee. (nehmen)',         answer: 'nimmst' },
+      { type: 'fill-blank', sentence: 'Wir __ Wasser. (trinken — regular!)',  answer: 'trinken', hint: 'trinken is REGULAR — no stem change' },
+      { type: 'fill-blank', sentence: 'Du __ nach Berlin. (fahren)',          answer: 'fährst' },
+      { type: 'fill-blank', sentence: 'Er __ acht Stunden. (schlafen)',        answer: 'schläft' },
+      { type: 'fill-blank', sentence: 'Ich __ ein Foto. (sehen — no change in ich!)', answer: 'sehe' },
+      { type: 'fill-blank', sentence: 'Wir __ Pizza. (essen — no change in wir!)',     answer: 'essen' },
+
+      // V2 inversion with stem-changers
+      {
+        type: 'multiple-choice',
+        q: 'Pick the right order: "Today he eats pizza."',
+        options: [
+          'Heute er isst Pizza.',
+          'Heute isst er Pizza.',
+          'Er heute isst Pizza.',
+          'Isst heute er Pizza.',
+        ],
+        answer: 'Heute isst er Pizza.',
+        explain: 'V2 still applies: time slot 1, conjugated stem-changer slot 2, subject slot 3.',
+      },
+
+      // Mini dialogue using stem-changers in a real chat
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Was isst du heute?',                       en: 'What are you eating today?' },
+        { speaker: 'B', de: 'Ich esse Pizza. Und du?',                  en: 'I am eating pizza. And you?' },
+        { speaker: 'A', de: 'Ich nehme einen Salat. Liest du gerade ein Buch?',
+                                                                          en: 'I am taking a salad. Are you reading a book at the moment?' },
+        { speaker: 'B', de: 'Ja, ich lese ein Buch über Berlin. Mein Freund fährt nächste Woche nach Berlin.',
+                                                                          en: 'Yes, I am reading a book about Berlin. My friend is travelling to Berlin next week.' },
+        { speaker: 'A', de: 'Sehr cool! Schläft er gut im Hotel?',     en: 'Very cool! Does he sleep well in the hotel?' },
+        { speaker: 'B', de: 'Ich glaube schon — er schläft immer gut.',en: 'I think so — he always sleeps well.' },
+      ]},
+
+      // Final regular-vs-irregular sweep
+      {
+        type: 'match',
+        pairs: [
+          { de: 'kommen',    en: '✓ regular' },
+          { de: 'schreiben', en: '✓ regular' },
+          { de: 'sprechen',  en: '🔁 stem-changer' },
+          { de: 'fahren',    en: '🔁 stem-changer' },
+        ],
+      },
+
+      // ─── Bonus drill: high-frequency REGULAR verbs (carried over from v1.6.0 Phase A) ───
+      // These are the slide-89 mini-set + the missing-regulars enrichment. Useful for
+      // building working vocabulary alongside the stem-changer focus of today.
       { type: 'fill-blank', sentence: 'Der Student __ den Freund. (besuchen)',                answer: 'besucht' },
       { type: 'fill-blank', sentence: 'Ich __ den Studenten. (besuchen)',                     answer: 'besuche' },
       { type: 'fill-blank', sentence: 'Die Lehrerin __ den Studenten das Buch. (zeigen)',     answer: 'zeigt' },
       { type: 'fill-blank', sentence: 'Wir __ den Computer. (benutzen)',                      answer: 'benutzen' },
-      // Mixed practice with the new verbs
       { type: 'fill-blank', sentence: 'Der Lehrer __ die Grammatik. (erklären)',              answer: 'erklärt' },
       { type: 'fill-blank', sentence: 'Wir __ jeden Tag. (üben)',                             answer: 'üben' },
       { type: 'fill-blank', sentence: 'Du __ deinen Schlüssel. (suchen)',                     answer: 'suchst' },
       { type: 'fill-blank', sentence: 'Sie (they) __ eine E-Mail. (schicken)',                answer: 'schicken' },
     ],
     quiz: [
-      { type: 'fill-blank', sentence: 'Wir __ Wasser. (trinken)', answer: 'trinken' },
-      { type: 'multiple-choice', q: 'Which is correct?', options: ['Ich sehe.','Ich siehe.','Ich sehe.','Ich seht.'], answer: 'Ich sehe.' },
+      { type: 'multiple-choice', q: '"er sprechen" → ?', options: ['sprecht','sprechst','spricht','spreche'], answer: 'spricht' },
+      { type: 'multiple-choice', q: '"du fahren" → ?',   options: ['fahre','fahrst','fährst','fahrt'],         answer: 'fährst' },
+      { type: 'multiple-choice', q: '"ich essen" → ?',   options: ['esse','isse','isst','isstst'],              answer: 'esse',
+        explain: 'No change in ich — ich esse stays regular.' },
+      { type: 'multiple-choice', q: '"wir lesen" → ?',   options: ['lese','liest','lesen','liesen'],            answer: 'lesen',
+        explain: 'No change in wir — wir lesen stays regular.' },
+      { type: 'multiple-choice',
+        q: 'Which is correct?',
+        options: ['Ich sehe ein Foto.','Ich siehe ein Foto.','Ich sieht ein Foto.','Ich seht ein Foto.'],
+        answer: 'Ich sehe ein Foto.' },
+      { type: 'fill-blank', sentence: 'Wir __ Wasser. (trinken — regular!)', answer: 'trinken' },
+      { type: 'fill-blank', sentence: 'Sie (she) __ eine Frage. (haben)',     answer: 'hat',
+        hint: 'haben is irregular but not a stem-changer — covered Day 6.' },
     ],
   },
 
