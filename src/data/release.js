@@ -11,10 +11,32 @@
  * in sync.
  */
 
-export const VERSION = '3.3.4';
+export const VERSION = '3.3.5';
 export const RELEASE_DATE = '2026-05-09';
 
 export const RELEASES = [
+  {
+    version: '3.3.5',
+    date: '2026-05-09',
+    type: 'improvement',
+    title: 'Day 12 review — separable verbs as a sandwich, prefix-meaning matches',
+    notes: [
+      'Reviewed Week 2 · Day 12 (Separable verbs) end-to-end. The previous version was 9 fill-blanks/MCQs with adequate but bare-bones coverage. Reshaped into the visual "sandwich" pattern — stem in slot 2, prefix flies to the end — with interactive prefix-meaning matches and full coverage of question + negation forms.',
+      'Vocabulary 12 → 19 items. Added role labels (das Präfix · der Stamm · trennbar) so the lesson can talk about its mechanics. Added 4 high-frequency separables (aufwachen, mitnehmen, ausgehen, vorbereiten). Every entry now shows a visual 🧩 prefix-+-stem split in its hint, with stem-changer warnings on fernsehen / einladen / anfangen / mitnehmen.',
+      'Grammar 3 → 5 callouts: ⭐ THE SANDWICH PATTERN with a 5-row position diagram (slot 1, slot 2-stem, middle, prefix-at-end) · 10 common prefixes WITH meanings (auf-, ein-, aus-, ab-, an-, mit-, zu-, vor-, nach-, fern-) and example verbs · ⭐ the 3-second spot test (stress + standalone-prefix rule + non-separable list be-/ver-/ent-/er-/zer-/ge-) · ⚠ the modal re-glue rule WITH question + negation behaviour also covered (Stehst du auf? · Ich stehe nicht auf) · 🚦 common pitfalls block.',
+      'Exercises completely reshaped (9 → 25 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: prefix → meaning · Lego-style prefix+stem → infinitive · sentence-form → scenario (sandwich · glued · question · negation).',
+      '• 5 ⭐ BUILD-THE-SENTENCE fill-blanks (4 main-clause + 1 modal version of the same verb so the contrast lands).',
+      '• 6 sandwich practice fill-blanks (stem + prefix in one answer string).',
+      '• 3 modal-re-glue fill-blanks.',
+      '• 2 ⚠ SPOT-THE-ERROR MCQs (Ich aufstehe ✗ · Ich muss aufstehen um 7 Uhr ✗ — modal infinitive must be at very end).',
+      '• 3 ❓ QUESTION-FORM fill-blanks (Stehst du auf? · Rufst du an? · Geht ihr aus?).',
+      '• 1 🚫 NEGATION fill-blank (nicht right BEFORE the prefix).',
+      '• Word-order MCQ.',
+      '• Mini dialogue using 7 different separable verbs in a real chat.',
+      'Quiz 2 → 6 items including a non-separable-prefix MCQ (which prefix does NOT split — be-) and a question-form fill-blank.',
+    ],
+  },
   {
     version: '3.3.4',
     date: '2026-05-09',

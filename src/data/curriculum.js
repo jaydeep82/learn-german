@@ -2721,54 +2721,192 @@ export const days = [
     title: 'Separable verbs',
     titleDe: 'Trennbare Verben',
     emoji: '🧩',
-    objective: 'Recognise and use German verbs that split apart in a sentence.',
-    intro: 'Many common German verbs are written as one word in the dictionary (aufstehen, einkaufen) but BREAK in a real sentence: the prefix moves to the end. "Ich stehe um 7 Uhr AUF."',
+    objective: 'Spot a separable verb in the dictionary, split it correctly in a real sentence, and re-glue it after a modal.',
+    intro: 'About one in six common German verbs LOOKS like one word (aufstehen, einkaufen, anrufen) but SECRETLY splits when you use it. The stem goes to slot 2 (the verb position you already know), and the prefix flies to the end of the sentence. "Ich stehe um 7 Uhr AUF." After a modal verb, the prefix re-glues. Today: spot, split, re-glue.',
     vocabulary: [
-      { de: 'aufstehen',  en: 'to get up' },
-      { de: 'einkaufen',  en: 'to shop / buy groceries' },
-      { de: 'mitkommen',  en: 'to come along' },
-      { de: 'aufmachen',  en: 'to open' },
-      { de: 'zumachen',   en: 'to close' },
-      { de: 'ausfüllen',  en: 'to fill out (a form)' },
-      { de: 'anrufen',    en: 'to call (on the phone)' },
-      { de: 'fernsehen',  en: 'to watch TV' },
-      { de: 'abholen',    en: 'to pick up' },
-      { de: 'anfangen',   en: 'to begin' },
-      { de: 'einladen',   en: 'to invite' },
-      { de: 'aufhören',   en: 'to stop' },
+      // Role labels
+      { de: 'das Präfix',     en: 'the prefix',         hint: 'the part that flies to the end of the sentence' },
+      { de: 'der Stamm',      en: 'the verb stem',      hint: 'the part that conjugates and stays in slot 2' },
+      { de: 'trennbar',       en: 'separable',          hint: 'splits in a real sentence' },
+      // The most useful separable verbs (with prefix · stem split shown)
+      { de: 'aufstehen',  en: 'to get up',                hint: '🧩 auf + stehen · "Ich stehe um 7 Uhr AUF."' },
+      { de: 'aufwachen',  en: 'to wake up',               hint: '🧩 auf + wachen' },
+      { de: 'einkaufen',  en: 'to shop / buy groceries', hint: '🧩 ein + kaufen · "Wir kaufen ein."' },
+      { de: 'mitkommen',  en: 'to come along',            hint: '🧩 mit + kommen · "Kommst du mit?"' },
+      { de: 'mitnehmen',  en: 'to take with',             hint: '🧩 mit + nehmen · stem-changer too! "Ich nehme den Schlüssel mit."' },
+      { de: 'aufmachen',  en: 'to open',                  hint: '🧩 auf + machen' },
+      { de: 'zumachen',   en: 'to close',                 hint: '🧩 zu + machen' },
+      { de: 'ausgehen',   en: 'to go out (socially)',     hint: '🧩 aus + gehen · "Wir gehen am Wochenende aus."' },
+      { de: 'ausfüllen',  en: 'to fill out (a form)',     hint: '🧩 aus + füllen' },
+      { de: 'anrufen',    en: 'to call (on the phone)',   hint: '🧩 an + rufen · "Ich rufe dich morgen AN."' },
+      { de: 'fernsehen',  en: 'to watch TV',              hint: '🧩 fern + sehen · stem-changer too! "Er sieht fern."' },
+      { de: 'abholen',    en: 'to pick up',               hint: '🧩 ab + holen · "Ich hole dich ab."' },
+      { de: 'anfangen',   en: 'to begin',                 hint: '🧩 an + fangen · stem-changer! "Es fängt um 8 Uhr an."' },
+      { de: 'einladen',   en: 'to invite',                hint: '🧩 ein + laden · stem-changer! "Sie lädt mich ein."' },
+      { de: 'aufhören',   en: 'to stop',                  hint: '🧩 auf + hören' },
+      { de: 'vorbereiten',en: 'to prepare',               hint: '🧩 vor + bereiten · "Ich bereite das Essen vor."' },
     ],
     grammar: [
-      { rule: 'How separable verbs work',
+      { rule: '⭐ The sandwich pattern — splitting in a main sentence',
         body:
-          'Dictionary form: aufstehen (one word).\n' +
-          'In a main sentence: the verb stem stays in position 2; the prefix jumps to the very end.\n' +
-          '  Ich STEHE um 7 Uhr AUF.\n' +
-          '  Wir KAUFEN am Samstag EIN.\n' +
-          '  Du MACHST das Fenster AUF.',
+          'A main-clause separable verb makes a SANDWICH. The stem sits in position 2; everything else goes between; the prefix lands at the very end:\n' +
+          '\n' +
+          '   slot 1     slot 2 (stem)        ……  middle  ……      slot ∞ (prefix)\n' +
+          '   Ich        STEHE                um 7 Uhr               AUF.\n' +
+          '   Wir        KAUFEN               am Samstag             EIN.\n' +
+          '   Du         MACHST               das Fenster            AUF.\n' +
+          '   Er         RUFT                 seine Freundin          AN.\n' +
+          '   Ich        HOLE                 dich am Bahnhof         AB.\n' +
+          '\n' +
+          'The longer the sentence, the wider the sandwich.',
       },
-      { rule: 'How to spot one',
+      { rule: 'Common separable prefixes — and their meanings',
         body:
-          'A separable verb is written together in the infinitive; the STRESS sits on the prefix.\n' +
-          'Common prefixes: auf-, an-, ein-, aus-, mit-, ab-, fern-, zu-, nach-.\n' +
-          'Compare: BEsuchen / verSTEHen → these are NOT separable (stress on the stem, no split).',
+          '   auf-   "up / open"     →  aufstehen, aufmachen, aufwachen, aufhören\n' +
+          '   ein-   "in / into"      →  einkaufen, einladen, einsteigen\n' +
+          '   aus-   "out"            →  ausgehen, ausfüllen, aussteigen\n' +
+          '   ab-    "off / away"     →  abholen, abfahren\n' +
+          '   an-    "on / at"        →  anrufen, anfangen, ankommen\n' +
+          '   mit-   "along / with"   →  mitkommen, mitnehmen\n' +
+          '   zu-    "to / closed"    →  zumachen, zuhören\n' +
+          '   vor-   "before / pre-"  →  vorbereiten, vorstellen\n' +
+          '   nach-  "after"          →  nachfragen\n' +
+          '   fern-  "far / TV"       →  fernsehen',
       },
-      { rule: 'With a modal verb — no split',
+      { rule: '⭐ Spot a separable verb — the 3-second test',
         body:
-          'When a modal verb takes over slot 2, the separable verb goes to the end as a SINGLE infinitive:\n' +
-          '  Ich muss um 7 Uhr aufstehen. (no split)\n' +
-          '  Wir wollen am Samstag einkaufen.',
+          'Two clues identify a separable verb in the dictionary:\n' +
+          '1. STRESS — the prefix is stressed when you say the infinitive: AUFstehen, EINkaufen, ANrufen. Compare to NON-separable: beSUchen, verSTEhen — stress on the stem.\n' +
+          '2. PREFIX from the list above. Most separable prefixes are themselves common little German words (auf, an, mit, aus). Non-separable prefixes (be-, ver-, ent-, er-, zer-, ge-) are not.\n' +
+          'Rule of thumb: if the prefix can stand alone as a German word, it usually separates.',
+      },
+      { rule: '⚠ With a modal verb, the prefix RE-GLUES',
+        body:
+          'When a modal verb (kann · muss · will · darf · soll · möchte) takes slot 2, the separable verb goes to the END as a SINGLE infinitive — no splitting:\n' +
+          '\n' +
+          '   Ich         stehe   um 7 Uhr         auf.            (present, splits)\n' +
+          '   Ich  MUSS   um 7 Uhr                 AUFSTEHEN.       (modal, glued)\n' +
+          '\n' +
+          '   Wir         kaufen  am Samstag       ein.            (present, splits)\n' +
+          '   Wir  WOLLEN am Samstag               EINKAUFEN.       (modal, glued)\n' +
+          '\n' +
+          'In a yes/no question, the stem still leads (slot 1) and the prefix still flies to the end:\n' +
+          '   Stehst   du um 7 Uhr     auf?\n' +
+          '   Rufst    du mich morgen   an?\n' +
+          'Negation glues "nicht" right BEFORE the prefix:\n' +
+          '   Ich rufe dich heute       nicht an.',
+      },
+      { rule: '🚦 Common pitfalls',
+        body:
+          '✗ Ich aufstehe um 7 Uhr.       ← prefix glued, stem buried in slot 2 — broken.\n' +
+          '✓ Ich stehe um 7 Uhr auf.\n' +
+          '\n' +
+          '✗ Ich stehe auf um 7 Uhr.      ← prefix not at the end.\n' +
+          '✓ Ich stehe um 7 Uhr auf.\n' +
+          '\n' +
+          '✗ Ich muss aufstehen um 7 Uhr. ← infinitive should be at the very end after the modal.\n' +
+          '✓ Ich muss um 7 Uhr aufstehen.',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: 'Ich __ um sieben Uhr __. (aufstehen) — present tense, splits!', answer: 'stehe auf', hint: 'two words separated by a space' },
-      { type: 'fill-blank', sentence: 'Wir __ am Samstag __. (einkaufen)', answer: 'kaufen ein' },
-      { type: 'fill-blank', sentence: 'Du __ das Fenster __. (aufmachen)', answer: 'machst auf' },
-      { type: 'fill-blank', sentence: 'Er __ seine Freundin __. (anrufen)', answer: 'ruft an' },
-      { type: 'fill-blank', sentence: 'Ich __ am Abend __. (fernsehen)', answer: 'sehe fern' },
-      { type: 'fill-blank', sentence: 'Wir __ unsere Freunde __. (einladen) — present tense', answer: 'laden ein' },
-      { type: 'fill-blank', sentence: 'Mit modal: "Ich muss um 7 Uhr __." (aufstehen — no split!)', answer: 'aufstehen' },
+
+      // ⭐ INTERACTIVE — match each prefix to its core meaning
+      {
+        type: 'match',
+        pairs: [
+          { de: 'auf-', en: 'up / open' },
+          { de: 'ein-', en: 'in / into' },
+          { de: 'aus-', en: 'out' },
+          { de: 'mit-', en: 'along / with' },
+          { de: 'ab-',  en: 'off / away' },
+          { de: 'an-',  en: 'on / at' },
+          { de: 'vor-', en: 'before / pre-' },
+        ],
+      },
+      // ⭐ Lego-style: prefix + stem → infinitive
+      {
+        type: 'match',
+        pairs: [
+          { de: 'auf + stehen', en: 'aufstehen  (to get up)' },
+          { de: 'ein + kaufen', en: 'einkaufen  (to shop)' },
+          { de: 'an + rufen',   en: 'anrufen  (to call)' },
+          { de: 'mit + kommen', en: 'mitkommen  (to come along)' },
+          { de: 'ab + holen',   en: 'abholen  (to pick up)' },
+        ],
+      },
+
+      // ⭐ Match each form to its scenario — sandwich vs glued
+      {
+        type: 'match',
+        pairs: [
+          { de: 'Ich stehe um 7 Uhr auf.',         en: '🧩 main clause — stem in slot 2, prefix at end' },
+          { de: 'Ich muss um 7 Uhr aufstehen.',     en: '⚠ with modal — prefix re-glues, infinitive at end' },
+          { de: 'Stehst du um 7 Uhr auf?',          en: '❓ yes/no question — stem in slot 1, prefix at end' },
+          { de: 'Ich stehe nicht um 7 Uhr auf.',    en: '🚫 negation — nicht right BEFORE the prefix' },
+        ],
+      },
+
+      // 🛠 BUILD-THE-SENTENCE — given parts, write the correct main-clause form
+      { type: 'fill-blank', sentence: '🛠 Ich + aufstehen + um sieben Uhr → __',                 answer: 'Ich stehe um sieben Uhr auf' },
+      { type: 'fill-blank', sentence: '🛠 Wir + einkaufen + am Samstag → __',                     answer: 'Wir kaufen am Samstag ein' },
+      { type: 'fill-blank', sentence: '🛠 Er + anrufen + seine Freundin → __',                    answer: 'Er ruft seine Freundin an' },
+      { type: 'fill-blank', sentence: '🛠 Ich + abholen + dich + am Bahnhof → __',                 answer: 'Ich hole dich am Bahnhof ab' },
+      { type: 'fill-blank', sentence: '🛠 With modal: Ich + müssen + aufstehen + um sieben Uhr → __',
+        answer: 'Ich muss um sieben Uhr aufstehen', hint: 'modal slot 2 · everything middle · infinitive at very end' },
+
+      // Sandwich practice — fill stem + prefix together
+      { type: 'fill-blank', sentence: 'Ich __ um sieben Uhr __. (aufstehen)', answer: 'stehe auf', hint: 'two words separated by a space' },
+      { type: 'fill-blank', sentence: 'Wir __ am Samstag __. (einkaufen)',     answer: 'kaufen ein' },
+      { type: 'fill-blank', sentence: 'Du __ das Fenster __. (aufmachen)',     answer: 'machst auf' },
+      { type: 'fill-blank', sentence: 'Er __ seine Freundin __. (anrufen)',    answer: 'ruft an' },
+      { type: 'fill-blank', sentence: 'Ich __ am Abend __. (fernsehen)',        answer: 'sehe fern',
+        hint: 'fernsehen is a stem-changer too! ich form is regular, but du siehst fern · er sieht fern' },
+      { type: 'fill-blank', sentence: 'Wir __ unsere Freunde __. (einladen)',  answer: 'laden ein',
+        hint: 'einladen is a stem-changer! du lädst ein · er lädt ein' },
+
+      // Modal interaction — re-gluing
+      { type: 'fill-blank', sentence: 'Mit modal: "Ich muss um 7 Uhr __." (aufstehen)',  answer: 'aufstehen' },
       { type: 'fill-blank', sentence: 'Mit modal: "Wir wollen am Samstag __." (einkaufen)', answer: 'einkaufen' },
+      { type: 'fill-blank', sentence: 'Mit modal: "Sie kann dich morgen __." (abholen)',  answer: 'abholen' },
+
+      // ⚠ Spot-the-error
+      {
+        type: 'multiple-choice',
+        q: '⚠ Which is WRONG?',
+        options: [
+          'Ich stehe um 7 Uhr auf.',
+          'Ich aufstehe um 7 Uhr.',
+          'Wir kaufen am Samstag ein.',
+          'Er ruft seine Freundin an.',
+        ],
+        answer: 'Ich aufstehe um 7 Uhr.',
+        explain: 'The stem (stehe) must be in slot 2 and the prefix (auf) must fly to the end: "Ich stehe um 7 Uhr AUF."',
+      },
+      {
+        type: 'multiple-choice',
+        q: '⚠ Which is WRONG?',
+        options: [
+          'Ich muss um 7 Uhr aufstehen.',
+          'Ich muss aufstehen um 7 Uhr.',
+          'Wir wollen am Samstag einkaufen.',
+          'Er kann dich morgen abholen.',
+        ],
+        answer: 'Ich muss aufstehen um 7 Uhr.',
+        explain: 'After a modal, the infinitive goes to the VERY end of the sentence — after the time/place: "Ich muss um 7 Uhr aufstehen."',
+      },
+
+      // Question form
+      { type: 'fill-blank', sentence: '❓ Question form (yes/no): "__ du um 7 Uhr __?" (aufstehen)',
+        answer: 'Stehst auf', hint: 'stem leads (slot 1) · prefix at end' },
+      { type: 'fill-blank', sentence: '❓ "__ du mich morgen __?" (anrufen)',  answer: 'Rufst an' },
+      { type: 'fill-blank', sentence: '❓ "__ ihr am Wochenende __?" (ausgehen)',  answer: 'Geht aus' },
+
+      // Negation
+      { type: 'fill-blank', sentence: '🚫 "Ich rufe dich heute __ __." (nicht + anrufen — prefix at end)',
+        answer: 'nicht an' },
+
+      // Word-order MCQ
       { type: 'multiple-choice',
         q: 'Which sentence is correct?',
         options: [
@@ -2778,8 +2916,20 @@ export const days = [
           'Auf ich stehe um 7 Uhr.',
         ],
         answer: 'Ich stehe um 7 Uhr auf.',
-        explain: 'In the present tense the stem (stehe) sits in slot 2 and the prefix (auf) jumps to the very end.',
+        explain: 'Stem in slot 2, prefix at the end.',
       },
+
+      // Mini dialogue using separable verbs in a real chat
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Wann stehst du normalerweise auf?',                       en: 'When do you usually get up?' },
+        { speaker: 'B', de: 'Ich stehe um sieben Uhr auf.',                              en: 'I get up at seven.' },
+        { speaker: 'A', de: 'Wir kaufen am Samstag ein. Kommst du mit?',                en: 'We are shopping on Saturday. Are you coming along?' },
+        { speaker: 'B', de: 'Klar! Ich bringe meinen Hund mit. Ruf mich vorher an, ja?', en: 'Of course! I will bring my dog. Call me beforehand, yeah?' },
+        { speaker: 'A', de: 'Ich rufe dich morgen früh an. Schläfst du gerade fern?',    en: 'I will call you tomorrow morning. Are you watching TV right now?' },
+        { speaker: 'B', de: 'Nein, ich bereite das Essen vor.',                          en: 'No, I am preparing the food.' },
+      ]},
+
+      // Match — original
       { type: 'match', pairs: [
         { de: 'aufstehen', en: 'to get up' },
         { de: 'einkaufen', en: 'to shop' },
@@ -2790,6 +2940,16 @@ export const days = [
     quiz: [
       { type: 'fill-blank', sentence: 'Ich __ den Kollegen __. (abholen)', answer: 'hole ab' },
       { type: 'multiple-choice', q: 'Where does the prefix go in present tense?', options: ['Position 1','Position 2','At the very end','Anywhere'], answer: 'At the very end' },
+      { type: 'multiple-choice', q: 'Which prefix is NOT separable?',
+        options: ['auf-','an-','be-','mit-'], answer: 'be-',
+        explain: 'be-, ver-, ent-, er-, zer-, ge- are NON-separable. They do not split.' },
+      { type: 'multiple-choice', q: 'After a modal verb, the separable verb goes…',
+        options: ['Stays split','Re-glues at the end as one infinitive','Stays as one word in slot 2','At the start'],
+        answer: 'Re-glues at the end as one infinitive' },
+      { type: 'fill-blank', sentence: '🛠 "Du wachst um 8 Uhr auf." → with modal "müssen": "Du musst um 8 Uhr __."',
+        answer: 'aufwachen' },
+      { type: 'fill-blank', sentence: '❓ "_ du heute __?" (aufstehen — yes/no question)',
+        answer: 'Stehst auf' },
     ],
   },
 
