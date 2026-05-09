@@ -11,10 +11,30 @@
  * in sync.
  */
 
-export const VERSION = '3.3.2';
-export const RELEASE_DATE = '2026-05-08';
+export const VERSION = '3.3.3';
+export const RELEASE_DATE = '2026-05-09';
 
 export const RELEASES = [
+  {
+    version: '3.3.3',
+    date: '2026-05-09',
+    type: 'improvement',
+    title: 'Day 10 review — regular verbs, "the recipe", interactive pattern building',
+    notes: [
+      'Reviewed Week 2 · Day 10 (Regular verbs — the pattern) end-to-end. The previous version was 21 fill-blanks in a row, mostly 6 forms of trinken / wohnen / arbeiten back-to-back — heavy drill, no scaffold. Reshaped into a 4-step "recipe" with interactive pattern-building.',
+      'Vocabulary 8 → 16 items. Added the role labels learners need to TALK about the pattern (der Stamm · die Endung · regelmäßig · unregelmäßig), plus 4 useful regular verbs (kommen · brauchen · finden · trinken). Every entry now carries a stem hint ("stem mach-").',
+      'Grammar 2 → 5 callouts: ⭐ THE 4-SECOND RECIPE — explicit numbered steps from infinitive → stem → pronoun → ending · the 6 endings cheat-sheet WITH worked examples per row · ⚠ stem ends in -t/-d gets the extra "e" rule with finden examples · same V2 rule as Day 9 (verb in slot 2) · ⭐ regular vs irregular preview that foreshadows Day 11.',
+      'Exercises completely reshaped (21 fill-blanks → 24 mixed):',
+      '• 2 ⭐ INTERACTIVE matches: pronoun ↔ ending, AND stem+ending → form (Lego-style).',
+      '• 2 conjugation tables: machen (the standard pattern) and arbeiten (the -t-stem trap).',
+      '• 7 ⭐ "BUILD-THE-FORM" fill-blanks where you compose the conjugated form from given pronoun + infinitive — including 2 that test the extra-e rule (du arbeitest, er findet).',
+      '• 2 ⚠ SPOT-THE-ERROR MCQs (er lernen ✗ vs er lernt ✓ · du arbeitst ✗ vs du arbeitest ✓).',
+      '• 10 mixed real-context fill-blanks (cut from 17, kept the most varied).',
+      '• V2-inversion MCQ + 2 build-the-sentence fill-blanks (one with leading time).',
+      '• Mini dialogue using regular verbs in real conversation (Was machst du heute? Wo wohnst du?).',
+      'Quiz 2 → 7 items: 4 conjugate-the-pronoun MCQs covering -d/-t-stem traps, plus 3 fill-blanks including a V2-inversion.',
+    ],
+  },
   {
     version: '3.3.2',
     date: '2026-05-08',

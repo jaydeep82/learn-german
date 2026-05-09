@@ -1507,46 +1507,180 @@ export const days = [
     title: 'Regular verbs — the pattern',
     titleDe: 'Regelmäßige Verben',
     emoji: '🔁',
-    objective: 'Conjugate any regular verb by stripping -en and adding the right ending.',
-    intro: 'Take the infinitive (machen), drop -en (mach-), then add the ending that matches the pronoun.',
+    objective: 'Conjugate ANY regular verb in 4 seconds: take the stem, add the matching ending.',
+    intro: 'German has thousands of regular verbs. They all follow the SAME pattern: take the infinitive (mach·en), drop the -en (mach·), then glue on the ending that matches the subject pronoun (ich → -e, du → -st …). Learn this once and you instantly own hundreds of verbs.',
     vocabulary: [
-      { de: 'machen',  en: 'to do/make' }, { de: 'lernen',  en: 'to learn' },
-      { de: 'spielen', en: 'to play' },    { de: 'arbeiten',en: 'to work' },
-      { de: 'kaufen',  en: 'to buy' },     { de: 'fragen',  en: 'to ask' },
-      { de: 'hören',   en: 'to hear' },    { de: 'wohnen',  en: 'to live (reside)' },
+      // Role labels for the lesson
+      { de: 'der Stamm',     en: 'the verb stem',         hint: 'machen → mach- · lernen → lern- · spielen → spiel-' },
+      { de: 'die Endung',    en: 'the ending',            hint: 'the bit that changes per pronoun: -e · -st · -t · -en · -t · -en' },
+      { de: 'regelmäßig',    en: 'regular',               hint: 'follows the standard pattern — today\'s topic' },
+      { de: 'unregelmäßig',  en: 'irregular',             hint: 'breaks the pattern — sein/haben/werden are like this' },
+      // The 8 core regular verbs
+      { de: 'machen',   en: 'to do / make',   hint: 'stem mach-' },
+      { de: 'lernen',   en: 'to learn',       hint: 'stem lern-' },
+      { de: 'spielen',  en: 'to play',        hint: 'stem spiel-' },
+      { de: 'arbeiten', en: 'to work',        hint: 'stem arbeit- (ends in -t → -et / -est)' },
+      { de: 'kaufen',   en: 'to buy',         hint: 'stem kauf-' },
+      { de: 'fragen',   en: 'to ask',         hint: 'stem frag-' },
+      { de: 'hören',    en: 'to hear',        hint: 'stem hör-' },
+      { de: 'wohnen',   en: 'to live (reside)', hint: 'stem wohn-' },
+      // A few more useful ones
+      { de: 'kommen',   en: 'to come',        hint: 'stem komm- · ich komme aus Indien' },
+      { de: 'brauchen', en: 'to need',        hint: 'stem brauch- · ich brauche Kaffee' },
+      { de: 'finden',   en: 'to find',        hint: 'stem find- (ends in -d → -et / -est)' },
+      { de: 'trinken',  en: 'to drink',       hint: 'stem trink-' },
     ],
     grammar: [
-      { rule: 'Endings cheat-sheet', body: 'ich -e · du -st · er/sie/es -t · wir -en · ihr -t · sie/Sie -en' },
-      { rule: 'Stem ends in -t/-d', body: 'Add an extra "e": du arbeit-est, er arbeit-et — easier to pronounce.' },
+      { rule: '⭐ The 4-second recipe',
+        body:
+          '1️⃣  Start with the infinitive:                machen\n' +
+          '2️⃣  Drop the final -en (or sometimes just -n):  mach-\n' +
+          '3️⃣  Look at the subject pronoun:                ich\n' +
+          '4️⃣  Glue on the matching ending:                mache\n' +
+          '\n' +
+          'That is it. The same recipe works for hundreds of verbs.',
+      },
+      { rule: 'The 6 endings cheat-sheet',
+        body:
+          '   ich         -e        ich  mach + e      → mache\n' +
+          '   du          -st       du   mach + st     → machst\n' +
+          '   er/sie/es   -t        er   mach + t      → macht\n' +
+          '   wir         -en       wir  mach + en     → machen\n' +
+          '   ihr         -t        ihr  mach + t      → macht\n' +
+          '   sie / Sie   -en       sie  mach + en     → machen\n' +
+          'Notice: the wir form and the infinitive look identical (machen). The ihr form and the er-form look identical (macht).',
+      },
+      { rule: '⚠ Stem ends in -t or -d? Sneak in an extra e',
+        body:
+          'When the verb stem ends in -t (arbeiten) or -d (finden), the consonant clusters at "-tst" or "-dt" are awkward. German inserts an "e" to make it pronounceable:\n' +
+          '   du   arbeit + e + st → arbeitest   (NOT arbeitst)\n' +
+          '   er   arbeit + e + t  → arbeitet    (NOT arbeitt)\n' +
+          '   ihr  arbeit + e + t  → arbeitet\n' +
+          'Same rule: finden → du findest · er findet · ihr findet.\n' +
+          'The wir / sie / ich forms don\'t need it: arbeite, arbeiten.',
+      },
+      { rule: '⭐ Where the conjugated verb sits — same V2 rule as Day 9',
+        body:
+          'Whatever verb you build, it goes in slot 2 of a main sentence:\n' +
+          '   Ich       lerne      Deutsch.\n' +
+          '   Heute     lerne      ich Deutsch.   ← time leads, subject moves to 3\n' +
+          '   In Berlin wohnen     wir.            ← place leads, subject moves to 3',
+      },
+      { rule: 'Regular vs irregular — a quick preview',
+        body:
+          'Most verbs are regular and follow the recipe above. A small group is irregular:\n' +
+          '• sein / haben / werden — already drilled on Days 5-7. Memorise their tables.\n' +
+          '• Stem-changing verbs — they look regular EXCEPT for the du and er/sie/es forms, where the vowel changes (essen → du isst, lesen → er liest, sehen → er sieht). You meet these on Day 11.\n' +
+          'Until tomorrow, assume any new verb is regular — you will be right 80% of the time.',
+      },
     ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ INTERACTIVE — pronoun ↔ ending match
+      {
+        type: 'match',
+        pairs: [
+          { de: 'ich',        en: '-e' },
+          { de: 'du',         en: '-st' },
+          { de: 'er / sie / es', en: '-t' },
+          { de: 'wir',        en: '-en' },
+          { de: 'ihr',        en: '-t' },
+          { de: 'sie / Sie',  en: '-en' },
+        ],
+      },
+      // ⭐ Stem + ending → form (Lego-style)
+      {
+        type: 'match',
+        pairs: [
+          { de: 'mach + e',    en: 'mache  (ich)' },
+          { de: 'spiel + st',  en: 'spielst  (du)' },
+          { de: 'lern + t',    en: 'lernt  (er/sie/es OR ihr)' },
+          { de: 'kauf + en',   en: 'kaufen  (wir / sie / Sie)' },
+          { de: 'arbeit + et', en: 'arbeitet  (er/sie/es OR ihr — extra e!)' },
+        ],
+      },
+
+      // 2 conjugation tables — the standard verb + the -t-stem trap
       conjEx('machen', 'to do'),
       conjEx('arbeiten', 'to work'),
-      { type: 'fill-blank', sentence: 'Ich __ Deutsch. (lernen)', answer: 'lerne' },
-      { type: 'fill-blank', sentence: 'Wir __ Fußball. (spielen)', answer: 'spielen' },
-      { type: 'fill-blank', sentence: 'Er __ in Berlin. (wohnen)', answer: 'wohnt' },
-      // trinken drill — slide 62. Multiple subjects, same verb.
-      { type: 'fill-blank', sentence: 'Ich __ Rotwein. (trinken)',                       answer: 'trinke' },
-      { type: 'fill-blank', sentence: 'Du __ Weißwein. (trinken)',                       answer: 'trinkst' },
-      { type: 'fill-blank', sentence: 'Robert und Sabine __ Bier. (trinken)',            answer: 'trinken', hint: 'two people = plural' },
-      { type: 'fill-blank', sentence: 'Der Hund __ Wasser. (trinken)',                   answer: 'trinkt', hint: 'der Hund → er → -t' },
-      { type: 'fill-blank', sentence: 'Celina und ich __ Sprite. (trinken)',             answer: 'trinken', hint: '"… and I" = wir' },
-      { type: 'fill-blank', sentence: 'Ihr __ Tee. (trinken)',                           answer: 'trinkt' },
-      // wohnen drill — slide 63
-      { type: 'fill-blank', sentence: 'Ich __ in Berlin. (wohnen)',                      answer: 'wohne' },
-      { type: 'fill-blank', sentence: 'Du __ auch in Berlin. (wohnen)',                  answer: 'wohnst' },
-      { type: 'fill-blank', sentence: 'Celina und ich __ in meiner Wohnung. (wohnen)',   answer: 'wohnen' },
-      { type: 'fill-blank', sentence: 'Ihr __ in Indien. (wohnen)',                      answer: 'wohnt' },
-      // arbeiten drill — slide 64. Stem ends in -t, takes -et / -est.
-      { type: 'fill-blank', sentence: 'Mein Team und ich __ in Indien. (arbeiten)',      answer: 'arbeiten' },
-      { type: 'fill-blank', sentence: 'Die Kollegin __ in unserem Team. (arbeiten)',     answer: 'arbeitet', hint: 'stem ends in t → -et' },
-      { type: 'fill-blank', sentence: 'Der Chef __ in unserem Büro. (arbeiten)',         answer: 'arbeitet' },
-      { type: 'fill-blank', sentence: 'Die Kunden __ auch in der IT. (arbeiten)',        answer: 'arbeiten' },
-      { type: 'fill-blank', sentence: 'Du __ als Deutschlehrer. (arbeiten)',             answer: 'arbeitest', hint: 'stem ends in t → -est, not -st' },
+
+      // 🛠 BUILD-THE-FORM — given pronoun + infinitive, write the conjugated form
+      { type: 'fill-blank', sentence: '🛠 Build the form: ich + lernen → __',          answer: 'lerne' },
+      { type: 'fill-blank', sentence: '🛠 Build the form: du + spielen → __',           answer: 'spielst' },
+      { type: 'fill-blank', sentence: '🛠 Build the form: er + kaufen → __',            answer: 'kauft' },
+      { type: 'fill-blank', sentence: '🛠 Build the form: wir + hören → __',            answer: 'hören' },
+      { type: 'fill-blank', sentence: '🛠 Build the form: ihr + machen → __',           answer: 'macht' },
+      { type: 'fill-blank', sentence: '🛠 Build the form: du + arbeiten → __  (extra e!)', answer: 'arbeitest' },
+      { type: 'fill-blank', sentence: '🛠 Build the form: er + finden → __  (extra e!)',   answer: 'findet' },
+
+      // ⚠ Spot-the-error
+      {
+        type: 'multiple-choice',
+        q: '⚠ Which is WRONG?',
+        options: ['ich lerne','du lernst','er lernen','wir lernen'],
+        answer: 'er lernen',
+        explain: 'er / sie / es always takes -t, never the bare infinitive: er lernt.',
+      },
+      {
+        type: 'multiple-choice',
+        q: '⚠ Which is WRONG?',
+        options: ['du arbeitst','du arbeitest','er arbeitet','wir arbeiten'],
+        answer: 'du arbeitst',
+        explain: 'Stem ends in -t → insert an "e" before -st: du arbeitest.',
+      },
+
+      // Mixed real-context fill-blanks (much shorter than before)
+      { type: 'fill-blank', sentence: 'Ich __ Deutsch. (lernen)',                 answer: 'lerne' },
+      { type: 'fill-blank', sentence: 'Wir __ Fußball am Wochenende. (spielen)',  answer: 'spielen' },
+      { type: 'fill-blank', sentence: 'Er __ in Berlin. (wohnen)',                 answer: 'wohnt' },
+      { type: 'fill-blank', sentence: 'Du __ Rotwein. (trinken)',                  answer: 'trinkst' },
+      { type: 'fill-blank', sentence: 'Robert und Sabine __ Bier. (trinken)',      answer: 'trinken', hint: 'two people → plural' },
+      { type: 'fill-blank', sentence: 'Der Hund __ Wasser. (trinken)',             answer: 'trinkt',  hint: 'der Hund → er → -t' },
+      { type: 'fill-blank', sentence: 'Die Kollegin __ in unserem Team. (arbeiten)', answer: 'arbeitet' },
+      { type: 'fill-blank', sentence: 'Du __ einen Kaffee. (kaufen)',              answer: 'kaufst' },
+      { type: 'fill-blank', sentence: 'Wir __ Musik. (hören)',                     answer: 'hören' },
+      { type: 'fill-blank', sentence: 'Sie (she) __ den Schlüssel. (finden)',      answer: 'findet',  hint: 'stem ends in d → -et' },
+
+      // V2 inversion with regular verbs
+      {
+        type: 'multiple-choice',
+        q: '"Today I am learning German." Pick the right order.',
+        options: [
+          'Heute ich lerne Deutsch.',
+          'Heute lerne ich Deutsch.',
+          'Ich heute lerne Deutsch.',
+          'Lerne ich heute Deutsch.',
+        ],
+        answer: 'Heute lerne ich Deutsch.',
+        explain: 'Time in slot 1 → conjugated verb stays in slot 2 → subject moves to slot 3.',
+      },
+
+      // 🛠 Build a real sentence
+      { type: 'fill-blank', sentence: '🛠 Build: ich + spielen + Fußball → __',           answer: 'Ich spiele Fußball' },
+      { type: 'fill-blank', sentence: '🛠 Build with TIME first: heute + ich + lernen + Deutsch → __',
+        answer: 'Heute lerne ich Deutsch', hint: 'time slot 1 · verb slot 2 · subject slot 3' },
+
+      // Mini dialogue using regular verbs in a real chat
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Was machst du heute?',                  en: 'What are you doing today?' },
+        { speaker: 'B', de: 'Ich lerne Deutsch und arbeite ein bisschen.', en: 'I am learning German and working a bit.' },
+        { speaker: 'A', de: 'Ich spiele Fußball am Wochenende.',     en: 'I play football on the weekend.' },
+        { speaker: 'B', de: 'Wo wohnst du jetzt?',                   en: 'Where do you live now?' },
+        { speaker: 'A', de: 'Ich wohne in Berlin. Und du?',          en: 'I live in Berlin. And you?' },
+        { speaker: 'B', de: 'Wir wohnen in München.',                en: 'We live in Munich.' },
+      ]},
     ],
     quiz: [
       { type: 'multiple-choice', q: '"du lernen" → ?', options: ['lerne','lernst','lernt','lernen'], answer: 'lernst' },
+      { type: 'multiple-choice', q: '"wir kaufen" → ?', options: ['kaufe','kaufst','kauft','kaufen'], answer: 'kaufen' },
+      { type: 'multiple-choice', q: '"er finden" → ?', options: ['finde','findst','findt','findet'],
+        answer: 'findet', explain: 'Stem ends in -d → insert e before -t: findet.' },
+      { type: 'multiple-choice', q: '"ihr arbeiten" → ?', options: ['arbeite','arbeitst','arbeitet','arbeiten'],
+        answer: 'arbeitet', explain: 'ihr always ends in -t. With -t-stem, insert e: arbeitet.' },
       { type: 'fill-blank', sentence: 'Sie (she) __ ein Buch. (kaufen)', answer: 'kauft' },
+      { type: 'fill-blank', sentence: 'Wir __ Musik. (hören)', answer: 'hören' },
+      { type: 'fill-blank', sentence: 'Heute __ ich Fußball. (spielen — V2!)', answer: 'spiele' },
     ],
   },
 
