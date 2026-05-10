@@ -1918,57 +1918,196 @@ export const days = [
     title: 'Time, frequency, preference',
     titleDe: 'Zeit · Häufigkeit · Präferenz',
     emoji: '🕒',
-    objective: 'Drop time- and frequency-words into a sentence in the right order.',
-    intro: 'Order: Subject → Verb → Time → (Frequency) → (Preference) → Object. "Ich lerne heute oft gerne Deutsch."',
+    objective: 'Layer 🕒 time, 🔄 frequency and ❤️ preference words into a sentence in the right order — and know that V2 still wins when one of them leads.',
+    intro: 'You can already build S-V-O sentences. Today you add three more "spice" words: 🕒 WHEN (heute, morgen, jeden Tag), 🔄 HOW OFTEN (oft, manchmal, immer, nie) and ❤️ HOW MUCH YOU LIKE IT (gerne, sehr gerne). They go in a fixed order: 🕒 → 🔄 → ❤️ → 🎯 object. So "I gladly listen to music every day often" becomes: "Ich höre jeden Tag oft gerne Musik." Memorise the chain TFP-O — it unlocks every hobby sentence, every routine, every weekend plan.',
     vocabulary: [
-      // Time
-      { de: 'heute',         en: 'today' },
-      { de: 'morgen',        en: 'tomorrow' },
-      { de: 'jetzt',         en: 'now' },
-      { de: 'jeden Tag',     en: 'every day' },
-      { de: 'am Wochenende', en: 'on the weekend' },
-      { de: 'nach der Arbeit', en: 'after work' },
-      { de: 'in meiner Freizeit', en: 'in my free time' },
-      // Frequency
-      { de: 'oft',           en: 'often' },
-      { de: 'manchmal',      en: 'sometimes' },
-      { de: 'immer',         en: 'always' },
-      { de: 'nie',           en: 'never' },
-      // Preference
-      { de: 'gerne',         en: 'gladly (like to)' },
-      { de: 'sehr gerne',    en: 'very much (like to)' },
-      // Hobby verbs (slide 66)
-      { de: 'reisen',        en: 'to travel' },
-      { de: 'kochen',        en: 'to cook' },
-      { de: 'schauen',       en: 'to watch' },
-      { de: 'hören',         en: 'to listen' },
-      { de: 'programmieren', en: 'to program' },
-      // Hobby objects (slide 66)
-      { de: 'Bücher',        en: 'books' },
-      { de: 'Filme',         en: 'movies' },
-      { de: 'Musik',         en: 'music' },
-      { de: 'Sport',         en: 'sport' },
-      { de: 'Freunde',       en: 'friends' },
-      { de: 'Kollegen',      en: 'colleagues' },
-      { de: 'Code',          en: 'code' },
-      { de: 'Spiele',        en: 'games' },
-      { de: 'Rezepte',       en: 'recipes' },
-      { de: 'Länder',        en: 'countries' },
-      { de: 'Städte',        en: 'cities' },
+      // 🕒 Time
+      { de: 'heute',              en: 'today',                   hint: '🕒 time · "HOY-tuh"' },
+      { de: 'morgen',             en: 'tomorrow',                hint: '🕒 time · "MOR-gen"' },
+      { de: 'gestern',            en: 'yesterday',               hint: '🕒 time · "GES-tern"' },
+      { de: 'jetzt',              en: 'now',                     hint: '🕒 time · "yetst"' },
+      { de: 'am Morgen',          en: 'in the morning',          hint: '🕒 time' },
+      { de: 'am Abend',           en: 'in the evening',          hint: '🕒 time · "am AH-bent"' },
+      { de: 'jeden Tag',          en: 'every day',               hint: '🕒 time · two words' },
+      { de: 'am Wochenende',      en: 'on the weekend',          hint: '🕒 time · "am VO-khen-en-duh"' },
+      { de: 'nach der Arbeit',    en: 'after work',              hint: '🕒 time · "after-work" routine' },
+      { de: 'in meiner Freizeit', en: 'in my free time',         hint: '🕒 time · classic hobby slot' },
+      // 🔄 Frequency (in scale order)
+      { de: 'immer',              en: 'always (100%)',           hint: '🔄 freq · top of the scale' },
+      { de: 'oft',                en: 'often (~80%)',            hint: '🔄 freq' },
+      { de: 'manchmal',           en: 'sometimes (~40%)',        hint: '🔄 freq · "MANKH-mal"' },
+      { de: 'selten',             en: 'rarely (~10%)',            hint: '🔄 freq · "ZEL-ten"' },
+      { de: 'nie',                en: 'never (0%)',              hint: '🔄 freq · bottom of the scale · "nee"' },
+      // ❤️ Preference
+      { de: 'gerne',              en: 'gladly / I like to',      hint: '❤️ pref · "GAYR-nuh"' },
+      { de: 'sehr gerne',         en: 'very much / I really like to', hint: '❤️ pref · stronger version' },
+      { de: 'lieber',             en: 'rather / preferably',     hint: '❤️ pref · "LEE-buh"' },
+      { de: 'am liebsten',        en: 'most of all',             hint: '❤️ pref · superlative' },
+      // 🎬 Hobby verbs
+      { de: 'reisen',             en: 'to travel',               hint: '🎬 hobby verb · regular' },
+      { de: 'kochen',             en: 'to cook',                 hint: '🎬 hobby verb · regular' },
+      { de: 'schauen',            en: 'to watch',                hint: '🎬 hobby verb · regular' },
+      { de: 'hören',              en: 'to listen',               hint: '🎬 hobby verb · regular' },
+      { de: 'programmieren',      en: 'to program',              hint: '🎬 hobby verb · regular · "pro-gra-MEER-en"' },
+      // 🎯 Hobby objects
+      { de: 'Bücher',             en: 'books',                   hint: '🎯 object · plural of das Buch' },
+      { de: 'Filme',              en: 'movies',                  hint: '🎯 object' },
+      { de: 'Musik',              en: 'music',                   hint: '🎯 object · "moo-ZEEK"' },
+      { de: 'Sport',              en: 'sport',                   hint: '🎯 object · English-style "S"' },
+      { de: 'Freunde',            en: 'friends',                 hint: '🎯 object' },
+      { de: 'Kollegen',           en: 'colleagues',              hint: '🎯 object' },
+      { de: 'Code',               en: 'code',                    hint: '🎯 object · English loan' },
+      { de: 'Spiele',             en: 'games',                   hint: '🎯 object · plural of das Spiel' },
+      { de: 'Rezepte',            en: 'recipes',                 hint: '🎯 object' },
+      { de: 'Länder',             en: 'countries',               hint: '🎯 object · plural of das Land' },
+      { de: 'Städte',             en: 'cities',                  hint: '🎯 object · plural of die Stadt' },
     ],
     grammar: [
-      { rule: 'TeKaMoLo (light)', body: 'Time first, then place. "Ich lerne heute zu Hause Deutsch."' },
-      { rule: '"gerne" before object', body: '"Ich trinke gerne Kaffee" — placed right before the object to mean "I like to drink coffee".' },
+      { rule: '⭐ The TFP-O order — your hobby-sentence template',
+        body:
+          'Subject + Verb (slot 2) + 🕒 Time + 🔄 Frequency + ❤️ Preference + 🎯 Object\n' +
+          '\n' +
+          '   Ich    höre    jeden Tag        oft       gerne     Musik.\n' +
+          '   Wir    spielen am Wochenende    manchmal  gerne     Fußball.\n' +
+          '   Du     liest   nach der Arbeit  immer     sehr gerne Bücher.\n' +
+          '   Sie    kocht   am Wochenende    oft       gerne     Pasta.\n' +
+          '\n' +
+          'Not every slot has to be filled. Drop whichever you do not need. But when two or three appear together, they go in this order.',
+      },
+      { rule: '⚠ V2 still wins — if 🕒 time leads, the subject moves',
+        body:
+          'When you put a TIME word in slot 1 for emphasis, the conjugated verb still keeps slot 2 — so the subject moves to slot 3:\n' +
+          '\n' +
+          '   slot 1            slot 2 (verb)   slot 3 (subject)\n' +
+          '   Heute             höre            ich       jeden Tag oft gerne Musik.   ✓\n' +
+          '   Am Wochenende     spielen         wir       oft Fußball.                  ✓\n' +
+          '\n' +
+          'Same V2 rule from Day 9 — it never sleeps.',
+      },
+      { rule: '🔄 The frequency scale — picture it',
+        body:
+          'Frequency words live on a sliding scale from 100% to 0%:\n' +
+          '\n' +
+          '   100% ████████  immer       always\n' +
+          '    80% ██████░░  oft         often\n' +
+          '    40% ████░░░░  manchmal    sometimes\n' +
+          '    10% █░░░░░░░  selten      rarely\n' +
+          '     0% ░░░░░░░░  nie         never\n' +
+          '\n' +
+          'In a sentence, the frequency word always goes between 🕒 time and ❤️ preference. Putting it FIRST (slot 1) pushes the subject out — same V2 rule: "Manchmal höre ich Musik."',
+      },
+      { rule: '❤️ "gerne" — the most-loved A1 word',
+        body:
+          'gerne (or its short form "gern") expresses ENJOYMENT. It sits between the frequency word and the object:\n' +
+          '\n' +
+          '   Ich trinke    gerne     Kaffee.       I like drinking coffee.\n' +
+          '   Wir spielen   gerne     Fußball.      We like playing football.\n' +
+          '   Du liest      sehr gerne Bücher.       You really like reading books.\n' +
+          '\n' +
+          'Three escalation forms:\n' +
+          '   gerne        →  I like it\n' +
+          '   sehr gerne   →  I really like it\n' +
+          '   am liebsten  →  most of all  ("Am liebsten esse ich Pizza.")\n' +
+          '\n' +
+          'Tip: gerne lives BEFORE the object, NOT after.\n' +
+          '   ✗ Ich trinke Kaffee gerne.\n' +
+          '   ✓ Ich trinke gerne Kaffee.',
+      },
+      { rule: 'TeKaMoLo — the full grown-up rule (preview)',
+        body:
+          'When place comes in too, German uses the order TeKaMoLo:\n' +
+          '   Te = TEmporal (when)\n' +
+          '   Ka = KAusal (why)\n' +
+          '   Mo = MOdal (how / preference)\n' +
+          '   Lo = LOkal (where)\n' +
+          '\n' +
+          'Example: "Ich fahre heute / wegen der Arbeit / mit dem Bus / nach Berlin."\n' +
+          'For Week 2 you only need TFP-O. The full TeKaMoLo arrives once you have prepositions of place under your belt.',
+      },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: 'Ich lerne __ Deutsch. (every day)', answer: 'jeden Tag' },
-      // Hobby-sentence builders — apply S + V + Time + Frequency + Preference + Object
-      { type: 'fill-blank', sentence: 'Ich __ jeden Tag gerne Musik. (listen)',          answer: 'höre' },
-      { type: 'fill-blank', sentence: 'Wir __ am Wochenende oft Fußball. (play)',        answer: 'spielen' },
-      { type: 'fill-blank', sentence: 'Sie (she) __ in ihrer Freizeit gerne. (cook)',    answer: 'kocht' },
-      { type: 'fill-blank', sentence: 'Du __ nach der Arbeit Bücher. (read)',            answer: 'liest', hint: 'lesen, irreg.: du liest' },
-      { type: 'fill-blank', sentence: 'Ich __ sehr gerne Code. (program)',               answer: 'programmiere' },
+
+      // ⭐ INTERACTIVE — match each word to its TFP role
+      {
+        type: 'match',
+        pairs: [
+          { de: 'heute',        en: '🕒 Time' },
+          { de: 'jeden Tag',    en: '🕒 Time' },
+          { de: 'oft',          en: '🔄 Frequency' },
+          { de: 'manchmal',     en: '🔄 Frequency' },
+          { de: 'gerne',        en: '❤️ Preference' },
+          { de: 'sehr gerne',   en: '❤️ Preference' },
+        ],
+      },
+      // ⭐ Frequency scale match
+      {
+        type: 'match',
+        pairs: [
+          { de: 'immer',     en: '100% — always' },
+          { de: 'oft',       en: '~80% — often' },
+          { de: 'manchmal',  en: '~40% — sometimes' },
+          { de: 'selten',    en: '~10% — rarely' },
+          { de: 'nie',       en: '0% — never' },
+        ],
+      },
+      // ⭐ TFP-O slot order match
+      {
+        type: 'match',
+        pairs: [
+          { de: 'Slot after the verb',  en: '🕒 Time' },
+          { de: 'Right after time',     en: '🔄 Frequency' },
+          { de: 'Right after frequency',en: '❤️ Preference' },
+          { de: 'Last, before the period', en: '🎯 Object' },
+        ],
+      },
+
+      // 🛠 BUILD-THE-SENTENCE — assemble the full TFP-O chain
+      { type: 'fill-blank',
+        sentence: '🛠 Ich + hören + 🕒 jeden Tag + 🔄 oft + ❤️ gerne + 🎯 Musik → __',
+        answer: 'Ich höre jeden Tag oft gerne Musik' },
+      { type: 'fill-blank',
+        sentence: '🛠 Wir + spielen + 🕒 am Wochenende + 🔄 manchmal + 🎯 Fußball → __',
+        answer: 'Wir spielen am Wochenende manchmal Fußball' },
+      { type: 'fill-blank',
+        sentence: '🛠 Du + lesen + 🕒 nach der Arbeit + 🔄 immer + ❤️ sehr gerne + 🎯 Bücher → __',
+        answer: 'Du liest nach der Arbeit immer sehr gerne Bücher',
+        hint: 'lesen is a stem-changer (e→ie): du liest' },
+      { type: 'fill-blank',
+        sentence: '🛠 V2 inversion: 🕒 Heute + ich + hören + Musik → __',
+        answer: 'Heute höre ich Musik',
+        hint: 'time slot 1 · verb slot 2 · subject slot 3' },
+      { type: 'fill-blank',
+        sentence: '🛠 V2 inversion: 🔄 Manchmal + wir + spielen + Fußball → __',
+        answer: 'Manchmal spielen wir Fußball' },
+
+      // ⚠ Spot-the-error
+      {
+        type: 'multiple-choice',
+        q: '⚠ Which sentence is WRONG?',
+        options: [
+          'Ich höre jeden Tag oft gerne Musik.',
+          'Ich höre Musik jeden Tag oft gerne.',
+          'Heute höre ich Musik.',
+          'Wir spielen am Wochenende Fußball.',
+        ],
+        answer: 'Ich höre Musik jeden Tag oft gerne.',
+        explain: 'The 🎯 object goes LAST. Time / frequency / preference all come BEFORE the object.',
+      },
+      {
+        type: 'multiple-choice',
+        q: '⚠ Which sentence is WRONG?',
+        options: [
+          'Ich trinke gerne Kaffee.',
+          'Ich trinke Kaffee gerne.',
+          'Wir essen am Wochenende oft gerne Pizza.',
+          'Heute kocht sie sehr gerne.',
+        ],
+        answer: 'Ich trinke Kaffee gerne.',
+        explain: '"gerne" must come BEFORE the object, not after. → "Ich trinke gerne Kaffee."',
+      },
+
+      // Word-order MCQs
       { type: 'multiple-choice',
         q: 'Which sentence is in the right order?',
         options: [
@@ -1988,10 +2127,47 @@ export const days = [
         ],
         answer: 'Ich höre jeden Tag oft gerne Musik.',
         explain: 'Time → Frequency → Preference → Object. The verb stays in slot 2.' },
+
+      // Hobby-sentence builders — fill the verb (existing, kept)
+      { type: 'fill-blank', sentence: 'Ich lerne __ Deutsch. (every day)', answer: 'jeden Tag' },
+      { type: 'fill-blank', sentence: 'Ich __ jeden Tag gerne Musik. (listen)',          answer: 'höre' },
+      { type: 'fill-blank', sentence: 'Wir __ am Wochenende oft Fußball. (play)',        answer: 'spielen' },
+      { type: 'fill-blank', sentence: 'Sie (she) __ in ihrer Freizeit gerne. (cook)',    answer: 'kocht' },
+      { type: 'fill-blank', sentence: 'Du __ nach der Arbeit Bücher. (read)',            answer: 'liest', hint: 'lesen, irreg.: du liest' },
+      { type: 'fill-blank', sentence: 'Ich __ sehr gerne Code. (program)',               answer: 'programmiere' },
+
+      // Frequency-fill
+      { type: 'fill-blank', sentence: 'Wir spielen __ Fußball. (often)',                 answer: 'oft' },
+      { type: 'fill-blank', sentence: 'Sie liest __ Bücher. (rarely)',                    answer: 'selten' },
+      { type: 'fill-blank', sentence: 'Ich __ Pizza. (never)',                             answer: 'esse nie',
+        hint: 'verb (esse) in slot 2 · frequency right after' },
+
+      // Mini dialogue using TFP in a real conversation
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Was machst du am Wochenende?',                          en: 'What do you do on the weekend?' },
+        { speaker: 'B', de: 'Ich koche oft gerne. Und du?',                          en: 'I often gladly cook. And you?' },
+        { speaker: 'A', de: 'Ich höre jeden Tag oft gerne Musik. Reist du gerne?',   en: 'I listen to music every day often gladly. Do you like to travel?' },
+        { speaker: 'B', de: 'Ja, sehr gerne! Am liebsten reise ich nach Italien.',   en: 'Yes, very much! Most of all, I travel to Italy.' },
+        { speaker: 'A', de: 'Spielst du auch Sport?',                                en: 'Do you also play sport?' },
+        { speaker: 'B', de: 'Manchmal. Ich spiele selten Fußball, aber ich tanze gerne.', en: 'Sometimes. I rarely play football, but I like to dance.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Wir spielen __ Fußball. (often)', answer: 'oft' },
       { type: 'multiple-choice', q: '"gerne" usually expresses…', options: ['time','frequency','preference','place'], answer: 'preference' },
+      { type: 'multiple-choice', q: 'On the frequency scale, where does "selten" sit?',
+        options: ['100% — always','~40% — sometimes','~10% — rarely','0% — never'], answer: '~10% — rarely' },
+      { type: 'multiple-choice', q: 'Pick the right order:',
+        options: ['Ich höre Musik gerne.','Ich höre gerne Musik.','Ich Musik höre gerne.','Gerne ich höre Musik.'],
+        answer: 'Ich höre gerne Musik.',
+        explain: '"gerne" goes BEFORE the object.' },
+      { type: 'multiple-choice', q: 'Which is the correct TFP-O order?',
+        options: ['Time → Frequency → Preference → Object','Object → Time → Frequency → Preference','Preference → Time → Object → Frequency','Object → Preference → Frequency → Time'],
+        answer: 'Time → Frequency → Preference → Object' },
+      { type: 'fill-blank', sentence: '🛠 V2 inversion: "Heute" + ich + lerne + Deutsch → __',
+        answer: 'Heute lerne ich Deutsch' },
+      { type: 'fill-blank', sentence: '🛠 Build: Wir + spielen + 🕒 am Wochenende + 🔄 oft + 🎯 Fußball → __',
+        answer: 'Wir spielen am Wochenende oft Fußball' },
     ],
   },
 

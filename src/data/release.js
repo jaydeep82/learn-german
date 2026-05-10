@@ -11,10 +11,30 @@
  * in sync.
  */
 
-export const VERSION = '3.3.5';
+export const VERSION = '3.3.6';
 export const RELEASE_DATE = '2026-05-09';
 
 export const RELEASES = [
+  {
+    version: '3.3.6',
+    date: '2026-05-09',
+    type: 'improvement',
+    title: 'Day 13 review — TFP-O order with the frequency scale and 🛠 builders',
+    notes: [
+      'Reviewed Week 2 · Day 13 (Time / Frequency / Preference) end-to-end. The previous version had 30 unannotated vocab items, 2 brief grammar bullets, 8 mostly-fill-blank exercises and 2 quiz items. Reshaped around the visual TFP-O chain with role icons, a frequency scale, and 🛠 build-the-sentence drills.',
+      'Vocabulary 30 → 35 items, regrouped by role icon (🕒 / 🔄 / ❤️ / 🎬 / 🎯). Added: gestern · am Morgen · am Abend (more time words) · selten (the missing rarely on the frequency scale) · lieber · am liebsten (preference escalation forms). Every entry carries a phonetic hint and its role icon.',
+      'Grammar 2 → 5 callouts: ⭐ THE TFP-O TEMPLATE — full position diagram with 4 worked examples · ⚠ V2 still wins when 🕒 time leads with subject-moves-to-slot-3 explanation · ⭐ THE FREQUENCY SCALE — 5-row visual ASCII chart from 100% (immer) down to 0% (nie) with selten finally placed at ~10% · ❤️ "gerne" deep-dive with three escalation forms (gerne · sehr gerne · am liebsten) and the BEFORE-the-object placement rule · TeKaMoLo preview for when place comes in too.',
+      'Exercises completely reshaped (8 → 17 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: word → role (🕒 / 🔄 / ❤️) · ⭐ FREQUENCY SCALE match (immer↔100%, oft↔80%, manchmal↔40%, selten↔10%, nie↔0%) · TFP-O slot order match.',
+      '• 5 ⭐ BUILD-THE-SENTENCE fill-blanks assembling the full TFP-O chain from labelled parts (including 2 V2 inversions where 🕒 time / 🔄 frequency leads).',
+      '• 2 ⚠ SPOT-THE-ERROR MCQs (object before TFP ✗ · gerne after object ✗).',
+      '• 2 word-order MCQs (existing).',
+      '• 6 hobby-sentence verb fill-blanks (existing).',
+      '• 3 frequency-fill blanks (oft, selten, nie).',
+      '• Mini dialogue using TFP/preference/frequency in real conversation including am liebsten + V2 inversion.',
+      'Quiz 2 → 7 items: frequency-scale placement MCQ, TFP-O order MCQ, "gerne" placement MCQ, two 🛠 build-the-sentence fill-blanks (one with V2 inversion).',
+    ],
+  },
   {
     version: '3.3.5',
     date: '2026-05-09',
