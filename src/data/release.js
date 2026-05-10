@@ -11,10 +11,31 @@
  * in sync.
  */
 
-export const VERSION = '3.3.6';
+export const VERSION = '3.3.7';
 export const RELEASE_DATE = '2026-05-09';
 
 export const RELEASES = [
+  {
+    version: '3.3.7',
+    date: '2026-05-09',
+    type: 'improvement',
+    title: 'Day 14 review — self-introduction with the 6-block recipe, du+Sie',
+    notes: [
+      'Reviewed Week 2 · Day 14 (Introducing yourself) end-to-end. The previous version had 8 vocab items, 1 grammar bullet, and 12 mostly-fill-blank exercises. Reshaped into the 6-block recipe with both registers (du AND Sie), greeting matrix, profession rule, and a build-your-own intro at the end.',
+      'Vocabulary 8 → 31 items, grouped by role icon (👋 greetings · 🪪 names · ❓ questions · 🌍 origin · 🏠 residence · 🎂 age · 💼 profession · 🤝 politeness · 👋 closings). Added 6 greetings with time/region tags (Guten Morgen / Guten Tag / Guten Abend · Hallo · Servus · Moin), 7 question forms (Wie heißt du / Wie heißen Sie / Woher kommst du / Wo wohnst du / Wie alt bist du / Was machst du beruflich / Sprichst du Deutsch), 4 closings (Tschüss · Auf Wiedersehen · Bis bald · Bis morgen), and 4 politeness phrases.',
+      'Grammar 1 → 5 callouts: ⭐ THE 6-BLOCK RECIPE (greeting → name → age → origin → residence → profession + bonus hobby) with worked positions · 👤 du-vs-Sie register matrix with the question-swap table (Wie heißt du? → Wie heißen Sie?) · ⚠ ⭐ Woher vs Wo killer pair with paired prepositions (woher … aus / wo … in) · 💼 PROFESSIONS — NO ARTICLE rule with female -in suffix examples (Ärztin, Lehrerin, Studentin) · 🤝 closing register options.',
+      'Exercises completely reshaped (12 → 23 mixed):',
+      '• 4 ⭐ INTERACTIVE matches: question→answer · greeting→time/region · du-vs-Sie register scenarios · du-form→Sie-form question swap.',
+      '• 2 ⚠ Woher vs Wo MCQs.',
+      '• 5 ⭐ BUILD-THE-ANSWER fill-blanks (English question → German answer).',
+      '• 2 ⚠ SPOT-THE-ERROR MCQs (Ich heißt Anna ✗ · Ich bin ein Lehrer ✗).',
+      '• 💬 INFORMAL dialogue extended with politeness closing (Schön, dich kennenzulernen + Sehr angenehm + Bis bald).',
+      '• 💼 NEW FORMAL dialogue (Frau Weber + Herr Patel) using the same 6-block recipe entirely in Sie-form.',
+      '• 11 Moritz translation drills (preserved from earlier enrichment).',
+      '• 5 ⭐ BUILD-YOUR-OWN slot-by-slot self-intro fill-blanks (heiße / bin / aus / wohne / Softwareentwicklerin).',
+      'Quiz 2 → 7 items including a Woher MCQ, a Sie-question MCQ, profession-rule MCQ, and a 4-block build-an-intro fill-blank that strings four verbs together (heiße komme wohne bin).',
+    ],
+  },
   {
     version: '3.3.6',
     date: '2026-05-09',

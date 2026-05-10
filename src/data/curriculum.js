@@ -2176,30 +2176,246 @@ export const days = [
     title: 'Introducing yourself',
     titleDe: 'Sich vorstellen',
     emoji: '👋',
-    objective: 'Hold a 60-second self-introduction in German.',
-    intro: 'Bundle everything from Week 1–2 into one fluent paragraph about you.',
+    objective: 'Hold a 60-second self-introduction in German — formal AND informal — using the 6-block recipe.',
+    intro: 'You now own enough verbs and structure to TALK ABOUT YOURSELF in German. The trick is a recipe — six blocks in a reliable order: 👋 greeting → 🪪 name → 🌍 origin → 🏠 residence → 🎂 age → 💼 profession (+ optional 🎮 hobby). Today you assemble the blocks, in BOTH the du-form (friends) and the Sie-form (strangers / professors / customer service), and finish with a personalised mini-speech.',
     vocabulary: [
-      { de: 'Hallo',         en: 'hello' },          { de: 'Guten Tag',  en: 'good day' },
-      { de: 'Mein Name ist', en: 'My name is' },     { de: 'Ich heiße',  en: 'I am called' },
-      { de: 'Ich komme aus', en: 'I come from' },    { de: 'Ich wohne in', en: 'I live in' },
-      { de: 'Ich bin __ Jahre alt', en: 'I am __ years old' },
-      { de: 'Ich lerne Deutsch', en: 'I learn German' },
+      // 👋 Greetings (by time of day + register)
+      { de: 'Hallo',          en: 'hello (anytime, informal)',         hint: '👋 informal / casual' },
+      { de: 'Guten Morgen',   en: 'good morning (until ~10am)',         hint: '👋 universal · "GOO-ten MOR-gen"' },
+      { de: 'Guten Tag',      en: 'good day (10am-6pm)',                hint: '👋 universal — works everywhere' },
+      { de: 'Guten Abend',    en: 'good evening (after ~6pm)',          hint: '👋 universal' },
+      { de: 'Servus',         en: 'hi/bye (southern Germany, Austria)', hint: '👋 informal · Bayern · Österreich' },
+      { de: 'Moin',           en: 'hi (northern Germany — anytime)',    hint: '👋 informal · Hamburg · Norddeutschland' },
+      // 🪪 Name
+      { de: 'Mein Name ist',  en: 'My name is …',                       hint: '🪪 slightly more formal' },
+      { de: 'Ich heiße',      en: 'I am called …',                      hint: '🪪 most natural in conversation' },
+      // ❓ Questions
+      { de: 'Wie heißt du?',     en: 'What is your name? (informal)',   hint: '❓ du-form question' },
+      { de: 'Wie heißen Sie?',   en: 'What is your name? (formal)',     hint: '❓ Sie-form (capital S)' },
+      { de: 'Woher kommst du?',  en: 'Where are you from? (origin)',    hint: '❓ ⚠ Woher = where FROM' },
+      { de: 'Wo wohnst du?',     en: 'Where do you live? (residence)',  hint: '❓ ⚠ Wo = where (location)' },
+      { de: 'Wie alt bist du?',  en: 'How old are you?',                hint: '❓ du-form' },
+      { de: 'Was machst du beruflich?', en: 'What do you do for work?', hint: '❓ literally "What do you do professionally?"' },
+      { de: 'Sprichst du Deutsch?', en: 'Do you speak German?',         hint: '❓ stem-changer: sprechen → du sprichst' },
+      // 🌍 Origin & 🏠 residence
+      { de: 'Ich komme aus',  en: 'I come from … (country/city)',       hint: '🌍 + country: aus Indien · aus Deutschland' },
+      { de: 'Ich wohne in',   en: 'I live in … (city)',                 hint: '🏠 + city: in Berlin · in München' },
+      { de: 'Ich lebe in',    en: 'I live in … (alternative)',           hint: '🏠 leben works too · slightly more "permanent"' },
+      // 🎂 Age & 💼 profession
+      { de: 'Ich bin … Jahre alt', en: 'I am … years old',              hint: '🎂 number + Jahre alt' },
+      { de: 'Ich bin Lehrer',     en: 'I am a teacher (m)',              hint: '💼 profession — NO article!' },
+      { de: 'Ich arbeite als',    en: 'I work as a …',                   hint: '💼 + profession noun' },
+      { de: 'Ich studiere',       en: 'I study (at university)',         hint: '💼 student · "Ich studiere Informatik"' },
+      { de: 'Ich lerne Deutsch',  en: 'I am learning German',            hint: '🎓 the line you can ALREADY say' },
+      // 🤝 Politeness phrases
+      { de: 'Sehr angenehm',      en: 'Very nice (to meet you)',         hint: '🤝 standard "nice to meet you"' },
+      { de: 'Es freut mich',      en: 'Pleased to meet you',             hint: '🤝 slightly warmer · stand-alone phrase' },
+      { de: 'Schön, dich kennenzulernen',  en: 'Nice to meet you (informal)', hint: '🤝 long but very common · du-form' },
+      { de: 'Schön, Sie kennenzulernen',   en: 'Nice to meet you (formal)',  hint: '🤝 Sie-form variant' },
+      // 👋 Closing
+      { de: 'Tschüss',            en: 'Bye (informal)',                  hint: '👋 close · "TSHUESS"' },
+      { de: 'Auf Wiedersehen',    en: 'Goodbye (formal / neutral)',      hint: '👋 close · "owf VEE-der-zay-en" · literally "until seeing again"' },
+      { de: 'Bis bald',           en: 'See you soon',                    hint: '👋 close · friendly send-off' },
+      { de: 'Bis morgen',         en: 'See you tomorrow',                hint: '👋 close · for known next meeting' },
     ],
     grammar: [
-      { rule: 'Greeting register', body: '"Hallo" is informal; "Guten Tag" works everywhere; "Servus" is southern German.' },
+      { rule: '⭐ The 6-block recipe',
+        body:
+          'Every solid self-introduction follows this order:\n' +
+          '\n' +
+          '   1. 👋 GREETING        Hallo · Guten Tag · Guten Morgen\n' +
+          '   2. 🪪 NAME            Ich heiße … / Mein Name ist …\n' +
+          '   3. 🎂 AGE             Ich bin … Jahre alt.\n' +
+          '   4. 🌍 ORIGIN          Ich komme aus … (country)\n' +
+          '   5. 🏠 RESIDENCE       Ich wohne in … (city)\n' +
+          '   6. 💼 PROFESSION      Ich bin … / Ich arbeite als … / Ich studiere …\n' +
+          '   ✨ Bonus: 🎮 hobby     In meiner Freizeit + verb (Day 13!).\n' +
+          '\n' +
+          'Order is flexible AFTER the greeting+name pair, but going top-to-bottom always sounds natural.',
+      },
+      { rule: '👤 The two registers — du vs Sie',
+        body:
+          'Same recipe, two voicings. Pick the right one BEFORE you open your mouth:\n' +
+          '\n' +
+          '   Situation                              Use\n' +
+          '   ──────────────────────────────────────────────────────\n' +
+          '   meeting a friend / classmate            du\n' +
+          '   chatting with a child                   du\n' +
+          '   social media / casual chat              du\n' +
+          '   meeting your boss / a stranger          Sie\n' +
+          '   talking to a doctor or professor        Sie\n' +
+          '   customer service / shop staff           Sie\n' +
+          '\n' +
+          'Question swap when you go formal:\n' +
+          '   du-form                              Sie-form\n' +
+          '   Wie heißt du?                       →  Wie heißen Sie?\n' +
+          '   Woher kommst du?                    →  Woher kommen Sie?\n' +
+          '   Wo wohnst du?                       →  Wo wohnen Sie?\n' +
+          '   Wie alt bist du?                    →  Wie alt sind Sie?',
+      },
+      { rule: '⚠ Woher vs Wo — the killer pair',
+        body:
+          'Both translate to "where" but point in OPPOSITE directions:\n' +
+          '\n' +
+          '   Woher kommst du?       →  Where are you FROM (origin)?\n' +
+          '   Ich komme AUS Indien.\n' +
+          '\n' +
+          '   Wo wohnst du?          →  Where (located) do you live?\n' +
+          '   Ich wohne IN Berlin.\n' +
+          '\n' +
+          'Pair the question word with the right preposition: woher … aus / wo … in. (There is also "wohin" = where TO — Day 17 will dive deeper.)',
+      },
+      { rule: '💼 Professions — no article!',
+        body:
+          'When you state your job, drop the article:\n' +
+          '\n' +
+          '   ✓ Ich bin Lehrer.       (not "Ich bin EIN Lehrer.")\n' +
+          '   ✓ Sie ist Ärztin.        (not "Sie ist EINE Ärztin.")\n' +
+          '   ✓ Wir sind Studenten.    (not "Wir sind DIE Studenten.")\n' +
+          '\n' +
+          'For female forms, add -in: Lehrer → Lehrerin · Arzt → Ärztin · Student → Studentin · Verkäufer → Verkäuferin.',
+      },
+      { rule: '🤝 Closing the introduction',
+        body:
+          'After you introduce yourself, the other person usually replies "Sehr angenehm" (very nice) or "Es freut mich" (pleased to meet you). End with one of:\n' +
+          '   Tschüss             — informal bye\n' +
+          '   Auf Wiedersehen     — formal / neutral goodbye\n' +
+          '   Bis bald            — see you soon\n' +
+          '   Bis morgen          — see you tomorrow (when you know you\'ll meet)',
+      },
     ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ INTERACTIVE — match each question to its typical answer
+      {
+        type: 'match',
+        pairs: [
+          { de: 'Wie heißt du?',          en: 'Ich heiße Anna.' },
+          { de: 'Woher kommst du?',       en: 'Ich komme aus Indien.' },
+          { de: 'Wo wohnst du?',          en: 'Ich wohne in Berlin.' },
+          { de: 'Wie alt bist du?',       en: 'Ich bin 25 Jahre alt.' },
+          { de: 'Was machst du beruflich?', en: 'Ich bin Lehrer.' },
+        ],
+      },
+      // ⭐ Greeting → time/situation
+      {
+        type: 'match',
+        pairs: [
+          { de: 'Guten Morgen',  en: 'until ~10am · universal' },
+          { de: 'Guten Tag',     en: '10am-6pm · universal' },
+          { de: 'Guten Abend',   en: 'after ~6pm · universal' },
+          { de: 'Hallo',         en: 'anytime · informal' },
+          { de: 'Servus',        en: 'southern Germany / Austria · informal' },
+          { de: 'Moin',          en: 'northern Germany · informal' },
+        ],
+      },
+      // ⭐ du vs Sie register match
+      {
+        type: 'match',
+        pairs: [
+          { de: 'meeting your boss',         en: 'Sie' },
+          { de: 'chatting with a friend',    en: 'du' },
+          { de: 'asking a stranger for help', en: 'Sie' },
+          { de: 'talking to a child',        en: 'du' },
+          { de: 'in customer service',       en: 'Sie' },
+        ],
+      },
+      // ⭐ du-form → Sie-form question swap
+      {
+        type: 'match',
+        pairs: [
+          { de: 'Wie heißt du?',     en: 'Wie heißen Sie?' },
+          { de: 'Woher kommst du?',  en: 'Woher kommen Sie?' },
+          { de: 'Wo wohnst du?',     en: 'Wo wohnen Sie?' },
+          { de: 'Wie alt bist du?',  en: 'Wie alt sind Sie?' },
+        ],
+      },
+
+      // ⚠ Woher vs Wo
+      {
+        type: 'multiple-choice',
+        q: '"Where are you FROM?" =',
+        options: ['Wo kommst du?','Woher kommst du?','Wohin kommst du?','Wann kommst du?'],
+        answer: 'Woher kommst du?',
+        explain: 'Woher = where FROM (origin). Wo = where (location). Wohin = where TO.',
+      },
+      {
+        type: 'multiple-choice',
+        q: '"Where do you live?" =',
+        options: ['Wo wohnst du?','Woher wohnst du?','Wohin wohnst du?','Wann wohnst du?'],
+        answer: 'Wo wohnst du?',
+      },
+
+      // 🛠 BUILD THE ANSWER — from English question to German answer
+      { type: 'fill-blank',
+        sentence: '🛠 "What is your name?" (formal) → "__ Sie?"',
+        answer: 'Wie heißen' },
+      { type: 'fill-blank',
+        sentence: '🛠 "I come from Germany." → Ich __ aus Deutschland.',
+        answer: 'komme' },
+      { type: 'fill-blank',
+        sentence: '🛠 "I live in Berlin." → Ich __ in Berlin.',
+        answer: 'wohne' },
+      { type: 'fill-blank',
+        sentence: '🛠 "I am a teacher." → Ich __ Lehrer.  (no article!)',
+        answer: 'bin' },
+      { type: 'fill-blank',
+        sentence: '🛠 "I am 28 years old." → Ich bin __ Jahre alt.',
+        answer: 'achtundzwanzig' },
+
+      // ⚠ Spot-the-error
+      {
+        type: 'multiple-choice',
+        q: '⚠ Which sentence is WRONG?',
+        options: [
+          'Ich heiße Anna.',
+          'Mein Name ist Anna.',
+          'Ich bin Anna.',
+          'Ich heißt Anna.',
+        ],
+        answer: 'Ich heißt Anna.',
+        explain: 'heißen → ich heiße (no -t for ich). The -t form is for er/sie/es: "Sie heißt Anna."',
+      },
+      {
+        type: 'multiple-choice',
+        q: '⚠ Which sentence is WRONG?',
+        options: [
+          'Ich bin Lehrer.',
+          'Ich bin ein Lehrer.',
+          'Ich bin Studentin.',
+          'Sie ist Ärztin.',
+        ],
+        answer: 'Ich bin ein Lehrer.',
+        explain: 'No article when stating your profession in German. Drop the "ein".',
+      },
+
+      // 💬 Informal dialogue (existing — preserved)
       { type: 'dialogue', lines: [
-        { speaker: 'A', de: 'Hallo! Wie heißt du?',                 en: 'Hi, what are you called?' },
-        { speaker: 'B', de: 'Ich heiße Anna. Und du?',              en: 'I am called Anna. And you?' },
-        { speaker: 'A', de: 'Ich heiße Tom. Woher kommst du?',      en: 'I am called Tom. Where are you from?' },
-        { speaker: 'B', de: 'Ich komme aus Indien und wohne in Berlin.', en: 'I come from India and live in Berlin.' },
-        { speaker: 'A', de: 'Wie alt bist du?',                     en: 'How old are you?' },
-        { speaker: 'B', de: 'Ich bin fünfundzwanzig Jahre alt.',    en: 'I am 25 years old.' },
+        { speaker: 'A', de: 'Hallo! Wie heißt du?',                       en: 'Hi, what are you called?' },
+        { speaker: 'B', de: 'Ich heiße Anna. Und du?',                    en: 'I am called Anna. And you?' },
+        { speaker: 'A', de: 'Ich heiße Tom. Woher kommst du?',            en: 'I am called Tom. Where are you from?' },
+        { speaker: 'B', de: 'Ich komme aus Indien und wohne in Berlin.',  en: 'I come from India and live in Berlin.' },
+        { speaker: 'A', de: 'Wie alt bist du?',                            en: 'How old are you?' },
+        { speaker: 'B', de: 'Ich bin fünfundzwanzig Jahre alt.',           en: 'I am 25 years old.' },
+        { speaker: 'A', de: 'Schön, dich kennenzulernen!',                  en: 'Nice to meet you!' },
+        { speaker: 'B', de: 'Sehr angenehm! Bis bald.',                     en: 'Very nice (to meet you)! See you soon.' },
       ]},
+      // 💼 Formal dialogue — same recipe, Sie-form throughout
+      { type: 'dialogue', lines: [
+        { speaker: 'Frau Weber', de: 'Guten Tag! Wie heißen Sie?',                en: 'Good day! What is your name?' },
+        { speaker: 'Herr Patel', de: 'Guten Tag! Mein Name ist Jaydeep Patel.',   en: 'Good day! My name is Jaydeep Patel.' },
+        { speaker: 'Frau Weber', de: 'Sehr angenehm. Woher kommen Sie?',          en: 'Very nice (to meet you). Where are you from?' },
+        { speaker: 'Herr Patel', de: 'Ich komme aus Indien und wohne in München.',en: 'I come from India and live in Munich.' },
+        { speaker: 'Frau Weber', de: 'Was machen Sie beruflich?',                  en: 'What do you do professionally?' },
+        { speaker: 'Herr Patel', de: 'Ich bin Softwareentwickler. Und Sie?',      en: 'I am a software developer. And you?' },
+        { speaker: 'Frau Weber', de: 'Ich arbeite als Ärztin. Auf Wiedersehen!',  en: 'I work as a doctor. Goodbye!' },
+        { speaker: 'Herr Patel', de: 'Auf Wiedersehen!',                            en: 'Goodbye!' },
+      ]},
+
+      // Moritz translation drill — slide 167-168 (existing — preserved)
       { type: 'fill-blank', sentence: 'Ich __ Anna. (am called)', answer: 'heiße' },
       { type: 'fill-blank', sentence: 'Ich __ aus Indien. (come)', answer: 'komme' },
-      // Moritz translation drill — slide 167-168. Translate one sentence at a time.
       { type: 'fill-blank', sentence: '"My name is Moritz." → Mein Name __ Moritz.',     answer: 'ist' },
       { type: 'fill-blank', sentence: '"I am 27 years old." → Ich __ 27 Jahre alt.',     answer: 'bin' },
       { type: 'fill-blank', sentence: '"I come from Germany." → Ich komme __ Deutschland.', answer: 'aus' },
@@ -2209,10 +2425,41 @@ export const days = [
       { type: 'fill-blank', sentence: '"I have a friend." → Ich __ einen Freund.',       answer: 'habe' },
       { type: 'fill-blank', sentence: '"In my free time, I play football." → In meiner Freizeit __ ich Fußball.', answer: 'spiele', hint: 'time-phrase first → verb still position 2 → subject after verb' },
       { type: 'fill-blank', sentence: '"On Saturday, I sometimes play a game." → Am Samstag __ ich manchmal ein Spiel.', answer: 'spiele' },
+
+      // 🛠 BUILD-YOUR-OWN — fill-blanks where you supply the answer about YOU
+      // (we use a model student "Anna" so the test has a single correct answer)
+      { type: 'fill-blank',
+        sentence: '🛠 Self-intro slot 2 (NAME): "Ich __ Anna."',
+        answer: 'heiße' },
+      { type: 'fill-blank',
+        sentence: '🛠 Self-intro slot 3 (AGE — 25): "Ich __ fünfundzwanzig Jahre alt."',
+        answer: 'bin' },
+      { type: 'fill-blank',
+        sentence: '🛠 Self-intro slot 4 (ORIGIN — India): "Ich komme __ Indien."',
+        answer: 'aus' },
+      { type: 'fill-blank',
+        sentence: '🛠 Self-intro slot 5 (RESIDENCE — Berlin): "Ich __ in Berlin."',
+        answer: 'wohne' },
+      { type: 'fill-blank',
+        sentence: '🛠 Self-intro slot 6 (PROFESSION — software developer): "Ich bin __."',
+        answer: 'Softwareentwicklerin', hint: 'female form ends in -in' },
     ],
     quiz: [
-      { type: 'multiple-choice', q: 'Which is most formal?', options: ['Hallo','Servus','Guten Tag','Hi'], answer: 'Guten Tag' },
+      { type: 'multiple-choice', q: 'Which is most formal?',
+        options: ['Hallo','Servus','Guten Tag','Hi'], answer: 'Guten Tag' },
+      { type: 'multiple-choice', q: '"Where are you FROM?" =',
+        options: ['Wo kommst du?','Woher kommst du?','Wohin kommst du?','Wann kommst du?'], answer: 'Woher kommst du?' },
+      { type: 'multiple-choice', q: 'You meet your professor for the first time. Which question?',
+        options: ['Wie heißt du?','Wie heißen Sie?','Was machst du?','Hallo!'], answer: 'Wie heißen Sie?' },
+      { type: 'multiple-choice', q: 'Pick the natural German for "I am a doctor (f)":',
+        options: ['Ich bin eine Ärztin.','Ich bin Ärztin.','Ich Ärztin bin.','Ich habe Ärztin.'],
+        answer: 'Ich bin Ärztin.',
+        explain: 'No article with profession.' },
       { type: 'fill-blank', sentence: 'Ich __ in Berlin.', answer: 'wohne' },
+      { type: 'fill-blank', sentence: '"How old are you?" (formal) → Wie alt __ Sie?', answer: 'sind' },
+      { type: 'fill-blank', sentence: '🛠 Build a 4-block intro: "Hallo! Ich __ Anna. Ich __ aus Indien und __ in Berlin. Ich __ 25 Jahre alt."',
+        answer: 'heiße komme wohne bin',
+        hint: 'four words separated by single spaces — the verbs for each block in order' },
     ],
   },
 
