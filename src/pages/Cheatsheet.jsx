@@ -1380,6 +1380,13 @@ const WK5_MEIN_DECLENSION = [
   { case: 'Dativ',     m: 'meinem', f: 'meiner', n: 'meinem', pl: 'meinen +n' },
 ];
 
+/* Standalone (independent) possessive — used WITHOUT a noun after it ("It's mine"). */
+const WK5_MEIN_STANDALONE = [
+  { case: 'Nominativ', m: 'meiner', f: 'meine',  n: 'mein(e)s', pl: 'meine' },
+  { case: 'Akkusativ', m: 'meinen', f: 'meine',  n: 'mein(e)s', pl: 'meine' },
+  { case: 'Dativ',     m: 'meinem', f: 'meiner', n: 'meinem',   pl: 'meinen' },
+];
+
 /* Modal verbs (Day 35 — können · müssen · wollen) */
 const WK5_MODALS = [
   {
@@ -1595,7 +1602,8 @@ function PronounsModalsCheatsheet() {
             </tbody>
           </table>
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-3">
-            <h3 className="font-bold text-sm mb-2">mein- declension (Nominativ · Akkusativ · Dativ)</h3>
+            <h3 className="font-bold text-sm mb-1">mein- + noun  <span className="font-normal text-slate-500">— attributive</span></h3>
+            <p className="text-xs text-slate-500 mb-2">Used BEFORE a noun: "mein Bruder", "meine Tasche".</p>
             <table className="w-full text-left text-sm border-collapse">
               <thead>
                 <tr className="text-xs uppercase tracking-wide text-slate-500">
@@ -1620,6 +1628,69 @@ function PronounsModalsCheatsheet() {
             </table>
             <p className="text-xs text-slate-500 mt-2">
               euer drops its "e" before any non-empty ending: eure · euren · eurer · eurem.
+            </p>
+          </div>
+        </div>
+
+        {/* ⭐ NEW — standalone "mine" forms */}
+        <div className="grid md:grid-cols-3 gap-3">
+          <div className="rounded-xl border-2 border-teal-300 dark:border-teal-700 bg-teal-50 dark:bg-teal-900/20 p-3 md:col-span-2">
+            <h3 className="font-bold text-sm mb-1">⭐ "mine" — standalone  <span className="font-normal text-slate-500">— used WITHOUT a noun after it</span></h3>
+            <p className="text-xs text-slate-600 dark:text-slate-300 mb-2">
+              When the possessive STANDS ALONE (English "mine / yours / his"), it carries the same
+              endings as <code className="font-mono">der/die/das</code>. The masculine and neuter
+              forms grow an extra ending compared to the attributive table above:
+            </p>
+            <table className="w-full text-left text-sm border-collapse">
+              <thead>
+                <tr className="text-xs uppercase tracking-wide text-slate-500">
+                  <th className="py-1 pr-2">Case</th>
+                  <th className="py-1 pr-2">m</th>
+                  <th className="py-1 pr-2">f</th>
+                  <th className="py-1 pr-2">n</th>
+                  <th className="py-1 pl-2">pl</th>
+                </tr>
+              </thead>
+              <tbody>
+                {WK5_MEIN_STANDALONE.map((row) => (
+                  <tr key={row.case} className="border-t border-teal-200 dark:border-teal-800">
+                    <td className="py-1 pr-2 font-semibold">{row.case}</td>
+                    <td className="py-1 pr-2 font-mono font-bold text-teal-700 dark:text-teal-300">{row.m}</td>
+                    <td className="py-1 pr-2 font-mono">{row.f}</td>
+                    <td className="py-1 pr-2 font-mono font-bold text-teal-700 dark:text-teal-300">{row.n}</td>
+                    <td className="py-1 pl-2 font-mono">{row.pl}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="text-xs text-slate-500 mt-2">
+              The (e) in <strong>mein(e)s</strong> is optional in writing — "meins" and "meines"
+              are both accepted; "meins" is what you almost always hear in conversation.
+            </p>
+          </div>
+
+          {/* 💡 TIP card — attributive vs standalone */}
+          <div className="rounded-xl border-2 border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-900/20 p-3">
+            <h3 className="font-bold mb-2">💡 Tip — attributive vs standalone</h3>
+            <p className="text-xs text-slate-700 dark:text-slate-200 mb-2">
+              Ask: <strong>is there a noun right after the possessive?</strong>
+            </p>
+            <ul className="text-xs space-y-2">
+              <li>
+                <span className="font-semibold">YES → attributive form (Day 31 table):</span>
+                <div className="mt-0.5 italic">"Das ist <strong>mein</strong> Buch."  →  That's my book.</div>
+                <div className="italic">"Das ist <strong>meine</strong> Tasche."  →  That's my bag.</div>
+              </li>
+              <li>
+                <span className="font-semibold">NO → standalone form (table on left):</span>
+                <div className="mt-0.5 italic">"Das Buch ist <strong>meins</strong>."  →  The book is mine.</div>
+                <div className="italic">"Wem gehört das? — <strong>Mir</strong>." (Dat — "to me")</div>
+                <div className="italic">"Ist das dein Stift? — Ja, das ist <strong>meiner</strong>." (masc.)</div>
+              </li>
+            </ul>
+            <p className="text-xs text-slate-500 mt-2">
+              Same logic for dein / sein / ihr / unser / euer / Ihr — replace "m" with the right
+              prefix, the endings stay identical.
             </p>
           </div>
         </div>

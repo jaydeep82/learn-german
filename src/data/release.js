@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.4.0';
+export const VERSION = '3.4.1';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.4.1',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Week 5 cheatsheet — add standalone possessive "mine" + tip',
+    notes: [
+      'Week 5 cheatsheet previously showed only the ATTRIBUTIVE possessive forms (mein Buch / meine Tasche — used BEFORE a noun). Added the standalone (independent) forms used WITHOUT a noun after them: meiner / meine / mein(e)s / meine in Nominativ, and the corresponding Akk + Dat rows.',
+      'New side-by-side display in the Possessivpronomen section: attributive table on the left + standalone "mine" table in a teal callout on the right. The two masculine + neuter cells that differ between the tables are highlighted in teal so the contrast is visible at a glance.',
+      'New 💡 TIP card explains the decision rule in one question: "Is there a noun right after the possessive?" YES → attributive form (mein Buch · meine Tasche). NO → standalone form (Das Buch ist meins · Ja, das ist meiner). Four worked examples cover Nom-neuter, Nom-masc, Dat-after-gehören, and the Akk masculine.',
+      'Note added that "mein(e)s" is the most common form in writing — "meins" without the optional e is what you hear in everyday conversation.',
+      'Note also extended the "same logic applies to dein / sein / ihr / unser / euer / Ihr" reassurance so learners don\'t fear having to memorise eight tables.',
+    ],
+  },
   {
     version: '3.4.0',
     date: '2026-05-11',
