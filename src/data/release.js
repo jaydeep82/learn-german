@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.3.7';
-export const RELEASE_DATE = '2026-05-09';
+export const VERSION = '3.4.0';
+export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.4.0',
+    date: '2026-05-11',
+    type: 'feature',
+    title: 'Week 5 cheatsheet — Akk+Dat pronouns side-by-side, Wechsel, possessives, modals',
+    notes: [
+      'Fifth printable cheatsheet at /cheatsheet/pronouns-modals. Mirrors the structure of the four previous sheets and covers Week 5\'s four pillars: Dativ pronouns (Day 29), Wechselpräpositionen (Day 30), Possessivpronomen (Day 31), modal verbs können/müssen/wollen (Day 35).',
+      'Sections: ⭐ Akkusativ + Dativ PRONOUN PAIR table — 8 rows with side-by-side columns (Nom · Akk · Dat), with the unchanged rows (wir/ihr) highlighted in emerald so learners see the discount immediately · ⭐ Wechselpräpositionen with a 9-row preposition table AND a Wo? / Wohin? visual decision card pair (Dat box on the left, Akk box on the right) · ⭐ Possessivpronomen 9-row person list paired with the mein- declension grid across all three cases AND four genders · ⭐ Modal verbs section: visual SANDWICH diagram (ASCII pre-block) + three colour-tinted conjugation cards (können · müssen · wollen) each with example sentence and audio · 👨‍👩‍👧 Family quick list (8 nouns) and 🌅 Daily routine quick list (7 verbs with time-of-day tags) for the life-vocab days · ⚠ "TWO KILLER PAIRS" amber callout (mich vs mir · in der Stadt vs in die Stadt) · 6 common mistakes · 6 memory hooks.',
+      'Discoverable from the dashboard (teal/cyan card under the Week 5 day grid) and from the Day 35 result screen on a passing score.',
+      'Cross-reference list (OtherCheatsheets) updated — every cheatsheet now lists all five.',
+      'Distinct teal/cyan/sky colour palette so the five sheets are visually separable: W1 sky/blue · W2 emerald/brand · W3 rose/orange/amber · W4 violet/indigo · W5 teal/cyan.',
+    ],
+  },
   {
     version: '3.3.7',
     date: '2026-05-09',

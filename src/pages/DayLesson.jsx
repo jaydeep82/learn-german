@@ -228,6 +228,21 @@ function Result({ day, result, onContinue }) {
           </div>
         </Link>
       )}
+      {passed && day.id === 35 && (
+        <Link
+          to="/cheatsheet/pronouns-modals"
+          className="block card bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-slate-900 dark:to-slate-900 hover:shadow-md transition"
+        >
+          <div className="flex items-center gap-3">
+            <div className="text-3xl" aria-hidden>🧭</div>
+            <div className="flex-1">
+              <div className="font-bold">Before Week 6 — review the Week 5 cheatsheet</div>
+              <div className="text-sm text-slate-500">Akk + Dat pronoun pair table, Wechsel Wo?/Wohin? decision, possessive table with mein- declension, three modals with the sandwich rule, family + routine quick lists.</div>
+            </div>
+            <span aria-hidden className="text-xl">→</span>
+          </div>
+        </Link>
+      )}
     </div>
   );
 }

@@ -13,6 +13,7 @@ export default function Cheatsheet() {
   if (slug === 'regular-verbs')      return <RegularVerbsCheatsheet />;
   if (slug === 'questions-numbers')  return <QuestionsNumbersCheatsheet />;
   if (slug === 'cases')              return <CasesCheatsheet />;
+  if (slug === 'pronouns-modals')    return <PronounsModalsCheatsheet />;
 
   return (
     <div className="card">
@@ -28,6 +29,7 @@ function OtherCheatsheets({ except }) {
     { slug: 'regular-verbs',     emoji: '🧰', title: 'Week 2 · regular & separable verbs · TFP order' },
     { slug: 'questions-numbers', emoji: '❓', title: 'Week 3 · questions · numbers · prices' },
     { slug: 'cases',             emoji: '📐', title: 'Week 4 · cases — Akkusativ · Dativ · pronouns' },
+    { slug: 'pronouns-modals',   emoji: '🧭', title: 'Week 5 · Dativ pronouns · Wechsel · possessives · modals' },
   ];
   const others = all.filter((c) => c.slug !== except);
   if (!others.length) return null;
@@ -1327,6 +1329,446 @@ function CasesCheatsheet() {
 
       <footer className="text-center text-sm text-slate-500 pb-4">
         Ready for Week 5? <Link to="/day/29" className="font-semibold text-violet-700 dark:text-violet-300 hover:underline">→ Go to Day 29 (Dativ pronouns)</Link>
+      </footer>
+    </div>
+  );
+}
+
+/* ===================== WEEK 5 — Dativ pronouns · Wechsel · possessives · modals ===================== */
+
+/* Akkusativ + Dativ pronoun pair table — side-by-side for instant comparison */
+const WK5_PRONOUN_PAIRS = [
+  { nom: 'ich',     akk: 'mich', dat: 'mir',   en: 'I / me / to me' },
+  { nom: 'du',      akk: 'dich', dat: 'dir',   en: 'you / you / to you (1 friend)' },
+  { nom: 'er',      akk: 'ihn',  dat: 'ihm',   en: 'he / him / to him' },
+  { nom: 'sie',     akk: 'sie',  dat: 'ihr',   en: 'she / her / to her' },
+  { nom: 'es',      akk: 'es',   dat: 'ihm',   en: 'it / it / to it' },
+  { nom: 'wir',     akk: 'uns',  dat: 'uns',   en: 'we / us / to us  ✓ same in both' },
+  { nom: 'ihr',     akk: 'euch', dat: 'euch',  en: 'you all / you all / to you all  ✓ same in both' },
+  { nom: 'sie/Sie', akk: 'sie/Sie', dat: 'ihnen/Ihnen', en: 'they / them / to them  (Sie/Ihnen for formal you)' },
+];
+
+const WK5_WECHSEL_PREPS = [
+  { de: 'in',     en: 'in / into',         wo: 'in dem (im)',     wohin: 'in das (ins)' },
+  { de: 'an',     en: 'at / on',           wo: 'an dem (am)',     wohin: 'an das (ans)' },
+  { de: 'auf',    en: 'on / onto',         wo: 'auf dem',         wohin: 'auf das (aufs)' },
+  { de: 'unter',  en: 'under / beneath',   wo: 'unter dem',       wohin: 'unter den/die/das' },
+  { de: 'über',   en: 'over / above',      wo: 'über dem',        wohin: 'über den/die/das' },
+  { de: 'vor',    en: 'in front of',       wo: 'vor dem',         wohin: 'vor den/die/das' },
+  { de: 'hinter', en: 'behind',            wo: 'hinter dem',      wohin: 'hinter den/die/das' },
+  { de: 'neben',  en: 'next to',           wo: 'neben dem',       wohin: 'neben den/die/das' },
+  { de: 'zwischen', en: 'between',          wo: 'zwischen dem',    wohin: 'zwischen den/die/das' },
+];
+
+/* Possessivpronomen — every person × every case-and-gender */
+const WK5_POSSESSIVES = [
+  { person: 'ich',     pos: 'mein',  meaning: 'my' },
+  { person: 'du',      pos: 'dein',  meaning: 'your (1 friend)' },
+  { person: 'er',      pos: 'sein',  meaning: 'his' },
+  { person: 'sie',     pos: 'ihr',   meaning: 'her' },
+  { person: 'es',      pos: 'sein',  meaning: 'its' },
+  { person: 'wir',     pos: 'unser', meaning: 'our' },
+  { person: 'ihr',     pos: 'euer',  meaning: 'your (group of friends)' },
+  { person: 'sie',     pos: 'ihr',   meaning: 'their' },
+  { person: 'Sie',     pos: 'Ihr',   meaning: 'your (formal — capital I)' },
+];
+
+/* Possessive declension table using mein as the template — all other persons follow the same shape */
+const WK5_MEIN_DECLENSION = [
+  { case: 'Nominativ', m: 'mein',   f: 'meine',  n: 'mein',   pl: 'meine' },
+  { case: 'Akkusativ', m: 'meinen', f: 'meine',  n: 'mein',   pl: 'meine' },
+  { case: 'Dativ',     m: 'meinem', f: 'meiner', n: 'meinem', pl: 'meinen +n' },
+];
+
+/* Modal verbs (Day 35 — können · müssen · wollen) */
+const WK5_MODALS = [
+  {
+    verb: 'können', en: 'can / to be able to', emoji: '💪',
+    accent: 'from-teal-500/20 to-teal-500/5',
+    rows: [['ich','kann'],['du','kannst'],['er/sie/es','kann'],['wir','können'],['ihr','könnt'],['sie/Sie','können']],
+    example: 'Ich kann Deutsch sprechen.',
+  },
+  {
+    verb: 'müssen', en: 'must / have to', emoji: '⚠',
+    accent: 'from-rose-500/20 to-rose-500/5',
+    rows: [['ich','muss'],['du','musst'],['er/sie/es','muss'],['wir','müssen'],['ihr','müsst'],['sie/Sie','müssen']],
+    example: 'Ich muss heute arbeiten.',
+  },
+  {
+    verb: 'wollen', en: 'to want to', emoji: '🎯',
+    accent: 'from-amber-500/20 to-amber-500/5',
+    rows: [['ich','will'],['du','willst'],['er/sie/es','will'],['wir','wollen'],['ihr','wollt'],['sie/Sie','wollen']],
+    example: 'Ich will einen Kaffee trinken.',
+  },
+];
+
+const WK5_FAMILY_QUICK = [
+  { de: 'der Vater',    en: 'father' },
+  { de: 'die Mutter',   en: 'mother' },
+  { de: 'der Bruder',   en: 'brother' },
+  { de: 'die Schwester', en: 'sister' },
+  { de: 'der Sohn',     en: 'son' },
+  { de: 'die Tochter',  en: 'daughter' },
+  { de: 'die Eltern',   en: 'parents' },
+  { de: 'die Großeltern', en: 'grandparents' },
+];
+
+const WK5_ROUTINE_QUICK = [
+  { de: 'aufstehen',  en: 'to get up',          time: 'morgens' },
+  { de: 'frühstücken', en: 'to have breakfast', time: 'morgens' },
+  { de: 'arbeiten',   en: 'to work',             time: 'vormittags' },
+  { de: 'Mittagessen', en: 'lunch',              time: 'mittags' },
+  { de: 'nach Hause gehen', en: 'go home',       time: 'abends' },
+  { de: 'fernsehen',  en: 'watch TV',            time: 'abends' },
+  { de: 'schlafen',   en: 'to sleep',            time: 'nachts' },
+];
+
+const WK5_COMMON_MISTAKES = [
+  {
+    wrong: '✗ Er hilft mich.',
+    right: '✓ Er hilft mir.',
+    why:   'helfen takes DATIV — and "me" in Dativ is "mir", not "mich". Same for danken / gefallen / gehören.',
+  },
+  {
+    wrong: '✗ Ich gehe in der Stadt.',
+    right: '✓ Ich gehe in die Stadt.   (= I go INTO town)',
+    why:   'in + Wohin? (movement INTO) → Akkusativ → in DIE Stadt. "in der Stadt" means "I am IN the city" (location, no movement) → Dativ.',
+  },
+  {
+    wrong: '✗ Mein Mutter ist Lehrerin.',
+    right: '✓ Meine Mutter ist Lehrerin.',
+    why:   'Possessives take the same endings as ein/eine. Mutter is feminine → meine (Nominativ).',
+  },
+  {
+    wrong: '✗ Ich kann Deutsch sprechen heute.',
+    right: '✓ Ich kann heute Deutsch sprechen.',
+    why:   'After a modal, the SECOND infinitive (sprechen) must be the very LAST word in the sentence. Time, place and object squeeze in BETWEEN the modal and the infinitive.',
+  },
+  {
+    wrong: '✗ Ich muss aufstehen um 7 Uhr.',
+    right: '✓ Ich muss um 7 Uhr aufstehen.',
+    why:   'Same rule — separable infinitive at the very end after a modal.',
+  },
+  {
+    wrong: '✗ Ich euer Auto.',
+    right: '✓ Ich liebe euer Auto.',
+    why:   'euer drops the e in feminine/Akk masc plural: eure / euren / euren / eurem. But before a neuter Akk like Auto, it stays as "euer".',
+  },
+];
+
+function PronounsModalsCheatsheet() {
+  return (
+    <div className="space-y-6">
+      <Link to="/" className="text-sm text-slate-500 hover:underline">← Back to dashboard</Link>
+
+      <header className="rounded-3xl bg-gradient-to-br from-teal-600 via-cyan-500 to-sky-500 text-white p-6 sm:p-8 shadow-md">
+        <p className="uppercase tracking-widest text-xs opacity-90">Week 5 · Revision</p>
+        <h1 className="text-3xl sm:text-4xl font-extrabold mt-1">
+          Cheatsheet: <span className="font-mono">pronouns · prepositions · modals</span>
+        </h1>
+        <p className="mt-2 max-w-2xl opacity-90">
+          Everything you can&rsquo;t lose from Week 5. Dativ-pronoun table side-by-side with
+          Akkusativ. Wechselpräpositionen Wo? vs Wohin? decision tree. Possessivpronomen across
+          three cases. Three modal verbs with the sandwich rule. Plus the family + routine + hobby
+          essentials.
+        </p>
+        <div className="mt-4 flex gap-2 flex-wrap">
+          <button onClick={() => window.print()} className="btn bg-white text-teal-700 hover:bg-teal-50">
+            🖨️ Print / Save as PDF
+          </button>
+          <Link to="/day/29" className="btn bg-white/10 text-white hover:bg-white/20">Dat pronouns</Link>
+          <Link to="/day/30" className="btn bg-white/10 text-white hover:bg-white/20">Wechsel preps</Link>
+          <Link to="/day/31" className="btn bg-white/10 text-white hover:bg-white/20">Possessives</Link>
+          <Link to="/day/35" className="btn bg-white/10 text-white hover:bg-white/20">Modals</Link>
+        </div>
+      </header>
+
+      {/* ⭐ Akkusativ + Dativ pronouns side-by-side */}
+      <section aria-labelledby="pronoun-pair" className="card overflow-x-auto">
+        <h2 id="pronoun-pair" className="font-bold mb-1">⭐ Akkusativ + Dativ pronouns — side by side</h2>
+        <p className="text-sm text-slate-500 mb-3">
+          The pair you'll use every day. Two columns shape-shift; <strong>wir</strong> and{' '}
+          <strong>ihr</strong> stay the same.
+        </p>
+        <table className="w-full text-left border-collapse min-w-[560px]">
+          <thead>
+            <tr className="text-xs uppercase tracking-wide text-slate-500">
+              <th className="py-2 pr-3 border-b-2 border-slate-200 dark:border-slate-700">Subject (Nom)</th>
+              <th className="py-2 px-3 border-b-2 border-slate-200 dark:border-slate-700 bg-violet-50 dark:bg-violet-900/20">Akkusativ <span className="text-[10px] block font-normal normal-case">(direct object)</span></th>
+              <th className="py-2 px-3 border-b-2 border-slate-200 dark:border-slate-700 bg-teal-50 dark:bg-teal-900/20">Dativ <span className="text-[10px] block font-normal normal-case">(indirect / after Dat-prep)</span></th>
+              <th className="py-2 pl-3 border-b-2 border-slate-200 dark:border-slate-700">Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            {WK5_PRONOUN_PAIRS.map((r) => {
+              const sameInBoth = r.akk === r.dat;
+              return (
+                <tr key={r.nom} className="border-b border-slate-100 dark:border-slate-800 align-top">
+                  <td className="py-2 pr-3 font-semibold font-mono">{r.nom}</td>
+                  <td className="py-2 px-3 font-mono font-bold bg-violet-50/40 dark:bg-violet-900/10">{r.akk}</td>
+                  <td className={`py-2 px-3 font-mono font-bold bg-teal-50/40 dark:bg-teal-900/10 ${sameInBoth ? 'text-emerald-700 dark:text-emerald-300' : ''}`}>{r.dat}</td>
+                  <td className="py-2 pl-3 text-sm text-slate-600 dark:text-slate-300">{r.en}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <p className="text-xs text-slate-500 mt-3">
+          Triggered by: <strong>Akkusativ</strong> = direct-object verbs (sehen, kaufen, lieben, treffen) and Akk prepositions (für, um, ohne).
+          <br />
+          <strong>Dativ</strong> = Dat verbs (helfen, danken, gehören, gefallen) and Dat prepositions (mit, bei, zu, von, nach, aus, seit, gegenüber).
+        </p>
+      </section>
+
+      {/* ⭐ Wechselpräpositionen — Wo? vs Wohin? */}
+      <section aria-labelledby="wechsel" className="card overflow-x-auto">
+        <h2 id="wechsel" className="font-bold mb-1">⭐ Wechselpräpositionen — the Wo? vs Wohin? decision</h2>
+        <p className="text-sm text-slate-500 mb-3">
+          Nine prepositions take EITHER Dativ or Akkusativ. The question you can ask the sentence decides:
+        </p>
+
+        <div className="grid sm:grid-cols-2 gap-3 mb-4">
+          <div className="rounded-xl border-2 border-teal-300 dark:border-teal-700 bg-teal-50 dark:bg-teal-900/20 p-3">
+            <div className="font-bold mb-1">📍 Wo? — LOCATION</div>
+            <div className="text-sm text-slate-700 dark:text-slate-200">No movement. You are simply somewhere.</div>
+            <div className="mt-2 font-mono text-sm">→ Dativ (dem · der · dem · den+n)</div>
+            <div className="mt-2 text-sm italic">"Ich bin <strong>in der</strong> Stadt."  (I am in the city.)</div>
+          </div>
+          <div className="rounded-xl border-2 border-violet-300 dark:border-violet-700 bg-violet-50 dark:bg-violet-900/20 p-3">
+            <div className="font-bold mb-1">➡️ Wohin? — MOVEMENT INTO</div>
+            <div className="text-sm text-slate-700 dark:text-slate-200">You move FROM A INTO B.</div>
+            <div className="mt-2 font-mono text-sm">→ Akkusativ (den · die · das · die)</div>
+            <div className="mt-2 text-sm italic">"Ich gehe <strong>in die</strong> Stadt."  (I go into the city.)</div>
+          </div>
+        </div>
+
+        <table className="w-full text-left border-collapse min-w-[640px]">
+          <thead>
+            <tr className="text-xs uppercase tracking-wide text-slate-500">
+              <th className="py-2 pr-3 border-b-2 border-slate-200 dark:border-slate-700">Preposition</th>
+              <th className="py-2 pr-3 border-b-2 border-slate-200 dark:border-slate-700">Meaning</th>
+              <th className="py-2 pr-3 border-b-2 border-slate-200 dark:border-slate-700 bg-teal-50 dark:bg-teal-900/20">Wo? → Dativ</th>
+              <th className="py-2 pl-3 border-b-2 border-slate-200 dark:border-slate-700 bg-violet-50 dark:bg-violet-900/20">Wohin? → Akkusativ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {WK5_WECHSEL_PREPS.map((p) => (
+              <tr key={p.de} className="border-b border-slate-100 dark:border-slate-800 align-top">
+                <td className="py-2 pr-3 font-mono font-bold">{p.de}</td>
+                <td className="py-2 pr-3 text-sm text-slate-600 dark:text-slate-300">{p.en}</td>
+                <td className="py-2 pr-3 font-mono text-sm bg-teal-50/40 dark:bg-teal-900/10">{p.wo}</td>
+                <td className="py-2 pl-3 font-mono text-sm bg-violet-50/40 dark:bg-violet-900/10">{p.wohin}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="text-xs text-slate-500 mt-3">
+          Always-Dat (mit · bei · zu · von · nach · aus · seit · gegenüber) and always-Akk (für · um · ohne)
+          take only one case. See the Week 4 cheatsheet for those.
+        </p>
+      </section>
+
+      {/* ⭐ Possessivpronomen */}
+      <section aria-labelledby="possessives" className="card overflow-x-auto">
+        <h2 id="possessives" className="font-bold mb-1">⭐ Possessivpronomen — all nine persons</h2>
+        <p className="text-sm text-slate-500 mb-3">
+          Replace "m" in <strong>mein-</strong> with the right person prefix to get all the others.
+          The case-and-gender endings stay identical.
+        </p>
+        <div className="grid sm:grid-cols-2 gap-3 mb-4">
+          <table className="w-full text-left text-sm border-collapse">
+            <thead>
+              <tr className="text-xs uppercase tracking-wide text-slate-500">
+                <th className="py-2 pr-3">Person</th>
+                <th className="py-2 pr-3">Possessive</th>
+                <th className="py-2 pl-3">Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              {WK5_POSSESSIVES.map((p) => (
+                <tr key={p.person + p.pos} className="border-t border-slate-200 dark:border-slate-800">
+                  <td className="py-2 pr-3 font-mono">{p.person}</td>
+                  <td className="py-2 pr-3 font-mono font-bold">{p.pos}</td>
+                  <td className="py-2 pl-3 text-slate-600 dark:text-slate-300">{p.meaning}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 p-3">
+            <h3 className="font-bold text-sm mb-2">mein- declension (Nominativ · Akkusativ · Dativ)</h3>
+            <table className="w-full text-left text-sm border-collapse">
+              <thead>
+                <tr className="text-xs uppercase tracking-wide text-slate-500">
+                  <th className="py-1 pr-2">Case</th>
+                  <th className="py-1 pr-2">m</th>
+                  <th className="py-1 pr-2">f</th>
+                  <th className="py-1 pr-2">n</th>
+                  <th className="py-1 pl-2">pl</th>
+                </tr>
+              </thead>
+              <tbody>
+                {WK5_MEIN_DECLENSION.map((row) => (
+                  <tr key={row.case} className="border-t border-slate-200 dark:border-slate-800">
+                    <td className="py-1 pr-2 font-semibold">{row.case}</td>
+                    <td className="py-1 pr-2 font-mono">{row.m}</td>
+                    <td className="py-1 pr-2 font-mono">{row.f}</td>
+                    <td className="py-1 pr-2 font-mono">{row.n}</td>
+                    <td className="py-1 pl-2 font-mono">{row.pl}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="text-xs text-slate-500 mt-2">
+              euer drops its "e" before any non-empty ending: eure · euren · eurer · eurem.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ⭐ Modal verbs */}
+      <section aria-labelledby="modals" className="card overflow-x-auto">
+        <h2 id="modals" className="font-bold mb-1">⭐ Modal verbs — Day 35 trio</h2>
+        <p className="text-sm text-slate-500 mb-3">
+          Modals always come paired with a second verb. The modal sits in slot 2 (conjugated); the
+          OTHER verb flies to the very end of the sentence as an infinitive.
+        </p>
+
+        {/* The sandwich rule visualisation */}
+        <div className="mb-4 rounded-xl border-2 border-teal-300 dark:border-teal-700 bg-teal-50 dark:bg-teal-900/20 p-3">
+          <div className="font-bold mb-2">🥪 The modal sandwich</div>
+          <pre className="text-xs sm:text-sm font-mono leading-relaxed overflow-x-auto">
+{`   slot 1   slot 2 (modal)   ……  middle  ……      slot ∞ (infinitive)
+   Ich      KANN             heute Deutsch        SPRECHEN.
+   Wir      MÜSSEN           am Samstag           ARBEITEN.
+   Du       WILLST           einen Kaffee         TRINKEN.
+
+   Separable verb? Re-glue it at the end as one word:
+   Ich      MUSS             um sieben Uhr        AUFSTEHEN.`}
+          </pre>
+        </div>
+
+        <div className="grid sm:grid-cols-3 gap-3">
+          {WK5_MODALS.map((m) => (
+            <div key={m.verb} className={`rounded-xl bg-gradient-to-br ${m.accent} border border-slate-200 dark:border-slate-700 p-3`}>
+              <div className="flex items-center gap-2">
+                <span aria-hidden className="text-xl">{m.emoji}</span>
+                <h3 className="font-extrabold text-lg">{m.verb}</h3>
+              </div>
+              <div className="text-xs text-slate-600 dark:text-slate-300 mb-2">{m.en}</div>
+              <table className="w-full text-sm">
+                <tbody>
+                  {m.rows.map(([p, f]) => (
+                    <tr key={p} className="border-t border-slate-200/60 dark:border-slate-700/60">
+                      <td className="py-1 pr-2 text-slate-500 font-mono text-xs">{p}</td>
+                      <td className="py-1 font-mono font-bold">{f}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div className="mt-2 text-xs italic flex items-center gap-2">
+                <span>"{m.example}"</span>
+                <AudioButton text={m.example} size="sm" />
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs text-slate-500 mt-3">
+          Pattern note: in singular (ich / du / er-sie-es), the stem vowel CHANGES in können (ö → a) and müssen (ü → u),
+          and the ich + er forms are IDENTICAL — never mark a 3rd-person -t on the modal. Day 36 adds dürfen ·
+          sollen · mögen / möchten (the polite-restaurant version).
+        </p>
+      </section>
+
+      {/* Life-vocab quick cards */}
+      <section aria-labelledby="life-vocab" className="grid md:grid-cols-2 gap-4">
+        <h2 id="life-vocab" className="sr-only">Life vocabulary</h2>
+        <div className="card">
+          <h3 className="font-bold mb-2">👨‍👩‍👧 Family — quick list</h3>
+          <ul className="space-y-2 text-sm">
+            {WK5_FAMILY_QUICK.map((v) => (
+              <li key={v.de} className="border-t border-slate-200 dark:border-slate-800 pt-2 first:border-0 first:pt-0">
+                <div className="flex items-start gap-2">
+                  <span className="font-mono font-bold flex-1">{v.de}</span>
+                  <AudioButton text={v.de} size="sm" />
+                </div>
+                <Pron de={v.de} />
+                <div className="text-xs text-slate-500">{v.en}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="card">
+          <h3 className="font-bold mb-2">🌅 Daily routine — quick list</h3>
+          <ul className="space-y-2 text-sm">
+            {WK5_ROUTINE_QUICK.map((v) => (
+              <li key={v.de} className="border-t border-slate-200 dark:border-slate-800 pt-2 first:border-0 first:pt-0">
+                <div className="flex items-start gap-2">
+                  <span className="font-mono font-bold flex-1">{v.de}</span>
+                  <span className="text-xs text-slate-500 italic">{v.time}</span>
+                  <AudioButton text={v.de} size="sm" />
+                </div>
+                <Pron de={v.de} />
+                <div className="text-xs text-slate-500">{v.en}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ⚠ gefallen / Wo-Wohin callout */}
+      <section aria-labelledby="wk5-gotcha" className="card bg-amber-50 border-amber-200 dark:bg-amber-900/20 dark:border-amber-700">
+        <h2 id="wk5-gotcha" className="font-bold mb-2">⚠ The two killer pairs in Week 5</h2>
+        <div className="grid sm:grid-cols-2 gap-3 text-sm">
+          <div className="rounded-lg border border-amber-300 dark:border-amber-700 bg-white dark:bg-slate-900 p-3">
+            <div className="font-bold mb-1">mich vs mir</div>
+            <p>"He sees me." → Er sieht <strong>mich</strong>. (Akk verb)</p>
+            <p>"He helps me." → Er hilft <strong>mir</strong>. (Dat verb)</p>
+            <p className="mt-2 text-xs text-slate-600 dark:text-slate-300">
+              When unsure: ask "Wen/Was?" → Akk (mich) · "Wem?" → Dat (mir).
+            </p>
+          </div>
+          <div className="rounded-lg border border-amber-300 dark:border-amber-700 bg-white dark:bg-slate-900 p-3">
+            <div className="font-bold mb-1">in der Stadt vs in die Stadt</div>
+            <p>"I am IN the city." → Ich bin <strong>in der</strong> Stadt. (Wo? = Dat)</p>
+            <p>"I go INTO the city." → Ich gehe <strong>in die</strong> Stadt. (Wohin? = Akk)</p>
+            <p className="mt-2 text-xs text-slate-600 dark:text-slate-300">
+              The English preposition is the same; the German case decides movement vs location.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Common mistakes */}
+      <section aria-labelledby="wk5-mistakes" className="card">
+        <h2 id="wk5-mistakes" className="font-bold mb-3">Common mistakes</h2>
+        <ul className="space-y-3">
+          {WK5_COMMON_MISTAKES.map((m) => (
+            <li key={m.right} className="border-t border-slate-200 dark:border-slate-800 pt-3 first:border-0 first:pt-0">
+              <div className="text-rose-600 dark:text-rose-400 font-mono">{m.wrong}</div>
+              <div className="text-emerald-700 dark:text-emerald-400 font-mono">{m.right}</div>
+              <div className="text-sm text-slate-600 dark:text-slate-300 mt-1">{m.why}</div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Memory hooks */}
+      <section aria-labelledby="wk5-hooks" className="card">
+        <h2 id="wk5-hooks" className="font-bold mb-2">Memory hooks</h2>
+        <ul className="list-disc pl-5 space-y-1 text-slate-700 dark:text-slate-200">
+          <li><strong>Dat pronouns end in -r or -m.</strong> mi<strong>r</strong>, di<strong>r</strong>, ih<strong>m</strong>, ih<strong>r</strong>, ih<strong>n</strong>en. Akk pronouns mostly end in -ch or -s: mich, dich, uns. The shape gives away the case.</li>
+          <li><strong>wir / ihr never change.</strong> uns = us in both Akk and Dat. euch = you-all in both. That's the discount you get for the others changing.</li>
+          <li><strong>Wechsel decision = ask Wohin? first.</strong> If the answer is YES (movement INTO), use Akk. If the answer is NO (just located there), use Dat. One question, every time.</li>
+          <li><strong>Modal sandwich:</strong> if you have a modal, the other verb is the LAST word. No exceptions.</li>
+          <li><strong>möchten is NOT in this trio.</strong> It's a polite form of mögen (Konjunktiv II) and lives on Day 36. Today is the can-must-want set.</li>
+          <li><strong>euer drops its e</strong> before a non-empty ending: eure Mutter · eure Bücher · euren Vater. Never "euere" or "euern".</li>
+        </ul>
+      </section>
+
+      <OtherCheatsheets except="pronouns-modals" />
+
+      <footer className="text-center text-sm text-slate-500 pb-4">
+        Ready for Week 6? <Link to="/day/36" className="font-semibold text-teal-700 dark:text-teal-300 hover:underline">→ Go to Day 36 (Modals II: dürfen · sollen · mögen)</Link>
       </footer>
     </div>
   );
