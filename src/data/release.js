@@ -11,10 +11,20 @@
  * in sync.
  */
 
-export const VERSION = '3.5.0';
+export const VERSION = '3.5.1';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.5.1',
+    date: '2026-05-11',
+    type: 'fix',
+    title: 'Correct release dates for v3.3.6 and v3.3.7',
+    notes: [
+      'v3.3.6 (Day 13 review) and v3.3.7 (Day 14 review) were both committed on 2026-05-10 but recorded as 2026-05-09 in release.js. Verified against git log and corrected.',
+      'No code change beyond the two date strings + this entry.',
+    ],
+  },
   {
     version: '3.5.0',
     date: '2026-05-11',
@@ -56,7 +66,7 @@ export const RELEASES = [
   },
   {
     version: '3.3.7',
-    date: '2026-05-09',
+    date: '2026-05-10',
     type: 'improvement',
     title: 'Day 14 review — self-introduction with the 6-block recipe, du+Sie',
     notes: [
@@ -77,7 +87,7 @@ export const RELEASES = [
   },
   {
     version: '3.3.6',
-    date: '2026-05-09',
+    date: '2026-05-10',
     type: 'improvement',
     title: 'Day 13 review — TFP-O order with the frequency scale and 🛠 builders',
     notes: [
