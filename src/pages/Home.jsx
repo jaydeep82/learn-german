@@ -158,6 +158,21 @@ export default function Home() {
                 </div>
               </Link>
             )}
+            {w.n === 6 && (
+              <Link
+                to="/cheatsheet/real-life"
+                className="mt-3 block card bg-gradient-to-br from-rose-50 to-orange-50 dark:from-slate-900 dark:to-slate-900 hover:shadow-md transition"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="text-3xl" aria-hidden>🍽️</div>
+                  <div className="flex-1">
+                    <div className="font-bold">Cheatsheet · real life — modals II · glue · scenarios · negation</div>
+                    <div className="text-sm text-slate-500">Four-modal table (dürfen/sollen/mögen/möchten), no-change vs verb-to-end connectors side-by-side, demonstratives + indefinites tables, three real-life scenario lists (restaurant/shopping/travel), kein-vs-nicht decision tree + full kein declension, möchte-magic tip.</div>
+                  </div>
+                  <span aria-hidden className="text-xl">→</span>
+                </div>
+              </Link>
+            )}
             {w.n < 8 && (
               <div className="mt-3">
                 <Link to={`/review/week-${w.n}`} className="text-sm font-semibold text-brand-700 dark:text-brand-300 hover:underline">

@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.4.1';
+export const VERSION = '3.5.0';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.5.0',
+    date: '2026-05-11',
+    type: 'feature',
+    title: 'Week 6 cheatsheet — real life: modals II · glue · scenarios · negation',
+    notes: [
+      'Sixth printable cheatsheet at /cheatsheet/real-life. The single most decisive Week 6 revision — covers all four polite-modal verbs, both conjunction flavours, demonstratives + indefinites, three real-life scenarios, and the kein-vs-nicht decision tree on one page.',
+      'Sections: 4-modal table (dürfen · sollen · mögen · möchten) side-by-side with all 6 pronouns × 4 verbs colour-coded by accent (rose · orange · amber · pink) · ⭐ no-change-vs-verb-to-end CONNECTORS shown as a 🟢/🔴 two-column visual with worked examples for und/oder/aber/denn/dann vs weil/wenn/dass · ⚠ denn-vs-weil contrast callout · demonstrative table (dieser/diese/dieses) next to article pattern · indefinite pronouns table with Akk + Dat forms (jemand → jemanden → jemandem) · 3 real-life scenario cards (🍽️ Restaurant · 🛒 Shopping · ✈️ Travel) with 6-8 phrases each, audio + pronunciation guide · ⭐ ⚠ kein-vs-nicht 5-second DECISION TREE next to the full kein declension table · ⭐ 💡 möchte-magic TIP card explaining the polite request word for service contexts · 5 common mistakes including the wollen-vs-möchte and stacked-negation traps · 9 memory hooks.',
+      'Discoverable from the dashboard (rose/orange card under the Week 6 day grid) and from the Day 42 result screen on a passing score ("Before Week 7 — review the Week 6 cheatsheet").',
+      'Cross-reference list (OtherCheatsheets) updated — every cheatsheet now lists all SIX.',
+      'Palette: rose · orange · amber · pink — distinct from W1 (sky/blue) · W2 (emerald/brand) · W3 (rose/amber) · W4 (violet/indigo) · W5 (teal/cyan). Each cheatsheet has its own colour identity.',
+    ],
+  },
   {
     version: '3.4.1',
     date: '2026-05-11',

@@ -13,6 +13,7 @@ export default function Cheatsheet() {
   if (slug === 'regular-verbs')      return <RegularVerbsCheatsheet />;
   if (slug === 'questions-numbers')  return <QuestionsNumbersCheatsheet />;
   if (slug === 'cases')              return <CasesCheatsheet />;
+  if (slug === 'real-life')          return <RealLifeCheatsheet />;
   if (slug === 'pronouns-modals')    return <PronounsModalsCheatsheet />;
 
   return (
@@ -30,6 +31,7 @@ function OtherCheatsheets({ except }) {
     { slug: 'questions-numbers', emoji: '❓', title: 'Week 3 · questions · numbers · prices' },
     { slug: 'cases',             emoji: '📐', title: 'Week 4 · cases — Akkusativ · Dativ · pronouns' },
     { slug: 'pronouns-modals',   emoji: '🧭', title: 'Week 5 · Dativ pronouns · Wechsel · possessives · modals' },
+    { slug: 'real-life',         emoji: '🍽️', title: 'Week 6 · real life — modals II · glue · scenarios · negation' },
   ];
   const others = all.filter((c) => c.slug !== except);
   if (!others.length) return null;
@@ -1840,6 +1842,481 @@ function PronounsModalsCheatsheet() {
 
       <footer className="text-center text-sm text-slate-500 pb-4">
         Ready for Week 6? <Link to="/day/36" className="font-semibold text-teal-700 dark:text-teal-300 hover:underline">→ Go to Day 36 (Modals II: dürfen · sollen · mögen)</Link>
+      </footer>
+    </div>
+  );
+}
+
+/* ===================== WEEK 6 — real life: modals · glue · scenarios · negation ===================== */
+
+/* All Week 6 modals laid out side-by-side for fast comparison. */
+const WK6_MODALS = [
+  { key: 'dürfen',  en: 'be allowed', accent: 'from-rose-500/15 to-rose-500/5',
+    rows: [['ich','darf'],['du','darfst'],['er/sie/es','darf'],['wir','dürfen'],['ihr','dürft'],['sie/Sie','dürfen']] },
+  { key: 'sollen',  en: 'should',     accent: 'from-orange-500/15 to-orange-500/5',
+    rows: [['ich','soll'],['du','sollst'],['er/sie/es','soll'],['wir','sollen'],['ihr','sollt'],['sie/Sie','sollen']] },
+  { key: 'mögen',   en: 'to like',    accent: 'from-amber-500/15 to-amber-500/5',
+    rows: [['ich','mag'],['du','magst'],['er/sie/es','mag'],['wir','mögen'],['ihr','mögt'],['sie/Sie','mögen']] },
+  { key: 'möchten', en: '"would like" (Konj. II of mögen — polite request)', accent: 'from-pink-500/15 to-pink-500/5',
+    rows: [['ich','möchte'],['du','möchtest'],['er/sie/es','möchte'],['wir','möchten'],['ihr','möchtet'],['sie/Sie','möchten']] },
+];
+
+/* Sentence connectors: split into "no-change" vs "verb-to-end" buckets. */
+const WK6_CONNECTORS_NO_CHANGE = [
+  { de: 'und',   en: 'and',     example: 'Ich lerne Deutsch UND ich arbeite viel.' },
+  { de: 'oder',  en: 'or',      example: 'Ich trinke Kaffee ODER ich trinke Tee.' },
+  { de: 'aber',  en: 'but',     example: 'Das ist lecker, ABER es ist teuer.' },
+  { de: 'denn',  en: 'because', example: 'Ich gehe, DENN ich bin hungrig.' },
+  { de: 'dann',  en: 'then',    example: 'Ich lerne Deutsch, DANN gehe ich nach Hause.' },
+];
+
+const WK6_CONNECTORS_VERB_END = [
+  { de: 'weil',  en: 'because', example: 'Ich lerne Deutsch, WEIL ich in Deutschland ARBEITE.' },
+  { de: 'wenn',  en: 'if / when',example: 'Ich komme, WENN ich Zeit HABE.' },
+  { de: 'dass',  en: 'that',    example: 'Ich denke, DASS er müde IST.' },
+];
+
+const WK6_DEMONSTRATIVE = [
+  { article: 'der',  dem: 'dieser', example: 'dieser Mann' },
+  { article: 'die',  dem: 'diese',  example: 'diese Frau' },
+  { article: 'das',  dem: 'dieses', example: 'dieses Kind' },
+  { article: 'die (pl)', dem: 'diese', example: 'diese Leute' },
+];
+
+const WK6_INDEFINITES = [
+  { de: 'jemand',  en: 'someone',         akk: 'jemanden',  dat: 'jemandem' },
+  { de: 'niemand', en: 'nobody',          akk: 'niemanden', dat: 'niemandem' },
+  { de: 'etwas',   en: 'something',       akk: 'etwas',     dat: 'etwas' },
+  { de: 'nichts',  en: 'nothing',         akk: 'nichts',    dat: 'nichts' },
+  { de: 'alles',   en: 'everything',      akk: 'alles',     dat: 'allem' },
+  { de: 'man',     en: 'one / people',    akk: 'einen',     dat: 'einem' },
+];
+
+const WK6_KEIN_TABLE = [
+  { case: 'Nominativ', m: 'kein',    f: 'keine',  n: 'kein',    pl: 'keine' },
+  { case: 'Akkusativ', m: 'keinen',  f: 'keine',  n: 'kein',    pl: 'keine' },
+  { case: 'Dativ',     m: 'keinem',  f: 'keiner', n: 'keinem',  pl: 'keinen +n' },
+];
+
+const WK6_RESTAURANT = [
+  { de: 'Ich hätte gerne …',           en: 'I would like to have … (most natural request)' },
+  { de: 'Ich möchte … bestellen.',      en: 'I would like to order …' },
+  { de: 'Die Speisekarte, bitte.',      en: 'The menu, please.' },
+  { de: 'Wie viel kostet das?',         en: 'How much does that cost?' },
+  { de: 'Zahlen, bitte.',                en: 'The bill, please.' },
+  { de: 'Die Rechnung, bitte.',         en: '"" (alt.)' },
+  { de: 'Mit Karte oder bar?',          en: 'With card or cash?' },
+  { de: 'Guten Appetit!',                en: 'Enjoy your meal!' },
+];
+
+const WK6_SHOPPING = [
+  { de: 'Was kostet das?',              en: 'What does that cost?' },
+  { de: 'Haben Sie das in Größe …?',     en: 'Do you have this in size …?' },
+  { de: 'Kann ich das anprobieren?',     en: 'Can I try this on?' },
+  { de: 'Das ist zu teuer.',             en: 'That is too expensive.' },
+  { de: 'Ich nehme es.',                  en: 'I\'ll take it.' },
+  { de: 'Wo ist die Kasse?',             en: 'Where is the checkout?' },
+];
+
+const WK6_TRAVEL = [
+  { de: 'Wo ist der Bahnhof?',          en: 'Where is the train station?' },
+  { de: 'Eine Fahrkarte nach … , bitte.', en: 'A ticket to … , please.' },
+  { de: 'Einfach oder hin und zurück?', en: 'One way or return?' },
+  { de: 'Wann fährt der nächste Zug?',   en: 'When does the next train leave?' },
+  { de: 'Geradeaus, dann links / rechts.', en: 'Straight on, then left / right.' },
+  { de: 'Ich habe eine Reservierung.',   en: 'I have a reservation.' },
+];
+
+const WK6_COMMON_MISTAKES = [
+  {
+    wrong: '✗ Ich will einen Kaffee.',
+    right: '✓ Ich möchte einen Kaffee, bitte.',
+    why:   'wollen sounds blunt in service contexts. möchte (Konjunktiv II of mögen) is the polite request form — always pair it with bitte.',
+  },
+  {
+    wrong: '✗ Ich gehe, weil ich bin hungrig.',
+    right: '✓ Ich gehe, weil ich hungrig BIN.',
+    why:   'After weil / wenn / dass, the conjugated verb jumps to the END of the sub-clause. Use denn (verb stays slot 2) if you don\'t want to move it.',
+  },
+  {
+    wrong: '✗ Ich habe nicht Zeit.',
+    right: '✓ Ich habe keine Zeit.',
+    why:   'kein replaces ein/nothing before a NOUN. Use nicht only for verbs, adjectives or whole sentences.',
+  },
+  {
+    wrong: '✗ Ich kaufe das Buch nicht.   (translates "I am not buying THE book")',
+    right: '✓ Ich kaufe kein Buch.        (translates "I am not buying A/ANY book")',
+    why:   'Both can be correct — pick by whether you mean a SPECIFIC item (nicht) or NO item at all (kein).',
+  },
+  {
+    wrong: '✗ Niemand ist hier nicht.',
+    right: '✓ Niemand ist hier.',
+    why:   'German does NOT stack negatives. niemand / nichts already mean "no one / nothing"; don\'t add nicht.',
+  },
+];
+
+function RealLifeCheatsheet() {
+  return (
+    <div className="space-y-6">
+      <Link to="/" className="text-sm text-slate-500 hover:underline">← Back to dashboard</Link>
+
+      <header className="rounded-3xl bg-gradient-to-br from-rose-500 via-orange-500 to-amber-500 text-white p-6 sm:p-8 shadow-md">
+        <p className="uppercase tracking-widest text-xs opacity-90">Week 6 · Revision</p>
+        <h1 className="text-3xl sm:text-4xl font-extrabold mt-1">
+          Cheatsheet: <span className="font-mono">real life</span>
+        </h1>
+        <p className="mt-2 max-w-2xl opacity-90">
+          The week where you go from drills to actual conversations. Four polite-modal tables,
+          two flavours of sentence glue, a demonstrative + indefinite pronoun pair, three
+          real-life scripts (restaurant · shopping · travel), and the kein-vs-nicht decision
+          tree — all on one printable page.
+        </p>
+        <div className="mt-4 flex gap-2 flex-wrap">
+          <button onClick={() => window.print()} className="btn bg-white text-rose-700 hover:bg-rose-50">
+            🖨️ Print / Save as PDF
+          </button>
+          <Link to="/day/36" className="btn bg-white/10 text-white hover:bg-white/20">Modals II</Link>
+          <Link to="/day/37" className="btn bg-white/10 text-white hover:bg-white/20">Connectors</Link>
+          <Link to="/day/38" className="btn bg-white/10 text-white hover:bg-white/20">Demonstratives</Link>
+          <Link to="/day/39" className="btn bg-white/10 text-white hover:bg-white/20">Restaurant</Link>
+          <Link to="/day/42" className="btn bg-white/10 text-white hover:bg-white/20">Negation</Link>
+        </div>
+      </header>
+
+      {/* MODALS II — full 4-verb table */}
+      <section aria-labelledby="wk6-modals" className="card overflow-x-auto">
+        <h2 id="wk6-modals" className="font-bold mb-3">Modals II — dürfen · sollen · mögen · möchten</h2>
+        <p className="text-sm text-slate-500 mb-3">
+          All four side-by-side. Note that <strong>mögen</strong> ("to like") is used WITHOUT a second verb
+          ("Ich mag Pizza"), while <strong>möchten</strong> (its Konjunktiv II form, "would like") is the
+          polite request word you\'ll use in every café.
+        </p>
+        <table className="w-full text-left text-sm border-collapse min-w-[560px]">
+          <thead>
+            <tr className="text-xs uppercase tracking-wide text-slate-500">
+              <th className="py-2 pr-3 border-b-2 border-slate-200 dark:border-slate-700">Pronoun</th>
+              {WK6_MODALS.map((m) => (
+                <th key={m.key} className="py-2 px-3 border-b-2 border-slate-200 dark:border-slate-700">
+                  <div className="text-base font-extrabold text-slate-900 dark:text-slate-100">{m.key}</div>
+                  <div className="font-normal text-xs text-slate-500 normal-case">{m.en}</div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {[0,1,2,3,4,5].map((i) => (
+              <tr key={i} className="border-b border-slate-100 dark:border-slate-800">
+                <td className="py-2 pr-3 font-semibold whitespace-nowrap">{WK6_MODALS[0].rows[i][0]}</td>
+                {WK6_MODALS.map((m) => (
+                  <td key={m.key} className={`py-2 px-3 bg-gradient-to-br ${m.accent} rounded`}>
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono font-bold">{m.rows[i][1]}</span>
+                      <AudioButton text={m.rows[i][1]} size="sm" />
+                    </div>
+                    <Pron de={m.rows[i][1]} />
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="text-xs text-slate-500 mt-3">
+          Same V2 rule + sandwich structure as Modals I — modal in slot 2, main verb infinitive at the end:
+          "Ich möchte einen Kaffee <strong>bestellen</strong>." · "Du sollst pünktlich <strong>kommen</strong>."
+        </p>
+      </section>
+
+      {/* SENTENCE CONNECTORS — two-column visual */}
+      <section aria-labelledby="wk6-connectors" className="grid md:grid-cols-2 gap-4">
+        <h2 id="wk6-connectors" className="sr-only">Sentence connectors</h2>
+
+        <div className="card bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border-emerald-200 dark:border-emerald-700">
+          <h3 className="font-bold mb-1">🟢 No change · verb stays slot 2</h3>
+          <p className="text-xs text-slate-500 mb-3">Coordinating connectors — the second clause behaves like a normal main clause.</p>
+          <ul className="space-y-2 text-sm">
+            {WK6_CONNECTORS_NO_CHANGE.map((c) => (
+              <li key={c.de} className="border-t border-emerald-200/60 dark:border-emerald-800/60 pt-2 first:border-0 first:pt-0">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono font-bold flex-1">{c.de}</span>
+                  <span className="text-xs text-slate-500">{c.en}</span>
+                </div>
+                <div className="mt-1 text-xs italic text-slate-600 dark:text-slate-300">e.g. „{c.example}"</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="card bg-gradient-to-br from-rose-50 to-orange-50 dark:from-rose-900/20 dark:to-orange-900/20 border-rose-200 dark:border-rose-700">
+          <h3 className="font-bold mb-1">🔴 Verb JUMPS to the end</h3>
+          <p className="text-xs text-slate-500 mb-3">Subordinating connectors — the conjugated verb flies to the END of the sub-clause.</p>
+          <ul className="space-y-2 text-sm">
+            {WK6_CONNECTORS_VERB_END.map((c) => (
+              <li key={c.de} className="border-t border-rose-200/60 dark:border-rose-800/60 pt-2 first:border-0 first:pt-0">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono font-bold flex-1">{c.de}</span>
+                  <span className="text-xs text-slate-500">{c.en}</span>
+                </div>
+                <div className="mt-1 text-xs italic text-slate-600 dark:text-slate-300">e.g. „{c.example}"</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="card md:col-span-2 bg-amber-50 border-amber-200 dark:bg-amber-900/20 dark:border-amber-700">
+          <h3 className="font-bold mb-1">⚠ denn vs weil — same meaning, OPPOSITE word order</h3>
+          <p className="text-sm text-slate-700 dark:text-slate-200">
+            Both translate "because". Pick by the word order you want:
+          </p>
+          <ul className="mt-2 text-sm space-y-1">
+            <li>„Ich gehe, <strong>denn</strong> ich bin hungrig."   — verb stays slot 2</li>
+            <li>„Ich gehe, <strong>weil</strong> ich hungrig <strong>bin</strong>."   — verb to the end</li>
+          </ul>
+          <p className="mt-2 text-xs text-slate-500">Modern spoken German leans on <strong>weil</strong> for "because" almost everywhere.</p>
+        </div>
+      </section>
+
+      {/* DEMONSTRATIVES + INDEFINITES */}
+      <section aria-labelledby="wk6-dem-ind" className="grid md:grid-cols-2 gap-4">
+        <h2 id="wk6-dem-ind" className="sr-only">Demonstratives & indefinites</h2>
+
+        <div className="card">
+          <h3 className="font-bold mb-1">👉 Demonstratives — "this / these"</h3>
+          <p className="text-xs text-slate-500 mb-3">
+            <code className="font-mono">dieser</code> replaces <code className="font-mono">der/die/das</code> to mean
+            "THIS particular one". Same case endings as the article.
+          </p>
+          <table className="w-full text-left text-sm border-collapse">
+            <thead>
+              <tr className="text-xs uppercase tracking-wide text-slate-500">
+                <th className="py-1 pr-2">Article</th>
+                <th className="py-1 pr-2">Demonstrative</th>
+                <th className="py-1">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              {WK6_DEMONSTRATIVE.map((d) => (
+                <tr key={d.article} className="border-t border-slate-200 dark:border-slate-800">
+                  <td className="py-1 pr-2 font-mono">{d.article}</td>
+                  <td className="py-1 pr-2 font-mono font-bold text-rose-700 dark:text-rose-300">{d.dem}</td>
+                  <td className="py-1 text-slate-600 dark:text-slate-300">{d.example}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-xs text-slate-500 mt-2">
+            Pattern: swap the "d-" of <em>der/die/das</em> for "dies-" — keep the same ending.
+          </p>
+        </div>
+
+        <div className="card">
+          <h3 className="font-bold mb-1">👤 Indefinite pronouns — "someone / nothing / one"</h3>
+          <p className="text-xs text-slate-500 mb-3">
+            jemand / niemand can change shape in Akk + Dat. etwas / nichts / alles don\'t move (except alles → allem).
+          </p>
+          <table className="w-full text-left text-sm border-collapse">
+            <thead>
+              <tr className="text-xs uppercase tracking-wide text-slate-500">
+                <th className="py-1 pr-2">Nom</th>
+                <th className="py-1 pr-2">Meaning</th>
+                <th className="py-1 pr-2">Akk</th>
+                <th className="py-1">Dat</th>
+              </tr>
+            </thead>
+            <tbody>
+              {WK6_INDEFINITES.map((p) => (
+                <tr key={p.de} className="border-t border-slate-200 dark:border-slate-800">
+                  <td className="py-1 pr-2 font-mono font-bold">{p.de}</td>
+                  <td className="py-1 pr-2 text-slate-600 dark:text-slate-300">{p.en}</td>
+                  <td className="py-1 pr-2 font-mono">{p.akk}</td>
+                  <td className="py-1 font-mono">{p.dat}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-xs text-slate-500 mt-2">
+            <strong>man</strong> always takes a 3rd-singular verb: <em>man arbeitet · man sagt · man trinkt</em>.
+            In Akk/Dat it borrows <em>einen / einem</em>.
+          </p>
+        </div>
+      </section>
+
+      {/* REAL-LIFE SCENARIOS — restaurant + shopping + travel */}
+      <section aria-labelledby="wk6-scenarios" className="grid md:grid-cols-3 gap-4">
+        <h2 id="wk6-scenarios" className="sr-only">Scenarios</h2>
+
+        <div className="card bg-gradient-to-br from-rose-50 to-pink-50 dark:from-rose-900/20 dark:to-pink-900/20">
+          <h3 className="font-bold mb-2">🍽️ At the restaurant</h3>
+          <ul className="space-y-2 text-sm">
+            {WK6_RESTAURANT.map((p) => (
+              <li key={p.de} className="border-t border-rose-200/60 dark:border-rose-800/60 pt-2 first:border-0 first:pt-0">
+                <div className="flex items-start gap-2">
+                  <span className="font-semibold flex-1">{p.de}</span>
+                  <AudioButton text={p.de} size="sm" />
+                </div>
+                <Pron de={p.de} />
+                <div className="text-xs text-slate-500">{p.en}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="card bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20">
+          <h3 className="font-bold mb-2">🛒 Shopping</h3>
+          <ul className="space-y-2 text-sm">
+            {WK6_SHOPPING.map((p) => (
+              <li key={p.de} className="border-t border-orange-200/60 dark:border-orange-800/60 pt-2 first:border-0 first:pt-0">
+                <div className="flex items-start gap-2">
+                  <span className="font-semibold flex-1">{p.de}</span>
+                  <AudioButton text={p.de} size="sm" />
+                </div>
+                <Pron de={p.de} />
+                <div className="text-xs text-slate-500">{p.en}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="card bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-900/20 dark:to-yellow-900/20">
+          <h3 className="font-bold mb-2">✈️ Travel</h3>
+          <ul className="space-y-2 text-sm">
+            {WK6_TRAVEL.map((p) => (
+              <li key={p.de} className="border-t border-amber-200/60 dark:border-amber-800/60 pt-2 first:border-0 first:pt-0">
+                <div className="flex items-start gap-2">
+                  <span className="font-semibold flex-1">{p.de}</span>
+                  <AudioButton text={p.de} size="sm" />
+                </div>
+                <Pron de={p.de} />
+                <div className="text-xs text-slate-500">{p.en}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* NEGATION — decision tree + kein table */}
+      <section aria-labelledby="wk6-negation" className="grid md:grid-cols-2 gap-4">
+        <h2 id="wk6-negation" className="sr-only">Negation</h2>
+
+        <div className="card bg-amber-50 border-amber-200 dark:bg-amber-900/20 dark:border-amber-700">
+          <h3 className="font-bold mb-2">🚫 kein vs nicht — 5-second decision tree</h3>
+          <ol className="list-decimal pl-5 text-sm space-y-2 text-slate-700 dark:text-slate-200">
+            <li>
+              <strong>Are you negating a NOUN that would take ein / no article?</strong>
+              <div className="text-xs text-slate-500 italic">("a coffee" → "no coffee" · "Zeit" → "keine Zeit")</div>
+              → use <code className="font-mono">kein</code>.
+            </li>
+            <li>
+              <strong>Are you negating a noun that already has der / die / das / a possessive?</strong>
+              <div className="text-xs text-slate-500 italic">("the book" — definite reference)</div>
+              → use <code className="font-mono">nicht</code> before the noun.
+            </li>
+            <li>
+              <strong>Everything else?</strong> (verb · adjective · adverb · whole sentence)
+              <div className="text-xs text-slate-500 italic">("not tired" · "doesn\'t come" · "not at the office")</div>
+              → use <code className="font-mono">nicht</code>.
+            </li>
+          </ol>
+          <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
+            <div className="rounded-lg border border-amber-300 dark:border-amber-700 p-2">
+              <div className="font-semibold mb-1">kein examples</div>
+              <div className="italic">Ich habe keine Zeit.</div>
+              <div className="italic">Wir trinken keinen Kaffee.</div>
+              <div className="italic">Er hat kein Geld.</div>
+            </div>
+            <div className="rounded-lg border border-amber-300 dark:border-amber-700 p-2">
+              <div className="font-semibold mb-1">nicht examples</div>
+              <div className="italic">Ich komme heute nicht.</div>
+              <div className="italic">Das Buch ist nicht teuer.</div>
+              <div className="italic">Ich kaufe das Buch nicht.</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="card overflow-x-auto">
+          <h3 className="font-bold mb-2">kein — full declension</h3>
+          <p className="text-xs text-slate-500 mb-2">Same endings as ein. Plural kein/keine works (unlike ein, which has no plural).</p>
+          <table className="w-full text-left text-sm border-collapse">
+            <thead>
+              <tr className="text-xs uppercase tracking-wide text-slate-500">
+                <th className="py-1 pr-2">Case</th>
+                <th className="py-1 pr-2">m</th>
+                <th className="py-1 pr-2">f</th>
+                <th className="py-1 pr-2">n</th>
+                <th className="py-1 pl-2">pl</th>
+              </tr>
+            </thead>
+            <tbody>
+              {WK6_KEIN_TABLE.map((row) => (
+                <tr key={row.case} className="border-t border-slate-200 dark:border-slate-800">
+                  <td className="py-1 pr-2 font-semibold">{row.case}</td>
+                  <td className="py-1 pr-2 font-mono">{row.m}</td>
+                  <td className="py-1 pr-2 font-mono">{row.f}</td>
+                  <td className="py-1 pr-2 font-mono">{row.n}</td>
+                  <td className="py-1 pl-2 font-mono">{row.pl}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-xs text-slate-500 mt-2">
+            <strong>nicht</strong> position rule: it goes BEFORE the part you negate. End of the sentence
+            for whole-clause negation; right before an adjective/adverb otherwise:
+            <em> "Ich arbeite heute nicht." · "Das ist nicht gut."</em>
+          </p>
+        </div>
+      </section>
+
+      {/* 💡 TIP — möchte */}
+      <section className="card bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20 border-pink-200 dark:border-pink-700">
+        <h2 className="font-bold mb-2">💡 Tip — möchte is the magic word for service contexts</h2>
+        <p className="text-sm text-slate-700 dark:text-slate-200 mb-2">
+          In a café, shop, hotel or ticket office, ALWAYS use <strong>möchte</strong> (not wollen).
+          It is grammatically the Konjunktiv II of mögen — but for A1 you just treat it as the polite
+          way to say "I would like".
+        </p>
+        <ul className="text-sm space-y-1">
+          <li>✗ <em>Ich will einen Kaffee.</em>         — sounds blunt / childish.</li>
+          <li>✓ <em>Ich möchte einen Kaffee, bitte.</em> — natural polite request.</li>
+          <li>✓ <em>Ich hätte gerne einen Kaffee.</em>   — even warmer ("I would like to have").</li>
+        </ul>
+        <p className="mt-2 text-xs text-slate-500">
+          Stress-free fallback: just add <strong>bitte</strong> to ANY möchte/hätte-gerne sentence and you sound right.
+        </p>
+      </section>
+
+      {/* COMMON MISTAKES */}
+      <section aria-labelledby="wk6-mistakes" className="card">
+        <h2 id="wk6-mistakes" className="font-bold mb-3">Common mistakes</h2>
+        <ul className="space-y-3">
+          {WK6_COMMON_MISTAKES.map((m) => (
+            <li key={m.right} className="border-t border-slate-200 dark:border-slate-800 pt-3 first:border-0 first:pt-0">
+              <div className="text-rose-600 dark:text-rose-400 font-mono">{m.wrong}</div>
+              <div className="text-emerald-700 dark:text-emerald-400 font-mono">{m.right}</div>
+              <div className="text-sm text-slate-600 dark:text-slate-300 mt-1">{m.why}</div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* MEMORY HOOKS */}
+      <section aria-labelledby="wk6-hooks" className="card">
+        <h2 id="wk6-hooks" className="font-bold mb-2">Memory hooks</h2>
+        <ul className="list-disc pl-5 space-y-1 text-slate-700 dark:text-slate-200">
+          <li><strong>möchten is the safe-mode "I want".</strong> Café? Shop? Office? Use möchte + bitte and you can\'t go wrong.</li>
+          <li><strong>denn vs weil — same meaning, opposite shape.</strong> Pick weil and put the verb at the end; pick denn and don\'t move anything.</li>
+          <li><strong>kein replaces "ein" / "no article".</strong> nicht negates everything else.</li>
+          <li><strong>kein is decline-friendly</strong> — it follows the same endings as ein, including a PLURAL form that ein lacks (keine Freunde, keine Bücher).</li>
+          <li><strong>dieser = der + endings.</strong> Same case logic — just swap the prefix.</li>
+          <li><strong>niemand and nichts are already negative.</strong> Don\'t add nicht. ✗ niemand ist hier nicht.</li>
+          <li><strong>man = the general "one / people"</strong>, never refers to a male specifically. Verb stays 3rd-singular: man trinkt, man sagt.</li>
+          <li><strong>Restaurant trio:</strong> Speisekarte → Bestellen → Zahlen, bitte. Three sentences carry you through any A1 dining scene.</li>
+          <li><strong>Direction trio:</strong> geradeaus · links · rechts. Combined with "Wo ist …?" you can find anything.</li>
+        </ul>
+      </section>
+
+      <OtherCheatsheets except="real-life" />
+
+      <footer className="text-center text-sm text-slate-500 pb-4">
+        Ready for Week 7? <Link to="/day/45" className="font-semibold text-rose-700 dark:text-rose-300 hover:underline">→ Go to Day 45 (Perfekt I — haben + Partizip II)</Link>
       </footer>
     </div>
   );

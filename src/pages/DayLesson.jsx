@@ -243,6 +243,21 @@ function Result({ day, result, onContinue }) {
           </div>
         </Link>
       )}
+      {passed && day.id === 42 && (
+        <Link
+          to="/cheatsheet/real-life"
+          className="block card bg-gradient-to-br from-rose-50 to-orange-50 dark:from-slate-900 dark:to-slate-900 hover:shadow-md transition"
+        >
+          <div className="flex items-center gap-3">
+            <div className="text-3xl" aria-hidden>🍽️</div>
+            <div className="flex-1">
+              <div className="font-bold">Before Week 7 — review the Week 6 cheatsheet</div>
+              <div className="text-sm text-slate-500">Four-modal table (dürfen/sollen/mögen/möchten), no-change vs verb-to-end connectors side-by-side, demonstratives + indefinites, restaurant/shopping/travel scenario lists, kein-vs-nicht decision tree.</div>
+            </div>
+            <span aria-hidden className="text-xl">→</span>
+          </div>
+        </Link>
+      )}
     </div>
   );
 }
