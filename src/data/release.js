@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.5.1';
+export const VERSION = '3.5.2';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.5.2',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 15 review — Week 1+2 milestone made comprehensive & interactive',
+    notes: [
+      'Reviewed Week 3 · Day 15 (Week 1+2 review). The previous version was a thin 6-exercise pass with no structure. Rebuilt as a proper milestone checkpoint covering all 14 prior days in an organised, interactive flow.',
+      'Added 3 RECAP CARDS that double as a printable study reference: ✅ Week 1 recap (sounds · numbers · pronouns · articles · sein/haben/werden) · ✅ Week 2 recap (regular/stem-changer/separable verbs · V2 rule · TFP-O order · self-intro) · 🎯 "The 5 mistakes to never make again" (Ich bin Hunger ✗ · Ich isse ✗ · Ich aufstehe ✗ · Heute ich lerne ✗ · Ich bin ein Lehrer ✗).',
+      'Exercises 6 → 24, organised by topic and varied: 2 ⭐ interactive matches (auxiliary forms↔pronouns · articles→pronouns) · 4 number-recall fill-blanks (with the classic 16-vs-60 trap) · 4 auxiliary fill-blanks including the haben body-state · 4 verb-conjugation fill-blanks spanning all three verb types (regular · stem-changer · separable) · 2 S-V-O role-ID MCQs · 2 word-order MCQs · 2 🛠 build-the-sentence (TFP-O + V2 inversion with a separable verb) · 2 ⚠ spot-the-error MCQs · 3 self-intro recall fill-blanks · 1 capstone dialogue weaving together intro + TFP + separable + sein/haben.',
+      'Quiz 0 → 7 items as a final mixed checkpoint (sein, stem-changer, article-pronoun, big number, V2 rule, haben-body-state, build-the-sentence).',
+    ],
+  },
   {
     version: '3.5.1',
     date: '2026-05-11',

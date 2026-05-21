@@ -2468,19 +2468,136 @@ export const days = [
     title: 'Week 1+2 review',
     titleDe: 'Wiederholung Woche 1+2',
     emoji: '🏁',
-    objective: 'Lock in everything before tackling cases.',
-    intro: 'A spaced-repetition pass through what you have learned. Aim for ≥ 80%.',
+    objective: 'Prove you own everything from Days 1-14 before cases begin — sounds, numbers, pronouns, articles, the three auxiliaries, verb conjugation, separable verbs and word order.',
+    intro: 'Milestone checkpoint! This pulls together your first two weeks: 🔤 sounds → 🔢 numbers 0-100 → 👤 pronouns → 🪪 articles → 🟦 sein/haben/werden → 🔁 regular & stem-changing & separable verbs → 🧩 S-V-O & TFP word order → 👋 self-introduction. Work through the recap cards, then the mixed drills. Aim for ≥ 80% — that means you are genuinely ready for the case system in Week 4.',
     vocabulary: [],
-    grammar: [],
-    exercises: [
-      { type: 'multiple-choice', q: '21 = ?', options: ['einsundzwanzig','einundzwanzig','zwanzigundeins','einzwanzig'], answer: 'einundzwanzig' },
-      { type: 'fill-blank', sentence: 'Wir __ müde. (sein)', answer: 'sind' },
-      { type: 'fill-blank', sentence: 'Du __ eine Frage. (haben)', answer: 'hast' },
-      { type: 'fill-blank', sentence: 'Ich __ Deutsch. (lernen)', answer: 'lerne' },
-      { type: 'multiple-choice', q: '"das Buch" → which pronoun?', options: ['er','sie','es'], answer: 'es' },
-      { type: 'multiple-choice', q: 'Which is correct?', options: ['Ich oft lerne Deutsch.','Ich lerne oft Deutsch.','Oft Deutsch ich lerne.','Ich Deutsch lerne oft.'], answer: 'Ich lerne oft Deutsch.' },
+    grammar: [
+      { rule: '✅ Week 1 recap — the foundations',
+        body:
+          '🔤 Sounds: V→F · W→soft V · Z→ts · J→Y · ch (hard/soft) · sch→sh · ä/ö/ü · chs→ks.\n' +
+          '🔢 Numbers: 0-12 unique · 13-19 = unit+zehn · 21-99 FLIP (einundzwanzig). 30 dreißig · 60 sechzig · 70 siebzig.\n' +
+          '👤 Pronouns: ich · du · er/sie/es · wir · ihr · sie/Sie. Three "sies" — verb form decodes them.\n' +
+          '🪪 Articles: der (m) · die (f) · das (n) · die (pl). Learn the article WITH the noun.\n' +
+          '🟦 sein: bin · bist · ist · sind · seid · sind.\n' +
+          '🟩 haben: habe · hast · hat · haben · habt · haben — body states (Hunger/Durst) use HABEN.\n' +
+          '🟨 werden: werde · wirst · wird · werden · werdet · werden.',
+      },
+      { rule: '✅ Week 2 recap — building sentences',
+        body:
+          '🔁 Regular verbs: stem + -e/-st/-t/-en/-t/-en. Stem ends in -t/-d → add extra e (arbeitest).\n' +
+          '⚡ Stem-changers: e→i (essen→isst) · e→ie (sehen→sieht) · a→ä (fahren→fährt). Only du + er/sie/es change.\n' +
+          '🧩 Separable verbs: stem in slot 2, prefix flies to the END (Ich stehe um 7 Uhr AUF). Re-glues after a modal.\n' +
+          '📍 V2 rule: the conjugated verb is ALWAYS in position 2. If time/place leads, the subject moves to slot 3.\n' +
+          '🕒 TFP-O order: Time → Frequency → Preference → Object (Ich höre jeden Tag oft gerne Musik).\n' +
+          '👋 Self-intro: greeting → name → age → origin (aus) → residence (in) → profession (no article!).',
+      },
+      { rule: '🎯 The 5 mistakes to never make again',
+        body:
+          '1. ✗ Ich bin Hunger.  →  ✓ Ich habe Hunger.  (body states use haben)\n' +
+          '2. ✗ Ich isse.  →  ✓ Ich esse.  (only du/er/sie/es stem-change)\n' +
+          '3. ✗ Ich aufstehe.  →  ✓ Ich stehe … auf.  (prefix to the end)\n' +
+          '4. ✗ Heute ich lerne.  →  ✓ Heute lerne ich.  (V2 — verb stays slot 2)\n' +
+          '5. ✗ Ich bin ein Lehrer.  →  ✓ Ich bin Lehrer.  (no article with profession)',
+      },
     ],
-    quiz: [],
+    exercises: [
+      // ── 🟦 Auxiliaries: forms ↔ pronouns ──
+      {
+        type: 'match',
+        pairs: [
+          { de: 'bin',  en: 'ich (sein)' },
+          { de: 'bist', en: 'du (sein)' },
+          { de: 'sind', en: 'wir / sie / Sie (sein)' },
+          { de: 'hast', en: 'du (haben)' },
+          { de: 'hat',  en: 'er / sie / es (haben)' },
+          { de: 'wird', en: 'er / sie / es (werden)' },
+        ],
+      },
+      // ── 👤 Articles → pronouns ──
+      {
+        type: 'match',
+        pairs: [
+          { de: 'der Laptop',  en: 'er' },
+          { de: 'die Tasche',  en: 'sie' },
+          { de: 'das Buch',    en: 'es' },
+          { de: 'die Bücher',  en: 'sie (plural)' },
+        ],
+      },
+      // ── 🔢 Numbers recall ──
+      { type: 'multiple-choice', q: '21 = ?', options: ['einsundzwanzig','einundzwanzig','zwanzigundeins','einzwanzig'], answer: 'einundzwanzig' },
+      { type: 'fill-blank', sentence: '🔢 16 = __', answer: 'sechzehn', hint: 'careful: 16 is sechzehn — sechzig is 60!' },
+      { type: 'fill-blank', sentence: '🔢 30 = __ (special spelling!)', answer: 'dreißig' },
+      { type: 'fill-blank', sentence: '🔢 77 = __', answer: 'siebenundsiebzig' },
+
+      // ── 🟦🟩🟨 Auxiliary fill-blanks ──
+      { type: 'fill-blank', sentence: 'Wir __ müde. (sein)',                 answer: 'sind' },
+      { type: 'fill-blank', sentence: 'Du __ eine Frage. (haben)',            answer: 'hast' },
+      { type: 'fill-blank', sentence: 'Es __ besser. (werden)',               answer: 'wird' },
+      { type: 'fill-blank', sentence: 'Ich __ Hunger. (haben — body state!)', answer: 'habe' },
+
+      // ── 🔁⚡🧩 Verb conjugation across all three types ──
+      { type: 'fill-blank', sentence: 'Ich __ Deutsch. (lernen — regular)',          answer: 'lerne' },
+      { type: 'fill-blank', sentence: 'Du __ einen Apfel. (essen — stem-changer)',   answer: 'isst' },
+      { type: 'fill-blank', sentence: 'Er __ nach Berlin. (fahren — stem-changer)',  answer: 'fährt' },
+      { type: 'fill-blank', sentence: 'Wir __ am Samstag __. (einkaufen — separable)', answer: 'kaufen ein' },
+
+      // ── 🧩 S-V-O role ID ──
+      { type: 'multiple-choice', q: '"das Buch" → which pronoun?', options: ['er','sie','es'], answer: 'es' },
+      { type: 'multiple-choice', q: 'In "Der Lehrer erklärt das Wort", what is the OBJECT?',
+        options: ['Der Lehrer','erklärt','das Wort','—'], answer: 'das Wort' },
+
+      // ── 📍🕒 Word order ──
+      { type: 'multiple-choice', q: 'Which is correct?',
+        options: ['Ich oft lerne Deutsch.','Ich lerne oft Deutsch.','Oft Deutsch ich lerne.','Ich Deutsch lerne oft.'],
+        answer: 'Ich lerne oft Deutsch.' },
+      { type: 'multiple-choice', q: 'Pick the right order (time leads):',
+        options: ['Heute ich bin müde.','Heute bin ich müde.','Ich heute bin müde.','Bin ich heute müde.'],
+        answer: 'Heute bin ich müde.',
+        explain: 'V2 — when time leads, the verb stays slot 2 and the subject moves to slot 3.' },
+
+      // ── 🛠 Build-the-sentence (synthesis) ──
+      { type: 'fill-blank', sentence: '🛠 Ich + hören + 🕒 jeden Tag + 🔄 oft + ❤️ gerne + 🎯 Musik → __',
+        answer: 'Ich höre jeden Tag oft gerne Musik' },
+      { type: 'fill-blank', sentence: '🛠 V2 inversion: 🕒 Heute + ich + stehen…auf + um 7 Uhr → __',
+        answer: 'Heute stehe ich um 7 Uhr auf', hint: 'separable verb splits · time leads · subject after verb' },
+
+      // ── ⚠ Spot-the-error sweep ──
+      { type: 'multiple-choice', q: '⚠ Which sentence is WRONG?',
+        options: ['Ich habe Hunger.','Ich bin müde.','Ich bin Hunger.','Wir haben Zeit.'],
+        answer: 'Ich bin Hunger.',
+        explain: 'Body states use haben: "Ich habe Hunger."' },
+      { type: 'multiple-choice', q: '⚠ Which sentence is WRONG?',
+        options: ['Du isst Pizza.','Er fährt nach Berlin.','Ich isse Pizza.','Wir essen Pizza.'],
+        answer: 'Ich isse Pizza.',
+        explain: 'Only du / er / sie / es stem-change. ich keeps the regular stem: ich esse.' },
+
+      // ── 👋 Self-introduction recall ──
+      { type: 'fill-blank', sentence: '👋 "I come from India." → Ich komme __ Indien.', answer: 'aus' },
+      { type: 'fill-blank', sentence: '👋 "I live in Berlin." → Ich __ in Berlin.', answer: 'wohne' },
+      { type: 'fill-blank', sentence: '👋 "I am a teacher." → Ich __ Lehrer. (no article!)', answer: 'bin' },
+
+      // ── 💬 Putting it all together ──
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Hallo! Wie heißt du?',                              en: 'Hi! What are you called?' },
+        { speaker: 'B', de: 'Ich heiße Anna. Ich komme aus Indien und wohne in Berlin.', en: 'I am called Anna. I come from India and live in Berlin.' },
+        { speaker: 'A', de: 'Was machst du am Wochenende?',                       en: 'What do you do on the weekend?' },
+        { speaker: 'B', de: 'Ich koche jeden Tag gerne und ich spiele oft Fußball.', en: 'I gladly cook every day and I often play football.' },
+        { speaker: 'A', de: 'Stehst du am Samstag früh auf?',                     en: 'Do you get up early on Saturday?' },
+        { speaker: 'B', de: 'Nein! Am Samstag schlafe ich lange. Ich bin oft müde.', en: 'No! On Saturday I sleep long. I am often tired.' },
+      ]},
+    ],
+    quiz: [
+      { type: 'fill-blank', sentence: 'Du __ müde. (sein)', answer: 'bist' },
+      { type: 'fill-blank', sentence: 'Sie (she) __ ein Buch. (lesen)', answer: 'liest' },
+      { type: 'multiple-choice', q: '"die Tasche" → pronoun?', options: ['er','sie','es'], answer: 'sie' },
+      { type: 'fill-blank', sentence: '🔢 53 = __', answer: 'dreiundfünfzig' },
+      { type: 'multiple-choice', q: 'Where does the verb sit in a main sentence?',
+        options: ['Position 1','Position 2','At the end','Anywhere'], answer: 'Position 2' },
+      { type: 'multiple-choice', q: 'Pick the natural German for "I am hungry":',
+        options: ['Ich bin Hunger.','Ich habe Hunger.','Ich bin hungrig haben.','Ich Hunger.'], answer: 'Ich habe Hunger.' },
+      { type: 'fill-blank', sentence: '🛠 Wir + spielen + 🕒 am Wochenende + 🔄 oft + 🎯 Fußball → __',
+        answer: 'Wir spielen am Wochenende oft Fußball' },
+    ],
   },
 
   /* ===================== WEEK 3: numbers + Akkusativ ===================== */
