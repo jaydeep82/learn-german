@@ -124,8 +124,8 @@ function Intro({ day, onStart }) {
         <section aria-labelledby="vocab">
           <h2 id="vocab" className="text-xl font-bold mb-3">Today&rsquo;s vocabulary</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-            {day.vocabulary.map((v) => (
-              <VocabCard key={v.de} v={v} layout={day.vocabLayout || 'compact'} showHint />
+            {day.vocabulary.map((v, i) => (
+              <VocabCard key={`${v.de}-${i}`} v={v} layout={day.vocabLayout || 'compact'} showHint />
             ))}
           </div>
         </section>

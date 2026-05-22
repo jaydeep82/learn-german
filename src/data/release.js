@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.6.0';
+export const VERSION = '3.6.1';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.6.1',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 3 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 3 (Personal pronouns) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Day 2.',
+      'All 9 pronoun entries get a relevant emoji + an example sentence: 🙋 ich → "Ich bin müde", 👉 du → "Wie heißt du?", 👨 er → "Er ist hier", 👩 sie → "Sie ist Lehrerin", 📦 es → "Es ist spät", 👥 wir → "Wir lernen Deutsch", 👨‍👩‍👧‍👦 ihr → "Ihr seid hier", 🧑‍🤝‍🧑 sie (plural) → "Sie sind Kollegen", 🤝 Sie (formal) → "Wie heißen Sie?".',
+      'Each example shows the three different "sie/Sie" forms in their natural verb context (sie ist / sie sind / Sie heißen) — reinforcing the day\'s core lesson.',
+      'Fixed a latent React key collision: Day 3 has two "sie" entries (she + they); vocab list keys now include the index so both render correctly.',
+    ],
+  },
   {
     version: '3.6.0',
     date: '2026-05-11',

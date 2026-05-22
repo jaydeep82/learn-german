@@ -54,8 +54,8 @@ export default function Vocabulary() {
               <Link to={`/day/${t.day}`} className="ml-auto text-xs text-brand-600 hover:underline">Open lesson →</Link>
             </h2>
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {t.items.map((v) => (
-                <li key={v.de}><VocabCard v={v} layout={t.layout} /></li>
+              {t.items.map((v, i) => (
+                <li key={`${v.de}-${i}`}><VocabCard v={v} layout={t.layout} /></li>
               ))}
             </ul>
           </section>

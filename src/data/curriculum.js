@@ -467,6 +467,7 @@ export const days = [
 
   {
     id: 3, week: 1,
+    vocabLayout: 'spotlight',
     title: 'Personal pronouns',
     titleDe: 'Personalpronomen',
     emoji: '👤',
@@ -474,17 +475,17 @@ export const days = [
     intro: 'German has more pronouns than English: TWO ways to say "you" (informal du / formal Sie), and the same word "sie" means three different things (she / they / formal you) — the verb form tells them apart. Master these eight today and every sentence in the rest of Week 1 falls into place.',
     vocabulary: [
       // Singular
-      { de: 'ich',  en: 'I',                  hint: '"ikh" — soft ch (front of mouth)' },
-      { de: 'du',   en: 'you (1 friend)',     hint: '"doo" — informal singular' },
-      { de: 'er',   en: 'he / it (m)',        hint: '"ehr" (rhymes with "air")' },
-      { de: 'sie',  en: 'she / it (f)',       hint: '"zee" — short, lowercase' },
-      { de: 'es',   en: 'it (n)',             hint: '"ess" — short, like English' },
+      { de: 'ich',  en: 'I',                  emoji: '🙋', hint: '"ikh" — soft ch (front of mouth)', example: 'Ich bin müde.',        exampleEn: 'I am tired.' },
+      { de: 'du',   en: 'you (1 friend)',     emoji: '👉', hint: '"doo" — informal singular',       example: 'Wie heißt du?',       exampleEn: 'What is your name?' },
+      { de: 'er',   en: 'he / it (m)',        emoji: '👨', hint: '"ehr" (rhymes with "air")',       example: 'Er ist hier.',        exampleEn: 'He is here.' },
+      { de: 'sie',  en: 'she / it (f)',       emoji: '👩', hint: '"zee" — short, lowercase',        example: 'Sie ist Lehrerin.',   exampleEn: 'She is a teacher.' },
+      { de: 'es',   en: 'it (n)',             emoji: '📦', hint: '"ess" — short, like English',     example: 'Es ist spät.',        exampleEn: 'It is late.' },
       // Plural
-      { de: 'wir',  en: 'we',                  hint: '"veer" — w → soft V, long i' },
-      { de: 'ihr',  en: 'you all (group of friends)', hint: '"eer" — silent h, long e' },
-      { de: 'sie',  en: 'they  (plural — same spelling as "she")', hint: '"zee" — verb form distinguishes from singular sie' },
+      { de: 'wir',  en: 'we',                  emoji: '👥', hint: '"veer" — w → soft V, long i',     example: 'Wir lernen Deutsch.', exampleEn: 'We learn German.' },
+      { de: 'ihr',  en: 'you all (group of friends)', emoji: '👨‍👩‍👧‍👦', hint: '"eer" — silent h, long e', example: 'Ihr seid hier.',      exampleEn: 'You all are here.' },
+      { de: 'sie',  en: 'they  (plural — same spelling as "she")', emoji: '🧑‍🤝‍🧑', hint: '"zee" — verb form distinguishes from singular sie', example: 'Sie sind Kollegen.', exampleEn: 'They are colleagues.' },
       // Formal
-      { de: 'Sie',  en: 'you (formal — singular OR plural)', hint: '"Zee" — ALWAYS capital S, even mid-sentence' },
+      { de: 'Sie',  en: 'you (formal — singular OR plural)', emoji: '🤝', hint: '"Zee" — ALWAYS capital S, even mid-sentence', example: 'Wie heißen Sie?', exampleEn: 'What is your name? (formal)' },
     ],
     grammar: [
       { rule: 'The 6 grammatical persons',
