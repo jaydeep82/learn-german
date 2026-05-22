@@ -4,6 +4,7 @@ import { dayById, days } from '../data/curriculum.js';
 import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
 import AudioButton from '../components/AudioButton.jsx';
 import Pron from '../components/Pron.jsx';
+import VocabCard from '../components/VocabCard.jsx';
 import { useApp } from '../store/AppContext.jsx';
 
 function Confetti() {
@@ -124,15 +125,7 @@ function Intro({ day, onStart }) {
           <h2 id="vocab" className="text-xl font-bold mb-3">Today&rsquo;s vocabulary</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {day.vocabulary.map((v) => (
-              <div key={v.de} className="card flex items-center gap-3 p-3">
-                <AudioButton text={v.de} size="sm" />
-                <div className="flex-1 min-w-0">
-                  <div className="font-semibold truncate">{v.de}</div>
-                  <Pron de={v.de} />
-                  <div className="text-sm text-slate-500 truncate">{v.en}</div>
-                  {v.hint && <div className="text-xs italic text-slate-400 truncate">💡 {v.hint}</div>}
-                </div>
-              </div>
+              <VocabCard key={v.de} v={v} layout={day.vocabLayout || 'compact'} showHint />
             ))}
           </div>
         </section>

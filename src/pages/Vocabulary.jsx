@@ -1,8 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { vocabByTopic, allVocab } from '../data/vocabulary.js';
-import AudioButton from '../components/AudioButton.jsx';
-import Pron from '../components/Pron.jsx';
+import VocabCard from '../components/VocabCard.jsx';
 
 export default function Vocabulary() {
   const [q, setQ] = useState('');
@@ -34,16 +33,14 @@ export default function Vocabulary() {
       {filtered ? (
         <section className="card">
           <h2 className="font-bold mb-3">{filtered.length} match{filtered.length === 1 ? '' : 'es'} for &ldquo;{q}&rdquo;</h2>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {filtered.map((v, i) => (
-              <li key={`${v.de}-${i}`} className="flex items-center gap-3 p-2 border border-slate-200 dark:border-slate-800 rounded-lg">
-                <AudioButton text={v.de} size="sm" />
-                <div className="flex-1 min-w-0">
-                  <div className="font-semibold truncate">{v.de}</div>
-                  <Pron de={v.de} />
-                  <div className="text-sm text-slate-500 truncate">{v.en}</div>
-                </div>
-                <Link to={`/day/${v.day}`} className="text-xs text-brand-600 hover:underline">D{v.day}</Link>
+              <li key={`${v.de}-${i}`}>
+                <VocabCard
+                  v={v}
+                  layout={v.layout}
+                  badge={<Link to={`/day/${v.day}`} className="text-xs text-brand-600 hover:underline shrink-0">D{v.day}</Link>}
+                />
               </li>
             ))}
           </ul>
@@ -56,15 +53,9 @@ export default function Vocabulary() {
               <span>Day {t.day} · {t.title}</span>
               <Link to={`/day/${t.day}`} className="ml-auto text-xs text-brand-600 hover:underline">Open lesson →</Link>
             </h2>
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {t.items.map((v) => (
-                <li key={v.de} className="flex items-center gap-3 p-2 border border-slate-200 dark:border-slate-800 rounded-lg">
-                  <AudioButton text={v.de} size="sm" />
-                  <div className="flex-1 min-w-0">
-                    <div className="font-semibold truncate">{v.de}</div>
-                    <div className="text-sm text-slate-500 truncate">{v.en}</div>
-                  </div>
-                </li>
+                <li key={v.de}><VocabCard v={v} layout={t.layout} /></li>
               ))}
             </ul>
           </section>

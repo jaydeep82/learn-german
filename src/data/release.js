@@ -11,10 +11,25 @@
  * in sync.
  */
 
-export const VERSION = '3.5.2';
+export const VERSION = '3.6.0';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.6.0',
+    date: '2026-05-11',
+    type: 'feature',
+    title: 'Per-day vocab layouts + example sentences for Days 1 & 2',
+    notes: [
+      'Vocabulary cards now support TWO layouts, chosen per day via a new day-level `vocabLayout` field, rendered through a shared <VocabCard> component used by the Day-lesson intro AND the Vocabulary page (topical + search):',
+      '• "compact" (Option 1, the default) — audio on the left, word + [Pron] + meaning stacked, example below a thin divider. White card.',
+      '• "spotlight" (Option 2) — big emoji in a white tile, word + [Pron] + meaning beside it, example in its own panel, on a soft brand-tinted block background (from-brand-50 to-white).',
+      'Day 1 (Sounds) stays on the COMPACT layout (Option 1) — unchanged in look. It keeps its 24 emojis + example sentences (built strictly from Day-1 content words, e.g. 🍳 kochen → "Ich koche Wasser").',
+      'Day 2 (Numbers 0-29) uses the SPOTLIGHT layout (Option 2). All 30 numbers get a thematic emoji + a real-world example — counting, age, time, quantity, maths. e.g. 📅 sieben → "Eine Woche hat sieben Tage", 🕐 vierundzwanzig → "Ein Tag hat vierundzwanzig Stunden", 🔤 sechsundzwanzig → "Das Alphabet hat sechsundzwanzig Buchstaben".',
+      'Every vocab item can carry optional emoji / example / exampleEn fields; examples render with a 🔊 audio button + [Pron] guide. Days not yet migrated render cleanly in the compact layout.',
+      'Removed the German „ … " quotation decoration around example sentences.',
+    ],
+  },
   {
     version: '3.5.2',
     date: '2026-05-11',
