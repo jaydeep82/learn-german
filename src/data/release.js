@@ -11,10 +11,25 @@
  * in sync.
  */
 
-export const VERSION = '3.6.2';
+export const VERSION = '3.6.3';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.6.3',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 5 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 5 (sein — to be) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Days 2-4.',
+      'All 17 entries get a relevant emoji + an example sentence that USES sein, reinforcing the day\'s core verb directly in the vocab page.',
+      'State adjectives: 😴 müde → "Ich bin müde", 🍽️ hungrig → "Du bist hungrig", 🥤 durstig → "Er ist durstig", ✅ fertig → "Wir sind fertig", 😊 glücklich → "Sie ist glücklich", 🤒 krank → "Der Mann ist krank", 👍 bereit → "Bist du bereit?", 👌 gut → "Das Buch ist gut".',
+      'Time markers: 🌙 spät → "Es ist spät", 🌅 früh → "Es ist früh".',
+      'Place markers: 📍 hier → "Wir sind hier", 👉 da → "Er ist da".',
+      'Origin / profession (the three sein-patterns from the day): 🇮🇳 aus Indien → "Ich bin aus Indien", 🇩🇪 aus Deutschland → "Sie ist aus Deutschland", 👨‍🏫 Lehrer → "Er ist Lehrer" (NO article!), 👩‍🏫 Lehrerin → "Sie ist Lehrerin", 💻 Softwareentwickler → "Ich bin Softwareentwickler".',
+      'Examples sweep through all six sein forms — bin / bist / ist / sind / seid — so learners see the full table in action while browsing vocabulary.',
+    ],
+  },
   {
     version: '3.6.2',
     date: '2026-05-11',

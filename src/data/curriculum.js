@@ -732,6 +732,7 @@ export const days = [
 
   {
     id: 5, week: 1,
+    vocabLayout: 'spotlight',
     title: 'sein — to be',
     titleDe: 'Das Verb „sein"',
     emoji: '🟦',
@@ -739,26 +740,26 @@ export const days = [
     intro: '"sein" is the most important German verb. It is fully irregular — none of the six forms look like the infinitive — so memorise all six today. With sein you can already say where you are, how you feel, what you do for a living, and where you come from.',
     vocabulary: [
       // adjectives describing state
-      { de: 'müde',      en: 'tired',     hint: '"MUE-duh" — long ü, soft d' },
-      { de: 'hungrig',   en: 'hungry',    hint: '"HOON-grikh" — final -ig sounds like soft ich' },
-      { de: 'durstig',   en: 'thirsty',   hint: '"DOOR-stikh"' },
-      { de: 'fertig',    en: 'finished / done', hint: '"FAIR-tikh"' },
-      { de: 'glücklich', en: 'happy',     hint: '"GLUEK-likh" — ü + soft ch' },
-      { de: 'krank',     en: 'sick',      hint: '"krahnk"' },
-      { de: 'bereit',    en: 'ready',     hint: '"buh-RYE-t" — ei = eye' },
-      { de: 'gut',       en: 'good',      hint: '"goot" — long u' },
+      { de: 'müde',      en: 'tired',     emoji: '😴', hint: '"MUE-duh" — long ü, soft d',                       example: 'Ich bin müde.',           exampleEn: 'I am tired.' },
+      { de: 'hungrig',   en: 'hungry',    emoji: '🍽️', hint: '"HOON-grikh" — final -ig sounds like soft ich',     example: 'Du bist hungrig.',        exampleEn: 'You are hungry.' },
+      { de: 'durstig',   en: 'thirsty',   emoji: '🥤', hint: '"DOOR-stikh"',                                      example: 'Er ist durstig.',         exampleEn: 'He is thirsty.' },
+      { de: 'fertig',    en: 'finished / done', emoji: '✅', hint: '"FAIR-tikh"',                                  example: 'Wir sind fertig.',         exampleEn: 'We are finished.' },
+      { de: 'glücklich', en: 'happy',     emoji: '😊', hint: '"GLUEK-likh" — ü + soft ch',                         example: 'Sie ist glücklich.',       exampleEn: 'She is happy.' },
+      { de: 'krank',     en: 'sick',      emoji: '🤒', hint: '"krahnk"',                                          example: 'Der Mann ist krank.',     exampleEn: 'The man is sick.' },
+      { de: 'bereit',    en: 'ready',     emoji: '👍', hint: '"buh-RYE-t" — ei = eye',                            example: 'Bist du bereit?',          exampleEn: 'Are you ready?' },
+      { de: 'gut',       en: 'good',      emoji: '👌', hint: '"goot" — long u',                                   example: 'Das Buch ist gut.',        exampleEn: 'The book is good.' },
       // time markers
-      { de: 'spät',      en: 'late',      hint: '"shpeht" — ä = open eh, st-start = sht' },
-      { de: 'früh',      en: 'early',     hint: '"frue" — silent h lengthens ü' },
+      { de: 'spät',      en: 'late',      emoji: '🌙', hint: '"shpeht" — ä = open eh, st-start = sht',            example: 'Es ist spät.',             exampleEn: 'It is late.' },
+      { de: 'früh',      en: 'early',     emoji: '🌅', hint: '"frue" — silent h lengthens ü',                     example: 'Es ist früh.',             exampleEn: 'It is early.' },
       // place markers
-      { de: 'hier',      en: 'here',      hint: '"heer" — long ee' },
-      { de: 'da',        en: 'there',     hint: '"dah" — short' },
+      { de: 'hier',      en: 'here',      emoji: '📍', hint: '"heer" — long ee',                                  example: 'Wir sind hier.',           exampleEn: 'We are here.' },
+      { de: 'da',        en: 'there',     emoji: '👉', hint: '"dah" — short',                                     example: 'Er ist da.',               exampleEn: 'He is there.' },
       // origin / profession (used in patterns below)
-      { de: 'aus Indien', en: 'from India',  hint: 'Ich bin aus Indien.' },
-      { de: 'aus Deutschland', en: 'from Germany', hint: 'aus = from / out of' },
-      { de: 'Lehrer',    en: 'teacher (m)',   hint: 'no article needed: "Ich bin Lehrer."' },
-      { de: 'Lehrerin',  en: 'teacher (f)',   hint: '-in suffix → female form' },
-      { de: 'Softwareentwickler', en: 'software developer', hint: 'compound — break up: Soft-ware-ent-wick-ler' },
+      { de: 'aus Indien', en: 'from India', emoji: '🇮🇳', hint: 'Ich bin aus Indien.',                              example: 'Ich bin aus Indien.',      exampleEn: 'I am from India.' },
+      { de: 'aus Deutschland', en: 'from Germany', emoji: '🇩🇪', hint: 'aus = from / out of',                       example: 'Sie ist aus Deutschland.', exampleEn: 'She is from Germany.' },
+      { de: 'Lehrer',    en: 'teacher (m)',   emoji: '👨‍🏫', hint: 'no article needed: "Ich bin Lehrer."',         example: 'Er ist Lehrer.',           exampleEn: 'He is a teacher.' },
+      { de: 'Lehrerin',  en: 'teacher (f)',   emoji: '👩‍🏫', hint: '-in suffix → female form',                     example: 'Sie ist Lehrerin.',        exampleEn: 'She is a teacher.' },
+      { de: 'Softwareentwickler', en: 'software developer', emoji: '💻', hint: 'compound — break up: Soft-ware-ent-wick-ler', example: 'Ich bin Softwareentwickler.', exampleEn: 'I am a software developer.' },
     ],
     grammar: [
       { rule: 'sein — full conjugation table',
