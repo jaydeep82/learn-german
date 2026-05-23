@@ -867,6 +867,7 @@ export const days = [
 
   {
     id: 6, week: 1,
+    vocabLayout: 'spotlight',
     title: 'haben — to have',
     titleDe: 'Das Verb „haben"',
     emoji: '🟩',
@@ -874,23 +875,23 @@ export const days = [
     intro: '"haben" is your second power tool. It is used for OWNERSHIP (Ich habe ein Buch), ABSTRACT things (Ich habe eine Idee, Ich habe Zeit), and — crucially — BODY STATES where English uses "to be": Ich habe Hunger / Durst / Angst (I am hungry / thirsty / afraid).',
     vocabulary: [
       // body states — the ones that surprise English speakers
-      { de: 'der Hunger',  en: 'hunger',     hint: '⚠ "Ich habe Hunger" = "I am hungry" — never "Ich bin Hunger"!' },
-      { de: 'der Durst',   en: 'thirst',     hint: '"Ich habe Durst" = "I am thirsty"' },
-      { de: 'die Angst',   en: 'fear',       hint: '"Ich habe Angst" = "I am afraid"' },
-      { de: 'die Lust',    en: 'desire / want to', hint: '"Ich habe Lust auf …" = "I feel like (having) …"' },
+      { de: 'der Hunger',  en: 'hunger',     emoji: '🍽️', hint: '⚠ "Ich habe Hunger" = "I am hungry" — never "Ich bin Hunger"!', example: 'Ich habe Hunger.',         exampleEn: 'I am hungry.' },
+      { de: 'der Durst',   en: 'thirst',     emoji: '🥤', hint: '"Ich habe Durst" = "I am thirsty"',                                example: 'Hast du Durst?',          exampleEn: 'Are you thirsty?' },
+      { de: 'die Angst',   en: 'fear',       emoji: '😨', hint: '"Ich habe Angst" = "I am afraid"',                                 example: 'Sie hat Angst.',           exampleEn: 'She is afraid.' },
+      { de: 'die Lust',    en: 'desire / want to', emoji: '🎉', hint: '"Ich habe Lust auf …" = "I feel like (having) …"',           example: 'Wir haben Lust auf Kaffee.', exampleEn: 'We feel like (having) coffee.' },
       // abstract / time
-      { de: 'die Zeit',    en: 'time',       hint: '"Ich habe Zeit" = "I have time / I am free"' },
-      { de: 'die Pause',   en: 'break',      hint: '"Ich habe Pause" = "I have a break / I\'m on break"' },
-      { de: 'die Idee',    en: 'idea',       hint: '"Ich habe eine Idee" = "I have an idea"' },
-      { de: 'die Frage',   en: 'question',   hint: '"Ich habe eine Frage" = "I have a question"' },
-      { de: 'das Problem', en: 'problem',    hint: '"Ich habe ein Problem" — pronounced English-style "problayme"' },
-      { de: 'der Stress',  en: 'stress',     hint: '"Ich habe Stress" — start with English "sht-"' },
+      { de: 'die Zeit',    en: 'time',       emoji: '⏰', hint: '"Ich habe Zeit" = "I have time / I am free"',                       example: 'Habt ihr Zeit?',           exampleEn: 'Do you all have time?' },
+      { de: 'die Pause',   en: 'break',      emoji: '☕', hint: '"Ich habe Pause" = "I have a break / I\'m on break"',               example: 'Wir haben Pause.',         exampleEn: 'We have a break.' },
+      { de: 'die Idee',    en: 'idea',       emoji: '💡', hint: '"Ich habe eine Idee" = "I have an idea"',                          example: 'Ich habe eine Idee.',      exampleEn: 'I have an idea.' },
+      { de: 'die Frage',   en: 'question',   emoji: '❓', hint: '"Ich habe eine Frage" = "I have a question"',                       example: 'Haben Sie eine Frage?',    exampleEn: 'Do you (formal) have a question?' },
+      { de: 'das Problem', en: 'problem',    emoji: '⚠️', hint: '"Ich habe ein Problem" — pronounced English-style "problayme"',     example: 'Er hat ein Problem.',      exampleEn: 'He has a problem.' },
+      { de: 'der Stress',  en: 'stress',     emoji: '😰', hint: '"Ich habe Stress" — start with English "sht-"',                     example: 'Ich habe Stress.',         exampleEn: 'I am stressed.' },
       // work-life
-      { de: 'die Arbeit',  en: 'work',       hint: '"Ich habe viel Arbeit" — long opening A' },
-      { de: 'der Termin',  en: 'appointment',hint: '"Ich habe einen Termin um 10 Uhr"' },
+      { de: 'die Arbeit',  en: 'work',       emoji: '💼', hint: '"Ich habe viel Arbeit" — long opening A',                          example: 'Du hast viel Arbeit.',     exampleEn: 'You have a lot of work.' },
+      { de: 'der Termin',  en: 'appointment',emoji: '📅', hint: '"Ich habe einen Termin um 10 Uhr"',                                example: 'Sie hat einen Termin.',    exampleEn: 'She has an appointment.' },
       // possessions
-      { de: 'das Buch',    en: 'a book',     hint: 'neuter → "Ich habe ein Buch"' },
-      { de: 'der Hund',    en: 'a dog',      hint: 'masc. — Akk. preview: "Ich habe EINEN Hund" (Week 4)' },
+      { de: 'das Buch',    en: 'a book',     emoji: '📖', hint: 'neuter → "Ich habe ein Buch"',                                    example: 'Ich habe ein Buch.',       exampleEn: 'I have a book.' },
+      { de: 'der Hund',    en: 'a dog',      emoji: '🐕', hint: 'masc. — Akk. preview: "Ich habe EINEN Hund" (Week 4)',             example: 'Sie haben einen Hund.',    exampleEn: 'They have a dog.' },
     ],
     grammar: [
       { rule: 'haben — full conjugation table',

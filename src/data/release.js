@@ -11,10 +11,26 @@
  * in sync.
  */
 
-export const VERSION = '3.6.3';
+export const VERSION = '3.6.4';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.6.4',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 6 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 6 (haben — to have) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Days 2-5.',
+      'All 14 entries get a relevant emoji + an example sentence that USES haben, reinforcing the day\'s core verb directly in the vocab page.',
+      'Body states: 🍽️ Hunger → "Ich habe Hunger", 🥤 Durst → "Hast du Durst?", 😨 Angst → "Sie hat Angst", 🎉 Lust → "Wir haben Lust auf Kaffee".',
+      'Abstract / time: ⏰ Zeit → "Habt ihr Zeit?", ☕ Pause → "Wir haben Pause", 💡 Idee → "Ich habe eine Idee", ❓ Frage → "Haben Sie eine Frage?" (formal), ⚠️ Problem → "Er hat ein Problem", 😰 Stress → "Ich habe Stress".',
+      'Work-life: 💼 Arbeit → "Du hast viel Arbeit", 📅 Termin → "Sie hat einen Termin".',
+      'Possessions: 📖 Buch → "Ich habe ein Buch", 🐕 Hund → "Sie haben einen Hund".',
+      'Examples sweep all six haben forms (habe / hast / hat / haben / habt / Sie haben) so learners see the full conjugation table in action.',
+      'Emojis 🍽️ and 🥤 deliberately match the same concepts from Day 5 (where Hunger/Durst used SEIN via "hungrig"/"durstig") — reinforcing that the FEELING is the same but the German verb construction differs.',
+    ],
+  },
   {
     version: '3.6.3',
     date: '2026-05-11',
