@@ -11,10 +11,26 @@
  * in sync.
  */
 
-export const VERSION = '3.6.1';
+export const VERSION = '3.6.2';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.6.2',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 4 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 4 (Articles: der/die/das) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Days 2 and 3.',
+      'All 21 vocab entries get a relevant emoji + an example sentence that reinforces the article-noun pair. Highlights by gender group:',
+      '• Masculine: 🍽️ der Tisch → "Der Tisch ist groß", 🪑 der Stuhl → "Der Stuhl ist neu", 💻 der Laptop · 👨 der Mann · 🐕 der Hund · ☀️ der Tag.',
+      '• Feminine: 💡 die Lampe · 👜 die Tasche → "Die Tasche ist schwer" · 👩 die Frau → "Die Frau ist Lehrerin" · 🏠 die Wohnung · 📰 die Zeitung.',
+      '• Neuter: 📖 das Buch → "Das Buch ist gut" · 📱 das Handy · 🧒 das Kind · 👧 das Mädchen (the famous neuter-trap) · 🥖 das Brötchen.',
+      '• Plural: 👥 die Leute · 📚 die Bücher · 🎒 die Kinder → "Die Kinder spielen".',
+      '• Indefinite preview: 🅰️ ein → "Das ist ein Buch" and 🅰️ eine → "Das ist eine Tasche".',
+      'Each example uses the article + noun in a natural sentence so the article-noun bond is reinforced visually AND aurally.',
+    ],
+  },
   {
     version: '3.6.1',
     date: '2026-05-11',
