@@ -11,10 +11,24 @@
  * in sync.
  */
 
-export const VERSION = '3.6.5';
+export const VERSION = '3.6.6';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.6.6',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 8 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 8 (Numbers 30-100) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Days 2-7.',
+      'All 20 entries get a relevant emoji + an example sentence using the number in a real-world context — age, family, books, money, time.',
+      'Tens (30-100): 🎂 dreißig → "Sie ist dreißig Jahre alt", 👔 vierzig → "Mein Vater ist vierzig", 🎓 fünfzig → "Die Klasse hat fünfzig Studenten", ⏱️ sechzig → "Eine Stunde hat sechzig Minuten" (great time-fact), 👴 siebzig → "Mein Opa ist siebzig", 👵 achtzig → "Meine Oma ist achtzig", 🎉 neunzig → "Mein Onkel WIRD neunzig" (recap werden from Day 7!), 💯 hundert → "Das Buch hat hundert Seiten", 📞 einhundert → "Einhundert Euro, bitte" (phone-clarity context).',
+      'Flip examples (31, 42, 55, 66, 77, 88, 99): 🎂 einunddreißig · 📖 zweiundvierzig (book pages) · 💶 fünfundfünfzig (price) · 🏖️ sechsundsechzig · 🎂 siebenundsiebzig · 🎂 achtundachtzig · 🎈 neunundneunzig → "Neunundneunzig Luftballons!" (the famous Nena song — German-culture moment).',
+      'Real-world support: 📅 Jahr · 👶 Alter · 🔢 Nummer · 📊 Prozent.',
+      'Examples introduce family-vocab exposure (Opa, Oma, Onkel, Tante, Großvater, Freund) — useful for later Family lesson, currently flagged via context only.',
+    ],
+  },
   {
     version: '3.6.5',
     date: '2026-05-11',
