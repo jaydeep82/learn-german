@@ -11,10 +11,26 @@
  * in sync.
  */
 
-export const VERSION = '3.6.4';
+export const VERSION = '3.6.5';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.6.5',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 7 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 7 (werden + sentence rules) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Days 2-6. Week 1 is now fully on the spotlight layout from Day 2 onwards (Day 1 stays compact by design).',
+      'All 16 entries get a relevant emoji + an example sentence that USES werden in its core "becoming / changing state" sense, reinforcing the day\'s verb directly in the vocab page.',
+      'Change-of-state weather + light: ❄️ kalt → "Es wird kalt", 🌡️ warm → "Es wird warm", 🔥 heiß → "Das Öl wird heiß", 🌑 dunkel → "Es wird dunkel", 💡 hell → "Es wird hell".',
+      'Change-of-state feelings: 😴 müde → "Ich werde müde", 😌 ruhig → "Du wirst ruhig", 😬 nervös → "Sie wird nervös".',
+      'Comparatives (the natural werden context): 📈 besser → "Es wird besser", 🐢 langsamer → "Wir werden langsamer", ⚡ schneller → "Ihr werdet schneller".',
+      'Life trajectory: 👴 alt → "Wir werden alt", 💰 reich → "Sie werden reich", 👨‍⚕️ Arzt → "Er wird Arzt" (werden + profession, no article!), 👩‍⚕️ Ärztin → "Sie wird Ärztin".',
+      'One sein exception: 👶 jung → "Er ist jung" — flagged in the hint because you don\'t logically BECOME young, so sein fits more naturally.',
+      'Examples sweep all six werden forms (werde / wirst / wird / werden / werdet / sie werden) so learners see the full table — including the vowel change in singular (werde → wirst → wird).',
+    ],
+  },
   {
     version: '3.6.4',
     date: '2026-05-11',
