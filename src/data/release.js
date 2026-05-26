@@ -11,10 +11,25 @@
  * in sync.
  */
 
-export const VERSION = '3.6.6';
+export const VERSION = '3.6.7';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.6.7',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 9 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 9 (Subject · Verb · Object) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Days 2-8.',
+      'All 16 entries get a relevant emoji + an example sentence that models the day\'s core S-V-O structure.',
+      'Role labels (colour-coded to match the lesson): 🟦 Subjekt → "Das Subjekt ist „ich"", 🟧 Verb → "Das Verb ist „schreiben"", 🟩 Objekt → "Das Objekt ist „das Buch"" — meta-examples that explain each role using the word itself.',
+      'People (subjects): 👨‍🏫 der Lehrer → "Der Lehrer erklärt das Wort", 🧑‍🎓 der Student → "Der Student schreibt den Satz", 👩‍🏫 die Lehrerin → "Die Lehrerin liest ein Buch" — full S-V-O sentences showing the noun in its subject role.',
+      'Things (objects): 💬 das Wort → "Ich lerne das Wort", 📝 der Satz → "Ich schreibe den Satz" (Akk preview), ❓ die Frage → "Ich habe eine Frage", 📖 das Buch → "Ich lese ein Buch", ☕ der Kaffee → "Ich trinke den Kaffee" (Akk preview).',
+      'Action verbs (the S-V-O machinery): ✍️ schreiben → "Du schreibst eine E-Mail", 📚 lesen → "Sie liest ein Buch", 🗣️ erklären, 🛒 kaufen → "Wir kaufen einen Kaffee" (Akk masc. preview), 🙋 fragen → "Ich frage den Lehrer".',
+      'Together the 16 examples form a mini-S-V-O atlas: every example IS a Subject + Verb + Object sentence in action.',
+    ],
+  },
   {
     version: '3.6.6',
     date: '2026-05-11',

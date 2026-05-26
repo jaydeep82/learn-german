@@ -1321,6 +1321,7 @@ export const days = [
 
   {
     id: 9, week: 2,
+    vocabLayout: 'spotlight',
     title: 'Subject · Verb · Object',
     titleDe: 'Subjekt · Verb · Objekt',
     emoji: '🧩',
@@ -1328,25 +1329,25 @@ export const days = [
     intro: 'A German sentence has three jobs to fill: 🟦 SUBJECT (the doer), 🟧 VERB (the action), 🟩 OBJECT (the receiver). The simplest order is S-V-O — same as English. But German has ONE iron rule that English doesn\'t: the conjugated verb ALWAYS sits in position 2. If you start with anything else (time, place, emphasis), the subject moves to position 3. Once you see this, every sentence in the rest of the course makes sense.',
     vocabulary: [
       // Role labels (so the lesson talks about them)
-      { de: 'das Subjekt', en: 'the subject (the doer)',     hint: '🟦 Wer / Was? (Who / What is doing it?)' },
-      { de: 'das Verb',    en: 'the verb (the action)',      hint: '🟧 ALWAYS slot 2 in a main sentence' },
-      { de: 'das Objekt',  en: 'the object (the receiver)',  hint: '🟩 Wen / Was? (Whom / What is being verbed?)' },
+      { de: 'das Subjekt', en: 'the subject (the doer)',     emoji: '🟦', hint: '🟦 Wer / Was? (Who / What is doing it?)',     example: 'Das Subjekt ist „ich".',           exampleEn: 'The subject is "I".' },
+      { de: 'das Verb',    en: 'the verb (the action)',      emoji: '🟧', hint: '🟧 ALWAYS slot 2 in a main sentence',          example: 'Das Verb ist „schreiben".',         exampleEn: 'The verb is "to write".' },
+      { de: 'das Objekt',  en: 'the object (the receiver)',  emoji: '🟩', hint: '🟩 Wen / Was? (Whom / What is being verbed?)', example: 'Das Objekt ist „das Buch".',        exampleEn: 'The object is "the book".' },
       // People (common subjects)
-      { de: 'der Lehrer',  en: 'the teacher',  hint: 'masc. — common subject' },
-      { de: 'der Student', en: 'the student',  hint: 'masc. — common subject' },
-      { de: 'die Lehrerin',en: 'the teacher (f)',hint: 'fem. — -in suffix → female form' },
+      { de: 'der Lehrer',  en: 'the teacher',     emoji: '👨‍🏫', hint: 'masc. — common subject',                              example: 'Der Lehrer erklärt das Wort.',     exampleEn: 'The teacher explains the word.' },
+      { de: 'der Student', en: 'the student',     emoji: '🧑‍🎓', hint: 'masc. — common subject',                              example: 'Der Student schreibt den Satz.',   exampleEn: 'The student writes the sentence.' },
+      { de: 'die Lehrerin',en: 'the teacher (f)', emoji: '👩‍🏫', hint: 'fem. — -in suffix → female form',                     example: 'Die Lehrerin liest ein Buch.',     exampleEn: 'The teacher reads a book.' },
       // Things (common objects)
-      { de: 'das Wort',    en: 'the word',     hint: 'neuter — das Wort' },
-      { de: 'der Satz',    en: 'the sentence', hint: 'masc. — der Satz' },
-      { de: 'die Frage',   en: 'the question', hint: 'fem. — die Frage' },
-      { de: 'das Buch',    en: 'the book',     hint: 'common object — das Buch' },
-      { de: 'der Kaffee',  en: 'the coffee',   hint: 'common object — der Kaffee' },
+      { de: 'das Wort',    en: 'the word',     emoji: '💬', hint: 'neuter — das Wort',                                       example: 'Ich lerne das Wort.',              exampleEn: 'I learn the word.' },
+      { de: 'der Satz',    en: 'the sentence', emoji: '📝', hint: 'masc. — der Satz',                                        example: 'Ich schreibe den Satz.',           exampleEn: 'I write the sentence.' },
+      { de: 'die Frage',   en: 'the question', emoji: '❓', hint: 'fem. — die Frage',                                         example: 'Ich habe eine Frage.',             exampleEn: 'I have a question.' },
+      { de: 'das Buch',    en: 'the book',     emoji: '📖', hint: 'common object — das Buch',                                example: 'Ich lese ein Buch.',               exampleEn: 'I read a book.' },
+      { de: 'der Kaffee',  en: 'the coffee',   emoji: '☕', hint: 'common object — der Kaffee',                              example: 'Ich trinke den Kaffee.',           exampleEn: 'I drink the coffee.' },
       // Action verbs (S-V-O machinery)
-      { de: 'schreiben',   en: 'to write',     hint: 'takes an object: schreibt + den Satz' },
-      { de: 'lesen',       en: 'to read',      hint: 'takes an object: liest + ein Buch' },
-      { de: 'erklären',    en: 'to explain',   hint: 'takes an object: erklärt + das Wort' },
-      { de: 'kaufen',      en: 'to buy',       hint: 'takes an object: kauft + den Kaffee' },
-      { de: 'fragen',      en: 'to ask',       hint: 'takes an object: fragt + den Lehrer' },
+      { de: 'schreiben',   en: 'to write',     emoji: '✍️', hint: 'takes an object: schreibt + den Satz',                    example: 'Du schreibst eine E-Mail.',        exampleEn: 'You write an email.' },
+      { de: 'lesen',       en: 'to read',      emoji: '📚', hint: 'takes an object: liest + ein Buch',                       example: 'Sie liest ein Buch.',              exampleEn: 'She reads a book.' },
+      { de: 'erklären',    en: 'to explain',   emoji: '🗣️', hint: 'takes an object: erklärt + das Wort',                     example: 'Sie erklärt das Wort.',            exampleEn: 'She explains the word.' },
+      { de: 'kaufen',      en: 'to buy',       emoji: '🛒', hint: 'takes an object: kauft + den Kaffee',                     example: 'Wir kaufen einen Kaffee.',         exampleEn: 'We buy a coffee.' },
+      { de: 'fragen',      en: 'to ask',       emoji: '🙋', hint: 'takes an object: fragt + den Lehrer',                     example: 'Ich frage den Lehrer.',            exampleEn: 'I ask the teacher.' },
     ],
     grammar: [
       { rule: 'The three sentence roles',
