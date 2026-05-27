@@ -11,10 +11,27 @@
  * in sync.
  */
 
-export const VERSION = '3.6.8';
+export const VERSION = '3.6.9';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.6.9',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 11 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 11 (Stem-changing verbs) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Days 2-10.',
+      'All 25 entries get a relevant emoji + an example sentence. Each stem-changer\'s example deliberately uses du / er / sie / es so the vowel shift is visible in context — exactly mirroring the day\'s teaching point.',
+      'Pattern label: 🔁 der Vokalwechsel → "Der Vokalwechsel ist e → i."',
+      'e → i pattern (5 verbs): 🍽️ essen → "Du isst Pizza", 🗣️ sprechen → "Er spricht Deutsch", 🤲 nehmen → "Du nimmst den Bus" (with doubled m!), 🎁 geben → "Sie gibt ein Buch", 🆘 helfen → "Du hilfst viel".',
+      'e → ie pattern (2 verbs): 👁️ sehen → "Er sieht das Auto", 📰 lesen → "Sie liest ein Buch".',
+      'a → ä pattern (3 verbs): 🚗 fahren → "Du fährst nach Berlin", 🛏️ schlafen → "Er schläft acht Stunden", 👕 tragen → "Sie trägt eine Tasche".',
+      '4 lookalike regulars: 🚶 kommen, 🏃 gehen, ✍️ schreiben, 🥤 trinken — examples use the wir/ich/sie forms (no stem change visible) for instructive contrast.',
+      '11 bonus regular verbs from the v1.6.0 enrichment kept intact: 🏠 besuchen · 👆 zeigen · 🔧 benutzen · 💡 erklären · 🔄 wiederholen · 💪 üben · 🔎 suchen · 📨 schicken · 🎙️ erzählen · 🙋 fragen · ⏳ warten.',
+      'Net effect: scrolling Day 11\'s vocab is a live demo of "stem-changers shift their vowel in du/er — regular verbs don\'t".',
+    ],
+  },
   {
     version: '3.6.8',
     date: '2026-05-11',
