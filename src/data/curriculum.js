@@ -1521,6 +1521,7 @@ export const days = [
 
   {
     id: 10, week: 2,
+    vocabLayout: 'spotlight',
     title: 'Regular verbs — the pattern',
     titleDe: 'Regelmäßige Verben',
     emoji: '🔁',
@@ -1528,24 +1529,24 @@ export const days = [
     intro: 'German has thousands of regular verbs. They all follow the SAME pattern: take the infinitive (mach·en), drop the -en (mach·), then glue on the ending that matches the subject pronoun (ich → -e, du → -st …). Learn this once and you instantly own hundreds of verbs.',
     vocabulary: [
       // Role labels for the lesson
-      { de: 'der Stamm',     en: 'the verb stem',         hint: 'machen → mach- · lernen → lern- · spielen → spiel-' },
-      { de: 'die Endung',    en: 'the ending',            hint: 'the bit that changes per pronoun: -e · -st · -t · -en · -t · -en' },
-      { de: 'regelmäßig',    en: 'regular',               hint: 'follows the standard pattern — today\'s topic' },
-      { de: 'unregelmäßig',  en: 'irregular',             hint: 'breaks the pattern — sein/haben/werden are like this' },
+      { de: 'der Stamm',     en: 'the verb stem',  emoji: '🌳', hint: 'machen → mach- · lernen → lern- · spielen → spiel-',                   example: 'Der Stamm ist „mach-".',           exampleEn: 'The stem is "mach-".' },
+      { de: 'die Endung',    en: 'the ending',     emoji: '🔚', hint: 'the bit that changes per pronoun: -e · -st · -t · -en · -t · -en',     example: 'Die Endung für „ich" ist „-e".',   exampleEn: 'The ending for "ich" is "-e".' },
+      { de: 'regelmäßig',    en: 'regular',        emoji: '✅', hint: 'follows the standard pattern — today\'s topic',                        example: '„Lernen" ist regelmäßig.',          exampleEn: '"lernen" is regular.' },
+      { de: 'unregelmäßig',  en: 'irregular',      emoji: '⚠️', hint: 'breaks the pattern — sein/haben/werden are like this',                example: '„Sein" ist unregelmäßig.',         exampleEn: '"sein" is irregular.' },
       // The 8 core regular verbs
-      { de: 'machen',   en: 'to do / make',   hint: 'stem mach-' },
-      { de: 'lernen',   en: 'to learn',       hint: 'stem lern-' },
-      { de: 'spielen',  en: 'to play',        hint: 'stem spiel-' },
-      { de: 'arbeiten', en: 'to work',        hint: 'stem arbeit- (ends in -t → -et / -est)' },
-      { de: 'kaufen',   en: 'to buy',         hint: 'stem kauf-' },
-      { de: 'fragen',   en: 'to ask',         hint: 'stem frag-' },
-      { de: 'hören',    en: 'to hear',        hint: 'stem hör-' },
-      { de: 'wohnen',   en: 'to live (reside)', hint: 'stem wohn-' },
+      { de: 'machen',   en: 'to do / make',   emoji: '🛠️', hint: 'stem mach-',                                example: 'Was machst du?',           exampleEn: 'What are you doing?' },
+      { de: 'lernen',   en: 'to learn',       emoji: '🎓', hint: 'stem lern-',                                example: 'Wir lernen Deutsch.',       exampleEn: 'We learn German.' },
+      { de: 'spielen',  en: 'to play',        emoji: '⚽', hint: 'stem spiel-',                                example: 'Die Kinder spielen Fußball.', exampleEn: 'The children play football.' },
+      { de: 'arbeiten', en: 'to work',        emoji: '🏢', hint: 'stem arbeit- (ends in -t → -et / -est)',    example: 'Du arbeitest viel.',        exampleEn: 'You work a lot.' },
+      { de: 'kaufen',   en: 'to buy',         emoji: '🛒', hint: 'stem kauf-',                                example: 'Ich kaufe ein Buch.',       exampleEn: 'I buy a book.' },
+      { de: 'fragen',   en: 'to ask',         emoji: '🙋', hint: 'stem frag-',                                example: 'Was fragst du?',            exampleEn: 'What are you asking?' },
+      { de: 'hören',    en: 'to hear',        emoji: '🎧', hint: 'stem hör-',                                  example: 'Ich höre Musik.',           exampleEn: 'I am listening to music.' },
+      { de: 'wohnen',   en: 'to live (reside)', emoji: '🏡', hint: 'stem wohn-',                              example: 'Wir wohnen in Berlin.',     exampleEn: 'We live in Berlin.' },
       // A few more useful ones
-      { de: 'kommen',   en: 'to come',        hint: 'stem komm- · ich komme aus Indien' },
-      { de: 'brauchen', en: 'to need',        hint: 'stem brauch- · ich brauche Kaffee' },
-      { de: 'finden',   en: 'to find',        hint: 'stem find- (ends in -d → -et / -est)' },
-      { de: 'trinken',  en: 'to drink',       hint: 'stem trink-' },
+      { de: 'kommen',   en: 'to come',        emoji: '🚶', hint: 'stem komm- · ich komme aus Indien',         example: 'Ich komme aus Indien.',     exampleEn: 'I come from India.' },
+      { de: 'brauchen', en: 'to need',        emoji: '🤔', hint: 'stem brauch- · ich brauche Kaffee',          example: 'Ich brauche Kaffee.',       exampleEn: 'I need coffee.' },
+      { de: 'finden',   en: 'to find',        emoji: '🔍', hint: 'stem find- (ends in -d → -et / -est)',      example: 'Er findet den Weg.',        exampleEn: 'He finds the way.' },
+      { de: 'trinken',  en: 'to drink',       emoji: '🍵', hint: 'stem trink-',                                example: 'Wir trinken Tee.',          exampleEn: 'We drink tea.' },
     ],
     grammar: [
       { rule: '⭐ The 4-second recipe',

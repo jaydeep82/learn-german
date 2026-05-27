@@ -11,10 +11,25 @@
  * in sync.
  */
 
-export const VERSION = '3.6.7';
+export const VERSION = '3.6.8';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.6.8',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 10 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 10 (Regular verbs — the pattern) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Days 2-9.',
+      'All 16 entries get a relevant emoji + an example that puts the verb in real action — sweeping the conjugation pattern across the day\'s six endings.',
+      'Role labels: 🌳 der Stamm → "Der Stamm ist „mach-"", 🔚 die Endung → "Die Endung für „ich" ist „-e"", ✅ regelmäßig → ""Lernen" ist regelmäßig", ⚠️ unregelmäßig → ""Sein" ist unregelmäßig" — meta-examples that explain each concept by using the word itself.',
+      'Core 8 verbs: 🛠️ machen → "Was machst du?" (-st ending), 🎓 lernen → "Wir lernen Deutsch" (-en), ⚽ spielen → "Die Kinder spielen Fußball" (-en plural), 🏢 arbeiten → "Du arbeitest viel" (the -et/-est trap!), 🛒 kaufen → "Ich kaufe ein Buch" (-e), 🙋 fragen → "Was fragst du?", 🎧 hören → "Ich höre Musik", 🏡 wohnen → "Wir wohnen in Berlin".',
+      'Bonus 4: 🚶 kommen → "Ich komme aus Indien" (recap from Day 5 self-intro), 🤔 brauchen → "Ich brauche Kaffee", 🔍 finden → "Er findet den Weg" (the -d-stem -et trap!), 🍵 trinken → "Wir trinken Tee".',
+      'The arbeiten + finden examples explicitly showcase the day\'s key gotcha: stems ending in -t or -d insert an extra -e- in du/er/ihr forms (du arbeitest, er findet).',
+      'Across the 16 examples, every regular ending appears in real use — perfect pattern reinforcement on the vocab page.',
+    ],
+  },
   {
     version: '3.6.7',
     date: '2026-05-11',
