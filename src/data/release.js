@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.6.9';
+export const VERSION = '3.7.0';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.7.0',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 12 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 12 (Separable verbs) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Days 2-11. Week 2 is now fully migrated (Days 8-15 will hit complete status once Day 13-15 land — Days 8-12 done so far).',
+      'All 19 entries get a relevant emoji + an example that SHOWS THE SPLIT — the stem in slot 2 and the prefix flying to the very end of the sentence. The teaching point lives in every example.',
+      'Role labels: 🔚 das Präfix → "Das Präfix ist „auf"", 🌳 der Stamm → "Der Stamm ist „stehen"", ✂️ trennbar → ""Aufstehen" ist trennbar".',
+      '16 separable verbs each show the prefix detaching: ⏰ aufstehen → "Ich stehe um 7 Uhr **auf**", 🌅 aufwachen → "Du wachst spät **auf**", 🛒 einkaufen → "Wir kaufen am Samstag **ein**", 👫 mitkommen → "Kommst du **mit**?", 🥡 mitnehmen → "Ich nehme den Schlüssel **mit**", 🚪 aufmachen → "Du machst das Buch **auf**", 🔒 zumachen → "Wir machen das Buch **zu**", 🌃 ausgehen → "Wir gehen am Wochenende **aus**", 📝 ausfüllen → "Du füllst das Formular **aus**", 📞 anrufen → "Ich rufe dich morgen **an**", 📺 fernsehen → "Er sieht **fern**", 🚉 abholen → "Ich hole dich am Bahnhof **ab**", ▶️ anfangen → "Es fängt um 8 Uhr **an**" (stem-changer!), 💌 einladen → "Sie lädt mich **ein**" (stem-changer!), 🛑 aufhören → "Wir hören **auf**", 📋 vorbereiten → "Ich bereite das Essen **vor**".',
+      'Net effect: scrolling Day 12\'s vocab is itself a demo of the prefix-flies-to-the-end rule — every separable verb\'s example demonstrates it in real use.',
+    ],
+  },
   {
     version: '3.6.9',
     date: '2026-05-11',
