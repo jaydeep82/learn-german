@@ -11,10 +11,26 @@
  * in sync.
  */
 
-export const VERSION = '3.7.0';
+export const VERSION = '3.7.1';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.7.1',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 13 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 13 (Time · Frequency · Preference) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Days 2-12.',
+      'All 35 entries get a relevant emoji + an example sentence — the largest vocab block so far. Examples demonstrate TFP-O placement in real sentences.',
+      '🕒 Time (10): 📅 heute → "Heute lerne ich Deutsch" (V2 inversion!), ⏭️ morgen, ⏮️ gestern → "Gestern war ich müde" (past-tense preview), ⏰ jetzt, 🌅 am Morgen, 🌆 am Abend → "Am Abend sehen wir fern" (recap Day 12 fernsehen!), 📆 jeden Tag, 🏖️ am Wochenende, 💼 nach der Arbeit, 🎮 in meiner Freizeit.',
+      '🔄 Frequency (5 — on the scale): 🟢 immer (100%) → "Ich trinke immer Kaffee", 🔁 oft (~80%) → "Wir spielen oft Fußball", 🤷 manchmal (~40%), 🔅 selten (~10%) → "Sie reist selten", 🚫 nie (0%).',
+      '❤️ Preference (4 — escalating): ❤️ gerne → "Ich lerne gerne Deutsch", 💖 sehr gerne, 🆚 lieber → "Ich trinke lieber Tee", 🏆 am liebsten → "Am liebsten esse ich Pizza".',
+      '🎬 Hobby verbs (5): ✈️ reisen, 🍳 kochen, 👀 schauen, 🎧 hören, ⌨️ programmieren.',
+      '🎯 Hobby objects (11): 📚 Bücher, 🎬 Filme, 🎵 Musik, 🏋️ Sport, 👫 Freunde, 👨‍💼 Kollegen, 👨‍💻 Code, 🎲 Spiele, 🍲 Rezepte, 🌍 Länder, 🏙️ Städte.',
+      'Each example slots the TFP word naturally into a real sentence — scrolling the vocab page itself rehearses the TFP-O chain in action.',
+    ],
+  },
   {
     version: '3.7.0',
     date: '2026-05-11',
