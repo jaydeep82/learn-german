@@ -11,10 +11,28 @@
  * in sync.
  */
 
-export const VERSION = '3.7.2';
-export const RELEASE_DATE = '2026-05-11';
+export const VERSION = '3.7.3';
+export const RELEASE_DATE = '2026-05-27';
 
 export const RELEASES = [
+  {
+    version: '3.7.3',
+    date: '2026-05-27',
+    type: 'improvement',
+    title: 'Day 15 vocabulary — review keystones (Week 1-2 in one block)',
+    notes: [
+      'Day 15 (Week 1+2 milestone review) previously had an empty vocabulary block — by design, since the day exercises already sweep all 14 prior days. Replaced the empty list with a curated "review keystones" set: the 17 highest-leverage words from Days 1-14, presented in the spotlight layout (vocabLayout: "spotlight") with emoji + example + Day-reference hint. Scrolling the vocab page is now a one-screen recap of Week 1+2.',
+      '🪪 Articles (3): 👨 der / 👩 die / 🧒 das — each example shows the article-noun pair in a real sentence (Der Mann ist hier · Die Frau ist Lehrerin · Das Kind spielt).',
+      '👤 Pronouns (3): 🙋 ich → "Ich bin müde", 👉 du → "Wie heißt du?", 🤝 Sie (formal) → "Wie heißen Sie?" — the formal-vs-informal contrast lives in the examples.',
+      '🟦🟩🟨 Auxiliaries (3 — the colour-coded trio from Day 7): 🟦 bin → "Ich bin müde" · 🟩 habe → "Ich habe Hunger" · 🟨 wird → "Es wird kalt" — one form per verb, with the matching Day-7 colour codes.',
+      '🧩 Sentence-rule words (4): ❌ nicht → "Ich bin nicht müde" (negation placement), 📅 heute → "Heute lerne ich Deutsch" (V2 inversion), ❤️ gerne → "Ich trinke gerne Kaffee" (TFP placement), 🔁 oft (frequency-scale anchor).',
+      '⚡ Verb pattern (1): ⏰ aufstehen → "Ich stehe um 7 Uhr auf" — the Day-12 sandwich rule in one example.',
+      '🔢 Number (1): 🎂 einundzwanzig — the flip-rule anchor from Day 2.',
+      '👋 Self-intro phrases (2): 🌍 "Ich komme aus" → "Ich komme aus Indien", 👨‍🏫 "Ich bin Lehrer" → "Ich bin Lehrer" (no article!) — the two most-used phrases from the Day-14 6-block recipe.',
+      'Every entry\'s hint cross-references the source day (e.g. "🔁 Day 4 · masc. → er", "🔁 Day 7 · sein", "🔁 Day 12 · sandwich") so learners can jump straight back if they need a refresher.',
+      'Day 1 stays compact by design; Days 2-15 are now all spotlight. Week 1 (Days 2-7) and Week 2 (Days 8-14) plus the Week 1+2 milestone (Day 15) are fully migrated.',
+    ],
+  },
   {
     version: '3.7.2',
     date: '2026-05-11',

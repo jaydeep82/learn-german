@@ -2477,12 +2477,38 @@ export const days = [
 
   {
     id: 15, week: 3,
+    vocabLayout: 'spotlight',
     title: 'Week 1+2 review',
     titleDe: 'Wiederholung Woche 1+2',
     emoji: '🏁',
     objective: 'Prove you own everything from Days 1-14 before cases begin — sounds, numbers, pronouns, articles, the three auxiliaries, verb conjugation, separable verbs and word order.',
     intro: 'Milestone checkpoint! This pulls together your first two weeks: 🔤 sounds → 🔢 numbers 0-100 → 👤 pronouns → 🪪 articles → 🟦 sein/haben/werden → 🔁 regular & stem-changing & separable verbs → 🧩 S-V-O & TFP word order → 👋 self-introduction. Work through the recap cards, then the mixed drills. Aim for ≥ 80% — that means you are genuinely ready for the case system in Week 4.',
-    vocabulary: [],
+    vocabulary: [
+      // 🪪 Articles — the three genders + plural rule
+      { de: 'der',           en: 'the (masculine)',   emoji: '👨',  hint: '🔁 Day 4 · masc. → er',                   example: 'Der Mann ist hier.',          exampleEn: 'The man is here.' },
+      { de: 'die',           en: 'the (fem. / plural)', emoji: '👩',  hint: '🔁 Day 4 · fem. → sie · pl. → sie',      example: 'Die Frau ist nett.',          exampleEn: 'The woman is nice.' },
+      { de: 'das',           en: 'the (neuter)',      emoji: '🧒',  hint: '🔁 Day 4 · neuter → es',                 example: 'Das Kind ist müde.',          exampleEn: 'The child is tired.' },
+      // 👤 Pronoun keystones — the register pair
+      { de: 'ich',           en: 'I',                 emoji: '🙋',  hint: '🔁 Day 3 · 1st singular',                example: 'Ich heiße Anna.',             exampleEn: 'My name is Anna.' },
+      { de: 'du',            en: 'you (1 friend)',    emoji: '👉',  hint: '🔁 Day 3 · informal singular',           example: 'Wie heißt du?',                exampleEn: 'What is your name?' },
+      { de: 'Sie',           en: 'you (formal)',      emoji: '🤝',  hint: '🔁 Day 3 · ALWAYS capital S',            example: 'Wie heißen Sie?',              exampleEn: 'What is your name? (formal)' },
+      // 🟦🟩🟨 The three auxiliaries — one form each
+      { de: 'bin',           en: 'am  (sein)',        emoji: '🟦',  hint: '🔁 Day 5 · ich-form of sein',            example: 'Ich bin müde.',                exampleEn: 'I am tired.' },
+      { de: 'habe',          en: 'have  (haben)',     emoji: '🟩',  hint: '🔁 Day 6 · body states use HABEN',       example: 'Ich habe Hunger.',             exampleEn: 'I am hungry.' },
+      { de: 'wird',          en: 'becomes  (werden)', emoji: '🟨',  hint: '🔁 Day 7 · change of state',             example: 'Es wird kalt.',                exampleEn: 'It is getting cold.' },
+      // 🧩 Sentence-rule keystones
+      { de: 'nicht',         en: 'not',               emoji: '❌',  hint: '🔁 Day 1 · negates verbs / adjectives',  example: 'Das ist nicht gut.',           exampleEn: 'That is not good.' },
+      { de: 'heute',         en: 'today',             emoji: '📅',  hint: '🔁 Day 13 · V2 inversion when time leads', example: 'Heute lerne ich Deutsch.',   exampleEn: 'Today I am learning German.' },
+      { de: 'gerne',         en: 'gladly / I like to', emoji: '❤️', hint: '🔁 Day 13 · TFP-O · before the object',  example: 'Ich trinke gerne Kaffee.',     exampleEn: 'I like to drink coffee.' },
+      { de: 'oft',           en: 'often',             emoji: '🔁',  hint: '🔁 Day 13 · 🔄 frequency · 80%',          example: 'Wir spielen oft Fußball.',     exampleEn: 'We often play football.' },
+      // ⚡ Verb-pattern keystones
+      { de: 'aufstehen',     en: 'to get up (separable)', emoji: '⏰', hint: '🔁 Day 12 · prefix flies to the END',  example: 'Ich stehe um 7 Uhr auf.',      exampleEn: 'I get up at 7 o\'clock.' },
+      // 🔢 Number flip showcase
+      { de: 'einundzwanzig', en: '21',                emoji: '🎂',  hint: '🔁 Day 2 · unit-FLIP, drops -s of eins', example: 'Ich bin einundzwanzig.',       exampleEn: 'I am twenty-one.' },
+      // 👋 Self-intro keystone phrases
+      { de: 'Ich komme aus', en: 'I come from …',     emoji: '🌍',  hint: '🔁 Day 14 · 6-block recipe slot 4',      example: 'Ich komme aus Indien.',        exampleEn: 'I come from India.' },
+      { de: 'Ich bin Lehrer', en: 'I am a teacher',   emoji: '👨‍🏫', hint: '🔁 Day 14 · NO article with profession',  example: 'Ich bin Lehrer.',              exampleEn: 'I am a teacher.' },
+    ],
     grammar: [
       { rule: '✅ Week 1 recap — the foundations',
         body:
