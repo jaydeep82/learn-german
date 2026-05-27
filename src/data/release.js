@@ -11,10 +11,27 @@
  * in sync.
  */
 
-export const VERSION = '3.7.1';
+export const VERSION = '3.7.2';
 export const RELEASE_DATE = '2026-05-11';
 
 export const RELEASES = [
+  {
+    version: '3.7.2',
+    date: '2026-05-11',
+    type: 'improvement',
+    title: 'Day 14 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 14 (Introducing yourself) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Days 2-13.',
+      'All 31 entries get a relevant emoji + an example. Question-vocab examples deliberately show "question — typical reply" pairs so learners see Q&A in context.',
+      'Greetings (6) with regional/time tags: 👋 Hallo · 🌅 Guten Morgen · 🌞 Guten Tag · 🌆 Guten Abend · 🍺 Servus (Bavaria!) · ⚓ Moin → "Moin, Moin!" (classic Hamburg double greeting).',
+      'Name (2): 🪪 Mein Name ist Anna Müller · 🏷️ Ich heiße Tom.',
+      'Questions with sample replies (7): ❓ "Wie heißt du? — Ich heiße Anna", 💼 "Wie heißen Sie? — Mein Name ist Anna", 🗺️ "Woher kommst du? — Aus Indien", 📍 "Wo wohnst du? — In Berlin", 🎂 "Wie alt bist du? — Ich bin 25", 🧑‍💻 "Was machst du beruflich? — Ich bin Lehrer", 🗣️ "Sprichst du Deutsch? — Ja, ein bisschen".',
+      'The 6-block recipe slots (8): 🌍 Ich komme aus Indien · 🏠 Ich wohne in Berlin · 🏡 Ich lebe in München · 🎈 Ich bin 30 Jahre alt · 👨‍🏫 Ich bin Lehrer (no article!) · 💼 Ich arbeite als Lehrer · 🎓 Ich studiere Informatik · 📚 Ich lerne Deutsch.',
+      'Politeness phrases (4): 🤝 Sehr angenehm · 😊 Es freut mich · 🙏 Schön, dich kennenzulernen · 🤵 Schön, Sie kennenzulernen.',
+      'Closings (4): 🚪 Tschüss → "Tschüss, bis morgen!", 🚶 Auf Wiedersehen → "Auf Wiedersehen, Herr Schmidt!", 🤙 Bis bald, 🌙 Bis morgen.',
+      'Together, the 31 examples ARE a complete self-introduction script — scrolling the vocab page is itself a rehearsal of the 6-block recipe.',
+    ],
+  },
   {
     version: '3.7.1',
     date: '2026-05-11',
