@@ -3539,66 +3539,220 @@ export const days = [
     title: 'Yes/No questions',
     titleDe: 'Ja/Nein-Fragen',
     emoji: '❓',
-    objective: 'Turn any statement into a yes/no question by flipping word order.',
-    intro: 'Yes/no questions in German are easy: just put the conjugated verb FIRST. "Du bist müde." → "Bist du müde?" Add a question mark — done.',
+    objective: 'Flip any statement into a yes/no question by putting the verb FIRST — and answer with ja, nein or the killer particle doch.',
+    intro: 'Yes/no questions in German are easy: just put the conjugated verb in slot 1. "Du bist müde." → "Bist du müde?" Add a question mark — done. Then learn the three answer particles (ja · nein · doch), keep separable prefixes flying to the end, and master polite forms with möchten / können.',
     vocabulary: [
-      // ✅ The straight-yes answer
-      { de: 'ja',         en: 'yes',                              emoji: '✅', hint: 'positive answer to a positive question',          example: 'Hast du Zeit? — Ja, ich habe Zeit.',                  exampleEn: 'Do you have time? — Yes, I have time.' },
-      // ⛔ The no answer
-      { de: 'nein',       en: 'no',                               emoji: '⛔', hint: 'negative answer · pair with "kein" / "nicht"',     example: 'Bist du müde? — Nein, ich bin nicht müde.',           exampleEn: 'Are you tired? — No, I am not tired.' },
-      // 🔁 The doch trick — THE day-16 teaching point
-      { de: 'doch',       en: 'yes (contradicting a negative)',   emoji: '🔁', hint: '⭐ used ONLY to contradict a "nicht/kein" question', example: 'Bist du nicht müde? — Doch! Ich bin sehr müde.',    exampleEn: 'Aren\'t you tired? — Yes I am! I am very tired.' },
-      // 🤷 The hedged answer
-      { de: 'vielleicht', en: 'maybe',                            emoji: '🤷', hint: 'often leads the sentence · V2 inversion!',           example: 'Vielleicht komme ich morgen.',                        exampleEn: 'Maybe I will come tomorrow.' },
-      // 👍 The enthusiastic yes
-      { de: 'natürlich',  en: 'of course',                        emoji: '👍', hint: 'literally "naturally" · stronger than just "ja"',    example: 'Sprichst du Deutsch? — Natürlich!',                   exampleEn: 'Do you speak German? — Of course!' },
-      // ✔️ The certain yes
-      { de: 'sicher',     en: 'sure / certainly',                 emoji: '✔️', hint: 'also means "safe" · context makes it clear',         example: 'Bist du sicher? — Ja, ganz sicher.',                  exampleEn: 'Are you sure? — Yes, completely sure.' },
+      // ✅ POSITIVE ANSWERS — from neutral to enthusiastic to polite
+      { de: 'ja',           en: 'yes',                       emoji: '✅', hint: 'simple yes · neutral',                          example: 'Hast du Zeit? — Ja.',                                  exampleEn: 'Do you have time? — Yes.' },
+      { de: 'natürlich',    en: 'of course',                 emoji: '👍', hint: 'lit. "naturally" · stronger than just "ja"',     example: 'Sprichst du Deutsch? — Natürlich!',                    exampleEn: 'Do you speak German? — Of course!' },
+      { de: 'sicher',       en: 'certainly / sure',          emoji: '✔️', hint: 'also means "safe" · context makes it clear',     example: 'Bist du sicher? — Ja, ganz sicher.',                   exampleEn: 'Are you sure? — Yes, completely sure.' },
+      { de: 'klar',         en: 'sure / clear',              emoji: '💯', hint: 'casual everyday "yeah, sure"',                   example: 'Kommst du mit? — Klar!',                               exampleEn: 'Coming along? — Sure!' },
+      { de: 'ja, gerne',    en: 'yes, gladly',               emoji: '❤️', hint: 'warm acceptance · polite YES to an invitation',  example: 'Möchtest du Kaffee? — Ja, gerne.',                     exampleEn: 'Would you like coffee? — Yes, gladly.' },
+      { de: 'ja, bitte',    en: 'yes please',                emoji: '🙏', hint: 'accepting an offer politely',                    example: 'Noch ein Stück Kuchen? — Ja, bitte.',                  exampleEn: 'Another piece of cake? — Yes please.' },
+
+      // ⛔ NEGATIVE ANSWERS — from neutral to soft to absolute
+      { de: 'nein',         en: 'no',                        emoji: '⛔', hint: 'simple no · neutral',                            example: 'Bist du müde? — Nein.',                                exampleEn: 'Are you tired? — No.' },
+      { de: 'nein, danke',  en: 'no thank you',              emoji: '🙅', hint: 'polite refusal',                                 example: 'Möchtest du Tee? — Nein, danke.',                      exampleEn: 'Would you like tea? — No thank you.' },
+      { de: 'leider nicht', en: 'unfortunately not',         emoji: '😔', hint: 'soft no · regretful',                            example: 'Hast du Zeit? — Leider nicht.',                        exampleEn: 'Do you have time? — Unfortunately not.' },
+      { de: 'gar nicht',    en: 'not at all',                emoji: '🚫', hint: 'reinforced no · "not in the slightest"',         example: 'Bist du müde? — Gar nicht.',                           exampleEn: 'Are you tired? — Not at all.' },
+      { de: 'auf keinen Fall', en: 'no way / under no circumstances', emoji: '❌', hint: 'strongest no possible',                 example: 'Möchtest du das? — Auf keinen Fall!',                  exampleEn: 'Do you want that? — No way!' },
+
+      // 🔁 THE DOCH TRICK — Day-16 keystone
+      { de: 'doch',         en: 'yes (contradicting a negative)', emoji: '🔁', hint: '⭐ used ONLY to contradict a nicht/kein question · German has NO English equivalent', example: 'Bist du nicht müde? — Doch! Ich bin sehr müde.',  exampleEn: 'Aren\'t you tired? — Yes I am! I am very tired.' },
+
+      // 🤷 HEDGED ANSWERS — when you\'re not sure
+      { de: 'vielleicht',   en: 'maybe',                     emoji: '🤷', hint: 'often leads the sentence → V2 inversion!',       example: 'Vielleicht komme ich morgen.',                         exampleEn: 'Maybe I will come tomorrow.' },
+      { de: 'ich denke ja', en: 'I think so',                emoji: '💭', hint: 'leaning yes · uncertain',                        example: 'Kommt er? — Ich denke ja.',                            exampleEn: 'Is he coming? — I think so.' },
+      { de: 'ich glaube nicht', en: 'I don\'t think so',     emoji: '🤨', hint: 'leaning no · uncertain',                         example: 'Hat er Zeit? — Ich glaube nicht.',                     exampleEn: 'Does he have time? — I don\'t think so.' },
+
+      // ❓ SEIN QUESTIONS — verb to slot 1
+      { de: 'Bist du …?',   en: 'Are you …? (informal)',     emoji: '🟦', hint: '🔁 Day 5 · sein flipped to slot 1',              example: 'Bist du müde?',                                        exampleEn: 'Are you tired?' },
+      { de: 'Ist das …?',   en: 'Is that …?',                emoji: '👉', hint: 'pointing question · super common opener',        example: 'Ist das dein Buch?',                                   exampleEn: 'Is that your book?' },
+      { de: 'Sind Sie …?',  en: 'Are you …? (formal)',       emoji: '🤝', hint: '🔁 Day 3 · formal Sie · always capital S',       example: 'Sind Sie Herr Schmidt?',                               exampleEn: 'Are you Mr Schmidt?' },
+
+      // ❓ HABEN QUESTIONS
+      { de: 'Hast du …?',   en: 'Do you have …?',            emoji: '🟩', hint: '🔁 Day 6 · haben flipped',                       example: 'Hast du Zeit?',                                        exampleEn: 'Do you have time?' },
+      { de: 'Haben Sie …?', en: 'Do you have …? (formal)',   emoji: '💼', hint: 'formal Sie + haben',                             example: 'Haben Sie eine Frage?',                                exampleEn: 'Do you have a question?' },
+
+      // ❓ MODAL QUESTIONS — the polite asks (Week 5 preview)
+      { de: 'Möchtest du …?', en: 'Would you like …?',       emoji: '☕', hint: 'most polite invitation form · Week 5 preview',    example: 'Möchtest du einen Kaffee?',                            exampleEn: 'Would you like a coffee?' },
+      { de: 'Kannst du …?',  en: 'Can you …?',               emoji: '💪', hint: 'asking for help / ability',                      example: 'Kannst du mir helfen?',                                exampleEn: 'Can you help me?' },
+      { de: 'Magst du …?',   en: 'Do you like …?',           emoji: '😍', hint: 'asking about preference',                        example: 'Magst du Pizza?',                                      exampleEn: 'Do you like pizza?' },
+
+      // 🧩 YES/NO QUESTION WITH SEPARABLE VERB — the sandwich still works
+      { de: 'Stehst du … auf?', en: 'Do you get up …?',      emoji: '⏰', hint: '🔁 Day 12 · prefix STILL at END in questions',   example: 'Stehst du früh auf?',                                  exampleEn: 'Do you get up early?' },
+      { de: 'Kommst du mit?',   en: 'Are you coming along?', emoji: '👫', hint: '🔁 Day 12 · mit- flies to end',                  example: 'Kommst du mit ins Kino?',                              exampleEn: 'Are you coming along to the cinema?' },
+      { de: 'Rufst du … an?',   en: 'Will you call …?',      emoji: '📞', hint: '🔁 Day 12 · an- flies to end',                   example: 'Rufst du mich heute an?',                              exampleEn: 'Will you call me today?' },
     ],
     grammar: [
-      { rule: 'Word-order flip',
+      { rule: '⭐ THE VERB-FIRST FLIP — yes/no questions in one rule',
         body:
-          'Statement → question = swap subject and verb:\n' +
-          '  Du bist müde.            → Bist du müde?\n' +
-          '  Sie hat Hunger.          → Hat sie Hunger?\n' +
-          '  Wir wohnen in Berlin.    → Wohnen wir in Berlin?\n' +
-          'No "do" required — German has no helper for questions.',
+          'To make a yes/no question, the conjugated verb moves to SLOT 1.\n' +
+          'Subject and verb just swap places — no "do" helper like English.\n\n' +
+          '  Statement                       Question\n' +
+          '  ─────────                       ────────\n' +
+          '  Du   bist müde.            →    Bist du müde?\n' +
+          '  Sie  hat  Hunger.          →    Hat sie Hunger?\n' +
+          '  Wir  wohnen in Berlin.     →    Wohnen wir in Berlin?\n' +
+          '  Er   kommt aus Indien.     →    Kommt er aus Indien?\n' +
+          '  Sie  sprechen Deutsch.     →    Sprechen Sie Deutsch?\n\n' +
+          'No "tust du …?" — German never uses "do" as a helper. The main verb is enough.',
       },
-      { rule: 'Three ways to answer',
+      { rule: '⭐ THREE ANSWER PARTICLES — ja · nein · DOCH',
         body:
-          'Ja — yes (positive answer to a positive question).\n' +
-          'Nein — no.\n' +
-          'Doch — yes! (used to contradict a negative question)\n' +
-          '  Bist du nicht müde? — Doch! (yes I am — contradicting "not")',
+          'ja   — yes  → answer to a POSITIVE question.\n' +
+          '         "Bist du müde?" — Ja, ich bin müde.\n\n' +
+          'nein — no   → negative answer to any question.\n' +
+          '         "Bist du müde?" — Nein, ich bin nicht müde.\n\n' +
+          '⭐ DOCH — the killer particle. Use ONLY to contradict a NEGATIVE question.\n' +
+          '         "Bist du NICHT müde?" — Doch! (= yes I AM, despite your "not")\n' +
+          '         "Hast du KEIN Geld?"  — Doch! (= yes I do have money)\n\n' +
+          'English has no single word for this — that\'s why doch is special. If you say "ja" to a negative question, Germans get confused. Train yourself: a "nicht" or "kein" in the question → reach for DOCH.',
       },
-      { rule: 'Separable verbs in a question',
+      { rule: '⚠ SEPARABLE VERBS — the prefix STILL flies to the end',
         body:
-          'The prefix STILL goes to the end:\n' +
-          '  Stehst du um 7 Uhr auf?\n' +
-          '  Kaufen wir am Samstag ein?',
+          'In a yes/no question the conjugated stem goes to slot 1, but the prefix STILL lands at the very end — exactly like a statement.\n\n' +
+          '  Statement                            Question\n' +
+          '  ─────────                            ────────\n' +
+          '  Du stehst um 7 Uhr AUF.         →    Stehst du um 7 Uhr AUF?\n' +
+          '  Wir kaufen am Samstag EIN.      →    Kaufen wir am Samstag EIN?\n' +
+          '  Sie ruft mich heute AN.         →    Ruft sie mich heute AN?\n' +
+          '  Er fängt um 8 Uhr AN.           →    Fängt er um 8 Uhr AN?\n\n' +
+          'Rule of thumb: stem at the FRONT, prefix at the BACK — everything else in the middle. The sandwich still works.',
+      },
+      { rule: '⭐ POLITE YES/NO QUESTIONS — möchten · können · mögen',
+        body:
+          'These three modal verbs make yes/no questions sound polite. They\'re Week 5 grammar but you can use them as ready-made phrases NOW.\n\n' +
+          '  Möchtest du …?  — Would you like …?         (most polite invitation)\n' +
+          '                    Möchtest du einen Kaffee?\n' +
+          '  Möchten Sie …?  — Would you like …? (formal)\n' +
+          '                    Möchten Sie eine Frage?\n' +
+          '  Kannst du …?    — Can you …? (ability / favour)\n' +
+          '                    Kannst du mir helfen?\n' +
+          '  Magst du …?     — Do you like …?\n' +
+          '                    Magst du Pizza?\n\n' +
+          'Polite tip: "Möchtest du …?" never offends. "Willst du …?" sounds blunt — save it for close friends.',
+      },
+      { rule: '🚦 ANSWER MENU — pick the right register',
+        body:
+          'Match the energy of the question:\n\n' +
+          '  Strong yes  : Natürlich! · Klar! · Sicher!\n' +
+          '  Neutral yes : Ja.\n' +
+          '  Polite yes  : Ja, gerne. · Ja, bitte.\n' +
+          '  Hedged      : Vielleicht. · Ich denke ja. · Ich glaube nicht.\n' +
+          '  Neutral no  : Nein.\n' +
+          '  Polite no   : Nein, danke. · Leider nicht.\n' +
+          '  Strong no   : Gar nicht. · Auf keinen Fall.\n' +
+          '  Contradict-the-negative : DOCH!\n\n' +
+          'Tip: in everyday speech Germans often just say the particle alone ("Ja." / "Doch." / "Nein.") and trust context. Repeating the full sentence (Ja, ich habe Zeit.) is polite but optional.',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — answer registers + statement→question + question→answer
+      { type: 'match',
+        pairs: [
+          { de: 'Klar!',           en: '✅ strong casual yes' },
+          { de: 'Ja, gerne.',      en: '✅ polite warm yes' },
+          { de: 'Vielleicht.',     en: '🤷 hedged maybe' },
+          { de: 'Nein, danke.',    en: '⛔ polite refusal' },
+          { de: 'Gar nicht.',      en: '🚫 emphatic NO' },
+          { de: 'Doch!',           en: '🔁 contradicting a NEGATIVE question' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Du bist müde.',          en: 'Bist du müde?' },
+          { de: 'Sie hat Hunger.',         en: 'Hat sie Hunger?' },
+          { de: 'Wir wohnen in Berlin.',   en: 'Wohnen wir in Berlin?' },
+          { de: 'Er spricht Deutsch.',     en: 'Spricht er Deutsch?' },
+          { de: 'Du stehst um 7 auf.',     en: 'Stehst du um 7 auf?' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Möchtest du einen Kaffee?',     en: 'Ja, gerne.' },
+          { de: 'Bist du nicht müde?',           en: 'Doch! Ich bin sehr müde.' },
+          { de: 'Hast du Zeit am Wochenende?',   en: 'Leider nicht.' },
+          { de: 'Sprichst du Deutsch?',          en: 'Natürlich!' },
+          { de: 'Magst du Spinat?',              en: 'Auf keinen Fall!' },
+        ],
+      },
+
+      // ⭐ 6 BUILD-THE-QUESTION fill-blanks (the verb-first flip in action)
       { type: 'fill-blank', sentence: 'Statement: "Du bist müde." → Question: "__ du müde?"', answer: 'Bist' },
       { type: 'fill-blank', sentence: 'Statement: "Sie hat Hunger." → Question: "__ sie Hunger?"', answer: 'Hat' },
       { type: 'fill-blank', sentence: 'Statement: "Wir wohnen in Berlin." → Question: "__ wir in Berlin?"', answer: 'Wohnen' },
       { type: 'fill-blank', sentence: 'Statement: "Er kommt aus Indien." → Question: "__ er aus Indien?"', answer: 'Kommt' },
-      { type: 'fill-blank', sentence: 'Statement: "Ich kann Deutsch." → Question: "__ du Deutsch?"', answer: 'Kannst' },
-      { type: 'fill-blank', sentence: 'With separable verb: "Du stehst um 7 Uhr auf." → Question: "__ du um 7 Uhr __?"', answer: 'Stehst auf' },
-      { type: 'multiple-choice', q: '"Bist du nicht müde?" — Yes I am! (contradicting). Pick the right answer.',
-        options: ['Ja!','Nein!','Doch!','Vielleicht!'], answer: 'Doch!' },
+      { type: 'fill-blank', sentence: 'Statement: "Du sprichst Deutsch." → Question: "__ du Deutsch?"', answer: 'Sprichst' },
+      { type: 'fill-blank', sentence: 'Formal — "Sie haben eine Frage." → Question: "__ Sie eine Frage?"', answer: 'Haben' },
+
+      // ⭐ 3 SEPARABLE-VERB QUESTION fill-blanks (the sandwich survives)
+      { type: 'fill-blank', sentence: '🧩 "Du stehst um 7 Uhr auf." → Question: "__ du um 7 Uhr __?"', answer: 'Stehst auf' },
+      { type: 'fill-blank', sentence: '🧩 "Wir kaufen am Samstag ein." → Question: "__ wir am Samstag __?"', answer: 'Kaufen ein' },
+      { type: 'fill-blank', sentence: '🧩 "Sie ruft mich heute an." → Question: "__ sie mich heute __?"', answer: 'Ruft an' },
+
+      // ⭐ 4 DOCH-vs-JA-vs-NEIN MCQs (the day\'s killer particle)
+      { type: 'multiple-choice', q: '"Bist du nicht müde?" — Yes I AM! (contradicting). Pick the right answer.',
+        options: ['Ja!','Nein!','Doch!','Vielleicht!'], answer: 'Doch!',
+        explain: '"nicht" in the question → answer with DOCH to contradict it.' },
+      { type: 'multiple-choice', q: '"Hast du kein Geld?" — Yes, I DO have money. Pick the right answer.',
+        options: ['Ja!','Doch!','Nein!','Klar!'], answer: 'Doch!',
+        explain: '"kein" makes the question negative, so the contradicting yes is DOCH.' },
+      { type: 'multiple-choice', q: '"Sprichst du Deutsch?" — Yes, I do. The neutral answer is:',
+        options: ['Doch!','Ja.','Nein.','Vielleicht.'], answer: 'Ja.',
+        explain: 'The question is POSITIVE, so a plain "Ja" works. Doch is only for negative questions.' },
+      { type: 'multiple-choice', q: '"Hast du Hunger?" — No, not at all. Strongest no:',
+        options: ['Nein, danke.','Vielleicht.','Gar nicht.','Doch.'], answer: 'Gar nicht.' },
+
+      // ⚠ 3 SPOT-THE-ERROR MCQs (verb position + doch misuse + separable prefix)
+      { type: 'multiple-choice', q: '⚠ Which is the CORRECT yes/no question for "Wir gehen ins Kino"?',
+        options: ['Wir gehen ins Kino?','Gehen wir ins Kino?','Ins Kino wir gehen?','Tun wir ins Kino gehen?'], answer: 'Gehen wir ins Kino?',
+        explain: 'The verb MUST move to slot 1. German has no "do/tun" helper.' },
+      { type: 'multiple-choice', q: '⚠ "Bist du müde?" — Yes I am. WRONG answer is:',
+        options: ['Ja, ich bin müde.','Ja.','Doch.','Klar.'], answer: 'Doch.',
+        explain: 'The question is POSITIVE → "doch" is wrong here. Use doch ONLY when the question contains nicht or kein.' },
+      { type: 'multiple-choice', q: '⚠ "Du stehst früh auf." → Yes/No question. Which is correct?',
+        options: ['Du stehst früh auf?','Stehst du früh auf?','Aufstehst du früh?','Stehst auf du früh?'], answer: 'Stehst du früh auf?',
+        explain: 'Only the STEM moves to slot 1. The prefix "auf" still flies to the very end.' },
+
+      // ❓ 2 POLITE-FORM MCQs (möchten vs willst register)
+      { type: 'multiple-choice', q: 'Politest way to offer coffee:',
+        options: ['Willst du Kaffee?','Möchtest du einen Kaffee?','Hast du Kaffee?','Trinkst du Kaffee?'], answer: 'Möchtest du einen Kaffee?',
+        explain: '"Möchtest du …?" is the polite invitation. "Willst du …?" sounds blunt to strangers.' },
+      { type: 'multiple-choice', q: 'Formal yes/no question for "Sprechen Sie Deutsch":',
+        options: ['Sprechen Sie Deutsch?','Sprichst du Deutsch?','Du Deutsch sprichst?','Tun Sie Deutsch sprechen?'], answer: 'Sprechen Sie Deutsch?' },
+
+      // ⭐ 2 NEGATIVE-QUESTION → DOCH fill-blanks
+      { type: 'fill-blank', sentence: '"Hast du nicht Zeit?" — (yes I do, contradicting!) → "__!"', answer: 'Doch' },
+      { type: 'fill-blank', sentence: '"Bist du kein Lehrer?" — (yes I am, contradicting!) → "__!"', answer: 'Doch' },
+
+      // 💬 Dialogue — verb-first + doch + möchten + separable
       { type: 'dialogue', lines: [
         { speaker: 'A', de: 'Hast du Zeit am Wochenende?',          en: 'Do you have time on the weekend?' },
         { speaker: 'B', de: 'Ja, ich habe Zeit.',                   en: 'Yes, I have time.' },
         { speaker: 'A', de: 'Möchtest du ins Restaurant gehen?',    en: 'Would you like to go to the restaurant?' },
-        { speaker: 'B', de: 'Vielleicht. Bist du nicht müde?',      en: 'Maybe. Are you not tired?' },
-        { speaker: 'A', de: 'Doch, aber ich möchte trotzdem essen.', en: 'Yes (I am), but I still want to eat.' },
+        { speaker: 'B', de: 'Ja, gerne. Stehst du auch früh auf?',  en: 'Yes, gladly. Do you also get up early?' },
+        { speaker: 'A', de: 'Doch, ich stehe immer um 7 Uhr auf.',  en: 'Yes (despite your assumption), I always get up at 7.' },
+        { speaker: 'B', de: 'Klar. Rufst du mich morgen an?',       en: 'Sure. Will you call me tomorrow?' },
+        { speaker: 'A', de: 'Natürlich!',                           en: 'Of course!' },
       ]},
     ],
     quiz: [
+      { type: 'multiple-choice', q: 'Where does the conjugated verb go in a yes/no question?',
+        options: ['Position 1','Position 2','Position 3','At the end'], answer: 'Position 1' },
+      { type: 'multiple-choice', q: '"Bist du nicht müde?" — Yes I AM! Correct contradicting answer:',
+        options: ['Ja','Nein','Doch','Vielleicht'], answer: 'Doch',
+        explain: 'A negative question (nicht/kein) is contradicted with DOCH.' },
       { type: 'fill-blank', sentence: 'Make the question: "Sie spricht Deutsch." → "__ sie Deutsch?"', answer: 'Spricht' },
-      { type: 'multiple-choice', q: 'Where does the verb go in a yes/no question?', options: ['Position 1','Position 2','Position 3','At the end'], answer: 'Position 1' },
+      { type: 'fill-blank', sentence: '🧩 Separable verb question: "Du stehst um 7 auf." → "__ du um 7 __?"', answer: 'Stehst auf' },
+      { type: 'multiple-choice', q: 'Politest yes/no offer for "Would you like tea?":',
+        options: ['Willst du Tee?','Möchtest du Tee?','Hast du Tee?','Tee du möchtest?'], answer: 'Möchtest du Tee?' },
+      { type: 'multiple-choice', q: '"Sprichst du Deutsch?" — Yes I do. Most NATURAL answer:',
+        options: ['Doch.','Ja.','Vielleicht.','Auf keinen Fall.'], answer: 'Ja.',
+        explain: 'Positive question → plain "Ja" works.' },
+      { type: 'fill-blank', sentence: 'Strongest "no way" answer to "Möchtest du das?" — "__ keinen __!"', answer: 'Auf Fall' },
     ],
   },
 

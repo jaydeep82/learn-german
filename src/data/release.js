@@ -11,10 +11,31 @@
  * in sync.
  */
 
-export const VERSION = '3.7.4';
+export const VERSION = '3.7.5';
 export const RELEASE_DATE = '2026-05-28';
 
 export const RELEASES = [
+  {
+    version: '3.7.5',
+    date: '2026-05-28',
+    type: 'improvement',
+    title: 'Day 16 review — yes/no questions, the doch trick, polite forms',
+    notes: [
+      'Reviewed Week 3 · Day 16 (Yes/No questions) end-to-end, parallel to the Day 14 full review (v3.3.7). The previous version had 6 vocab items, 3 grammar bullets and 8 mostly-fill-blank exercises. Reshaped around the verb-first flip, the doch keystone, and a polite-form preview of Week 5 modals.',
+      'Vocabulary 6 → 26 items, grouped by role icon (✅ positive answers · ⛔ negative answers · 🔁 doch · 🤷 hedged · ❓ sein/haben questions · ❓ modal questions · 🧩 separable-verb questions). Added the full ANSWER MENU from neutral to enthusiastic to polite to absolute — Klar! · Ja, gerne · Ja, bitte · Nein, danke · Leider nicht · Gar nicht · Auf keinen Fall · Ich denke ja · Ich glaube nicht — so learners can match register, not just say ja/nein. Added 8 ready-made question STARTERS as phrases: Bist du …? · Ist das …? · Sind Sie …? · Hast du …? · Haben Sie …? · Möchtest du …? · Kannst du …? · Magst du …? — pluggable into any noun. Added 3 separable-verb question phrases (Stehst du … auf? · Kommst du mit? · Rufst du … an?) so the sandwich rule is right there in the vocab.',
+      'Grammar 3 → 5 callouts: ⭐ THE VERB-FIRST FLIP with a 5-row side-by-side statement-vs-question table · ⭐ THREE ANSWER PARTICLES (ja · nein · DOCH) with explicit "doch only contradicts a nicht/kein question" rule and worked English-has-no-equivalent explanation · ⚠ SEPARABLE VERBS in questions — prefix STILL flies to the end with 4 statement-vs-question pairs · ⭐ POLITE YES/NO QUESTIONS with möchten · können · mögen (Week 5 preview as ready-made phrases) including the möchtest-vs-willst register tip · 🚦 ANSWER MENU — pick the right register (strong/neutral/polite/hedged yes; neutral/polite/strong no; the doch slot).',
+      'Exercises completely reshaped (8 → 22 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: answer → register (6 pairs) · statement → question (5 pairs) · question → most-likely answer (5 pairs).',
+      '• 6 ⭐ BUILD-THE-QUESTION fill-blanks covering sein/haben/wohnen/kommen/sprechen + 1 formal-Sie haben.',
+      '• 3 🧩 SEPARABLE-VERB question fill-blanks (aufstehen · einkaufen · anrufen) — both stem AND prefix slots.',
+      '• 4 ⭐ DOCH-vs-JA-vs-NEIN MCQs including the "Hast du KEIN Geld? — Doch!" case and the "Hast du Hunger? — Gar nicht" strongest-no contrast.',
+      '• 3 ⚠ SPOT-THE-ERROR MCQs: no-tun-helper · doch-misuse-after-positive-question · separable-prefix-must-stay-at-end.',
+      '• 2 polite-form MCQs (möchten vs willst register · formal-Sie question).',
+      '• 2 ⭐ NEGATIVE-QUESTION → DOCH fill-blanks (one with nicht, one with kein).',
+      '• 💬 Mini dialogue weaving in verb-first questions, doch, möchten, klar, separable verb (aufstehen + anrufen) in a real chat.',
+      'Quiz 2 → 7 items: verb position, doch-contradicting, statement-flip, separable-question flip, möchten-politeness, ja-vs-doch register, "Auf keinen Fall" strongest-no fill-blank.',
+    ],
+  },
   {
     version: '3.7.4',
     date: '2026-05-28',
