@@ -11,10 +11,30 @@
  * in sync.
  */
 
-export const VERSION = '3.7.5';
+export const VERSION = '3.7.6';
 export const RELEASE_DATE = '2026-05-28';
 
 export const RELEASES = [
+  {
+    version: '3.7.6',
+    date: '2026-05-28',
+    type: 'improvement',
+    title: 'Day 17 review — W-questions, the wo-triple, welcher gender, was-für',
+    notes: [
+      'Reviewed Week 3 · Day 17 (W-questions) end-to-end, parallel to the Day 14 / Day 16 full reviews. The previous version had 11 W-words, 3 brief grammar bullets and 10 mostly-fill-blank exercises. Reshaped around the W-word + V2 pattern, the wo/wohin/woher triple decision, the gender-matched welcher trio, and the was-für vs welcher distinction.',
+      'Vocabulary 11 → 25 items grouped by role icon. Kept the 11 core W-words and added: 🤔 wieso (the spoken-German favourite for "warum"), 🟣 welche (f) and 🟢 welches (n) so all three genders are explicitly listed, and 12 ready-made W-question phrases that learners can drop straight into a conversation: 🪪 Wie heißt du? · 🤝 Wie heißen Sie? · 👋 Wie geht\'s? · 🎂 Wie alt bist du? · 👉 Was ist das? · 🧑 Wer ist das? · 🗺️ Wo ist …? · 💶 Wie viel kostet das? · 🤷 Warum nicht? · 🎁 Was für (ein) …?',
+      'Grammar 3 → 5 callouts: ⭐ THE W-QUESTION PATTERN with a 7-row slot table (W-word in slot 1, verb in slot 2, subject in slot 3, the rest after) · ⭐ ⚠ THE WO TRIPLE — wo (location · sein/wohnen/bleiben), wohin (destination · gehen/fahren), woher (origin · aus …) with explicit verb-pairing rules · 🔵 WELCHER gender-matched table (welcher/welche/welches/welche — same endings as der/die/das/die) with the "rhymes-with-the-article" mnemonic · ⚠ WAS FÜR vs WELCHER — kind/type (open-ended) vs which-specific (from a known set) with worked examples · 🚦 common pitfalls + spoken shortcuts (wieso for warum · Warum nicht? as polite acceptance · no tun-helper).',
+      'Exercises completely reshaped (10 → 22 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: W-word → meaning (8 pairs) · wo-triple → context (5 pairs) · English question → German W-question (6 pairs).',
+      '• 7 ⭐ BUILD-THE-W-QUESTION fill-blanks covering wer/wie/was/wann/warum/wie viel/wie viele.',
+      '• 4 ⭐ WO/WOHIN/WOHER fill-blanks (the day\'s killer pair) — including fahren and gehen movement verbs.',
+      '• 3 🔵 WELCHER gender-MCQs (m/f/n with Tisch/Tasche/Buch).',
+      '• 3 ⚠ SPOT-THE-ERROR MCQs: wo-vs-wohin movement, wer-vs-was for people, V2 word-order violation (wann du kommst ✗).',
+      '• 2 WAS-FÜR vs WELCHER MCQs (type vs specific choice).',
+      '• 💬 Mini dialogue extended to 12 lines sweeping all 7 W-words plus welches and wie viel in a real Q&A flow.',
+      'Quiz 2 → 7 items: was-fill, wo-vs-wohin, welcher gender, wie-viele plural, was-für, V2 order violation, wieso as spoken-warum.',
+    ],
+  },
   {
     version: '3.7.5',
     date: '2026-05-28',

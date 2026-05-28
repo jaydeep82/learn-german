@@ -3759,69 +3759,212 @@ export const days = [
   /* ----- Day 17: W-questions (slide 76 — 10 W-words) ----- */
   {
     id: 17, week: 3,
+    vocabLayout: 'spotlight',
     title: 'W-questions',
     titleDe: 'W-Fragen',
     emoji: '🔍',
-    objective: 'Ask questions starting with WHO, WHAT, WHERE, WHEN, WHY, HOW.',
-    intro: 'A W-question opens with a question word, then the verb, then everything else. "Wer bist du? Wo wohnst du? Wann kommst du?"',
+    objective: 'Open ANY question with a W-word — who · what · where (at/to/from) · when · why · how · which — keeping the verb glued to slot 2.',
+    intro: 'A W-question starts with a question word in slot 1, then the verb in slot 2, then the subject, then everything else. "Wer bist du? Wo wohnst du? Wann kommst du?" The verb-2 rule from Day 9 still rules — the W-word just fills slot 1.',
     vocabulary: [
-      { de: 'wer',     en: 'who' },
-      { de: 'was',     en: 'what' },
-      { de: 'wo',      en: 'where (at)' },
-      { de: 'wohin',   en: 'where to' },
-      { de: 'woher',   en: 'where from' },
-      { de: 'wann',    en: 'when' },
-      { de: 'warum',   en: 'why' },
-      { de: 'wie',     en: 'how' },
-      { de: 'welcher', en: 'which (m / der-words)' },
-      { de: 'wie viel',  en: 'how much' },
-      { de: 'wie viele', en: 'how many' },
+      // 🔤 THE CORE W-WORDS (the 12 you actually use every day)
+      { de: 'wer',       en: 'who',                        emoji: '🧑',  hint: 'asks about a PERSON · "Wer ist das?"',                example: 'Wer kommt heute Abend?',          exampleEn: 'Who is coming this evening?' },
+      { de: 'was',       en: 'what',                       emoji: '🎯',  hint: 'asks about a THING / action',                          example: 'Was machst du heute?',            exampleEn: 'What are you doing today?' },
+      { de: 'wo',        en: 'where (at)',                 emoji: '📍',  hint: '⭐ no movement · location',                            example: 'Wo wohnst du?',                   exampleEn: 'Where do you live?' },
+      { de: 'wohin',     en: 'where to',                   emoji: '➡️',  hint: '⭐ movement AWAY · destination',                       example: 'Wohin gehst du?',                  exampleEn: 'Where are you going?' },
+      { de: 'woher',     en: 'where from',                 emoji: '🌍',  hint: '⭐ origin · pairs with "aus …"',                       example: 'Woher kommst du?',                 exampleEn: 'Where do you come from?' },
+      { de: 'wann',      en: 'when',                       emoji: '🕐',  hint: 'asks about TIME',                                     example: 'Wann kommst du nach Hause?',       exampleEn: 'When are you coming home?' },
+      { de: 'warum',     en: 'why',                        emoji: '❔',  hint: 'asks for a REASON · answer with "weil …"',            example: 'Warum lernst du Deutsch?',         exampleEn: 'Why are you learning German?' },
+      { de: 'wieso',     en: 'why (more conversational)',  emoji: '🤔',  hint: 'spoken-German favourite · same meaning as warum',     example: 'Wieso bist du müde?',              exampleEn: 'Why are you tired?' },
+      { de: 'wie',       en: 'how',                        emoji: '❓',  hint: 'also covers "what" in name/greeting questions',       example: 'Wie heißt du?',                    exampleEn: 'What is your name?' },
+      { de: 'welcher',   en: 'which (m / der-words)',      emoji: '🔵',  hint: '⭐ changes by gender · welcher/welche/welches',         example: 'Welcher Tisch ist neu?',           exampleEn: 'Which table is new?' },
+      { de: 'wie viel',  en: 'how much',                   emoji: '💶',  hint: 'singular (uncountable / money)',                      example: 'Wie viel kostet das Brot?',        exampleEn: 'How much does the bread cost?' },
+      { de: 'wie viele', en: 'how many',                   emoji: '🔢',  hint: 'plural (countable things)',                           example: 'Wie viele Bücher hast du?',        exampleEn: 'How many books do you have?' },
+
+      // 🎯 READY-MADE W-QUESTION PHRASES (drop in and use)
+      { de: 'Wie heißt du?',         en: 'What\'s your name? (informal)', emoji: '🪪',  hint: '🔁 Day 14 · NOT "Wie ist dein Name?"',          example: 'Wie heißt du? — Ich heiße Anna.',    exampleEn: 'What\'s your name? — My name is Anna.' },
+      { de: 'Wie heißen Sie?',       en: 'What\'s your name? (formal)',   emoji: '🤝',  hint: 'formal Sie · always capital S',                example: 'Wie heißen Sie? — Mein Name ist Anna.', exampleEn: 'What\'s your name? — My name is Anna.' },
+      { de: 'Wie geht\'s?',          en: 'How\'s it going?',              emoji: '👋',  hint: 'short for "Wie geht es dir?" · greeting',      example: 'Wie geht\'s? — Gut, danke!',         exampleEn: 'How are you? — Good, thanks!' },
+      { de: 'Wie alt bist du?',      en: 'How old are you?',              emoji: '🎂',  hint: '🔁 Day 14 · uses sein, not haben',             example: 'Wie alt bist du? — Ich bin 25.',      exampleEn: 'How old are you? — I am 25.' },
+      { de: 'Was ist das?',          en: 'What is that?',                 emoji: '👉',  hint: 'pointing question · super common',             example: 'Was ist das? — Das ist ein Buch.',    exampleEn: 'What is that? — That is a book.' },
+      { de: 'Wer ist das?',          en: 'Who is that?',                  emoji: '🧑',  hint: 'pointing at a person',                         example: 'Wer ist das? — Das ist mein Freund.', exampleEn: 'Who is that? — That is my friend.' },
+      { de: 'Wo ist …?',             en: 'Where is …?',                   emoji: '🗺️', hint: 'location question · trains, bathrooms…',       example: 'Wo ist der Bahnhof?',                 exampleEn: 'Where is the train station?' },
+      { de: 'Wie viel kostet das?',  en: 'How much does that cost?',      emoji: '💶',  hint: 'shopping essential',                           example: 'Wie viel kostet das Brot?',           exampleEn: 'How much does the bread cost?' },
+      { de: 'Warum nicht?',          en: 'Why not?',                      emoji: '🤷',  hint: 'one-word comeback · accepting an invite',      example: 'Möchtest du Kaffee? — Warum nicht?',  exampleEn: 'Would you like coffee? — Why not?' },
+      { de: 'Was für (ein) …?',      en: 'What kind of …?',               emoji: '🎁',  hint: '⚠ different from welcher · asks the TYPE',     example: 'Was für ein Buch liest du?',           exampleEn: 'What kind of book are you reading?' },
+
+      // 🔵 WELCHER tri-form (which: m / f / n)
+      { de: 'welche',                en: 'which (f · die-words)',         emoji: '🟣',  hint: '⭐ feminine ending -e',                        example: 'Welche Tasche ist neu?',               exampleEn: 'Which bag is new?' },
+      { de: 'welches',               en: 'which (n · das-words)',         emoji: '🟢',  hint: '⭐ neuter ending -es',                         example: 'Welches Buch liest du?',               exampleEn: 'Which book are you reading?' },
     ],
     grammar: [
-      { rule: 'Pattern: W-word · verb · subject · …',
+      { rule: '⭐ THE W-QUESTION PATTERN — W-word · verb · subject · …',
         body:
-          'Wer ist das?           — Who is that?\n' +
-          'Wo wohnst du?          — Where do you live?\n' +
-          'Wann kommst du?        — When are you coming?\n' +
-          'Warum lernst du Deutsch? — Why are you learning German?\n' +
-          'Wie heißt du?          — What is your name?',
+          'A W-question fills slot 1 with the W-word, slot 2 with the conjugated verb, slot 3 with the subject. The V2 rule from Day 9 still rules — the W-word just IS slot 1.\n\n' +
+          '  Slot 1     Slot 2  Slot 3   …\n' +
+          '  ──────     ──────  ──────   ─────\n' +
+          '  Wer        ist     das?\n' +
+          '  Was        machst  du       heute?\n' +
+          '  Wo         wohnst  du?\n' +
+          '  Wann       kommst  du       nach Hause?\n' +
+          '  Warum      lernst  du       Deutsch?\n' +
+          '  Wie        heißt   du?\n' +
+          '  Wie viel   kostet  das?\n\n' +
+          'No "do" helper — German never says "Was tust du machen?" The conjugated verb does all the work.',
       },
-      { rule: 'wo / wohin / woher',
+      { rule: '⭐ ⚠ THE WO TRIPLE — wo · wohin · woher',
         body:
-          'wo = where (location, no movement): "Wo ist der Bahnhof?"\n' +
-          'wohin = where TO (movement away from speaker): "Wohin gehst du?"\n' +
-          'woher = where FROM (origin): "Woher kommst du?"',
+          'English uses "where" for everything. German splits it three ways depending on movement:\n\n' +
+          '  📍 wo    = where (AT, no movement)  → pairs with "in / an / auf" + STATIC verbs (sein, wohnen, bleiben)\n' +
+          '             "Wo ist der Bahnhof?"\n' +
+          '             "Wo wohnst du?"\n\n' +
+          '  ➡️ wohin = where TO (destination)   → pairs with "nach / zu / in" + MOVEMENT verbs (gehen, fahren, fliegen)\n' +
+          '             "Wohin gehst du?"  — Ich gehe nach Hause.\n' +
+          '             "Wohin fährst du?" — Ich fahre nach Berlin.\n\n' +
+          '  🌍 woher = where FROM (origin)      → pairs with "aus …"\n' +
+          '             "Woher kommst du?" — Ich komme aus Indien.\n\n' +
+          '⚠ Common mistake: "Wo gehst du?" ✗ — if there\'s movement, you NEED wohin. Train your ear: any verb of motion → wohin / woher.',
       },
-      { rule: '"Wie heißt du?" not "Wie ist dein Name?"',
-        body: 'Both are correct. "Wie heißt du?" sounds more natural.',
+      { rule: '🔵 WELCHER — gender-matched "which"',
+        body:
+          'welcher is THE only W-word that changes shape. It follows the article it replaces:\n\n' +
+          '  Gender   article  →  welcher-form    Example\n' +
+          '  ──────   ───────     ───────────     ───────\n' +
+          '  m  (der)  → welcher                 Welcher Tisch ist neu?\n' +
+          '  f  (die)  → welche                  Welche Tasche ist neu?\n' +
+          '  n  (das)  → welches                 Welches Buch liest du?\n' +
+          '  pl (die)  → welche                  Welche Bücher liest du?\n\n' +
+          'Tip: welcher rhymes with der · welches rhymes with das · welche rhymes with die. Same endings as the article — that\'s the whole rule.',
+      },
+      { rule: '⚠ WAS FÜR vs WELCHER — kind vs which-specific',
+        body:
+          'These two are NOT interchangeable:\n\n' +
+          '  Welcher / welche / welches  =  WHICH specific one? (from a known set)\n' +
+          '    "Welches Buch liest du?"   — meaning: of the books we both know, which one?\n\n' +
+          '  Was für (ein) …?            =  What KIND / TYPE? (open-ended)\n' +
+          '    "Was für ein Buch liest du?" — meaning: tell me about the type / genre / topic.\n\n' +
+          '"Was für" stays unchanged (the "ein" inside it follows normal article rules). Use it when you want a description, not a choice.',
+      },
+      { rule: '🚦 COMMON PITFALLS & SPOKEN SHORTCUTS',
+        body:
+          '• wer (WHO) ≠ was (WHAT) — "Wer ist das?" for people, "Was ist das?" for things.\n' +
+          '• "Wie heißt du?" is the natural choice for name — "Wie ist dein Name?" is grammatically fine but stiff.\n' +
+          '• In casual speech, "Wieso?" replaces "Warum?" all the time — they mean the same thing.\n' +
+          '• "Warum nicht?" is a one-word polite acceptance: Möchtest du …? — Warum nicht?\n' +
+          '• Verb stays in slot 2 even with a long W-phrase: "Wie viel kostet das?" — wie viel is ONE unit in slot 1.\n' +
+          '• German has no "do" helper. "Was machst du?" ✓ · "Was tust du machen?" ✗.',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: '__ ist das? (who)', answer: 'Wer' },
-      { type: 'fill-blank', sentence: '__ heißt du? (how / what)', answer: 'Wie' },
-      { type: 'fill-blank', sentence: '__ wohnst du? (where at)', answer: 'Wo' },
-      { type: 'fill-blank', sentence: '__ kommst du? (where from)', answer: 'Woher' },
-      { type: 'fill-blank', sentence: '__ gehst du? (where to)', answer: 'Wohin' },
-      { type: 'fill-blank', sentence: '__ kommst du nach Hause? (when)', answer: 'Wann' },
-      { type: 'fill-blank', sentence: '__ lernst du Deutsch? (why)', answer: 'Warum' },
-      { type: 'fill-blank', sentence: '__ kostet das? (how much)', answer: 'Wie viel' },
-      { type: 'multiple-choice', q: '"Where do you live?" =', options: ['Wo wohnst du?','Wohin wohnst du?','Wer wohnst du?','Was wohnst du?'], answer: 'Wo wohnst du?' },
-      { type: 'multiple-choice', q: '"Where are you going?" =', options: ['Wo gehst du?','Wohin gehst du?','Woher gehst du?','Was gehst du?'], answer: 'Wohin gehst du?' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — W-word → meaning · wo-triple → context · English Q → German Q
+      { type: 'match',
+        pairs: [
+          { de: 'wer',      en: '🧑 asks about a PERSON' },
+          { de: 'was',      en: '🎯 asks about a THING / action' },
+          { de: 'wann',     en: '🕐 asks about TIME' },
+          { de: 'warum',    en: '❔ asks for a REASON' },
+          { de: 'wie',      en: '❓ HOW (also "what" for name/greeting)' },
+          { de: 'welcher',  en: '🔵 WHICH specific one (gender-matched)' },
+          { de: 'wie viel', en: '💶 HOW MUCH (uncountable / money)' },
+          { de: 'wie viele',en: '🔢 HOW MANY (countable)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Wo ist der Bahnhof?',     en: '📍 location · no movement' },
+          { de: 'Wohin gehst du?',          en: '➡️ destination · movement TO' },
+          { de: 'Woher kommst du?',         en: '🌍 origin · "aus …"' },
+          { de: 'Wo wohnst du?',            en: '📍 location · sein/wohnen' },
+          { de: 'Wohin fährst du?',         en: '➡️ destination · fahren' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Wie heißt du?',            en: 'What is your name?' },
+          { de: 'Wie alt bist du?',         en: 'How old are you?' },
+          { de: 'Wo wohnst du?',            en: 'Where do you live?' },
+          { de: 'Woher kommst du?',         en: 'Where are you from?' },
+          { de: 'Wie viel kostet das?',     en: 'How much does that cost?' },
+          { de: 'Was machst du beruflich?', en: 'What do you do for a living?' },
+        ],
+      },
+
+      // ⭐ 7 BUILD-THE-W-QUESTION fill-blanks
+      { type: 'fill-blank', sentence: '__ ist das? (who)',                        answer: 'Wer' },
+      { type: 'fill-blank', sentence: '__ heißt du?',                             answer: 'Wie' },
+      { type: 'fill-blank', sentence: '__ machst du heute? (what)',               answer: 'Was' },
+      { type: 'fill-blank', sentence: '__ kommst du nach Hause? (when)',          answer: 'Wann' },
+      { type: 'fill-blank', sentence: '__ lernst du Deutsch? (why)',              answer: 'Warum' },
+      { type: 'fill-blank', sentence: '__ kostet das? (how much)',                answer: 'Wie viel' },
+      { type: 'fill-blank', sentence: '__ Bücher hast du? (how many)',            answer: 'Wie viele' },
+
+      // ⭐ 4 WO/WOHIN/WOHER fill-blanks (the day\'s killer pair)
+      { type: 'fill-blank', sentence: '📍 __ wohnst du? (location · no movement)', answer: 'Wo' },
+      { type: 'fill-blank', sentence: '➡️ __ gehst du? (destination)',             answer: 'Wohin' },
+      { type: 'fill-blank', sentence: '🌍 __ kommst du? (origin)',                 answer: 'Woher' },
+      { type: 'fill-blank', sentence: '➡️ __ fährst du? (movement to)',            answer: 'Wohin' },
+
+      // 🔵 3 WELCHER MCQs (gender-matched)
+      { type: 'multiple-choice', q: '"__ Tisch ist neu?" (Tisch is masculine)',
+        options: ['Welcher','Welche','Welches','Was für'], answer: 'Welcher',
+        explain: 'masculine der-word → welcher.' },
+      { type: 'multiple-choice', q: '"__ Tasche ist neu?" (Tasche is feminine)',
+        options: ['Welcher','Welche','Welches','Was für'], answer: 'Welche',
+        explain: 'feminine die-word → welche.' },
+      { type: 'multiple-choice', q: '"__ Buch liest du?" (Buch is neuter)',
+        options: ['Welcher','Welche','Welches','Was für'], answer: 'Welches',
+        explain: 'neuter das-word → welches.' },
+
+      // ⚠ 3 SPOT-THE-ERROR / wer-vs-was / V2 MCQs
+      { type: 'multiple-choice', q: '⚠ "Where are you going?" — CORRECT German:',
+        options: ['Wo gehst du?','Wohin gehst du?','Woher gehst du?','Was gehst du?'], answer: 'Wohin gehst du?',
+        explain: 'gehen = movement → wohin, not wo.' },
+      { type: 'multiple-choice', q: '⚠ Pointing at a person: "Who is that?" =',
+        options: ['Was ist das?','Wer ist das?','Wie ist das?','Welcher ist das?'], answer: 'Wer ist das?',
+        explain: 'wer for people, was for things.' },
+      { type: 'multiple-choice', q: '⚠ Which sentence has the WRONG word order?',
+        options: ['Was machst du?','Wo wohnst du?','Wann du kommst?','Warum lernst du Deutsch?'], answer: 'Wann du kommst?',
+        explain: 'V2 rule: verb in slot 2. "Wann KOMMST du?" — subject is in slot 3.' },
+
+      // 💬 2 WAS-FÜR vs WELCHER MCQs
+      { type: 'multiple-choice', q: 'Asking for the TYPE / genre (not a specific choice): "__ Buch liest du?"',
+        options: ['Welches','Was für ein','Welcher','Wie viel'], answer: 'Was für ein',
+        explain: '"Was für ein …?" = what kind of? · "Welches" = which specific one.' },
+      { type: 'multiple-choice', q: 'Picking ONE specific item from a known set: "__ Tasche ist neu?"',
+        options: ['Welche','Was für eine','Wie','Woher'], answer: 'Welche',
+        explain: 'welche for a specific choice from a known set; Tasche is feminine.' },
+
+      // 💬 Mini dialogue — sweeps wer/was/wo/wohin/woher/wann/warum/wie + welches + wie viel
       { type: 'dialogue', lines: [
-        { speaker: 'A', de: 'Wie heißt du?',          en: 'What is your name?' },
-        { speaker: 'B', de: 'Ich heiße Anna.',         en: 'My name is Anna.' },
-        { speaker: 'A', de: 'Woher kommst du?',        en: 'Where are you from?' },
-        { speaker: 'B', de: 'Ich komme aus Indien.',   en: 'I come from India.' },
-        { speaker: 'A', de: 'Wo wohnst du jetzt?',     en: 'Where do you live now?' },
-        { speaker: 'B', de: 'Jetzt wohne ich in Berlin.', en: 'Now I live in Berlin.' },
-        { speaker: 'A', de: 'Warum lernst du Deutsch?', en: 'Why are you learning German?' },
-        { speaker: 'B', de: 'Ich arbeite hier.',        en: 'I work here.' },
+        { speaker: 'A', de: 'Wie heißt du?',                  en: 'What is your name?' },
+        { speaker: 'B', de: 'Ich heiße Anna.',                en: 'My name is Anna.' },
+        { speaker: 'A', de: 'Woher kommst du?',               en: 'Where are you from?' },
+        { speaker: 'B', de: 'Ich komme aus Indien.',          en: 'I come from India.' },
+        { speaker: 'A', de: 'Wo wohnst du jetzt?',            en: 'Where do you live now?' },
+        { speaker: 'B', de: 'Jetzt wohne ich in Berlin.',     en: 'Now I live in Berlin.' },
+        { speaker: 'A', de: 'Wohin gehst du heute Abend?',    en: 'Where are you going this evening?' },
+        { speaker: 'B', de: 'Ich gehe ins Restaurant.',       en: 'I am going to the restaurant.' },
+        { speaker: 'A', de: 'Warum lernst du Deutsch?',       en: 'Why are you learning German?' },
+        { speaker: 'B', de: 'Weil ich hier arbeite.',         en: 'Because I work here.' },
+        { speaker: 'A', de: 'Wie viel kostet die Wohnung?',   en: 'How much does the apartment cost?' },
+        { speaker: 'B', de: 'Achthundert Euro pro Monat.',    en: 'Eight hundred euros per month.' },
       ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: '"What is that?" → __ ist das?', answer: 'Was' },
-      { type: 'multiple-choice', q: 'How many W-words start with W in German?', options: ['5','7','10','It varies — at least 10 common ones.'], answer: 'It varies — at least 10 common ones.' },
+      { type: 'multiple-choice', q: '"Where are you going?" — Pick the right W-word.',
+        options: ['Wo','Wohin','Woher','Wann'], answer: 'Wohin',
+        explain: 'Movement → wohin.' },
+      { type: 'multiple-choice', q: '"__ Buch liest du?" (Buch is neuter — choose the right "which")',
+        options: ['Welcher','Welche','Welches','Was für'], answer: 'Welches' },
+      { type: 'fill-blank', sentence: '"How many books do you have?" → __ Bücher hast du?', answer: 'Wie viele' },
+      { type: 'multiple-choice', q: 'Asking the TYPE (open-ended): "__ Buch liest du?"',
+        options: ['Welches','Was für ein','Wo','Warum'], answer: 'Was für ein' },
+      { type: 'multiple-choice', q: 'Which sentence has the WRONG word order?',
+        options: ['Was machst du?','Wo du wohnst?','Wann kommst du?','Warum lernst du Deutsch?'], answer: 'Wo du wohnst?',
+        explain: 'V2 rule: verb in slot 2. "Wo WOHNST du?" — subject is in slot 3.' },
+      { type: 'fill-blank', sentence: 'Casual spoken alternative to "Warum bist du müde?" → "__ bist du müde?"', answer: 'Wieso' },
     ],
   },
 
