@@ -11,10 +11,27 @@
  * in sync.
  */
 
-export const VERSION = '3.7.3';
-export const RELEASE_DATE = '2026-05-27';
+export const VERSION = '3.7.4';
+export const RELEASE_DATE = '2026-05-28';
 
 export const RELEASES = [
+  {
+    version: '3.7.4',
+    date: '2026-05-28',
+    type: 'improvement',
+    title: 'Day 16 vocabulary — spotlight layout + emoji + example sentences',
+    notes: [
+      'Day 16 (Yes/No questions) now uses the spotlight vocab layout (vocabLayout: "spotlight"), matching Days 2-15.',
+      'All 6 entries get a relevant emoji + an example that demonstrates the day\'s teaching point — every example is itself a Q&A pair, so scrolling vocab IS practising yes/no questions.',
+      '✅ ja → "Hast du Zeit? — Ja, ich habe Zeit." (positive answer to a positive question).',
+      '⛔ nein → "Bist du müde? — Nein, ich bin nicht müde." (paired with the nicht negation from Day 15).',
+      '🔁 ⭐ doch — THE Day-16 keystone → "Bist du nicht müde? — Doch! Ich bin sehr müde." The contradicting-a-negative example shows EXACTLY where doch fires.',
+      '🤷 vielleicht → "Vielleicht komme ich morgen." (V2 inversion preview — subject moves to slot 3).',
+      '👍 natürlich → "Sprichst du Deutsch? — Natürlich!" (stronger than just ja).',
+      '✔️ sicher → "Bist du sicher? — Ja, ganz sicher." (the certainty stack).',
+      'Every example is a Q-then-A pair, mirroring the dialogue exercise at the end of the day — the vocab page itself models the yes/no question flip.',
+    ],
+  },
   {
     version: '3.7.3',
     date: '2026-05-27',

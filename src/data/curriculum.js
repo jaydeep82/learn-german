@@ -3535,18 +3535,25 @@ export const days = [
   /* ----- Day 16: Yes/No questions (slides 71-77, 128-131) ----- */
   {
     id: 16, week: 3,
+    vocabLayout: 'spotlight',
     title: 'Yes/No questions',
     titleDe: 'Ja/Nein-Fragen',
     emoji: '❓',
     objective: 'Turn any statement into a yes/no question by flipping word order.',
     intro: 'Yes/no questions in German are easy: just put the conjugated verb FIRST. "Du bist müde." → "Bist du müde?" Add a question mark — done.',
     vocabulary: [
-      { de: 'ja',         en: 'yes' },
-      { de: 'nein',       en: 'no' },
-      { de: 'doch',       en: 'yes (contradicting a negative)' },
-      { de: 'vielleicht', en: 'maybe' },
-      { de: 'natürlich',  en: 'of course' },
-      { de: 'sicher',     en: 'sure / certainly' },
+      // ✅ The straight-yes answer
+      { de: 'ja',         en: 'yes',                              emoji: '✅', hint: 'positive answer to a positive question',          example: 'Hast du Zeit? — Ja, ich habe Zeit.',                  exampleEn: 'Do you have time? — Yes, I have time.' },
+      // ⛔ The no answer
+      { de: 'nein',       en: 'no',                               emoji: '⛔', hint: 'negative answer · pair with "kein" / "nicht"',     example: 'Bist du müde? — Nein, ich bin nicht müde.',           exampleEn: 'Are you tired? — No, I am not tired.' },
+      // 🔁 The doch trick — THE day-16 teaching point
+      { de: 'doch',       en: 'yes (contradicting a negative)',   emoji: '🔁', hint: '⭐ used ONLY to contradict a "nicht/kein" question', example: 'Bist du nicht müde? — Doch! Ich bin sehr müde.',    exampleEn: 'Aren\'t you tired? — Yes I am! I am very tired.' },
+      // 🤷 The hedged answer
+      { de: 'vielleicht', en: 'maybe',                            emoji: '🤷', hint: 'often leads the sentence · V2 inversion!',           example: 'Vielleicht komme ich morgen.',                        exampleEn: 'Maybe I will come tomorrow.' },
+      // 👍 The enthusiastic yes
+      { de: 'natürlich',  en: 'of course',                        emoji: '👍', hint: 'literally "naturally" · stronger than just "ja"',    example: 'Sprichst du Deutsch? — Natürlich!',                   exampleEn: 'Do you speak German? — Of course!' },
+      // ✔️ The certain yes
+      { de: 'sicher',     en: 'sure / certainly',                 emoji: '✔️', hint: 'also means "safe" · context makes it clear',         example: 'Bist du sicher? — Ja, ganz sicher.',                  exampleEn: 'Are you sure? — Yes, completely sure.' },
     ],
     grammar: [
       { rule: 'Word-order flip',
