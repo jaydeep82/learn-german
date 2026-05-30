@@ -3090,7 +3090,7 @@ export const days = [
     vocabulary: [
       // ✅ FEMININE — die / eine never change
       { de: 'die Tasche', en: 'the bag (f · NO change)',   emoji: '👜', hint: '✅ die → die · feminine never flips',       example: 'Ich kaufe die Tasche.',        exampleEn: 'I am buying the bag.' },
-      { de: 'die Frau (= die Frau)',     en: 'the woman (f · NO change)', emoji: '👩', hint: '✅ die → die',                              example: 'Ich sehe die Frau.',           exampleEn: 'I see the woman.' },
+      { de: 'die Frau',     en: 'the woman (f · NO change)', emoji: '👩', hint: '✅ die → die',                              example: 'Ich sehe die Frau.',           exampleEn: 'I see the woman.' },
       { de: 'die Zeitung', en: 'the newspaper (f · NO change)', emoji: '📰', hint: '✅ die → die',                       example: 'Er liest die Zeitung.',        exampleEn: 'He reads the newspaper.' },
       { de: 'eine Idee',   en: 'an idea (f · NO change)',   emoji: '💡', hint: '✅ eine → eine',                            example: 'Ich habe eine Idee.',          exampleEn: 'I have an idea.' },
       { de: 'eine Frage', en: 'a question (f · NO change)', emoji: '❓', hint: '✅ eine → eine',                           example: 'Ich habe eine Frage.',         exampleEn: 'I have a question.' },
@@ -3103,7 +3103,7 @@ export const days = [
 
       // ✅ PLURAL — die always stays die
       { de: 'die Bücher', en: 'the books (pl · NO change)', emoji: '📚', hint: '✅ plural die → die',                     example: 'Ich lese die Bücher.',         exampleEn: 'I read the books.' },
-      { de: 'die Kinder',   en: 'the children (pl · NO change)', emoji: '🧒', hint: '✅ plural die → die',                  example: 'Ich sehe die Kinder.',         exampleEn: 'I see the children.' },
+      { de: 'die Kinder', en: 'the children (pl · NO change)', emoji: '🧒', hint: '✅ plural die → die',                  example: 'Ich sehe die Kinder.',         exampleEn: 'I see the children.' },
       { de: 'die Freunde', en: 'the friends (pl · NO change)', emoji: '👥', hint: '✅ plural die → die',                 example: 'Ich besuche die Freunde.',     exampleEn: 'I visit the friends.' },
 
       // ⭐ THE CONTRAST — masculine DOES flip (so you stay sharp)
