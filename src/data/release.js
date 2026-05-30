@@ -11,10 +11,30 @@
  * in sync.
  */
 
-export const VERSION = '3.8.2';
+export const VERSION = '3.8.3';
 export const RELEASE_DATE = '2026-05-31';
 
 export const RELEASES = [
+  {
+    version: '3.8.3',
+    date: '2026-05-31',
+    type: 'improvement',
+    title: 'Day 24 review — Verbs that take Akkusativ (+ es gibt, the sein exception, Dativ-verb preview)',
+    notes: [
+      'Reviewed Day 24 (Verbs that take Akkusativ) end-to-end, parallel to the Day 14-23 full reviews. The previous version had 10 bare verb entries, 2 grammar bullets and 4 exercises. Reshaped into a complete "which case does this verb take?" toolkit — the crucial skill before the Dativ arrives.',
+      'Vocabulary 10 → 22 items (vocabLayout: "spotlight") grouped by role icon: 🎯 16 core Akkusativ verbs (haben · brauchen · kaufen · suchen · finden · nehmen · sehen · essen · trinken · lesen · schreiben · hören · kennen · mögen · fragen · besuchen) each with a worked Akk-object example · ✨ es gibt (the always-Akkusativ construction) · ⚠ 3 NO-OBJECT verbs that take Nominativ (sein · werden · heißen) · 🅿️ 2 Dativ-verb previews (helfen · danken) flagged so learners don\'t auto-flip them to den.',
+      'Grammar 2 → 6 callouts: ⭐ WHAT IS AN AKKUSATIV VERB — the verb+Wen/Was test with the memorise-as-a-block list · ✨ ES GIBT — always Akkusativ, all four genders, with the "es is the subject" logic + the directions-question form · ⚠ THE EXCEPTION — sein/werden/heißen/bleiben take Nominativ on both sides (the "=" mental model + the "Ich bin einen Student" ✗ fix) · 🅿️ NOT ALL OBJECTS ARE AKKUSATIV — the Dativ-verb shortlist (helfen/danken/gehören/gefallen/antworten) as a preview · 📖 FIRST MENTION vs SECOND MENTION (ein → der · new vs known info, preserved + expanded from the old day) · 🚦 pitfalls (case-per-verb cheat list, fragen-takes-Akk, es-gibt-Akk, kennen vs wissen).',
+      'Exercises reshaped (4 → 21 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: verb → which case (Akk/Nom/Dativ/es-gibt) · es-gibt article by gender · fill-the-verb by case (habe/bin/helfe/nehme).',
+      '• 5 🎯 AKKUSATIV-VERB fill-blanks (einen/den/den/die-no-change/fragen-den).',
+      '• 3 ✨ ES-GIBT fill-blanks (einen/eine/ein).',
+      '• 1 📖 first-mention→second-mention fill-blank (einen Hund → Der Hund).',
+      '• 4 ⚠ CASE-PER-VERB MCQs (lesen-neuter · sein-Nominativ · helfen-Dativ · which-verb-isn\'t-Akk=werden).',
+      '• 2 ⚠ SPOT-THE-ERROR MCQs (Ich bin einen Student ✗ · es-gibt-Akkusativ).',
+      '• 💬 Shop dialogue weaving es gibt, brauchen, kennen, fragen and the helfen-Dativ verb.',
+      'Quiz 1 → 7 items: den-Kaffee · es-gibt-einen · sein-Nominativ · danken-Dativ · Wen-finds-Akk · fragen-den · which-verb-takes-Dativ.',
+    ],
+  },
   {
     version: '3.8.2',
     date: '2026-05-31',

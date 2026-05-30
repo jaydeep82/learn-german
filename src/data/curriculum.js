@@ -3456,35 +3456,198 @@ export const days = [
 
   {
     id: 24, week: 4,
+    vocabLayout: 'spotlight',
     title: 'Verbs that take Akkusativ',
     titleDe: 'Verben mit Akkusativ',
     emoji: '🎯',
-    objective: 'Memorise high-frequency Akkusativ verbs.',
-    intro: 'These verbs almost always carry a direct object: kaufen, sehen, haben, essen, trinken, lesen, schreiben, hören, fragen, suchen.',
+    objective: 'Know which everyday verbs trigger an Akkusativ object — and, just as important, which verbs DON\'T (sein/werden take Nominativ; a few take Dativ).',
+    intro: 'Most German verbs describe doing something TO a thing — and that thing goes in the Akkusativ. Today you collect the high-frequency "Akkusativ verbs" so the masculine flip becomes automatic. You\'ll also learn the must-know "es gibt" (always Akkusativ!), the first-mention→ein / second-mention→der rhythm, and the key exceptions: sein/werden take NO object, and a handful of verbs (helfen, danken) take Dativ instead — coming next.',
     vocabulary: [
-      { de: 'kaufen',  en: 'to buy' },  { de: 'sehen',  en: 'to see' },
-      { de: 'haben',   en: 'to have' }, { de: 'essen',  en: 'to eat' },
-      { de: 'trinken', en: 'to drink' },{ de: 'lesen',  en: 'to read' },
-      { de: 'schreiben',en:'to write' },{ de: 'hören',  en: 'to hear' },
-      { de: 'fragen',  en: 'to ask' },  { de: 'suchen', en: 'to search' },
+      // 🎯 CORE AKKUSATIV VERBS — action-on-a-thing (the big everyday set)
+      { de: 'haben',     en: 'to have',          emoji: '✋', hint: '🔁 Day 6 · have WHAT? → Akk',           example: 'Ich habe einen Hund.',       exampleEn: 'I have a dog.' },
+      { de: 'brauchen',  en: 'to need',          emoji: '🙏', hint: 'need WHAT? → Akk',                     example: 'Ich brauche einen Stift.',   exampleEn: 'I need a pen.' },
+      { de: 'kaufen',    en: 'to buy',           emoji: '🛒', hint: 'buy WHAT? → Akk',                      example: 'Sie kauft den Laptop.',      exampleEn: 'She buys the laptop.' },
+      { de: 'suchen',    en: 'to look for',      emoji: '🔎', hint: 'look for WHAT? → Akk',                 example: 'Ich suche den Schlüssel.',   exampleEn: 'I am looking for the key.' },
+      { de: 'finden',    en: 'to find',          emoji: '🎯', hint: 'find WHAT? → Akk · also "think it\'s…"', example: 'Ich finde den Film gut.',    exampleEn: 'I think the film is good.' },
+      { de: 'nehmen',    en: 'to take',          emoji: '🤲', hint: '🔁 Day 11 stem-changer · take WHAT? → Akk', example: 'Ich nehme den Bus.',      exampleEn: 'I take the bus.' },
+      { de: 'sehen',     en: 'to see',           emoji: '👀', hint: 'see WHAT? → Akk',                      example: 'Ich sehe den Film.',         exampleEn: 'I see the film.' },
+      { de: 'essen',     en: 'to eat',           emoji: '🍽️', hint: '🔁 Day 11 · eat WHAT? → Akk',          example: 'Er isst einen Apfel.',       exampleEn: 'He eats an apple.' },
+      { de: 'trinken',   en: 'to drink',         emoji: '🥤', hint: 'drink WHAT? → Akk',                    example: 'Ich trinke den Kaffee.',     exampleEn: 'I drink the coffee.' },
+      { de: 'lesen',     en: 'to read',          emoji: '📖', hint: '🔁 Day 11 · read WHAT? → Akk',         example: 'Sie liest die Zeitung.',     exampleEn: 'She reads the newspaper.' },
+      { de: 'schreiben', en: 'to write',         emoji: '✍️', hint: 'write WHAT? → Akk',                    example: 'Ich schreibe einen Brief.',  exampleEn: 'I am writing a letter.' },
+      { de: 'hören',     en: 'to hear / listen to', emoji: '🎧', hint: 'hear WHAT? → Akk',                  example: 'Ich höre die Musik.',        exampleEn: 'I listen to the music.' },
+      { de: 'kennen',    en: 'to know (person/place)', emoji: '🤝', hint: 'know WHOM? → Akk (vs wissen=facts)', example: 'Ich kenne den Mann.',    exampleEn: 'I know the man.' },
+      { de: 'mögen',     en: 'to like',          emoji: '😍', hint: 'like WHAT? → Akk',                     example: 'Ich mag den Tee.',           exampleEn: 'I like the tea.' },
+      { de: 'fragen',    en: 'to ask (someone)', emoji: '🙋', hint: '⚠ ask SOMEONE = Akk in German!',       example: 'Ich frage den Lehrer.',      exampleEn: 'I ask the teacher.' },
+      { de: 'besuchen',  en: 'to visit',         emoji: '🚪', hint: 'visit WHOM? → Akk',                    example: 'Wir besuchen den Arzt.',     exampleEn: 'We visit the doctor.' },
+
+      // ✨ ES GIBT — the must-know construction (ALWAYS Akkusativ)
+      { de: 'es gibt',   en: 'there is / there are', emoji: '✨', hint: '⭐ ALWAYS takes Akkusativ · "es gibt einen…"', example: 'Es gibt einen Supermarkt hier.', exampleEn: 'There is a supermarket here.' },
+
+      // ⚠ NO-OBJECT VERBS — sein / werden take NOMINATIV (the equals-sign verbs)
+      { de: 'sein',      en: 'to be (NO object → Nom)', emoji: '🟦', hint: '⚠ Nominativ on BOTH sides · "Er ist ein Mann"', example: 'Er ist ein Lehrer.',  exampleEn: 'He is a teacher.' },
+      { de: 'werden',    en: 'to become (NO object → Nom)', emoji: '🟨', hint: '⚠ also Nominativ · "Er wird Arzt"',       example: 'Er wird Arzt.',       exampleEn: 'He is becoming a doctor.' },
+      { de: 'heißen',    en: 'to be called (NO object → Nom)', emoji: '🪪', hint: '⚠ Nominativ · "Ich heiße Anna"',       example: 'Ich heiße Anna.',     exampleEn: 'My name is Anna.' },
+
+      // 🅿️ DATIV-VERB PREVIEW — NOT every verb takes Akkusativ
+      { de: 'helfen',    en: 'to help (takes DATIV!)', emoji: '🆘', hint: '⚠ Day 26 preview · "Ich helfe dem Mann" — NOT den', example: 'Ich helfe dem Mann.',  exampleEn: 'I help the man.' },
+      { de: 'danken',    en: 'to thank (takes DATIV!)', emoji: '🙏', hint: '⚠ Day 26 preview · "Ich danke dem Lehrer" — NOT den', example: 'Ich danke dem Lehrer.', exampleEn: 'I thank the teacher.' },
     ],
     grammar: [
-      { rule: 'Default to Akkusativ', body: 'When in doubt with these verbs, use the Akkusativ for their object.' },
-      { rule: 'First mention vs second mention',
+      { rule: '⭐ WHAT IS AN "AKKUSATIV VERB"? — the action-on-a-thing test',
         body:
-          'In a story or paragraph:\n' +
-          '• First time you mention something → ein / eine / einen (introducing it).\n' +
-          '• Every time after → der / die / das (we already know which one).\n' +
-          'Example: „Ich habe ein Buch. Das Buch ist gut." — first time = ein, second time = das.',
+          'A transitive verb does its action TO a direct object — and that object goes in the Akkusativ. Find it with the Day-23 test:\n\n' +
+          '  verb + WEN / WAS?  → the answer is the Akkusativ object.\n\n' +
+          '  Ich kaufe … was?      → einen Tisch.   (kaufen → Akk)\n' +
+          '  Ich sehe … wen?       → den Mann.      (sehen → Akk)\n' +
+          '  Ich brauche … was?    → eine Lampe.    (brauchen → Akk)\n\n' +
+          'The big everyday Akkusativ verbs to memorise as a block:\n' +
+          '  haben · brauchen · kaufen · suchen · finden · nehmen · sehen ·\n' +
+          '  essen · trinken · lesen · schreiben · hören · kennen · mögen ·\n' +
+          '  fragen · besuchen · machen · möchten.',
+      },
+      { rule: '✨ ES GIBT — the construction that ALWAYS takes Akkusativ',
+        body:
+          '"es gibt" = "there is / there are". It is one fixed phrase and its noun is ALWAYS Akkusativ — so masculine always flips to den/einen:\n\n' +
+          '  Es gibt einen Supermarkt.   (m → einen) ⚠\n' +
+          '  Es gibt eine Apotheke.      (f → eine)\n' +
+          '  Es gibt ein Problem.        (n → ein)\n' +
+          '  Es gibt viele Leute.        (pl → viele)\n\n' +
+          'The literal logic: "es" is the subject (Nominativ), so the thing that exists is the OBJECT. Question form: "Gibt es einen Supermarkt hier?" — super common when asking for directions.',
+      },
+      { rule: '⚠ THE EXCEPTION — sein / werden take NO object (Nominativ)',
+        body:
+          'Not every verb has an Akkusativ object. The "equals-sign" verbs link two things that are the SAME — so both sides stay Nominativ:\n\n' +
+          '  sein   (to be)        Er ist ein Lehrer.    (NOT einen) ✓\n' +
+          '  werden (to become)    Er wird ein guter Arzt. (NOT einen) ✓\n' +
+          '  heißen (to be called) Das heißt ein Problem.  (Nominativ)\n' +
+          '  bleiben (to stay)     Er bleibt mein Freund.  (Nominativ)\n\n' +
+          '🧠 Think of sein/werden as "=" : "Er = ein Lehrer." Both sides are the same person, so there is no receiver, no Akkusativ. This is THE most common case mistake — "Ich bin einen Student" ✗ → "Ich bin ein Student" ✓.',
+      },
+      { rule: '🅿️ NOT ALL OBJECTS ARE AKKUSATIV — the Dativ verbs (preview)',
+        body:
+          'A small but very common group of verbs takes a DATIV object instead of Akkusativ. You meet the Dativ properly on Day 25-26, but flag these now so you don\'t auto-flip them to den:\n\n' +
+          '  helfen   (to help)        Ich helfe dem Mann.    (dem, NOT den) ⚠\n' +
+          '  danken   (to thank)       Ich danke dem Lehrer.  (dem) ⚠\n' +
+          '  gehören  (to belong to)   Das Buch gehört dem Kind.\n' +
+          '  gefallen (to please)      Das Buch gefällt dem Mann.\n' +
+          '  antworten (to answer)     Ich antworte dem Freund.\n\n' +
+          'These are worth memorising as "the Dativ verbs". Everything NOT on this short list almost always takes Akkusativ.',
+      },
+      { rule: '📖 FIRST MENTION vs SECOND MENTION — ein → der',
+        body:
+          'Within a story or paragraph the article also tracks NEW vs KNOWN information:\n\n' +
+          '• First time you introduce a thing → ein / eine / einen (one of many).\n' +
+          '• Every time after → der / die / das (now we both know which one).\n\n' +
+          '  „Ich habe einen Hund. Der Hund ist klein."\n' +
+          '       first mention → einen        second → der (subject again)\n' +
+          '  „Ich kaufe ein Buch. Das Buch ist gut."\n\n' +
+          'This is the same logic as English "a … the …". Combine it with the case rules: first mention of a masculine OBJECT = einen, then as the subject of the next sentence = der.',
+      },
+      { rule: '🚦 PITFALLS — pick the right case per verb',
+        body:
+          '• Most action verbs → Akkusativ (masc der→den, ein→einen).\n' +
+          '• sein / werden / heißen / bleiben → Nominativ, no flip ("Er ist ein Mann").\n' +
+          '• helfen / danken / gehören / gefallen / antworten → Dativ (dem/der), NOT Akkusativ.\n' +
+          '• "fragen" takes Akkusativ in German even though English "ask TO someone" feels indirect: "Ich frage den Lehrer." ✓\n' +
+          '• "es gibt" is always Akkusativ — "Gibt es einen Bahnhof?" not "ein Bahnhof".\n' +
+          '• kennen (people/places you\'re familiar with) vs wissen (facts) — both common, but only kennen takes a simple Akk noun.',
       },
     ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — verb→case · es-gibt genders · sort the three groups
+      { type: 'match',
+        pairs: [
+          { de: 'kaufen / sehen / haben', en: '🎯 takes AKKUSATIV (den/einen)' },
+          { de: 'sein / werden',           en: '🟦 takes NOMINATIV (no flip)' },
+          { de: 'helfen / danken',         en: '🅿️ takes DATIV (dem/der)' },
+          { de: 'es gibt',                 en: '✨ ALWAYS Akkusativ' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Es gibt __ Supermarkt (m)', en: 'einen' },
+          { de: 'Es gibt __ Apotheke (f)',   en: 'eine' },
+          { de: 'Es gibt __ Problem (n)',    en: 'ein' },
+          { de: 'Es gibt __ Leute (pl)',     en: 'viele' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Ich __ einen Hund', en: 'habe (Akk)' },
+          { de: 'Ich __ ein Lehrer', en: 'bin (Nom)' },
+          { de: 'Ich __ dem Mann',   en: 'helfe (Dativ)' },
+          { de: 'Ich __ den Bus',    en: 'nehme (Akk)' },
+        ],
+      },
+
+      // 🎯 5 AKKUSATIV-VERB fill-blanks (the flip in real verbs)
+      { type: 'fill-blank', sentence: 'Ich brauche __ Stift. (a, masc.)', answer: 'einen' },
+      { type: 'fill-blank', sentence: 'Wir nehmen __ Bus. (the, masc.)', answer: 'den' },
       { type: 'fill-blank', sentence: 'Ich suche __ Schlüssel. (the, masc.)', answer: 'den' },
-      { type: 'fill-blank', sentence: 'Wir hören __ Musik. (the, fem.)', answer: 'die' },
-      { type: 'multiple-choice', q: '"Er liest __ Buch." (the)', options: ['der','den','das','die'], answer: 'das' },
+      { type: 'fill-blank', sentence: 'Wir hören __ Musik. (the, fem. — no change)', answer: 'die' },
+      { type: 'fill-blank', sentence: 'Ich frage __ Lehrer. (the, masc. — fragen takes Akk!)', answer: 'den' },
+
+      // ✨ 3 ES-GIBT fill-blanks
+      { type: 'fill-blank', sentence: 'Es gibt __ Supermarkt hier. (a, masc.)', answer: 'einen' },
+      { type: 'fill-blank', sentence: 'Gibt es __ Apotheke in der Nähe? (an, fem.)', answer: 'eine' },
+      { type: 'fill-blank', sentence: 'Es gibt __ Problem. (a, neuter)', answer: 'ein' },
+
+      // 📖 1 first-mention → second-mention fill-blank
+      { type: 'fill-blank', sentence: 'Ich habe einen Hund. __ Hund ist klein. (2nd mention — subject)', answer: 'Der' },
+
+      // ⚠ 4 CASE-PER-VERB MCQs (Akk vs Nom vs Dativ)
+      { type: 'multiple-choice', q: '"Er liest __ Buch." (the, neuter)',
+        options: ['der','den','das','die'], answer: 'das',
+        explain: 'lesen → Akkusativ, but Buch is neuter → das (no change).' },
+      { type: 'multiple-choice', q: '"He is a teacher." — pick the correct German.',
+        options: ['Er ist einen Lehrer.','Er ist ein Lehrer.','Er ist dem Lehrer.','Er hat ein Lehrer.'],
+        answer: 'Er ist ein Lehrer.',
+        explain: 'sein takes Nominativ on both sides — no flip.' },
+      { type: 'multiple-choice', q: '⚠ "I help the man." (helfen takes Dativ!)',
+        options: ['Ich helfe den Mann.','Ich helfe dem Mann.','Ich helfe einen Mann.','Ich helfe der Mann.'],
+        answer: 'Ich helfe dem Mann.',
+        explain: 'helfen is a Dativ verb → dem Mann, not den Mann.' },
+      { type: 'multiple-choice', q: 'Which verb does NOT take an Akkusativ object?',
+        options: ['kaufen','sehen','werden','brauchen'], answer: 'werden',
+        explain: 'werden (to become) takes Nominativ — it links two equal things.' },
+
+      // ⚠ 2 SPOT-THE-ERROR MCQs
+      { type: 'multiple-choice', q: '⚠ Which sentence is WRONG?',
+        options: ['Ich habe einen Hund.','Ich bin einen Student.','Ich sehe den Mann.','Ich kaufe einen Tisch.'],
+        answer: 'Ich bin einen Student.',
+        explain: 'sein → Nominativ: "Ich bin ein Student."' },
+      { type: 'multiple-choice', q: '⚠ "There is a train station here." — correct German:',
+        options: ['Es gibt ein Bahnhof hier.','Es gibt einen Bahnhof hier.','Es ist ein Bahnhof hier.','Es gibt dem Bahnhof hier.'],
+        answer: 'Es gibt einen Bahnhof hier.',
+        explain: 'es gibt always takes Akkusativ → masc einen.' },
+
+      // 💬 Mini dialogue — Akk verbs + es gibt + the sein exception
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Gibt es hier einen Supermarkt?',          en: 'Is there a supermarket here?' },
+        { speaker: 'B', de: 'Ja, es gibt einen Supermarkt und eine Apotheke.', en: 'Yes, there is a supermarket and a pharmacy.' },
+        { speaker: 'A', de: 'Super. Ich brauche einen Kaffee und das Brot.', en: 'Great. I need a coffee and the bread.' },
+        { speaker: 'B', de: 'Kennst du den Verkäufer? Er ist sehr nett.', en: 'Do you know the salesperson? He is very nice.' },
+        { speaker: 'A', de: 'Ja, ich kenne den Mann. Ich frage ihn oft.', en: 'Yes, I know the man. I often ask him.' },
+        { speaker: 'B', de: 'Und ich helfe dem Verkäufer manchmal.',    en: 'And I sometimes help the salesperson.' },
+      ]},
     ],
     quiz: [
-      { type: 'fill-blank', sentence: 'Ich frage __ Lehrer. (the, masc.)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Ich trinke __ Kaffee. (the, masc.)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Es gibt __ Supermarkt hier. (a, masc.)', answer: 'einen' },
+      { type: 'multiple-choice', q: '"He is a doctor." — correct German:',
+        options: ['Er ist einen Arzt.','Er ist ein Arzt.','Er wird einen Arzt.','Er hat ein Arzt.'],
+        answer: 'Er ist ein Arzt.', explain: 'sein → Nominativ.' },
+      { type: 'multiple-choice', q: '⚠ "I thank the teacher." (danken takes Dativ)',
+        options: ['Ich danke den Lehrer.','Ich danke dem Lehrer.','Ich danke einen Lehrer.','Ich danke der Lehrer.'],
+        answer: 'Ich danke dem Lehrer.' },
+      { type: 'multiple-choice', q: 'Which question word finds the Akkusativ object?',
+        options: ['Wer?','Wen?','Wo?','Wann?'], answer: 'Wen?' },
+      { type: 'fill-blank', sentence: 'Ich frage __ Lehrer. (the, masc. — fragen takes Akk)', answer: 'den' },
+      { type: 'multiple-choice', q: 'Which verb takes a DATIV object (not Akkusativ)?',
+        options: ['kaufen','helfen','sehen','brauchen'], answer: 'helfen' },
     ],
   },
 
