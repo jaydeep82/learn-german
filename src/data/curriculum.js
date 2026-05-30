@@ -3081,35 +3081,191 @@ export const days = [
 
   {
     id: 22, week: 4,
+    vocabLayout: 'spotlight',
     title: 'Akkusativ — f / n / plural',
     titleDe: 'Akkusativ (f, n, pl)',
     emoji: '🔄',
-    objective: 'Confirm that feminine, neuter and plural articles do NOT change.',
-    intro: 'Good news: only masculine articles change in the Akkusativ. The rest stay identical to the Nominativ form.',
+    objective: 'Lock in the relief half of the Akkusativ: feminine, neuter and plural articles do NOT change — then practise deciding WHEN to flip and when to leave it alone.',
+    intro: 'Day 21 taught the one flip (der → den). Today is the good-news day: feminine, neuter and plural articles look EXACTLY the same as direct objects as they do as subjects. die stays die, das stays das, eine stays eine. The real skill now is mixing genders in one sentence and flipping ONLY the masculine — so most drills here make you decide.',
     vocabulary: [
-      { de: 'die Tasche', en: 'the bag (f)' },
-      { de: 'das Buch',   en: 'the book (n)' },
-      { de: 'die Bücher', en: 'the books (pl)' },
+      // ✅ FEMININE — die / eine never change
+      { de: 'die Tasche (= die Tasche)', en: 'the bag (f · NO change)',   emoji: '👜', hint: '✅ die → die · feminine never flips',       example: 'Ich kaufe die Tasche.',        exampleEn: 'I am buying the bag.' },
+      { de: 'die Frau (= die Frau)',     en: 'the woman (f · NO change)', emoji: '👩', hint: '✅ die → die',                              example: 'Ich sehe die Frau.',           exampleEn: 'I see the woman.' },
+      { de: 'die Zeitung (= die Zeitung)', en: 'the newspaper (f · NO change)', emoji: '📰', hint: '✅ die → die',                       example: 'Er liest die Zeitung.',        exampleEn: 'He reads the newspaper.' },
+      { de: 'eine Idee (= eine Idee)',   en: 'an idea (f · NO change)',   emoji: '💡', hint: '✅ eine → eine',                            example: 'Ich habe eine Idee.',          exampleEn: 'I have an idea.' },
+      { de: 'eine Frage (= eine Frage)', en: 'a question (f · NO change)', emoji: '❓', hint: '✅ eine → eine',                           example: 'Ich habe eine Frage.',         exampleEn: 'I have a question.' },
+
+      // ✅ NEUTER — das / ein never change
+      { de: 'das Buch (= das Buch)',     en: 'the book (n · NO change)',  emoji: '📖', hint: '✅ das → das · neuter never flips',        example: 'Ich lese das Buch.',           exampleEn: 'I read the book.' },
+      { de: 'das Handy (= das Handy)',   en: 'the phone (n · NO change)', emoji: '📱', hint: '✅ das → das',                             example: 'Ich brauche das Handy.',       exampleEn: 'I need the phone.' },
+      { de: 'das Auto (= das Auto)',     en: 'the car (n · NO change)',   emoji: '🚗', hint: '✅ das → das',                             example: 'Wir kaufen das Auto.',         exampleEn: 'We are buying the car.' },
+      { de: 'ein Brötchen (= ein Brötchen)', en: 'a bread roll (n · NO change)', emoji: '🥖', hint: '✅ ein → ein (NOT einen!)',        example: 'Ich esse ein Brötchen.',       exampleEn: 'I eat a bread roll.' },
+
+      // ✅ PLURAL — die always stays die
+      { de: 'die Bücher (= die Bücher)', en: 'the books (pl · NO change)', emoji: '📚', hint: '✅ plural die → die',                     example: 'Ich lese die Bücher.',         exampleEn: 'I read the books.' },
+      { de: 'die Kinder (= die Kinder)', en: 'the children (pl · NO change)', emoji: '🧒', hint: '✅ plural die → die',                  example: 'Ich sehe die Kinder.',         exampleEn: 'I see the children.' },
+      { de: 'die Freunde (= die Freunde)', en: 'the friends (pl · NO change)', emoji: '👥', hint: '✅ plural die → die',                 example: 'Ich besuche die Freunde.',     exampleEn: 'I visit the friends.' },
+
+      // ⭐ THE CONTRAST — masculine DOES flip (so you stay sharp)
+      { de: 'der Tisch → den Tisch',     en: 'the table (m · DOES flip)', emoji: '🪑', hint: '⚠ ONLY masculine flips · der → den',     example: 'Ich kaufe den Tisch.',         exampleEn: 'I am buying the table.' },
+      { de: 'ein Hund → einen Hund',     en: 'a dog (m · DOES flip)',     emoji: '🐕', hint: '⚠ masc · ein → einen',                    example: 'Er hat einen Hund.',           exampleEn: 'He has a dog.' },
+
+      // 🚫 EIN-WORDS in f / n / pl — keine / keine, meine / mein
+      { de: 'keine Zeit (= keine Zeit)', en: 'no time (f · NO change)',   emoji: '⏳', hint: '✅ keine → keine (feminine)',             example: 'Ich habe keine Zeit.',         exampleEn: 'I have no time.' },
+      { de: 'keine Bücher (= keine Bücher)', en: 'no books (pl · NO change)', emoji: '🚫', hint: '✅ keine → keine (plural)',          example: 'Ich habe keine Bücher.',       exampleEn: 'I have no books.' },
+      { de: 'mein Auto (= mein Auto)',   en: 'my car (n · NO change)',    emoji: '🚙', hint: '✅ mein → mein (neuter, NOT meinen!)',   example: 'Ich nehme mein Auto.',         exampleEn: 'I take my car.' },
+      { de: 'meine Tasche (= meine Tasche)', en: 'my bag (f · NO change)', emoji: '👝', hint: '✅ meine → meine (feminine)',           example: 'Ich nehme meine Tasche.',      exampleEn: 'I take my bag.' },
     ],
     grammar: [
-      { rule: 'No-change rule',
-        body: 'die / das / die-plural look identical as subject and as direct object.' },
+      { rule: '⭐ THE NO-CHANGE RULE — f / n / pl look identical',
+        body:
+          'In the Akkusativ, feminine, neuter and plural articles are EXACTLY the same as in the Nominativ. Nothing to memorise — just leave them alone:\n\n' +
+          '            NOMINATIV  →  AKKUSATIV\n' +
+          '  fem.   f   die        →  die        ✅ same\n' +
+          '             eine       →  eine       ✅ same\n' +
+          '  neut.  n   das        →  das        ✅ same\n' +
+          '             ein        →  ein        ✅ same\n' +
+          '  plur.  pl  die        →  die        ✅ same\n\n' +
+          'Compare with the one that DOES change:\n' +
+          '  masc.  m   der → den   ·   ein → einen   ⚠ the only flip\n\n' +
+          '🧠 So in any sentence, scan for a MASCULINE object. If it\'s feminine, neuter or plural, you\'re already done.',
+      },
+      { rule: '⭐ THE FULL AKKUSATIV TABLE — all four genders at once',
+        body:
+          'Here is the entire definite + indefinite Akkusativ on one card. The masculine row is the ONLY one with an arrow:\n\n' +
+          '          DEFINITE        INDEFINITE\n' +
+          '  m   →   den  ⚠          einen ⚠\n' +
+          '  f   →   die             eine\n' +
+          '  n   →   das             ein\n' +
+          '  pl  →   die             — (no plural "ein"; use keine / meine / plain noun)\n\n' +
+          'Worked sentences (object underlined by the article):\n' +
+          '  Ich sehe den Mann.   (m → den) ⚠\n' +
+          '  Ich sehe die Frau.   (f → die)\n' +
+          '  Ich sehe das Kind.   (n → das)\n' +
+          '  Ich sehe die Kinder. (pl → die)',
+      },
+      { rule: '⚠ THE NEUTER TRAP — ein stays ein (never einen)',
+        body:
+          'The most common beginner mistake on this day: adding -en to a NEUTER "ein".\n\n' +
+          '  Ich esse ein Brötchen.   ✓  (neuter → ein, no ending)\n' +
+          '  Ich esse einen Brötchen. ✗  (that -en is masculine only!)\n\n' +
+          'The -en ending is the masculine fingerprint and NOTHING else gets it:\n' +
+          '  einen Apfel (m) ✓   ·   ein Brötchen (n) ✓   ·   eine Banane (f) ✓\n\n' +
+          'Same for the ein-words: keinen/meinen are masculine only; neuter stays kein/mein, feminine becomes keine/meine.',
+      },
+      { rule: '⭐ MIXING GENDERS — the real skill',
+        body:
+          'Real sentences mix genders. Flip ONLY the masculine and leave the rest:\n\n' +
+          '  "Ich kaufe einen Tisch (m) und eine Lampe (f)."\n' +
+          '       → einen ⚠         → eine ✅\n\n' +
+          '  "Er hat den Hund (m), das Auto (n) und die Bücher (pl)."\n' +
+          '       → den ⚠   → das ✅   → die ✅\n\n' +
+          'Decision routine for every object:\n' +
+          '  1. What gender is the noun?\n' +
+          '  2. Masculine? → flip (der→den / ein→einen).\n' +
+          '  3. Feminine / neuter / plural? → leave it exactly as is.',
+      },
+      { rule: '🚦 PITFALLS — over-correcting the easy genders',
+        body:
+          '• Don\'t "fix" what isn\'t broken: die Frau / das Kind / die Kinder NEVER change in the Akk.\n' +
+          '• ein Brötchen (n) and eine Banane (f) keep their plain forms — only der/ein masculine gets -en/den.\n' +
+          '• Plural has no indefinite article: "Ich kaufe Bücher" (some books) or "keine Bücher" (no books) — never "einen Bücher".\n' +
+          '• The flip depends on GENDER + JOB, not on the verb alone. Same verb, different object: "Ich sehe den Mann / die Frau."\n' +
+          '• Remember the Day-21 contrast lives on: masculine subject also stays der — "Der Hund sieht die Frau."',
+      },
     ],
     exercises: [
-      { type: 'fill-blank', sentence: 'Ich kaufe __ Tasche. (the)', answer: 'die' },
-      { type: 'fill-blank', sentence: 'Wir lesen __ Buch. (the)', answer: 'das' },
-      { type: 'fill-blank', sentence: 'Sie hat __ Bücher. (the, pl)', answer: 'die' },
-      // Definite Nominativ drill — slide 123
-      { type: 'fill-blank', sentence: '__ Studenten benutzen das Buch. (the, plural)', answer: 'Die' },
-      { type: 'fill-blank', sentence: '__ Geschichte ist interessant. (the, fem.)', answer: 'Die' },
-      { type: 'fill-blank', sentence: 'Am Wochenende erzählt __ Kollege eine Geschichte. (the, masc.)', answer: 'der' },
-      // Indefinite Nominativ drill — slide 124
-      { type: 'fill-blank', sentence: '__ Studentin arbeitet in der Firma. (a, fem.)', answer: 'Eine' },
-      { type: 'fill-blank', sentence: '__ Freund besucht den Studenten. (a, masc.)', answer: 'Ein' },
-      { type: 'fill-blank', sentence: 'Am Wochenende besucht __ Freund den Studenten. (a, masc.)', answer: 'ein' },
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — gender→flip-or-not · article table · ein-word forms
+      { type: 'match',
+        pairs: [
+          { de: 'die Tasche (f)', en: '✅ die (no change)' },
+          { de: 'das Buch (n)',   en: '✅ das (no change)' },
+          { de: 'die Kinder (pl)', en: '✅ die (no change)' },
+          { de: 'der Tisch (m)',  en: '⚠ den (flips!)' },
+          { de: 'ein Hund (m)',   en: '⚠ einen (flips!)' },
+          { de: 'ein Brötchen (n)', en: '✅ ein (no change)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'm definite',  en: 'den ⚠' },
+          { de: 'f definite',  en: 'die ✅' },
+          { de: 'n definite',  en: 'das ✅' },
+          { de: 'pl definite', en: 'die ✅' },
+          { de: 'm indefinite', en: 'einen ⚠' },
+          { de: 'f indefinite', en: 'eine ✅' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'kein + Hund (m)',     en: 'keinen ⚠' },
+          { de: 'kein + Zeit (f)',     en: 'keine ✅' },
+          { de: 'mein + Auto (n)',     en: 'mein ✅' },
+          { de: 'mein + Bruder (m)',   en: 'meinen ⚠' },
+          { de: 'meine + Tasche (f)',  en: 'meine ✅' },
+        ],
+      },
+
+      // ✅ 5 NO-CHANGE fill-blanks (f / n / pl)
+      { type: 'fill-blank', sentence: 'Ich kaufe __ Tasche. (the, fem.)', answer: 'die' },
+      { type: 'fill-blank', sentence: 'Wir lesen __ Buch. (the, neuter)', answer: 'das' },
+      { type: 'fill-blank', sentence: 'Sie hat __ Bücher. (the, plural)', answer: 'die' },
+      { type: 'fill-blank', sentence: 'Ich habe __ Idee. (an, fem.)', answer: 'eine' },
+      { type: 'fill-blank', sentence: 'Ich esse __ Brötchen. (a, neuter — careful!)', answer: 'ein' },
+
+      // ⭐ 5 MIXED-GENDER decide-the-flip fill-blanks
+      { type: 'fill-blank', sentence: 'Ich kaufe __ Tisch. (a, masc. — flip!)', answer: 'einen' },
+      { type: 'fill-blank', sentence: 'Ich kaufe __ Lampe. (a, fem. — no change)', answer: 'eine' },
+      { type: 'fill-blank', sentence: 'Er hat __ Hund. (the, masc. — flip!)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Er hat __ Auto. (the, neuter — no change)', answer: 'das' },
+      { type: 'fill-blank', sentence: 'Ich nehme __ Tasche. (my, fem. — no change)', answer: 'meine' },
+
+      // ⚠ 3 NEUTER-TRAP / over-correction MCQs
+      { type: 'multiple-choice', q: '"I eat a bread roll." (Brötchen is neuter)',
+        options: ['Ich esse einen Brötchen.','Ich esse ein Brötchen.','Ich esse eine Brötchen.','Ich esse den Brötchen.'],
+        answer: 'Ich esse ein Brötchen.',
+        explain: 'Neuter ein stays ein — the -en ending is masculine only.' },
+      { type: 'multiple-choice', q: '⚠ Which is WRONG?',
+        options: ['Ich sehe die Frau.','Ich sehe eine Frau.','Ich sehe einen Frau.','Ich sehe die Kinder.'],
+        answer: 'Ich sehe einen Frau.',
+        explain: 'Frau is feminine → eine, never einen.' },
+      { type: 'multiple-choice', q: '"I have no time." (Zeit is feminine)',
+        options: ['Ich habe keinen Zeit.','Ich habe keine Zeit.','Ich habe kein Zeit.','Ich habe keiner Zeit.'],
+        answer: 'Ich habe keine Zeit.',
+        explain: 'Feminine kein → keine (same -e as eine).' },
+
+      // ⭐ 2 ALL-GENDERS-IN-ONE MCQs
+      { type: 'multiple-choice', q: 'Pick the fully-correct sentence:',
+        options: ['Ich habe einen Hund, eine Katze und ein Buch.','Ich habe ein Hund, einen Katze und einen Buch.','Ich habe einen Hund, einen Katze und ein Buch.','Ich habe den Hund, der Katze und das Buch.'],
+        answer: 'Ich habe einen Hund, eine Katze und ein Buch.',
+        explain: 'Hund (m)→einen ⚠ · Katze (f)→eine ✅ · Buch (n)→ein ✅.' },
+      { type: 'multiple-choice', q: 'In "Ich kaufe die Bücher", what changed from the Nominativ?',
+        options: ['die → den','die → die (nothing)','Bücher → Bücher','die → das'],
+        answer: 'die → die (nothing)',
+        explain: 'Plural die never changes in the Akkusativ.' },
+
+      // 💬 Mini dialogue — mixed-gender objects, flipping only masculine
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Was brauchst du für die Wohnung?',           en: 'What do you need for the apartment?' },
+        { speaker: 'B', de: 'Ich brauche einen Tisch und eine Lampe.',     en: 'I need a table and a lamp.' },
+        { speaker: 'A', de: 'Hast du schon das Sofa?',                     en: 'Do you already have the sofa?' },
+        { speaker: 'B', de: 'Ja, und ich habe auch die Stühle.',          en: 'Yes, and I also have the chairs.' },
+        { speaker: 'A', de: 'Kaufst du ein Bett oder einen Schrank?',      en: 'Are you buying a bed or a wardrobe?' },
+        { speaker: 'B', de: 'Ich kaufe ein Bett. Den Schrank habe ich schon.', en: 'I am buying a bed. I already have the wardrobe.' },
+      ]},
     ],
     quiz: [
       { type: 'multiple-choice', q: '"Ich habe __ Idee." (a, fem.)', options: ['einen','eine','ein','einer'], answer: 'eine' },
+      { type: 'fill-blank', sentence: 'Ich lese __ Buch. (the, neuter — no change)', answer: 'das' },
+      { type: 'fill-blank', sentence: 'Sie kauft __ Bücher. (the, plural — no change)', answer: 'die' },
+      { type: 'fill-blank', sentence: 'Ich kaufe __ Tisch. (a, masc. — flip!)', answer: 'einen' },
+      { type: 'multiple-choice', q: '⚠ "I eat a bread roll." (Brötchen = neuter)',
+        options: ['einen Brötchen','ein Brötchen','eine Brötchen','den Brötchen'], answer: 'ein Brötchen' },
+      { type: 'multiple-choice', q: 'Which genders do NOT change in the Akkusativ?',
+        options: ['masculine only','feminine, neuter & plural','all of them','none of them'], answer: 'feminine, neuter & plural' },
+      { type: 'fill-blank', sentence: 'Ich habe __ Zeit. (no, fem.)', answer: 'keine' },
     ],
   },
 

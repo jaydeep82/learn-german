@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.8.0';
+export const VERSION = '3.8.1';
 export const RELEASE_DATE = '2026-05-31';
 
 export const RELEASES = [
+  {
+    version: '3.8.1',
+    date: '2026-05-31',
+    type: 'improvement',
+    title: 'Day 22 review — Akkusativ (f / n / pl): the no-change relief + the decide-when-to-flip skill',
+    notes: [
+      'Reviewed Day 22 (Akkusativ — feminine / neuter / plural) end-to-end, parallel to the Day 14-21 full reviews. This is the consolidation half of the case: it confirms f/n/pl never change, then drills the real skill — mixing genders and flipping ONLY the masculine. The previous version had 3 vocab items, 1 grammar bullet and a Nominativ-drill that muddied the focus.',
+      'Vocabulary 3 → 18 items (vocabLayout: "spotlight") grouped by role icon: ✅ feminine no-change (die Tasche/Frau/Zeitung · eine Idee/Frage) · ✅ neuter no-change (das Buch/Handy/Auto · ein Brötchen with the "NOT einen" warning) · ✅ plural no-change (die Bücher/Kinder/Freunde) · ⭐ the masculine CONTRAST pair (der Tisch→den · ein Hund→einen) so learners stay sharp · 🚫 ein-word forms in f/n/pl (keine Zeit · keine Bücher · mein Auto · meine Tasche).',
+      'Grammar 1 → 5 callouts: ⭐ THE NO-CHANGE RULE with the f/n/pl table (all ✅ same) next to the lone masculine flip · ⭐ THE FULL AKKUSATIV TABLE — all four genders, definite + indefinite, on one card with the masculine row arrowed · ⚠ THE NEUTER TRAP — ein stays ein, never einen (the #1 beginner mistake) with the -en-is-masculine-fingerprint rule · ⭐ MIXING GENDERS — the real skill, with the 3-step decision routine (gender? → masc flip / else leave) · 🚦 pitfalls (over-correcting the easy genders · plural has no indefinite article · flip depends on gender+job).',
+      'Exercises reshaped (9 → 21 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: gender → flip-or-not (6 pairs) · article table m/f/n/pl (6 pairs) · ein-word forms keine/meine across genders (5 pairs).',
+      '• 5 ✅ NO-CHANGE fill-blanks (die/das/die-pl/eine/ein-neuter).',
+      '• 5 ⭐ MIXED-GENDER decide-the-flip fill-blanks (einen vs eine, den vs das, meine) — the core skill.',
+      '• 3 ⚠ NEUTER-TRAP / over-correction MCQs (ein Brötchen · einen Frau ✗ · keine Zeit).',
+      '• 2 ALL-GENDERS-IN-ONE MCQs (full mixed sentence · "what changed?" plural answer = nothing).',
+      '• 💬 Furniture dialogue mixing m/f/n/pl objects so only the masculine flips.',
+      'Quiz 1 → 7 items: eine-Idee · das-no-change · die-plural · einen-flip · neuter-trap · which-genders-dont-change · keine-Zeit.',
+    ],
+  },
   {
     version: '3.8.0',
     date: '2026-05-31',
