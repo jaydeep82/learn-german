@@ -2880,37 +2880,202 @@ export const days = [
 
   {
     id: 21, week: 3,
+    vocabLayout: 'spotlight',
     title: 'Akkusativ — masculine flips',
     titleDe: 'Akkusativ (m)',
     emoji: '➡️',
-    objective: 'Change "der" to "den" when a noun is the direct object.',
-    intro: 'In German the article changes shape when the noun receives the action. Only masculine articles change in the accusative — the others stay the same.',
+    objective: 'Master the FIRST case change: when a masculine noun receives the action, der → den and ein → einen. Everything else (f / n / pl) stays the same.',
+    intro: 'Welcome to the German case system! Until now articles never changed. From here, the article shows a noun\'s JOB in the sentence. The good news for the Akkusativ (the "receiving" case): only the MASCULINE article flips — der → den, ein → einen. Feminine, neuter and plural look exactly the same as before. Learn this one flip and you\'ve cracked 90 % of the accusative.',
     vocabulary: [
-      { de: 'der Mann → den Mann',   en: 'the man (subject → object)' },
-      { de: 'der Tisch → den Tisch', en: 'the table' },
-      { de: 'der Kaffee → den Kaffee', en: 'the coffee' },
-      { de: 'ein Mann → einen Mann', en: 'a man' },
+      // ➡️ THE CORE FLIP — der → den (the ONLY definite article that changes)
+      { de: 'der Mann → den Mann',     en: 'the man (subject → object)',  emoji: '👨', hint: '⭐ THE flip · der → den when it RECEIVES',     example: 'Ich sehe den Mann.',          exampleEn: 'I see the man.' },
+      { de: 'der Tisch → den Tisch',   en: 'the table',                   emoji: '🪑', hint: 'masc · der → den',                          example: 'Wir kaufen den Tisch.',       exampleEn: 'We are buying the table.' },
+      { de: 'der Kaffee → den Kaffee', en: 'the coffee',                  emoji: '☕', hint: 'masc · der → den',                          example: 'Ich trinke den Kaffee.',      exampleEn: 'I drink the coffee.' },
+      { de: 'der Hund → den Hund',     en: 'the dog',                     emoji: '🐕', hint: 'masc · der → den',                          example: 'Sie hat den Hund.',           exampleEn: 'She has the dog.' },
+      { de: 'der Apfel → den Apfel',   en: 'the apple',                   emoji: '🍎', hint: 'masc · der → den',                          example: 'Er isst den Apfel.',          exampleEn: 'He eats the apple.' },
+
+      // 🅰️ INDEFINITE FLIP — ein → einen (the +en is the giveaway)
+      { de: 'ein Mann → einen Mann',   en: 'a man',                       emoji: '👤', hint: '⭐ ein → einen · the -EN ending = Akk masc', example: 'Ich kenne einen Mann.',       exampleEn: 'I know a man.' },
+      { de: 'ein Tisch → einen Tisch', en: 'a table',                     emoji: '🪑', hint: 'ein → einen',                                example: 'Wir brauchen einen Tisch.',   exampleEn: 'We need a table.' },
+      { de: 'ein Hund → einen Hund',   en: 'a dog',                       emoji: '🐶', hint: 'ein → einen',                                example: 'Er hat einen Hund.',          exampleEn: 'He has a dog.' },
+
+      // 🚫 KEIN / MEIN flip — same -en ending (preview of the pattern)
+      { de: 'kein Mann → keinen Mann', en: 'no man',                      emoji: '🚫', hint: 'kein follows ein → keinen (masc Akk)',      example: 'Ich habe keinen Hund.',       exampleEn: 'I have no dog.' },
+      { de: 'mein Bruder → meinen Bruder', en: 'my brother',             emoji: '👬', hint: 'mein follows ein → meinen (masc Akk)',      example: 'Ich besuche meinen Bruder.',  exampleEn: 'I am visiting my brother.' },
+
+      // ✅ NO-CHANGE GROUP — f / n / pl look identical (the relief)
+      { de: 'die Frau (= die Frau)',   en: 'the woman (f · NO change)',   emoji: '👩', hint: '✅ feminine die → die (unchanged!)',         example: 'Ich sehe die Frau.',          exampleEn: 'I see the woman.' },
+      { de: 'das Kind (= das Kind)',   en: 'the child (n · NO change)',   emoji: '🧒', hint: '✅ neuter das → das (unchanged!)',           example: 'Ich sehe das Kind.',          exampleEn: 'I see the child.' },
+      { de: 'die Kinder (= die Kinder)', en: 'the children (pl · NO change)', emoji: '👨‍👩‍👧', hint: '✅ plural die → die (unchanged!)',    example: 'Ich sehe die Kinder.',        exampleEn: 'I see the children.' },
+      { de: 'eine Tasche (= eine Tasche)', en: 'a bag (f · NO change)',   emoji: '👜', hint: '✅ eine → eine (unchanged!)',               example: 'Ich kaufe eine Tasche.',      exampleEn: 'I am buying a bag.' },
+
+      // 🎬 AKKUSATIV-TRIGGER VERBS — these take a direct object
+      { de: 'sehen',     en: 'to see',                emoji: '👀', hint: 'classic Akk verb · "Ich sehe den …"',     example: 'Ich sehe den Bus.',           exampleEn: 'I see the bus.' },
+      { de: 'haben',     en: 'to have',               emoji: '✋', hint: '🔁 Day 6 · always takes Akk',              example: 'Ich habe einen Termin.',      exampleEn: 'I have an appointment.' },
+      { de: 'kaufen',    en: 'to buy',                emoji: '🛒', hint: 'buy WHAT? → Akk object',                   example: 'Sie kauft den Laptop.',       exampleEn: 'She buys the laptop.' },
+      { de: 'brauchen',  en: 'to need',               emoji: '🙏', hint: 'need WHAT? → Akk object',                  example: 'Ich brauche einen Stift.',    exampleEn: 'I need a pen.' },
+      { de: 'besuchen',  en: 'to visit',              emoji: '🚪', hint: 'visit WHOM? → Akk object',                 example: 'Wir besuchen den Lehrer.',    exampleEn: 'We visit the teacher.' },
+      { de: 'essen',     en: 'to eat',                emoji: '🍽️', hint: '🔁 Day 11 stem-changer · eat WHAT? → Akk', example: 'Er isst den Apfel.',          exampleEn: 'He eats the apple.' },
+      { de: 'trinken',   en: 'to drink',              emoji: '🥤', hint: 'drink WHAT? → Akk object',                 example: 'Ich trinke den Tee.',         exampleEn: 'I drink the tea.' },
+      { de: 'nehmen',    en: 'to take',               emoji: '🤲', hint: '🔁 Day 11 stem-changer · take WHAT? → Akk', example: 'Ich nehme den Bus.',          exampleEn: 'I take the bus.' },
     ],
     grammar: [
-      { rule: 'Akkusativ table',
-        body: 'm: der → den · ein → einen | f: die → die · eine → eine | n: das → das · ein → ein | pl: die → die.' },
-      { rule: 'When?', body: 'Whenever the noun is the direct object — the thing being verbed.' },
+      { rule: '⭐ WHAT IS THE AKKUSATIV? — the "receiving" case',
+        body:
+          'German marks a noun\'s JOB with its article. Two jobs so far:\n\n' +
+          '  🟦 NOMINATIV (subject) — the DOER of the action.\n' +
+          '  🟩 AKKUSATIV (direct object) — the THING/PERSON receiving the action.\n\n' +
+          'Worked example — "The man sees the dog":\n' +
+          '  Der Mann   sieht   den Hund.\n' +
+          '  └ subject ┘        └ object ┘\n' +
+          '  (Nominativ)        (Akkusativ → der flipped to den)\n\n' +
+          'The man DOES the seeing (stays der). The dog RECEIVES it (der → den). Flip the meaning and the articles flip too: "Den Mann sieht der Hund" = the DOG sees the man.',
+      },
+      { rule: '⭐ THE ONE RULE — only MASCULINE changes',
+        body:
+          'This is the whole lesson. In the Akkusativ, ONLY the masculine article changes:\n\n' +
+          '            NOMINATIV  →  AKKUSATIV\n' +
+          '  masc.  m   der        →  den        ⭐ THE flip\n' +
+          '             ein        →  einen      ⭐ +en\n' +
+          '  fem.   f   die        →  die        ✅ same\n' +
+          '             eine       →  eine       ✅ same\n' +
+          '  neut.  n   das        →  das        ✅ same\n' +
+          '             ein        →  ein        ✅ same\n' +
+          '  plur.  pl  die        →  die        ✅ same\n\n' +
+          '🧠 Memory hook: "der → den, ein → einen — everything else stays the same." Feminine, neuter and plural give you a free pass.',
+      },
+      { rule: '⭐ THE 5-SECOND TEST — Wer/Was vs Wen/Was',
+        body:
+          'To find which noun is the object, ask the verb a question:\n\n' +
+          '  WER / WAS + verb?  → the answer is the SUBJECT (Nominativ)\n' +
+          '  WEN / WAS + verb?  → the answer is the OBJECT  (Akkusativ)\n\n' +
+          'Sentence: "Ich kaufe den Tisch."\n' +
+          '  Wer kauft?  → Ich.        (subject)\n' +
+          '  Wen/Was kaufe ich? → den Tisch.   (object → Akkusativ → der became den)\n\n' +
+          '"Wen" literally means "whom" — German kept the -m/-n ending English mostly dropped. If "whom/what" fits the slot, that noun is in the Akkusativ.',
+      },
+      { rule: '🚫 kein / mein / dein all follow "ein"',
+        body:
+          'Any word built on the "ein"-pattern takes the SAME masculine -en ending in the Akkusativ:\n\n' +
+          '  ein   → einen     Ich habe einen Hund.\n' +
+          '  kein  → keinen    Ich habe keinen Hund.   (no dog)\n' +
+          '  mein  → meinen    Ich besuche meinen Bruder.\n' +
+          '  dein  → deinen    Ich sehe deinen Vater.\n' +
+          '  sein  → seinen / ihr → ihren / unser → unseren …\n\n' +
+          'They are called "ein-words" for exactly this reason — learn the ein → einen flip and they ALL come free. (Feminine/neuter/plural of these stay unchanged too: meine / mein / meine.)',
+      },
+      { rule: '🎬 WHICH VERBS TRIGGER IT? — the action-on-a-thing verbs',
+        body:
+          'Most everyday verbs take an Akkusativ object — the thing being acted on:\n\n' +
+          '  sehen (see) · haben (have) · kaufen (buy) · brauchen (need) ·\n' +
+          '  besuchen (visit) · essen (eat) · trinken (drink) · nehmen (take) ·\n' +
+          '  lesen (read) · suchen (look for) · finden (find) · machen (do)\n\n' +
+          '⚠ EXCEPTION — "sein" (to be) takes NO object, it takes Nominativ on BOTH sides:\n' +
+          '  "Er ist ein Lehrer." (NOT einen) — sein is an equals-sign, not an action.\n' +
+          '  Compare: "Er hat einen Hund" (haben → Akk) vs "Das ist ein Hund" (sein → Nom).',
+      },
+      { rule: '🚦 PITFALLS — the masculine traps',
+        body:
+          '• The flip is INVISIBLE on f / n / pl — "Ich sehe die Frau / das Kind / die Kinder" never change. Don\'t over-correct them.\n' +
+          '• It only happens to the OBJECT. The subject masculine stays der: "Der Hund sieht den Mann."\n' +
+          '• -en ending is the masculine Akk fingerprint: einen / keinen / meinen / deinen all end -en.\n' +
+          '• sein (to be) is the big exception — "Ich bin ein Mann" (Nom), never "einen".\n' +
+          '• Weak masculine nouns (der Student, der Junge, der Herr, der Kollege) ALSO add -n/-en to the NOUN in the Akk: "Ich sehe den Studenten / den Jungen / den Herrn / den Kollegen." (A small advanced group — just notice it for now.)',
+      },
     ],
     exercises: [
-      { type: 'fill-blank', sentence: 'Ich sehe __ Mann. (the)', answer: 'den' },
-      { type: 'fill-blank', sentence: 'Wir kaufen __ Tisch. (a)', answer: 'einen' },
-      { type: 'multiple-choice', q: 'Which is correct?', options: ['Ich trinke der Kaffee.','Ich trinke den Kaffee.','Ich trinke dem Kaffee.','Ich trinke des Kaffees.'], answer: 'Ich trinke den Kaffee.' },
-      // Akkusativ masculine drill — slide 125 (definite) + 126 (indefinite)
-      { type: 'fill-blank', sentence: 'Der Freund besucht __ Student. (the, masc. Akk.)', answer: 'den' },
-      { type: 'fill-blank', sentence: 'Der Student benutzt __ Computer. (the, masc. Akk.)', answer: 'den' },
-      { type: 'fill-blank', sentence: 'Der Student kauft __ Buch. (a, neuter Akk.)', answer: 'ein' },
-      { type: 'fill-blank', sentence: 'Der Freund besucht __ Studentin. (a, fem. Akk.)', answer: 'eine' },
-      { type: 'fill-blank', sentence: 'Der Student erzählt __ Geschichte. (a, fem. Akk.)', answer: 'eine' },
-      { type: 'fill-blank', sentence: 'Die Freunde kaufen __ Buch. (a, neuter Akk.)', answer: 'ein' },
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — Nom→Akk flip · gender→does-it-change · verb→object
+      { type: 'match',
+        pairs: [
+          { de: 'der Mann',  en: 'den Mann (Akk)' },
+          { de: 'ein Hund',  en: 'einen Hund (Akk)' },
+          { de: 'mein Bruder', en: 'meinen Bruder (Akk)' },
+          { de: 'kein Tisch', en: 'keinen Tisch (Akk)' },
+          { de: 'die Frau',  en: 'die Frau (NO change)' },
+          { de: 'das Kind',  en: 'das Kind (NO change)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'masculine der',   en: '⭐ → den (CHANGES)' },
+          { de: 'masculine ein',   en: '⭐ → einen (CHANGES)' },
+          { de: 'feminine die/eine', en: '✅ stays the same' },
+          { de: 'neuter das/ein',  en: '✅ stays the same' },
+          { de: 'plural die',      en: '✅ stays the same' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Wer / Was …?', en: '🟦 finds the SUBJECT (Nominativ)' },
+          { de: 'Wen / Was …?', en: '🟩 finds the OBJECT (Akkusativ)' },
+          { de: 'haben / kaufen / sehen', en: '🎬 take an Akk object' },
+          { de: 'sein (to be)', en: '⚠ takes Nominativ on both sides' },
+        ],
+      },
+
+      // ⭐ 6 MASCULINE-FLIP fill-blanks (der → den, ein → einen)
+      { type: 'fill-blank', sentence: 'Ich sehe __ Mann. (the, masc.)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Wir kaufen __ Tisch. (a, masc.)', answer: 'einen' },
+      { type: 'fill-blank', sentence: 'Er hat __ Hund. (a, masc.)', answer: 'einen' },
+      { type: 'fill-blank', sentence: 'Der Freund besucht __ Student. (the, masc.)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Ich besuche __ Bruder. (my, masc.)', answer: 'meinen' },
+      { type: 'fill-blank', sentence: 'Ich habe __ Hund. (no, masc. — kein)', answer: 'keinen' },
+
+      // ✅ 4 NO-CHANGE fill-blanks (f / n / pl stay identical)
+      { type: 'fill-blank', sentence: 'Ich sehe __ Frau. (the, fem. — no change)', answer: 'die' },
+      { type: 'fill-blank', sentence: 'Wir lesen __ Buch. (the, neuter — no change)', answer: 'das' },
+      { type: 'fill-blank', sentence: 'Sie kauft __ Tasche. (a, fem. — no change)', answer: 'eine' },
+      { type: 'fill-blank', sentence: 'Der Kollege besucht __ Freunde. (the, plural — no change)', answer: 'die', hint: 'die for plural Akk' },
+
+      // ⭐ 3 WEN/WAS identification MCQs
+      { type: 'multiple-choice', q: 'In "Der Hund sieht den Mann", what is in the Akkusativ?',
+        options: ['Der Hund','sieht','den Mann','—'], answer: 'den Mann',
+        explain: 'Wen sieht der Hund? → den Mann. The receiver is in the Akkusativ.' },
+      { type: 'multiple-choice', q: 'In "Ich kaufe einen Tisch", which word is the SUBJECT?',
+        options: ['Ich','kaufe','einen Tisch','Tisch'], answer: 'Ich',
+        explain: 'Wer kauft? → Ich. The doer is the Nominativ subject.' },
+      { type: 'multiple-choice', q: 'Which sentence has its masculine object correctly flipped?',
+        options: ['Ich sehe der Mann.','Ich sehe den Mann.','Ich sehe dem Mann.','Ich sehe des Mannes.'],
+        answer: 'Ich sehe den Mann.' },
+
+      // ⚠ 3 SPOT-THE-ERROR MCQs (der-not-flipped · sein-exception · over-correcting f)
+      { type: 'multiple-choice', q: '⚠ Which is WRONG?',
+        options: ['Ich trinke den Kaffee.','Ich trinke der Kaffee.','Ich habe einen Hund.','Ich sehe den Mann.'],
+        answer: 'Ich trinke der Kaffee.',
+        explain: 'Kaffee is the object here → der must become den.' },
+      { type: 'multiple-choice', q: '⚠ "He is a teacher." — pick the CORRECT German.',
+        options: ['Er ist einen Lehrer.','Er ist ein Lehrer.','Er hat ein Lehrer.','Er ist den Lehrer.'],
+        answer: 'Er ist ein Lehrer.',
+        explain: 'sein (to be) takes Nominativ on both sides — never einen.' },
+      { type: 'multiple-choice', q: '⚠ Which sentence OVER-corrects (changes something it should not)?',
+        options: ['Ich sehe die Frau.','Ich sehe diene Frau.','Ich sehe das Kind.','Ich sehe die Kinder.'],
+        answer: 'Ich sehe diene Frau.',
+        explain: 'Feminine die does NOT change in the Akkusativ — and "diene" isn\'t a word. It stays "die Frau".' },
+
+      // 💬 Mini dialogue — Akk objects across haben / kaufen / brauchen / sehen
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Was kaufst du heute?',                 en: 'What are you buying today?' },
+        { speaker: 'B', de: 'Ich kaufe einen Tisch und eine Lampe.', en: 'I am buying a table and a lamp.' },
+        { speaker: 'A', de: 'Brauchst du auch einen Stuhl?',         en: 'Do you also need a chair?' },
+        { speaker: 'B', de: 'Nein, ich habe schon den Stuhl.',       en: 'No, I already have the chair.' },
+        { speaker: 'A', de: 'Und siehst du den Laptop dort?',        en: 'And do you see the laptop there?' },
+        { speaker: 'B', de: 'Ja! Ich nehme den Laptop auch.',        en: 'Yes! I\'ll take the laptop too.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Er hat __ Hund. (a, masc.)', answer: 'einen' },
-      { type: 'fill-blank', sentence: 'Der Kollege besucht __ Freunde. (no article — already plural)', answer: 'die', hint: 'die for plural Akk' },
+      { type: 'fill-blank', sentence: 'Ich sehe __ Mann. (the, masc.)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Ich sehe __ Frau. (the, fem. — no change)', answer: 'die' },
+      { type: 'multiple-choice', q: 'In "Ich kaufe den Tisch", which case is "den Tisch"?',
+        options: ['Nominativ','Akkusativ','Dativ','Genitiv'], answer: 'Akkusativ' },
+      { type: 'multiple-choice', q: 'Which question finds the Akkusativ object?',
+        options: ['Wer/Was?','Wen/Was?','Wo?','Wann?'], answer: 'Wen/Was?' },
+      { type: 'multiple-choice', q: '⚠ "He is a man." — correct German:',
+        options: ['Er ist einen Mann.','Er ist ein Mann.','Er hat ein Mann.','Er ist den Mann.'],
+        answer: 'Er ist ein Mann.', explain: 'sein → Nominativ on both sides.' },
+      { type: 'fill-blank', sentence: 'Ich besuche __ Bruder. (my, masc. Akk)', answer: 'meinen' },
     ],
   },
 

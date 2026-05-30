@@ -11,10 +11,30 @@
  * in sync.
  */
 
-export const VERSION = '3.7.9';
-export const RELEASE_DATE = '2026-05-30';
+export const VERSION = '3.8.0';
+export const RELEASE_DATE = '2026-05-31';
 
 export const RELEASES = [
+  {
+    version: '3.8.0',
+    date: '2026-05-31',
+    type: 'improvement',
+    title: 'Day 21 review — Akkusativ (masculine flips): the case system begins',
+    notes: [
+      'Reviewed Day 21 (Akkusativ — masculine flips) end-to-end, parallel to the Day 14/16/17/18/19/20 full reviews. This is the FIRST day of the German case system, so the polish doubles as the gentlest possible on-ramp. The previous version had 4 vocab items, 2 grammar bullets and 9 fill-blanks. Reshaped into a complete "only-masculine-changes" toolkit.',
+      'Vocabulary 4 → 23 items (vocabLayout: "spotlight") grouped by role icon: ➡️ the core der → den flip on 5 masculine nouns (Mann · Tisch · Kaffee · Hund · Apfel) shown as before→after pairs · 🅰️ the ein → einen indefinite flip (3 nouns) with the "-EN ending = Akk masc" fingerprint · 🚫 kein → keinen and mein → meinen so learners see the ein-word family · ✅ a NO-CHANGE group (die Frau / das Kind / die Kinder / eine Tasche) that visibly reassures f/n/pl stay identical · 🎬 8 Akkusativ-trigger verbs (sehen · haben · kaufen · brauchen · besuchen · essen · trinken · nehmen) each with a worked Akk-object example.',
+      'Grammar 2 → 6 callouts: ⭐ WHAT IS THE AKKUSATIV — Nominativ (doer) vs Akkusativ (receiver) with the "Der Mann sieht den Hund" worked diagram · ⭐ THE ONE RULE — full Nom→Akk article table showing ONLY masculine changes (der→den, ein→einen; f/n/pl free pass) with the memory hook · ⭐ THE 5-SECOND TEST — Wer/Was (subject) vs Wen/Was (object) with worked Q&A · 🚫 kein/mein/dein all follow ein → -en · 🎬 which verbs trigger it (action-on-a-thing list) PLUS the ⚠ sein-takes-Nominativ-on-both-sides exception · 🚦 pitfalls (invisible on f/n/pl · only the object · -en fingerprint · sein exception · weak-masculine -n nouns flagged for awareness).',
+      'Exercises completely reshaped (9 → 22 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: Nom → Akk flip (6 pairs incl. ein-words and no-change cases) · gender → does-it-change (5 pairs) · question/verb → role (Wer-vs-Wen + Akk-verbs + sein exception).',
+      '• 6 ⭐ MASCULINE-FLIP fill-blanks (den · einen · einen · den · meinen · keinen).',
+      '• 4 ✅ NO-CHANGE fill-blanks (die Frau · das Buch · eine Tasche · die Freunde) so learners practise NOT over-correcting.',
+      '• 3 WEN/WAS identification MCQs (find the Akk object · find the subject · pick the correctly-flipped sentence).',
+      '• 3 ⚠ SPOT-THE-ERROR MCQs: der-not-flipped · the sein-exception ("Er ist ein Lehrer" not einen) · over-correcting feminine die.',
+      '• 💬 Mini dialogue using Akk objects across kaufen / brauchen / haben / sehen / nehmen in a furniture-shopping chat.',
+      'Quiz 2 → 7 items: einen · den · die-no-change · case-naming MCQ · Wen/Was test MCQ · sein-exception MCQ · meinen.',
+      'Version bumped to 3.8.0 (minor) to mark the start of the Week-4 case-system arc.',
+    ],
+  },
   {
     version: '3.7.9',
     date: '2026-05-30',
