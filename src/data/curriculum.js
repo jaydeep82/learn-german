@@ -4188,70 +4188,242 @@ export const days = [
   /* ----- Day 19: Big numbers & prices (slides 143-145, 186-187, 256) ----- */
   {
     id: 19, week: 3,
+    vocabLayout: 'spotlight',
     title: 'Big numbers & prices',
     titleDe: 'Große Zahlen & Preise',
     emoji: '💶',
-    objective: 'Read 4–6 digit numbers and handle prices in euros.',
-    intro: 'After 1000, German numbers can look terrifying — but the building blocks are the same. Plus you\'ll need them for shopping, salaries and bills.',
+    objective: 'Read 4–7 digit numbers, handle euros & cents at any checkout, and describe prices like a local (teuer · günstig · im Angebot · Rabatt).',
+    intro: 'Past 1 000, German numbers look scary but use the SAME Lego rule as Day 18 — just more bricks. Add the comma-swap trick (1.234,56 €), the polite teuer/billig/günstig ladder, and a handful of checkout phrases — and you can shop, pay, and read any salary listing.',
     vocabulary: [
-      { de: 'tausend',          en: '1 000' },
-      { de: 'zweitausend',      en: '2 000' },
-      { de: 'zehntausend',      en: '10 000' },
-      { de: 'hunderttausend',   en: '100 000' },
-      { de: 'eine Million',     en: '1 000 000' },
-      { de: 'der Euro',         en: 'euro' },
-      { de: 'der Cent',         en: 'cent' },
-      { de: 'kosten',           en: 'to cost' },
-      { de: 'der Preis',        en: 'price' },
-      { de: 'teuer',            en: 'expensive' },
-      { de: 'billig',           en: 'cheap' },
-      { de: 'günstig',          en: 'good value' },
+      // 🔟 THE THOUSANDS LADDER — same Lego rule, more bricks
+      { de: 'tausend',          en: '1 000',          emoji: '🔟', hint: 'either "tausend" or "eintausend" · same Lego rule',     example: 'Tausend Euro pro Monat.',                          exampleEn: 'One thousand euros per month.' },
+      { de: 'zweitausend',      en: '2 000',          emoji: '2⃣🔟', hint: 'multiplier + tausend · one word',                     example: 'Zweitausend Euro pro Jahr für Strom.',             exampleEn: 'Two thousand euros per year for electricity.' },
+      { de: 'fünftausend',      en: '5 000',          emoji: '5⃣🔟', hint: 'fünf + tausend · still one word',                      example: 'Fünftausend Schritte am Tag.',                     exampleEn: 'Five thousand steps a day.' },
+      { de: 'zehntausend',      en: '10 000',         emoji: '🔢', hint: 'zehn + tausend',                                         example: 'Zehntausend Studenten an der Uni.',                exampleEn: 'Ten thousand students at the university.' },
+      { de: 'fünfzigtausend',   en: '50 000',         emoji: '💸', hint: 'fünfzig + tausend · typical salary number',              example: 'Mein Bruder verdient fünfzigtausend Euro pro Jahr.', exampleEn: 'My brother earns fifty thousand euros a year.' },
+      { de: 'hunderttausend',   en: '100 000',        emoji: '💯', hint: 'hundert + tausend · one word',                           example: 'Das Auto kostet hunderttausend Euro.',             exampleEn: 'The car costs one hundred thousand euros.' },
+      { de: 'eine Million',     en: '1 000 000',      emoji: '🪙', hint: '⚠ FEMININE (eine, not ein) · separate word with capital M', example: 'Eine Million Menschen leben hier.',              exampleEn: 'One million people live here.' },
+      { de: 'eine Milliarde',   en: '1 000 000 000',  emoji: '🌐', hint: '⚠ Milliarde = English BILLION (10⁹) · not "Billion"!',     example: 'Eine Milliarde Sterne.',                           exampleEn: 'A billion stars.' },
+
+      // 🧮 BIG-NUMBER LEGO IN ACTION (worked examples)
+      { de: 'eintausendzweihundertvierunddreißig',       en: '1 234',     emoji: '🧮', hint: 'tausend + hundert + flip',                       example: 'Eintausendzweihundertvierunddreißig Euro Miete.',           exampleEn: 'One thousand two hundred thirty-four euros rent.' },
+      { de: 'neuntausendachthundertsechsundsiebzig',     en: '9 876',     emoji: '🧮', hint: 'all-9876 · biggest 4-digit demo',                 example: 'Das Modell kostet neuntausendachthundertsechsundsiebzig Euro.', exampleEn: 'The model costs nine thousand eight hundred seventy-six euros.' },
+      { de: 'vierundzwanzigtausendvierhundertneunundneunzig', en: '24 499', emoji: '🚗', hint: '⭐ for 21 000+, the multiplier itself FLIPS first', example: 'Das Auto kostet vierundzwanzigtausendvierhundertneunundneunzig Euro.', exampleEn: 'The car costs twenty-four thousand four hundred ninety-nine euros.' },
+      { de: 'eine Million fünfhunderttausend',           en: '1 500 000', emoji: '🏠', hint: 'Million + the rest (separate words)',              example: 'Die Wohnung kostet eine Million fünfhunderttausend Euro.', exampleEn: 'The apartment costs one million five hundred thousand euros.' },
+
+      // 💶 MONEY & CURRENCY
+      { de: 'der Euro',     en: 'euro',         emoji: '💶', hint: '€ · plural Euro (unchanged)',                example: 'Das kostet zehn Euro.',          exampleEn: 'That costs ten euros.' },
+      { de: 'der Cent',     en: 'cent',         emoji: '🪙', hint: '¢ · usually dropped in speech',              example: 'Zehn Euro fünfzig (Cent).',      exampleEn: 'Ten euros fifty (cents).' },
+      { de: 'das Geld',     en: 'money',        emoji: '💰', hint: 'uncountable · always das Geld',              example: 'Ich habe wenig Geld.',           exampleEn: 'I have little money.' },
+      { de: 'die Münze',    en: 'coin',         emoji: '🟡', hint: 'plural: Münzen',                             example: 'Ich habe nur Münzen.',           exampleEn: 'I only have coins.' },
+      { de: 'der Schein',   en: 'banknote / bill', emoji: '💵', hint: 'der Zehn-Euro-Schein = the €10 note',     example: 'Hier ist ein Fünfzig-Euro-Schein.', exampleEn: 'Here is a fifty-euro note.' },
+
+      // 💰 PRICE — ASKING, ANSWERING, PAYING
+      { de: 'kosten',         en: 'to cost',                       emoji: '🏷️', hint: '🔁 Day 18 · "kostet" = costs',                 example: 'Wie viel kostet das?',                     exampleEn: 'How much does that cost?' },
+      { de: 'der Preis',      en: 'price',                         emoji: '🏷️', hint: 'masc · "Was ist der Preis?"',                  example: 'Der Preis ist gut.',                       exampleEn: 'The price is good.' },
+      { de: 'bezahlen',       en: 'to pay',                        emoji: '💳', hint: 'regular verb · ich bezahle / du bezahlst',      example: 'Ich bezahle mit Karte.',                   exampleEn: 'I pay by card.' },
+      { de: 'mit Karte',      en: 'by card',                       emoji: '💳', hint: 'checkout phrase · contactless / credit',         example: 'Bezahlen Sie mit Karte oder bar?',         exampleEn: 'Are you paying by card or cash?' },
+      { de: 'bar',            en: 'cash',                          emoji: '💵', hint: '"in cash" · adverb · "bar bezahlen"',            example: 'Ich bezahle bar.',                         exampleEn: 'I am paying in cash.' },
+      { de: 'inklusive',      en: 'including (inkl.)',             emoji: '✅', hint: '"inkl. MwSt" = incl. VAT · receipt staple',     example: 'Hundert Euro inkl. MwSt.',                 exampleEn: 'One hundred euros incl. VAT.' },
+
+      // 🏷️ DESCRIBING A PRICE — register matters
+      { de: 'teuer',          en: 'expensive',                     emoji: '💸', hint: 'neutral · "Das ist teuer"',                     example: 'Das Auto ist sehr teuer.',                 exampleEn: 'The car is very expensive.' },
+      { de: 'billig',         en: 'cheap',                         emoji: '👎', hint: '⚠ can mean "cheap quality" · sounds negative', example: 'Diese Tasche ist billig — schlechte Qualität.', exampleEn: 'This bag is cheap — bad quality.' },
+      { de: 'günstig',        en: 'good value / affordable',       emoji: '👍', hint: '⭐ polite way to say "cheap" · preferred',       example: 'Die Wohnung ist sehr günstig.',            exampleEn: 'The apartment is very good value.' },
+      { de: 'im Angebot',     en: 'on sale / on offer',            emoji: '🏷️', hint: 'shop-window magic word',                        example: 'Heute sind die Schuhe im Angebot.',        exampleEn: 'Today the shoes are on sale.' },
+      { de: 'der Rabatt',     en: 'discount',                      emoji: '🎯', hint: '"10 % Rabatt" = 10 % off',                     example: 'Es gibt zehn Prozent Rabatt.',             exampleEn: 'There is a ten percent discount.' },
     ],
     grammar: [
-      { rule: 'Building any number',
+      { rule: '⭐ BIG NUMBERS — same Lego rule, more bricks',
         body:
-          'Read it like Lego — biggest unit first:\n' +
-          '• 365   = drei-hundert-fünf-und-sechzig\n' +
-          '• 1 234 = ein-tausend-zwei-hundert-vier-und-dreißig\n' +
-          '• 9 876 = neun-tausend-acht-hundert-sechs-und-siebzig\n' +
-          '• 24 499 = vier-und-zwanzigtausend-vier-hundert-neun-und-neunzig',
+          'Past 1 000 the formula stays the same. Read biggest-first, glue everything into ONE word:\n\n' +
+          '  multiplier·tausend  +  multiplier·hundert  +  units-UND-tens\n\n' +
+          'Worked examples (underscores show the Lego seams):\n\n' +
+          '  1 234  = ein_tausend + zwei_hundert + vier_und_dreißig\n' +
+          '         → eintausendzweihundertvierunddreißig\n' +
+          '  9 876  = neun_tausend + acht_hundert + sechs_und_siebzig\n' +
+          '         → neuntausendachthundertsechsundsiebzig\n' +
+          '  24 499 = vier_und_zwanzig·tausend + vier_hundert + neun_und_neunzig\n' +
+          '         → vierundzwanzigtausendvierhundertneunundneunzig\n\n' +
+          '⭐ THE TWIST AT 21 000+: the multiplier in front of "tausend" itself uses the FLIP rule.\n' +
+          '  24 000 = vier-UND-zwanzig + tausend → vierundzwanzigtausend (NOT "zwanzigvierhausend")\n' +
+          '  73 000 = drei-UND-siebzig + tausend → dreiundsiebzigtausend\n\n' +
+          '🧠 Quick parse: chunk the digits from the right in 3s (24 499 → 24 | 499) and read each chunk with its unit label (tausend / hundert / nothing).',
       },
-      { rule: 'Decimals use a COMMA, thousands use a DOT',
+      { rule: '⭐ MILLION & MILLIARDE — different rules + the BILLION trap',
         body:
-          'German money: 1.234,56 € (English: 1,234.56)\n' +
-          'Spoken: "ein-tausend-zwei-hundert-vier-und-dreißig Euro sechs-und-fünfzig (Cent)"\n' +
-          'Or just: "ein-tausend-zwei-hundert-vier-und-dreißig Euro fünfzig" (Cents often dropped).',
+          'Million and Milliarde are NOUNS, not number-suffixes. They behave differently from tausend:\n\n' +
+          '  • Feminine (DIE): die Million · die Milliarde\n' +
+          '  • Take the indefinite article "eine" — "eine Million" (NOT "ein Million") ✓\n' +
+          '  • Stand as SEPARATE words — "eine Million Euro" (not "einmillioneuro")\n' +
+          '  • Capital first letter — "eine Million" (always capitalised)\n' +
+          '  • Plural: Millionen / Milliarden — "drei Millionen Euro"\n\n' +
+          '⚠ THE FALSE-FRIEND BILLION TRAP:\n' +
+          '  English BILLION  = 1 000 000 000 (10⁹)     →  German MILLIARDE\n' +
+          '  English TRILLION = 1 000 000 000 000 (10¹²) →  German BILLION\n\n' +
+          'Reading "der Staat hat 1 Billion Euro Schulden" as "1 billion" loses you a factor of 1 000! Always use Milliarde for the English billion.',
       },
-      { rule: 'Asking and giving a price',
+      { rule: '⭐ DECIMALS & THOUSANDS — German swaps the . and ,',
         body:
-          'Q: "Wie viel kostet das?"  /  "Was kostet …?"\n' +
-          'A: "Das kostet 13 Euro."  /  "13 Euro fünfzig."',
+          'German uses , for decimals and . for thousands — the OPPOSITE of English/US convention:\n\n' +
+          '  German  1.234,56 €   ↔   English  1,234.56\n' +
+          '  German  3,14 (Pi)    ↔   English  3.14\n' +
+          '  German  1.000        ↔   English  1,000\n\n' +
+          'Spoken decimals use the word "Komma":\n' +
+          '  3,14   →  drei Komma eins vier\n' +
+          '  9,99 € →  neun Komma neun neun Euro  (or just "neun Euro neunundneunzig")\n\n' +
+          '💶 PRICE SPEECH SHORTCUT:\n' +
+          '  Written:  12,50 €\n' +
+          '  Spoken:   "zwölf Euro fünfzig" (Cent is usually dropped)\n' +
+          '  Formal:   "zwölf Euro fünfzig Cent"',
+      },
+      { rule: '💶 PRICES — ask, answer, pay',
+        body:
+          'ASKING:\n' +
+          '  Wie viel kostet das?   — How much does this cost? (most common)\n' +
+          '  Was kostet das?         — same, slightly shorter\n' +
+          '  Was macht das?          — What does it come to? (at checkout)\n' +
+          '  Was ist der Preis?      — What\'s the price? (more formal)\n\n' +
+          'ANSWERING:\n' +
+          '  Das kostet 13 Euro.            — formal\n' +
+          '  Das macht 25 Euro fünfzig.     — checkout\n' +
+          '  Zehn Euro, bitte.              — a tip-or-stall reply\n' +
+          '  Hundert Euro inkl. MwSt.       — including VAT (you\'ll see "inkl. MwSt" on every receipt)\n\n' +
+          'PAYING:\n' +
+          '  Q: Bar oder mit Karte?   — Cash or card?\n' +
+          '  A: Mit Karte, bitte.     — Card, please.\n' +
+          '  A: Bar.                  — Cash.\n' +
+          '  "Stimmt so!"             — "Keep the change!" (one of the most-used checkout phrases)',
+      },
+      { rule: '🏷️ DESCRIBING PRICES — pick the right word (it\'s social!)',
+        body:
+          'The teuer / billig / günstig ladder is a REGISTER question, not just translation:\n\n' +
+          '  💸 teuer    — "expensive" · neutral observation\n' +
+          '                "Das Auto ist teuer."\n\n' +
+          '  👎 billig   — "cheap" · BEWARE: in German this often implies CHEAP QUALITY (= shoddy)\n' +
+          '                "Die Tasche ist billig" sounds dismissive\n' +
+          '                Use only when you DO mean "low quality"\n\n' +
+          '  👍 günstig  — ⭐ "affordable / good value" · the polite default\n' +
+          '                "Die Wohnung ist günstig" = "the apartment is well-priced"\n' +
+          '                In shops you\'ll hear "ein günstiges Angebot" not "ein billiges Angebot"\n\n' +
+          'SHOPPING WORDS:\n' +
+          '  im Angebot       — on sale / on offer (window-poster magic word)\n' +
+          '  X % Rabatt       — X % off (Rabatt = discount)\n' +
+          '  reduziert         — reduced ("alles reduziert")\n\n' +
+          '⚠ PITFALLS: don\'t say "kostet teuer" — that\'s "ist teuer" or "kostet viel". And don\'t call a friend\'s gift "billig" — say "günstig" to keep things polite.',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: '1000 = __', answer: 'tausend' },
-      { type: 'fill-blank', sentence: '10 000 = __', answer: 'zehntausend' },
-      { type: 'fill-blank', sentence: '1 234 = ein__zweihundertvierunddreißig', answer: 'tausend' },
-      { type: 'fill-blank', sentence: '"How much does it cost?" → Wie viel __ das?', answer: 'kostet' },
-      { type: 'fill-blank', sentence: '"That costs 13 euros." → Das __ dreizehn Euro.', answer: 'kostet' },
-      { type: 'multiple-choice', q: '982 = ?',
-        options: ['neunhundertachtzigzwei','neunhundertzweiundachtzig','neunhundertachtundzwei','neuhundertzweiundachtzig'],
-        answer: 'neunhundertzweiundachtzig' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — numeral→word · description→meaning · Q→A
+      { type: 'match',
+        pairs: [
+          { de: '1 000',         en: 'tausend' },
+          { de: '10 000',        en: 'zehntausend' },
+          { de: '50 000',        en: 'fünfzigtausend' },
+          { de: '100 000',       en: 'hunderttausend' },
+          { de: '1 000 000',     en: 'eine Million' },
+          { de: '1 000 000 000', en: 'eine Milliarde' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'teuer',       en: '💸 expensive (neutral)' },
+          { de: 'billig',      en: '👎 cheap (often = poor quality)' },
+          { de: 'günstig',     en: '👍 good value / affordable (polite)' },
+          { de: 'im Angebot',  en: '🏷️ on sale / on offer' },
+          { de: 'der Rabatt',  en: '🎯 discount (e.g. 10 % off)' },
+          { de: 'inklusive',   en: '✅ including (incl. VAT etc.)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Wie viel kostet das?',           en: 'Das kostet 13 Euro.' },
+          { de: 'Was macht das?',                  en: 'Das macht 25 Euro fünfzig.' },
+          { de: 'Bar oder mit Karte?',             en: 'Mit Karte, bitte.' },
+          { de: 'Gibt es einen Rabatt?',           en: 'Ja, zehn Prozent Rabatt.' },
+          { de: 'Ist das im Angebot?',             en: 'Nein, der normale Preis.' },
+        ],
+      },
+
+      // ⭐ 6 BUILD-THE-BIG-NUMBER fill-blanks
+      { type: 'fill-blank', sentence: '1 000 = __', answer: 'tausend' },
+      { type: 'fill-blank', sentence: '10 000 = __tausend', answer: 'zehn' },
+      { type: 'fill-blank', sentence: '100 000 = __tausend', answer: 'hundert' },
+      { type: 'fill-blank', sentence: '1 234 = eintausendzweihundert__unddreißig', answer: 'vier' },
+      { type: 'fill-blank', sentence: '24 000 = __undzwanzigtausend (the multiplier flips)', answer: 'vier' },
+      { type: 'fill-blank', sentence: '1 000 000 = eine __', answer: 'Million' },
+
+      // ⚠ 3 MILLION / MILLIARDE MCQs
+      { type: 'multiple-choice', q: '"One million euros":',
+        options: ['ein Million Euro','eine Million Euro','einer Million Euro','einmillion Euro'],
+        answer: 'eine Million Euro',
+        explain: 'Million is FEMININE → eine, not ein. And it\'s a separate word with a capital M.' },
+      { type: 'multiple-choice', q: '⚠ "1 000 000 000 stars" — pick the right German word:',
+        options: ['eine Million','eine Milliarde','eine Billion','eintausend Million'],
+        answer: 'eine Milliarde',
+        explain: 'English BILLION = German MILLIARDE. The German "Billion" actually means trillion (10¹²).' },
+      { type: 'multiple-choice', q: 'How many ZEROS does a German "Billion" have?',
+        options: ['6','9','12','3'],
+        answer: '12',
+        explain: 'German Billion = 10¹² = English trillion. The false-friend trap.' },
+
+      // 💶 3 PRICE-FORMAT MCQs
       { type: 'multiple-choice', q: 'In German, 1.234,56 € reads as…',
         options: ['one point two three four, fifty-six','one thousand two hundred thirty-four euros fifty-six','one comma two three four','twelve hundred and thirty-four'],
-        answer: 'one thousand two hundred thirty-four euros fifty-six' },
+        answer: 'one thousand two hundred thirty-four euros fifty-six',
+        explain: 'German uses . for thousands and , for decimals — the opposite of English.' },
+      { type: 'multiple-choice', q: 'Spoken: 9,99 € most naturally =',
+        options: ['neun Komma neun neun Euro','neun Euro neunundneunzig','neun Punkt neun neun','neuneuro neunundneunzig'],
+        answer: 'neun Euro neunundneunzig',
+        explain: 'At checkout most Germans say "X Euro Y" without "Komma" — the "Cent" word is usually dropped.' },
+      { type: 'multiple-choice', q: 'On a receipt "inkl. MwSt" means:',
+        options: ['plus tax','including VAT','exclusive of tax','tax-free'],
+        answer: 'including VAT',
+        explain: 'MwSt = Mehrwertsteuer (value-added tax). German prices are usually shown including it.' },
+
+      // ⚠ 3 SPOT-THE-ERROR / REGISTER MCQs
+      { type: 'multiple-choice', q: '⚠ Which sentence is WRONG?',
+        options: ['Das ist teuer.','Das kostet viel.','Das kostet teuer.','Das ist günstig.'],
+        answer: 'Das kostet teuer.',
+        explain: 'Don\'t pair kosten with teuer — say "ist teuer" or "kostet viel".' },
+      { type: 'multiple-choice', q: '⚠ Polite way to say a friend\'s sofa was affordable:',
+        options: ['Das Sofa ist billig.','Das Sofa ist günstig.','Das Sofa kostet teuer.','Das Sofa ist schein.'],
+        answer: 'Das Sofa ist günstig.',
+        explain: '"billig" often implies cheap-quality in German. Use "günstig" for the polite meaning of "affordable".' },
+      { type: 'multiple-choice', q: '⚠ Which is the CORRECT spelling of 24 499?',
+        options: ['zwanzigvierhausend...','vierundzwanzigtausendvierhundertneunundneunzig','vierundzwanzigtausend und vierhundertneunundneunzig','vierundzwanzigtausendvierhundertundneunundneunzig'],
+        answer: 'vierundzwanzigtausendvierhundertneunundneunzig',
+        explain: 'All one word. The multiplier 24 itself flips (vier-UND-zwanzig). No "und" between the chunks.' },
+
+      // 💬 Mini dialogue — full checkout flow with prices, paying, Rabatt
       { type: 'dialogue', lines: [
-        { speaker: 'Kunde',     de: 'Wie viel kostet das Smartphone?',     en: 'How much does the smartphone cost?' },
-        { speaker: 'Verkäufer', de: 'Das Smartphone kostet 982 Euro.',     en: 'The smartphone costs 982 euros.' },
-        { speaker: 'Kunde',     de: 'Und das Auto?',                       en: 'And the car?' },
-        { speaker: 'Verkäufer', de: 'Das Auto kostet 24 499 Euro.',         en: 'The car costs 24,499 euros.' },
-        { speaker: 'Kunde',     de: 'Das ist sehr teuer!',                 en: 'That is very expensive!' },
+        { speaker: 'Kunde',     de: 'Wie viel kostet das Smartphone?',                                 en: 'How much does the smartphone cost?' },
+        { speaker: 'Verkäufer', de: 'Das Smartphone kostet neunhundertneunundneunzig Euro.',            en: 'The smartphone costs nine hundred ninety-nine euros.' },
+        { speaker: 'Kunde',     de: 'Das ist sehr teuer! Gibt es einen Rabatt?',                       en: 'That is very expensive! Is there a discount?' },
+        { speaker: 'Verkäufer', de: 'Heute ist es im Angebot — zehn Prozent Rabatt.',                   en: 'Today it is on sale — ten percent off.' },
+        { speaker: 'Kunde',     de: 'Sehr günstig! Und das Auto?',                                      en: 'Very good value! And the car?' },
+        { speaker: 'Verkäufer', de: 'Das Auto kostet vierundzwanzigtausendvierhundertneunundneunzig Euro inkl. MwSt.', en: 'The car costs 24,499 euros incl. VAT.' },
+        { speaker: 'Kunde',     de: 'Ich nehme das Smartphone. Bar oder mit Karte?',                    en: 'I\'ll take the smartphone. Cash or card?' },
+        { speaker: 'Verkäufer', de: 'Wie Sie möchten. Das macht achthundertneunundneunzig Euro zehn.',  en: 'However you prefer. That comes to 899 euros 10.' },
+        { speaker: 'Kunde',     de: 'Mit Karte, bitte. Stimmt so.',                                     en: 'Card, please. Keep the change.' },
       ]},
     ],
     quiz: [
-      { type: 'multiple-choice', q: '13 € (spoken) =', options: ['drei Euro','dreizehn Euro','dreißig Euro','dreihundert Euro'], answer: 'dreizehn Euro' },
+      { type: 'multiple-choice', q: '13 € (spoken) =',
+        options: ['drei Euro','dreizehn Euro','dreißig Euro','dreihundert Euro'], answer: 'dreizehn Euro' },
       { type: 'fill-blank', sentence: '1 000 000 = eine __', answer: 'Million' },
+      { type: 'multiple-choice', q: '⚠ English "one billion" (10⁹) in German =',
+        options: ['eine Million','eine Milliarde','eine Billion','tausend Million'], answer: 'eine Milliarde',
+        explain: 'German Milliarde = English billion. German Billion = English trillion. Classic false friend.' },
+      { type: 'multiple-choice', q: 'German 1.234,56 means in English notation =',
+        options: ['1,234.56','1.234.56','1234,56','1234.56'], answer: '1,234.56' },
+      { type: 'fill-blank', sentence: '"How much does that cost?" → Wie viel __ das?', answer: 'kostet' },
+      { type: 'multiple-choice', q: 'Polite way to say a price is "affordable":',
+        options: ['teuer','billig','günstig','viel'], answer: 'günstig',
+        explain: 'günstig is the polite default · billig often implies cheap-quality.' },
+      { type: 'fill-blank', sentence: '24 000 = __undzwanzigtausend (the multiplier flips before tausend)', answer: 'vier' },
     ],
   },
 

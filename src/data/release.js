@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.7.7';
+export const VERSION = '3.7.8';
 export const RELEASE_DATE = '2026-05-29';
 
 export const RELEASES = [
+  {
+    version: '3.7.8',
+    date: '2026-05-29',
+    type: 'improvement',
+    title: 'Day 19 review — Big numbers & prices, the Milliarde trap, checkout register',
+    notes: [
+      'Reviewed Week 3 · Day 19 (Big numbers & prices) end-to-end, parallel to the Day 14/16/17/18 full reviews. The previous version had 12 vocab items, 3 grammar bullets and 8 mostly-fill-blank exercises. Reshaped into a complete 4-7 digit toolkit plus a real-world checkout register guide.',
+      'Vocabulary 12 → 28 items grouped by role icon: 🔟 the THOUSANDS LADDER (8 anchors from tausend → eine Milliarde) including the salary-typical fünfzigtausend and the easily-confused Milliarde · 🧮 4 worked big-number Lego examples (1 234 / 9 876 / 24 499 / 1 500 000) — the 24 499 entry explicitly demonstrates the "multiplier-flips-too" twist that hits at 21 000+ · 💶 5 money/currency words (Euro / Cent / Geld / Münze / Schein) · 💰 6 paying phrases (kosten / Preis / bezahlen / mit Karte / bar / inklusive) · 🏷️ 5 price-describing words covering the polite teuer/billig/günstig register ladder + im Angebot + Rabatt.',
+      'Grammar 3 → 5 callouts: ⭐ BIG NUMBERS — same Lego rule with the chunk-from-right-in-3s parse trick and ⭐ the multiplier-FLIPS-first rule at 21 000+ (vierundzwanzigtausend, not zwanzigvierhausend) · ⭐ MILLION & MILLIARDE — feminine "eine" article, separate-word + capital-letter rule, plural Millionen/Milliarden, AND ⚠ the BIG false-friend BILLION TRAP (English billion 10⁹ = German Milliarde; German Billion = English trillion 10¹²) · ⭐ DECIMALS & THOUSANDS — German . and , are SWAPPED vs English with the "Komma" spoken decimal + the cents-dropping price-speech shortcut · 💶 PRICES — ASK/ANSWER/PAY menu including "Bar oder mit Karte?" and the must-know "Stimmt so!" tip phrase · 🏷️ DESCRIBING PRICES — the polite teuer/billig/günstig REGISTER ladder with the explicit warning that "billig" often implies cheap-QUALITY (use "günstig" if you mean affordable) plus the kostet+teuer ✗ pitfall.',
+      'Exercises completely reshaped (8 → 22 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: numeral → German word (6 pairs covering the thousands ladder) · price-describing word → meaning (6 pairs including the polite-register cards) · Q → A (5 pairs of common checkout exchanges).',
+      '• 6 ⭐ BUILD-THE-BIG-NUMBER fill-blanks: tausend / zehntausend / hunderttausend / 1234 / 24000 (multiplier-flips) / Million.',
+      '• 3 ⚠ MILLION/MILLIARDE MCQs: "eine Million" not "ein Million" · the billion-trap (1 000 000 000 = eine Milliarde) · German Billion-zeros (10¹², not 10⁹).',
+      '• 3 💶 PRICE-FORMAT MCQs: reading 1.234,56 € · checkout "neun Euro neunundneunzig" speech-shortcut · "inkl. MwSt" decoded.',
+      '• 3 ⚠ SPOT-THE-ERROR / REGISTER MCQs: kostet+teuer ✗ · billig-vs-günstig politeness · 24 499 one-word spelling.',
+      '• 💬 9-line checkout dialogue weaving prices, Rabatt, im Angebot, inkl. MwSt, bar/mit Karte AND "Stimmt so!" — basically a full shop scene.',
+      'Quiz 2 → 7 items: dreizehn Euro · Million fill · Milliarde-trap · German-decimal-to-English-notation conversion · kostet fill · günstig register · 24 000 multiplier-flip.',
+    ],
+  },
   {
     version: '3.7.7',
     date: '2026-05-29',
