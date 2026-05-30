@@ -3290,17 +3290,105 @@ export const days = [
       },
     ],
     exercises: [
-      { type: 'multiple-choice', q: 'In "Der Hund sieht den Mann", what is in the Akkusativ?', options: ['Der Hund','sieht','den Mann','—'], answer: 'den Mann' },
-      { type: 'fill-blank', sentence: '__ Mann sieht den Hund. (the)', answer: 'Der' },
-      { type: 'fill-blank', sentence: 'Der Mann sieht __ Hund. (the)', answer: 'den' },
-      // Mixed Nom-vs-Akk article drill — slides 107, 109, 160, 161
-      { type: 'fill-blank', sentence: '__ Freund besucht __ Studentin. — specific male friend visits any female student.', answer: 'Der eine', hint: 'two words separated by a space: subject article, then object article' },
-      { type: 'fill-blank', sentence: '__ Freund besucht __ Studentin. — any male friend visits the specific female student.', answer: 'Ein die' },
-      { type: 'fill-blank', sentence: '__ Freundin besucht __ Freund. — any female friend visits any male friend.', answer: 'Eine einen' },
-      { type: 'fill-blank', sentence: '__ Freunde besuchen __ Freund. — specific friends visit the specific male friend.', answer: 'Die den' },
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — test words · role→case · tag the words
+      { type: 'match',
+        pairs: [
+          { de: 'Wer …?',       en: '🟦 finds the SUBJECT (Nominativ)' },
+          { de: 'Wen …?',       en: '🟩 finds the OBJECT (Akkusativ)' },
+          { de: 'the DOER',     en: '🟦 Nominativ' },
+          { de: 'the RECEIVER', en: '🟩 Akkusativ' },
+          { de: 'after "sein"', en: '🟦 Nominativ on both sides' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Der Hund (sieht …)', en: '🟦 subject — der' },
+          { de: '(… sieht) den Mann', en: '🟩 object — den' },
+          { de: 'Den Hund (sieht …)', en: '🟩 object first — den' },
+          { de: '(… sieht) der Mann', en: '🟦 subject later — der' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Ich (kaufe …)',     en: '🟦 subject' },
+          { de: '(… kaufe) den Tisch', en: '🟩 object (masc → den)' },
+          { de: '(… sehe) die Frau', en: '🟩 object (fem → die)' },
+          { de: '(… habe) ein Auto', en: '🟩 object (neut → ein)' },
+        ],
+      },
+
+      // 🔍 4 IDENTIFY-THE-ROLE MCQs
+      { type: 'multiple-choice', q: 'In "Der Hund sieht den Mann", what is in the Akkusativ?',
+        options: ['Der Hund','sieht','den Mann','—'], answer: 'den Mann',
+        explain: 'Wen sieht der Hund? → den Mann. The receiver is Akkusativ.' },
+      { type: 'multiple-choice', q: 'In "Den Mann sieht der Hund", who is doing the seeing?',
+        options: ['den Mann','der Hund','sieht','both'], answer: 'der Hund',
+        explain: 'Object-first sentence! "der Hund" is tagged Nominativ → it is the subject.' },
+      { type: 'multiple-choice', q: 'In "Ich kaufe den Tisch", which word is the SUBJECT?',
+        options: ['Ich','kaufe','den Tisch','Tisch'], answer: 'Ich',
+        explain: 'Wer kauft? → Ich. The doer is the Nominativ subject.' },
+      { type: 'multiple-choice', q: 'Which question word finds the direct object?',
+        options: ['Wer?','Wen?','Wo?','Wann?'], answer: 'Wen?' },
+
+      // ⭐ 4 BUILD-THE-ROLE fill-blanks (subject vs object article)
+      { type: 'fill-blank', sentence: '__ Mann sieht den Hund. (the — subject, masc.)', answer: 'Der' },
+      { type: 'fill-blank', sentence: 'Der Mann sieht __ Hund. (the — object, masc.)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Die Frau besucht __ Arzt. (the — object, masc.)', answer: 'den' },
+      { type: 'fill-blank', sentence: '__ Hund sieht die Frau. (the — subject, masc.)', answer: 'Der' },
+
+      // ⚖️ 3 TWO-ARTICLE fill-blanks (subject + object in one)
+      { type: 'fill-blank', sentence: '__ Freund besucht __ Studentin. — specific male friend visits a female student.',
+        answer: 'Der eine', hint: 'two words separated by a space: subject article, then object article' },
+      { type: 'fill-blank', sentence: '__ Freundin besucht __ Freund. — a female friend visits a male friend.',
+        answer: 'Eine einen', hint: 'subject (fem) then object (masc → einen)' },
+      { type: 'fill-blank', sentence: '__ Freunde besuchen __ Freund. — the friends visit the male friend.',
+        answer: 'Die den', hint: 'plural subject then masc object' },
+
+      // ⭐ 2 WORD-ORDER / SAME-MEANING MCQs
+      { type: 'multiple-choice', q: 'Which sentence ALSO means "The dog sees the man"?',
+        options: ['Den Hund sieht der Mann.','Den Mann sieht der Hund.','Der Mann sieht den Hund.','Die Hund sieht der Mann.'],
+        answer: 'Den Mann sieht der Hund.',
+        explain: 'Object-first: "den Mann" stays the object, "der Hund" stays the subject — same meaning, just reordered.' },
+      { type: 'multiple-choice', q: 'Why can German move the object to the front?',
+        options: ['It can\'t — order is fixed like English.','Because the article (den) already tags it as the object.','Because the verb moves too.','Because nouns are capitalised.'],
+        answer: 'Because the article (den) already tags it as the object.' },
+
+      // ⚠ 2 SPOT-THE-ERROR MCQs
+      { type: 'multiple-choice', q: 'Which sentence is WRONG?',
+        options: ['Ich sehe den Tisch.','Der Tisch ist groß.','Ich sehe der Tisch.','Wir kaufen den Tisch.'],
+        answer: 'Ich sehe der Tisch.',
+        explain: 'Tisch is the object of sehen → der must become den.' },
+      { type: 'multiple-choice', q: '⚠ Which is correct after "sein"?',
+        options: ['Das ist einen Mann.','Das ist ein Mann.','Das sieht ein Mann.','Das ist den Mann.'],
+        answer: 'Das ist ein Mann.',
+        explain: 'sein takes Nominativ on both sides — no object, no flip.' },
+
+      // 💬 Mini dialogue — naming subject/object roles in real chat
+      { type: 'dialogue', lines: [
+        { speaker: 'Lehrer',  de: 'In „Der Student liest das Buch" — wer ist das Subjekt?', en: 'In "The student reads the book" — who is the subject?' },
+        { speaker: 'Schüler', de: 'Der Student. Wer liest? Der Student.',                    en: 'The student. Who reads? The student.' },
+        { speaker: 'Lehrer',  de: 'Und das Objekt?',                                          en: 'And the object?' },
+        { speaker: 'Schüler', de: 'Das Buch. Wen oder was liest er? Das Buch.',               en: 'The book. What does he read? The book.' },
+        { speaker: 'Lehrer',  de: 'Genau. Und „Den Mann sieht der Hund" — wer sieht?',        en: 'Exactly. And "The man, the dog sees" — who sees?' },
+        { speaker: 'Schüler', de: 'Der Hund! „der" zeigt das Subjekt.',                       en: 'The dog! "der" marks the subject.' },
+      ]},
     ],
     quiz: [
-      { type: 'multiple-choice', q: 'Which sentence is wrong?', options: ['Ich sehe den Tisch.','Der Tisch ist groß.','Ich sehe der Tisch.','Wir kaufen den Tisch.'], answer: 'Ich sehe der Tisch.' },
+      { type: 'multiple-choice', q: 'Which sentence is wrong?',
+        options: ['Ich sehe den Tisch.','Der Tisch ist groß.','Ich sehe der Tisch.','Wir kaufen den Tisch.'], answer: 'Ich sehe der Tisch.' },
+      { type: 'multiple-choice', q: 'Which question finds the SUBJECT?',
+        options: ['Wer?','Wen?','Wo?','Wie?'], answer: 'Wer?' },
+      { type: 'multiple-choice', q: 'In "Den Hund sieht der Mann", who does the seeing?',
+        options: ['den Hund','der Mann','both','neither'], answer: 'der Mann',
+        explain: 'der Mann is tagged Nominativ → the subject, even though it comes second.' },
+      { type: 'fill-blank', sentence: '__ Mann sieht den Hund. (the — subject)', answer: 'Der' },
+      { type: 'fill-blank', sentence: 'Der Mann sieht __ Hund. (the — object)', answer: 'den' },
+      { type: 'multiple-choice', q: 'Changing "ein" to "der" before the subject…',
+        options: ['turns it into the object','changes "a" to "the" but keeps the role','flips subject and object','is always wrong'],
+        answer: 'changes "a" to "the" but keeps the role' },
+      { type: 'fill-blank', sentence: 'Build it: "a female friend visits a male friend" → __ Freundin besucht __ Freund.', answer: 'Eine einen' },
     ],
   },
 

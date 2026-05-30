@@ -11,10 +11,30 @@
  * in sync.
  */
 
-export const VERSION = '3.8.1';
+export const VERSION = '3.8.2';
 export const RELEASE_DATE = '2026-05-31';
 
 export const RELEASES = [
+  {
+    version: '3.8.2',
+    date: '2026-05-31',
+    type: 'improvement',
+    title: 'Day 23 review — Nominativ vs Akkusativ: the Wer/Wen test + flexible word order',
+    notes: [
+      'Reviewed Day 23 (Nominativ vs Akkusativ) end-to-end, parallel to the Day 14-22 full reviews. This is the synthesis day for the two cases — deciding instantly which noun is subject vs object, and understanding WHY the article tag lets German reorder words. The previous version had an empty vocab block, 2 grammar bullets (one with a duplicated line) and 8 exercises.',
+      'Vocabulary 0 → 16 items (vocabLayout: "spotlight") grouped by role icon: ⚖️ the two roles named (der Nominativ 🟦 · der Akkusativ 🟩 · das Subjekt · das Objekt) · 🔍 the two test words (Wer …? → subject · Wen …? → object) · ⭐ the SAME sentence both ways (Der Hund sieht den Mann / Den Hund sieht der Mann) to show object-fronting · 👫 practice nouns (Freund/Freundin/Student/Studentin) · 🎬 three two-noun verbs (besuchen · kennen · fragen).',
+      'Grammar 2 → 5 callouts: ⭐ THE 5-SECOND TEST (Wer → Nominativ subject · Wen → Akkusativ object) with the "wen carries the same -n as den" hook · ⭐ WHY THE ARTICLE TAG MATTERS — German vs English word order, with the "Den Mann sieht der Hund = same meaning" demo and the ⚠ caveat that it only disambiguates when one noun is masculine · ⭐ ROLE STAYS, ARTICLE FLIPS — the same noun in two jobs + the 3-step build routine · ⚖️ definite-vs-indefinite does NOT change the role (the four the/a combinations) · 🚦 pitfalls (der-Tisch-as-object ✗ · sein keeps Nominativ · slot-1≠subject · weak nouns · same-gender ambiguity).',
+      'Exercises reshaped (8 → 18 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: test-word → role · sentence-part → subject/object tag · which-article-as-object across genders.',
+      '• 4 🔍 IDENTIFY-THE-ROLE MCQs including an object-first sentence ("who is doing the seeing?").',
+      '• 4 ⭐ BUILD-THE-ROLE fill-blanks (subject Der vs object den).',
+      '• 3 ⚖️ TWO-ARTICLE fill-blanks (subject + object in one answer).',
+      '• 2 ⭐ WORD-ORDER MCQs (same-meaning reorder · why German can front the object).',
+      '• 2 ⚠ SPOT-THE-ERROR MCQs (der-as-object · sein-keeps-Nominativ).',
+      '• 💬 Teacher/student dialogue that NAMES Subjekt/Objekt and models the Wer/Wen test in conversation.',
+      'Quiz 1 → 7 items: wrong-sentence · Wer-finds-subject · object-first who-sees · subject Der · object den · the/a-keeps-role · build-the-two-articles.',
+    ],
+  },
   {
     version: '3.8.1',
     date: '2026-05-31',
