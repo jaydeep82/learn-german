@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.7.8';
-export const RELEASE_DATE = '2026-05-29';
+export const VERSION = '3.7.9';
+export const RELEASE_DATE = '2026-05-30';
 
 export const RELEASES = [
+  {
+    version: '3.7.9',
+    date: '2026-05-30',
+    type: 'improvement',
+    title: 'Day 20 review — Week 3 milestone made comprehensive & interactive',
+    notes: [
+      'Reviewed Week 3 · Day 20 (Week 3 review) end-to-end, parallel to the Day 15 milestone treatment. The previous version was a thin 5-exercise pass with an empty vocab block and one grammar bullet. Rebuilt as a proper Week-3 checkpoint covering questions, the wo-triple, numbers up to a million, prices and politeness — the last stop before the case system.',
+      'Added 16 REVIEW KEYSTONES (vocabLayout: "spotlight") — the highest-leverage Week-3 words, each with emoji + example + Day-reference hint so the vocab page is a one-screen Week-3 recap: ❓ question keystones (Bist du …? · doch · wer · was · wie) · 📍 the wo-triple (wo · wohin · woher) · 🔢 number anchors (einundzwanzig · dreihundertfünfundsechzig · eine Million) · 💶 price & politeness (Wie viel kostet das? · günstig · mit Karte · bitte · Entschuldigung).',
+      'Grammar 1 → 5 recap cards that double as a printable study reference: ✅ questions (yes/no flip · doch · W-pattern · welcher gender) · ✅ the wo-triple (wo/wohin/woher with verb-pairing) · ✅ numbers as Lego (flip · 3-digit · thousands-multiplier-flip · Million/Milliarde feminine + billion-trap) · ✅ prices & politeness (kostet/macht · the . , swap · teuer/günstig/billig register · Bar oder mit Karte / Stimmt so) · 🎯 "The 5 Week-3 mistakes to never make again" (statement-not-flipped ✗ · ja-instead-of-doch ✗ · wo-for-movement ✗ · und-between-hundreds ✗ · ein-Million ✗).',
+      'Exercises 5 → 18, organised and varied: 3 ⭐ interactive matches (statement→question · question→type incl. wo-triple · numeral→word) · 4 question drills (flip MCQ · wo + wohin fill-blanks · doch-after-kein MCQ) · 4 number drills (347 spelling · 21 flip · 24 000 multiplier-flip · eine-Million gender) · 2 price drills (kostet fill · günstig register MCQ) · 2 ⚠ spot-the-error MCQs (wo-vs-wohin · und-between-hundreds) · 1 capstone café dialogue weaving politeness + question + doch + im Angebot + günstig + mit Karte + Stimmt so.',
+      'Quiz 1 → 7 items as a final mixed checkpoint: W-question shape · yes/no flip · doch · wohin movement · 365 spelling · Million · günstig register.',
+    ],
+  },
   {
     version: '3.7.8',
     date: '2026-05-29',

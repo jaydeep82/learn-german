@@ -4430,24 +4430,181 @@ export const days = [
   /* ----- Day 20: Week 3 review (questions + numbers) ----- */
   {
     id: 20, week: 3,
+    vocabLayout: 'spotlight',
     title: 'Week 3 review',
     titleDe: 'Wiederholung Woche 3',
     emoji: '🔁',
-    objective: 'Lock in questions, big numbers, and the politeness ladder before tackling cases.',
-    intro: 'Mixed pass through Yes/No questions, W-questions, big numbers and prices.',
-    vocabulary: [],
-    grammar: [],
-    exercises: [
-      { type: 'fill-blank', sentence: 'Statement: "Sie kommt aus Indien." → Question: "__ sie aus Indien?"', answer: 'Kommt' },
-      { type: 'fill-blank', sentence: 'Asking origin: "__ kommst du?"', answer: 'Woher' },
-      { type: 'fill-blank', sentence: 'Asking destination: "__ gehst du?"', answer: 'Wohin' },
-      { type: 'fill-blank', sentence: '"Bist du nicht müde?" — Yes (contradicting). → "__!"', answer: 'Doch' },
-      { type: 'fill-blank', sentence: '"How much does the menu cost?" → __ kostet die Speisekarte?', answer: 'Wie viel' },
-      { type: 'fill-blank', sentence: 'Separable verb question: "__ du um 7 Uhr __?" (aufstehen)', answer: 'Stehst auf' },
-      { type: 'multiple-choice', q: 'Pick the natural German order for "Why are you learning German?".', options: ['Du lernst warum Deutsch?','Warum du lernst Deutsch?','Warum lernst du Deutsch?','Lernst du warum Deutsch?'], answer: 'Warum lernst du Deutsch?' },
-      { type: 'multiple-choice', q: '24 499 = ?', options: ['vierundzwanzigtausendvierhundertneunundneunzig','zweiundvierzigtausend…','vierundzwanzighundertneunundvierzig','vierundzwanzigtausendvierneunneun'], answer: 'vierundzwanzigtausendvierhundertneunundneunzig' },
+    objective: 'Prove you own all of Week 3 — yes/no questions, the doch trick, every W-word, the wo-triple, numbers up to a million, prices and the polite checkout — before the case system begins in Week 4.',
+    intro: 'Milestone checkpoint! This pulls Week 3 together: ❓ yes/no flip → 🔁 the doch particle → 🔍 W-questions → 📍 wo/wohin/woher → 🔢 numbers 100-1 000 000 → 💶 prices & the teuer/günstig ladder → 🙏 politeness. Scroll the keystones, read the recap cards, then aim for ≥ 80% on the mixed drills. That score means you are genuinely ready for Akkusativ.',
+    vocabulary: [
+      // ❓ QUESTION KEYSTONES — the verb-first flip + the killer particle
+      { de: 'Bist du …?',  en: 'Are you …? (yes/no flip)',        emoji: '❓', hint: '🔁 Day 16 · verb to slot 1',                       example: 'Bist du müde?',                  exampleEn: 'Are you tired?' },
+      { de: 'doch',        en: 'yes (contradicting a negative)',  emoji: '🔁', hint: '⭐ Day 16 · ONLY after a nicht/kein question',     example: 'Bist du nicht müde? — Doch!',    exampleEn: 'Aren\'t you tired? — Yes I am!' },
+      { de: 'wer',         en: 'who',                             emoji: '🧑', hint: '🔁 Day 17 · asks a PERSON',                        example: 'Wer ist das?',                   exampleEn: 'Who is that?' },
+      { de: 'was',         en: 'what',                            emoji: '🎯', hint: '🔁 Day 17 · asks a THING',                         example: 'Was machst du heute?',           exampleEn: 'What are you doing today?' },
+      { de: 'wie',         en: 'how',                             emoji: '❔', hint: '🔁 Day 17 · also "Wie heißt du?"',                 example: 'Wie heißt du?',                  exampleEn: 'What is your name?' },
+
+      // 📍 THE WO-TRIPLE — the Day-17 killer pair
+      { de: 'wo',          en: 'where (at · no movement)',        emoji: '📍', hint: '🔁 Day 17 · sein / wohnen',                       example: 'Wo wohnst du?',                  exampleEn: 'Where do you live?' },
+      { de: 'wohin',       en: 'where to (movement)',             emoji: '➡️', hint: '🔁 Day 17 · gehen / fahren',                      example: 'Wohin gehst du?',                exampleEn: 'Where are you going?' },
+      { de: 'woher',       en: 'where from (origin)',             emoji: '🌍', hint: '🔁 Day 17 · pairs with "aus …"',                  example: 'Woher kommst du?',               exampleEn: 'Where do you come from?' },
+
+      // 🔢 NUMBER KEYSTONES — the three building rules
+      { de: 'einundzwanzig',  en: '21 (the flip)',               emoji: '🔄', hint: '🔁 Day 2 · units-UND-tens',                       example: 'Ich bin einundzwanzig.',         exampleEn: 'I am twenty-one.' },
+      { de: 'dreihundertfünfundsechzig', en: '365 (3-digit Lego)', emoji: '🧮', hint: '🔁 Day 18 · hundert + flip · days in a year', example: 'Ein Jahr hat 365 Tage.',         exampleEn: 'A year has 365 days.' },
+      { de: 'eine Million',   en: '1 000 000',                   emoji: '🪙', hint: '🔁 Day 19 · FEMININE · eine, not ein',            example: 'Eine Million Menschen.',         exampleEn: 'One million people.' },
+
+      // 💶 PRICE & POLITENESS KEYSTONES
+      { de: 'Wie viel kostet das?', en: 'How much does that cost?', emoji: '💶', hint: '🔁 Day 18-19 · the shopping opener',          example: 'Wie viel kostet das? — Zehn Euro.', exampleEn: 'How much is that? — Ten euros.' },
+      { de: 'günstig',     en: 'good value / affordable',         emoji: '👍', hint: '🔁 Day 19 · polite "cheap" (not billig!)',       example: 'Die Wohnung ist günstig.',       exampleEn: 'The apartment is good value.' },
+      { de: 'mit Karte',   en: 'by card',                         emoji: '💳', hint: '🔁 Day 19 · "Bar oder mit Karte?"',              example: 'Ich bezahle mit Karte.',         exampleEn: 'I pay by card.' },
+      { de: 'bitte',       en: 'please / you\'re welcome',        emoji: '🙏', hint: 'politeness anchor · also "here you go"',          example: 'Einen Kaffee, bitte.',           exampleEn: 'A coffee, please.' },
+      { de: 'Entschuldigung', en: 'excuse me / sorry',           emoji: '🙋', hint: 'opens a question to a stranger',                  example: 'Entschuldigung, wo ist der Bahnhof?', exampleEn: 'Excuse me, where is the station?' },
     ],
-    quiz: [],
+    grammar: [
+      { rule: '✅ Week 3 recap — questions',
+        body:
+          '❓ YES/NO question = conjugated verb to SLOT 1:\n' +
+          '   "Du bist müde." → "Bist du müde?"  (no "do" helper)\n' +
+          '   Separable verb? prefix STILL at the end: "Stehst du um 7 auf?"\n\n' +
+          '🔁 ANSWER PARTICLES: ja (yes) · nein (no) · DOCH (yes — to contradict a nicht/kein question).\n' +
+          '   "Bist du nicht müde?" — Doch! (= yes I am)\n\n' +
+          '🔍 W-QUESTION = W-word (slot 1) + verb (slot 2) + subject (slot 3):\n' +
+          '   "Wo wohnst du?"  ·  "Wann kommst du?"  ·  "Warum lernst du Deutsch?"\n' +
+          '   welcher/welche/welches matches the noun\'s gender.',
+      },
+      { rule: '✅ Week 3 recap — the wo-triple',
+        body:
+          '📍 wo    = where (AT · no movement) → sein, wohnen, bleiben\n' +
+          '            "Wo ist der Bahnhof?"\n' +
+          '➡️ wohin = where TO (destination) → gehen, fahren, fliegen\n' +
+          '            "Wohin gehst du?" — Ich gehe nach Hause.\n' +
+          '🌍 woher = where FROM (origin) → pairs with "aus …"\n' +
+          '            "Woher kommst du?" — Ich komme aus Indien.\n\n' +
+          '⚠ Any verb of MOTION needs wohin / woher — never plain "wo".',
+      },
+      { rule: '✅ Week 3 recap — numbers as Lego',
+        body:
+          '🔢 0-12 unique · 13-19 = unit+zehn · 21-99 = units-UND-tens flip (einundzwanzig).\n' +
+          '🧮 3-digit: multiplier-hundert + flip → 365 = dreihundertfünfundsechzig.\n' +
+          '🔟 Thousands: multiplier-tausend (the multiplier itself flips at 21 000+ → vierundzwanzigtausend).\n' +
+          '🪙 eine Million / eine Milliarde — FEMININE, separate word, capital letter. ⚠ Milliarde = English BILLION.\n' +
+          'All one word, no spaces; "und" lives ONLY inside the tens-units flip.',
+      },
+      { rule: '✅ Week 3 recap — prices & politeness',
+        body:
+          '💶 Ask: "Wie viel kostet das?" / "Was macht das?" (checkout).\n' +
+          '💶 German money writes 1.234,56 € — . for thousands, , for decimals (opposite of English).\n' +
+          '🏷️ Describe: teuer (expensive) · günstig (affordable — polite) · billig (cheap — often = poor quality!).\n' +
+          '💳 Pay: "Bar oder mit Karte?" · "Stimmt so!" (keep the change).\n' +
+          '🙏 Politeness: bitte · danke · Entschuldigung — open every stranger-question with Entschuldigung.',
+      },
+      { rule: '🎯 The 5 Week-3 mistakes to never make again',
+        body:
+          '1. "Du kommst aus Berlin?" ✗ → yes/no needs the FLIP: "Kommst du aus Berlin?" ✓\n' +
+          '2. "Bist du nicht müde?" — "Ja!" ✗ → contradicting a negative needs "Doch!" ✓\n' +
+          '3. "Wo gehst du?" ✗ → movement needs "Wohin gehst du?" ✓\n' +
+          '4. "hundert und fünf" ✗ → no und between hundreds & rest: "hundertfünf" ✓\n' +
+          '5. "ein Million" ✗ → Million is feminine: "eine Million" ✓',
+      },
+    ],
+    exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — sweep questions, wo-triple, numbers
+      { type: 'match',
+        pairs: [
+          { de: 'Du bist müde.',          en: 'Bist du müde?' },
+          { de: 'Du kommst aus Berlin.',  en: 'Kommst du aus Berlin?' },
+          { de: 'Du stehst um 7 auf.',    en: 'Stehst du um 7 auf?' },
+          { de: 'Bist du nicht müde?',    en: 'Doch! (contradicting)' },
+          { de: 'Sprichst du Deutsch?',   en: 'Natürlich!' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Wo wohnst du?',     en: '📍 location · no movement' },
+          { de: 'Wohin gehst du?',   en: '➡️ destination · movement' },
+          { de: 'Woher kommst du?',  en: '🌍 origin · "aus …"' },
+          { de: 'Wer ist das?',      en: '🧑 asks a person' },
+          { de: 'Wie viel kostet das?', en: '💶 asks a price' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: '21',        en: 'einundzwanzig' },
+          { de: '365',       en: 'dreihundertfünfundsechzig' },
+          { de: '1 000',     en: 'tausend' },
+          { de: '24 000',    en: 'vierundzwanzigtausend' },
+          { de: '1 000 000', en: 'eine Million' },
+        ],
+      },
+
+      // ❓ 4 QUESTION drills — flip + W-word + doch
+      { type: 'multiple-choice', q: 'Make it a yes/no question: "Du kommst aus Berlin." →',
+        options: ['Kommst du aus Berlin?','Du kommst aus Berlin?','Aus Berlin du kommst?','Woher kommst du?'],
+        answer: 'Kommst du aus Berlin?' },
+      { type: 'fill-blank', sentence: '"Where do you live?" → __ wohnst du?', answer: 'Wo' },
+      { type: 'fill-blank', sentence: '"Where are you going?" → __ gehst du? (movement!)', answer: 'Wohin' },
+      { type: 'multiple-choice', q: '"Hast du kein Geld?" — Yes, I DO have money. Pick the answer.',
+        options: ['Ja!','Nein!','Doch!','Vielleicht!'], answer: 'Doch!',
+        explain: '"kein" makes the question negative → contradict with DOCH.' },
+
+      // 🔢 4 NUMBER drills — flip, 3-digit Lego, thousands flip, Million gender
+      { type: 'multiple-choice', q: '347 = ?',
+        options: ['dreihundertsiebenundvierzig','dreihundertvierundsiebzig','dreihundertsiebenvierzig','vierhundertsiebenundvierzig'],
+        answer: 'dreihundertsiebenundvierzig' },
+      { type: 'fill-blank', sentence: '21 = einund__', answer: 'zwanzig' },
+      { type: 'fill-blank', sentence: '24 000 = __undzwanzigtausend (multiplier flips)', answer: 'vier' },
+      { type: 'multiple-choice', q: '"One million euros":',
+        options: ['ein Million Euro','eine Million Euro','einer Million Euro','einmillion Euro'],
+        answer: 'eine Million Euro',
+        explain: 'Million is feminine → eine.' },
+
+      // 💶 2 PRICE drills — ask + describe register
+      { type: 'fill-blank', sentence: '"How much is that?" → Wie viel __ das?', answer: 'kostet' },
+      { type: 'multiple-choice', q: 'Polite way to say a flat is affordable:',
+        options: ['Die Wohnung ist billig.','Die Wohnung ist günstig.','Die Wohnung kostet teuer.','Die Wohnung ist Karte.'],
+        answer: 'Die Wohnung ist günstig.',
+        explain: 'billig often implies poor quality — günstig is the polite "affordable".' },
+
+      // ⚠ 2 SPOT-THE-ERROR MCQs across the week
+      { type: 'multiple-choice', q: '⚠ Which sentence is WRONG?',
+        options: ['Wohin gehst du?','Wo wohnst du?','Wo gehst du?','Woher kommst du?'],
+        answer: 'Wo gehst du?',
+        explain: 'gehen = movement → needs wohin.' },
+      { type: 'multiple-choice', q: '⚠ Which number is spelled WRONG?',
+        options: ['hundertfünf','dreihundert','hundert und fünf','zweitausend'],
+        answer: 'hundert und fünf',
+        explain: 'No "und" between hundreds and the rest → hundertfünf.' },
+
+      // 💬 Capstone dialogue — politeness + question + price + paying
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Entschuldigung, wie viel kostet der Kaffee?',  en: 'Excuse me, how much is the coffee?' },
+        { speaker: 'B', de: 'Der Kaffee kostet drei Euro fünfzig.',         en: 'The coffee costs three euros fifty.' },
+        { speaker: 'A', de: 'Und haben Sie auch Tee?',                      en: 'And do you have tea too?' },
+        { speaker: 'B', de: 'Ja, natürlich. Möchten Sie auch ein Stück Kuchen?', en: 'Yes, of course. Would you also like a piece of cake?' },
+        { speaker: 'A', de: 'Ist der Kuchen im Angebot?',                   en: 'Is the cake on sale?' },
+        { speaker: 'B', de: 'Doch — heute zehn Prozent Rabatt!',            en: 'Yes actually — ten percent off today!' },
+        { speaker: 'A', de: 'Sehr günstig. Ich nehme alles. Mit Karte, bitte.', en: 'Very good value. I\'ll take it all. By card, please.' },
+        { speaker: 'B', de: 'Das macht acht Euro zwanzig. Stimmt so?',      en: 'That comes to eight euros twenty. Keep the change?' },
+      ]},
+    ],
+    quiz: [
+      { type: 'multiple-choice', q: 'Which is a correct W-question?',
+        options: ['Wo kommst du?','Woher du kommst?','Woher kommst du?','Du kommst woher?'], answer: 'Woher kommst du?' },
+      { type: 'multiple-choice', q: 'Make it a yes/no question: "Sie spricht Deutsch." →',
+        options: ['Sie Deutsch spricht?','Spricht sie Deutsch?','Deutsch spricht sie?','Wie spricht sie Deutsch?'], answer: 'Spricht sie Deutsch?' },
+      { type: 'multiple-choice', q: '"Bist du nicht müde?" — Yes I am! Correct answer:',
+        options: ['Ja','Nein','Doch','Vielleicht'], answer: 'Doch' },
+      { type: 'fill-blank', sentence: 'Movement: "__ fährst du?" (where to)', answer: 'Wohin' },
+      { type: 'multiple-choice', q: '365 = ?',
+        options: ['dreihundertsechsundfünfzig','dreihundertfünfundsechzig','dreihundertfünfzig','dreihundertfünf'],
+        answer: 'dreihundertfünfundsechzig' },
+      { type: 'fill-blank', sentence: '1 000 000 = eine __', answer: 'Million' },
+      { type: 'multiple-choice', q: 'Polite "affordable":',
+        options: ['teuer','billig','günstig','viel'], answer: 'günstig' },
+    ],
   },
 
   /* ----- Day 25: Dativ I — prepositions (slides 277-280) ----- */
