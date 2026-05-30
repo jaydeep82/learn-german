@@ -11,10 +11,30 @@
  * in sync.
  */
 
-export const VERSION = '3.7.6';
-export const RELEASE_DATE = '2026-05-28';
+export const VERSION = '3.7.7';
+export const RELEASE_DATE = '2026-05-29';
 
 export const RELEASES = [
+  {
+    version: '3.7.7',
+    date: '2026-05-29',
+    type: 'improvement',
+    title: 'Day 18 review — Numbers 100-1000, the Lego formula, year-reading, prices',
+    notes: [
+      'Reviewed Week 3 · Day 18 (Numbers 100-1000) end-to-end, parallel to the Day 14 / 16 / 17 full reviews. The previous version was the THINNEST day in the whole curriculum — 5 vocab items, 1 grammar bullet, 2 exercises, 1 quiz item. Reshaped into a complete 3-digit toolkit covering hundreds, thousands, year-reading and shop prices.',
+      'Vocabulary 5 → 26 items grouped by role icon: 💯 all 10 hundreds (100-900 + tausend) with spelling-trap callouts on 600 (sechshundert keeps the -s) and 700 (siebenhundert keeps the -en); 🧮 5 worked Lego examples (125, 234, 365, 678, 999) that DEMONSTRATE the formula on each card; 📅 3 year-reading anchors (1989 · 2000 · 2024) showing both the "neunzehnhundert + last two" trick and the post-2000 thousands form; 💶 4 shop-checkout phrases (das kostet · das macht · pro Monat · pro Jahr); 🔢 4 support words (die Zahl vs die Nummer distinction + ungefähr / genau softener-hardener pair).',
+      'Grammar 1 → 5 callouts: ⭐ THE 3-DIGIT FORMULA with seam-labelled worked examples (multiplier-hundert + units-UND-tens, all one word) and the explicit "und only lives inside the flip" rule · ⭐ HUNDREDS & THOUSANDS table with the sechs/sieben spelling-trap reminders (16 / 60 drop letters but 600 / 700 keep them back) · ⭐ READING YEARS — the German shortcut: 1100-1999 use "neunzehnhundert + last two" (not English-style "twenty twenty-four"); 2000+ use the normal thousands form · 💶 PRICES with "Das kostet" (formal) vs "Das macht" (checkout) phrases, cents-dropping rule, and ca./ungefähr/genau softeners · 🚦 PITFALLS: one-word always · ein optional at the start · never "und" between hundreds and the rest · . for thousands vs , for decimals (opposite of English) · Nummer for phone/room/house, Zahl for math.',
+      'Exercises completely reshaped (2 → 22 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: numeral → German word (6 hundreds pairs) · year → spoken form (5 pairs covering 1492 / 1900 / 1989 / 2000 / 2024) · price-phrase → meaning (6 pairs).',
+      '• 7 ⭐ BUILD-THE-NUMBER fill-blanks decomposing 125 / 234 / 365 / 678 / 999 / 500 / 1000 brick by brick.',
+      '• 3 ⭐ HUNDREDS / FORMULA MCQs including the 600 (sechs-vs-sechzig) trap and the 999 spelling.',
+      '• 3 📅 YEAR-READING MCQs covering 1989 (pre-2000), 2024 (post-2000) and 1900 (round century).',
+      '• 3 ⚠ SPOT-THE-ERROR MCQs: no-und-between-hundreds-and-rest · sechzighundert ✗ vs sechshundert ✓ · German , and . are swapped vs English.',
+      '• 2 💶 PRICE-PHRASE MCQs: das-macht as casual checkout · ungefähr as softener.',
+      '• 💬 Shopping dialogue (8 lines) sweeping 3-digit prices, das macht, change-counting and the cents-after-Euro speech pattern.',
+      'Quiz 1 → 7 items: tausend fill-blank · 234 spelling · year 2026 · spot-the-und-error · 600 spelling · das-macht checkout · ungefähr softener.',
+    ],
+  },
   {
     version: '3.7.6',
     date: '2026-05-28',

@@ -2641,24 +2641,241 @@ export const days = [
   /* ===================== WEEK 3: numbers + Akkusativ ===================== */
   {
     id: 18, week: 3,
+    vocabLayout: 'spotlight',
     title: 'Numbers 100–1000',
     titleDe: 'Zahlen 100–1000',
     emoji: '🧮',
-    objective: 'Read and write three-digit numbers.',
-    intro: 'Hundreds + tens-with-flip = full number. 365 = drei-hundert-fünf-und-sechzig.',
+    objective: 'Read and write any 3-digit number (and the year you were born) using ONE Lego rule: hundred + (units-flip + tens), all one word.',
+    intro: 'Three-digit numbers are just Lego. Take the hundreds multiplier, glue on "hundert", then add the Day-2 flip number for everything below 100. 365 = drei-hundert-fünf-und-sechzig. Once you can do that, years and prices come free.',
     vocabulary: [
-      { de: 'einhundert',   en: '100' }, { de: 'zweihundert', en: '200' },
-      { de: 'tausend',      en: '1000' },{ de: 'einhundertfünfundzwanzig', en: '125' },
-      { de: 'dreihundertfünfundsechzig', en: '365' },
+      // 💯 THE HUNDREDS — multiplier + hundert, ALL one word
+      { de: 'hundert',          en: '100',  emoji: '💯', hint: 'either "hundert" or "einhundert" · the "ein" is optional', example: 'Ich habe hundert Euro.',                  exampleEn: 'I have one hundred euros.' },
+      { de: 'einhundert',       en: '100',  emoji: '1️⃣', hint: 'explicit form · for phone-clarity ("one hundred")',     example: 'Einhundert, bitte! (am Telefon)',         exampleEn: 'One hundred, please! (on the phone)' },
+      { de: 'zweihundert',      en: '200',  emoji: '2️⃣', hint: 'zwei + hundert · one word, no space',                    example: 'Die Reise kostet zweihundert Euro.',      exampleEn: 'The trip costs two hundred euros.' },
+      { de: 'dreihundert',      en: '300',  emoji: '3️⃣', hint: 'drei + hundert',                                          example: 'Das Buch hat dreihundert Seiten.',        exampleEn: 'The book has three hundred pages.' },
+      { de: 'vierhundert',      en: '400',  emoji: '4️⃣', hint: 'vier + hundert',                                          example: 'Vierhundert Studenten lernen Deutsch.',   exampleEn: 'Four hundred students are learning German.' },
+      { de: 'fünfhundert',      en: '500',  emoji: '5️⃣', hint: 'fünf + hundert',                                          example: 'Ich habe fünfhundert Euro im Geldbeutel.', exampleEn: 'I have five hundred euros in my wallet.' },
+      { de: 'sechshundert',     en: '600',  emoji: '6️⃣', hint: '⚠ sechs keeps its full -s here',                          example: 'Sechshundert Personen waren im Konzert.', exampleEn: 'Six hundred people were at the concert.' },
+      { de: 'siebenhundert',    en: '700',  emoji: '7️⃣', hint: '⚠ sieben keeps its full -en here',                        example: 'Siebenhundert Meter sind es bis dorthin.', exampleEn: 'It is seven hundred metres to there.' },
+      { de: 'achthundert',      en: '800',  emoji: '8️⃣', hint: 'acht + hundert',                                          example: 'Achthundert Euro pro Monat — Miete.',     exampleEn: 'Eight hundred euros per month — rent.' },
+      { de: 'neunhundert',      en: '900',  emoji: '9️⃣', hint: 'neun + hundert',                                          example: 'Neunhundert Kilometer nach Berlin.',      exampleEn: 'Nine hundred kilometres to Berlin.' },
+      { de: 'tausend',          en: '1 000', emoji: '🔟', hint: 'either "tausend" or "eintausend" · same Lego rule',     example: 'Tausend Dank! (idiom)',                    exampleEn: 'A thousand thanks! (= many thanks)' },
+
+      // 🧮 THE FORMULA IN ACTION — 3-digit Lego examples (every one a worked sentence)
+      { de: 'hundertfünfundzwanzig',     en: '125', emoji: '🧮', hint: '⭐ hundert + 25 (fünf-UND-zwanzig)',         example: 'Hundertfünfundzwanzig Euro, bitte.',          exampleEn: 'One hundred twenty-five euros, please.' },
+      { de: 'zweihundertvierunddreißig', en: '234', emoji: '🧮', hint: '⭐ zweihundert + 34 (vier-UND-dreißig)',     example: 'Zweihundertvierunddreißig Seiten lang.',      exampleEn: 'Two hundred thirty-four pages long.' },
+      { de: 'dreihundertfünfundsechzig', en: '365', emoji: '📅', hint: '⭐ dreihundert + 65 · days in a year!',      example: 'Ein Jahr hat dreihundertfünfundsechzig Tage.', exampleEn: 'A year has three hundred sixty-five days.' },
+      { de: 'sechshundertachtundsiebzig',en: '678', emoji: '🧮', hint: 'sechshundert + 78',                          example: 'Sechshundertachtundsiebzig Personen.',         exampleEn: 'Six hundred seventy-eight people.' },
+      { de: 'neunhundertneunundneunzig', en: '999', emoji: '🔢', hint: 'all-9s · the biggest 3-digit',               example: 'Das Handy kostet neunhundertneunundneunzig Euro.', exampleEn: 'The phone costs nine hundred ninety-nine euros.' },
+
+      // 📅 YEAR-READING — the special trick
+      { de: 'neunzehnhundertneunundachtzig', en: '1989 (year)', emoji: '📅', hint: '⭐ pre-2000 years = "neunzehnhundert" + last two', example: 'Die Mauer fiel neunzehnhundertneunundachtzig.', exampleEn: 'The Wall fell in 1989.' },
+      { de: 'zweitausend',                   en: '2000 (year)', emoji: '📅', hint: '⭐ 2000+ years = "zweitausend" + units',          example: 'Im Jahr zweitausend war ich klein.',           exampleEn: 'In the year 2000 I was small.' },
+      { de: 'zweitausendvierundzwanzig',     en: '2024 (year)', emoji: '📅', hint: 'zweitausend + vier-und-zwanzig',                  example: 'Wir sind im Jahr zweitausendvierundzwanzig.',  exampleEn: 'We are in the year 2024.' },
+
+      // 💶 PRICE & SHOP phrases — the immediate payoff
+      { de: 'das kostet',     en: 'that costs',         emoji: '💰', hint: 'formal price answer',                          example: 'Das kostet hundertfünfzig Euro.',     exampleEn: 'That costs one hundred fifty euros.' },
+      { de: 'das macht',      en: 'that comes to',      emoji: '🧾', hint: 'casual checkout phrase · "that\'s …"',         example: 'Das macht zweihundert Euro.',         exampleEn: 'That comes to two hundred euros.' },
+      { de: 'pro Monat',      en: 'per month',          emoji: '🗓️', hint: 'rent / salary context',                        example: 'Achthundert Euro pro Monat — Miete.', exampleEn: 'Eight hundred euros per month — rent.' },
+      { de: 'pro Jahr',       en: 'per year',           emoji: '📆', hint: 'salary / subscription',                        example: 'Zweitausend Euro pro Jahr.',          exampleEn: 'Two thousand euros per year.' },
+
+      // 🔢 SUPPORT WORDS — number helpers
+      { de: 'die Zahl',       en: 'the number (digit)', emoji: '🔢', hint: 'math / counting · "the number itself"',         example: 'Die Zahl hundert ist rund.',          exampleEn: 'The number one hundred is round.' },
+      { de: 'die Nummer',     en: 'the number (ID)',   emoji: '☎️', hint: 'phone, room, house number · an identifier',      example: 'Meine Nummer ist 30 25.',             exampleEn: 'My number is 30 25.' },
+      { de: 'ungefähr',       en: 'about / roughly',    emoji: '〜', hint: 'softens the number · "around …"',               example: 'Ungefähr hundert Personen.',           exampleEn: 'About one hundred people.' },
+      { de: 'genau',          en: 'exactly',            emoji: '🎯', hint: 'hardens the number · "precisely"',              example: 'Genau dreihundert Euro.',              exampleEn: 'Exactly three hundred euros.' },
     ],
     grammar: [
-      { rule: 'Big numbers stay one word', body: 'Even 99,999 is written without spaces in old style. Modern usage allows spacing for readability.' },
+      { rule: '⭐ THE 3-DIGIT FORMULA — one Lego rule for ALL 3-digit numbers',
+        body:
+          'Read it like Lego — biggest unit first, all glued into ONE word:\n\n' +
+          '  multiplier-hundert + (units-UND-tens)\n\n' +
+          'Worked examples (the underscores show the Lego seams):\n\n' +
+          '  125 = ein_hundert + fünf_und_zwanzig   → hundertfünfundzwanzig\n' +
+          '  234 = zwei_hundert + vier_und_dreißig  → zweihundertvierunddreißig\n' +
+          '  365 = drei_hundert + fünf_und_sechzig  → dreihundertfünfundsechzig\n' +
+          '  678 = sechs_hundert + acht_und_siebzig → sechshundertachtundsiebzig\n' +
+          '  999 = neun_hundert + neun_und_neunzig  → neunhundertneunundneunzig\n\n' +
+          '🧠 The "und" only appears INSIDE the tens-units flip (fünf-und-zwanzig). NEVER between the hundreds and the rest.\n' +
+          '  hundertfünfundzwanzig ✓\n' +
+          '  hundert und fünfundzwanzig ✗',
+      },
+      { rule: '⭐ HUNDREDS & THOUSANDS — same Lego rule, all one word',
+        body:
+          'Hundreds (multiplier + hundert):\n' +
+          '  100 = (ein)hundert     500 = fünfhundert\n' +
+          '  200 = zweihundert      600 = sechshundert  ⚠ keeps full -s\n' +
+          '  300 = dreihundert      700 = siebenhundert ⚠ keeps full -en\n' +
+          '  400 = vierhundert      900 = neunhundert\n\n' +
+          'Thousands work the same way (multiplier + tausend):\n' +
+          '  1 000 = (ein)tausend\n' +
+          '  2 000 = zweitausend\n' +
+          '  10 000 = zehntausend\n' +
+          '  1 234 = ein_tausend + zwei_hundert + vier_und_dreißig → eintausendzweihundertvierunddreißig\n\n' +
+          '🧠 Spelling traps to memorise: only 16 (sechzehn) and 60 (sechzig) drop the -s of sechs. In sechshundert (600) the -s comes BACK because of the linking position. Same for 70: 17 (siebzehn) / 70 (siebzig) drop the -en — but siebenhundert (700) keeps it.',
+      },
+      { rule: '⭐ READING YEARS — the German shortcut',
+        body:
+          'German has TWO ways to read a year, depending on the century:\n\n' +
+          '  📅 1100 – 1999 → "<XX>hundert + <YY>"  (read as HUNDREDS, not thousands)\n' +
+          '    1989 = neunzehnhundert + neunundachtzig\n' +
+          '         = neunzehnhundertneunundachtzig\n' +
+          '    1492 = vierzehnhundertzweiundneunzig\n' +
+          '    1900 = neunzehnhundert\n\n' +
+          '  📅 2000 +     → "zweitausend + units"  (normal thousands rule)\n' +
+          '    2000 = zweitausend\n' +
+          '    2024 = zweitausendvierundzwanzig\n' +
+          '    2026 = zweitausendsechsundzwanzig\n\n' +
+          '⚠ English speakers default to "twenty twenty-four" (= zwanzig vierundzwanzig). That sounds wrong in German — use the thousands form. The neunzehnhundert trick is only for years STARTING with 11–19.',
+      },
+      { rule: '💶 PRICES — putting big numbers to work',
+        body:
+          'The two checkout phrases you\'ll hear daily:\n\n' +
+          '  Q: Wie viel kostet das?       (formal · written prices)\n' +
+          '  A: Das kostet 199 Euro.       — Das kostet hundertneunundneunzig Euro.\n\n' +
+          '  Q: Was kostet das?            (casual)\n' +
+          '  A: Das macht 25 Euro fünfzig. — Das macht fünfundzwanzig Euro fünfzig.\n\n' +
+          'Speaking tip: cents are usually dropped if they\'re ,00. Otherwise just say the cent number after Euro — "fünfundzwanzig Euro fünfzig" is enough; the word "Cent" is optional.\n\n' +
+          'Number-softeners + hardeners:\n' +
+          '  ungefähr hundert Euro  — about €100\n' +
+          '  genau hundert Euro     — exactly €100\n' +
+          '  ca. hundert Euro       — circa €100 (very common in writing)',
+      },
+      { rule: '🚦 PITFALLS & SPOKEN SHORTCUTS',
+        body:
+          '• ONE WORD always. "zweihundertvierunddreißig" — no spaces, no hyphens. The flip "und" is the only "und" in the whole number.\n' +
+          '• "ein" is optional at the start of round hundreds/thousands: hundert ≈ einhundert · tausend ≈ eintausend. In speech the short forms win; in writing or for phone-clarity, use the full einhundert / eintausend.\n' +
+          '• ⚠ Never insert "und" between hundreds and the rest. hundert und fünf ✗ → hundertfünf ✓.\n' +
+          '• 16 / 60 drop the -s of sechs (sechzehn · sechzig), but 600 (sechshundert) keeps the full sechs. Same for 17 / 70 vs 700.\n' +
+          '• German uses , for decimals and . for thousands — opposite of English. 1.234,56 € is "one thousand two hundred thirty-four euros fifty-six".\n' +
+          '• Years 1100-1999: read as "neunzehnhundert + last two", NOT as four digits in pairs.\n' +
+          '• Phone / room / house numbers use "Nummer", not "Zahl". "Welche Nummer hast du?" not "Welche Zahl?".',
+      },
     ],
     exercises: [
-      { type: 'fill-blank', sentence: '125 = ein__fünfundzwanzig', answer: 'hundert' },
-      { type: 'multiple-choice', q: '365 = ?', options: ['dreihundertsechsundfünfzig','dreihundertfünfundsechzig','sechsdreihundertfünfzig','dreihundertfünf'], answer: 'dreihundertfünfundsechzig' },
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — numeral→word · year→spoken · price-phrase→meaning
+      { type: 'match',
+        pairs: [
+          { de: '100',  en: 'hundert' },
+          { de: '200',  en: 'zweihundert' },
+          { de: '500',  en: 'fünfhundert' },
+          { de: '600',  en: 'sechshundert' },
+          { de: '700',  en: 'siebenhundert' },
+          { de: '1000', en: 'tausend' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: '1989 (year)', en: 'neunzehnhundertneunundachtzig' },
+          { de: '1900 (year)', en: 'neunzehnhundert' },
+          { de: '2000 (year)', en: 'zweitausend' },
+          { de: '2024 (year)', en: 'zweitausendvierundzwanzig' },
+          { de: '1492 (year)', en: 'vierzehnhundertzweiundneunzig' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Das kostet …',       en: '💰 formal price answer' },
+          { de: 'Das macht …',         en: '🧾 casual checkout total' },
+          { de: 'pro Monat',           en: '🗓️ rent / salary unit' },
+          { de: 'pro Jahr',            en: '📆 yearly subscription / salary' },
+          { de: 'ungefähr',            en: '〜 about / roughly' },
+          { de: 'genau',               en: '🎯 exactly' },
+        ],
+      },
+
+      // ⭐ 7 BUILD-THE-NUMBER fill-blanks (the formula in action)
+      { type: 'fill-blank', sentence: '125 = ein__fünfundzwanzig', answer: 'hundert',
+        explain: 'hundert is the Lego brick between 100 and the flip-number.' },
+      { type: 'fill-blank', sentence: '234 = zweihundert__unddreißig (4 = vier · flipped before 30)', answer: 'vier' },
+      { type: 'fill-blank', sentence: '365 = __hundertfünfundsechzig', answer: 'drei' },
+      { type: 'fill-blank', sentence: '678 = sechshundert__undsiebzig', answer: 'acht' },
+      { type: 'fill-blank', sentence: '999 = neunhundert__undneunzig', answer: 'neun' },
+      { type: 'fill-blank', sentence: '500 = __hundert', answer: 'fünf' },
+      { type: 'fill-blank', sentence: '1 000 = __', answer: 'tausend' },
+
+      // ⭐ 3 HUNDREDS / FORMULA MCQs
+      { type: 'multiple-choice', q: '365 = ?',
+        options: ['dreihundertsechsundfünfzig','dreihundertfünfundsechzig','sechsdreihundertfünfzig','dreihundertfünf'],
+        answer: 'dreihundertfünfundsechzig',
+        explain: 'drei-hundert + fünf-und-sechzig. The flip "und" is the only und in the whole number.' },
+      { type: 'multiple-choice', q: '600 = ?',
+        options: ['sechzighundert','sechshundert','sechshundertzwanzig','sechszehnhundert'],
+        answer: 'sechshundert',
+        explain: 'sechs keeps its full -s in front of hundert (unlike sechzehn / sechzig).' },
+      { type: 'multiple-choice', q: '999 = ?',
+        options: ['neunhundertneunzigundneun','neunhundertneunundneunzig','neunzighundertneunundneunzig','neunhundertundneunundneunzig'],
+        answer: 'neunhundertneunundneunzig' },
+
+      // 📅 3 YEAR-READING MCQs
+      { type: 'multiple-choice', q: '📅 The year 1989 in spoken German:',
+        options: ['eintausendneunhundertneunundachtzig','neunzehnhundertneunundachtzig','neunzehnachtundneunzig','neunzehnneunundachtzig'],
+        answer: 'neunzehnhundertneunundachtzig',
+        explain: 'Pre-2000 years use the "neunzehnhundert + last two" shortcut.' },
+      { type: 'multiple-choice', q: '📅 The year 2024 in spoken German:',
+        options: ['zwanzigvierundzwanzig','zweitausendundvierundzwanzig','zweitausendvierundzwanzig','zwei_null_zwei_vier'],
+        answer: 'zweitausendvierundzwanzig',
+        explain: '2000+ years use the normal thousands rule — no und between tausend and the flip.' },
+      { type: 'multiple-choice', q: '📅 The year 1900 in spoken German:',
+        options: ['eintausendneunhundert','neunzehnhundert','neunzehn','neunzehntausend'],
+        answer: 'neunzehnhundert' },
+
+      // ⚠ 3 SPOT-THE-ERROR MCQs (one-word, no und, sechs-trap)
+      { type: 'multiple-choice', q: '⚠ WRONG spelling for 145:',
+        options: ['hundertfünfundvierzig','einhundertfünfundvierzig','hundert und fünfundvierzig','einhundertfünfundvierzig'],
+        answer: 'hundert und fünfundvierzig',
+        explain: 'Never insert "und" between hundreds and the rest. The "und" only lives inside the flip.' },
+      { type: 'multiple-choice', q: '⚠ WRONG spelling for 600:',
+        options: ['sechshundert','sechzighundert','sechs hundert','seclhundert'],
+        answer: 'sechzighundert',
+        explain: 'sechzig = 60, not 600. 600 = sechshundert (sechs keeps its -s).' },
+      { type: 'multiple-choice', q: '⚠ WRONG: how German writes 1 234.56:',
+        options: ['1.234,56','1,234.56','1234,56','1 234,56'],
+        answer: '1,234.56',
+        explain: 'German uses . for thousands and , for decimals. English does the opposite.' },
+
+      // 💶 2 PRICE-PHRASE MCQs
+      { type: 'multiple-choice', q: 'Casual checkout total: "__ 25 Euro 50."',
+        options: ['Das kostet','Das macht','Das hat','Das ist'],
+        answer: 'Das macht',
+        explain: '"Das macht …" is the standard checkout phrase. "Das kostet" works too but sounds more formal.' },
+      { type: 'multiple-choice', q: 'About €100 (softened):',
+        options: ['genau hundert Euro','ungefähr hundert Euro','sicher hundert Euro','klar hundert Euro'],
+        answer: 'ungefähr hundert Euro' },
+
+      // 💬 Mini dialogue — shopping scenario sweeping 3-digit prices, "das macht", years
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Guten Tag! Wie viel kostet diese Tasche?',                 en: 'Good day! How much does this bag cost?' },
+        { speaker: 'B', de: 'Die kostet hundertfünfundzwanzig Euro.',                   en: 'It costs one hundred twenty-five euros.' },
+        { speaker: 'A', de: 'Und das Buch?',                                            en: 'And the book?' },
+        { speaker: 'B', de: 'Das Buch macht achtzehn Euro fünfzig.',                    en: 'The book comes to eighteen euros fifty.' },
+        { speaker: 'A', de: 'Ich nehme beides. Was macht das zusammen?',                en: 'I\'ll take both. What does that come to together?' },
+        { speaker: 'B', de: 'Das macht hundertdreiundvierzig Euro fünfzig.',            en: 'That comes to one hundred forty-three euros fifty.' },
+        { speaker: 'A', de: 'Hier sind hundertfünfzig Euro.',                           en: 'Here is one hundred fifty euros.' },
+        { speaker: 'B', de: 'Danke. Sechs Euro fünfzig zurück. Schönen Tag!',           en: 'Thank you. Six euros fifty back. Have a good day!' },
+      ]},
     ],
-    quiz: [{ type: 'fill-blank', sentence: '1000 = __', answer: 'tausend' }],
+    quiz: [
+      { type: 'fill-blank', sentence: '1000 = __', answer: 'tausend' },
+      { type: 'multiple-choice', q: '234 = ?',
+        options: ['zweihundertdreiundvierzig','zweihundertvierunddreißig','zweihundertvierzigdrei','zwanzigvierunddreißig'],
+        answer: 'zweihundertvierunddreißig',
+        explain: 'zwei-hundert + vier-und-dreißig.' },
+      { type: 'multiple-choice', q: '📅 The year 2026 in spoken German:',
+        options: ['zwanzigsechsundzwanzig','zweitausendsechsundzwanzig','zweitausendundsechsundzwanzig','sechsundzwanzighundert'],
+        answer: 'zweitausendsechsundzwanzig' },
+      { type: 'multiple-choice', q: '⚠ Which number is spelled WRONG?',
+        options: ['hundertfünfundzwanzig','dreihundert','hundert und fünf','zweitausend'],
+        answer: 'hundert und fünf',
+        explain: 'No "und" between hundreds and the rest — should be "hundertfünf".' },
+      { type: 'multiple-choice', q: '600 = ?',
+        options: ['sechshundert','sechzighundert','sechzehnhundert','sechshundertzig'],
+        answer: 'sechshundert' },
+      { type: 'fill-blank', sentence: 'Casual checkout: "Das __ zwölf Euro fünfzig."', answer: 'macht' },
+      { type: 'fill-blank', sentence: 'About €500 (softened): "__ fünfhundert Euro"', answer: 'ungefähr' },
+    ],
   },
 
   {
