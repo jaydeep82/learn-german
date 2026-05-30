@@ -3089,32 +3089,32 @@ export const days = [
     intro: 'Day 21 taught the one flip (der → den). Today is the good-news day: feminine, neuter and plural articles look EXACTLY the same as direct objects as they do as subjects. die stays die, das stays das, eine stays eine. The real skill now is mixing genders in one sentence and flipping ONLY the masculine — so most drills here make you decide.',
     vocabulary: [
       // ✅ FEMININE — die / eine never change
-      { de: 'die Tasche (= die Tasche)', en: 'the bag (f · NO change)',   emoji: '👜', hint: '✅ die → die · feminine never flips',       example: 'Ich kaufe die Tasche.',        exampleEn: 'I am buying the bag.' },
+      { de: 'die Tasche', en: 'the bag (f · NO change)',   emoji: '👜', hint: '✅ die → die · feminine never flips',       example: 'Ich kaufe die Tasche.',        exampleEn: 'I am buying the bag.' },
       { de: 'die Frau (= die Frau)',     en: 'the woman (f · NO change)', emoji: '👩', hint: '✅ die → die',                              example: 'Ich sehe die Frau.',           exampleEn: 'I see the woman.' },
-      { de: 'die Zeitung (= die Zeitung)', en: 'the newspaper (f · NO change)', emoji: '📰', hint: '✅ die → die',                       example: 'Er liest die Zeitung.',        exampleEn: 'He reads the newspaper.' },
-      { de: 'eine Idee (= eine Idee)',   en: 'an idea (f · NO change)',   emoji: '💡', hint: '✅ eine → eine',                            example: 'Ich habe eine Idee.',          exampleEn: 'I have an idea.' },
-      { de: 'eine Frage (= eine Frage)', en: 'a question (f · NO change)', emoji: '❓', hint: '✅ eine → eine',                           example: 'Ich habe eine Frage.',         exampleEn: 'I have a question.' },
+      { de: 'die Zeitung', en: 'the newspaper (f · NO change)', emoji: '📰', hint: '✅ die → die',                       example: 'Er liest die Zeitung.',        exampleEn: 'He reads the newspaper.' },
+      { de: 'eine Idee',   en: 'an idea (f · NO change)',   emoji: '💡', hint: '✅ eine → eine',                            example: 'Ich habe eine Idee.',          exampleEn: 'I have an idea.' },
+      { de: 'eine Frage', en: 'a question (f · NO change)', emoji: '❓', hint: '✅ eine → eine',                           example: 'Ich habe eine Frage.',         exampleEn: 'I have a question.' },
 
       // ✅ NEUTER — das / ein never change
-      { de: 'das Buch (= das Buch)',     en: 'the book (n · NO change)',  emoji: '📖', hint: '✅ das → das · neuter never flips',        example: 'Ich lese das Buch.',           exampleEn: 'I read the book.' },
-      { de: 'das Handy (= das Handy)',   en: 'the phone (n · NO change)', emoji: '📱', hint: '✅ das → das',                             example: 'Ich brauche das Handy.',       exampleEn: 'I need the phone.' },
-      { de: 'das Auto (= das Auto)',     en: 'the car (n · NO change)',   emoji: '🚗', hint: '✅ das → das',                             example: 'Wir kaufen das Auto.',         exampleEn: 'We are buying the car.' },
-      { de: 'ein Brötchen (= ein Brötchen)', en: 'a bread roll (n · NO change)', emoji: '🥖', hint: '✅ ein → ein (NOT einen!)',        example: 'Ich esse ein Brötchen.',       exampleEn: 'I eat a bread roll.' },
+      { de: 'das Buch',     en: 'the book (n · NO change)',  emoji: '📖', hint: '✅ das → das · neuter never flips',        example: 'Ich lese das Buch.',           exampleEn: 'I read the book.' },
+      { de: 'das Handy',   en: 'the phone (n · NO change)', emoji: '📱', hint: '✅ das → das',                             example: 'Ich brauche das Handy.',       exampleEn: 'I need the phone.' },
+      { de: 'das Auto',     en: 'the car (n · NO change)',   emoji: '🚗', hint: '✅ das → das',                             example: 'Wir kaufen das Auto.',         exampleEn: 'We are buying the car.' },
+      { de: 'ein Brötchen', en: 'a bread roll (n · NO change)', emoji: '🥖', hint: '✅ ein → ein (NOT einen!)',        example: 'Ich esse ein Brötchen.',       exampleEn: 'I eat a bread roll.' },
 
       // ✅ PLURAL — die always stays die
-      { de: 'die Bücher (= die Bücher)', en: 'the books (pl · NO change)', emoji: '📚', hint: '✅ plural die → die',                     example: 'Ich lese die Bücher.',         exampleEn: 'I read the books.' },
-      { de: 'die Kinder (= die Kinder)', en: 'the children (pl · NO change)', emoji: '🧒', hint: '✅ plural die → die',                  example: 'Ich sehe die Kinder.',         exampleEn: 'I see the children.' },
-      { de: 'die Freunde (= die Freunde)', en: 'the friends (pl · NO change)', emoji: '👥', hint: '✅ plural die → die',                 example: 'Ich besuche die Freunde.',     exampleEn: 'I visit the friends.' },
+      { de: 'die Bücher', en: 'the books (pl · NO change)', emoji: '📚', hint: '✅ plural die → die',                     example: 'Ich lese die Bücher.',         exampleEn: 'I read the books.' },
+      { de: 'die Kinder',   en: 'the children (pl · NO change)', emoji: '🧒', hint: '✅ plural die → die',                  example: 'Ich sehe die Kinder.',         exampleEn: 'I see the children.' },
+      { de: 'die Freunde', en: 'the friends (pl · NO change)', emoji: '👥', hint: '✅ plural die → die',                 example: 'Ich besuche die Freunde.',     exampleEn: 'I visit the friends.' },
 
       // ⭐ THE CONTRAST — masculine DOES flip (so you stay sharp)
       { de: 'der Tisch → den Tisch',     en: 'the table (m · DOES flip)', emoji: '🪑', hint: '⚠ ONLY masculine flips · der → den',     example: 'Ich kaufe den Tisch.',         exampleEn: 'I am buying the table.' },
       { de: 'ein Hund → einen Hund',     en: 'a dog (m · DOES flip)',     emoji: '🐕', hint: '⚠ masc · ein → einen',                    example: 'Er hat einen Hund.',           exampleEn: 'He has a dog.' },
 
       // 🚫 EIN-WORDS in f / n / pl — keine / keine, meine / mein
-      { de: 'keine Zeit (= keine Zeit)', en: 'no time (f · NO change)',   emoji: '⏳', hint: '✅ keine → keine (feminine)',             example: 'Ich habe keine Zeit.',         exampleEn: 'I have no time.' },
-      { de: 'keine Bücher (= keine Bücher)', en: 'no books (pl · NO change)', emoji: '🚫', hint: '✅ keine → keine (plural)',          example: 'Ich habe keine Bücher.',       exampleEn: 'I have no books.' },
-      { de: 'mein Auto (= mein Auto)',   en: 'my car (n · NO change)',    emoji: '🚙', hint: '✅ mein → mein (neuter, NOT meinen!)',   example: 'Ich nehme mein Auto.',         exampleEn: 'I take my car.' },
-      { de: 'meine Tasche (= meine Tasche)', en: 'my bag (f · NO change)', emoji: '👝', hint: '✅ meine → meine (feminine)',           example: 'Ich nehme meine Tasche.',      exampleEn: 'I take my bag.' },
+      { de: 'keine Zeit', en: 'no time (f · NO change)',   emoji: '⏳', hint: '✅ keine → keine (feminine)',             example: 'Ich habe keine Zeit.',         exampleEn: 'I have no time.' },
+      { de: 'keine Bücher', en: 'no books (pl · NO change)', emoji: '🚫', hint: '✅ keine → keine (plural)',          example: 'Ich habe keine Bücher.',       exampleEn: 'I have no books.' },
+      { de: 'mein Auto',   en: 'my car (n · NO change)',    emoji: '🚙', hint: '✅ mein → mein (neuter, NOT meinen!)',   example: 'Ich nehme mein Auto.',         exampleEn: 'I take my car.' },
+      { de: 'meine Tasche', en: 'my bag (f · NO change)', emoji: '👝', hint: '✅ meine → meine (feminine)',           example: 'Ich nehme meine Tasche.',      exampleEn: 'I take my bag.' },
     ],
     grammar: [
       { rule: '⭐ THE NO-CHANGE RULE — f / n / pl look identical',
