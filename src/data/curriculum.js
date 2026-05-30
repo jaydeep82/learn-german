@@ -3271,22 +3271,84 @@ export const days = [
 
   {
     id: 23, week: 4,
+    vocabLayout: 'spotlight',
     title: 'Nominativ vs Akkusativ',
     titleDe: 'Nominativ vs Akkusativ',
     emoji: '⚖️',
-    objective: 'Decide instantly whether a noun is a subject or an object.',
-    intro: 'The subject does the action (Nominativ). The object receives it (Akkusativ).',
-    vocabulary: [],
+    objective: 'Decide in one second whether a noun is the subject (Nominativ) or the object (Akkusativ) — and understand why German can move words around without losing the meaning.',
+    intro: 'You now know the two cases (Day 21 masculine flip, Day 22 the no-change genders). Today you put them head-to-head: who DOES the action vs who RECEIVES it. The article tag is what makes German flexible — because "den" already marks the object, German can even put the object FIRST and the meaning still holds. Master the Wer/Wen test and you own both cases.',
+    vocabulary: [
+      // ⚖️ THE TWO ROLES — name them
+      { de: 'der Nominativ', en: 'the subject case (the DOER)',     emoji: '🟦', hint: '🔁 Day 9 · Wer/Was? · stays der/die/das',      example: 'Der Mann schläft. (Mann = Nominativ)',  exampleEn: 'The man sleeps. (man = subject)' },
+      { de: 'der Akkusativ', en: 'the object case (the RECEIVER)',  emoji: '🟩', hint: '🔁 Day 21 · Wen/Was? · masc → den',          example: 'Ich sehe den Mann. (Mann = Akkusativ)', exampleEn: 'I see the man. (man = object)' },
+      { de: 'das Subjekt',   en: 'the subject',                     emoji: '🙋', hint: 'the one performing the verb',                 example: 'Das Subjekt ist „der Hund".',           exampleEn: 'The subject is "the dog".' },
+      { de: 'das Objekt',    en: 'the (direct) object',             emoji: '🎯', hint: 'the one receiving the verb',                  example: 'Das Objekt ist „den Mann".',            exampleEn: 'The object is "the man".' },
+
+      // 🔍 THE TEST WORDS — Wer/Wen
+      { de: 'Wer …?',  en: 'Who …? (subject test)',  emoji: '🟦', hint: '⭐ answer = Nominativ (the doer)',     example: 'Wer sieht den Mann? — Der Hund.',  exampleEn: 'Who sees the man? — The dog.' },
+      { de: 'Wen …?',  en: 'Whom …? (object test)',  emoji: '🟩', hint: '⭐ answer = Akkusativ (the receiver)', example: 'Wen sieht der Hund? — Den Mann.',  exampleEn: 'Whom does the dog see? — The man.' },
+
+      // ⭐ THE SAME NOUN, BOTH JOBS — der Hund flips by role
+      { de: 'Der Hund sieht den Mann.', en: 'The dog sees the man.',  emoji: '🐕', hint: '⭐ Hund = subject (der) · Mann = object (den)', example: 'Der Hund sieht den Mann.',  exampleEn: 'The dog sees the man.' },
+      { de: 'Den Hund sieht der Mann.', en: 'The man sees the dog.',  emoji: '👨', hint: '⭐ object-first! den Hund = object · der Mann = subject', example: 'Den Hund sieht der Mann.',  exampleEn: 'The man sees the dog. (lit. "The dog, the man sees")' },
+
+      // 👫 PRACTICE NOUNS — to mix subjects & objects
+      { de: 'der Freund',   en: 'the (male) friend',  emoji: '👦', hint: 'masc · der → den as object',           example: 'Der Freund besucht den Lehrer.', exampleEn: 'The friend visits the teacher.' },
+      { de: 'die Freundin', en: 'the (female) friend', emoji: '👧', hint: 'fem · die → die (no change)',          example: 'Die Freundin liest das Buch.',   exampleEn: 'The friend reads the book.' },
+      { de: 'der Student',  en: 'the (male) student',  emoji: '🧑‍🎓', hint: '⚠ weak noun · den Studenten in Akk', example: 'Ich kenne den Studenten.',       exampleEn: 'I know the student.' },
+      { de: 'die Studentin', en: 'the (female) student', emoji: '👩‍🎓', hint: 'fem · die → die (no change)',       example: 'Der Freund besucht die Studentin.', exampleEn: 'The friend visits the student.' },
+
+      // 🎬 TWO-NOUN VERBS — need a subject AND an object
+      { de: 'besuchen', en: 'to visit',  emoji: '🚪', hint: 'subject visits object → Akk',  example: 'Die Frau besucht den Arzt.',   exampleEn: 'The woman visits the doctor.' },
+      { de: 'kennen',   en: 'to know (a person/thing)', emoji: '🤝', hint: 'subject knows object → Akk', example: 'Ich kenne den Mann.', exampleEn: 'I know the man.' },
+      { de: 'fragen',   en: 'to ask (someone)', emoji: '🙋', hint: 'subject asks object → Akk', example: 'Der Student fragt den Lehrer.', exampleEn: 'The student asks the teacher.' },
+    ],
     grammar: [
-      { rule: 'Question test', body: 'Ask "Wer/Was?" → subject. Ask "Wen/Was?" → object.' },
-      { rule: 'One sentence — four meanings',
+      { rule: '⭐ THE 5-SECOND TEST — Wer (subject) vs Wen (object)',
         body:
-          'The same verb + nouns can shift meaning depending on definite (der/die/das) vs indefinite (ein/eine):\n' +
-          '• Ein Freund besucht eine Studentin. — any friend visits any student\n' +
-          '• Der Freund besucht eine Studentin. — the (specific) friend visits any student\n' +
-          '• Ein Freund besucht die Studentin. — any friend visits the (specific) student\n' +
-          '• Die Freundin besucht die Studentin. — the friend visits the student\n' +
-          'The article does NOT change the grammatical role — Freund stays the subject.',
+          'Every two-noun sentence has a doer and a receiver. Ask the verb two questions:\n\n' +
+          '  WER + verb?   → the answer is the SUBJECT  (🟦 Nominativ)\n' +
+          '  WEN + verb?   → the answer is the OBJECT   (🟩 Akkusativ)\n\n' +
+          'Sentence: "Der Hund sieht den Mann."\n' +
+          '  Wer sieht?        → Der Hund.   (subject → Nominativ → der)\n' +
+          '  Wen sieht der Hund? → den Mann. (object → Akkusativ → den)\n\n' +
+          '🧠 "Wen" carries the same -n as "den" — both are the Akkusativ tag. If "whom" fits the slot, that noun is the object.',
+      },
+      { rule: '⭐ WHY THE ARTICLE TAG MATTERS — word order can move',
+        body:
+          'English relies on WORD ORDER: "The dog sees the man" ≠ "The man sees the dog". German relies on the ARTICLE, so it can shuffle words and keep the meaning:\n\n' +
+          '  Der Hund sieht den Mann.   = The dog sees the man.\n' +
+          '  Den Mann sieht der Hund.   = The dog sees the man.  (SAME meaning!)\n' +
+          '      └ object first         └ subject later\n\n' +
+          'Because "den Mann" is tagged as the object, you can lead with it for emphasis and German still knows the dog is doing the seeing. The verb stays in slot 2 (V2 rule) — only the nouns move.\n\n' +
+          '⚠ This ONLY works clearly when one noun is masculine (der vs den shows the role). With "Die Frau sieht die Katze" both are die, so order DOES carry the meaning.',
+      },
+      { rule: '⭐ ROLE STAYS, ARTICLE FLIPS — the same noun, two jobs',
+        body:
+          'A noun is not "a subject" or "an object" by nature — its JOB in the sentence decides:\n\n' +
+          '  Der Mann sieht den Hund.   — Mann is subject (der)\n' +
+          '  Den Mann sieht der Hund.   — Mann is object (den), Hund is now subject\n\n' +
+          'Routine for building a correct sentence:\n' +
+          '  1. Who DOES it? → that noun is Nominativ (der/die/das).\n' +
+          '  2. Who RECEIVES it? → that noun is Akkusativ (masc → den/einen; f/n/pl unchanged).\n' +
+          '  3. Put the verb in slot 2; either noun can take slot 1.',
+      },
+      { rule: '⚖️ definite vs indefinite does NOT change the role',
+        body:
+          'der/die/das (specific) vs ein/eine (any) only changes "the" vs "a" — NOT who is subject or object:\n\n' +
+          '  Ein Freund besucht eine Studentin. — a friend visits a student\n' +
+          '  Der Freund besucht eine Studentin. — the friend visits a student\n' +
+          '  Ein Freund besucht die Studentin.  — a friend visits the student\n' +
+          '  Die Freundin besucht die Studentin. — the friend visits the student\n\n' +
+          'In all four, the FIRST noun is the subject (it does the visiting) and the second is the object. Swapping the/a never swaps the roles — only re-ordering or re-tagging does.',
+      },
+      { rule: '🚦 PITFALLS — the classic Nom-vs-Akk errors',
+        body:
+          '• "Ich sehe der Tisch" ✗ → Tisch is the object → "Ich sehe den Tisch." ✓\n' +
+          '• "Der Tisch ist groß" ✓ — after sein the noun stays Nominativ (no object).\n' +
+          '• Don\'t assume slot 1 = subject. "Den Mann sieht der Hund" — slot 1 is the OBJECT here.\n' +
+          '• Weak masculine nouns add -n in the Akk: den Studenten / den Jungen / den Herrn.\n' +
+          '• With two same-gender nouns (die Frau / die Katze) word order is the ONLY clue — keep subject first.',
       },
     ],
     exercises: [
