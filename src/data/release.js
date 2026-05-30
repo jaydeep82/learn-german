@@ -11,10 +11,20 @@
  * in sync.
  */
 
-export const VERSION = '3.8.3';
+export const VERSION = '3.8.4';
 export const RELEASE_DATE = '2026-05-31';
 
 export const RELEASES = [
+  {
+    version: '3.8.4',
+    date: '2026-05-31',
+    type: 'fix',
+    title: 'Day 22 vocab — remove the redundant "(= …)" brackets from German headwords',
+    notes: [
+      'Day 22 (Akkusativ f/n/pl) vocab cards showed the German word doubled in brackets to signal "no change" — e.g. "die Tasche (= die Tasche)". That parenthetical was redundant (and made the audio button read the word twice). Removed the "(= …)" from all 16 no-change German headwords so each card now shows a clean word ("die Tasche", "das Buch", "keine Zeit", …).',
+      'The teaching signal is preserved in the English gloss (e.g. "the bag (f · NO change)") and the ✅ hint, and the masculine contrast pairs (der Tisch → den Tisch) are untouched.',
+    ],
+  },
   {
     version: '3.8.3',
     date: '2026-05-31',
