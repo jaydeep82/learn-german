@@ -5433,60 +5433,192 @@ export const days = [
   /* ----- Day 26: Dativ II — verbs (slides 281-287) ----- */
   {
     id: 26, week: 4,
+    vocabLayout: 'spotlight',
     title: 'Dativ II — verbs',
     titleDe: 'Dativ II — Verben',
     emoji: '🤝',
-    objective: 'Spot the verbs that demand a Dativ object — and use them.',
-    intro: 'Some verbs take a direct object in the Dativ rather than the Akkusativ. They are common ones — helfen, danken, gefallen, gehören, antworten, glauben.',
+    objective: 'Master the verbs that demand a Dativ object (helfen, danken, gefallen…), the full set of Dativ pronouns (mir, dir, ihm…), and the famous "gefallen flip" where the thing — not the person — is the subject.',
+    intro: 'Day 25 forced Dativ with prepositions. Today a SECOND trigger: certain verbs simply take their object in the Dativ, not the Akkusativ. Most involve giving, helping or reacting to a PERSON. Learn the shortlist, learn the Dativ pronouns (mir/dir/ihm…), and crack the gefallen/schmecken "flip" — and you own the third case.',
     vocabulary: [
-      { de: 'helfen',     en: 'to help (someone)' },
-      { de: 'danken',     en: 'to thank' },
-      { de: 'gefallen',   en: 'to please / to be liked by' },
-      { de: 'gehören',    en: 'to belong to' },
-      { de: 'antworten',  en: 'to answer (someone)' },
-      { de: 'glauben',    en: 'to believe (someone)' },
-      { de: 'gratulieren',en: 'to congratulate' },
-      { de: 'passen',     en: 'to fit / suit' },
+      // 🤝 THE CLASSIC DATIV VERBS — action TO a person
+      { de: 'helfen',     en: 'to help (sb)',        emoji: '🆘', hint: '⭐ Dativ! "Ich helfe DEM Mann" — NOT den',     example: 'Ich helfe dem Mann.',          exampleEn: 'I help the man.' },
+      { de: 'danken',     en: 'to thank (sb)',       emoji: '🙏', hint: '⭐ Dativ! "Ich danke DIR"',                   example: 'Ich danke dem Lehrer.',        exampleEn: 'I thank the teacher.' },
+      { de: 'antworten',  en: 'to answer (sb)',      emoji: '💬', hint: '⭐ Dativ! answer a PERSON → dem/der',          example: 'Ich antworte dem Freund.',     exampleEn: 'I answer the friend.' },
+      { de: 'glauben',    en: 'to believe (sb)',     emoji: '🤔', hint: '⭐ Dativ for a person · "Ich glaube dir"',     example: 'Ich glaube der Frau.',         exampleEn: 'I believe the woman.' },
+      { de: 'gratulieren', en: 'to congratulate (sb)', emoji: '🎉', hint: '⭐ Dativ! "Ich gratuliere DEM Chef"',       example: 'Wir gratulieren dem Chef.',    exampleEn: 'We congratulate the boss.' },
+      { de: 'folgen',     en: 'to follow (sb)',      emoji: '👣', hint: '⭐ Dativ · "Folg mir!"',                      example: 'Der Hund folgt dem Kind.',     exampleEn: 'The dog follows the child.' },
+      { de: 'zuhören',    en: 'to listen to (sb)',   emoji: '👂', hint: '⭐ Dativ (separable) · "Ich höre dir zu"',     example: 'Ich höre dem Lehrer zu.',      exampleEn: 'I listen to the teacher.' },
+
+      // 🔄 THE "FLIP" VERBS — the THING is the subject, the person is Dativ
+      { de: 'gefallen',   en: 'to please / be liked by', emoji: '👍', hint: '🔄 "Es gefällt MIR" = I like it',          example: 'Die Stadt gefällt mir.',       exampleEn: 'I like the city.' },
+      { de: 'schmecken',  en: 'to taste good (to sb)',   emoji: '😋', hint: '🔄 "Es schmeckt MIR" = I like the taste',  example: 'Die Pizza schmeckt mir.',      exampleEn: 'I like the pizza (taste).' },
+      { de: 'gehören',    en: 'to belong to (sb)',       emoji: '🔑', hint: '🔄 "Das gehört MIR" = that\'s mine',       example: 'Das Buch gehört dem Kind.',    exampleEn: 'The book belongs to the child.' },
+      { de: 'passen',     en: 'to fit / suit (sb)',      emoji: '👕', hint: '🔄 "Das passt MIR" = that suits me',       example: 'Das Hemd passt dir.',          exampleEn: 'The shirt fits you.' },
+      { de: 'fehlen',     en: 'to be missing (to sb)',   emoji: '😔', hint: '🔄 "Du fehlst MIR" = I miss you',          example: 'Du fehlst mir.',               exampleEn: 'I miss you.' },
+
+      // 👤 THE DATIV PRONOUNS — learn the full set
+      { de: 'mir',   en: 'to/for me',          emoji: '🙋', hint: '👤 Dativ of ich',          example: 'Das gefällt mir.',     exampleEn: 'I like that.' },
+      { de: 'dir',   en: 'to/for you (1 friend)', emoji: '👉', hint: '👤 Dativ of du',         example: 'Ich danke dir.',        exampleEn: 'I thank you.' },
+      { de: 'ihm',   en: 'to/for him / it',    emoji: '👨', hint: '👤 Dativ of er/es · (NOT ihn!)', example: 'Ich helfe ihm.',  exampleEn: 'I help him.' },
+      { de: 'ihr',   en: 'to/for her',         emoji: '👩', hint: '👤 Dativ of sie (she)',     example: 'Ich glaube ihr.',       exampleEn: 'I believe her.' },
+      { de: 'uns',   en: 'to/for us',          emoji: '👥', hint: '👤 Dativ of wir (same as Akk)', example: 'Hilf uns!',         exampleEn: 'Help us!' },
+      { de: 'euch',  en: 'to/for you (group)', emoji: '👨‍👩‍👧', hint: '👤 Dativ of ihr (same as Akk)', example: 'Ich danke euch.',   exampleEn: 'I thank you all.' },
+      { de: 'ihnen', en: 'to/for them',        emoji: '🧑‍🤝‍🧑', hint: '👤 Dativ of sie (they)',  example: 'Ich helfe ihnen.',      exampleEn: 'I help them.' },
+      { de: 'Ihnen', en: 'to/for you (formal)', emoji: '🤝', hint: '👤 Dativ of Sie · capital I', example: 'Ich danke Ihnen.',     exampleEn: 'I thank you. (formal)' },
     ],
     grammar: [
-      { rule: 'Dativ-only verbs',
+      { rule: '⭐ THE DATIV-VERB SHORTLIST — memorise these',
         body:
-          'These verbs take their human object in Dativ:\n' +
-          '• helfen, danken, antworten, gratulieren, glauben (jdm.)\n' +
-          '• gefallen, gehören, passen (jdm.)\n' +
-          'Examples:\n' +
-          '  Ich helfe DEM Vater.       I help the father.\n' +
-          '  Ich danke DER Frau.         I thank the woman.\n' +
-          '  Das Buch gehört DEM Kind.   The book belongs to the child.\n' +
-          '  Die Stadt gefällt MIR.      I like the city. (lit. "the city pleases me")',
+          'A small group of verbs takes its object in the DATIV (not Akkusativ). Most involve helping, giving or reacting to a PERSON:\n\n' +
+          '  helfen      — to help          Ich helfe dem Mann.\n' +
+          '  danken      — to thank         Ich danke der Frau.\n' +
+          '  antworten   — to answer        Ich antworte dem Freund.\n' +
+          '  glauben     — to believe (sb)  Ich glaube dir.\n' +
+          '  gratulieren — to congratulate  Wir gratulieren dem Chef.\n' +
+          '  folgen      — to follow        Der Hund folgt mir.\n' +
+          '  zuhören     — to listen to     Ich höre dem Lehrer zu.\n' +
+          '  gehören     — to belong to     Das Buch gehört dem Kind.\n' +
+          '  passen      — to fit / suit    Das Hemd passt dir.\n\n' +
+          '🧠 There is no rule that predicts these — they must be memorised. The good news: there are only a handful, and they\'re all everyday verbs.',
       },
-      { rule: 'gefallen — flipped meaning',
+      { rule: '🔄 THE GEFALLEN FLIP — the thing is the subject',
         body:
-          'In English: "I like X." (subject = I)\n' +
-          'In German: "X gefällt mir." (subject = X — what is liked!)\n' +
-          'Memorise the swap: the THING is the subject, the PERSON is in Dativ.',
+          'gefallen, schmecken, gehören, passen and fehlen work BACKWARDS compared to English. The THING is the subject; the PERSON is in the Dativ:\n\n' +
+          '  English: "I    like   the city."   (I = subject)\n' +
+          '  German:  "Die Stadt gefällt mir."  (die Stadt = subject, mir = Dativ)\n' +
+          '            └ subject  └ verb  └ Dativ person\n\n' +
+          'More flips:\n' +
+          '  Die Pizza schmeckt mir.   — I like the pizza (taste).\n' +
+          '  Das Buch gehört mir.       — The book is mine.\n' +
+          '  Das Hemd passt dir.        — The shirt suits you.\n' +
+          '  Du fehlst mir.             — I miss you.  (lit. "you are missing to me")\n\n' +
+          '⚠ Because the THING is the subject, the verb agrees with the THING, not the person:\n' +
+          '  Die Schuhe gefallen mir.  (plural thing → gefallen)\n' +
+          '  Das Auto gefällt mir.     (singular thing → gefällt)',
+      },
+      { rule: '👤 THE DATIV PRONOUNS — the full set',
+        body:
+          'When the Dativ object is a pronoun, use these forms:\n\n' +
+          '  ich → mir          wir → uns\n' +
+          '  du  → dir          ihr → euch\n' +
+          '  er  → ihm          sie (they) → ihnen\n' +
+          '  sie → ihr          Sie (formal) → Ihnen\n' +
+          '  es  → ihm\n\n' +
+          '⚠ Watch the er/sie pair: er → IHM (not "ihn" — that\'s Akkusativ!), sie → IHR.\n' +
+          '🧠 uns and euch are identical in Akkusativ and Dativ — one less thing to learn.\n\n' +
+          'Examples: Ich helfe dir. · Das gehört ihm. · Wir danken Ihnen. · Sie glaubt mir.',
+      },
+      { rule: '⚖️ DATIV vs AKKUSATIV — which case does THIS verb take?',
+        body:
+          'Most verbs take Akkusativ; the shortlist above takes Dativ. Compare:\n\n' +
+          '  AKKUSATIV (the majority)        DATIV (the shortlist)\n' +
+          '  Ich sehe den Mann.       ⚠      Ich helfe dem Mann.\n' +
+          '  Ich frage den Lehrer.    ⚠      Ich danke dem Lehrer.\n' +
+          '  Ich besuche den Freund.  ⚠      Ich glaube dem Freund.\n\n' +
+          'The same person (der Mann) becomes den with a normal verb but dem with a Dativ verb. The VERB decides the case — so you must know which list the verb is on.',
+      },
+      { rule: '🚦 PITFALLS — Dativ-verb traps',
+        body:
+          '• helfen / danken / antworten / glauben / gratulieren / folgen / gehören / passen → Dativ, NOT Akkusativ.\n' +
+          '• er → ihm (Dativ), NOT ihn (that\'s Akkusativ). Same trap: wer→wem in the Dativ question.\n' +
+          '• gefallen agrees with the THING: "Die Bücher gefallen mir" (plural verb).\n' +
+          '• "Ich mag die Stadt" (Akk) and "Die Stadt gefällt mir" (Dativ) both mean "I like the city" — both are correct.\n' +
+          '• glauben takes Dativ for a PERSON (Ich glaube dir) but Akkusativ for a thing/fact (Ich glaube das).\n' +
+          '• zuhören is separable AND Dativ: "Ich höre dir zu."',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: 'Ich helfe __ Vater. (the, masc.)',          answer: 'dem' },
-      { type: 'fill-blank', sentence: 'Wir danken __ Lehrerin. (the, fem.)',       answer: 'der' },
-      { type: 'fill-blank', sentence: 'Das Buch gehört __ Kind. (the, neuter)',    answer: 'dem' },
-      { type: 'fill-blank', sentence: 'Du antwortest __ Kollegen. (the, plural)',  answer: 'den' },
-      { type: 'fill-blank', sentence: 'Die Stadt gefällt __ . (me — Dativ of ich)', answer: 'mir' },
-      { type: 'fill-blank', sentence: 'Das Auto gehört __ . (you, 1 friend — Dativ of du)', answer: 'dir' },
-      { type: 'fill-blank', sentence: 'Ich glaube __ Frau. (the, fem.)',           answer: 'der' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — verb→case · pronoun→Dativ · gefallen flip
+      { type: 'match',
+        pairs: [
+          { de: 'helfen',  en: '🤝 Dativ verb' },
+          { de: 'danken',  en: '🤝 Dativ verb' },
+          { de: 'sehen',   en: '🎯 Akkusativ verb' },
+          { de: 'besuchen', en: '🎯 Akkusativ verb' },
+          { de: 'gehören', en: '🔄 Dativ flip verb' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'ich → ?', en: 'mir' },
+          { de: 'du → ?',  en: 'dir' },
+          { de: 'er → ?',  en: 'ihm' },
+          { de: 'sie (she) → ?', en: 'ihr' },
+          { de: 'sie (they) → ?', en: 'ihnen' },
+          { de: 'Sie (formal) → ?', en: 'Ihnen' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Die Stadt gefällt mir.', en: '👍 I like the city' },
+          { de: 'Die Pizza schmeckt mir.', en: '😋 I like the pizza (taste)' },
+          { de: 'Das Buch gehört mir.',   en: '🔑 The book is mine' },
+          { de: 'Du fehlst mir.',          en: '😔 I miss you' },
+        ],
+      },
+
+      // 🤝 5 DATIV-VERB article fill-blanks
+      { type: 'fill-blank', sentence: 'Ich helfe __ Vater. (the, masc.)',         answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Wir danken __ Lehrerin. (the, fem.)',      answer: 'der' },
+      { type: 'fill-blank', sentence: 'Das Buch gehört __ Kind. (the, neuter)',   answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Du antwortest __ Kollegen. (the, plural)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Ich glaube __ Frau. (the, fem.)',          answer: 'der' },
+
+      // 👤 4 DATIV-PRONOUN fill-blanks
+      { type: 'fill-blank', sentence: 'Die Stadt gefällt __ . (me)',               answer: 'mir' },
+      { type: 'fill-blank', sentence: 'Das Auto gehört __ . (you, 1 friend)',      answer: 'dir' },
+      { type: 'fill-blank', sentence: 'Ich helfe __ . (him)',                      answer: 'ihm' },
+      { type: 'fill-blank', sentence: 'Wir danken __ . (you, formal)',             answer: 'Ihnen' },
+
+      // 🔄 2 GEFALLEN-FLIP MCQs (verb agrees with the thing)
+      { type: 'multiple-choice', q: '"I like the shoes." (die Schuhe — plural)',
+        options: ['Die Schuhe gefällt mir.','Die Schuhe gefallen mir.','Ich gefalle die Schuhe.','Die Schuhe gefallen mich.'],
+        answer: 'Die Schuhe gefallen mir.',
+        explain: 'The THING (Schuhe, plural) is the subject → gefallen; the person is Dativ → mir.' },
       { type: 'multiple-choice', q: '"I like the city." in German is…',
-        options: ['Ich mag die Stadt.', 'Die Stadt gefällt mir.', 'Both are correct.', 'Neither.'],
+        options: ['Ich mag die Stadt.','Die Stadt gefällt mir.','Both are correct.','Neither.'],
         answer: 'Both are correct.',
         explain: 'Both work. "gefallen" + Dativ is the more idiomatic phrasing.' },
+
+      // ⚖️ 3 DATIV-vs-AKKUSATIV / pronoun-trap MCQs
       { type: 'multiple-choice', q: 'Which verb does NOT take Dativ?',
-        options: ['helfen','danken','sehen','gefallen'],
-        answer: 'sehen',
+        options: ['helfen','danken','sehen','gefallen'], answer: 'sehen',
         explain: '"sehen" takes Akkusativ: Ich sehe DEN Mann.' },
+      { type: 'multiple-choice', q: '⚠ "I help him." — correct German:',
+        options: ['Ich helfe ihn.','Ich helfe ihm.','Ich helfe er.','Ich helfe ihr.'],
+        answer: 'Ich helfe ihm.',
+        explain: 'helfen → Dativ → er becomes ihm (NOT ihn, which is Akkusativ).' },
+      { type: 'multiple-choice', q: '"Ich sehe __ Mann" vs "Ich helfe __ Mann" — the blanks are:',
+        options: ['den / den','dem / dem','den / dem','dem / den'],
+        answer: 'den / dem',
+        explain: 'sehen = Akk → den; helfen = Dativ → dem. The verb decides the case.' },
+
+      // 💬 Mini dialogue — Dativ verbs + pronouns + the flip in real chat
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Kannst du mir helfen?',                       en: 'Can you help me?' },
+        { speaker: 'B', de: 'Natürlich, ich helfe dir gern.',             en: 'Of course, I\'ll gladly help you.' },
+        { speaker: 'A', de: 'Danke! Gehört das Buch dir?',                en: 'Thanks! Does this book belong to you?' },
+        { speaker: 'B', de: 'Nein, es gehört dem Lehrer.',                en: 'No, it belongs to the teacher.' },
+        { speaker: 'A', de: 'Wie gefällt dir die neue Stadt?',            en: 'How do you like the new city?' },
+        { speaker: 'B', de: 'Sie gefällt mir sehr! Und das Essen schmeckt mir auch.', en: 'I like it a lot! And I like the food too.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Wir gratulieren __ Chef. (the, masc.)', answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Ich danke __ . (you, formal)', answer: 'Ihnen' },
+      { type: 'multiple-choice', q: '⚠ "I believe him." — correct German:',
+        options: ['Ich glaube ihn.','Ich glaube ihm.','Ich glaube er.','Ich glaube ihr.'],
+        answer: 'Ich glaube ihm.', explain: 'glauben (a person) → Dativ → ihm.' },
+      { type: 'multiple-choice', q: '"I like the shoes." (plural) →',
+        options: ['Die Schuhe gefällt mir.','Die Schuhe gefallen mir.','Ich gefalle die Schuhe.','Die Schuhe gefallen mich.'],
+        answer: 'Die Schuhe gefallen mir.', explain: 'Verb agrees with the THING (plural) → gefallen; person → mir.' },
+      { type: 'fill-blank', sentence: 'Das Buch gehört __ Kind. (the, neuter)', answer: 'dem' },
+      { type: 'multiple-choice', q: 'Dativ of "er" is…',
+        options: ['ihn','ihm','ihr','es'], answer: 'ihm' },
+      { type: 'multiple-choice', q: 'Which verb takes a DATIV object?',
+        options: ['kaufen','besuchen','helfen','sehen'], answer: 'helfen' },
     ],
   },
 

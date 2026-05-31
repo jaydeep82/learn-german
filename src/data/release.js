@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.8.5';
+export const VERSION = '3.8.6';
 export const RELEASE_DATE = '2026-05-31';
 
 export const RELEASES = [
+  {
+    version: '3.8.6',
+    date: '2026-05-31',
+    type: 'improvement',
+    title: 'Day 26 review — Dativ II: the Dativ verbs, the gefallen flip, the Dativ pronouns',
+    notes: [
+      'Reviewed Day 26 (Dativ II — verbs) end-to-end, parallel to the Day 14-25 full reviews. This is the SECOND Dativ trigger (after prepositions): verbs that simply demand a Dativ object. The previous version had 8 bare verbs, 2 grammar bullets and 11 exercises. Reshaped into a complete Dativ-verb toolkit with spotlight vocab, the full Dativ pronoun set and the gefallen flip.',
+      'Vocabulary 8 → 20 items (vocabLayout: "spotlight") grouped by role icon: 🤝 7 classic Dativ verbs (helfen · danken · antworten · glauben · gratulieren · folgen · zuhören) each with a worked dem/der example · 🔄 5 "flip" verbs where the thing is the subject (gefallen · schmecken · gehören · passen · fehlen) · 👤 the FULL Dativ-pronoun set (mir · dir · ihm · ihr · uns · euch · ihnen · Ihnen).',
+      'Grammar 2 → 6 callouts: ⭐ THE DATIV-VERB SHORTLIST (9 verbs with examples + the "must be memorised" note) · 🔄 THE GEFALLEN FLIP — the thing is the subject, the person is Dativ, with the ⚠ verb-agrees-with-the-thing rule (gefällt vs gefallen) · 👤 THE DATIV PRONOUNS full table with the er→ihm-not-ihn trap and the uns/euch-same-as-Akk shortcut · ⚖️ DATIV vs AKKUSATIV side-by-side (same noun: den Mann with sehen, dem Mann with helfen — the verb decides) · 🚦 pitfalls (the Dativ-verb list · ihm-not-ihn · gefallen plural agreement · mag-vs-gefällt both fine · glauben Dativ-person/Akk-fact · zuhören separable+Dativ).',
+      'Exercises reshaped (11 → 21 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: verb → case bucket (Dativ/Akk/flip) · pronoun → Dativ form (6) · flip-sentence → English meaning (4).',
+      '• 5 🤝 DATIV-VERB article fill-blanks (dem/der/dem/den/der).',
+      '• 4 👤 DATIV-PRONOUN fill-blanks (mir/dir/ihm/Ihnen).',
+      '• 2 🔄 GEFALLEN-FLIP MCQs (plural agreement · mag-vs-gefällt both-correct).',
+      '• 3 ⚖️ DATIV-vs-AKKUSATIV / pronoun-trap MCQs (which-isn\'t-Dativ=sehen · ihm-not-ihn · den/dem by verb).',
+      '• 💬 Help-and-preference dialogue weaving helfen, gehören, gefallen and schmecken with Dativ pronouns.',
+      'Quiz 1 → 7 items: gratulieren-dem · danke-Ihnen · glaube-ihm · gefallen-plural · gehört-dem · Dativ-of-er · which-verb-takes-Dativ.',
+    ],
+  },
   {
     version: '3.8.5',
     date: '2026-05-31',
