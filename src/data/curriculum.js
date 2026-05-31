@@ -5625,45 +5625,182 @@ export const days = [
   /* ----- Day 27: Cases review (Nom · Akk · Dat) ----- */
   {
     id: 27, week: 4,
+    vocabLayout: 'spotlight',
     title: 'Cases review',
     titleDe: 'Kasus-Wiederholung',
     emoji: '📐',
-    objective: 'Tell Nominativ, Akkusativ and Dativ apart in any sentence.',
-    intro: 'Three cases, one cheat-sheet. Once this clicks, half of German grammar is yours.',
-    vocabulary: [],
+    objective: 'Prove you can switch between all three cases at will — pick Nominativ, Akkusativ or Dativ for any noun via a 5-step decision tree, and build the classic give-sentence where Dativ (to whom) and Akkusativ (what) appear together.',
+    intro: 'Milestone checkpoint for the case system! Week 4 built three cases: 🟦 Nominativ (the doer) → 🟩 Akkusativ (the receiver) → 🅿️ Dativ (to/for whom + 8 prepositions + special verbs). Today you put them side by side, learn the wer/wen/wem question test and the decision tree, and assemble the full "Ich gebe dem Mann das Buch" sentence. Scroll the keystones, read the recap cards, then aim for ≥ 80%.',
+    vocabulary: [
+      // ⚖️ THE THREE CASES NAMED
+      { de: 'der Nominativ', en: 'subject case (the DOER)',       emoji: '🟦', hint: '🔁 Day 9 · Wer? · der/die/das stay',    example: 'Der Mann schläft.',           exampleEn: 'The man sleeps.' },
+      { de: 'der Akkusativ', en: 'direct-object case (RECEIVER)', emoji: '🟩', hint: '🔁 Day 21 · Wen? · masc → den',         example: 'Ich sehe den Mann.',          exampleEn: 'I see the man.' },
+      { de: 'der Dativ',     en: 'indirect-object case (TO whom)', emoji: '🅿️', hint: '🔁 Day 25-26 · Wem? · der→dem etc.',  example: 'Ich gebe dem Mann das Buch.', exampleEn: 'I give the man the book.' },
+
+      // ⭐ THE MASCULINE DRAMA — der → den → dem
+      { de: 'der → den → dem', en: 'masc.: Nom → Akk → Dat',  emoji: '🎭', hint: '⭐ the only row with 3 different forms',  example: 'Der Mann gibt dem Kind den Ball.', exampleEn: 'The man gives the child the ball.' },
+      { de: 'die → die → der', en: 'fem.: Nom → Akk → Dat',   emoji: '🟥', hint: 'fem. only changes in Dativ → der',       example: 'Die Frau · die Frau · der Frau',  exampleEn: 'the woman (subj · obj · to her)' },
+      { de: 'das → das → dem', en: 'neut.: Nom → Akk → Dat',  emoji: '🟩', hint: 'neut. only changes in Dativ → dem',       example: 'Das Kind · das Kind · dem Kind',  exampleEn: 'the child (subj · obj · to it)' },
+      { de: 'die → die → den', en: 'pl.: Nom → Akk → Dat (+n)', emoji: '🟨', hint: 'plural Dativ → den + noun adds -n',     example: 'die Kinder → den Kindern',        exampleEn: 'the children → to the children' },
+
+      // 🅰️ INDEFINITE forms
+      { de: 'ein → einen → einem', en: 'a (masc.): Nom→Akk→Dat', emoji: '🅰️', hint: 'indefinite masc · the full change',    example: 'Ich gebe einem Mann einen Ball.', exampleEn: 'I give a man a ball.' },
+      { de: 'eine → eine → einer', en: 'a (fem.): Nom→Akk→Dat', emoji: '🅰️', hint: 'indefinite fem · changes only in Dativ', example: 'Ich helfe einer Frau.',          exampleEn: 'I help a woman.' },
+
+      // 🔍 THE QUESTION TEST — wer / wen / wem
+      { de: 'Wer …?', en: 'Who …? → Nominativ',  emoji: '🟦', hint: '🔍 finds the SUBJECT',          example: 'Wer schläft? — Der Mann.',         exampleEn: 'Who sleeps? — The man.' },
+      { de: 'Wen …?', en: 'Whom …? → Akkusativ', emoji: '🟩', hint: '🔍 finds the DIRECT object',    example: 'Wen sieht er? — Den Hund.',         exampleEn: 'Whom does he see? — The dog.' },
+      { de: 'Wem …?', en: 'To whom …? → Dativ',  emoji: '🅿️', hint: '🔍 finds the INDIRECT object',  example: 'Wem gibt er das Buch? — Dem Kind.', exampleEn: 'To whom does he give the book? — The child.' },
+
+      // 🎁 THE GIVE-SENTENCE — Dativ + Akkusativ together
+      { de: 'geben',  en: 'to give (sb sth)',  emoji: '🎁', hint: '⭐ Dativ person + Akkusativ thing', example: 'Ich gebe dem Mann das Buch.',  exampleEn: 'I give the man the book.' },
+      { de: 'zeigen', en: 'to show (sb sth)',  emoji: '👉', hint: 'Dativ person + Akkusativ thing',    example: 'Ich zeige dir die Stadt.',     exampleEn: 'I show you the city.' },
+
+      // 🔑 KEY DATIV TRIGGERS — quick recall
+      { de: 'mit / bei / zu …', en: 'the 8 Dativ prepositions', emoji: '🅿️', hint: '🔁 Day 25 · always Dativ',           example: 'Ich fahre mit dem Bus.',  exampleEn: 'I go by bus.' },
+      { de: 'helfen / danken',  en: 'Dativ verbs',              emoji: '🤝', hint: '🔁 Day 26 · take Dativ, not Akk',     example: 'Ich helfe dem Mann.',     exampleEn: 'I help the man.' },
+      { de: 'gefällt mir',      en: 'I like it (the flip)',     emoji: '🔄', hint: '🔁 Day 26 · thing = subject',         example: 'Die Stadt gefällt mir.',  exampleEn: 'I like the city.' },
+    ],
     grammar: [
-      { rule: 'Article cheat-sheet',
+      { rule: '⭐ THE ARTICLE CHEAT-SHEET — all 12 + indefinite',
         body:
           '              masc.   fem.   neuter  plural\n' +
-          'Nominativ     der     die    das     die\n' +
-          'Akkusativ     den     die    das     die\n' +
-          'Dativ         dem     der    dem     den +n\n' +
-          'Indef. Nom.   ein     eine   ein     —\n' +
-          'Indef. Akk.   einen   eine   ein     —\n' +
-          'Indef. Dat.   einem   einer  einem   —',
+          '  Nominativ   der     die    das     die\n' +
+          '  Akkusativ   den     die    das     die\n' +
+          '  Dativ       dem     der    dem     den +n\n' +
+          '  ─────────────────────────────────────────\n' +
+          '  Indef. Nom. ein     eine   ein     —\n' +
+          '  Indef. Akk. einen   eine   ein     —\n' +
+          '  Indef. Dat. einem   einer  einem   —\n\n' +
+          '🧠 Three shortcuts cover almost everything:\n' +
+          '  1. Only MASCULINE changes in the Akkusativ (der→den).\n' +
+          '  2. In the Dativ, masc. & neuter are identical (dem/einem).\n' +
+          '  3. Plural Dativ adds -n to the noun (den Kindern).',
       },
-      { rule: 'Decision tree',
+      { rule: '🔍 THE QUESTION TEST — wer · wen · wem',
         body:
-          '1. Is the noun the subject (who does it)? → Nominativ.\n' +
-          '2. Is it the direct object (what is being verbed)? → Akkusativ.\n' +
-          '3. After mit / bei / zu / von / nach / aus / seit / gegenüber? → Dativ.\n' +
-          '4. After helfen / danken / gehören / gefallen / antworten / glauben? → Dativ.\n' +
-          '5. None of the above? Default to Akkusativ.',
+          'Identify any noun\'s case by asking the verb a question:\n\n' +
+          '  Wer + verb?  → Nominativ (subject)\n' +
+          '  Wen + verb?  → Akkusativ (direct object)\n' +
+          '  Wem + verb?  → Dativ (indirect object)\n\n' +
+          'Sentence: "Der Mann gibt dem Kind den Ball."\n' +
+          '  Wer gibt?       → Der Mann.  (Nominativ)\n' +
+          '  Wem gibt er …?  → dem Kind.  (Dativ — the receiver-person)\n' +
+          '  Was gibt er?    → den Ball.  (Akkusativ — the thing given)\n\n' +
+          '🧠 The endings echo: weR→deR (Nom), weN→deN (Akk masc.), weM→deM (Dativ).',
+      },
+      { rule: '⭐ THE 5-STEP DECISION TREE — which case?',
+        body:
+          'For any noun, ask in order:\n\n' +
+          '  1. Is it the SUBJECT (who does it)?            → Nominativ\n' +
+          '  2. Is it the DIRECT object (what is verbed)?    → Akkusativ\n' +
+          '  3. After mit/bei/zu/von/nach/aus/seit/gegenüber? → Dativ\n' +
+          '  4. After helfen/danken/gehören/gefallen/antworten/glauben? → Dativ\n' +
+          '  5. None of the above?                          → default Akkusativ\n\n' +
+          'This tree resolves the vast majority of A1 sentences. Steps 3-4 (the Dativ triggers) are the ones to over-learn, because they override the "default Akkusativ" instinct.',
+      },
+      { rule: '⭐ THE GIVE-SENTENCE — Dativ + Akkusativ together',
+        body:
+          'Verbs like geben, zeigen, schenken, schicken take TWO objects: a PERSON (Dativ) and a THING (Akkusativ). Default order = Dativ before Akkusativ:\n\n' +
+          '  Subject(Nom)  Verb   Person(Dat)  Thing(Akk)\n' +
+          '  Ich           gebe   dem Mann     das Buch.\n' +
+          '  Sie           zeigt  dem Kind     den Weg.\n\n' +
+          'Rule of thumb: "to/for whom" (Dativ) comes BEFORE "what" (Akkusativ) — unless the thing is a pronoun, then it flips (Ich gebe es dem Mann). At A1, Dativ-then-Akkusativ is your safe default.',
+      },
+      { rule: '🎯 The 5 case mistakes to never make again',
+        body:
+          '1. "Ich sehe der Mann" ✗ → object → "Ich sehe den Mann." ✓\n' +
+          '2. "Ich helfe den Mann" ✗ → helfen takes Dativ → "Ich helfe dem Mann." ✓\n' +
+          '3. "mit den Kinder" ✗ → plural Dativ adds -n → "mit den Kindern." ✓\n' +
+          '4. "Das Buch gefällt mich" ✗ → gefallen takes Dativ → "… gefällt mir." ✓\n' +
+          '5. "Ich helfe ihn" ✗ → Dativ pronoun → "Ich helfe ihm." ✓',
       },
     ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — case→test · masc grid · sentence→case
+      { type: 'match',
+        pairs: [
+          { de: 'Nominativ', en: '🔍 Wer? · the subject' },
+          { de: 'Akkusativ', en: '🔍 Wen? · the direct object' },
+          { de: 'Dativ',     en: '🔍 Wem? · the indirect object' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'masc. Nominativ', en: 'der' },
+          { de: 'masc. Akkusativ', en: 'den' },
+          { de: 'masc. Dativ',     en: 'dem' },
+          { de: 'fem. Dativ',      en: 'der' },
+          { de: 'plural Dativ',    en: 'den + noun-n' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Der Mann schläft.',      en: '🟦 Nominativ' },
+          { de: 'Ich sehe den Mann.',     en: '🟩 Akkusativ' },
+          { de: 'Ich helfe dem Mann.',    en: '🅿️ Dativ (verb)' },
+          { de: 'Ich fahre mit dem Bus.', en: '🅿️ Dativ (preposition)' },
+        ],
+      },
+
+      // ⚖️ 6 ONE-NOUN-ACROSS-CASES fill-blanks (masc + fem)
       { type: 'fill-blank', sentence: 'Subject: "__ Mann arbeitet hier." (the, masc., Nom.)', answer: 'Der' },
       { type: 'fill-blank', sentence: 'Object: "Ich sehe __ Mann." (the, masc., Akk.)',       answer: 'den' },
       { type: 'fill-blank', sentence: 'Dativ prep: "Ich gehe mit __ Mann." (the, masc.)',      answer: 'dem' },
       { type: 'fill-blank', sentence: 'Subject: "__ Frau ist hier." (the, fem., Nom.)',       answer: 'Die' },
       { type: 'fill-blank', sentence: 'Object: "Ich sehe __ Frau." (the, fem., Akk.)',         answer: 'die' },
       { type: 'fill-blank', sentence: 'Dativ verb: "Ich helfe __ Frau." (the, fem.)',          answer: 'der' },
+
+      // 🎁 2 GIVE-SENTENCE fill-blanks (Dativ + Akkusativ together)
+      { type: 'fill-blank', sentence: 'Ich gebe __ Mann das Buch. (the person — Dativ, masc.)',  answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Ich gebe dem Mann __ Buch. (the thing — Akkusativ, neut.)', answer: 'das' },
+
+      // ⚠ 1 PLURAL -n drill
       { type: 'fill-blank', sentence: 'Plural Dativ: "Ich spreche mit __ Studenten."',         answer: 'den' },
+
+      // 🔍 4 CASE-DECISION MCQs
       { type: 'multiple-choice', q: 'What case after "mit"?', options: ['Nom.','Akk.','Dat.','Gen.'], answer: 'Dat.' },
-      { type: 'multiple-choice', q: '"Das Buch gefällt ___ ." — pick.', options: ['ich','mich','mir','meinen'], answer: 'mir' },
+      { type: 'multiple-choice', q: '"Das Buch gefällt ___ ." — pick.', options: ['ich','mich','mir','meinen'], answer: 'mir',
+        explain: 'gefallen takes Dativ → mir.' },
       { type: 'multiple-choice', q: '"Ich kaufe ___ Buch." (a, neuter)', options: ['ein','einen','einem','eine'], answer: 'ein' },
+      { type: 'multiple-choice', q: 'Which question finds the Dativ (indirect object)?',
+        options: ['Wer?','Wen?','Wem?','Was?'], answer: 'Wem?' },
+
+      // ⚠ 2 SPOT-THE-ERROR MCQs
+      { type: 'multiple-choice', q: '⚠ Which sentence is WRONG?',
+        options: ['Ich sehe den Mann.','Ich helfe den Mann.','Ich helfe dem Mann.','Der Mann schläft.'],
+        answer: 'Ich helfe den Mann.',
+        explain: 'helfen takes Dativ → "Ich helfe dem Mann."' },
+      { type: 'multiple-choice', q: '⚠ Plural Dativ — which is correct?',
+        options: ['mit den Kinder','mit die Kindern','mit den Kindern','mit dem Kindern'],
+        answer: 'mit den Kindern',
+        explain: 'Plural Dativ: den + noun adds -n.' },
+
+      // 💬 Capstone dialogue — all three cases in one chat
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Was machst du mit dem Buch?',             en: 'What are you doing with the book?' },
+        { speaker: 'B', de: 'Ich gebe es dem Lehrer.',                 en: 'I am giving it to the teacher.' },
+        { speaker: 'A', de: 'Und wer hilft dir bei den Hausaufgaben?', en: 'And who helps you with the homework?' },
+        { speaker: 'B', de: 'Die Lehrerin hilft mir. Sie zeigt mir die Grammatik.', en: 'The teacher helps me. She shows me the grammar.' },
+        { speaker: 'A', de: 'Gefällt dir der Kurs?',                   en: 'Do you like the course?' },
+        { speaker: 'B', de: 'Ja! Der Kurs gefällt mir sehr.',          en: 'Yes! I like the course a lot.' },
+      ]},
     ],
-    quiz: [],
+    quiz: [
+      { type: 'fill-blank', sentence: 'Subject: "__ Mann arbeitet hier." (the, masc., Nom.)', answer: 'Der' },
+      { type: 'fill-blank', sentence: 'Object: "Ich sehe __ Mann." (the, masc., Akk.)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Dativ: "Ich gebe ___ Kind einen Ball." (the, neuter)', answer: 'dem' },
+      { type: 'multiple-choice', q: 'Which question finds the direct object?',
+        options: ['Wer?','Wen?','Wem?','Wo?'], answer: 'Wen?' },
+      { type: 'multiple-choice', q: 'masc. Dativ article =',
+        options: ['der','den','dem','das'], answer: 'dem' },
+      { type: 'multiple-choice', q: '⚠ "I help the child." — correct German:',
+        options: ['Ich helfe das Kind.','Ich helfe dem Kind.','Ich helfe den Kind.','Ich helfe der Kind.'],
+        answer: 'Ich helfe dem Kind.', explain: 'helfen → Dativ; neuter das → dem.' },
+      { type: 'fill-blank', sentence: 'Plural Dativ: Ich spiele mit den __ . (Kinder + -n)', answer: 'Kindern' },
+    ],
   },
 
   /* ----- Day 30: Hobbies — dedicated (slide 66 expansion) ----- */

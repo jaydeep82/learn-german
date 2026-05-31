@@ -11,10 +11,30 @@
  * in sync.
  */
 
-export const VERSION = '3.8.6';
+export const VERSION = '3.8.7';
 export const RELEASE_DATE = '2026-05-31';
 
 export const RELEASES = [
+  {
+    version: '3.8.7',
+    date: '2026-05-31',
+    type: 'improvement',
+    title: 'Day 27 review — Cases milestone: all three cases side-by-side, the wer/wen/wem test, the give-sentence',
+    notes: [
+      'Reviewed Day 27 (Cases review) end-to-end, parallel to the Day 14-26 full reviews. This is the Week-4 milestone — the consolidation of the whole case system (Nominativ · Akkusativ · Dativ). The previous version had an empty vocab block, 2 grammar bullets and 10 exercises. Rebuilt as a proper checkpoint with spotlight keystones, the full article grid, the question test and the two-object give-sentence.',
+      'Added 18 REVIEW KEYSTONES (vocabLayout: "spotlight") grouped by role icon so the vocab page is a one-screen case recap: ⚖️ the 3 cases named (Nominativ 🟦 · Akkusativ 🟩 · Dativ 🅿️) · ⭐ the four article rows shown as transformations (der→den→dem · die→die→der · das→das→dem · die→die→den+n) · 🅰️ the indefinite rows (ein→einen→einem · eine→eine→einer) · 🔍 the question test (Wer? · Wen? · Wem?) · 🎁 the two-object verbs geben/zeigen · 🔑 the three Dativ-trigger reminders (prepositions · verbs · the gefallen flip).',
+      'Grammar 2 → 5 callouts: ⭐ THE ARTICLE CHEAT-SHEET — all 12 definite cells + the 6 indefinite cells on one card with the three shortcuts (only masc changes in Akk · masc=neuter in Dativ · plural Dativ +n) · 🔍 THE QUESTION TEST (wer/wen/wem → Nom/Akk/Dativ) with the weR→deR / weN→deN / weM→deM ending-echo hook · ⭐ THE 5-STEP DECISION TREE (subject? → direct object? → Dativ preposition? → Dativ verb? → default Akkusativ) · ⭐ THE GIVE-SENTENCE (geben/zeigen/schenken take Dativ person + Akkusativ thing, default Dativ-before-Akkusativ) · 🎯 "The 5 case mistakes to never make again".',
+      'Exercises reshaped (10 → 19 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: case → question test · masc/fem/pl → article form · sentence → its case (incl. Dativ-by-verb vs Dativ-by-preposition).',
+      '• 6 ⚖️ ONE-NOUN-ACROSS-CASES fill-blanks (der Mann & die Frau through Nom/Akk/Dativ).',
+      '• 2 🎁 GIVE-SENTENCE fill-blanks (Dativ person + Akkusativ thing in one sentence).',
+      '• 1 ⚠ plural -n drill.',
+      '• 4 CASE-DECISION MCQs (case-after-mit · gefällt-mir · indefinite-neuter · Wem-finds-Dativ).',
+      '• 2 ⚠ SPOT-THE-ERROR MCQs (helfen-takes-Dativ · plural-Dativ-adds-n).',
+      '• 💬 Capstone dialogue weaving all three cases (mit dem Buch · gebe es dem Lehrer · hilft mir · gefällt mir).',
+      'Quiz 0 → 7 items: subject Der · object den · give-sentence dem · Wen-finds-object · masc-Dativ-dem · helfen-Dativ · plural Kindern.',
+    ],
+  },
   {
     version: '3.8.6',
     date: '2026-05-31',
