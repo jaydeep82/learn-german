@@ -5918,68 +5918,172 @@ export const days = [
   /* ----- Day 28: Akkusativ pronouns ----- */
   {
     id: 28, week: 4,
+    vocabLayout: 'spotlight',
     title: 'Akkusativ pronouns',
     titleDe: 'Akkusativ-Pronomen',
     emoji: '👀',
-    objective: 'Replace any direct-object noun with the right Akkusativ pronoun.',
-    intro: 'You have already met "ich · du · er · sie · es · wir · ihr · sie/Sie" as subjects. When the SAME person becomes the direct object, most of them shape-shift: ich → mich, du → dich, er → ihn, and so on.',
+    objective: 'Replace any direct-object noun with the right Akkusativ pronoun (mich · dich · ihn …) — and contrast it instantly with the Dativ set (mir · dir · ihm …) you met on Day 26.',
+    intro: 'You know the subject pronouns (ich · du · er · sie · es · wir · ihr · sie/Sie). When the SAME person becomes the DIRECT object, most shape-shift: ich → mich, du → dich, er → ihn. Today you lock in the full Akkusativ set, see which ones DON\'T change (sie/es/uns/euch), and put them head-to-head with the Dativ pronouns so mich-vs-mir never trips you up.',
     vocabulary: [
-      { de: 'mich',  en: 'me' },
-      { de: 'dich',  en: 'you (1 friend)' },
-      { de: 'ihn',   en: 'him' },
-      { de: 'sie',   en: 'her / them (unchanged)' },
-      { de: 'es',    en: 'it (unchanged)' },
-      { de: 'uns',   en: 'us' },
-      { de: 'euch',  en: 'you all (group of friends)' },
-      { de: 'Sie',   en: 'you (formal)' },
+      // 🔄 THE SHAPE-SHIFTERS — change from Nominativ to Akkusativ
+      { de: 'ich → mich', en: 'me',                  emoji: '🙋', hint: '🔄 ich becomes mich · Dativ = mir',          example: 'Er liebt mich.',          exampleEn: 'He loves me.' },
+      { de: 'du → dich',  en: 'you (1 friend)',      emoji: '👉', hint: '🔄 du becomes dich · Dativ = dir',          example: 'Ich sehe dich.',          exampleEn: 'I see you.' },
+      { de: 'er → ihn',   en: 'him',                 emoji: '👨', hint: '⭐ er becomes IHN · Dativ = ihm (watch it!)', example: 'Ich treffe ihn.',         exampleEn: 'I meet him.' },
+
+      // ✅ THE NO-CHANGERS — identical to the subject form
+      { de: 'sie = sie',  en: 'her / them (NO change)', emoji: '👩', hint: '✅ sie stays sie · Dativ = ihr/ihnen',    example: 'Ich besuche sie.',        exampleEn: 'I visit her.' },
+      { de: 'es = es',    en: 'it (NO change)',       emoji: '📦', hint: '✅ es stays es · Dativ = ihm',             example: 'Ich kaufe es.',           exampleEn: 'I buy it.' },
+      { de: 'uns = uns',  en: 'us (NO change)',       emoji: '👥', hint: '✅ uns · same in Akk AND Dativ',           example: 'Er besucht uns.',         exampleEn: 'He visits us.' },
+      { de: 'euch = euch', en: 'you all (NO change)', emoji: '👨‍👩‍👧', hint: '✅ euch · same in Akk AND Dativ',     example: 'Wir laden euch ein.',     exampleEn: 'We invite you all.' },
+      { de: 'Sie = Sie',  en: 'you (formal, NO change)', emoji: '🤝', hint: '✅ formal Sie · same · Dativ = Ihnen', example: 'Ich sehe Sie.',           exampleEn: 'I see you. (formal)' },
+
+      // ⚖️ THE AKK-vs-DAT CONTRAST PAIRS — the trap to crush
+      { de: 'mich (Akk) ↔ mir (Dat)', en: 'me: object vs to-me',    emoji: '⚖️', hint: '⭐ "Er sieht mich" vs "Er hilft mir"', example: 'Er sieht mich. / Er hilft mir.', exampleEn: 'He sees me. / He helps me.' },
+      { de: 'dich (Akk) ↔ dir (Dat)', en: 'you: object vs to-you',  emoji: '⚖️', hint: '⭐ "Ich liebe dich" vs "Ich danke dir"', example: 'Ich liebe dich. / Ich danke dir.', exampleEn: 'I love you. / I thank you.' },
+      { de: 'ihn (Akk) ↔ ihm (Dat)',  en: 'him: object vs to-him',  emoji: '⚖️', hint: '⭐ "Ich sehe ihn" vs "Ich helfe ihm"', example: 'Ich sehe ihn. / Ich helfe ihm.', exampleEn: 'I see him. / I help him.' },
+
+      // 🎬 AKKUSATIV VERBS that trigger these pronouns
+      { de: 'lieben',   en: 'to love',          emoji: '❤️', hint: 'Akk · "Ich liebe dich"',          example: 'Ich liebe dich.',         exampleEn: 'I love you.' },
+      { de: 'treffen',  en: 'to meet',          emoji: '🤝', hint: 'Akk · "Ich treffe ihn"',          example: 'Ich treffe sie morgen.',  exampleEn: 'I meet her tomorrow.' },
+      { de: 'einladen', en: 'to invite (sep.)', emoji: '✉️', hint: 'Akk + separable · "Ich lade dich ein"', example: 'Ich lade euch ein.',  exampleEn: 'I invite you all.' },
+      { de: 'anrufen',  en: 'to call (sep.)',   emoji: '📞', hint: 'Akk + separable · "Ich rufe dich an"', example: 'Ich rufe dich an.',     exampleEn: 'I call you.' },
+      { de: 'verstehen', en: 'to understand',   emoji: '💡', hint: 'Akk · "Ich verstehe dich"',        example: 'Ich verstehe dich nicht.', exampleEn: 'I don\'t understand you.' },
     ],
     grammar: [
-      { rule: 'The full Akkusativ-pronoun table',
+      { rule: '⭐ THE FULL AKKUSATIV-PRONOUN TABLE',
         body:
           '              Subject (Nom)   →   Direct object (Akk)\n' +
           '   1st sg     ich              →   mich\n' +
           '   2nd sg     du               →   dich\n' +
-          '   3rd m      er               →   ihn\n' +
-          '   3rd f      sie              →   sie     (unchanged)\n' +
-          '   3rd n      es               →   es      (unchanged)\n' +
+          '   3rd m      er               →   ihn      ⚠ big change\n' +
+          '   3rd f      sie              →   sie      ✅ unchanged\n' +
+          '   3rd n      es               →   es       ✅ unchanged\n' +
           '   1st pl     wir              →   uns\n' +
           '   2nd pl     ihr              →   euch\n' +
-          '   3rd pl     sie / Sie        →   sie / Sie  (unchanged)',
+          '   3rd pl     sie / Sie        →   sie / Sie ✅ unchanged\n\n' +
+          '🧠 Only FOUR forms actually change: ich→mich, du→dich, er→ihn, wir→uns, ihr→euch. The 3rd-person sie/es and formal Sie stay put.',
       },
-      { rule: 'When to use them',
+      { rule: '⚖️ AKKUSATIV vs DATIV PRONOUNS — the table that prevents 90% of errors',
         body:
-          'After verbs that take Akkusativ — sehen, haben, kaufen, lieben, treffen, besuchen, einladen…\n' +
-          '  Wrong: „Ich sehe du!"\n' +
-          '  Right: „Ich sehe dich!"\n' +
-          '  Wrong: „Er liebt ich."\n' +
-          '  Right: „Er liebt mich."',
+          'Put the two object-pronoun sets side by side. The VERB decides which column you need (Day 26 Dativ verbs → right column; normal verbs → left):\n\n' +
+          '   Subject   Akkusativ      Dativ\n' +
+          '   ich       mich           mir\n' +
+          '   du        dich           dir\n' +
+          '   er        ihn            ihm\n' +
+          '   sie(she)  sie            ihr\n' +
+          '   es        es             ihm\n' +
+          '   wir       uns            uns    ✅ same\n' +
+          '   ihr       euch           euch   ✅ same\n' +
+          '   sie(they) sie            ihnen\n' +
+          '   Sie       Sie            Ihnen\n\n' +
+          '⚠ The killer pair is er: ihn (Akk) vs ihm (Dat). "Ich sehe ihn" (I see him) but "Ich helfe ihm" (I help him). uns and euch are identical in both — a freebie.',
+      },
+      { rule: '🎯 WHEN TO USE AKKUSATIV PRONOUNS',
+        body:
+          'Use them as the DIRECT object of a normal (Akkusativ) verb — sehen, haben, kaufen, lieben, treffen, besuchen, einladen, anrufen, verstehen…\n\n' +
+          '  Wrong: „Ich sehe du!"        Right: „Ich sehe dich!"\n' +
+          '  Wrong: „Er liebt ich."        Right: „Er liebt mich."\n' +
+          '  Wrong: „Ich rufe er an."      Right: „Ich rufe ihn an."\n\n' +
+          'The pronoun slots in exactly where the noun object would go. With separable verbs the prefix still flies to the end: "Ich rufe dich an", "Ich lade euch ein".',
+      },
+      { rule: '📍 WORD ORDER — where the object pronoun sits',
+        body:
+          'A pronoun object likes to come EARLY — right after the conjugated verb:\n\n' +
+          '  Ich sehe ihn morgen.        (pronoun before the time word)\n' +
+          '  Morgen sehe ich ihn.        (after V2 inversion, still early)\n' +
+          '  Ich rufe dich später an.     (separable: stem-…-prefix)\n\n' +
+          'If there are TWO objects and both are pronouns, Akkusativ comes BEFORE Dativ (the reverse of the noun order): "Ich gebe es dir." (it=Akk, dir=Dat). At A1 you\'ll mostly use one pronoun at a time — just keep it close to the verb.',
+      },
+      { rule: '🚦 PITFALLS — Akkusativ-pronoun traps',
+        body:
+          '• er → ihn (Akk), NOT ihm (that\'s Dativ). The #1 mix-up.\n' +
+          '• sie, es, uns, euch, Sie do NOT change — don\'t invent forms like "sien".\n' +
+          '• Don\'t use the subject form as an object: "Er liebt ich" ✗ → "Er liebt mich" ✓.\n' +
+          '• Dativ verbs (helfen, danken, gefallen) still take the DATIV pronoun: "Ich helfe dir", not "dich".\n' +
+          '• mich/dich are Akkusativ; mir/dir are Dativ — check the verb before you choose.',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: '"He loves me." → Er liebt __.',                  answer: 'mich' },
-      { type: 'fill-blank', sentence: '"I call you (1 friend)." → Ich rufe __ an.',     answer: 'dich' },
-      { type: 'fill-blank', sentence: '"She meets him." → Sie trifft __.',              answer: 'ihn' },
-      { type: 'fill-blank', sentence: '"I visit her." → Ich besuche __.',               answer: 'sie' },
-      { type: 'fill-blank', sentence: '"I buy it." → Ich kaufe __.',                    answer: 'es' },
-      { type: 'fill-blank', sentence: '"They help us." → Sie helfen __ . (uns works in both Akk and Dat)', answer: 'uns' },
-      { type: 'fill-blank', sentence: '"We invite you (group)." → Wir laden __ ein.',   answer: 'euch' },
-      { type: 'fill-blank', sentence: '"I see you (formal)." → Ich sehe __.',           answer: 'Sie' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — Nom→Akk · Akk↔Dat contrast · changes vs no-change
+      { type: 'match',
+        pairs: [
+          { de: 'ich → ?', en: 'mich' },
+          { de: 'du → ?',  en: 'dich' },
+          { de: 'er → ?',  en: 'ihn' },
+          { de: 'wir → ?', en: 'uns' },
+          { de: 'ihr → ?', en: 'euch' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Er sieht ___ (me)',   en: 'mich (Akk)' },
+          { de: 'Er hilft ___ (me)',   en: 'mir (Dat)' },
+          { de: 'Ich sehe ___ (him)',  en: 'ihn (Akk)' },
+          { de: 'Ich helfe ___ (him)', en: 'ihm (Dat)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'ich (→mich)', en: '🔄 changes in Akk' },
+          { de: 'er (→ihn)',   en: '🔄 changes in Akk' },
+          { de: 'sie (her)',   en: '✅ no change' },
+          { de: 'es',          en: '✅ no change' },
+          { de: 'uns',         en: '✅ no change' },
+        ],
+      },
+
+      // 🎯 6 AKKUSATIV-PRONOUN fill-blanks
+      { type: 'fill-blank', sentence: '"He loves me." → Er liebt __.',               answer: 'mich' },
+      { type: 'fill-blank', sentence: '"I call you (1 friend)." → Ich rufe __ an.',  answer: 'dich' },
+      { type: 'fill-blank', sentence: '"She meets him." → Sie trifft __.',           answer: 'ihn' },
+      { type: 'fill-blank', sentence: '"I visit her." → Ich besuche __.',            answer: 'sie' },
+      { type: 'fill-blank', sentence: '"I buy it." → Ich kaufe __.',                 answer: 'es' },
+      { type: 'fill-blank', sentence: '"We invite you (group)." → Wir laden __ ein.', answer: 'euch' },
+
+      // ⚖️ 3 AKK-vs-DAT decide-the-case fill-blanks
+      { type: 'fill-blank', sentence: '"I see him." (sehen = Akk) → Ich sehe __.',   answer: 'ihn' },
+      { type: 'fill-blank', sentence: '"I help him." (helfen = Dativ) → Ich helfe __.', answer: 'ihm' },
+      { type: 'fill-blank', sentence: '"He thanks me." (danken = Dativ) → Er dankt __.', answer: 'mir' },
+
+      // ⚠ 4 SHAPE-SHIFT / TRAP MCQs
       { type: 'multiple-choice', q: '"He sees me." =',
-        options: ['Er sieht ich.', 'Er sieht mir.', 'Er sieht mich.', 'Er sieht mein.'],
-        answer: 'Er sieht mich.', explain: 'Subject: er (Nom). Object: ich → mich (Akk).' },
-      { type: 'match', pairs: [
-        { de: 'mich',  en: 'me' },
-        { de: 'dich',  en: 'you (1 friend)' },
-        { de: 'ihn',   en: 'him' },
-        { de: 'uns',   en: 'us' },
-        { de: 'euch',  en: 'you all' },
+        options: ['Er sieht ich.','Er sieht mir.','Er sieht mich.','Er sieht mein.'],
+        answer: 'Er sieht mich.', explain: 'Subject er (Nom), object ich → mich (Akk).' },
+      { type: 'multiple-choice', q: '⚠ "I see him." — correct Akkusativ:',
+        options: ['Ich sehe ihm.','Ich sehe ihn.','Ich sehe er.','Ich sehe ihr.'],
+        answer: 'Ich sehe ihn.', explain: 'sehen takes Akkusativ → er becomes ihn (ihm is Dativ).' },
+      { type: 'multiple-choice', q: 'Which pronoun is the same in Nom and Akk?',
+        options: ['ich','du','er','sie/es'], answer: 'sie/es',
+        explain: 'sie (her/them) and es (it) keep the same form.' },
+      { type: 'multiple-choice', q: 'Which pair is identical in BOTH Akkusativ and Dativ?',
+        options: ['mich/mir','ihn/ihm','uns/uns','dich/dir'], answer: 'uns/uns',
+        explain: 'uns (and euch) are the same in both cases.' },
+
+      // 💬 Mini dialogue — Akk pronouns + the Akk/Dat contrast
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Triffst du Anna heute?',                  en: 'Are you meeting Anna today?' },
+        { speaker: 'B', de: 'Ja, ich treffe sie um drei.',            en: 'Yes, I\'m meeting her at three.' },
+        { speaker: 'A', de: 'Rufst du mich danach an?',               en: 'Will you call me afterwards?' },
+        { speaker: 'B', de: 'Klar, ich rufe dich an.',                en: 'Sure, I\'ll call you.' },
+        { speaker: 'A', de: 'Super. Und kannst du mir helfen?',       en: 'Great. And can you help me?' },
+        { speaker: 'B', de: 'Natürlich helfe ich dir!',               en: 'Of course I\'ll help you!' },
       ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: '"She invites him." → Sie lädt __ ein.', answer: 'ihn' },
       { type: 'multiple-choice', q: 'Which pronoun is the same in Nom and Akk?',
         options: ['ich','du','er','sie/es'], answer: 'sie/es', explain: 'sie (her/them) and es (it) keep the same form.' },
+      { type: 'fill-blank', sentence: '"He loves me." → Er liebt __.', answer: 'mich' },
+      { type: 'multiple-choice', q: '⚠ "I help him." (helfen = Dativ) =',
+        options: ['Ich helfe ihn.','Ich helfe ihm.','Ich helfe er.','Ich helfe ihr.'],
+        answer: 'Ich helfe ihm.', explain: 'helfen takes Dativ → ihm, not ihn.' },
+      { type: 'multiple-choice', q: 'Akkusativ of "er" is…',
+        options: ['ihm','ihn','er','ihr'], answer: 'ihn' },
+      { type: 'fill-blank', sentence: '"We invite you all." → Wir laden __ ein.', answer: 'euch' },
+      { type: 'multiple-choice', q: 'Which is the same in Akkusativ AND Dativ?',
+        options: ['ich','er','uns','du'], answer: 'uns' },
     ],
   },
 

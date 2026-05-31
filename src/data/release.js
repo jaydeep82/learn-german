@@ -11,10 +11,28 @@
  * in sync.
  */
 
-export const VERSION = '3.8.7';
+export const VERSION = '3.8.8';
 export const RELEASE_DATE = '2026-05-31';
 
 export const RELEASES = [
+  {
+    version: '3.8.8',
+    date: '2026-05-31',
+    type: 'improvement',
+    title: 'Day 28 review — Akkusativ pronouns + the Akk-vs-Dat contrast table',
+    notes: [
+      'Reviewed Day 28 (Akkusativ pronouns) end-to-end, parallel to the Day 14-27 full reviews. The previous version had 8 bare pronouns, 2 grammar bullets and 11 exercises. Reshaped into a complete object-pronoun toolkit that explicitly contrasts Akkusativ with the Day-26 Dativ set so mich-vs-mir / ihn-vs-ihm never trips learners up.',
+      'Vocabulary 8 → 16 items (vocabLayout: "spotlight") grouped by role icon: 🔄 the 3 shape-shifters (ich→mich · du→dich · er→ihn) · ✅ the 5 no-changers (sie · es · uns · euch · Sie) · ⚖️ 3 explicit Akk↔Dat contrast pairs (mich/mir · dich/dir · ihn/ihm) each with a worked "sehen vs helfen" example · 🎬 5 Akkusativ verbs that trigger these pronouns (lieben · treffen · einladen · anrufen · verstehen).',
+      'Grammar 2 → 5 callouts: ⭐ THE FULL AKKUSATIV-PRONOUN TABLE (with the "only four forms actually change" hook) · ⚖️ THE AKKUSATIV-vs-DATIV PRONOUN TABLE — both sets side by side, flagging the er: ihn/ihm killer pair and the uns/euch freebies · 🎯 WHEN TO USE THEM (after Akkusativ verbs, with wrong→right pairs and separable-verb note) · 📍 WORD ORDER (pronoun comes early, after the verb; Akk-before-Dat when both are pronouns) · 🚦 pitfalls (er→ihn not ihm · no-changers · subject-form-as-object error · Dativ verbs still take Dativ pronoun).',
+      'Exercises reshaped (11 → 19 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: Nom → Akk form · Akk↔Dat sentence contrast · which-change vs no-change.',
+      '• 6 🎯 AKKUSATIV-PRONOUN fill-blanks (mich/dich/ihn/sie/es/euch).',
+      '• 3 ⚖️ AKK-vs-DAT decide-the-case fill-blanks (ihn for sehen, ihm for helfen, mir for danken).',
+      '• 4 ⚠ SHAPE-SHIFT / TRAP MCQs (Er sieht mich · ihn-not-ihm · same-in-Nom&Akk · same-in-Akk&Dat=uns).',
+      '• 💬 Meet-and-call dialogue weaving treffen/anrufen (Akk) with the helfen Dativ contrast (dich vs dir).',
+      'Quiz 2 → 7 items: lädt ihn ein · same-in-Nom&Akk · liebt mich · helfen-Dativ-ihm · Akk-of-er · laden euch ein · same-in-both-cases-uns.',
+    ],
+  },
   {
     version: '3.8.7',
     date: '2026-05-31',
