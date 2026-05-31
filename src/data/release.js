@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.8.4';
+export const VERSION = '3.8.5';
 export const RELEASE_DATE = '2026-05-31';
 
 export const RELEASES = [
+  {
+    version: '3.8.5',
+    date: '2026-05-31',
+    type: 'improvement',
+    title: 'Day 25 review — Dativ I: the 8 always-Dativ prepositions, article table, contractions',
+    notes: [
+      'Reviewed Day 25 (Dativ I — prepositions) end-to-end, parallel to the Day 14-24 full reviews. This is the entry point to the THIRD case. The previous version had 8 bare prepositions, 4 grammar bullets and 11 exercises. Reshaped into a complete Dativ-preposition toolkit with spotlight vocab, the full article table, the plural -n rule and the four contractions.',
+      'Vocabulary 8 → 19 items (vocabLayout: "spotlight") grouped by role icon: 🅿️ all 8 always-Dativ prepositions (mit · bei · zu · von · nach · aus · seit · gegenüber) each with a worked Dativ example · 📊 the 4 article shifts shown as cards (dem m · der f · dem n · den+n pl) · 🔗 the 4 everyday contractions (beim · vom · zum · zur) · 🧰 3 Dativ-context anchors (mein→meinem/meiner · das Auto · die Arbeit).',
+      'Grammar 4 → 6 callouts: ⭐ THE 8 ALWAYS-DATIV PREPOSITIONS with a rhythm/alphabetical memory hook · ⭐ THE DATIV ARTICLE TABLE (der→dem · die→der · das→dem · die→den+n) with the "masc & neuter are identical" shortcut · ⚠ THE PLURAL -n RULE — the most-forgotten detail (den Kindern/Büchern/Freunden, but -n/-s plurals unchanged) · 🔗 THE 4 CONTRACTIONS (beim/vom/zum/zur) with the "zu has two" gender-match note · ⚠ "nach" vs "zu" (cities/countries no-article vs people/places with contraction, + nach Hause) · 🚦 pitfalls (für/ohne/gegen are Akkusativ · fem der looks like masc Nom der · plural -n · seit always Dativ · use contractions · gegenüber comes after the noun).',
+      'Exercises reshaped (11 → 20 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: preposition → meaning (6) · article shift der/die/das/pl → Dativ form (4) · contraction pieces → beim/vom/zum/zur (4).',
+      '• 5 🅿️ ARTICLE fill-blanks across all genders (dem/der/der/einem/meiner).',
+      '• 3 ⚠ PLURAL -n drills (Kindern fill + Büchern MCQ + correct-form MCQ).',
+      '• 3 🔗 CONTRACTION fill-blanks (beim/zur/zum).',
+      '• 3 ⚠ nach-vs-zu + which-prep MCQs (nach Berlin · zum Arzt · für-is-not-Dativ).',
+      '• 💬 Commute dialogue weaving mit dem Bus, bei meiner Schwester, seit einem Jahr, zum Bäcker, gegenüber dem Park.',
+      'Quiz 2 → 7 items: zum-contraction · plural Büchern · fem der · nach-Berlin · seit-is-Dativ · vom-contraction · masc&neuter→dem.',
+    ],
+  },
   {
     version: '3.8.4',
     date: '2026-05-31',

@@ -5244,69 +5244,189 @@ export const days = [
   /* ----- Day 25: Dativ I — prepositions (slides 277-280) ----- */
   {
     id: 25, week: 4,
+    vocabLayout: 'spotlight',
     title: 'Dativ I — prepositions',
     titleDe: 'Dativ I — Präpositionen',
     emoji: '🅿️',
-    objective: 'Use the Dativ case after the eight everyday "always-Dativ" prepositions.',
-    intro: 'After mastering Akkusativ (object), meet the third case: Dativ. It marks the indirect object ("to whom") AND is forced by certain prepositions like mit, bei, zu.',
+    objective: 'Meet the THIRD case — and master the eight prepositions that ALWAYS force it, plus the four everyday contractions (beim · vom · zum · zur).',
+    intro: 'You know Nominativ (subject) and Akkusativ (object). Now meet the Dativ — the case of "to/for whom" and the case that eight everyday prepositions DEMAND. The trick: after mit · bei · zu · von · nach · aus · seit · gegenüber, the article shifts to dem (m/n) · der (f) · den+n (pl). Memorise the eight as one block and the rest is automatic.',
     vocabulary: [
-      { de: 'mit',        en: 'with' },
-      { de: 'bei',        en: 'at / near / with (a person)' },
-      { de: 'zu',         en: 'to (a place / person)' },
-      { de: 'von',        en: 'from / of' },
-      { de: 'nach',       en: 'to (city/country) / after' },
-      { de: 'aus',        en: 'out of / from (origin)' },
-      { de: 'seit',       en: 'since / for' },
-      { de: 'gegenüber',  en: 'opposite' },
+      // 🅿️ THE 8 ALWAYS-DATIV PREPOSITIONS — memorise as ONE block
+      { de: 'mit',        en: 'with / by (transport)', emoji: '🤝', hint: '🅿️ always Dativ · "mit dem Bus" = by bus',    example: 'Ich fahre mit dem Bus.',          exampleEn: 'I go by bus.' },
+      { de: 'bei',        en: 'at / near / at sb\'s place', emoji: '🏠', hint: '🅿️ always Dativ · "bei der Arbeit" = at work', example: 'Ich wohne bei meiner Mutter.', exampleEn: 'I live at my mother\'s.' },
+      { de: 'zu',         en: 'to (a person / place)',  emoji: '➡️', hint: '🅿️ always Dativ · "zu dem Arzt" → zum Arzt',  example: 'Ich gehe zum Arzt.',              exampleEn: 'I am going to the doctor.' },
+      { de: 'von',        en: 'from / of / by',         emoji: '📤', hint: '🅿️ always Dativ · "von dem" → vom',          example: 'Ich komme vom Bahnhof.',          exampleEn: 'I am coming from the station.' },
+      { de: 'nach',       en: 'to (city/country) / after', emoji: '🗺️', hint: '🅿️ Dativ · but cities take NO article',   example: 'Ich fahre nach Berlin.',          exampleEn: 'I am going to Berlin.' },
+      { de: 'aus',        en: 'out of / from (origin)', emoji: '🚪', hint: '🅿️ always Dativ · "aus der Schweiz"',        example: 'Sie kommt aus der Schule.',       exampleEn: 'She comes from school.' },
+      { de: 'seit',       en: 'since / for (time)',     emoji: '⏳', hint: '🅿️ always Dativ · "seit einem Jahr"',        example: 'Ich lerne seit einem Jahr Deutsch.', exampleEn: 'I have been learning German for a year.' },
+      { de: 'gegenüber',  en: 'opposite / across from', emoji: '↔️', hint: '🅿️ Dativ · often AFTER the noun',           example: 'Die Bank ist gegenüber dem Park.', exampleEn: 'The bank is opposite the park.' },
+
+      // 📊 THE DATIV ARTICLES — what each one becomes
+      { de: 'dem (m)',    en: 'der → dem (masculine)',  emoji: '🟦', hint: '⭐ masc. article in Dativ',                  example: 'mit dem Mann',                     exampleEn: 'with the man' },
+      { de: 'der (f)',    en: 'die → der (feminine)',   emoji: '🟥', hint: '⭐ fem. article in Dativ (looks like Nom. der!)', example: 'mit der Frau',                exampleEn: 'with the woman' },
+      { de: 'dem (n)',    en: 'das → dem (neuter)',     emoji: '🟩', hint: '⭐ neuter = same as masc. → dem',            example: 'mit dem Kind',                     exampleEn: 'with the child' },
+      { de: 'den …-n (pl)', en: 'die → den + noun adds -n', emoji: '🟨', hint: '⭐ plural · ADD -n to the noun: den Kindern', example: 'mit den Kindern',             exampleEn: 'with the children' },
+
+      // 🔗 THE 4 EVERYDAY CONTRACTIONS — say these, not the long form
+      { de: 'beim',       en: 'bei + dem',  emoji: '🔗', hint: '🔗 beim Bäcker = at the baker\'s',     example: 'Ich bin beim Bäcker.',     exampleEn: 'I am at the baker\'s.' },
+      { de: 'vom',        en: 'von + dem',  emoji: '🔗', hint: '🔗 vom Bahnhof = from the station',    example: 'Ich komme vom Bahnhof.',   exampleEn: 'I am coming from the station.' },
+      { de: 'zum',        en: 'zu + dem',   emoji: '🔗', hint: '🔗 zum Arzt = to the doctor',          example: 'Ich gehe zum Arzt.',       exampleEn: 'I am going to the doctor.' },
+      { de: 'zur',        en: 'zu + der',   emoji: '🔗', hint: '🔗 zur Schule = to school (fem.)',     example: 'Ich gehe zur Schule.',     exampleEn: 'I am going to school.' },
+
+      // 🧰 USEFUL DATIV-CONTEXT NOUNS
+      { de: 'mein → meinem / meiner', en: 'my (Dativ m/n · f)', emoji: '👪', hint: 'possessive in Dativ: meinem Vater · meiner Mutter', example: 'Ich wohne bei meiner Mutter.', exampleEn: 'I live with my mother.' },
+      { de: 'das Auto',   en: 'the car',        emoji: '🚗', hint: 'mit dem Auto = by car',          example: 'Wir fahren mit dem Auto.', exampleEn: 'We go by car.' },
+      { de: 'die Arbeit', en: 'work / the job', emoji: '💼', hint: 'bei der Arbeit = at work · nach der Arbeit = after work', example: 'Ich bin bei der Arbeit.', exampleEn: 'I am at work.' },
     ],
     grammar: [
-      { rule: 'Dativ article table',
+      { rule: '⭐ THE 8 ALWAYS-DATIV PREPOSITIONS — memorise the block',
         body:
-          'masc.   der → dem    "mit dem Auto"\n' +
-          'fem.    die → der    "mit der Frau"\n' +
-          'neuter  das → dem    "bei dem Kind" (often → beim Kind)\n' +
-          'plural  die → den + ADD -n to the noun if missing  "mit den Kindern"',
+          'These eight prepositions ALWAYS take the Dativ — no exceptions, no thinking required. Any noun after one of them is Dativ:\n\n' +
+          '  mit   — with / by         bei  — at / near\n' +
+          '  zu    — to (person/place) von  — from / of\n' +
+          '  nach  — to / after        aus  — out of / from\n' +
+          '  seit  — since / for       gegenüber — opposite\n\n' +
+          '🧠 Memory hook — say them in a rhythm: "mit-bei-zu-von, nach-aus-seit, gegenüber." Some learners use the song "Aus-bei-mit-nach-seit-von-zu" (alphabetical). Pick one and drill it until it\'s automatic.',
       },
-      { rule: 'Indefinite & possessive',
+      { rule: '⭐ THE DATIV ARTICLE TABLE — der/die/das all shift',
         body:
-          'ein → einem (m, n)  /  eine → einer (f)  /  no plural form for ein.\n' +
-          'mein → meinem / meiner / meinem / meinen.\n' +
-          '  "Ich fahre mit meinem Auto."\n' +
-          '  "Ich wohne bei meiner Mutter."',
+          'In the Dativ, EVERY article changes (unlike Akkusativ where only masc. flipped):\n\n' +
+          '            NOM   →  DATIV       example\n' +
+          '  masc.  m  der   →  dem         mit dem Mann\n' +
+          '  fem.   f  die   →  der         mit der Frau   ⚠ looks like Nom. "der"!\n' +
+          '  neut.  n  das   →  dem         mit dem Kind   (same as masc.)\n' +
+          '  plur.  pl die   →  den +(-n)   mit den Kindern\n\n' +
+          'Indefinite + possessive follow the same endings:\n' +
+          '  ein → einem (m/n) · eine → einer (f)\n' +
+          '  mein → meinem (m/n) · meiner (f) · meinen+(-n) (pl)\n\n' +
+          '🧠 Shortcut: masc. & neuter are IDENTICAL in Dativ (both dem / einem). Only feminine (der/einer) and plural (den + noun-n) stand apart.',
       },
-      { rule: 'The 8 always-Dativ prepositions',
+      { rule: '⚠ THE PLURAL -n RULE — the most-forgotten detail',
         body:
-          'mit · bei · zu · von · nach · aus · seit · gegenüber.\n' +
-          'Memorise them as one block — every noun after one of these uses Dativ.',
+          'Plural Dativ does TWO things: article → den AND the noun gets an extra -n (if it doesn\'t already end in -n or -s):\n\n' +
+          '  die Kinder  → mit den Kindern   (+n)\n' +
+          '  die Bücher  → mit den Büchern   (+n)\n' +
+          '  die Freunde → mit den Freunden  (+n)\n' +
+          '  die Frauen  → mit den Frauen    (already ends in -n, no change)\n' +
+          '  die Autos   → mit den Autos     (-s plural, no -n)\n\n' +
+          'This is the #1 thing beginners forget. If it\'s plural Dativ, check the noun ending.',
       },
-      { rule: 'Common contractions',
+      { rule: '🔗 THE 4 CONTRACTIONS — say beim/vom/zum/zur',
         body:
-          'bei + dem  → beim    "beim Bäcker"\n' +
-          'von + dem  → vom     "vom Bahnhof"\n' +
-          'zu + dem   → zum     "zum Arzt"\n' +
-          'zu + der   → zur     "zur Schule"',
+          'In speech, preposition + dem/der almost always contracts. Using the long form sounds stiff:\n\n' +
+          '  bei + dem → beim    beim Bäcker   (at the baker\'s)\n' +
+          '  von + dem → vom     vom Bahnhof   (from the station)\n' +
+          '  zu  + dem → zum     zum Arzt      (to the doctor)\n' +
+          '  zu  + der → zur     zur Schule    (to school)\n\n' +
+          '⚠ "zu" has TWO contractions because it meets both dem (zum) and der (zur). Match the gender: zum Supermarkt (m) but zur Apotheke (f).',
+      },
+      { rule: '⚠ "nach" vs "zu" — both mean "to", different uses',
+        body:
+          'A classic A1 confusion. Both are Dativ, but:\n\n' +
+          '  nach — for CITIES, COUNTRIES & "home" (NO article)\n' +
+          '         nach Berlin · nach Deutschland · nach Hause\n' +
+          '  zu   — for PEOPLE and specific PLACES (with article → contraction)\n' +
+          '         zum Arzt · zur Schule · zu meiner Mutter\n\n' +
+          'Exceptions that take an article use "in die": "in die Türkei", "in die Schweiz" — but at A1, "nach + city/country (no article)" covers the vast majority. And "nach Hause" (going home) is a fixed phrase worth memorising.',
+      },
+      { rule: '🚦 PITFALLS — Dativ-preposition traps',
+        body:
+          '• für / ohne / gegen / um / durch are AKKUSATIV — do NOT use Dativ after them.\n' +
+          '• fem. Dativ "der" looks exactly like masc. Nominativ "der" — context tells them apart (a preposition before it = Dativ).\n' +
+          '• Don\'t forget the plural -n: "mit den Kindern", not "mit den Kinder".\n' +
+          '• "seit" = since/for a duration and ALWAYS Dativ: "seit einem Jahr", "seit zwei Wochen".\n' +
+          '• Use the contractions in speech: "Ich gehe zu dem Arzt" is understandable but says "zum Arzt".\n' +
+          '• "gegenüber" usually comes AFTER the noun/pronoun: "mir gegenüber", "dem Park gegenüber".',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: 'Ich fahre mit __ Auto. (the, masc.)',          answer: 'dem' },
-      { type: 'fill-blank', sentence: 'Wir wohnen bei __ Eltern. (the, plural)',      answer: 'den', hint: 'don\'t forget — plural Dativ noun adds -n if missing: Eltern already ends in n' },
-      { type: 'fill-blank', sentence: 'Ich gehe zu __ Bahnhof. (the, masc.)',          answer: 'dem' },
-      { type: 'fill-blank', sentence: 'Sie kommt aus __ Schule. (the, fem.)',         answer: 'der' },
-      { type: 'fill-blank', sentence: 'Er arbeitet seit __ Jahr. (a, neuter)',        answer: 'einem' },
-      { type: 'fill-blank', sentence: 'Wir fahren nach __ . (Berlin — no article!)',  answer: 'Berlin', hint: 'cities and most countries take no article' },
-      { type: 'fill-blank', sentence: 'Ich fahre mit __ Mutter. (my, fem.)',          answer: 'meiner' },
-      { type: 'fill-blank', sentence: 'Contraction: "bei + dem" = __',                answer: 'beim' },
-      { type: 'fill-blank', sentence: 'Contraction: "zu + der" = __',                 answer: 'zur' },
-      { type: 'multiple-choice', q: 'Which preposition does NOT take Dativ?',
-        options: ['mit', 'bei', 'für', 'zu'],
-        answer: 'für',
-        explain: '"für" takes Akkusativ. The eight always-Dativ prepositions are mit, bei, zu, von, nach, aus, seit, gegenüber.',
+
+      // ⭐ 3 INTERACTIVE MATCHES — prep meanings · article shifts · contractions
+      { type: 'match',
+        pairs: [
+          { de: 'mit',  en: '🤝 with / by transport' },
+          { de: 'bei',  en: '🏠 at / at sb\'s place' },
+          { de: 'zu',   en: '➡️ to a person / place' },
+          { de: 'aus',  en: '🚪 out of / origin' },
+          { de: 'seit', en: '⏳ since / for (time)' },
+          { de: 'gegenüber', en: '↔️ opposite' },
+        ],
       },
+      { type: 'match',
+        pairs: [
+          { de: 'der (m) → ?',  en: 'dem' },
+          { de: 'die (f) → ?',  en: 'der' },
+          { de: 'das (n) → ?',  en: 'dem' },
+          { de: 'die (pl) → ?', en: 'den + noun-n' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'bei + dem', en: 'beim' },
+          { de: 'von + dem', en: 'vom' },
+          { de: 'zu + dem',  en: 'zum' },
+          { de: 'zu + der',  en: 'zur' },
+        ],
+      },
+
+      // 🅿️ 5 ARTICLE fill-blanks across all genders
+      { type: 'fill-blank', sentence: 'Ich fahre mit __ Auto. (the, masc./neut.)', answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Ich fahre mit __ Frau. (the, fem.)',        answer: 'der' },
+      { type: 'fill-blank', sentence: 'Sie kommt aus __ Schule. (the, fem.)',      answer: 'der' },
+      { type: 'fill-blank', sentence: 'Er arbeitet seit __ Jahr. (a, neuter)',      answer: 'einem' },
+      { type: 'fill-blank', sentence: 'Ich fahre mit __ Mutter. (my, fem.)',        answer: 'meiner' },
+
+      // ⚠ 3 PLURAL -n drills
+      { type: 'fill-blank', sentence: 'Ich spiele mit den __ . (Kinder → plural Dativ)', answer: 'Kindern',
+        hint: 'plural Dativ adds -n to the noun' },
+      { type: 'multiple-choice', q: 'Plural Dativ for "die Bücher" =',
+        options: ['die Bücher','der Bücher','dem Bücher','den Büchern'], answer: 'den Büchern',
+        explain: 'Plural Dativ: article = den, and the noun adds -n.' },
+      { type: 'multiple-choice', q: 'Which is CORRECT?',
+        options: ['mit den Kinder','mit den Kindern','mit dem Kindern','mit der Kindern'],
+        answer: 'mit den Kindern', explain: 'Plural Dativ: den + noun adds -n.' },
+
+      // 🔗 3 CONTRACTION fill-blanks
+      { type: 'fill-blank', sentence: 'Contraction: "bei + dem" = __',  answer: 'beim' },
+      { type: 'fill-blank', sentence: 'Contraction: "zu + der" = __',   answer: 'zur' },
+      { type: 'fill-blank', sentence: 'Ich gehe zu dem Arzt → Ich gehe __ Arzt.', answer: 'zum' },
+
+      // ⚠ 3 nach-vs-zu + which-prep MCQs
+      { type: 'multiple-choice', q: '"I am going to Berlin." — which preposition?',
+        options: ['zu Berlin','nach Berlin','bei Berlin','in Berlin'], answer: 'nach Berlin',
+        explain: 'Cities & countries use "nach" with no article.' },
+      { type: 'multiple-choice', q: '"I am going to the doctor." — pick the right form:',
+        options: ['nach dem Arzt','zum Arzt','bei Arzt','zur Arzt'], answer: 'zum Arzt',
+        explain: 'People/places use zu → zum (zu + dem) for masculine Arzt.' },
+      { type: 'multiple-choice', q: 'Which preposition does NOT take Dativ?',
+        options: ['mit','bei','für','zu'], answer: 'für',
+        explain: '"für" takes Akkusativ. The eight always-Dativ ones: mit, bei, zu, von, nach, aus, seit, gegenüber.' },
+
+      // 💬 Mini dialogue — Dativ prepositions + contractions in real chat
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Wie kommst du zur Arbeit?',               en: 'How do you get to work?' },
+        { speaker: 'B', de: 'Ich fahre mit dem Bus. Und du?',          en: 'I go by bus. And you?' },
+        { speaker: 'A', de: 'Mit dem Auto. Wohnst du noch bei deinen Eltern?', en: 'By car. Do you still live with your parents?' },
+        { speaker: 'B', de: 'Nein, seit einem Jahr wohne ich bei meiner Schwester.', en: 'No, for a year I\'ve been living with my sister.' },
+        { speaker: 'A', de: 'Schön! Gehst du nachher zum Bäcker?',     en: 'Nice! Are you going to the baker\'s afterwards?' },
+        { speaker: 'B', de: 'Ja, der ist gegenüber dem Park.',         en: 'Yes, it\'s opposite the park.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Ich gehe zu __ Arzt. (the, masc. — use the contraction)', answer: 'zum' },
-      { type: 'multiple-choice', q: 'Plural Dativ for "die Bücher" =', options: ['die Bücher','der Bücher','dem Bücher','den Büchern'], answer: 'den Büchern', explain: 'Plural Dativ: article = den, and the noun adds -n.' },
+      { type: 'multiple-choice', q: 'Plural Dativ for "die Bücher" =',
+        options: ['die Bücher','der Bücher','dem Bücher','den Büchern'], answer: 'den Büchern',
+        explain: 'Plural Dativ: article = den, and the noun adds -n.' },
+      { type: 'fill-blank', sentence: 'Ich fahre mit __ Frau. (the, fem.)', answer: 'der' },
+      { type: 'multiple-choice', q: '"to Berlin" =',
+        options: ['zu Berlin','nach Berlin','bei Berlin','aus Berlin'], answer: 'nach Berlin' },
+      { type: 'multiple-choice', q: 'Which preposition is ALWAYS Dativ?',
+        options: ['für','ohne','seit','durch'], answer: 'seit' },
+      { type: 'fill-blank', sentence: 'Contraction: "von + dem" = __', answer: 'vom' },
+      { type: 'multiple-choice', q: 'Masculine & neuter in the Dativ both become…',
+        options: ['der','dem','den','das'], answer: 'dem',
+        explain: 'Both masc. (der) and neuter (das) shift to dem.' },
     ],
   },
 
