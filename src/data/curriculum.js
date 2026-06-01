@@ -6913,3 +6913,156 @@ export const weeks = [
 ];
 
 export const dayById = (id) => days.find((d) => d.id === Number(id));
+
+/**
+ * Case-system consolidation review covering Days 21-30 (Week 4 + early Week 5).
+ * Not part of the `days` array — it lives on the /review/case-system route and a
+ * dashboard card, so day-numbering, locking and saved progress are untouched.
+ */
+export const caseReview = {
+  id: 'case-system',
+  title: 'Case System Review — Days 21–30',
+  titleDe: 'Wiederholung: Das Kasussystem',
+  emoji: '🧩',
+  objective: 'Consolidate everything from the case arc: Akkusativ (Days 21-24), the three-case decision (Day 27), Dativ prepositions & verbs (Days 25-26), Akk/Dat pronouns (Days 28-29) and the full preposition system incl. Wechsel (Day 30).',
+  intro: 'Ten days, one system. This pulls the whole case arc together: 🟦 Nominativ → 🟩 Akkusativ → 🅿️ Dativ, plus the pronouns and the preposition groups that force each case. Read the keystones and recap cards, then take the mixed quiz that samples all of Days 21-30. Aim for ≥ 80% — that means the case system is genuinely yours.',
+  vocabularyLayout: 'spotlight',
+  vocabulary: [
+    // ⚖️ THE THREE CASES
+    { de: 'der Nominativ', en: 'subject (the DOER)',        emoji: '🟦', hint: '🔁 Day 27 · Wer? · der/die/das stay',  example: 'Der Mann schläft.',           exampleEn: 'The man sleeps.' },
+    { de: 'der Akkusativ', en: 'direct object (RECEIVER)',  emoji: '🟩', hint: '🔁 Day 21-24 · Wen? · masc → den',     example: 'Ich sehe den Mann.',          exampleEn: 'I see the man.' },
+    { de: 'der Dativ',     en: 'indirect object (TO whom)', emoji: '🅿️', hint: '🔁 Day 25-26 · Wem? · der→dem etc.',  example: 'Ich gebe dem Mann das Buch.', exampleEn: 'I give the man the book.' },
+
+    // 🎭 THE ARTICLE TRANSFORMATIONS
+    { de: 'der → den → dem', en: 'masc.: Nom → Akk → Dat',  emoji: '🎭', hint: '⭐ Day 21-27 · the only 3-form row',  example: 'Der Mann gibt dem Kind den Ball.', exampleEn: 'The man gives the child the ball.' },
+    { de: 'die → die → der', en: 'fem.: Nom → Akk → Dat',   emoji: '🟥', hint: 'fem. only changes in Dativ → der',    example: 'Die Frau · die Frau · der Frau',   exampleEn: 'the woman (subj · obj · to her)' },
+    { de: 'die → die → den', en: 'pl.: Nom → Akk → Dat (+n)', emoji: '🟨', hint: '🔁 Day 25 · plural Dativ adds -n',  example: 'die Kinder → den Kindern',         exampleEn: 'the children → to the children' },
+
+    // 🔍 THE QUESTION TEST
+    { de: 'Wer? / Wen? / Wem?', en: 'subject / object / to-whom', emoji: '🔍', hint: '🔁 Day 27 · the case-finder test', example: 'Wem gibt er das Buch? — Dem Kind.', exampleEn: 'To whom does he give the book? — The child.' },
+
+    // 👤 THE PRONOUN PAIRS — Akk vs Dat
+    { de: 'mich ↔ mir',  en: 'me: Akk ↔ Dat',   emoji: '⚖️', hint: '🔁 Day 28-29 · sehen mich / helfen mir',  example: 'Er sieht mich. / Er hilft mir.', exampleEn: 'He sees me. / He helps me.' },
+    { de: 'ihn ↔ ihm',   en: 'him: Akk ↔ Dat',  emoji: '⚖️', hint: '⭐ the killer pair · ihn(Akk)/ihm(Dat)',  example: 'Ich sehe ihn. / Ich helfe ihm.', exampleEn: 'I see him. / I help him.' },
+    { de: 'sie ↔ ihr',   en: 'her: Akk ↔ Dat',  emoji: '⚖️', hint: '🔁 Day 28-29 · sie(Akk)/ihr(Dat)',       example: 'Ich sehe sie. / Ich danke ihr.', exampleEn: 'I see her. / I thank her.' },
+
+    // 🅿️ THE PREPOSITION GROUPS
+    { de: 'mit · bei · zu · von · nach · aus · seit · gegenüber', en: 'the 8 always-Dativ prepositions', emoji: '🅿️', hint: '🔁 Day 25 · always Dativ', example: 'Ich fahre mit dem Bus.', exampleEn: 'I go by bus.' },
+    { de: 'für · um · ohne · durch · gegen', en: 'the always-Akkusativ prepositions (FUDGO)', emoji: '🎯', hint: '🔁 Day 30 · always Akkusativ', example: 'Das ist für den Mann.', exampleEn: 'That is for the man.' },
+    { de: 'in · an · auf · über · unter …', en: 'the 9 Wechsel (two-way) prepositions', emoji: '🔀', hint: '🔁 Day 30 · Wo?→Dat / Wohin?→Akk', example: 'Ich bin in der Stadt. / Ich gehe in die Stadt.', exampleEn: 'I am in the city. / I go into the city.' },
+
+    // 🤝 THE DATIV VERBS + 🎁 THE GIVE-SENTENCE
+    { de: 'helfen · danken · gehören · gefallen', en: 'the Dativ verbs', emoji: '🤝', hint: '🔁 Day 26 · take Dativ, not Akk', example: 'Ich helfe dem Mann.', exampleEn: 'I help the man.' },
+    { de: 'geben / zeigen', en: 'give/show: Dat person + Akk thing', emoji: '🎁', hint: '🔁 Day 27 · Dativ before Akkusativ', example: 'Ich gebe dem Mann das Buch.', exampleEn: 'I give the man the book.' },
+  ],
+  grammar: [
+    { rule: '⭐ THE MASTER ARTICLE GRID — all 12 + indefinite',
+      body:
+        '              masc.   fem.   neuter  plural\n' +
+        '  Nominativ   der     die    das     die\n' +
+        '  Akkusativ   den     die    das     die\n' +
+        '  Dativ       dem     der    dem     den +n\n' +
+        '  ─────────────────────────────────────────\n' +
+        '  Indef. Nom. ein     eine   ein     —\n' +
+        '  Indef. Akk. einen   eine   ein     —\n' +
+        '  Indef. Dat. einem   einer  einem   —\n\n' +
+        '🧠 Three shortcuts: (1) only MASCULINE changes in the Akkusativ; (2) masc. & neuter are identical in the Dativ (dem/einem); (3) plural Dativ adds -n to the noun (den Kindern).',
+    },
+    { rule: '🔍 THE QUESTION TEST + 🅿️ THE DECISION TREE',
+      body:
+        'Find any noun\'s case by asking the verb: Wer? → Nominativ · Wen? → Akkusativ · Wem? → Dativ.\n\n' +
+        'Then the 5-step decision tree:\n' +
+        '  1. Subject (who does it)?               → Nominativ\n' +
+        '  2. Direct object (what is verbed)?       → Akkusativ\n' +
+        '  3. After mit/bei/zu/von/nach/aus/seit/gegenüber? → Dativ\n' +
+        '  4. After helfen/danken/gehören/gefallen/antworten/glauben? → Dativ\n' +
+        '  5. None of the above?                    → default Akkusativ',
+    },
+    { rule: '🅿️ THE THREE PREPOSITION GROUPS',
+      body:
+        '  🅿️ ALWAYS DATIV (Day 25):  mit · bei · zu · von · nach · aus · seit · gegenüber\n' +
+        '  🎯 ALWAYS AKKUSATIV (Day 30): für · um · ohne · durch · gegen  ("FUDGO")\n' +
+        '  🔀 WECHSEL — two-way (Day 30): in · an · auf · über · unter · vor · hinter · neben · zwischen\n\n' +
+        'For the Wechsel group, ONE question decides:\n' +
+        '  📍 Wo? (location, no movement) → DATIV    Ich bin in der Stadt.\n' +
+        '  ➡️ Wohin? (movement) → AKKUSATIV          Ich gehe in die Stadt.\n' +
+        'Contractions: ins/ans signal movement (Akk); im/am signal location (Dat).',
+    },
+    { rule: '👤 THE PRONOUN TABLE — Akkusativ vs Dativ',
+      body:
+        '   Subject   Akkusativ   Dativ\n' +
+        '   ich       mich        mir\n' +
+        '   du        dich        dir\n' +
+        '   er        ihn         ihm     ⚠ the killer pair\n' +
+        '   sie(she)  sie         ihr\n' +
+        '   es        es          ihm\n' +
+        '   wir       uns         uns     ✅ same\n' +
+        '   ihr       euch        euch    ✅ same\n' +
+        '   sie(they) sie         ihnen\n' +
+        '   Sie       Sie         Ihnen\n\n' +
+        'The VERB or PREPOSITION decides the column. Day-26 Dativ verbs + Day-25 Dativ preps → Dativ; normal Akk verbs → Akkusativ.',
+    },
+    { rule: '🎁 THE GIVE-SENTENCE — Dativ + Akkusativ together',
+      body:
+        'geben, zeigen, schenken, schicken take a PERSON (Dativ) and a THING (Akkusativ):\n\n' +
+        '  Ich gebe   dem Mann (Dat)   das Buch (Akk).\n\n' +
+        'Default order: Dativ before Akkusativ. BUT when the thing becomes a pronoun, Akkusativ jumps to the front:\n' +
+        '  Ich gebe dem Mann das Buch.  →  Ich gebe es dem Mann.  →  Ich gebe es ihm.',
+    },
+    { rule: '🎯 The 7 case mistakes to never make again',
+      body:
+        '1. "Ich sehe der Mann" ✗ → object → "den Mann." ✓\n' +
+        '2. "Ich helfe den Mann" ✗ → helfen=Dativ → "dem Mann." ✓\n' +
+        '3. "mit den Kinder" ✗ → plural Dativ +n → "mit den Kindern." ✓\n' +
+        '4. "Ich helfe ihn" ✗ → Dativ pronoun → "ihm." ✓\n' +
+        '5. "Das gefällt mich" ✗ → gefallen=Dativ → "mir." ✓\n' +
+        '6. "Ich gehe in der Stadt" ✗ (movement) → "in die Stadt." ✓\n' +
+        '7. "Ich bin ein Lehrer" — sein takes Nominativ, so this one is RIGHT (no flip). ✓',
+    },
+  ],
+  // A comprehensive mixed quiz sampling every day from 21-30.
+  quiz: [
+    // Day 21-24 — Akkusativ
+    { type: 'fill-blank', sentence: 'Day 21 · Akk masc.: Ich sehe __ Mann. (the)', answer: 'den' },
+    { type: 'multiple-choice', q: 'Day 22 · "I eat a bread roll." (Brötchen = neuter)',
+      options: ['einen Brötchen','ein Brötchen','eine Brötchen','den Brötchen'], answer: 'ein Brötchen',
+      explain: 'Neuter ein stays ein — only masculine flips.' },
+    { type: 'multiple-choice', q: 'Day 23 · In "Der Hund sieht den Mann", what is the Akkusativ?',
+      options: ['Der Hund','sieht','den Mann','—'], answer: 'den Mann' },
+    { type: 'multiple-choice', q: 'Day 24 · Which verb does NOT take an Akkusativ object?',
+      options: ['kaufen','sehen','werden','brauchen'], answer: 'werden',
+      explain: 'werden (to become) takes Nominativ.' },
+    { type: 'fill-blank', sentence: 'Day 24 · es gibt is always Akk: Es gibt __ Supermarkt. (a, masc.)', answer: 'einen' },
+
+    // Day 25 — Dativ prepositions
+    { type: 'fill-blank', sentence: 'Day 25 · Dativ prep: Ich fahre mit __ Bus. (the, masc.)', answer: 'dem' },
+    { type: 'multiple-choice', q: 'Day 25 · Plural Dativ for "die Bücher" =',
+      options: ['die Bücher','der Bücher','dem Bücher','den Büchern'], answer: 'den Büchern',
+      explain: 'den + noun adds -n.' },
+
+    // Day 26 — Dativ verbs
+    { type: 'multiple-choice', q: 'Day 26 · "I help him." (helfen = Dativ)',
+      options: ['Ich helfe ihn.','Ich helfe ihm.','Ich helfe er.','Ich helfe ihr.'], answer: 'Ich helfe ihm.' },
+    { type: 'fill-blank', sentence: 'Day 26 · The flip: "I like the city." → Die Stadt gefällt __.', answer: 'mir' },
+
+    // Day 27 — three-case decision + give-sentence
+    { type: 'fill-blank', sentence: 'Day 27 · Give-sentence: Ich gebe __ Mann das Buch. (the person, Dativ)', answer: 'dem' },
+    { type: 'multiple-choice', q: 'Day 27 · Which question finds the indirect object?',
+      options: ['Wer?','Wen?','Wem?','Was?'], answer: 'Wem?' },
+
+    // Day 28 — Akkusativ pronouns
+    { type: 'fill-blank', sentence: 'Day 28 · Akk pronoun: "He loves me." → Er liebt __.', answer: 'mich' },
+
+    // Day 29 — Dativ pronouns
+    { type: 'multiple-choice', q: 'Day 29 · Dativ of "er" is…',
+      options: ['ihn','ihm','er','ihr'], answer: 'ihm' },
+
+    // Day 30 — prepositions Akk + Wechsel
+    { type: 'multiple-choice', q: 'Day 30 · für · um · ohne · durch · gegen all take which case?',
+      options: ['Nominativ','Akkusativ','Dativ','It depends'], answer: 'Akkusativ' },
+    { type: 'fill-blank', sentence: 'Day 30 · Wechsel "wohin?" (movement): Ich gehe in __ Stadt. (the, fem. → Akk)', answer: 'die' },
+    { type: 'multiple-choice', q: 'Day 30 · "The book is ON the table." (location, Wo?)',
+      options: ['auf den Tisch','auf dem Tisch','auf der Tisch','auf das Tisch'], answer: 'auf dem Tisch',
+      explain: 'Location → Dativ → auf dem Tisch.' },
+  ],
+};

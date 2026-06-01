@@ -11,10 +11,24 @@
  * in sync.
  */
 
-export const VERSION = '3.8.10';
+export const VERSION = '3.9.0';
 export const RELEASE_DATE = '2026-06-01';
 
 export const RELEASES = [
+  {
+    version: '3.9.0',
+    date: '2026-06-01',
+    type: 'feature',
+    title: 'NEW — Case System Review (Days 21–30 consolidation)',
+    notes: [
+      'Added a dedicated consolidation review for the whole case arc — Days 21-30 — accessible from the dashboard (a violet/indigo card under Week 5) and at /review/case-system. It pulls Akkusativ, Dativ, the three-case decision, both pronoun sets and the full preposition system into one place.',
+      'Implemented non-invasively: the review is a new `caseReview` export in curriculum.js, NOT a new entry in the `days` array. So day-numbering (1-50), the sequential day-locking, every /day/N link and all saved learner progress are completely untouched — nothing was renumbered.',
+      'KEYSTONES (15, spotlight layout, each with a Day-reference hint): the 3 cases named · the article transformations (der→den→dem · die→die→der · die→die→den+n) · the wer/wen/wem test · the 3 pronoun pairs (mich↔mir · ihn↔ihm · sie↔ihr) · the 3 preposition groups (always-Dativ · always-Akk FUDGO · the 9 Wechsel) · the Dativ verbs · the give-sentence.',
+      'RECAP CARDS (6): ⭐ the master article grid (12 definite + 6 indefinite cells + 3 shortcuts) · the wer/wen/wem question test + the 5-step decision tree · the three preposition groups with the Wo?/Wohin? switch · the Akk-vs-Dat pronoun table (the ihn/ihm killer pair, uns/euch freebies) · the give-sentence with the pronoun-order flip · 🎯 "the 7 case mistakes to never make again".',
+      'MIXED QUIZ (16 questions) that explicitly samples EVERY day from 21-30: Akk masc/neuter/es-gibt (21-24) · Dativ prepositions + plural -n (25) · Dativ verbs + the gefallen flip (26) · the give-sentence + wem-test (27) · Akk pronoun (28) · Dativ pronoun (29) · always-Akk + Wechsel Wo?/Wohin? (30). Each item is tagged with its source day.',
+      'Review.jsx refactored into a thin dispatcher + GenericReview child so the new rich page and the existing review kinds keep consistent React hook order.',
+    ],
+  },
   {
     version: '3.8.10',
     date: '2026-06-01',

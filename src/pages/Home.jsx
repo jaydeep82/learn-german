@@ -173,6 +173,21 @@ export default function Home() {
                 </div>
               </Link>
             )}
+            {w.n === 5 && (
+              <Link
+                to="/review/case-system"
+                className="mt-3 block card bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-slate-900 dark:to-slate-900 hover:shadow-md transition"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="text-3xl" aria-hidden>🧩</div>
+                  <div className="flex-1">
+                    <div className="font-bold">Case System Review · Days 21–30</div>
+                    <div className="text-sm text-slate-500">Consolidate the whole case arc — Akkusativ, Dativ, the wer/wen/wem test, Akk/Dat pronouns and the full preposition system (always-Dativ · always-Akk · Wechsel) — with keystone cards and a 16-question mixed quiz.</div>
+                  </div>
+                  <span aria-hidden className="text-xl">→</span>
+                </div>
+              </Link>
+            )}
             {w.n < 8 && (
               <div className="mt-3">
                 <Link to={`/review/week-${w.n}`} className="text-sm font-semibold text-brand-700 dark:text-brand-300 hover:underline">
