@@ -11,10 +11,28 @@
  * in sync.
  */
 
-export const VERSION = '3.8.8';
-export const RELEASE_DATE = '2026-05-31';
+export const VERSION = '3.8.9';
+export const RELEASE_DATE = '2026-06-01';
 
 export const RELEASES = [
+  {
+    version: '3.8.9',
+    date: '2026-06-01',
+    type: 'improvement',
+    title: 'Day 29 review — Dativ pronouns: both triggers + the give-sentence word order',
+    notes: [
+      'Reviewed Day 29 (Dativ pronouns) end-to-end, parallel to the Day 14-28 full reviews. The Dativ twin of Day 28. The previous version had 8 bare pronouns, 2 grammar bullets and 11 exercises. Reshaped into a complete Dativ-pronoun toolkit covering both triggers (Dativ verbs + Dativ prepositions), the mir-vs-mich contrast, and the pronoun word-order flip in the give-sentence.',
+      'Vocabulary 8 → 16 items (vocabLayout: "spotlight") grouped by role icon: 🔄 the 6 shape-shifters (ich→mir · du→dir · er→ihm · sie→ihr · es→ihm · sie→ihnen) · ✅ the no-changers (uns · euch) + formal Sie→Ihnen · ⚖️ 3 explicit Dat↔Akk contrast pairs (mir/mich · ihm/ihn · ihr/sie) each with a worked "helfen vs sehen" example · 🅿️ the four triggers (Dativ prepositions · Dativ verbs · give/show verbs · gehören/gefallen).',
+      'Grammar 2 → 5 callouts: ⭐ THE FULL DATIV-PRONOUN TABLE (with the -r/-m ending hook) · ⚖️ DATIV vs AKKUSATIV side-by-side (the ihn/ihm + mir/mich traps, uns/euch freebies) with worked sehen-vs-helfen contrasts · 🅿️ THE TWO TRIGGERS (Dativ verbs list + Dativ prepositions list, with wrong→right pairs) · 🎁 THE GIVE-SENTENCE (Dativ person + Akkusativ thing, AND the pronoun-order flip: "Ich gebe dir das Buch" → "Ich gebe es dir") · 🚦 pitfalls (er→ihm not ihn · sie→ihr · ihnen/Ihnen · uns/euch unchanged · mit mir not mit mich · gefallen/gehören take Dativ).',
+      'Exercises reshaped (11 → 19 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: Nom → Dat form · Dat↔Akk sentence contrast · trigger → which case.',
+      '• 6 🤲 DATIV-PRONOUN fill-blanks (mir/ihm/ihr/uns + mit mir + gehört ihr).',
+      '• 3 ⚖️ AKK-vs-DAT decide-the-case fill-blanks (helfe ihm, sehe ihn, danke Ihnen).',
+      '• 4 ⚠ TRAP / CONTRAST MCQs (Dat-her=ihr · helfen-ihm · mit-mir · the give-sentence es-before-dir pronoun flip).',
+      '• 💬 Help-and-café dialogue weaving helfen, gehören, the give-sentence (es ihm), mit mir and gefällt mir.',
+      'Quiz 1 → 7 items: danke Ihnen · hilft mir · Dat-of-er=ihm · mit-mir-not-mich · gebe ihr · same-in-both=uns · es-before-dir pronoun flip.',
+    ],
+  },
   {
     version: '3.8.8',
     date: '2026-05-31',

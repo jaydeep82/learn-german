@@ -6090,62 +6090,184 @@ export const days = [
   /* ----- Day 29: Dativ pronouns ----- */
   {
     id: 29, week: 5,
+    vocabLayout: 'spotlight',
     title: 'Dativ pronouns',
     titleDe: 'Dativ-Pronomen',
     emoji: '🤲',
-    objective: 'Use the Dativ pronoun set after Dativ verbs and Dativ prepositions.',
-    intro: 'Same idea as yesterday, different case. After verbs like helfen, danken, geben — and after prepositions like mit, bei, zu — pronouns shift again: ich → mir, du → dir, er → ihm…',
+    objective: 'Master the Dativ pronoun set (mir · dir · ihm …) and deploy it after BOTH triggers — Dativ verbs and Dativ prepositions — plus learn the pronoun word-order rule in the give-sentence.',
+    intro: 'Day 28 gave you the Akkusativ pronouns; today is their Dativ twin. The Dativ pronoun appears after the Day-26 Dativ verbs (helfen, danken, gehören, gefallen) AND after the Day-25 Dativ prepositions (mit, bei, zu …). ich → mir, du → dir, er → ihm. Lock the set, see how it pairs with an Akkusativ object in "Ich gebe dir das Buch", and crush the mir-vs-mich trap for good.',
     vocabulary: [
-      { de: 'mir',     en: 'to / for me' },
-      { de: 'dir',     en: 'to / for you (1 friend)' },
-      { de: 'ihm',     en: 'to / for him / it' },
-      { de: 'ihr',     en: 'to / for her' },
-      { de: 'uns',     en: 'to / for us' },
-      { de: 'euch',    en: 'to / for you all' },
-      { de: 'ihnen',   en: 'to / for them' },
-      { de: 'Ihnen',   en: 'to / for you (formal — capital I)' },
+      // 🔄 THE SHAPE-SHIFTERS — change from Nominativ to Dativ
+      { de: 'ich → mir', en: 'to/for me',          emoji: '🙋', hint: '🔄 ich becomes mir · Akk = mich',         example: 'Er hilft mir.',           exampleEn: 'He helps me.' },
+      { de: 'du → dir',  en: 'to/for you (1 friend)', emoji: '👉', hint: '🔄 du becomes dir · Akk = dich',       example: 'Ich danke dir.',          exampleEn: 'I thank you.' },
+      { de: 'er → ihm',  en: 'to/for him',         emoji: '👨', hint: '⭐ er becomes IHM · Akk = ihn (the trap!)', example: 'Ich gebe ihm das Buch.', exampleEn: 'I give him the book.' },
+      { de: 'sie → ihr', en: 'to/for her',         emoji: '👩', hint: '⭐ sie(she) becomes IHR · Akk = sie',     example: 'Ich helfe ihr.',          exampleEn: 'I help her.' },
+      { de: 'es → ihm',  en: 'to/for it',          emoji: '📦', hint: '🔄 es becomes ihm (same as er)',          example: 'Ich gebe ihm Wasser.',    exampleEn: 'I give it water.' },
+      { de: 'sie → ihnen', en: 'to/for them',      emoji: '🧑‍🤝‍🧑', hint: '🔄 sie(they) becomes IHNEN',          example: 'Ich helfe ihnen.',        exampleEn: 'I help them.' },
+
+      // ✅ THE NO-CHANGERS — identical to the subject form
+      { de: 'uns = uns',  en: 'to/for us (NO change)',   emoji: '👥', hint: '✅ uns · same in Akk AND Dativ',     example: 'Er hilft uns.',           exampleEn: 'He helps us.' },
+      { de: 'euch = euch', en: 'to/for you all (NO change)', emoji: '👨‍👩‍👧', hint: '✅ euch · same in Akk AND Dativ', example: 'Wir danken euch.',    exampleEn: 'We thank you all.' },
+      { de: 'Sie → Ihnen', en: 'to/for you (formal)', emoji: '🤝', hint: '⭐ formal Sie → Ihnen · capital I',     example: 'Ich danke Ihnen.',        exampleEn: 'I thank you. (formal)' },
+
+      // ⚖️ THE AKK-vs-DAT CONTRAST PAIRS — the mir-vs-mich trap
+      { de: 'mir (Dat) ↔ mich (Akk)', en: 'me: to-me vs object', emoji: '⚖️', hint: '⭐ "Er hilft mir" vs "Er sieht mich"', example: 'Er hilft mir. / Er sieht mich.', exampleEn: 'He helps me. / He sees me.' },
+      { de: 'ihm (Dat) ↔ ihn (Akk)',  en: 'him: to-him vs object', emoji: '⚖️', hint: '⭐ "Ich helfe ihm" vs "Ich sehe ihn"', example: 'Ich helfe ihm. / Ich sehe ihn.', exampleEn: 'I help him. / I see him.' },
+      { de: 'ihr (Dat) ↔ sie (Akk)',  en: 'her: to-her vs object', emoji: '⚖️', hint: '⭐ "Ich danke ihr" vs "Ich sehe sie"', example: 'Ich danke ihr. / Ich sehe sie.', exampleEn: 'I thank her. / I see her.' },
+
+      // 🅿️ THE TWO TRIGGERS — what forces a Dativ pronoun
+      { de: 'mit / bei / zu …', en: 'after a Dativ preposition', emoji: '🅿️', hint: '🔁 Day 25 · "mit mir", "bei dir", "zu ihm"', example: 'Kommst du mit mir?',     exampleEn: 'Are you coming with me?' },
+      { de: 'helfen / danken', en: 'after a Dativ verb',         emoji: '🤝', hint: '🔁 Day 26 · "Ich helfe dir"',          example: 'Ich danke dir.',          exampleEn: 'I thank you.' },
+      { de: 'geben / zeigen',  en: 'give/show sb (Dat) sth (Akk)', emoji: '🎁', hint: '⭐ Dativ person + Akkusativ thing',  example: 'Ich gebe dir das Buch.',  exampleEn: 'I give you the book.' },
+      { de: 'gehören / gefallen', en: 'belong to / please sb',   emoji: '🔄', hint: '🔁 Day 26 · "Das gehört mir", "gefällt mir"', example: 'Das gehört mir.',     exampleEn: 'That belongs to me.' },
     ],
     grammar: [
-      { rule: 'The full Dativ-pronoun table',
+      { rule: '⭐ THE FULL DATIV-PRONOUN TABLE',
         body:
           '              Subject (Nom)   →   Indirect object (Dat)\n' +
           '   1st sg     ich              →   mir\n' +
           '   2nd sg     du               →   dir\n' +
           '   3rd m      er               →   ihm\n' +
           '   3rd f      sie              →   ihr\n' +
-          '   3rd n      es               →   ihm\n' +
-          '   1st pl     wir              →   uns\n' +
-          '   2nd pl     ihr              →   euch\n' +
+          '   3rd n      es               →   ihm     (same as er)\n' +
+          '   1st pl     wir              →   uns     ✅ unchanged\n' +
+          '   2nd pl     ihr              →   euch    ✅ unchanged\n' +
           '   3rd pl     sie              →   ihnen\n' +
-          '   formal     Sie              →   Ihnen  (capital I)',
+          '   formal     Sie              →   Ihnen   (capital I)\n\n' +
+          '🧠 Most singular forms end in -r (miR, diR, ihR) or -m (ihM). uns & euch don\'t change.',
       },
-      { rule: 'When to use them',
+      { rule: '⚖️ DATIV vs AKKUSATIV — the mir/mich · ihm/ihn trap',
         body:
-          'After Dativ-only verbs: helfen, danken, geben, gehören, gefallen, antworten, glauben.\n' +
-          'After Dativ prepositions: mit, bei, zu, von, nach, aus, seit, gegenüber.\n' +
-          '  Wrong: „Das Buch gehört ich!"\n' +
-          '  Right: „Das Buch gehört mir!"\n' +
-          '  Wrong: „Er kommt mit du."\n' +
-          '  Right: „Er kommt mit dir."',
+          'Both are object pronouns; the VERB (or preposition) decides which set you need. Day-26 Dativ verbs + Day-25 Dativ preps → Dativ; normal verbs → Akkusativ:\n\n' +
+          '   Subject   Akkusativ      Dativ\n' +
+          '   ich       mich           mir\n' +
+          '   du        dich           dir\n' +
+          '   er        ihn            ihm\n' +
+          '   sie(she)  sie            ihr\n' +
+          '   wir       uns            uns    ✅ same\n' +
+          '   ihr       euch           euch   ✅ same\n' +
+          '   sie(they) sie            ihnen\n\n' +
+          'Worked contrast:\n' +
+          '  Er SIEHT mich.   (sehen = Akk)   Er HILFT mir.   (helfen = Dat)\n' +
+          '  Ich SEHE ihn.    (Akk)           Ich HELFE ihm.  (Dat)\n\n' +
+          '⚠ The single most-tested pair: ihn (Akk) vs ihm (Dat).',
+      },
+      { rule: '🅿️ THE TWO TRIGGERS — when a pronoun goes Dativ',
+        body:
+          'A pronoun takes the Dativ in exactly two situations:\n\n' +
+          '  1. After a DATIV VERB (Day 26):\n' +
+          '     helfen · danken · gehören · gefallen · antworten · glauben · gratulieren\n' +
+          '     "Ich helfe dir." · "Das gehört mir." · "Es gefällt ihr."\n\n' +
+          '  2. After a DATIV PREPOSITION (Day 25):\n' +
+          '     mit · bei · zu · von · nach · aus · seit · gegenüber\n' +
+          '     "Kommst du mit mir?" · "Ich wohne bei ihr." · "Ich gehe zu ihm."\n\n' +
+          '  Wrong: „Das Buch gehört ich!"   Right: „Das Buch gehört mir!"\n' +
+          '  Wrong: „Er kommt mit du."        Right: „Er kommt mit dir."',
+      },
+      { rule: '🎁 THE GIVE-SENTENCE — Dativ person + Akkusativ thing',
+        body:
+          'Verbs like geben, zeigen, schenken, schicken take a PERSON (Dativ) and a THING (Akkusativ) at once:\n\n' +
+          '  Ich gebe   dir       das Buch.\n' +
+          '             └ Dat person └ Akk thing\n' +
+          '  Sie zeigt  ihm        die Stadt.\n\n' +
+          '⭐ The pronoun-order flip: with TWO noun objects it\'s Dativ-then-Akkusativ, but when the THING becomes a pronoun, Akkusativ jumps in FRONT of Dativ:\n' +
+          '  Ich gebe dir das Buch.   →   Ich gebe es dir.\n' +
+          '            (Dat → Akk)              (Akk → Dat)\n' +
+          'Rule: a pronoun object comes before a noun object, and Akk-pronoun before Dat-pronoun.',
+      },
+      { rule: '🚦 PITFALLS — Dativ-pronoun traps',
+        body:
+          '• er → ihm (Dativ), NOT ihn (that\'s Akkusativ). The classic flip.\n' +
+          '• sie (she) → ihr in the Dativ — don\'t leave it as sie.\n' +
+          '• sie (they) → ihnen (lowercase); formal Sie → Ihnen (capital I).\n' +
+          '• uns and euch are identical in Akk and Dativ — no change.\n' +
+          '• After mit/bei/zu… always Dativ: "mit mir", never "mit mich".\n' +
+          '• gefallen/gehören take Dativ: "Das gefällt mir" (not mich), "Das gehört mir" (not mich).',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: '"He helps me." → Er hilft __.',                       answer: 'mir' },
-      { type: 'fill-blank', sentence: '"I help you (1 friend)." → Ich helfe __.',            answer: 'dir' },
-      { type: 'fill-blank', sentence: '"She gives him the book." → Sie gibt __ das Buch.',   answer: 'ihm' },
-      { type: 'fill-blank', sentence: '"I give her the book." → Ich gebe __ das Buch.',      answer: 'ihr' },
-      { type: 'fill-blank', sentence: '"We help you (group)." → Wir helfen __.',             answer: 'euch' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — Nom→Dat · Akk↔Dat contrast · trigger→case
+      { type: 'match',
+        pairs: [
+          { de: 'ich → ?', en: 'mir' },
+          { de: 'du → ?',  en: 'dir' },
+          { de: 'er → ?',  en: 'ihm' },
+          { de: 'sie (she) → ?', en: 'ihr' },
+          { de: 'sie (they) → ?', en: 'ihnen' },
+          { de: 'Sie (formal) → ?', en: 'Ihnen' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Er hilft ___ (me)',  en: 'mir (Dat)' },
+          { de: 'Er sieht ___ (me)',  en: 'mich (Akk)' },
+          { de: 'Ich helfe ___ (him)', en: 'ihm (Dat)' },
+          { de: 'Ich sehe ___ (him)',  en: 'ihn (Akk)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'mit / bei / zu', en: '🅿️ Dativ preposition → Dativ pronoun' },
+          { de: 'helfen / danken', en: '🤝 Dativ verb → Dativ pronoun' },
+          { de: 'sehen / lieben',  en: '🎯 Akkusativ verb → Akk pronoun' },
+          { de: 'gehören / gefallen', en: '🔄 Dativ flip verb → Dativ pronoun' },
+        ],
+      },
+
+      // 🤲 6 DATIV-PRONOUN fill-blanks (verbs + prepositions)
+      { type: 'fill-blank', sentence: '"He helps me." → Er hilft __.',                     answer: 'mir' },
+      { type: 'fill-blank', sentence: '"She gives him the book." → Sie gibt __ das Buch.', answer: 'ihm' },
+      { type: 'fill-blank', sentence: '"I give her the book." → Ich gebe __ das Buch.',    answer: 'ihr' },
       { type: 'fill-blank', sentence: '"They give us a computer." → Sie geben __ einen Computer.', answer: 'uns' },
-      { type: 'fill-blank', sentence: '"I help you (group)." → Ich helfe __.',               answer: 'euch' },
-      { type: 'fill-blank', sentence: '"He comes with me." → Er kommt mit __.',              answer: 'mir' },
-      { type: 'fill-blank', sentence: '"The book belongs to her." → Das Buch gehört __.',    answer: 'ihr' },
-      { type: 'multiple-choice', q: 'Akk pronoun for "her" vs Dat pronoun for "her" — pick the Dat one.',
+      { type: 'fill-blank', sentence: '"He comes with me." → Er kommt mit __.',            answer: 'mir' },
+      { type: 'fill-blank', sentence: '"The book belongs to her." → Das Buch gehört __.',  answer: 'ihr' },
+
+      // ⚖️ 3 AKK-vs-DAT decide-the-case fill-blanks
+      { type: 'fill-blank', sentence: '"I help him." (helfen = Dativ) → Ich helfe __.',    answer: 'ihm' },
+      { type: 'fill-blank', sentence: '"I see him." (sehen = Akk) → Ich sehe __.',         answer: 'ihn' },
+      { type: 'fill-blank', sentence: '"I am thanking you (formal)." → Ich danke __.',     answer: 'Ihnen', hint: 'capital I — formal you' },
+
+      // ⚠ 4 TRAP / CONTRAST MCQs
+      { type: 'multiple-choice', q: 'Akk pronoun for "her" vs Dat pronoun for "her" — pick the Dativ one.',
         options: ['sie','ihr','ihn','ihnen'], answer: 'ihr',
-        explain: 'Akk = sie (unchanged). Dat = ihr.' },
+        explain: 'Akk = sie (unchanged). Dativ = ihr.' },
+      { type: 'multiple-choice', q: '⚠ "I help him." — correct Dativ:',
+        options: ['Ich helfe ihn.','Ich helfe ihm.','Ich helfe er.','Ich helfe ihr.'],
+        answer: 'Ich helfe ihm.', explain: 'helfen takes Dativ → ihm (ihn is Akkusativ).' },
+      { type: 'multiple-choice', q: 'After "mit", the pronoun for "me" is…',
+        options: ['mich','mir','ich','mein'], answer: 'mir',
+        explain: 'mit is a Dativ preposition → mir.' },
+      { type: 'multiple-choice', q: '"Ich gebe dir das Buch" → replace "das Buch" with a pronoun:',
+        options: ['Ich gebe dir es.','Ich gebe es dir.','Ich gebe dir das.','Ich gebe ihm es.'],
+        answer: 'Ich gebe es dir.',
+        explain: 'When the thing is a pronoun, Akkusativ (es) comes BEFORE Dativ (dir).' },
+
+      // 💬 Mini dialogue — Dativ pronouns after verbs + prepositions + the give-sentence
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Kannst du mir helfen?',                 en: 'Can you help me?' },
+        { speaker: 'B', de: 'Klar, ich helfe dir gern.',            en: 'Sure, I\'ll gladly help you.' },
+        { speaker: 'A', de: 'Gehört das Buch dir?',                  en: 'Does the book belong to you?' },
+        { speaker: 'B', de: 'Nein, ich gebe es ihm zurück.',        en: 'No, I\'m giving it back to him.' },
+        { speaker: 'A', de: 'Kommst du nachher mit mir ins Café?',  en: 'Are you coming with me to the café later?' },
+        { speaker: 'B', de: 'Ja! Und das Café gefällt mir sehr.',   en: 'Yes! And I really like that café.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: '"I am thanking you (formal)." → Ich danke __.', answer: 'Ihnen', hint: 'capital I — formal you' },
+      { type: 'fill-blank', sentence: '"He helps me." → Er hilft __.', answer: 'mir' },
+      { type: 'multiple-choice', q: 'Dativ of "er" is…',
+        options: ['ihn','ihm','er','ihr'], answer: 'ihm' },
+      { type: 'multiple-choice', q: '⚠ "He comes with me." — correct German:',
+        options: ['Er kommt mit mich.','Er kommt mit mir.','Er kommt mit ich.','Er kommt mit mein.'],
+        answer: 'Er kommt mit mir.', explain: 'mit is a Dativ preposition → mir.' },
+      { type: 'fill-blank', sentence: '"I give her the book." → Ich gebe __ das Buch.', answer: 'ihr' },
+      { type: 'multiple-choice', q: 'Which is the same in Akkusativ AND Dativ?',
+        options: ['ich','er','uns','sie'], answer: 'uns' },
+      { type: 'multiple-choice', q: '"Ich gebe dir das Buch" → with a pronoun thing:',
+        options: ['Ich gebe dir es.','Ich gebe es dir.','Ich gebe dir das.','Ich gebe es dich.'],
+        answer: 'Ich gebe es dir.', explain: 'Akk-pronoun (es) before Dat-pronoun (dir).' },
     ],
   },
 
