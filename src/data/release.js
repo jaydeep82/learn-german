@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.8.9';
+export const VERSION = '3.8.10';
 export const RELEASE_DATE = '2026-06-01';
 
 export const RELEASES = [
+  {
+    version: '3.8.10',
+    date: '2026-06-01',
+    type: 'improvement',
+    title: 'Day 30 review — Akk-only + Wechsel prepositions (the full preposition picture)',
+    notes: [
+      'Reviewed Day 30 (More prepositions: Akk + Wechsel) end-to-end, parallel to the Day 14-29 full reviews. This closes the preposition system that began with Day 25\'s Dativ block. The previous version had 6 prepositions, 3 grammar bullets and 10 exercises. Reshaped into the complete picture — the always-Akkusativ block AND all 9 Wechselpräpositionen with the Wo?/Wohin? switch and both contraction sets.',
+      'Vocabulary 6 → 20 items (vocabLayout: "spotlight") grouped by role icon: 🎯 5 always-Akkusativ prepositions (für · um · ohne · durch · gegen — added durch & gegen) · 🔀 all 9 Wechselpräpositionen (in · an · auf · über · unter · vor · hinter · neben · zwischen — added 6 position prepositions) each with a worked Wo?/Wohin? example · 🔍 the two decider questions (Wo?→Dativ · Wohin?→Akkusativ) · 🔗 all 4 contractions in both cases (ins/ans for movement, im/am for location).',
+      'Grammar 3 → 5 callouts: 🎯 THE ALWAYS-AKKUSATIV BLOCK with the "FUDGO" memory hook (Für·Um·Durch·Gegen·Ohne) set against the Day-25 Dativ block · ⭐ WECHSELPRÄPOSITIONEN — the Wo?(Dativ)/Wohin?(Akkusativ) switch with three worked verb-pairs and the stay-verb-vs-move-verb trick · 🔀 THE 9 WECHSEL PREPOSITIONS full set + the an-vs-auf (vertical vs horizontal) distinction · 🔗 WECHSEL CONTRACTIONS — ins/ans signal movement (Akk), im/am signal location (Dat), "the little letter tells you the case" · 🚦 pitfalls (don\'t mix the Akk & Dativ blocks · Wechsel needs the test every time · ins-vs-im movement-vs-location · an-vs-auf surface).',
+      'Exercises reshaped (10 → 21 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: preposition → case group (Akk / Dativ / Wechsel) · Wo?/Wohin? → case · contraction → meaning (ins/ans/im/am).',
+      '• 3 🎯 ALWAYS-AKKUSATIV fill-blanks (für den · ohne einen · durch den).',
+      '• 5 🔀 WECHSEL Wo?/Wohin? fill-blanks (in der/die Stadt · auf dem/den Tisch · unter dem Bett).',
+      '• 2 🔗 CONTRACTION fill-blanks (ins for movement, im for location).',
+      '• 4 ⚠ CASE-DECISION / TRAP MCQs (case-by-question · mit-is-not-Akk · in-die-Stadt movement · auf-dem-Tisch location).',
+      '• 💬 Dinner-plan dialogue weaving um/ohne/für (Akk) with ins/im/neben dem (Wechsel both cases).',
+      'Quiz 1 → 7 items: für die Firma · in die Stadt (Wohin) · an der Wand (Wo) · FUDGO-takes-Akkusativ · Wohin→Akkusativ · ans-movement-contraction · im-location.',
+    ],
+  },
   {
     version: '3.8.9',
     date: '2026-06-01',

@@ -6274,61 +6274,182 @@ export const days = [
   /* ----- Day 30: Akkusativ + Wechsel prepositions ----- */
   {
     id: 30, week: 5,
+    vocabLayout: 'spotlight',
     title: 'More prepositions: Akk + Wechsel',
     titleDe: 'Mehr Präpositionen',
     emoji: '🧭',
-    objective: 'Master the Akkusativ-only prepositions AND the "two-way" prepositions that switch case.',
-    intro: 'On Day 25 you met the eight always-Dativ prepositions. Today: the three always-Akkusativ ones (für · um · ohne) and the trickiest group — Wechselpräpositionen (in, an, auf) — which switch between Dat and Akk depending on the question they answer.',
+    objective: 'Complete the preposition picture — the 4 always-Akkusativ prepositions AND the 9 two-way Wechselpräpositionen that switch case based on Wo? (Dativ) vs Wohin? (Akkusativ).',
+    intro: 'Day 25 gave you the 8 always-Dativ prepositions. Today closes the loop: the always-Akkusativ ones (für · um · ohne · durch · gegen) and the trickiest group of all — the 9 Wechselpräpositionen (in, an, auf, über, unter, vor, hinter, neben, zwischen) which flip between Dativ and Akkusativ depending on ONE question: Wo? (location → Dativ) or Wohin? (movement → Akkusativ).',
     vocabulary: [
-      { de: 'für',    en: 'for (always Akk)' },
-      { de: 'um',     en: 'at (time) / around (always Akk)' },
-      { de: 'ohne',   en: 'without (always Akk)' },
-      { de: 'in',     en: 'in / into (Wechsel)' },
-      { de: 'an',     en: 'at / on (Wechsel)' },
-      { de: 'auf',    en: 'on / onto (Wechsel)' },
+      // 🎯 ALWAYS-AKKUSATIV PREPOSITIONS
+      { de: 'für',   en: 'for',              emoji: '🎁', hint: '🎯 always Akk · "für dich"',            example: 'Das Geschenk ist für dich.',     exampleEn: 'The gift is for you.' },
+      { de: 'um',    en: 'at (time) / around', emoji: '🕐', hint: '🎯 always Akk · "um 8 Uhr"',          example: 'Ich esse um acht Uhr.',          exampleEn: 'I eat at eight o\'clock.' },
+      { de: 'ohne',  en: 'without',          emoji: '🚫', hint: '🎯 always Akk · "ohne dich"',          example: 'Ich gehe ohne den Schlüssel.',   exampleEn: 'I go without the key.' },
+      { de: 'durch', en: 'through',          emoji: '🚪', hint: '🎯 always Akk · "durch den Park"',      example: 'Wir gehen durch den Park.',      exampleEn: 'We walk through the park.' },
+      { de: 'gegen', en: 'against / around (time)', emoji: '🥊', hint: '🎯 always Akk · "gegen die Wand"', example: 'Der Ball fliegt gegen die Wand.', exampleEn: 'The ball flies against the wall.' },
+
+      // 🔀 THE 9 WECHSELPRÄPOSITIONEN — two-way (Wo?→Dat / Wohin?→Akk)
+      { de: 'in',       en: 'in / into',          emoji: '📥', hint: '🔀 Wo?→Dat · Wohin?→Akk',          example: 'Ich bin in der Stadt. / Ich gehe in die Stadt.', exampleEn: 'I am in the city. / I go into the city.' },
+      { de: 'an',       en: 'at / on (vertical)', emoji: '🖼️', hint: '🔀 walls, edges · Wo?→Dat / Wohin?→Akk', example: 'Das Bild hängt an der Wand. / Ich hänge es an die Wand.', exampleEn: 'The picture hangs on the wall. / I hang it on the wall.' },
+      { de: 'auf',      en: 'on / onto (horizontal)', emoji: '🍽️', hint: '🔀 surfaces · Wo?→Dat / Wohin?→Akk', example: 'Das Buch ist auf dem Tisch. / Ich lege es auf den Tisch.', exampleEn: 'The book is on the table. / I put it on the table.' },
+      { de: 'über',     en: 'over / above',       emoji: '🔝', hint: '🔀 Wo?→Dat / Wohin?→Akk',          example: 'Die Lampe hängt über dem Tisch.', exampleEn: 'The lamp hangs above the table.' },
+      { de: 'unter',    en: 'under / below',      emoji: '🔻', hint: '🔀 Wo?→Dat / Wohin?→Akk',          example: 'Die Katze ist unter dem Tisch.',  exampleEn: 'The cat is under the table.' },
+      { de: 'vor',      en: 'in front of / before', emoji: '⏮️', hint: '🔀 Wo?→Dat / Wohin?→Akk',         example: 'Ich warte vor dem Haus.',         exampleEn: 'I wait in front of the house.' },
+      { de: 'hinter',   en: 'behind',             emoji: '⏭️', hint: '🔀 Wo?→Dat / Wohin?→Akk',          example: 'Der Garten ist hinter dem Haus.', exampleEn: 'The garden is behind the house.' },
+      { de: 'neben',    en: 'next to / beside',   emoji: '↔️', hint: '🔀 Wo?→Dat / Wohin?→Akk',          example: 'Die Lampe steht neben dem Bett.', exampleEn: 'The lamp stands next to the bed.' },
+      { de: 'zwischen', en: 'between',            emoji: '🔃', hint: '🔀 Wo?→Dat / Wohin?→Akk',          example: 'Das Auto ist zwischen den Häusern.', exampleEn: 'The car is between the houses.' },
+
+      // 🔍 THE DECIDER QUESTIONS
+      { de: 'Wo?',    en: 'Where (at)? → DATIV',   emoji: '📍', hint: '⭐ location · no movement → Dativ',  example: 'Wo bist du? — In der Stadt.',     exampleEn: 'Where are you? — In the city.' },
+      { de: 'Wohin?', en: 'Where to? → AKKUSATIV', emoji: '➡️', hint: '⭐ movement / direction → Akkusativ', example: 'Wohin gehst du? — In die Stadt.', exampleEn: 'Where are you going? — Into the city.' },
+
+      // 🔗 WECHSEL CONTRACTIONS (Akk: into · Dat: at the)
+      { de: 'ins',  en: 'in + das (into the)',  emoji: '🔗', hint: '🔗 Akk · "ins Restaurant" = into the restaurant', example: 'Ich gehe ins Restaurant.',  exampleEn: 'I go into the restaurant.' },
+      { de: 'ans',  en: 'an + das (to the)',    emoji: '🔗', hint: '🔗 Akk · "ans Fenster" = to the window',          example: 'Ich gehe ans Fenster.',    exampleEn: 'I go to the window.' },
+      { de: 'im',   en: 'in + dem (in the)',    emoji: '🔗', hint: '🔗 Dat · "im Park" = in the park',                example: 'Ich bin im Park.',         exampleEn: 'I am in the park.' },
+      { de: 'am',   en: 'an + dem (at the)',    emoji: '🔗', hint: '🔗 Dat · "am Fenster" = at the window',           example: 'Ich stehe am Fenster.',    exampleEn: 'I stand at the window.' },
     ],
     grammar: [
-      { rule: '3 always-Akkusativ prepositions',
+      { rule: '🎯 THE ALWAYS-AKKUSATIV PREPOSITIONS — memorise the block',
         body:
-          'für · um · ohne — every noun after these is Akkusativ:\n' +
-          '  Ich kaufe Kaffee FÜR den Freund.\n' +
-          '  Ich esse UM 18 Uhr.\n' +
-          '  Ich gehe OHNE den Schlüssel weg.',
+          'These prepositions ALWAYS take the Akkusativ — no thinking, just flip masculine to den/einen:\n\n' +
+          '  für   — for          Das ist für den Mann.\n' +
+          '  um    — at / around  Wir essen um acht Uhr.\n' +
+          '  ohne  — without      Ich gehe ohne den Schlüssel.\n' +
+          '  durch — through      Wir gehen durch den Park.\n' +
+          '  gegen — against      Der Ball fliegt gegen die Wand.\n\n' +
+          '🧠 Memory hook: "FUDGO" — Für · Um · Durch · Gegen · Ohne. Pair it against the Day-25 Dativ block (mit/bei/zu/von/nach/aus/seit/gegenüber) so you always know which case a preposition forces.',
       },
-      { rule: 'Wechselpräpositionen — the case depends on the QUESTION',
+      { rule: '⭐ WECHSELPRÄPOSITIONEN — the Wo?/Wohin? switch',
         body:
-          'in · an · auf (and a few more later) take EITHER case.\n' +
-          '  "Wo?" (location, no movement) → DATIV.    Ich bin IN der Stadt.\n' +
-          '  "Wohin?" (movement INTO/ONTO) → AKKUSATIV. Ich gehe IN die Stadt.\n' +
-          'Same trick for an + auf:\n' +
-          '  Wo? → Das Bild hängt AN DER Wand.   (Dat — no movement)\n' +
-          '  Wohin? → Ich hänge das Bild AN DIE Wand. (Akk — movement)',
+          'Nine prepositions take EITHER case. One question decides:\n\n' +
+          '  📍 Wo?    (location · NO movement)   → DATIV\n' +
+          '  ➡️ Wohin? (movement · direction)      → AKKUSATIV\n\n' +
+          '  Ich bin  IN DER Stadt.    (Wo? → Dativ — der)\n' +
+          '  Ich gehe IN DIE Stadt.    (Wohin? → Akk — die)\n\n' +
+          '  Das Bild hängt AN DER Wand.   (Wo? → Dativ)\n' +
+          '  Ich hänge es AN DIE Wand.     (Wohin? → Akk)\n\n' +
+          '  Das Buch ist AUF DEM Tisch.   (Wo? → Dativ)\n' +
+          '  Ich lege es AUF DEN Tisch.    (Wohin? → Akk)\n\n' +
+          '🧠 Trick: if the verb is a "where to / put / go" verb (gehen, legen, stellen, hängen-action), it\'s movement → Akkusativ. If it\'s a "stay / be / located" verb (sein, liegen, stehen, hängen-state), it\'s location → Dativ.',
       },
-      { rule: 'New short forms',
+      { rule: '🔀 THE 9 WECHSEL PREPOSITIONS — the full set',
         body:
-          'Akkusativ contractions (less common but you\'ll see them):\n' +
-          '  in + das  → ins    "Ich gehe ins Restaurant."\n' +
-          '  an + das  → ans    "Ich gehe ans Fenster."',
+          'Learn them as one block (they\'re all about position):\n\n' +
+          '  in       — in / into\n' +
+          '  an       — at / on (vertical surface, edge)\n' +
+          '  auf      — on / onto (horizontal surface)\n' +
+          '  über     — over / above\n' +
+          '  unter    — under / below\n' +
+          '  vor      — in front of / before\n' +
+          '  hinter   — behind\n' +
+          '  neben    — next to\n' +
+          '  zwischen — between\n\n' +
+          '⚠ an vs auf: an = vertical contact / edges (an der Wand, am Fenster); auf = horizontal top surfaces (auf dem Tisch, auf dem Boden).',
+      },
+      { rule: '🔗 WECHSEL CONTRACTIONS — ins/ans (Akk) · im/am (Dat)',
+        body:
+          'The two-way prepositions contract with the article in BOTH cases:\n\n' +
+          '  Movement (Akkusativ + das):\n' +
+          '    in + das → ins    "Ich gehe ins Restaurant."\n' +
+          '    an + das → ans    "Ich gehe ans Fenster."\n\n' +
+          '  Location (Dativ + dem):\n' +
+          '    in + dem → im     "Ich bin im Restaurant."\n' +
+          '    an + dem → am     "Ich stehe am Fenster."\n\n' +
+          '🧠 -s ending (ins/ans) signals MOVEMENT (Akk); -m ending (im/am) signals LOCATION (Dat). The little letter tells you the case.',
+      },
+      { rule: '🚦 PITFALLS — preposition-case traps',
+        body:
+          '• für/um/ohne/durch/gegen → ALWAYS Akkusativ (never Dativ).\n' +
+          '• mit/bei/zu… → ALWAYS Dativ (Day 25) — don\'t mix the two blocks.\n' +
+          '• Wechsel prepositions need the Wo?/Wohin? test EVERY time — there is no default.\n' +
+          '• Movement → Akkusativ (in die Stadt); location → Dativ (in der Stadt). The verb usually tells you.\n' +
+          '• ins/ans = movement (Akk); im/am = location (Dat). Don\'t say "Ich gehe im Restaurant" for "going into".\n' +
+          '• an (vertical/edge) vs auf (horizontal top) — pick by the physical surface.',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — prep→case group · Wo?/Wohin?→case · contraction→meaning
+      { type: 'match',
+        pairs: [
+          { de: 'für / um / ohne / durch / gegen', en: '🎯 always Akkusativ' },
+          { de: 'mit / bei / zu / von',            en: '🅿️ always Dativ (Day 25)' },
+          { de: 'in / an / auf / über …',          en: '🔀 Wechsel (Wo?→Dat / Wohin?→Akk)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Wo? (location)',   en: '📍 → Dativ (der/dem)' },
+          { de: 'Wohin? (movement)', en: '➡️ → Akkusativ (die/den)' },
+          { de: 'Ich bin in der Stadt.',  en: '📍 Wo? · Dativ' },
+          { de: 'Ich gehe in die Stadt.', en: '➡️ Wohin? · Akkusativ' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'ins', en: '🔗 in + das (movement → Akk)' },
+          { de: 'ans', en: '🔗 an + das (movement → Akk)' },
+          { de: 'im',  en: '🔗 in + dem (location → Dat)' },
+          { de: 'am',  en: '🔗 an + dem (location → Dat)' },
+        ],
+      },
+
+      // 🎯 3 ALWAYS-AKKUSATIV fill-blanks
       { type: 'fill-blank', sentence: 'Akk-only: Ich kaufe Kaffee für __ Freund. (the, masc.)', answer: 'den' },
-      { type: 'fill-blank', sentence: 'Akk-only: Wir essen um __ Uhr. (eight)',                 answer: 'acht' },
       { type: 'fill-blank', sentence: 'Akk-only: Ich gehe ohne __ Schlüssel. (a, masc.)',       answer: 'einen' },
-      { type: 'fill-blank', sentence: 'Wechsel "wo?": Ich bin in __ Stadt. (the, fem. → Dat)',  answer: 'der' },
+      { type: 'fill-blank', sentence: 'Akk-only: Wir gehen durch __ Park. (the, masc.)',         answer: 'den' },
+
+      // 🔀 5 WECHSEL Wo?/Wohin? fill-blanks
+      { type: 'fill-blank', sentence: 'Wechsel "wo?": Ich bin in __ Stadt. (the, fem. → Dat)',   answer: 'der' },
       { type: 'fill-blank', sentence: 'Wechsel "wohin?": Ich gehe in __ Stadt. (the, fem. → Akk)', answer: 'die' },
-      { type: 'fill-blank', sentence: 'Wechsel "wohin?": Ich gehe __ Restaurant. (in + das contraction)', answer: 'ins' },
       { type: 'fill-blank', sentence: 'Wechsel "wo?": Das Buch ist auf __ Tisch. (the, masc. → Dat)', answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Wechsel "wohin?": Ich lege das Buch auf __ Tisch. (the, masc. → Akk)', answer: 'den' },
+      { type: 'fill-blank', sentence: 'Wechsel "wo?": Die Katze ist unter __ Bett. (the, neut. → Dat)', answer: 'dem' },
+
+      // 🔗 2 CONTRACTION fill-blanks
+      { type: 'fill-blank', sentence: 'Movement: Ich gehe __ Restaurant. (in + das)',  answer: 'ins' },
+      { type: 'fill-blank', sentence: 'Location: Ich bin __ Park. (in + dem)',          answer: 'im' },
+
+      // ⚠ 4 CASE-DECISION / TRAP MCQs
       { type: 'multiple-choice', q: '"in / an / auf" choose the case based on…',
-        options: ['Always Dativ', 'Always Akkusativ', 'The question (Wo? → Dat, Wohin? → Akk)', 'Whichever sounds better'],
+        options: ['Always Dativ','Always Akkusativ','The question (Wo? → Dat, Wohin? → Akk)','Whichever sounds better'],
         answer: 'The question (Wo? → Dat, Wohin? → Akk)' },
       { type: 'multiple-choice', q: 'Which preposition is NOT Akkusativ-only?',
         options: ['für','um','mit','ohne'], answer: 'mit',
         explain: '"mit" is in the always-Dativ group from Day 25.' },
+      { type: 'multiple-choice', q: '⚠ "I am going INTO the city." — correct German:',
+        options: ['Ich gehe in der Stadt.','Ich gehe in die Stadt.','Ich bin in die Stadt.','Ich gehe im Stadt.'],
+        answer: 'Ich gehe in die Stadt.',
+        explain: 'Movement (Wohin?) → Akkusativ → die Stadt.' },
+      { type: 'multiple-choice', q: '⚠ "The book is ON the table." (location) — correct German:',
+        options: ['Das Buch ist auf den Tisch.','Das Buch ist auf dem Tisch.','Das Buch ist auf der Tisch.','Das Buch ist auf das Tisch.'],
+        answer: 'Das Buch ist auf dem Tisch.',
+        explain: 'Location (Wo?) → Dativ → auf dem Tisch.' },
+
+      // 💬 Mini dialogue — Akk-only + Wechsel both cases + contractions
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Wohin gehst du um acht Uhr?',             en: 'Where are you going at eight o\'clock?' },
+        { speaker: 'B', de: 'Ich gehe ins Restaurant.',               en: 'I am going into the restaurant.' },
+        { speaker: 'A', de: 'Und wo ist das Restaurant?',             en: 'And where is the restaurant?' },
+        { speaker: 'B', de: 'Es ist im Zentrum, neben dem Park.',     en: 'It\'s in the centre, next to the park.' },
+        { speaker: 'A', de: 'Gehst du ohne deinen Freund?',           en: 'Are you going without your friend?' },
+        { speaker: 'B', de: 'Nein, ich kaufe das Essen für ihn und gehe mit ihm.', en: 'No, I\'m buying the food for him and going with him.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: '"I work for the company." → Ich arbeite für __ Firma. (the, fem. — Akk fem = die)', answer: 'die' },
+      { type: 'fill-blank', sentence: 'Wechsel "wohin?": Ich gehe in __ Stadt. (the, fem. → Akk)', answer: 'die' },
+      { type: 'fill-blank', sentence: 'Wechsel "wo?": Das Bild hängt an __ Wand. (the, fem. → Dat)', answer: 'der' },
+      { type: 'multiple-choice', q: 'für · um · ohne · durch · gegen all take which case?',
+        options: ['Nominativ','Akkusativ','Dativ','It depends'], answer: 'Akkusativ' },
+      { type: 'multiple-choice', q: 'Wechsel preposition + movement (Wohin?) →',
+        options: ['Dativ','Akkusativ','Nominativ','no change'], answer: 'Akkusativ' },
+      { type: 'fill-blank', sentence: 'Movement contraction: Ich gehe __ Fenster. (an + das)', answer: 'ans' },
+      { type: 'multiple-choice', q: '⚠ "I am IN the restaurant." (location) =',
+        options: ['Ich bin ins Restaurant.','Ich bin im Restaurant.','Ich gehe ins Restaurant.','Ich bin in den Restaurant.'],
+        answer: 'Ich bin im Restaurant.', explain: 'Location (Wo?) → Dativ → im (in + dem).' },
     ],
   },
 
