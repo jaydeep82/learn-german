@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.9.0';
+export const VERSION = '3.9.1';
 export const RELEASE_DATE = '2026-06-01';
 
 export const RELEASES = [
+  {
+    version: '3.9.1',
+    date: '2026-06-01',
+    type: 'improvement',
+    title: 'Day 31 review — Family + possessives (all 8, declined like "ein")',
+    notes: [
+      'Reviewed Day 31 (Family) end-to-end, parallel to the Day 14-30 full reviews. The previous version had 17 bare vocab items, 2 grammar bullets and 15 exercises. Reshaped into a complete family + possessive toolkit with spotlight vocab, the full declension grid and the euer/ihr traps.',
+      'Vocabulary 17 → 21 items (vocabLayout: "spotlight") grouped by role icon: 👨‍👩‍👧 core family (Familie · Eltern · Vater · Mutter · Bruder · Schwester · Geschwister) · 👶 children & grandparents (Sohn · Tochter · das Kind [neuter!] · Großeltern · Opa · Oma) · 🔑 the 8 possessives (mein · dein · sein · ihr · unser · euer · ihr · Ihr) each with a worked example. Added Geschwister, das Kind, Opa, Oma.',
+      'Grammar 2 → 5 callouts: ⭐ THE 8 POSSESSIVES (one per person, with the er+es→sein and ihr=her/their traps) · ⭐ THEY ALL DECLINE LIKE "EIN" — the full Nom/Akk/Dat grid across all genders with the "learn the masculine row" shortcut · ⚠ EUER — the e-dropping irregular (eure/euren/eurem) · ⚠ ihr — the triple-meaning word (her / their / you-group / formal Ihr / Dativ to-her) · 🚦 pitfalls (das Kind neuter · er+es→sein · euer drops -e · ein-endings · plural-only family nouns · capital formal Ihr).',
+      'Exercises reshaped (15 → 21 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: person → possessive (6) · family word → meaning (6) · ein-ending across Nom/Akk/Dat (4).',
+      '• 5 🔑 PERSON→POSSESSIVE fill-blanks (one per person: mein/dein/seine/ihr/unsere).',
+      '• 4 ⭐ DECLINE-LIKE-EIN fill-blanks (Akk meinen · Nom meine · Dat meinem · neuter mein).',
+      '• 2 ⚠ EUER-drop fill-blanks (eure / euren).',
+      '• 3 ⚠ TRAP MCQs (Akk-fem meine · register dein · neuter mein Kind).',
+      '• 💬 Family dialogue weaving Geschwister, dein/mein/eure/unsere + the bei meiner Oma Dativ.',
+      'Quiz 2 → 7 items: Akk-fem meine · register dein · Akk meinen · er+es→sein · Dat meinem · euer-drop eure · neuter mein Kind.',
+    ],
+  },
   {
     version: '3.9.0',
     date: '2026-06-01',

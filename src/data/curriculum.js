@@ -3653,73 +3653,175 @@ export const days = [
 
   {
     id: 31, week: 5,
+    vocabLayout: 'spotlight',
     title: 'Family',
     titleDe: 'Die Familie',
     emoji: '👨‍👩‍👧',
-    objective: 'Talk about your family with possessives.',
-    intro: 'Family vocab plus the possessive "mein" (my). It declines just like "ein".',
+    objective: 'Name every family member, master the 8 possessives (mein · dein · sein · ihr …), and decline them like "ein" across Nominativ, Akkusativ and Dativ.',
+    intro: 'Family is one of the most useful topics to talk about — and it\'s the perfect home for the possessives. Today you learn the family nouns AND the 8 possessive words (mein = my, dein = your, sein = his, ihr = her …). The magic: every possessive declines EXACTLY like "ein", so once you know einen/eine/einem you already know meinen/meine/meinem.',
     vocabulary: [
-      // Family nouns
-      { de: 'die Familie',  en: 'the family' },
-      { de: 'der Vater',    en: 'the father' },     { de: 'die Mutter', en: 'the mother' },
-      { de: 'der Bruder',   en: 'the brother' },    { de: 'die Schwester', en: 'the sister' },
-      { de: 'der Sohn',     en: 'the son' },        { de: 'die Tochter',   en: 'the daughter' },
-      { de: 'die Eltern',   en: 'the parents (pl)' },
-      { de: 'die Großeltern', en: 'the grandparents (pl)' },
-      // Full possessive pronoun set — slide 290
-      { de: 'mein',  en: 'my' },
-      { de: 'dein',  en: 'your (1 friend)' },
-      { de: 'sein',  en: 'his / its' },
-      { de: 'ihr',   en: 'her' },
-      { de: 'unser', en: 'our' },
-      { de: 'euer',  en: 'your (group of friends)' },
-      { de: 'ihr',   en: 'their' },
-      { de: 'Ihr',   en: 'your (formal — capital I)' },
+      // 👨‍👩‍👧 CORE FAMILY — the household
+      { de: 'die Familie',    en: 'the family',        emoji: '👨‍👩‍👧', hint: 'fem · "meine Familie"',                example: 'Meine Familie ist groß.',     exampleEn: 'My family is big.' },
+      { de: 'die Eltern',     en: 'the parents (pl)',  emoji: '👫', hint: 'plural only · "meine Eltern"',          example: 'Meine Eltern wohnen in Berlin.', exampleEn: 'My parents live in Berlin.' },
+      { de: 'der Vater',      en: 'the father',        emoji: '👨', hint: 'masc · informal: Papa',                 example: 'Mein Vater ist Lehrer.',      exampleEn: 'My father is a teacher.' },
+      { de: 'die Mutter',     en: 'the mother',        emoji: '👩', hint: 'fem · informal: Mama',                  example: 'Meine Mutter heißt Anna.',    exampleEn: 'My mother\'s name is Anna.' },
+      { de: 'der Bruder',     en: 'the brother',       emoji: '👦', hint: 'masc · pl: die Brüder',                 example: 'Mein Bruder spielt Fußball.', exampleEn: 'My brother plays football.' },
+      { de: 'die Schwester',  en: 'the sister',        emoji: '👧', hint: 'fem · pl: die Schwestern',             example: 'Meine Schwester wohnt in Köln.', exampleEn: 'My sister lives in Cologne.' },
+      { de: 'die Geschwister', en: 'siblings (pl)',    emoji: '🧒', hint: 'plural only · brothers & sisters',      example: 'Ich habe zwei Geschwister.',  exampleEn: 'I have two siblings.' },
+
+      // 👶 CHILDREN & GRANDPARENTS
+      { de: 'der Sohn',       en: 'the son',           emoji: '👦', hint: 'masc · pl: die Söhne',                  example: 'Ihr Sohn lernt Deutsch.',     exampleEn: 'Her son is learning German.' },
+      { de: 'die Tochter',    en: 'the daughter',      emoji: '👧', hint: 'fem · pl: die Töchter',                example: 'Sein Tochter… → Seine Tochter ist klein.', exampleEn: 'His daughter is little.' },
+      { de: 'das Kind',       en: 'the child',         emoji: '🧒', hint: 'neuter! · "mein Kind"',                 example: 'Mein Kind spielt im Garten.', exampleEn: 'My child plays in the garden.' },
+      { de: 'die Großeltern', en: 'the grandparents (pl)', emoji: '👴', hint: 'plural · Opa + Oma',               example: 'Meine Großeltern sind nett.', exampleEn: 'My grandparents are kind.' },
+      { de: 'der Opa',        en: 'grandpa',           emoji: '👴', hint: 'informal · der Großvater = formal',     example: 'Mein Opa ist achtzig.',       exampleEn: 'My grandpa is eighty.' },
+      { de: 'die Oma',        en: 'grandma',           emoji: '👵', hint: 'informal · die Großmutter = formal',    example: 'Meine Oma kocht gern.',       exampleEn: 'My grandma likes to cook.' },
+
+      // 🔑 THE 8 POSSESSIVES — one per person
+      { de: 'mein',  en: 'my (ich)',               emoji: '🙋', hint: '⭐ declines like ein · meinen/meine/meinem', example: 'Das ist mein Vater.',     exampleEn: 'That is my father.' },
+      { de: 'dein',  en: 'your (du · 1 friend)',   emoji: '👉', hint: '⭐ deinen/deine/deinem',                   example: 'Wo ist dein Bruder?',      exampleEn: 'Where is your brother?' },
+      { de: 'sein',  en: 'his / its (er / es)',    emoji: '👨', hint: '⚠ er→sein AND es→sein',                   example: 'Sein Sohn ist klein.',     exampleEn: 'His son is little.' },
+      { de: 'ihr',   en: 'her (sie)',              emoji: '👩', hint: '⚠ sie(she)→ihr · don\'t confuse with Dativ ihr', example: 'Ihr Mann heißt Tom.',  exampleEn: 'Her husband is called Tom.' },
+      { de: 'unser', en: 'our (wir)',              emoji: '👥', hint: 'unseren/unsere/unserem',                  example: 'Unsere Familie ist groß.', exampleEn: 'Our family is big.' },
+      { de: 'euer',  en: 'your (ihr · group)',     emoji: '👨‍👩‍👧', hint: '⚠ drops the e before endings: eure, euren', example: 'Wo sind eure Eltern?',  exampleEn: 'Where are your parents?' },
+      { de: 'ihr',   en: 'their (sie pl)',         emoji: '🧑‍🤝‍🧑', hint: '⚠ sie(they)→ihr · same word as "her"',  example: 'Ihr Haus ist groß.',       exampleEn: 'Their house is big.' },
+      { de: 'Ihr',   en: 'your (Sie · formal)',    emoji: '🤝', hint: '⚠ formal · ALWAYS capital I',             example: 'Ist das Ihr Auto?',        exampleEn: 'Is that your car? (formal)' },
     ],
     grammar: [
-      { rule: 'Possessivpronomen — full table',
+      { rule: '⭐ THE 8 POSSESSIVES — one per person',
         body:
-          'Each subject pronoun has its own possessive. They decline like "ein/eine":\n' +
-          '• ich → mein (my)\n' +
-          '• du → dein (your, one friend)\n' +
-          '• er → sein (his)  ·  es → sein (its)\n' +
-          '• sie → ihr (her)\n' +
-          '• wir → unser (our)\n' +
-          '• ihr → euer (your, group of friends)\n' +
-          '• sie → ihr (their)\n' +
-          '• Sie → Ihr (your, formal — always capital)',
+          'Every subject pronoun has its own possessive word:\n\n' +
+          '  ich → mein   (my)            wir → unser  (our)\n' +
+          '  du  → dein   (your, friend)  ihr → euer   (your, group)\n' +
+          '  er  → sein   (his)           sie → ihr    (their)\n' +
+          '  es  → sein   (its)           Sie → Ihr    (your, formal · capital)\n' +
+          '  sie → ihr    (her)\n\n' +
+          '⚠ Two traps to watch: (1) er AND es both → sein. (2) ihr means BOTH "her" (sie=she) AND "their" (sie=they) — context decides. Formal "Ihr" is always capitalised.',
       },
-      { rule: 'Endings (Nominativ → Akkusativ)',
+      { rule: '⭐ THEY ALL DECLINE LIKE "EIN" — that\'s the whole rule',
         body:
-          'mein behaves exactly like ein:\n' +
-          '• masc.: mein → meinen (Akk.)   "mein Bruder" → "meinen Bruder"\n' +
-          '• fem.:  meine → meine          "meine Schwester" → "meine Schwester"\n' +
-          '• neut.: mein → mein            "mein Kind" → "mein Kind"\n' +
-          '• plural: meine → meine         "meine Eltern" → "meine Eltern"\n' +
-          'Replace "m" with d/s/uns/eu/ihr to get the same six endings for the other persons.',
+          'A possessive takes the SAME endings as ein/eine. Learn the masculine row and you know the system:\n\n' +
+          '            masc.     fem.      neut.     plural\n' +
+          '  Nom.      mein      meine     mein      meine\n' +
+          '  Akk.      meinen    meine     mein      meine\n' +
+          '  Dat.      meinem    meiner    meinem    meinen +(-n)\n\n' +
+          '  "Mein Bruder ist hier."        (Nom. masc.)\n' +
+          '  "Ich sehe meinen Bruder."      (Akk. masc. → -en)\n' +
+          '  "Ich helfe meinem Bruder."     (Dat. masc. → -em)\n\n' +
+          'Swap the stem (mein → dein/sein/ihr/unser/euer/Ihr) and the SAME endings apply. So "deinen", "seinem", "ihre", "unseren" all follow the ein-pattern.',
+      },
+      { rule: '⚠ EUER — the e-dropping irregular',
+        body:
+          'euer (your, group) is the one odd stem: when it takes an ending, the middle -e- drops:\n\n' +
+          '  euer  → eure  (not "euere")     "eure Familie"\n' +
+          '  euer  → euren (not "eueren")    "euren Bruder" (Akk.)\n' +
+          '  euer  → eurem                   "eurem Vater" (Dat.)\n\n' +
+          'Only the bare Nominativ-masc/neuter form stays "euer" (euer Vater, euer Kind). Everywhere else it\'s eur-.',
+      },
+      { rule: '⚠ ihr — the triple-meaning word',
+        body:
+          'The little word "ihr" wears three hats — keep them apart by role:\n\n' +
+          '  ihr  = "her"          (possessive, sie=she):  Ihr Mann → her husband\n' +
+          '  ihr  = "their"        (possessive, sie=they): Ihr Haus → their house\n' +
+          '  ihr  = "you (group)"  (subject pronoun):      Ihr seid nett → you are nice\n' +
+          '  Ihr  = "your" formal  (capital I):            Ihr Auto → your car\n\n' +
+          'Plus the Dativ pronoun "ihr" = "to her" (Day 29). Context and capitalisation are your guides.',
+      },
+      { rule: '🚦 PITFALLS — possessive traps',
+        body:
+          '• das Kind is NEUTER → "mein Kind" (not meine), "meinem Kind" in Dativ.\n' +
+          '• er and es both take sein; only sie (she) takes ihr.\n' +
+          '• euer drops its -e- before endings: eure / euren / eurem.\n' +
+          '• Possessive endings = ein endings: masc Akk adds -en (meinen Bruder).\n' +
+          '• Eltern, Geschwister, Großeltern are PLURAL-only — always meine/deine + plural verb.\n' +
+          '• Formal "Ihr" is capitalised; "ihr" (her/their/you-group) is not.',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: '__ Vater ist Lehrer. (my)', answer: 'Mein' },
-      { type: 'fill-blank', sentence: 'Ich sehe __ Bruder. (my, Akk.)', answer: 'meinen' },
-      { type: 'fill-blank', sentence: '__ Mutter heißt Anna. (my)', answer: 'Meine' },
-      // Full-table drills — one item per person
-      { type: 'fill-blank', sentence: '__ Bruder spielt Fußball. (your, 1 friend)',           answer: 'Dein' },
-      { type: 'fill-blank', sentence: '__ Schwester wohnt in Berlin. (his)',                  answer: 'Seine' },
-      { type: 'fill-blank', sentence: '__ Vater arbeitet in der Firma. (her)',                answer: 'Ihr' },
-      { type: 'fill-blank', sentence: '__ Familie ist groß. (our)',                           answer: 'Unsere' },
-      { type: 'fill-blank', sentence: '__ Eltern sind nett. (your, plural — group of friends)', answer: 'Eure', hint: 'euer drops the e before -e: eure, euren' },
-      { type: 'fill-blank', sentence: '__ Sohn lernt Deutsch. (their)',                       answer: 'Ihr' },
-      // Slide 291 translation drill — translate each line
-      { type: 'fill-blank', sentence: '"My friend (m) sees my colleague (f)." → __ Freund sieht meine Kollegin.', answer: 'Mein' },
-      { type: 'fill-blank', sentence: '"My boss (m) works on the weekend." → __ Chef arbeitet am Wochenende.',    answer: 'Mein' },
-      { type: 'fill-blank', sentence: '"The teacher (f) sees my friend (m) tomorrow." → Die Lehrerin sieht __ Freund morgen.', answer: 'meinen', hint: 'Akkusativ masculine' },
-      { type: 'fill-blank', sentence: '"My friends go to my restaurant in the evening." → __ Freunde gehen zu meinem Restaurant am Abend.', answer: 'Meine' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — person→possessive · family word→meaning · ein-endings
+      { type: 'match',
+        pairs: [
+          { de: 'ich → ?',  en: 'mein' },
+          { de: 'du → ?',   en: 'dein' },
+          { de: 'er → ?',   en: 'sein' },
+          { de: 'sie (she) → ?', en: 'ihr' },
+          { de: 'wir → ?',  en: 'unser' },
+          { de: 'ihr (group) → ?', en: 'euer' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'der Vater',     en: '👨 father' },
+          { de: 'die Mutter',    en: '👩 mother' },
+          { de: 'die Schwester', en: '👧 sister' },
+          { de: 'die Eltern',    en: '👫 parents (pl)' },
+          { de: 'das Kind',      en: '🧒 child (neuter!)' },
+          { de: 'die Großeltern', en: '👴 grandparents (pl)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'mein Bruder (Nom.)',     en: 'subject → mein' },
+          { de: 'Ich sehe ___ Bruder (Akk.)', en: 'meinen' },
+          { de: 'Ich helfe ___ Bruder (Dat.)', en: 'meinem' },
+          { de: 'meine Schwester (Akk.)', en: 'fem → meine (no change)' },
+        ],
+      },
+
+      // 🔑 5 PERSON→POSSESSIVE fill-blanks (one per person)
+      { type: 'fill-blank', sentence: '__ Vater ist Lehrer. (my)',                  answer: 'Mein' },
+      { type: 'fill-blank', sentence: '__ Bruder spielt Fußball. (your, 1 friend)', answer: 'Dein' },
+      { type: 'fill-blank', sentence: '__ Schwester wohnt in Berlin. (his)',        answer: 'Seine' },
+      { type: 'fill-blank', sentence: '__ Vater arbeitet in der Firma. (her)',      answer: 'Ihr' },
+      { type: 'fill-blank', sentence: '__ Familie ist groß. (our)',                 answer: 'Unsere' },
+
+      // ⭐ 4 DECLINE-LIKE-EIN fill-blanks (Nom/Akk/Dat)
+      { type: 'fill-blank', sentence: 'Akk masc.: Ich sehe __ Bruder. (my)',        answer: 'meinen' },
+      { type: 'fill-blank', sentence: 'Nom. fem.: __ Mutter heißt Anna. (my)',      answer: 'Meine' },
+      { type: 'fill-blank', sentence: 'Dat masc.: Ich helfe __ Vater. (my)',        answer: 'meinem', hint: 'Dativ masc → -em' },
+      { type: 'fill-blank', sentence: 'Neuter: __ Kind spielt. (my — das Kind!)',   answer: 'Mein' },
+
+      // ⚠ 2 EUER-drop fill-blanks
+      { type: 'fill-blank', sentence: '__ Eltern sind nett. (your, group)',          answer: 'Eure', hint: 'euer drops the e: eure' },
+      { type: 'fill-blank', sentence: 'Akk: Ich besuche __ Bruder. (your, group)',   answer: 'euren', hint: 'euer → euren' },
+
+      // ⚠ 3 TRAP MCQs (Akk fem · register · neuter Kind)
+      { type: 'multiple-choice', q: '"Ich liebe __ Schwester." (my, Akk.)',
+        options: ['mein','meinen','meine','meiner'], answer: 'meine',
+        explain: 'Schwester is fem → meine (no change in Akk).' },
+      { type: 'multiple-choice', q: '"Where is YOUR coffee?" (1 friend, masc.)',
+        options: ['mein','dein','sein','euer'], answer: 'dein' },
+      { type: 'multiple-choice', q: '⚠ "my child" (das Kind = neuter):',
+        options: ['meine Kind','meinen Kind','mein Kind','meiner Kind'], answer: 'mein Kind',
+        explain: 'Neuter takes mein (like ein), no ending in Nom/Akk.' },
+
+      // 💬 Mini dialogue — family + possessives in real chat
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Ist deine Familie groß?',                 en: 'Is your family big?' },
+        { speaker: 'B', de: 'Ja! Ich habe zwei Geschwister.',          en: 'Yes! I have two siblings.' },
+        { speaker: 'A', de: 'Was macht dein Bruder?',                  en: 'What does your brother do?' },
+        { speaker: 'B', de: 'Mein Bruder ist Arzt, und meine Schwester studiert.', en: 'My brother is a doctor, and my sister studies.' },
+        { speaker: 'A', de: 'Und wo wohnen eure Eltern?',             en: 'And where do your parents live?' },
+        { speaker: 'B', de: 'Unsere Eltern wohnen bei meiner Oma.',    en: 'Our parents live at my grandma\'s.' },
+      ]},
     ],
     quiz: [
-      { type: 'multiple-choice', q: '"Ich liebe __ Schwester." (my, Akk.)', options: ['mein','meinen','meine','meiner'], answer: 'meine' },
-      { type: 'multiple-choice', q: '"Where is YOUR coffee?" (1 friend, masc.)', options: ['mein','dein','sein','euer'], answer: 'dein' },
+      { type: 'multiple-choice', q: '"Ich liebe __ Schwester." (my, Akk.)',
+        options: ['mein','meinen','meine','meiner'], answer: 'meine' },
+      { type: 'multiple-choice', q: '"Where is YOUR coffee?" (1 friend, masc.)',
+        options: ['mein','dein','sein','euer'], answer: 'dein' },
+      { type: 'fill-blank', sentence: 'Akk masc.: Ich sehe __ Bruder. (my)', answer: 'meinen' },
+      { type: 'multiple-choice', q: 'er and es both take which possessive?',
+        options: ['ihr','sein','mein','euer'], answer: 'sein',
+        explain: 'er → sein (his), es → sein (its).' },
+      { type: 'fill-blank', sentence: 'Dat masc.: Ich helfe __ Vater. (my)', answer: 'meinem' },
+      { type: 'multiple-choice', q: '⚠ "your parents" (group of friends):',
+        options: ['euer Eltern','euere Eltern','eure Eltern','euren Eltern'], answer: 'eure Eltern',
+        explain: 'euer drops the e before an ending → eure.' },
+      { type: 'multiple-choice', q: '"my child" (das Kind = neuter):',
+        options: ['meine Kind','mein Kind','meinen Kind','meinem Kind'], answer: 'mein Kind' },
     ],
   },
 
