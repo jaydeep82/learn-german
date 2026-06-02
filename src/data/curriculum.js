@@ -3827,34 +3827,198 @@ export const days = [
 
   {
     id: 32, week: 5,
+    vocabLayout: 'spotlight',
     title: 'Daily routine',
     titleDe: 'Der Tagesablauf',
     emoji: '🌅',
-    objective: 'Describe a normal day with time markers.',
-    intro: 'Stitch together everything: pronouns, verbs, time words, articles.',
+    objective: 'Narrate a full day in order — wake to sleep — using routine verbs (many separable), time-of-day markers, clock times, and the time-first V2 inversion.',
+    intro: 'Today everything comes together: the separable verbs from Day 12, the V2 word-order rule, and time words combine to describe a real day. You\'ll learn the routine verbs in sequence (aufstehen → frühstücken → arbeiten → … → schlafen), the time-of-day markers (morgens · mittags · abends), how to tell the clock, and the key move — when a time word leads, the verb STAYS in slot 2 and the subject jumps behind it.',
     vocabulary: [
-      { de: 'aufstehen',     en: 'to get up' },
-      { de: 'frühstücken',   en: 'to have breakfast' },
-      { de: 'arbeiten',      en: 'to work' },
-      { de: 'Mittagessen',   en: 'lunch' },
-      { de: 'nach Hause gehen', en: 'to go home' },
-      { de: 'fernsehen',     en: 'to watch TV' },
-      { de: 'schlafen',      en: 'to sleep' },
+      // 🌅 THE ROUTINE — verbs in daily order (★ = separable)
+      { de: 'aufstehen',        en: 'to get up ★',          emoji: '⏰', hint: '★ separable · "Ich stehe um 7 auf"',        example: 'Ich stehe um sieben Uhr auf.',     exampleEn: 'I get up at seven.' },
+      { de: 'aufwachen',        en: 'to wake up ★',         emoji: '😴', hint: '★ separable · before getting up',           example: 'Ich wache früh auf.',              exampleEn: 'I wake up early.' },
+      { de: 'sich duschen',     en: 'to shower',            emoji: '🚿', hint: 'reflexive · "Ich dusche mich"',             example: 'Ich dusche mich am Morgen.',       exampleEn: 'I shower in the morning.' },
+      { de: 'frühstücken',      en: 'to have breakfast',    emoji: '🍳', hint: 'regular · das Frühstück = breakfast',       example: 'Ich frühstücke um acht Uhr.',      exampleEn: 'I have breakfast at eight.' },
+      { de: 'zur Arbeit fahren', en: 'to go to work',       emoji: '🚌', hint: 'fahren + zur Arbeit (Dativ)',               example: 'Ich fahre mit dem Bus zur Arbeit.', exampleEn: 'I go to work by bus.' },
+      { de: 'arbeiten',         en: 'to work',              emoji: '💼', hint: 'regular · -t stem → du arbeitest',          example: 'Ich arbeite von neun bis fünf.',   exampleEn: 'I work from nine to five.' },
+      { de: 'zu Mittag essen',  en: 'to have lunch',        emoji: '🍽️', hint: 'essen + zu Mittag · das Mittagessen',      example: 'Ich esse um halb eins zu Mittag.', exampleEn: 'I have lunch at half past twelve.' },
+      { de: 'nach Hause gehen', en: 'to go home',           emoji: '🏠', hint: 'nach Hause = (to) home · fixed phrase',     example: 'Ich gehe um sechs nach Hause.',    exampleEn: 'I go home at six.' },
+      { de: 'einkaufen',        en: 'to shop ★',            emoji: '🛒', hint: '★ separable · "Ich kaufe ein"',             example: 'Ich kaufe am Abend ein.',          exampleEn: 'I shop in the evening.' },
+      { de: 'kochen',           en: 'to cook',              emoji: '🍲', hint: 'regular · das Abendessen = dinner',         example: 'Ich koche das Abendessen.',        exampleEn: 'I cook dinner.' },
+      { de: 'fernsehen',        en: 'to watch TV ★',        emoji: '📺', hint: '★ separable · "Ich sehe fern"',             example: 'Ich sehe am Abend fern.',          exampleEn: 'I watch TV in the evening.' },
+      { de: 'ins Bett gehen',   en: 'to go to bed',         emoji: '🛏️', hint: 'ins Bett = to bed (Akk · movement)',        example: 'Ich gehe um elf ins Bett.',        exampleEn: 'I go to bed at eleven.' },
+      { de: 'schlafen',         en: 'to sleep',             emoji: '💤', hint: 'stem-changer a→ä · du schläfst',            example: 'Ich schlafe acht Stunden.',        exampleEn: 'I sleep eight hours.' },
+
+      // 🕐 TIME-OF-DAY MARKERS (the -s adverbs)
+      { de: 'morgens',  en: 'in the morning(s)',   emoji: '🌅', hint: 'time adverb · often leads → V2 inversion',  example: 'Morgens trinke ich Kaffee.',  exampleEn: 'In the mornings I drink coffee.' },
+      { de: 'mittags',  en: 'at midday',           emoji: '🌞', hint: 'around noon',                              example: 'Mittags esse ich wenig.',     exampleEn: 'At midday I eat little.' },
+      { de: 'nachmittags', en: 'in the afternoon', emoji: '🌤️', hint: 'after noon',                               example: 'Nachmittags arbeite ich.',    exampleEn: 'In the afternoon I work.' },
+      { de: 'abends',   en: 'in the evening(s)',   emoji: '🌆', hint: 'time adverb · leads → V2 inversion',        example: 'Abends sehe ich fern.',       exampleEn: 'In the evenings I watch TV.' },
+      { de: 'nachts',   en: 'at night',            emoji: '🌙', hint: 'during the night',                         example: 'Nachts schlafe ich tief.',    exampleEn: 'At night I sleep deeply.' },
+
+      // 🕐 CLOCK TIME
+      { de: 'um … Uhr',     en: 'at … o\'clock',     emoji: '🕐', hint: '⭐ um + number + Uhr · "um 7 Uhr"',     example: 'Ich stehe um sieben Uhr auf.', exampleEn: 'I get up at seven o\'clock.' },
+      { de: 'halb …',       en: 'half past (the hour BEFORE)', emoji: '🕜', hint: '⚠ halb acht = 7:30 (half TO eight!)', example: 'Ich frühstücke um halb acht.', exampleEn: 'I have breakfast at 7:30.' },
+      { de: 'Viertel nach', en: 'quarter past',      emoji: '🕒', hint: 'Viertel nach drei = 3:15',              example: 'Viertel nach drei.',           exampleEn: 'Quarter past three.' },
+      { de: 'Viertel vor',  en: 'quarter to',        emoji: '🕘', hint: 'Viertel vor vier = 3:45',              example: 'Viertel vor vier.',            exampleEn: 'Quarter to four.' },
+
+      // 🔗 SEQUENCE CONNECTORS
+      { de: 'zuerst',  en: 'first',          emoji: '1️⃣', hint: 'opens a sequence · leads → V2',  example: 'Zuerst stehe ich auf.',       exampleEn: 'First I get up.' },
+      { de: 'dann',    en: 'then',           emoji: '➡️', hint: 'next step · leads → V2',          example: 'Dann frühstücke ich.',        exampleEn: 'Then I have breakfast.' },
+      { de: 'danach',  en: 'after that',     emoji: '⏩', hint: 'after that · leads → V2',         example: 'Danach fahre ich zur Arbeit.', exampleEn: 'After that I go to work.' },
+      { de: 'schließlich', en: 'finally',    emoji: '🔚', hint: 'last step · leads → V2',          example: 'Schließlich gehe ich ins Bett.', exampleEn: 'Finally I go to bed.' },
     ],
     grammar: [
-      { rule: 'Time first', body: 'Morgens stehe ich um 7 Uhr auf. — When time leads, the verb still keeps slot 2 → subject moves after the verb.' },
+      { rule: '⭐ TIME-FIRST → V2 INVERSION (the key move)',
+        body:
+          'When a time word OPENS the sentence, the conjugated verb STILL keeps slot 2 — so the subject jumps to slot 3, right after the verb:\n\n' +
+          '  Slot 1        Slot 2   Slot 3   …\n' +
+          '  ──────        ──────   ──────   ─────\n' +
+          '  Ich           stehe    —        um 7 Uhr auf.   (normal)\n' +
+          '  Morgens       stehe    ich      um 7 Uhr auf.   (time leads → ich moves)\n' +
+          '  Um 7 Uhr      stehe    ich      auf.\n' +
+          '  Dann          frühstücke ich.\n\n' +
+          '⚠ NOT "Morgens ich stehe auf" ✗. The verb is glued to position 2; only the subject moves. This is the same V2 rule from Day 9/13 — now applied to time openers.',
+      },
+      { rule: '★ SEPARABLE ROUTINE VERBS — stem in 2, prefix at the end',
+        body:
+          'Many routine verbs are separable (Day 12). The stem takes slot 2, the prefix flies to the very end:\n\n' +
+          '  aufstehen  → Ich stehe um 7 Uhr AUF.\n' +
+          '  aufwachen  → Ich wache früh AUF.\n' +
+          '  einkaufen  → Ich kaufe am Abend EIN.\n' +
+          '  fernsehen  → Ich sehe abends FERN.\n\n' +
+          'With a time opener BOTH rules stack: "Abends sehe ich FERN." — abends (slot 1), sehe (slot 2), ich (slot 3), fern (end).',
+      },
+      { rule: '🕐 TELLING THE TIME — um, halb, Viertel',
+        body:
+          'AT a clock time: um + number + Uhr → "um sieben Uhr" (at 7).\n\n' +
+          '  halb        → ⚠ counts to the NEXT hour:\n' +
+          '                 halb acht = 7:30 (half-way TO eight, not "half eight"!)\n' +
+          '  Viertel nach → quarter past: "Viertel nach drei" = 3:15\n' +
+          '  Viertel vor  → quarter to:   "Viertel vor vier"  = 3:45\n\n' +
+          'The "halb" trap is the #1 beginner mistake: German halb looks AHEAD to the coming hour. halb neun = 8:30.',
+      },
+      { rule: '🌅 TIME-OF-DAY ADVERBS — the -s words',
+        body:
+          'Add -s to a part of the day to mean "(habitually) during that time":\n\n' +
+          '  der Morgen   → morgens   (in the mornings)\n' +
+          '  der Mittag   → mittags   (at midday)\n' +
+          '  der Nachmittag → nachmittags (afternoons)\n' +
+          '  der Abend    → abends    (in the evenings)\n' +
+          '  die Nacht    → nachts    (at night)\n\n' +
+          'These are adverbs (lowercase, no article) and they love to lead the sentence → V2 inversion: "Abends koche ich."',
+      },
+      { rule: '🔗 SEQUENCING A DAY — zuerst · dann · danach · schließlich',
+        body:
+          'Chain the steps of your day with sequence words. Each one leads the clause → verb stays in slot 2:\n\n' +
+          '  Zuerst stehe ich auf.\n' +
+          '  Dann frühstücke ich.\n' +
+          '  Danach fahre ich zur Arbeit.\n' +
+          '  Am Abend koche ich.\n' +
+          '  Schließlich gehe ich ins Bett.\n\n' +
+          'Notice every one triggers the inversion — subject after the verb. String them together and you have a complete spoken day.',
+      },
+      { rule: '🚦 PITFALLS — daily-routine traps',
+        body:
+          '• Time leads → verb still slot 2, subject slot 3: "Morgens stehe ICH auf." (not "Morgens ich stehe").\n' +
+          '• Separable prefix goes to the END: "Ich sehe abends fern" (not "Ich fernsehe").\n' +
+          '• halb acht = 7:30, NOT 8:30 — German counts to the next hour.\n' +
+          '• "nach Hause" (going home) vs "zu Hause" (being at home) — movement vs location.\n' +
+          '• arbeiten has a -t stem → "du arbeitest, er arbeitet" (extra -e-).\n' +
+          '• schlafen is a stem-changer a→ä → "du schläfst, er schläft".',
+      },
     ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — verb→meaning · time marker→part of day · clock
+      { type: 'match',
+        pairs: [
+          { de: 'aufstehen',  en: '⏰ to get up' },
+          { de: 'frühstücken', en: '🍳 to have breakfast' },
+          { de: 'arbeiten',    en: '💼 to work' },
+          { de: 'einkaufen',   en: '🛒 to shop' },
+          { de: 'fernsehen',   en: '📺 to watch TV' },
+          { de: 'schlafen',    en: '💤 to sleep' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'morgens',  en: '🌅 in the morning' },
+          { de: 'mittags',  en: '🌞 at midday' },
+          { de: 'abends',   en: '🌆 in the evening' },
+          { de: 'nachts',   en: '🌙 at night' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'um sieben Uhr',   en: '7:00' },
+          { de: 'halb acht',       en: '7:30 (half TO eight!)' },
+          { de: 'Viertel nach drei', en: '3:15' },
+          { de: 'Viertel vor vier', en: '3:45' },
+        ],
+      },
+
+      // ★ 4 SEPARABLE-VERB routine fill-blanks
+      { type: 'fill-blank', sentence: 'Ich __ um sieben Uhr auf. (aufstehen — stem)', answer: 'stehe' },
+      { type: 'fill-blank', sentence: 'Ich sehe am Abend __ . (fernsehen — prefix)', answer: 'fern' },
+      { type: 'fill-blank', sentence: 'Ich kaufe am Nachmittag __ . (einkaufen — prefix)', answer: 'ein' },
+      { type: 'fill-blank', sentence: 'Ich wache früh __ . (aufwachen — prefix)', answer: 'auf' },
+
+      // ⭐ 4 TIME-FIRST V2-INVERSION fill-blanks (subject after verb)
+      { type: 'fill-blank', sentence: 'V2: "Morgens __ ich Kaffee." (trinken)', answer: 'trinke' },
+      { type: 'fill-blank', sentence: 'V2: "Abends __ ich fern." (fernsehen — stem in slot 2)', answer: 'sehe' },
+      { type: 'fill-blank', sentence: 'V2 order: "Dann __ ich." (frühstücken)', answer: 'frühstücke' },
+      { type: 'fill-blank', sentence: 'V2: "Um sieben Uhr __ ich auf." (aufstehen — stem)', answer: 'stehe' },
+
+      // 🕐 2 CLOCK MCQs (the halb trap)
+      { type: 'multiple-choice', q: '⚠ "halb acht" means…',
+        options: ['8:30','7:30','8:15','7:45'], answer: '7:30',
+        explain: 'German halb counts to the NEXT hour: halb acht = half-way TO eight = 7:30.' },
+      { type: 'multiple-choice', q: '"Viertel vor vier" =',
+        options: ['4:15','3:45','4:45','3:15'], answer: '3:45',
+        explain: 'Viertel vor = quarter to → 3:45.' },
+
+      // ⚠ 3 WORD-ORDER / TRAP MCQs
+      { type: 'multiple-choice', q: '⚠ Which word order is CORRECT?',
+        options: ['Morgens ich stehe auf.','Morgens stehe ich auf.','Ich morgens stehe auf.','Morgens auf ich stehe.'],
+        answer: 'Morgens stehe ich auf.',
+        explain: 'Time leads → verb stays slot 2, subject moves to slot 3.' },
+      { type: 'multiple-choice', q: '⚠ Correct separable-verb sentence:',
+        options: ['Ich fernsehe am Abend.','Ich sehe am Abend fern.','Ich am Abend fern sehe.','Ich sehe fern am Abend nicht.'],
+        answer: 'Ich sehe am Abend fern.',
+        explain: 'Stem (sehe) in slot 2, prefix (fern) at the end.' },
+      { type: 'multiple-choice', q: '"going home" vs "at home" — "I go ___":',
+        options: ['zu Hause','nach Hause','in Hause','am Hause'], answer: 'nach Hause',
+        explain: 'nach Hause = movement home; zu Hause = being at home.' },
+
+      // 💬 Mini dialogue — a full day in sequence
       { type: 'dialogue', lines: [
-        { speaker: 'A', de: 'Was machst du am Morgen?',      en: 'What do you do in the morning?' },
-        { speaker: 'B', de: 'Ich stehe um sieben Uhr auf.',  en: 'I get up at seven.' },
-        { speaker: 'A', de: 'Und dann?',                     en: 'And then?' },
-        { speaker: 'B', de: 'Ich frühstücke und arbeite.',   en: 'I have breakfast and work.' },
+        { speaker: 'A', de: 'Wie sieht dein Tag aus?',                    en: 'What does your day look like?' },
+        { speaker: 'B', de: 'Zuerst stehe ich um sieben Uhr auf.',        en: 'First I get up at seven.' },
+        { speaker: 'A', de: 'Und dann?',                                  en: 'And then?' },
+        { speaker: 'B', de: 'Dann frühstücke ich und fahre zur Arbeit.',  en: 'Then I have breakfast and go to work.' },
+        { speaker: 'A', de: 'Was machst du am Abend?',                    en: 'What do you do in the evening?' },
+        { speaker: 'B', de: 'Abends koche ich und sehe fern.',            en: 'In the evening I cook and watch TV.' },
+        { speaker: 'A', de: 'Und wann gehst du ins Bett?',                en: 'And when do you go to bed?' },
+        { speaker: 'B', de: 'Schließlich gehe ich um elf ins Bett.',      en: 'Finally I go to bed at eleven.' },
       ]},
-      { type: 'fill-blank', sentence: 'Ich __ um sieben Uhr auf.', answer: 'stehe' },
     ],
     quiz: [
-      { type: 'multiple-choice', q: '"Morgens __ ich Kaffee." (drink)', options: ['trinke','trinkst','trinkt','trinken'], answer: 'trinke' },
+      { type: 'multiple-choice', q: '"Morgens __ ich Kaffee." (drink)',
+        options: ['trinke','trinkst','trinkt','trinken'], answer: 'trinke' },
+      { type: 'multiple-choice', q: '⚠ Which word order is CORRECT?',
+        options: ['Abends ich sehe fern.','Abends sehe ich fern.','Abends fern ich sehe.','Ich abends fern sehe.'],
+        answer: 'Abends sehe ich fern.', explain: 'Time leads → verb slot 2, subject slot 3, prefix at end.' },
+      { type: 'multiple-choice', q: '⚠ "halb neun" means…',
+        options: ['9:30','8:30','9:15','8:45'], answer: '8:30',
+        explain: 'halb counts to the next hour → halb neun = 8:30.' },
+      { type: 'fill-blank', sentence: 'Separable: "Ich __ um sieben Uhr auf." (aufstehen — stem)', answer: 'stehe' },
+      { type: 'fill-blank', sentence: 'Sequence: "__ frühstücke ich." (then)', answer: 'Dann' },
+      { type: 'multiple-choice', q: '"I go home" =',
+        options: ['Ich gehe zu Hause.','Ich gehe nach Hause.','Ich gehe im Hause.','Ich gehe Hause.'],
+        answer: 'Ich gehe nach Hause.' },
+      { type: 'fill-blank', sentence: 'Separable prefix: "Ich kaufe am Abend __ ." (einkaufen)', answer: 'ein' },
     ],
   },
 

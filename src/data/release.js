@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.9.1';
+export const VERSION = '3.9.2';
 export const RELEASE_DATE = '2026-06-01';
 
 export const RELEASES = [
+  {
+    version: '3.9.2',
+    date: '2026-06-01',
+    type: 'improvement',
+    title: 'Day 32 review — Daily routine: sequence verbs, clock time, time-first V2',
+    notes: [
+      'Reviewed Day 32 (Daily routine) end-to-end, parallel to the Day 14-31 full reviews. Was one of the thinnest days left — 7 vocab items, 1 grammar bullet, 2 exercises. Reshaped into a full narrate-your-day toolkit that ties together separable verbs (Day 12), the V2 rule (Day 9/13) and time words.',
+      'Vocabulary 7 → 26 items (vocabLayout: "spotlight") grouped by role icon: 🌅 13 routine verbs in daily order (aufstehen → aufwachen → sich duschen → frühstücken → zur Arbeit fahren → arbeiten → zu Mittag essen → nach Hause gehen → einkaufen → kochen → fernsehen → ins Bett gehen → schlafen), separable ones flagged ★ · 🕐 5 time-of-day -s adverbs (morgens · mittags · nachmittags · abends · nachts) · 🕐 4 clock-time patterns (um … Uhr · halb · Viertel nach · Viertel vor) · 🔗 4 sequence connectors (zuerst · dann · danach · schließlich).',
+      'Grammar 1 → 6 callouts: ⭐ TIME-FIRST → V2 INVERSION (the key move, with the slot table and the "Morgens stehe ICH auf" fix) · ★ SEPARABLE ROUTINE VERBS (stem in 2, prefix at end, both rules stacking) · 🕐 TELLING THE TIME (um/halb/Viertel with the halb-acht=7:30 trap) · 🌅 TIME-OF-DAY -s ADVERBS · 🔗 SEQUENCING A DAY (zuerst/dann/danach/schließlich each triggering inversion) · 🚦 pitfalls (time→V2, prefix-to-end, halb-trap, nach-vs-zu Hause, arbeiten -t stem, schlafen a→ä).',
+      'Exercises reshaped (2 → 21 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: routine verb → meaning (6) · time marker → part of day (4) · clock phrase → digital time (4, incl. the halb trap).',
+      '• 4 ★ SEPARABLE-VERB fill-blanks (stem stehe · prefixes fern/ein/auf).',
+      '• 4 ⭐ TIME-FIRST V2-INVERSION fill-blanks (subject after the verb).',
+      '• 2 🕐 CLOCK MCQs (halb acht = 7:30 · Viertel vor vier = 3:45).',
+      '• 3 ⚠ WORD-ORDER / TRAP MCQs (Morgens stehe ich auf · separable fern at end · nach-vs-zu Hause).',
+      '• 💬 Full-day dialogue sequenced zuerst → dann → abends → schließlich with separable verbs and clock times.',
+      'Quiz 1 → 7 items: morgens-trinke · abends-V2-order · halb-neun=8:30 · separable stehe · sequence Dann · nach Hause · separable ein.',
+    ],
+  },
   {
     version: '3.9.1',
     date: '2026-06-01',
