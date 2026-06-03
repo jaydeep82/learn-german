@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.9.4';
-export const RELEASE_DATE = '2026-06-01';
+export const VERSION = '3.9.5';
+export const RELEASE_DATE = '2026-06-04';
 
 export const RELEASES = [
+  {
+    version: '3.9.5',
+    date: '2026-06-04',
+    type: 'improvement',
+    title: 'Day 35 review — Modals I (können/müssen/wollen): the sandwich rule + möchten',
+    notes: [
+      'Reviewed Day 35 (Modals: können · müssen · wollen) end-to-end, parallel to the Day 14-34 full reviews. The previous version had 3 bare vocab items, 2 grammar bullets and the 3 conjugation tables + 2 drills. Reshaped into a full modal-verb toolkit while preserving the 3 conjEx conjugation tables.',
+      'Vocabulary 3 → 18 items (vocabLayout: "spotlight") grouped by role icon: 🛠️ the 3 modals (können · müssen · wollen) · 🔤 the singular vowel-change forms (ich kann/muss/will + du kannst) · 🙏 the polite möchten (+ ich möchte) · 🎬 5 common infinitives that fly to the end (arbeiten · schwimmen · lernen · bezahlen · schlafen) · 🧩 the sandwich-rule labels (das Modalverb · der Infinitiv).',
+      'Grammar 2 → 5 callouts: ⭐ THE SANDWICH RULE (modal in slot 2, infinitive at the END, with the slot table and the "Ich will Deutsch lernen" fix) · ⭐ THE SINGULAR VOWEL-CHANGE (full können/müssen/wollen table + the "ich=er, no -e/-t, plural=infinitive" quirks) · ⚠ "ich will" ≠ English "I will" (the #1 false friend — will=want, future=werden) · 🙏 möchten the polite "would like" (full conjugation + the blunt-vs-polite contrast) · 🚦 pitfalls (infinitive-to-end, no ich/er ending, will=want, use möchten politely, singular-only vowel change, standalone modals).',
+      'Exercises reshaped (5 → 19 mixed):',
+      '• 2 ⭐ INTERACTIVE matches: modal → meaning · ich-forms → English.',
+      '• 3 📊 CONJUGATION TABLES preserved (können · müssen · wollen via conjEx).',
+      '• 5 🛠️ MODAL fill-blanks (muss/kannst/will/müssen-plural/möchte-polite).',
+      '• 3 🧩 SANDWICH-RULE build + word-order items (infinitive-last).',
+      '• 3 ⚠ TRAP MCQs (will=want · er-takes-no-ending · politest-order).',
+      '• 💬 Plans dialogue weaving all three modals + möchten + the sandwich rule.',
+      'Quiz 1 → 7 items: kannst · muss · will=want · word-order · 3rd-person-kann · möchte-polite · wollen-plural.',
+    ],
+  },
   {
     version: '3.9.4',
     date: '2026-06-01',

@@ -4025,29 +4025,170 @@ export const days = [
   /* ===================== WEEK 4: modals + scenarios ===================== */
   {
     id: 35, week: 5,
+    vocabLayout: 'spotlight',
     title: 'Modals: können · müssen · wollen',
     titleDe: 'Modalverben I',
     emoji: '🛠️',
-    objective: 'Express ability, obligation and desire.',
-    intro: 'Modal verbs work as a duo with a second verb that goes to the END of the sentence in its infinitive form.',
+    objective: 'Express ability (können), obligation (müssen) and desire (wollen) — master the sandwich rule (modal in slot 2, infinitive at the end), the singular vowel-change, and the polite möchten alternative to blunt wollen.',
+    intro: 'Modal verbs are a game-changer: they let you say what you CAN, MUST and WANT to do. They work as a duo — the modal takes slot 2 and a SECOND verb flies to the end in its infinitive form ("Ich KANN heute Deutsch LERNEN"). Watch the singular vowel-change (ich kann/muss/will) and reach for the polite "möchten" instead of blunt "wollen" with strangers.',
     vocabulary: [
-      { de: 'können', en: 'can / be able to' },
-      { de: 'müssen', en: 'must / have to' },
-      { de: 'wollen', en: 'to want to' },
+      // 🛠️ THE THREE MODALS — ability / obligation / desire
+      { de: 'können', en: 'can / be able to',  emoji: '💪', hint: '⭐ ability · ich KANN (vowel change)',       example: 'Ich kann gut schwimmen.',         exampleEn: 'I can swim well.' },
+      { de: 'müssen', en: 'must / have to',    emoji: '⏰', hint: '⭐ obligation · ich MUSS',                  example: 'Ich muss heute arbeiten.',        exampleEn: 'I have to work today.' },
+      { de: 'wollen', en: 'to want to',        emoji: '🎯', hint: '⭐ strong desire · ich WILL (not "will"=future!)', example: 'Ich will Deutsch lernen.',   exampleEn: 'I want to learn German.' },
+
+      // 🔤 THE SINGULAR FORMS — the vowel-change to memorise
+      { de: 'ich kann',  en: 'I can',          emoji: '🟦', hint: 'können → kann (ö→a) · no -e ending!',       example: 'Ich kann Auto fahren.',           exampleEn: 'I can drive a car.' },
+      { de: 'du kannst', en: 'you can',        emoji: '👉', hint: 'kann + st',                                example: 'Kannst du mir helfen?',           exampleEn: 'Can you help me?' },
+      { de: 'ich muss',  en: 'I must',         emoji: '🟥', hint: 'müssen → muss (ü→u) · no -e ending!',       example: 'Ich muss jetzt gehen.',           exampleEn: 'I must go now.' },
+      { de: 'ich will',  en: 'I want to',      emoji: '🟨', hint: 'wollen → will (o→i) · ⚠ NOT English "will"', example: 'Ich will nach Hause.',            exampleEn: 'I want to go home.' },
+
+      // 🙏 THE POLITE ALTERNATIVE — möchten
+      { de: 'möchten',   en: 'would like to',  emoji: '🙏', hint: '⭐ polite form of wollen · ich möchte',     example: 'Ich möchte einen Kaffee.',        exampleEn: 'I would like a coffee.' },
+      { de: 'ich möchte', en: 'I would like',  emoji: '☕', hint: 'polite · no -e→ no, IT KEEPS -e: möchte',   example: 'Ich möchte bezahlen.',            exampleEn: 'I would like to pay.' },
+
+      // 🎬 COMMON INFINITIVES — the second verb that flies to the end
+      { de: 'arbeiten',  en: 'to work',        emoji: '💼', hint: 'goes to the END after a modal',            example: 'Ich muss heute arbeiten.',        exampleEn: 'I have to work today.' },
+      { de: 'schwimmen', en: 'to swim',        emoji: '🏊', hint: 'goes to the END',                          example: 'Kannst du schwimmen?',            exampleEn: 'Can you swim?' },
+      { de: 'lernen',    en: 'to learn',       emoji: '📚', hint: 'goes to the END',                          example: 'Ich will Deutsch lernen.',        exampleEn: 'I want to learn German.' },
+      { de: 'bezahlen',  en: 'to pay',         emoji: '💳', hint: 'goes to the END',                          example: 'Ich möchte bezahlen.',            exampleEn: 'I would like to pay.' },
+      { de: 'schlafen',  en: 'to sleep',       emoji: '💤', hint: 'goes to the END',                          example: 'Ich will jetzt schlafen.',        exampleEn: 'I want to sleep now.' },
+
+      // 🧩 SANDWICH-RULE LABELS
+      { de: 'das Modalverb', en: 'the modal verb (slot 2)', emoji: '🥪', hint: 'the conjugated half · stays in slot 2', example: 'Das Modalverb ist „kann".',   exampleEn: 'The modal verb is "can".' },
+      { de: 'der Infinitiv', en: 'the infinitive (at the END)', emoji: '🔚', hint: 'the second verb · flies to the end · -en form', example: 'Der Infinitiv ist „lernen".', exampleEn: 'The infinitive is "to learn".' },
     ],
     grammar: [
-      { rule: 'Sandwich rule', body: 'Modal in slot 2, infinitive at the end. "Ich KANN heute Deutsch LERNEN."' },
-      { rule: 'Stem changes', body: 'können → ich kann; müssen → ich muss; wollen → ich will. The vowel changes only in the singular.' },
+      { rule: '⭐ THE SANDWICH RULE — modal in slot 2, infinitive at the END',
+        body:
+          'A modal verb almost always pairs with a SECOND verb. The modal is conjugated in slot 2; the second verb goes to the very END as an infinitive (-en form):\n\n' +
+          '  Slot 1   Slot 2(modal)   …middle…        END(infinitive)\n' +
+          '  ──────   ─────────────   ────────        ───────────────\n' +
+          '  Ich      kann            heute Deutsch   lernen.\n' +
+          '  Ich      muss            morgen früh     arbeiten.\n' +
+          '  Wir      wollen          am Wochenende   schwimmen.\n\n' +
+          '⚠ NOT "Ich will lernen Deutsch" ✗ — the infinitive MUST be last: "Ich will Deutsch lernen" ✓. Everything else (time, object) sits in the middle.',
+      },
+      { rule: '⭐ THE SINGULAR VOWEL-CHANGE + no -e/-t endings',
+        body:
+          'Modals change their vowel in the singular (ich/du/er-sie-es), and ich/er take NO ending:\n\n' +
+          '           können    müssen    wollen\n' +
+          '  ich      kann      muss      will      ← vowel change, no -e\n' +
+          '  du       kannst    musst     willst\n' +
+          '  er/sie   kann      muss      will      ← no -t\n' +
+          '  wir      können    müssen    wollen    ← back to infinitive\n' +
+          '  ihr      könnt     müsst     wollt\n' +
+          '  sie/Sie  können    müssen    wollen\n\n' +
+          '🧠 Two quirks: (1) ich and er/sie/es are IDENTICAL (kann / muss / will). (2) the plural forms (wir/sie/Sie) = the infinitive. The vowel only changes in the three singular forms.',
+      },
+      { rule: '⚠ "ich will" ≠ English "I will"',
+        body:
+          'The biggest false friend in German modals:\n\n' +
+          '  Ich will …  = I WANT to …   (present desire, NOT future!)\n' +
+          '  "Ich will Deutsch lernen."  = I want to learn German.\n\n' +
+          'To say English "I will" (future), German uses werden: "Ich werde Deutsch lernen." So never read "will" as future — it always means "want".',
+      },
+      { rule: '🙏 möchten — the polite "would like"',
+        body:
+          'wollen ("want") can sound blunt or demanding to strangers. The polite version is möchten ("would like"):\n\n' +
+          '  ich möchte      wir möchten\n' +
+          '  du möchtest     ihr möchtet\n' +
+          '  er/sie möchte   sie/Sie möchten\n\n' +
+          '  Blunt:  "Ich will einen Kaffee."   (I want a coffee)\n' +
+          '  Polite: "Ich möchte einen Kaffee." (I would like a coffee)\n\n' +
+          'It follows the same sandwich rule ("Ich möchte jetzt bezahlen") and can also stand alone with a noun ("Ich möchte einen Tee"). Use möchten in shops, restaurants and with people you don\'t know.',
+      },
+      { rule: '🚦 PITFALLS — modal traps',
+        body:
+          '• Infinitive goes to the END: "Ich muss heute arbeiten" (not "Ich muss arbeiten heute").\n' +
+          '• ich/er take NO ending: "er kann" (not "er kannt"), "ich muss" (not "ich musse").\n' +
+          '• "ich will" = I want, NOT I will. Future = werden.\n' +
+          '• Use möchten (not wollen) to be polite with strangers.\n' +
+          '• The vowel change is singular-only: wir/sie/Sie keep the full infinitive (können/müssen/wollen).\n' +
+          '• A modal can stand alone if the meaning is clear: "Ich kann Deutsch" (I know German), "Ich muss nach Hause" (I must go home).',
+      },
     ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 2 INTERACTIVE MATCHES — modal→meaning · singular forms
+      { type: 'match',
+        pairs: [
+          { de: 'können',  en: '💪 can / ability' },
+          { de: 'müssen',  en: '⏰ must / obligation' },
+          { de: 'wollen',  en: '🎯 want to / desire' },
+          { de: 'möchten', en: '🙏 would like (polite)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'ich kann',  en: 'I can' },
+          { de: 'ich muss',  en: 'I must' },
+          { de: 'ich will',  en: 'I want to' },
+          { de: 'ich möchte', en: 'I would like' },
+        ],
+      },
+
+      // 📊 3 CONJUGATION TABLES (preserved — können / müssen / wollen)
       conjEx('können', 'can'),
       conjEx('müssen', 'must'),
       conjEx('wollen', 'want to'),
-      { type: 'fill-blank', sentence: 'Ich __ heute Deutsch lernen. (must)', answer: 'muss' },
-      { type: 'multiple-choice', q: 'Which is correct?', options: ['Ich will Deutsch lernen heute.','Heute ich will Deutsch lernen.','Ich will heute Deutsch lernen.','Ich Deutsch lernen will heute.'], answer: 'Ich will heute Deutsch lernen.' },
+
+      // 🛠️ 5 MODAL fill-blanks (the right singular form)
+      { type: 'fill-blank', sentence: 'Ich __ heute Deutsch lernen. (must)',  answer: 'muss' },
+      { type: 'fill-blank', sentence: 'Du __ schwimmen. (can)',               answer: 'kannst' },
+      { type: 'fill-blank', sentence: 'Er __ nach Hause gehen. (wants to)',   answer: 'will' },
+      { type: 'fill-blank', sentence: 'Wir __ am Wochenende arbeiten. (must — plural!)', answer: 'müssen' },
+      { type: 'fill-blank', sentence: 'Polite: Ich __ einen Kaffee. (would like)', answer: 'möchte' },
+
+      // 🧩 3 SANDWICH-RULE build / order
+      { type: 'fill-blank', sentence: 'Sandwich: put the infinitive last → "Ich will heute Deutsch __." (lernen)', answer: 'lernen' },
+      { type: 'multiple-choice', q: 'Which word order is correct?',
+        options: ['Ich will Deutsch lernen heute.','Heute ich will Deutsch lernen.','Ich will heute Deutsch lernen.','Ich Deutsch lernen will heute.'],
+        answer: 'Ich will heute Deutsch lernen.',
+        explain: 'Modal in slot 2, infinitive at the very end.' },
+      { type: 'multiple-choice', q: '⚠ Which is CORRECT?',
+        options: ['Ich muss arbeiten heute.','Ich muss heute arbeiten.','Heute ich muss arbeiten.','Ich heute muss arbeiten.'],
+        answer: 'Ich muss heute arbeiten.',
+        explain: 'Infinitive (arbeiten) goes to the end.' },
+
+      // ⚠ 3 TRAP MCQs (will=want · no -t · polite)
+      { type: 'multiple-choice', q: '⚠ "Ich will einen Kaffee" means…',
+        options: ['I will have a coffee (future)','I want a coffee (now)','I would like a coffee','I can have a coffee'],
+        answer: 'I want a coffee (now)',
+        explain: '"will" = want, NOT English future. Future would be "Ich werde …".' },
+      { type: 'multiple-choice', q: '⚠ Correct 3rd-person form: "Er ___ schwimmen."',
+        options: ['kannt','kann','kanns','kannst'], answer: 'kann',
+        explain: 'er/sie/es take NO ending on a modal → er kann.' },
+      { type: 'multiple-choice', q: 'Politest way to order in a café:',
+        options: ['Ich will einen Tee.','Ich möchte einen Tee.','Ich muss einen Tee.','Gib mir Tee.'],
+        answer: 'Ich möchte einen Tee.',
+        explain: 'möchten is the polite "would like".' },
+
+      // 💬 Mini dialogue — all three modals + möchten + sandwich rule
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Was möchtest du heute machen?',            en: 'What would you like to do today?' },
+        { speaker: 'B', de: 'Ich will schwimmen gehen, aber ich muss arbeiten.', en: 'I want to go swimming, but I have to work.' },
+        { speaker: 'A', de: 'Kannst du am Abend?',                      en: 'Can you in the evening?' },
+        { speaker: 'B', de: 'Ja, am Abend kann ich. Möchtest du mitkommen?', en: 'Yes, in the evening I can. Would you like to come along?' },
+        { speaker: 'A', de: 'Gerne! Ich möchte auch schwimmen.',        en: 'Gladly! I would also like to swim.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Du __ schwimmen. (can)', answer: 'kannst' },
+      { type: 'fill-blank', sentence: 'Ich __ heute arbeiten. (must)', answer: 'muss' },
+      { type: 'multiple-choice', q: '⚠ "Ich will Deutsch lernen" means…',
+        options: ['I will learn German (future)','I want to learn German','I can learn German','I must learn German'],
+        answer: 'I want to learn German', explain: 'will = want, not future.' },
+      { type: 'multiple-choice', q: 'Correct word order:',
+        options: ['Ich kann lernen Deutsch.','Ich kann Deutsch lernen.','Lernen ich kann Deutsch.','Ich Deutsch kann lernen.'],
+        answer: 'Ich kann Deutsch lernen.', explain: 'Infinitive at the end.' },
+      { type: 'multiple-choice', q: '3rd-person singular: "Sie ___ gut kochen." (can)',
+        options: ['kannt','kann','kannst','könnt'], answer: 'kann' },
+      { type: 'multiple-choice', q: 'Polite "I would like a coffee":',
+        options: ['Ich will einen Kaffee.','Ich möchte einen Kaffee.','Ich muss einen Kaffee.','Ich kann einen Kaffee.'],
+        answer: 'Ich möchte einen Kaffee.' },
+      { type: 'fill-blank', sentence: 'Plural: "Wir __ nach Berlin fahren." (want to)', answer: 'wollen' },
     ],
   },
 
