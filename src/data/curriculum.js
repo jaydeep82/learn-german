@@ -6072,49 +6072,170 @@ export const days = [
   /* ----- Day 30: Hobbies — dedicated (slide 66 expansion) ----- */
   {
     id: 33, week: 5,
+    vocabLayout: 'spotlight',
     title: 'Hobbies & free time',
     titleDe: 'Hobbys & Freizeit',
     emoji: '🎮',
-    objective: 'Talk about what you do for fun, with the right time and frequency words.',
-    intro: 'You already met the hobby vocab on Day 13. Today: build long, natural sentences and hold a 60-second conversation about your free time.',
+    objective: 'Talk about what you do for fun — build natural sentences with the right verb, frequency and preference words, and use spielen vs machen vs gehen correctly.',
+    intro: 'You met the hobby vocab on Day 13 and the TFP word order there too. Today you turn it into real conversation: a big set of free-time verbs, the three "do a hobby" patterns (spielen + game · X machen · X-en gehen), the gerne/lieber/am liebsten preference ladder, and a 60-second free-time chat.',
     vocabulary: [
-      { de: 'das Hobby',     en: 'hobby' },
-      { de: 'die Freizeit',  en: 'free time' },
-      { de: 'reisen',        en: 'to travel' },
-      { de: 'kochen',        en: 'to cook' },
-      { de: 'tanzen',        en: 'to dance' },
-      { de: 'singen',        en: 'to sing' },
-      { de: 'malen',         en: 'to paint' },
-      { de: 'fotografieren', en: 'to take photos' },
-      { de: 'wandern',       en: 'to hike' },
-      { de: 'schwimmen',     en: 'to swim' },
-      { de: 'Fahrrad fahren',en: 'to ride a bike' },
-      { de: 'Yoga machen',   en: 'to do yoga' },
-      { de: 'der Sport',     en: 'sport' },
-      { de: 'die Musik',     en: 'music' },
-      { de: 'die Kunst',     en: 'art' },
+      // 🎮 THE NOUNS — free time itself
+      { de: 'das Hobby',    en: 'hobby',         emoji: '🎯', hint: 'pl: die Hobbys',                  example: 'Mein Hobby ist Lesen.',        exampleEn: 'My hobby is reading.' },
+      { de: 'die Freizeit', en: 'free time',     emoji: '🛋️', hint: '"in meiner Freizeit" = in my free time', example: 'In meiner Freizeit koche ich.', exampleEn: 'In my free time I cook.' },
+
+      // ⚽ SPIELEN + game/sport/instrument
+      { de: 'Fußball spielen', en: 'to play football', emoji: '⚽', hint: 'spielen + sport (no article)',  example: 'Ich spiele am Wochenende Fußball.', exampleEn: 'I play football at the weekend.' },
+      { de: 'Tennis spielen',  en: 'to play tennis',   emoji: '🎾', hint: 'spielen + sport',               example: 'Wir spielen oft Tennis.',          exampleEn: 'We often play tennis.' },
+      { de: 'Gitarre spielen', en: 'to play guitar',   emoji: '🎸', hint: 'spielen + instrument',          example: 'Er spielt gut Gitarre.',           exampleEn: 'He plays guitar well.' },
+      { de: 'Videospiele spielen', en: 'to play video games', emoji: '🎮', hint: 'spielen + games',        example: 'Ich spiele gerne Videospiele.',    exampleEn: 'I like playing video games.' },
+
+      // 🧘 X MACHEN — do an activity
+      { de: 'Sport machen',  en: 'to do sport',  emoji: '🏃', hint: 'machen + activity',               example: 'Ich mache dreimal pro Woche Sport.', exampleEn: 'I do sport three times a week.' },
+      { de: 'Yoga machen',   en: 'to do yoga',   emoji: '🧘', hint: 'machen + activity',               example: 'Sie macht jeden Morgen Yoga.',     exampleEn: 'She does yoga every morning.' },
+      { de: 'Musik machen',  en: 'to make music', emoji: '🎵', hint: 'machen + activity',              example: 'Wir machen zusammen Musik.',       exampleEn: 'We make music together.' },
+
+      // 🚶 X-EN GEHEN — go do an activity
+      { de: 'schwimmen gehen', en: 'to go swimming', emoji: '🏊', hint: 'infinitive + gehen',          example: 'Ich gehe am Samstag schwimmen.',   exampleEn: 'I go swimming on Saturday.' },
+      { de: 'tanzen gehen',    en: 'to go dancing',  emoji: '💃', hint: 'infinitive + gehen',          example: 'Wir gehen abends tanzen.',         exampleEn: 'We go dancing in the evening.' },
+      { de: 'spazieren gehen', en: 'to go for a walk', emoji: '🚶', hint: 'infinitive + gehen',        example: 'Ich gehe gerne spazieren.',        exampleEn: 'I like going for a walk.' },
+
+      // 🎨 STANDALONE HOBBY VERBS
+      { de: 'reisen',        en: 'to travel',       emoji: '✈️', hint: 'regular',                       example: 'Ich reise gerne nach Italien.',    exampleEn: 'I like travelling to Italy.' },
+      { de: 'kochen',        en: 'to cook',         emoji: '🍳', hint: 'regular',                       example: 'Am Wochenende koche ich gern.',    exampleEn: 'At weekends I like to cook.' },
+      { de: 'lesen',         en: 'to read',         emoji: '📖', hint: 'stem-changer e→ie · du liest',   example: 'Ich lese jeden Abend.',            exampleEn: 'I read every evening.' },
+      { de: 'singen',        en: 'to sing',         emoji: '🎤', hint: 'regular',                       example: 'Sie singt sehr gut.',              exampleEn: 'She sings very well.' },
+      { de: 'malen',         en: 'to paint/draw',   emoji: '🎨', hint: 'regular',                       example: 'Ich male gerne Bilder.',           exampleEn: 'I like painting pictures.' },
+      { de: 'fotografieren', en: 'to take photos',  emoji: '📷', hint: '-ieren verb · no ge- in Perfekt', example: 'Er fotografiert die Stadt.',     exampleEn: 'He photographs the city.' },
+      { de: 'wandern',       en: 'to hike',         emoji: '🥾', hint: 'regular · wir wandern',          example: 'Wir wandern im Sommer oft.',       exampleEn: 'We often hike in summer.' },
+      { de: 'Fahrrad fahren', en: 'to ride a bike', emoji: '🚴', hint: 'fahren stem-changer a→ä · du fährst', example: 'Ich fahre gern Fahrrad.',     exampleEn: 'I like riding a bike.' },
+
+      // ❤️ PREFERENCE LADDER + 🔁 FREQUENCY (recap from Day 13)
+      { de: 'gerne',        en: 'gladly / like to',  emoji: '❤️', hint: '🔁 Day 13 · "Ich koche gerne"',  example: 'Ich koche gerne.',            exampleEn: 'I like to cook.' },
+      { de: 'lieber',       en: 'prefer to',         emoji: '🆚', hint: '🔁 Day 13 · comparative of gerne', example: 'Ich tanze lieber.',          exampleEn: 'I prefer to dance.' },
+      { de: 'am liebsten',  en: 'most of all',       emoji: '🏆', hint: '🔁 Day 13 · the top preference',  example: 'Am liebsten reise ich.',      exampleEn: 'Most of all I like to travel.' },
+      { de: 'jeden Tag',    en: 'every day',         emoji: '📆', hint: '🔁 Day 13 · frequency',          example: 'Ich lese jeden Tag.',         exampleEn: 'I read every day.' },
+      { de: 'am Wochenende', en: 'at the weekend',   emoji: '🏖️', hint: 'time phrase · often leads → V2', example: 'Am Wochenende spiele ich Fußball.', exampleEn: 'At the weekend I play football.' },
     ],
     grammar: [
-      { rule: 'Sentence template',
+      { rule: '⭐ THE THREE "DO A HOBBY" PATTERNS — spielen · machen · gehen',
         body:
-          'Subject + Verb + Time + Frequency + Preference + Object\n' +
-          '  Ich   höre  am Wochenende  oft  gerne  Musik.\n' +
-          '  Wir   spielen jeden Tag  manchmal — Fußball.',
+          'German picks a different verb depending on the hobby:\n\n' +
+          '  ⚽ spielen + GAME / SPORT / INSTRUMENT (no article)\n' +
+          '     Ich spiele Fußball / Tennis / Gitarre / Videospiele.\n\n' +
+          '  🧘 [Activity] + machen\n' +
+          '     Ich mache Sport / Yoga / Musik.\n\n' +
+          '  🚶 [Infinitive] + gehen  (go and do it)\n' +
+          '     Ich gehe schwimmen / tanzen / spazieren.\n\n' +
+          '🧠 Rule of thumb: a ball game or instrument → spielen; a named activity → machen; "go do X" → X-infinitive + gehen. Many hobbies also have their own verb (reisen, kochen, lesen, malen) — just conjugate those normally.',
+      },
+      { rule: '⭐ TFP-O WORD ORDER — Time · Frequency · Preference · Object',
+        body:
+          'After the verb, modifiers line up in a fixed order (recap from Day 13):\n\n' +
+          '  Subject + Verb + TIME + FREQUENCY + PREFERENCE + OBJECT\n' +
+          '  Ich       höre   am Wochenende  oft   gerne   Musik.\n' +
+          '  Wir       spielen jeden Tag    manchmal  —    Fußball.\n\n' +
+          '⚠ "gerne" comes right BEFORE the object: "Ich koche gerne indisches Essen." If a TIME phrase leads the sentence, the verb still keeps slot 2 → "Am Wochenende spiele ich Fußball."',
+      },
+      { rule: '❤️ THE PREFERENCE LADDER — gerne · lieber · am liebsten',
+        body:
+          'Express how much you like an activity by escalating:\n\n' +
+          '  gerne        — I like to …        Ich koche gerne.\n' +
+          '  lieber       — I prefer to …      Ich koche lieber. (rather than X)\n' +
+          '  am liebsten  — most of all …      Am liebsten koche ich.\n\n' +
+          'Use "lieber" to compare two hobbies: "Ich spiele gern Tennis, aber ich schwimme lieber." (I like tennis, but I prefer swimming.) "am liebsten" names your absolute favourite.',
+      },
+      { rule: '🔁 FREQUENCY — how often',
+        body:
+          'Common free-time frequency markers (from Day 13\'s scale + time phrases):\n\n' +
+          '  immer (always) · oft (often) · manchmal (sometimes) · selten (rarely) · nie (never)\n' +
+          '  jeden Tag (every day) · einmal/zweimal pro Woche (once/twice a week)\n' +
+          '  am Wochenende (at the weekend) · in meiner Freizeit (in my free time)\n\n' +
+          'These sit in the FREQUENCY/TIME slots: "Ich mache zweimal pro Woche Sport." A time phrase can also lead → V2 inversion.',
+      },
+      { rule: '🚦 PITFALLS — hobby-talk traps',
+        body:
+          '• Ball games & instruments use spielen (Fußball spielen, Gitarre spielen) — NOT machen.\n' +
+          '• "go swimming" = schwimmen gehen (infinitive + gehen), not "gehen schwimmen".\n' +
+          '• gerne goes before the object: "Ich höre gerne Musik" (not "Ich höre Musik gerne" — acceptable but gerne-first is cleaner).\n' +
+          '• Sports take NO article after spielen: "Ich spiele Fußball" (not "den Fußball").\n' +
+          '• Time leads → verb slot 2: "Am Wochenende gehe ich schwimmen."\n' +
+          '• lesen (e→ie: du liest) and Fahrrad fahren (a→ä: du fährst) are stem-changers.',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: 'In meiner Freizeit __ ich gerne. (cook)',                  answer: 'koche' },
-      { type: 'fill-blank', sentence: 'Wir __ am Wochenende oft. (hike)',                          answer: 'wandern' },
-      { type: 'fill-blank', sentence: 'Sie (she) __ jeden Tag. (sing)',                            answer: 'singt' },
-      { type: 'fill-blank', sentence: 'Du __ in deiner Freizeit Bücher. (read)',                   answer: 'liest' },
-      { type: 'fill-blank', sentence: 'Ich __ sehr gerne Yoga. (machen — irreg. modal-like idiom)', answer: 'mache' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — hobby→verb pattern · verb→meaning · preference ladder
+      { type: 'match',
+        pairs: [
+          { de: 'Fußball …',  en: '⚽ spielen' },
+          { de: 'Gitarre …',  en: '🎸 spielen' },
+          { de: 'Yoga …',     en: '🧘 machen' },
+          { de: 'Sport …',    en: '🏃 machen' },
+          { de: 'schwimmen …', en: '🏊 gehen' },
+          { de: 'tanzen …',   en: '💃 gehen' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'reisen',        en: '✈️ to travel' },
+          { de: 'kochen',        en: '🍳 to cook' },
+          { de: 'malen',         en: '🎨 to paint' },
+          { de: 'wandern',       en: '🥾 to hike' },
+          { de: 'fotografieren', en: '📷 to take photos' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'gerne',       en: '❤️ I like to' },
+          { de: 'lieber',      en: '🆚 I prefer to' },
+          { de: 'am liebsten', en: '🏆 most of all' },
+          { de: 'jeden Tag',   en: '📆 every day' },
+        ],
+      },
+
+      // ⚽ 4 PATTERN fill-blanks (spielen/machen/gehen choice)
+      { type: 'fill-blank', sentence: 'Ball game: Ich __ am Wochenende Fußball. (spielen)', answer: 'spiele' },
+      { type: 'fill-blank', sentence: 'Activity: Sie __ jeden Morgen Yoga. (machen)',        answer: 'macht' },
+      { type: 'fill-blank', sentence: 'Go do it: Ich __ am Samstag schwimmen. (gehen)',      answer: 'gehe' },
+      { type: 'fill-blank', sentence: 'Instrument: Er __ gut Gitarre. (spielen)',            answer: 'spielt' },
+
+      // 🎨 4 HOBBY-VERB conjugation fill-blanks
+      { type: 'fill-blank', sentence: 'In meiner Freizeit __ ich gerne. (cook)', answer: 'koche' },
+      { type: 'fill-blank', sentence: 'Wir __ am Wochenende oft. (hike)',         answer: 'wandern' },
+      { type: 'fill-blank', sentence: 'Sie (she) __ jeden Tag. (sing)',           answer: 'singt' },
+      { type: 'fill-blank', sentence: 'Du __ in deiner Freizeit Bücher. (read — e→ie)', answer: 'liest' },
+
+      // ❤️ 2 PREFERENCE fill-blanks
+      { type: 'fill-blank', sentence: 'Top favourite: "__ reise ich." (most of all)', answer: 'Am liebsten' },
+      { type: 'fill-blank', sentence: 'Compare: "Ich spiele gern Tennis, aber ich schwimme __." (prefer)', answer: 'lieber' },
+
+      // ⚠ 3 WORD-ORDER / PATTERN MCQs
+      { type: 'multiple-choice', q: '"In my free time, I gladly travel." Pick the order.',
+        options: [
+          'Ich reise in meiner Freizeit gerne.',
+          'In meiner Freizeit ich reise gerne.',
+          'Reise ich in meiner Freizeit gerne.',
+          'Gerne ich reise in meiner Freizeit.',
+        ],
+        answer: 'Ich reise in meiner Freizeit gerne.' },
+      { type: 'multiple-choice', q: '⚠ "I go swimming on Saturday." — correct German:',
+        options: ['Ich schwimme gehen am Samstag.','Ich gehe am Samstag schwimmen.','Ich gehe schwimmen am Samstag nicht.','Am Samstag ich gehe schwimmen.'],
+        answer: 'Ich gehe am Samstag schwimmen.',
+        explain: 'Pattern is [infinitive] + gehen; verb in slot 2, schwimmen at the end.' },
+      { type: 'multiple-choice', q: '⚠ "to play football" =',
+        options: ['Fußball machen','Fußball spielen','Fußball gehen','Fußball fahren'],
+        answer: 'Fußball spielen',
+        explain: 'Ball games & instruments use spielen.' },
+
+      // 💬 Mini dialogue — free-time chat with all three patterns
       { type: 'dialogue', lines: [
-        { speaker: 'A', de: 'Was machst du in deiner Freizeit?',         en: 'What do you do in your free time?' },
+        { speaker: 'A', de: 'Was machst du in deiner Freizeit?',           en: 'What do you do in your free time?' },
         { speaker: 'B', de: 'Ich spiele gerne Videospiele und ich koche.', en: 'I like playing video games and I cook.' },
-        { speaker: 'A', de: 'Was kochst du?',                            en: 'What do you cook?' },
-        { speaker: 'B', de: 'Indisches Essen. Magst du indisches Essen?', en: 'Indian food. Do you like Indian food?' },
-        { speaker: 'A', de: 'Ja, sehr gerne!',                           en: 'Yes, very much!' },
+        { speaker: 'A', de: 'Machst du auch Sport?',                       en: 'Do you do sport too?' },
+        { speaker: 'B', de: 'Ja, zweimal pro Woche gehe ich schwimmen.',   en: 'Yes, twice a week I go swimming.' },
+        { speaker: 'A', de: 'Und am Wochenende?',                          en: 'And at the weekend?' },
+        { speaker: 'B', de: 'Am liebsten reise ich oder ich gehe wandern.', en: 'Most of all I travel or I go hiking.' },
       ]},
     ],
     quiz: [
@@ -6126,6 +6247,16 @@ export const days = [
           'Gerne ich reise in meiner Freizeit.',
         ],
         answer: 'Ich reise in meiner Freizeit gerne.' },
+      { type: 'multiple-choice', q: '"to play guitar" =',
+        options: ['Gitarre machen','Gitarre spielen','Gitarre gehen','Gitarre fahren'], answer: 'Gitarre spielen' },
+      { type: 'multiple-choice', q: '"to do yoga" =',
+        options: ['Yoga spielen','Yoga machen','Yoga gehen','Yoga fahren'], answer: 'Yoga machen' },
+      { type: 'fill-blank', sentence: 'Go do it: "Ich __ am Samstag tanzen." (gehen)', answer: 'gehe' },
+      { type: 'fill-blank', sentence: 'Top favourite: "__ koche ich." (most of all)', answer: 'Am liebsten' },
+      { type: 'multiple-choice', q: '⚠ "I go swimming" pattern is…',
+        options: ['gehen + infinitive at end','infinitive + gehen at end','machen + noun','spielen + noun'],
+        answer: 'gehen + infinitive at end', explain: 'schwimmen gehen → "Ich gehe … schwimmen."' },
+      { type: 'fill-blank', sentence: 'Compare two hobbies: "Ich male gern, aber ich fotografiere __." (prefer)', answer: 'lieber' },
     ],
   },
 

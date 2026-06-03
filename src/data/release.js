@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.9.2';
+export const VERSION = '3.9.3';
 export const RELEASE_DATE = '2026-06-01';
 
 export const RELEASES = [
+  {
+    version: '3.9.3',
+    date: '2026-06-01',
+    type: 'improvement',
+    title: 'Day 33 review — Hobbies & free time: spielen/machen/gehen + the preference ladder',
+    notes: [
+      'Reviewed Day 33 (Hobbies & free time) end-to-end, parallel to the Day 14-32 full reviews. The previous version had 15 bare vocab items, 1 grammar bullet and 7 exercises. Reshaped into a full free-time-conversation toolkit built around the three "do a hobby" verb patterns and the preference ladder.',
+      'Vocabulary 15 → 26 items (vocabLayout: "spotlight") grouped by role icon: 🎮 the nouns (Hobby · Freizeit) · ⚽ spielen + game/instrument (Fußball · Tennis · Gitarre · Videospiele) · 🧘 X machen (Sport · Yoga · Musik) · 🚶 X-en gehen (schwimmen · tanzen · spazieren gehen) · 🎨 standalone hobby verbs (reisen · kochen · lesen · singen · malen · fotografieren · wandern · Fahrrad fahren) · ❤️ the preference ladder + frequency (gerne · lieber · am liebsten · jeden Tag · am Wochenende).',
+      'Grammar 1 → 5 callouts: ⭐ THE THREE "DO A HOBBY" PATTERNS (spielen + ball/instrument · activity + machen · infinitive + gehen) with the rule-of-thumb · ⭐ TFP-O WORD ORDER recap (Time · Frequency · Preference · Object, gerne-before-object, time-leads→V2) · ❤️ THE PREFERENCE LADDER (gerne → lieber → am liebsten, with lieber for comparing two hobbies) · 🔁 FREQUENCY markers · 🚦 pitfalls (spielen for ball games/instruments · infinitive+gehen order · no article after spielen · stem-changers lesen/fahren).',
+      'Exercises reshaped (7 → 21 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: hobby → verb pattern (spielen/machen/gehen) · verb → meaning · preference ladder.',
+      '• 4 ⚽ PATTERN fill-blanks (spiele/macht/gehe/spielt — choosing the right verb).',
+      '• 4 🎨 HOBBY-VERB conjugation fill-blanks (koche/wandern/singt/liest).',
+      '• 2 ❤️ PREFERENCE fill-blanks (am liebsten · lieber).',
+      '• 3 ⚠ WORD-ORDER / PATTERN MCQs (TFP order · schwimmen-gehen order · Fußball spielen).',
+      '• 💬 Free-time dialogue weaving all three patterns + frequency + am liebsten.',
+      'Quiz 1 → 7 items: TFP order · Gitarre spielen · Yoga machen · gehe-tanzen · am liebsten · gehen-pattern · lieber comparison.',
+    ],
+  },
   {
     version: '3.9.2',
     date: '2026-06-01',
