@@ -6263,22 +6263,108 @@ export const days = [
   /* ----- Day 31: Reading practice (slides 111, 146-147, 183) ----- */
   {
     id: 34, week: 5,
+    vocabLayout: 'spotlight',
     title: 'Reading practice',
     titleDe: 'Leseverständnis',
     emoji: '📖',
-    objective: 'Read short German paragraphs and answer comprehension questions.',
-    intro: 'You have built enough vocabulary and grammar to read real beginner-level paragraphs. Read each text aloud (use the 🔊), then answer the questions.',
-    vocabulary: [],
+    objective: 'Read short German paragraphs with a strategy — spot cognates, find the verb, follow the signal words — then answer comprehension questions (in English AND in German).',
+    intro: 'You now have enough vocabulary and grammar to read real beginner-level paragraphs. The skill today isn\'t new grammar — it\'s a READING STRATEGY: read for gist first, lean on cognates, find the verb to see who-does-what, and let signal words (und, aber, dann, weil) map the logic. Read each text aloud with the 🔊, then answer.',
+    vocabulary: [
+      // 📖 COMPREHENSION TOOLKIT — words to talk about a text
+      { de: 'der Text',        en: 'the text',           emoji: '📄', hint: 'a passage · pl: die Texte',          example: 'Lies den Text laut.',          exampleEn: 'Read the text aloud.' },
+      { de: 'der Absatz',      en: 'the paragraph',      emoji: '¶', hint: 'a block of text',                    example: 'Der erste Absatz ist kurz.',   exampleEn: 'The first paragraph is short.' },
+      { de: 'der Satz',        en: 'the sentence',       emoji: '📝', hint: '🔁 Day 9 · pl: die Sätze',           example: 'Jeder Satz hat ein Verb.',     exampleEn: 'Every sentence has a verb.' },
+      { de: 'das Wort',        en: 'the word',           emoji: '🔤', hint: 'pl: die Wörter',                     example: 'Ich verstehe dieses Wort nicht.', exampleEn: 'I don\'t understand this word.' },
+      { de: 'die Frage',       en: 'the question',       emoji: '❓', hint: 'pl: die Fragen',                     example: 'Beantworte die Frage.',        exampleEn: 'Answer the question.' },
+      { de: 'die Antwort',     en: 'the answer',         emoji: '✅', hint: 'antworten = to answer',              example: 'Die Antwort ist richtig.',     exampleEn: 'The answer is correct.' },
+      { de: 'die Geschichte',  en: 'the story',          emoji: '📚', hint: 'also = "history"',                   example: 'Das ist eine schöne Geschichte.', exampleEn: 'That is a nice story.' },
+
+      // 🧠 READING VERBS
+      { de: 'lesen',           en: 'to read',            emoji: '👀', hint: 'stem-changer e→ie · du liest',       example: 'Ich lese den Text zweimal.',   exampleEn: 'I read the text twice.' },
+      { de: 'verstehen',       en: 'to understand',      emoji: '💡', hint: 'understand WHAT? → Akk',             example: 'Ich verstehe die Geschichte.', exampleEn: 'I understand the story.' },
+      { de: 'bedeuten',        en: 'to mean',            emoji: '🟰', hint: '"Was bedeutet …?" = what does … mean?', example: 'Was bedeutet dieses Wort?',  exampleEn: 'What does this word mean?' },
+      { de: 'wiederholen',     en: 'to repeat',          emoji: '🔁', hint: 'inseparable · no split',             example: 'Ich wiederhole den Satz.',     exampleEn: 'I repeat the sentence.' },
+      { de: 'beantworten',     en: 'to answer (a question)', emoji: '🙋', hint: 'beantworten + die Frage (Akk)',  example: 'Beantworte die Fragen.',       exampleEn: 'Answer the questions.' },
+
+      // 🔗 SIGNAL WORDS — the logic map of any text
+      { de: 'und',     en: 'and',          emoji: '➕', hint: '🔗 adds info · no word-order change',      example: 'Er liest und schreibt.',       exampleEn: 'He reads and writes.' },
+      { de: 'aber',    en: 'but',          emoji: '↔️', hint: '🔗 contrast · no word-order change',       example: 'Es ist klein, aber schön.',    exampleEn: 'It is small but nice.' },
+      { de: 'denn',    en: 'because (reason)', emoji: '💬', hint: '🔗 reason · keeps normal order',        example: 'Ich bleibe, denn es regnet.',  exampleEn: 'I stay, because it is raining.' },
+      { de: 'weil',    en: 'because',      emoji: '🧩', hint: '⚠ verb goes to the END after weil',         example: 'Ich bleibe, weil es regnet.',  exampleEn: 'I stay because it is raining.' },
+      { de: 'dann',    en: 'then',         emoji: '➡️', hint: '🔁 Day 32 · sequence · leads → V2',         example: 'Dann geht er nach Hause.',     exampleEn: 'Then he goes home.' },
+      { de: 'danach',  en: 'after that',   emoji: '⏩', hint: 'sequence · leads → V2',                    example: 'Danach trinkt er Kaffee.',     exampleEn: 'After that he drinks coffee.' },
+      { de: 'zuerst',  en: 'first',        emoji: '1️⃣', hint: 'opens a sequence',                         example: 'Zuerst liest sie den Text.',   exampleEn: 'First she reads the text.' },
+
+      // 🆓 COGNATES — free words (look/sound like English)
+      { de: 'die Firma',       en: 'the firm / company', emoji: '🏢', hint: '🆓 cognate-ish · "firm"',          example: 'Sie arbeitet in einer Firma.', exampleEn: 'She works at a company.' },
+      { de: 'das Restaurant',  en: 'the restaurant',     emoji: '🍽️', hint: '🆓 identical to English',          example: 'Wir gehen ins Restaurant.',    exampleEn: 'We go to the restaurant.' },
+      { de: 'der Kaffee',      en: 'the coffee',         emoji: '☕', hint: '🆓 near-identical · "coffee"',      example: 'Ich trinke einen Kaffee.',     exampleEn: 'I drink a coffee.' },
+    ],
     grammar: [
-      { rule: 'Reading strategy',
+      { rule: '⭐ THE 4-STEP READING STRATEGY',
         body:
-          '1. Read the whole paragraph once for the gist — do NOT translate every word.\n' +
-          '2. Highlight the verbs (they tell you who does what).\n' +
-          '3. On the second read, look up only words you actually need.\n' +
-          '4. Answer the questions IN GERMAN if you can — match grammar from the text.',
+          '1. GIST FIRST — read the whole paragraph once without stopping. Do NOT translate every word.\n' +
+          '2. FIND THE VERBS — they tell you who does what. The conjugated verb is in slot 2 (or slot 1 in a question).\n' +
+          '3. SECOND READ — now look up ONLY the words you genuinely need for meaning.\n' +
+          '4. ANSWER — answer in German when you can, reusing words and grammar straight from the text.',
+      },
+      { rule: '🆓 LEAN ON COGNATES — free vocabulary',
+        body:
+          'Hundreds of German words look or sound like English. Recognise them and you read faster:\n\n' +
+          '  Restaurant · Kaffee · Computer · Telefon · Firma · Information · Musik · Familie ·\n' +
+          '  Hotel · Bus · Park · Problem · Student · Adresse · Supermarkt · Apartment\n\n' +
+          '⚠ Watch the "false friends": "bekommen" = to RECEIVE (not become), "also" = therefore (not also), "Gift" = poison. But true cognates far outnumber the traps — guess first, verify if it matters.',
+      },
+      { rule: '🔍 FIND THE VERB = find the meaning',
+        body:
+          'German can move things around, but the conjugated verb is anchored:\n\n' +
+          '  • Statement → verb in SLOT 2:  "Heute arbeitet er in der Firma." (arbeitet)\n' +
+          '  • Yes/No question → verb in SLOT 1: "Kommt Anna aus Indien?"\n' +
+          '  • After weil/dass → verb at the END: "…, weil sie arbeiten muss."\n\n' +
+          'Find that verb, ask "Wer?" (who does it → subject) and "Wen/Was?" (what is affected → object), and the sentence unlocks — even if you don\'t know every word.',
+      },
+      { rule: '🔗 SIGNAL WORDS MAP THE LOGIC',
+        body:
+          'Little connecting words tell you HOW ideas relate — they\'re sign-posts:\n\n' +
+          '  und (and) · aber (but) · oder (or)        → add / contrast / choose\n' +
+          '  denn / weil (because)                      → a REASON follows\n' +
+          '  zuerst → dann → danach → schließlich      → SEQUENCE / order of events\n' +
+          '  heute · jetzt · am Wochenende             → WHEN it happens\n\n' +
+          '⚠ "weil" sends its verb to the END of the clause; "denn" keeps normal order. Both mean "because".',
+      },
+      { rule: '🙋 ANSWERING IN GERMAN — recycle the text',
+        body:
+          'When a question asks "Woher kommt Anna?", build the answer from the text\'s own words:\n\n' +
+          '  Q: Woher kommt Anna?      Text: "Anna kommt aus Indien."\n' +
+          '  A: Anna kommt aus Indien. / Aus Indien.\n\n' +
+          'Match the W-word to the case (Day 17): Wer→subject, Wen→Akk object, Wo→location, Wann→time, Warum→reason (answer with weil). You rarely need new vocabulary — the answer is usually hiding in the sentence.',
       },
     ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 2 INTERACTIVE MATCHES — comprehension words · signal words
+      { type: 'match',
+        pairs: [
+          { de: 'der Text',       en: '📄 the text' },
+          { de: 'der Satz',       en: '📝 the sentence' },
+          { de: 'das Wort',       en: '🔤 the word' },
+          { de: 'die Frage',      en: '❓ the question' },
+          { de: 'die Antwort',    en: '✅ the answer' },
+          { de: 'die Geschichte', en: '📚 the story' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'und',    en: '➕ and (adds)' },
+          { de: 'aber',   en: '↔️ but (contrast)' },
+          { de: 'weil',   en: '🧩 because (verb to end)' },
+          { de: 'dann',   en: '➡️ then (sequence)' },
+          { de: 'zuerst', en: '1️⃣ first (opens sequence)' },
+        ],
+      },
+
+      // 📖 TEXT 1 + comprehension (EN) + answer-in-German
       { type: 'dialogue', lines: [
         { speaker: 'Text 1', de: 'Der Student ist dreiundzwanzig Jahre alt.', en: 'The student is 23 years old.' },
         { speaker: 'Text 1', de: 'Heute arbeitet er in der Firma.',           en: 'Today he works in the company.' },
@@ -6289,6 +6375,9 @@ export const days = [
       { type: 'multiple-choice', q: 'Text 1: How old is the student?', options: ['13', '23', '33', '43'], answer: '23' },
       { type: 'multiple-choice', q: 'Text 1: Who shows the book?', options: ['the student', 'the teacher', 'the friend', 'the colleague'], answer: 'the teacher' },
       { type: 'multiple-choice', q: 'Text 1: What does the student do at the end?', options: ['writes a sentence', 'works in the company', 'listens and repeats', 'reads a book'], answer: 'listens and repeats' },
+      { type: 'fill-blank', sentence: 'Text 1 · answer in German: "Wie alt ist der Student?" → Er ist __ Jahre alt.', answer: 'dreiundzwanzig', hint: 'write the number as a word' },
+
+      // 📖 TEXT 2 + comprehension (EN) + answer-in-German
       { type: 'dialogue', lines: [
         { speaker: 'Text 2', de: 'Anna kommt aus Indien und wohnt jetzt in Berlin.', en: 'Anna comes from India and lives now in Berlin.' },
         { speaker: 'Text 2', de: 'Sie ist Softwareentwicklerin und arbeitet in einer Firma.', en: 'She is a software developer and works in a company.' },
@@ -6298,6 +6387,9 @@ export const days = [
       { type: 'multiple-choice', q: 'Text 2: Where is Anna from?', options: ['Berlin', 'Germany', 'India', 'Frankfurt'], answer: 'India' },
       { type: 'multiple-choice', q: 'Text 2: What is Anna\'s profession?', options: ['teacher', 'software developer', 'cook', 'doctor'], answer: 'software developer' },
       { type: 'multiple-choice', q: 'Text 2: Why does Anna have no time today?', options: ['She is sick.', 'She has to work.', 'She is travelling.', 'She is cooking.'], answer: 'She has to work.' },
+      { type: 'fill-blank', sentence: 'Text 2 · answer in German: "Wo wohnt Anna jetzt?" → Sie wohnt in __.', answer: 'Berlin' },
+
+      // 📖 TEXT 3 + comprehension (EN) + answer-in-German
       { type: 'dialogue', lines: [
         { speaker: 'Text 3', de: 'Im Restaurant bestellt Tom einen Kaffee mit Milch und eine Suppe.', en: 'At the restaurant Tom orders a coffee with milk and a soup.' },
         { speaker: 'Text 3', de: 'Der Kellner bringt das Essen schnell.', en: 'The waiter brings the food quickly.' },
@@ -6306,8 +6398,46 @@ export const days = [
       ]},
       { type: 'multiple-choice', q: 'Text 3: What does Tom order?', options: ['tea and a salad', 'coffee with milk and a soup', 'water and bread', 'beer and pizza'], answer: 'coffee with milk and a soup' },
       { type: 'multiple-choice', q: 'Text 3: How does Tom pay?', options: ['cash', 'card', 'phone', 'cheque'], answer: 'card' },
+      { type: 'fill-blank', sentence: 'Text 3 · answer in German: "Womit zahlt Tom?" → Er zahlt mit __.', answer: 'Karte' },
+
+      // 📖 TEXT 4 (NEW) — uses weil/aber + a daily routine, with EN + DE questions
+      { type: 'dialogue', lines: [
+        { speaker: 'Text 4', de: 'Max steht um sechs Uhr auf, denn er fährt früh zur Arbeit.', en: 'Max gets up at six, because he goes to work early.' },
+        { speaker: 'Text 4', de: 'Er frühstückt schnell und nimmt den Bus.', en: 'He has breakfast quickly and takes the bus.' },
+        { speaker: 'Text 4', de: 'Heute ist er müde, aber er muss arbeiten.', en: 'Today he is tired, but he has to work.' },
+        { speaker: 'Text 4', de: 'Am Abend geht er nicht aus, weil er schlafen will.', en: 'In the evening he does not go out, because he wants to sleep.' },
+      ]},
+      { type: 'multiple-choice', q: 'Text 4: When does Max get up?', options: ['at five', 'at six', 'at seven', 'at eight'], answer: 'at six' },
+      { type: 'multiple-choice', q: 'Text 4: How does he get to work?', options: ['by car', 'by bike', 'by bus', 'on foot'], answer: 'by bus' },
+      { type: 'multiple-choice', q: 'Text 4: Why doesn\'t he go out in the evening?', options: ['He is sick.', 'He wants to sleep.', 'He has no money.', 'He is cooking.'], answer: 'He wants to sleep.' },
+      { type: 'fill-blank', sentence: 'Text 4 · signal word: "Heute ist er müde, __ er muss arbeiten." (but)', answer: 'aber' },
+
+      // 🆓 1 cognate match
+      { type: 'match',
+        pairs: [
+          { de: 'die Firma',      en: 'company / firm' },
+          { de: 'das Restaurant', en: 'restaurant' },
+          { de: 'der Kaffee',     en: 'coffee' },
+          { de: 'der Bus',        en: 'bus' },
+        ],
+      },
     ],
-    quiz: [],
+    quiz: [
+      { type: 'multiple-choice', q: 'Reading strategy: what do you do FIRST with a new text?',
+        options: ['Translate every word','Read for the gist without stopping','Look up all nouns','Answer the questions'], answer: 'Read for the gist without stopping' },
+      { type: 'multiple-choice', q: 'In a statement, the conjugated verb is usually in…',
+        options: ['slot 1','slot 2','the last position','any position'], answer: 'slot 2' },
+      { type: 'multiple-choice', q: '⚠ After "weil", the verb goes…',
+        options: ['to slot 1','to slot 2','to the END of the clause','nowhere — weil has no verb'], answer: 'to the END of the clause' },
+      { type: 'multiple-choice', q: 'Which word signals a REASON is coming?',
+        options: ['aber','und','weil','dann'], answer: 'weil' },
+      { type: 'fill-blank', sentence: 'Answer in German: "Woher kommt Anna?" → Anna kommt __ Indien.', answer: 'aus' },
+      { type: 'multiple-choice', q: '"Was bedeutet das Wort?" means…',
+        options: ['Where is the word?','What does the word mean?','How many words?','Who said the word?'], answer: 'What does the word mean?' },
+      { type: 'multiple-choice', q: 'A reliable cognate (free word) is…',
+        options: ['bekommen','also','das Restaurant','das Gift'], answer: 'das Restaurant',
+        explain: 'Restaurant is a true cognate. bekommen=receive, also=therefore, Gift=poison are false friends.' },
+    ],
   },
 
   /* ===================== v3.0.0 — A2 expansion (presentation 0205.pptx) ===================== */

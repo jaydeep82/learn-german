@@ -11,10 +11,27 @@
  * in sync.
  */
 
-export const VERSION = '3.9.3';
+export const VERSION = '3.9.4';
 export const RELEASE_DATE = '2026-06-01';
 
 export const RELEASES = [
+  {
+    version: '3.9.4',
+    date: '2026-06-01',
+    type: 'improvement',
+    title: 'Day 34 review — Reading practice: strategy, cognates, signal words + a 4th text',
+    notes: [
+      'Reviewed Day 34 (Reading practice) end-to-end, parallel to the Day 14-33 full reviews. The previous version had an empty vocab block, 1 strategy bullet and 3 texts. Reshaped into a full reading-comprehension toolkit — keystone reading vocab, a 5-part strategy, and answer-in-German drills — without losing any of the original texts.',
+      'Vocabulary 0 → 24 items (vocabLayout: "spotlight") grouped by role icon: 📖 comprehension toolkit (Text · Absatz · Satz · Wort · Frage · Antwort · Geschichte) · 🧠 reading verbs (lesen · verstehen · bedeuten · wiederholen · beantworten) · 🔗 signal words (und · aber · denn · weil · dann · danach · zuerst) · 🆓 true cognates (Firma · Restaurant · Kaffee).',
+      'Grammar 1 → 5 callouts: ⭐ THE 4-STEP READING STRATEGY (gist → find verbs → second read → answer in German) · 🆓 LEAN ON COGNATES (a free-vocabulary list + the false-friend warning: bekommen/also/Gift) · 🔍 FIND THE VERB = find the meaning (slot-2 statement, slot-1 question, end after weil) · 🔗 SIGNAL WORDS MAP THE LOGIC (add/contrast/reason/sequence, weil-sends-verb-to-end) · 🙋 ANSWERING IN GERMAN (recycle the text, match the W-word to the case).',
+      'Exercises reshaped (11 → 23 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: comprehension words · signal words · cognates.',
+      '• 4 reading TEXTS (the 3 originals + a NEW Text 4 using denn/aber/weil and a daily routine), each with EN comprehension MCQs.',
+      '• 4 ⭐ ANSWER-IN-GERMAN fill-blanks (one per text — recycle the passage: dreiundzwanzig · Berlin · Karte · aber).',
+      '• 10 comprehension MCQs across the four texts.',
+      'Quiz 0 → 7 items: strategy-first-step · verb-in-slot-2 · weil-verb-to-end · weil-signals-reason · answer-in-German (aus) · was-bedeutet · spot-the-true-cognate (vs false friends).',
+    ],
+  },
   {
     version: '3.9.3',
     date: '2026-06-01',
