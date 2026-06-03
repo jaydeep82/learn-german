@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.9.5';
+export const VERSION = '3.9.6';
 export const RELEASE_DATE = '2026-06-04';
 
 export const RELEASES = [
+  {
+    version: '3.9.6',
+    date: '2026-06-04',
+    type: 'improvement',
+    title: 'Day 36 review — Modals II (dürfen/sollen/mögen): the negative-dürfen trap + politeness ladder',
+    notes: [
+      'Reviewed Day 36 (Modals: dürfen · sollen · mögen) end-to-end, parallel to the Day 14-35 full reviews. The previous version had 4 bare vocab items, 3 grammar bullets and the 3 conjugation tables + drills. Reshaped into a complete second-modal toolkit while preserving the 3 conjEx tables, the politeness ladder and the den-vs-einen note.',
+      'Vocabulary 4 → 17 items (vocabLayout: "spotlight") grouped by role icon: 🧰 the 3 new modals + möchten (dürfen · sollen · mögen · möchten) · 🔤 the singular forms incl. the sollen no-vowel-change exception (ich darf/soll/mag + du darfst) · 🚫 permission/prohibition (nicht dürfen · Darf ich …?) · ☕ the 5-rung politeness ladder (Ich möchte → Ich hätte gerne + bitte + bestellen) · 🧩 the sandwich-rule recap label.',
+      'Grammar 3 → 5 callouts: ⭐ THE SIX MODALS overview (all jobs + the shared sandwich rule) · ⭐ THE SINGULAR VOWEL-CHANGE with the ⚠ sollen exception (darf/mag change, soll does NOT) · ⚠ dürfen-vs-müssen in the NEGATIVE — the safety trap (darf nicht = forbidden / muss nicht = don\'t have to; English "must not" → darf nicht) · 😍 mögen vs möchten (like-a-thing vs would-like-now) · ☕ THE POLITENESS LADDER (5 rungs, "Ich hätte gerne" the most natural, avoid "Ich will", + den-vs-einen).',
+      'Exercises reshaped (10 → 19 mixed):',
+      '• 2 ⭐ INTERACTIVE matches: modal → meaning · politeness ladder (demanding → most natural).',
+      '• 3 📊 CONJUGATION TABLES preserved (dürfen · sollen · mögen via conjEx).',
+      '• 5 🧰 MODAL fill-blanks (möchte/darfst/sollst/mag/Darf).',
+      '• 4 ☕ POLITENESS-LADDER fill-blanks (gerne/mit/hätte/bitte).',
+      '• 3 ⚠ TRAP MCQs (darf-nicht prohibition · sollen-no-vowel · mögen-vs-möchten) + the preserved restaurant-order MCQ.',
+      '• 💬 Café dialogue weaving Darf ich…?, möchten, hätte gerne, mag and sollten advice.',
+      'Quiz 1 → 7 items: polite-order · Darf-ich · darf-nicht-trap · sollst-advice · mag-general-taste · sollen-no-vowel · hätte-gerne.',
+    ],
+  },
   {
     version: '3.9.5',
     date: '2026-06-04',

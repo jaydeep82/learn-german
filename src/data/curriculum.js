@@ -4194,53 +4194,172 @@ export const days = [
 
   {
     id: 36, week: 6,
+    vocabLayout: 'spotlight',
     title: 'Modals: dürfen · sollen · mögen',
     titleDe: 'Modalverben II',
     emoji: '🧰',
-    objective: 'Express permission, advice and liking.',
-    intro: '"dürfen" = be allowed. "sollen" = should. "mögen" = like (and, in subjunctive form möchte = would like — your restaurant friend).',
+    objective: 'Complete the modal set — dürfen (permission), sollen (advice/obligation), mögen (liking) and möchten (polite would-like) — and climb the café/restaurant politeness ladder.',
+    intro: 'Day 35 gave you können/müssen/wollen. Today finishes the family: dürfen = be allowed (permission), sollen = should (advice or someone else\'s instruction), mögen = like (a thing), and möchten = would like (the polite ordering verb). Same sandwich rule, same singular vowel-change — plus the real-world politeness ladder for cafés and shops.',
     vocabulary: [
-      { de: 'dürfen', en: 'to be allowed' },
-      { de: 'sollen', en: 'should' },
-      { de: 'mögen',  en: 'to like' },
-      { de: 'möchten',en: 'would like (polite)' },
+      // 🧰 THE THREE NEW MODALS + möchten
+      { de: 'dürfen',  en: 'to be allowed to',  emoji: '✅', hint: '⭐ permission · ich DARF (rf→r)',           example: 'Darf ich hier rauchen?',        exampleEn: 'May I smoke here?' },
+      { de: 'sollen',  en: 'should / ought to',  emoji: '📋', hint: '⭐ advice / instruction · ich SOLL (no vowel change!)', example: 'Du sollst mehr schlafen.', exampleEn: 'You should sleep more.' },
+      { de: 'mögen',   en: 'to like (a thing)',  emoji: '😍', hint: '⭐ liking · ich MAG · usually + NOUN, no 2nd verb', example: 'Ich mag Kaffee.',           exampleEn: 'I like coffee.' },
+      { de: 'möchten', en: 'would like (polite)', emoji: '🙏', hint: '🔁 Day 35 · polite form of mögen/wollen', example: 'Ich möchte einen Tee.',         exampleEn: 'I would like a tea.' },
+
+      // 🔤 THE SINGULAR FORMS — the vowel-change (and the sollen exception)
+      { de: 'ich darf',  en: 'I may / am allowed', emoji: '🟦', hint: 'dürfen → darf (ü→a) · no -e',           example: 'Ich darf heute früher gehen.',  exampleEn: 'I may leave earlier today.' },
+      { de: 'du darfst', en: 'you may',            emoji: '👉', hint: 'darf + st',                            example: 'Du darfst hier parken.',        exampleEn: 'You may park here.' },
+      { de: 'ich soll',  en: 'I should',           emoji: '🟥', hint: '⚠ NO vowel change · soll (not "sull")', example: 'Was soll ich machen?',         exampleEn: 'What should I do?' },
+      { de: 'ich mag',   en: 'I like',             emoji: '🟨', hint: 'mögen → mag (ö→a) · no -e',            example: 'Ich mag Schokolade.',           exampleEn: 'I like chocolate.' },
+
+      // 🚫 PERMISSION / PROHIBITION (dürfen + nicht)
+      { de: 'nicht dürfen', en: 'not be allowed / must not', emoji: '🚫', hint: '⚠ "darf nicht" = forbidden, NOT "don\'t have to"', example: 'Du darfst nicht rauchen.', exampleEn: 'You must not smoke.' },
+      { de: 'Darf ich …?',  en: 'May I …?',         emoji: '🙋', hint: 'asking permission politely',          example: 'Darf ich das Fenster öffnen?',  exampleEn: 'May I open the window?' },
+
+      // ☕ THE POLITENESS LADDER — café/restaurant ordering
+      { de: 'Ich möchte …',        en: 'I would like … (basic polite)', emoji: '1️⃣', hint: 'the standard polite order',       example: 'Ich möchte einen Kaffee.',          exampleEn: 'I would like a coffee.' },
+      { de: 'Ich möchte gerne …',  en: 'I would gladly like … (warmer)', emoji: '2️⃣', hint: 'gerne adds warmth',              example: 'Ich möchte gerne einen Kaffee.',    exampleEn: 'I\'d gladly have a coffee.' },
+      { de: 'Ich hätte gerne …',   en: 'I would like to have … (most natural)', emoji: '⭐', hint: '⭐ THE restaurant phrase · hätte gerne', example: 'Ich hätte gerne einen Kaffee, bitte.', exampleEn: 'I\'d like a coffee, please.' },
+      { de: 'bitte',               en: 'please',     emoji: '🙏', hint: 'add anywhere · always softens',       example: 'Einen Tee, bitte.',                 exampleEn: 'A tea, please.' },
+      { de: 'bestellen',           en: 'to order',   emoji: '📝', hint: 'the café/restaurant verb',           example: 'Ich möchte bestellen.',             exampleEn: 'I would like to order.' },
+
+      // 🧩 SANDWICH RULE (recap label)
+      { de: 'Modal + Infinitiv', en: 'modal slot 2, infinitive at END', emoji: '🥪', hint: '🔁 Day 35 · same rule for all 6 modals', example: 'Ich darf heute früher gehen.', exampleEn: 'I may leave earlier today.' },
     ],
     grammar: [
-      { rule: 'möchte vs will', body: '"Ich möchte einen Kaffee" is polite. "Ich will einen Kaffee" sounds demanding.' },
-      { rule: 'The politeness ladder',
+      { rule: '⭐ THE SIX MODALS — what each one means',
         body:
-          'Climb the ladder to sound natural in cafés, shops and offices:\n' +
-          '1. Ich möchte einen Kaffee bestellen.            (basic polite — "I would like to order")\n' +
-          '2. Ich möchte gerne einen Kaffee bestellen.      (warmer — "gladly")\n' +
-          '3. Ich möchte sehr gerne einen Kaffee bestellen, bitte.   (very polite)\n' +
-          '4. Ich möchte einen Kaffee mit Milch, bitte.     (specifying preferences)\n' +
-          '5. Ich hätte gerne einen Kaffee mit Milch.       (most natural in restaurants)\n' +
-          'Add "bitte" anywhere — it always softens.',
+          'Day 35 gave you three; here are the other three (+ möchten). Each has a distinct job:\n\n' +
+          '  können  — can / ability        (Day 35)\n' +
+          '  müssen  — must / obligation    (Day 35)\n' +
+          '  wollen  — want / desire        (Day 35)\n' +
+          '  dürfen  — be ALLOWED / permission   "Darf ich …?"\n' +
+          '  sollen  — SHOULD / advice or instruction   "Du sollst …"\n' +
+          '  mögen   — to LIKE (usually + a noun)   "Ich mag Kaffee."\n' +
+          '  möchten — would LIKE (polite)   "Ich möchte …"\n\n' +
+          'All seven follow the SAME sandwich rule: conjugated modal in slot 2, any second verb to the END as an infinitive.',
       },
-      { rule: '"den" vs "einen" — does it matter?',
+      { rule: '⭐ THE SINGULAR VOWEL-CHANGE (and sollen\'s exception)',
         body:
-          'Ich möchte EINEN Fisch bestellen. — "any fish" (you are choosing).\n' +
-          'Ich möchte DEN Fisch bestellen. — "the (specific) fish" (you are pointing at it on the menu).\n' +
-          'Both are correct German — meaning shifts.',
+          '           dürfen    sollen    mögen\n' +
+          '  ich      darf      soll      mag       ← darf/mag change vowel; soll does NOT\n' +
+          '  du       darfst    sollst    magst\n' +
+          '  er/sie   darf      soll      mag       ← no -t\n' +
+          '  wir      dürfen    sollen    mögen\n' +
+          '  ihr      dürft     sollt     mögt\n' +
+          '  sie/Sie  dürfen    sollen    mögen\n\n' +
+          '🧠 dürfen (ü→a) and mögen (ö→a) change their vowel in the singular — but ⚠ sollen does NOT (ich soll, not "süll"). As always, ich = er/sie (no ending), and the plural = the infinitive.',
+      },
+      { rule: '⚠ dürfen vs müssen in the NEGATIVE — a key safety trap',
+        body:
+          'In the negative these two are NOT the same — getting it wrong can be dangerous:\n\n' +
+          '  nicht dürfen  = MUST NOT / forbidden\n' +
+          '     "Du darfst hier nicht rauchen." = You are NOT allowed to smoke here.\n' +
+          '  nicht müssen  = don\'t HAVE to (but you may)\n' +
+          '     "Du musst nicht kommen." = You don\'t have to come (optional).\n\n' +
+          'So "darf nicht" = prohibition; "muss nicht" = no obligation. English "must not" maps to darf nicht, NOT muss nicht.',
+      },
+      { rule: '😍 mögen vs möchten — like vs would-like',
+        body:
+          'Same root, different jobs:\n\n' +
+          '  mögen   = to LIKE something (a standing preference, usually + noun, no second verb):\n' +
+          '            "Ich mag Kaffee." · "Magst du Pizza?"\n' +
+          '  möchten = would LIKE (a polite request / wish, right now):\n' +
+          '            "Ich möchte einen Kaffee." · "Ich möchte bezahlen."\n\n' +
+          'Rule of thumb: mögen describes taste in general; möchten places an order or states a wish for now. (Grammatically möchten is the Konjunktiv II of mögen — the polite "would" form.)',
+      },
+      { rule: '☕ THE POLITENESS LADDER — ordering like a local',
+        body:
+          'Climb the ladder to sound natural in cafés, shops and offices:\n\n' +
+          '  1. Ich möchte einen Kaffee.                  (basic polite)\n' +
+          '  2. Ich möchte gerne einen Kaffee.            (warmer — "gladly")\n' +
+          '  3. Ich möchte gerne einen Kaffee, bitte.     (very polite)\n' +
+          '  4. Ich möchte einen Kaffee mit Milch, bitte. (specifying)\n' +
+          '  5. Ich hätte gerne einen Kaffee mit Milch.   (⭐ most natural in restaurants)\n\n' +
+          '"Ich hätte gerne …" (lit. "I would have gladly") is what waiters hear most. Add "bitte" anywhere — it always softens. AVOID "Ich will …" with strangers — it sounds demanding.\n\n' +
+          'Bonus — den vs einen: "Ich möchte EINEN Fisch" = any fish (you choose); "Ich möchte DEN Fisch" = the specific fish (pointing at the menu). Both correct — meaning shifts.',
       },
     ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 2 INTERACTIVE MATCHES — modal→meaning · politeness ladder
+      { type: 'match',
+        pairs: [
+          { de: 'dürfen',  en: '✅ be allowed (permission)' },
+          { de: 'sollen',  en: '📋 should (advice)' },
+          { de: 'mögen',   en: '😍 to like (a thing)' },
+          { de: 'möchten', en: '🙏 would like (polite)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Ich will einen Kaffee.',          en: '😠 demanding (avoid)' },
+          { de: 'Ich möchte einen Kaffee.',         en: '🙂 basic polite' },
+          { de: 'Ich möchte gerne einen Kaffee.',   en: '😊 warmer' },
+          { de: 'Ich hätte gerne einen Kaffee, bitte.', en: '⭐ most natural' },
+        ],
+      },
+
+      // 📊 3 CONJUGATION TABLES (preserved — dürfen / sollen / mögen)
       conjEx('dürfen', 'be allowed'),
       conjEx('sollen', 'should'),
       conjEx('mögen', 'to like'),
-      { type: 'fill-blank', sentence: 'Ich __ ein Bier, bitte. (would like)', answer: 'möchte' },
-      { type: 'fill-blank', sentence: 'Du __ nicht rauchen. (be allowed, neg.)', answer: 'darfst' },
-      // Politeness ladder drills — slide 258
+
+      // 🧰 5 MODAL fill-blanks (right singular form)
+      { type: 'fill-blank', sentence: 'Ich __ ein Bier, bitte. (would like)',        answer: 'möchte' },
+      { type: 'fill-blank', sentence: 'Du __ hier nicht rauchen. (be allowed, neg.)', answer: 'darfst' },
+      { type: 'fill-blank', sentence: 'Du __ mehr schlafen. (should)',               answer: 'sollst' },
+      { type: 'fill-blank', sentence: 'Ich __ Schokolade sehr. (like)',              answer: 'mag' },
+      { type: 'fill-blank', sentence: '__ ich das Fenster öffnen? (May I …?)',       answer: 'Darf' },
+
+      // ☕ 4 POLITENESS-LADDER fill-blanks (preserved + extended)
       { type: 'fill-blank', sentence: 'Ich möchte __ einen Kaffee bestellen. (gladly)', answer: 'gerne' },
-      { type: 'fill-blank', sentence: 'Ich möchte sehr __ einen Kaffee bestellen, bitte.', answer: 'gerne' },
       { type: 'fill-blank', sentence: 'Ich möchte einen Kaffee __ Milch, bitte. (with)', answer: 'mit' },
       { type: 'fill-blank', sentence: 'Ich __ gerne einen Kaffee mit Milch. (most natural restaurant phrasing)', answer: 'hätte', hint: '"hätte gerne" = "would like to have"' },
+      { type: 'fill-blank', sentence: 'Soften any request: add "__" at the end.',   answer: 'bitte' },
+
+      // ⚠ 3 TRAP MCQs (dürfen-nicht vs müssen-nicht · sollen-no-vowel · mögen-vs-möchten)
+      { type: 'multiple-choice', q: '⚠ "You must not smoke here." (prohibition) =',
+        options: ['Du musst hier nicht rauchen.','Du darfst hier nicht rauchen.','Du sollst hier rauchen.','Du magst hier nicht rauchen.'],
+        answer: 'Du darfst hier nicht rauchen.',
+        explain: '"must not" = darf nicht (forbidden). "muss nicht" would mean "don\'t have to".' },
+      { type: 'multiple-choice', q: '⚠ 1st-person of sollen: "Ich ___ mehr lernen."',
+        options: ['sull','söll','soll','sölle'], answer: 'soll',
+        explain: 'sollen does NOT change its vowel → ich soll.' },
+      { type: 'multiple-choice', q: 'Standing preference for a thing: "Ich ___ Pizza." (I like pizza)',
+        options: ['möchte','will','mag','soll'], answer: 'mag',
+        explain: 'mögen = to like a thing in general; möchten = would like right now.' },
+
+      // 💬 1 restaurant order MCQ (preserved)
       { type: 'multiple-choice', q: 'Most natural restaurant order:',
         options: ['Ich will einen Kaffee.', 'Gib mir einen Kaffee.', 'Ich hätte gerne einen Kaffee, bitte.', 'Kaffee jetzt!'],
         answer: 'Ich hätte gerne einen Kaffee, bitte.' },
+
+      // 💬 Mini dialogue — permission + advice + ordering
+      { type: 'dialogue', lines: [
+        { speaker: 'Gast',    de: 'Entschuldigung, darf ich hier sitzen?',          en: 'Excuse me, may I sit here?' },
+        { speaker: 'Kellner', de: 'Natürlich! Was möchten Sie bestellen?',          en: 'Of course! What would you like to order?' },
+        { speaker: 'Gast',    de: 'Ich hätte gerne einen Kaffee mit Milch, bitte.', en: 'I\'d like a coffee with milk, please.' },
+        { speaker: 'Kellner', de: 'Möchten Sie auch etwas essen?',                  en: 'Would you also like something to eat?' },
+        { speaker: 'Gast',    de: 'Ich mag Kuchen — ich nehme ein Stück.',          en: 'I like cake — I\'ll take a piece.' },
+        { speaker: 'Kellner', de: 'Sie sollten den Apfelkuchen probieren!',          en: 'You should try the apple cake!' },
+      ]},
     ],
     quiz: [
-      { type: 'multiple-choice', q: 'Polite restaurant order:', options: ['Ich will eine Pizza.','Ich möchte eine Pizza.','Ich muss eine Pizza.','Ich kann eine Pizza.'], answer: 'Ich möchte eine Pizza.' },
+      { type: 'multiple-choice', q: 'Polite restaurant order:',
+        options: ['Ich will eine Pizza.','Ich möchte eine Pizza.','Ich muss eine Pizza.','Ich kann eine Pizza.'], answer: 'Ich möchte eine Pizza.' },
+      { type: 'fill-blank', sentence: '"May I …?" → __ ich hier parken?', answer: 'Darf' },
+      { type: 'multiple-choice', q: '⚠ "You must not smoke" (forbidden) =',
+        options: ['Du musst nicht rauchen.','Du darfst nicht rauchen.','Du sollst rauchen.','Du magst nicht rauchen.'],
+        answer: 'Du darfst nicht rauchen.', explain: 'darf nicht = forbidden; muss nicht = don\'t have to.' },
+      { type: 'fill-blank', sentence: 'Advice: "Du __ mehr Wasser trinken." (should)', answer: 'sollst' },
+      { type: 'multiple-choice', q: '"I like coffee" (general taste) =',
+        options: ['Ich möchte Kaffee.','Ich mag Kaffee.','Ich soll Kaffee.','Ich darf Kaffee.'], answer: 'Ich mag Kaffee.' },
+      { type: 'multiple-choice', q: '1st-person of sollen is…',
+        options: ['sull','soll','söll','solle'], answer: 'soll', explain: 'sollen keeps its vowel.' },
+      { type: 'fill-blank', sentence: 'Most natural: "Ich __ gerne einen Tee, bitte." (would like to have)', answer: 'hätte' },
     ],
   },
 
