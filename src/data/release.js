@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.9.6';
+export const VERSION = '3.9.7';
 export const RELEASE_DATE = '2026-06-04';
 
 export const RELEASES = [
+  {
+    version: '3.9.7',
+    date: '2026-06-04',
+    type: 'improvement',
+    title: 'Day 37 review — Connectors: the 3 word-order groups (slot-2 · verb-to-end · V2 inversion)',
+    notes: [
+      'Reviewed Day 37 (Sentence connections) end-to-end, parallel to the Day 14-36 full reviews. The previous version had 8 connectors, 3 grammar bullets and 8 exercises covering two groups. Reshaped around the full THREE-group system, adding the adverb-connector (V2-inversion) group that learners most often get wrong.',
+      'Vocabulary 8 → 17 items (vocabLayout: "spotlight") grouped by behaviour: 🟢 Group 1 coordinating, verb stays slot 2 (und · oder · aber · denn · sondern — added sondern) · 🔴 Group 2 subordinating, verb to END (weil · wenn · dass · obwohl · ob — added obwohl, ob) · 🟡 Group 3 adverb-connectors, V2 inversion (deshalb · dann · trotzdem — NEW group) · 🧩 structure labels (Hauptsatz · Nebensatz).',
+      'Grammar 3 → 5 callouts: 🟢 GROUP 1 coordinating with the ADUSO memory aid + sondern-after-negative · 🔴 GROUP 2 subordinating (verb to end, comma rule, modal-goes-last) · 🟡 GROUP 3 adverb-connectors V2 inversion (the deshalb/dann/trotzdem rule learners miss) · ⚖️ denn vs weil vs deshalb (reason-same-order / reason-verb-end / result-inversion) · 🚦 pitfalls (the three behaviours + denn≠dann + sondern-only-after-negative + modal-last).',
+      'Exercises reshaped (8 → 21 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: connector → group/behaviour · subordinating connectors → meaning · denn/dann/deshalb/sondern disambiguation.',
+      '• 4 🟢 GROUP-1 fill-blanks (und/oder/aber/denn — no word-order change).',
+      '• 4 🔴 GROUP-2 verb-to-END fill-blanks (weil-arbeite/wenn-habe/dass-ist/obwohl-regnet).',
+      '• 2 🟡 GROUP-3 V2-inversion fill-blanks (deshalb gehe ich / dann schlafe ich).',
+      '• 4 ⚠ WORD-ORDER / GROUP MCQs (which-sends-verb-to-end · weil order · deshalb inversion · denn-vs-dann).',
+      '• 💬 Plans dialogue weaving aber, weil, dass and deshalb.',
+      'Quiz 1 → 7 items: dass-ist · which-group-unchanged · weil-regnet · deshalb-inversion · denn-stays-slot2 · dann-V2 · sondern-after-negative.',
+    ],
+  },
   {
     version: '3.9.6',
     date: '2026-06-04',

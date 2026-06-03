@@ -7243,58 +7243,133 @@ export const days = [
   /* ----- Day 37: Sentence connections ----- */
   {
     id: 37, week: 6,
+    vocabLayout: 'spotlight',
     title: 'Sentence connections',
     titleDe: 'Konnektoren',
     emoji: '🔗',
-    objective: 'Glue two sentences together — and know when the verb stays in slot 2 vs jumps to the end.',
-    intro: 'Two flavours of conjunction. Coordinating ones (und, oder, aber, denn, dann) leave word order ALONE. Subordinating ones (weil, wenn) push the verb to the very END of the second clause.',
+    objective: 'Glue clauses together and know the word-order each connector demands — verb stays in slot 2 (und/aber/denn), verb jumps to the END (weil/wenn/dass), or verb-first inversion (deshalb/dann).',
+    intro: 'Connectors turn short sentences into real German. There are THREE behaviours: (1) coordinating connectors (und · oder · aber · denn · sondern) leave word order untouched; (2) subordinating connectors (weil · wenn · dass · obwohl) push the conjugated verb to the very END; (3) adverb-connectors (deshalb · dann · trotzdem) trigger V2 inversion — verb second, subject third. Learn which group a word is in and your sentences click into place.',
     vocabulary: [
-      { de: 'und',   en: 'and' },
-      { de: 'oder',  en: 'or' },
-      { de: 'aber',  en: 'but' },
-      { de: 'denn',  en: 'because (coordinating — verb stays slot 2)' },
-      { de: 'dann',  en: 'then' },
-      { de: 'weil',  en: 'because (subordinating — verb to end)' },
-      { de: 'wenn',  en: 'if / when' },
-      { de: 'dass',  en: 'that (subordinating — verb to end)' },
+      // 🟢 GROUP 1 — COORDINATING (verb stays in slot 2, no change)
+      { de: 'und',     en: 'and',                emoji: '➕', hint: '🟢 coordinating · no word-order change',   example: 'Ich lerne Deutsch und ich arbeite.', exampleEn: 'I learn German and I work.' },
+      { de: 'oder',    en: 'or',                 emoji: '🔀', hint: '🟢 coordinating · offers a choice',        example: 'Trinkst du Kaffee oder Tee?',        exampleEn: 'Do you drink coffee or tea?' },
+      { de: 'aber',    en: 'but',                emoji: '↔️', hint: '🟢 coordinating · contrast',               example: 'Es ist klein, aber schön.',          exampleEn: 'It is small but nice.' },
+      { de: 'denn',    en: 'because (verb stays slot 2)', emoji: '💬', hint: '🟢 coordinating "because" · normal order', example: 'Ich gehe, denn ich bin müde.', exampleEn: 'I am going, because I am tired.' },
+      { de: 'sondern', en: 'but rather',         emoji: '🔄', hint: '🟢 "but" AFTER a negative · nicht X, sondern Y', example: 'Nicht Tee, sondern Kaffee.',     exampleEn: 'Not tea, but rather coffee.' },
+
+      // 🔴 GROUP 2 — SUBORDINATING (verb JUMPS to the end)
+      { de: 'weil',    en: 'because (verb to END)', emoji: '🧩', hint: '🔴 subordinating · verb at the end',     example: 'Ich gehe, weil ich müde bin.',       exampleEn: 'I am going because I am tired.' },
+      { de: 'wenn',    en: 'if / when',          emoji: '🔁', hint: '🔴 subordinating · condition · verb to END', example: 'Ich komme, wenn ich Zeit habe.',     exampleEn: 'I come if I have time.' },
+      { de: 'dass',    en: 'that',               emoji: '📎', hint: '🔴 subordinating · reported speech · verb to END', example: 'Ich denke, dass er müde ist.', exampleEn: 'I think that he is tired.' },
+      { de: 'obwohl',  en: 'although',           emoji: '🤷', hint: '🔴 subordinating · concession · verb to END', example: 'Ich gehe, obwohl es regnet.',      exampleEn: 'I go although it is raining.' },
+      { de: 'ob',      en: 'whether',            emoji: '❓', hint: '🔴 subordinating · indirect yes/no · verb to END', example: 'Ich weiß nicht, ob er kommt.', exampleEn: 'I don\'t know whether he is coming.' },
+
+      // 🟡 GROUP 3 — ADVERB-CONNECTORS (V2 inversion: verb 2nd, subject 3rd)
+      { de: 'deshalb', en: 'therefore / so',     emoji: '➡️', hint: '🟡 adverb · V2 inversion · "deshalb gehe ich"', example: 'Ich bin müde, deshalb gehe ich.',  exampleEn: 'I am tired, so I am going.' },
+      { de: 'dann',    en: 'then',               emoji: '⏭️', hint: '🟡 adverb · sequence · V2 inversion',       example: 'Zuerst esse ich, dann schlafe ich.', exampleEn: 'First I eat, then I sleep.' },
+      { de: 'trotzdem', en: 'nevertheless',      emoji: '💪', hint: '🟡 adverb · V2 inversion · "still / anyway"', example: 'Es regnet, trotzdem gehe ich.',     exampleEn: 'It is raining; nevertheless I go.' },
+
+      // 🧩 STRUCTURE LABELS
+      { de: 'der Hauptsatz', en: 'main clause (verb slot 2)', emoji: '1️⃣', hint: 'a complete sentence on its own', example: 'Ich bin müde.',                exampleEn: 'I am tired.' },
+      { de: 'der Nebensatz', en: 'subordinate clause (verb at END)', emoji: '2️⃣', hint: 'depends on a main clause · weil/dass…', example: '…, weil ich müde bin.',  exampleEn: '…, because I am tired.' },
     ],
     grammar: [
-      { rule: 'Group 1 — verb still in slot 2',
+      { rule: '🟢 GROUP 1 — COORDINATING (verb stays in slot 2)',
         body:
-          'und · oder · aber · denn · dann\n' +
+          'und · oder · aber · denn · sondern — these join two equal main clauses and leave word order ALONE (they sit in "position 0", not counted):\n\n' +
           '  Ich lerne Deutsch UND ich arbeite viel.\n' +
-          '  Ich trinke Kaffee ODER ich trinke Tee.\n' +
+          '  Trinkst du Kaffee ODER (trinkst du) Tee?\n' +
           '  Das ist lecker, ABER es ist teuer.\n' +
           '  Ich gehe ins Restaurant, DENN ich bin hungrig.\n' +
-          '  Ich lerne Deutsch, DANN gehe ich nach Hause.   (note: "dann" pulls subject after verb)',
+          '  Ich will keinen Tee, SONDERN Kaffee.   (sondern = "but rather", only after a negative)\n\n' +
+          '🧠 Memory aid: the German "ADUSO" set (Aber · Denn · Und · Sondern · Oder) never changes word order.',
       },
-      { rule: 'Group 2 — verb JUMPS to the end',
+      { rule: '🔴 GROUP 2 — SUBORDINATING (verb JUMPS to the end)',
         body:
-          'weil · wenn · dass\n' +
+          'weil · wenn · dass · obwohl · ob — these open a Nebensatz (subordinate clause) and kick the conjugated verb to the VERY END:\n\n' +
           '  Ich lerne Deutsch, WEIL ich in Deutschland ARBEITE.\n' +
           '  Ich komme, WENN ich Zeit HABE.\n' +
           '  Ich denke, DASS er müde IST.\n' +
-          'Comma BEFORE the conjunction. Conjugated verb at the very end of the sub-clause.',
+          '  Ich gehe, OBWOHL es REGNET.\n' +
+          '  Ich weiß nicht, OB er KOMMT.\n\n' +
+          '⚠ Always a COMMA before the connector, and the conjugated verb lands last. With a modal, the modal goes last: "…, weil ich arbeiten MUSS."',
       },
-      { rule: 'denn vs weil — same meaning, different word order',
+      { rule: '🟡 GROUP 3 — ADVERB-CONNECTORS (V2 inversion)',
         body:
-          'Both mean "because". Pick the word order you want:\n' +
-          '  Ich gehe, DENN ich bin hungrig.   (verb stays slot 2)\n' +
-          '  Ich gehe, WEIL ich hungrig BIN.   (verb to end)\n' +
-          'Speakers tend to use "weil" more often in modern German.',
+          'deshalb · dann · trotzdem · danach · sonst are ADVERBS, not real conjunctions. When they lead the second clause they fill slot 1, so the verb stays in slot 2 and the SUBJECT moves to slot 3:\n\n' +
+          '  Ich bin müde, DESHALB gehe ICH nach Hause.\n' +
+          '  Zuerst esse ich, DANN schlafe ICH.\n' +
+          '  Es regnet, TROTZDEM gehe ICH spazieren.\n\n' +
+          '⚠ NOT "deshalb ich gehe" ✗. These behave like any time/place word that leads a sentence (the Day-9/32 V2 rule): verb second, subject right after.',
+      },
+      { rule: '⚖️ denn vs weil — same meaning, different word order',
+        body:
+          'Both mean "because" — choose by the word order you want:\n\n' +
+          '  Ich gehe, DENN ich bin müde.   (Group 1 · verb stays slot 2)\n' +
+          '  Ich gehe, WEIL ich müde bin.   (Group 2 · verb to the end)\n\n' +
+          'Same idea: deshalb is the "flip side" — it states the RESULT, not the reason:\n' +
+          '  Ich bin müde, DESHALB gehe ich. (I am tired, therefore I go.)\n\n' +
+          'Modern spoken German uses "weil" most; "denn" sounds a touch more formal/written.',
+      },
+      { rule: '🚦 PITFALLS — connector traps',
+        body:
+          '• und/oder/aber/denn/sondern → word order UNCHANGED (no verb movement).\n' +
+          '• weil/wenn/dass/obwohl/ob → conjugated verb to the END, comma before.\n' +
+          '• deshalb/dann/trotzdem → V2 inversion: verb 2nd, subject 3rd (NOT "deshalb ich…").\n' +
+          '• "denn" (because) ≠ "dann" (then) — one letter, totally different jobs.\n' +
+          '• sondern only after a negative ("nicht X, sondern Y"); otherwise use aber.\n' +
+          '• With a modal in a weil-clause, the MODAL goes last: "…, weil ich gehen muss."',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: 'Ich lerne Deutsch __ ich arbeite viel. (and)',                       answer: 'und' },
-      { type: 'fill-blank', sentence: 'Ich trinke Kaffee __ ich trinke Tee. (or)',                          answer: 'oder' },
-      { type: 'fill-blank', sentence: 'Das ist lecker, __ es ist teuer. (but)',                             answer: 'aber' },
-      { type: 'fill-blank', sentence: 'Ich gehe ins Restaurant, __ ich bin hungrig. (because — verb in slot 2)', answer: 'denn' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — connector→group · group→behaviour · denn/dann
+      { type: 'match',
+        pairs: [
+          { de: 'und / aber / denn', en: '🟢 verb stays in slot 2' },
+          { de: 'weil / dass / wenn', en: '🔴 verb jumps to the END' },
+          { de: 'deshalb / dann / trotzdem', en: '🟡 V2 inversion (verb 2nd, subject 3rd)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'weil',    en: '🧩 because (verb to end)' },
+          { de: 'wenn',    en: '🔁 if / when' },
+          { de: 'dass',    en: '📎 that (reported speech)' },
+          { de: 'obwohl',  en: '🤷 although' },
+          { de: 'ob',      en: '❓ whether' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'denn',    en: 'because (reason)' },
+          { de: 'dann',    en: 'then (sequence)' },
+          { de: 'deshalb', en: 'therefore (result)' },
+          { de: 'sondern', en: 'but rather (after negative)' },
+        ],
+      },
+
+      // 🟢 4 GROUP-1 fill-blanks (no word-order change)
+      { type: 'fill-blank', sentence: 'Ich lerne Deutsch __ ich arbeite viel. (and)',          answer: 'und' },
+      { type: 'fill-blank', sentence: 'Trinkst du Kaffee __ Tee? (or)',                         answer: 'oder' },
+      { type: 'fill-blank', sentence: 'Das ist lecker, __ es ist teuer. (but)',                 answer: 'aber' },
+      { type: 'fill-blank', sentence: 'Ich gehe ins Restaurant, __ ich bin hungrig. (because — verb stays slot 2)', answer: 'denn' },
+
+      // 🔴 4 GROUP-2 verb-to-END fill-blanks
       { type: 'fill-blank', sentence: 'Ich lerne Deutsch, weil ich in Deutschland __. (arbeiten — verb at END)', answer: 'arbeite' },
-      { type: 'fill-blank', sentence: 'Ich komme, wenn ich Zeit __. (haben — verb at END)',                  answer: 'habe' },
+      { type: 'fill-blank', sentence: 'Ich komme, wenn ich Zeit __. (haben — verb at END)',     answer: 'habe' },
+      { type: 'fill-blank', sentence: 'Ich denke, dass er müde __. (sein — verb at END)',        answer: 'ist' },
+      { type: 'fill-blank', sentence: 'Ich gehe, obwohl es __. (regnen — verb at END)',          answer: 'regnet' },
+
+      // 🟡 2 GROUP-3 V2-inversion fill-blanks (subject after verb)
+      { type: 'fill-blank', sentence: 'Ich bin müde, deshalb __ ich nach Hause. (gehen — V2!)',  answer: 'gehe' },
+      { type: 'fill-blank', sentence: 'Zuerst esse ich, dann __ ich. (schlafen — V2!)',          answer: 'schlafe' },
+
+      // ⚠ 4 WORD-ORDER / GROUP MCQs
       { type: 'multiple-choice', q: 'Which conjunction sends the verb to the END?',
         options: ['und','aber','denn','weil'], answer: 'weil',
-        explain: 'weil, wenn, dass are subordinating — verb jumps to the end of the clause.' },
+        explain: 'weil/wenn/dass/obwohl/ob are subordinating — verb to the end.' },
       { type: 'multiple-choice', q: 'Pick the correct word order:',
         options: [
           'Ich bin müde, weil ich arbeite viel.',
@@ -7304,9 +7379,37 @@ export const days = [
         ],
         answer: 'Ich bin müde, weil ich viel arbeite.',
         explain: 'After "weil", the conjugated verb (arbeite) goes to the very end.' },
+      { type: 'multiple-choice', q: '⚠ "I am tired, so I am going home." — correct German:',
+        options: ['Ich bin müde, deshalb ich gehe nach Hause.','Ich bin müde, deshalb gehe ich nach Hause.','Ich bin müde, deshalb nach Hause ich gehe.','Ich bin müde, gehe ich deshalb nach Hause.'],
+        answer: 'Ich bin müde, deshalb gehe ich nach Hause.',
+        explain: 'deshalb triggers V2 inversion: verb 2nd, subject 3rd.' },
+      { type: 'multiple-choice', q: '⚠ "denn" vs "dann" — which means "because"?',
+        options: ['dann','denn','both','neither'], answer: 'denn',
+        explain: 'denn = because; dann = then. One letter apart.' },
+
+      // 💬 Mini dialogue — all three groups in conversation
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Kommst du heute Abend?',                       en: 'Are you coming this evening?' },
+        { speaker: 'B', de: 'Ich möchte gerne, aber ich muss arbeiten.',    en: 'I\'d like to, but I have to work.' },
+        { speaker: 'A', de: 'Warum?',                                       en: 'Why?' },
+        { speaker: 'B', de: 'Weil mein Chef krank ist.',                    en: 'Because my boss is sick.' },
+        { speaker: 'A', de: 'Schade. Ich denke, dass wir nächste Woche Zeit haben.', en: 'Too bad. I think that we\'ll have time next week.' },
+        { speaker: 'B', de: 'Ja! Ich bin dann frei, deshalb treffen wir uns.', en: 'Yes! I\'m free then, so let\'s meet.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: '"I think that he is tired." → Ich denke, dass er müde __.', answer: 'ist' },
+      { type: 'multiple-choice', q: 'Which group leaves word order UNCHANGED?',
+        options: ['weil / dass','deshalb / dann','und / aber / denn','wenn / obwohl'], answer: 'und / aber / denn' },
+      { type: 'fill-blank', sentence: 'Verb to END: "Ich bleibe, weil es __." (regnen)', answer: 'regnet' },
+      { type: 'multiple-choice', q: '⚠ Correct after "deshalb":',
+        options: ['deshalb ich gehe','deshalb gehe ich','deshalb gehen ich','ich deshalb gehe'],
+        answer: 'deshalb gehe ich', explain: 'V2 inversion: verb 2nd, subject 3rd.' },
+      { type: 'multiple-choice', q: '"because" with the verb staying in slot 2 is…',
+        options: ['weil','denn','dass','obwohl'], answer: 'denn' },
+      { type: 'fill-blank', sentence: 'Sequence + V2: "Zuerst lerne ich, dann __ ich." (schlafen)', answer: 'schlafe' },
+      { type: 'multiple-choice', q: '"not X but rather Y" (after a negative) uses…',
+        options: ['aber','sondern','oder','denn'], answer: 'sondern' },
     ],
   },
 
