@@ -7416,60 +7416,171 @@ export const days = [
   /* ----- Day 38: Demonstrative articles + Indefinite pronouns ----- */
   {
     id: 38, week: 6,
+    vocabLayout: 'spotlight',
     title: 'Demonstratives & indefinites',
     titleDe: 'Demonstrativ + Indefinit',
     emoji: '👉',
-    objective: 'Point at "this one" with dieser/diese/dieses; talk about "someone/nobody/something/nothing/everyone".',
-    intro: 'Two small but high-frequency word groups. "dieser" replaces der/die/das to mean "THIS particular one". Indefinite pronouns let you say "someone is here" or "nobody knows" without naming names.',
+    objective: 'Point at "this one" with dieser/diese/dieses (declined like der/die/das), and talk about people and things in general — someone, nobody, something, nothing, everything, and the super-useful "man".',
+    intro: 'Two small but high-frequency word groups. "dieser" replaces der/die/das to mean "THIS particular one" — and it takes the EXACT same endings as the definite article you already know. Indefinite pronouns (jemand · niemand · etwas · nichts · alles · man) let you talk about people and things without naming them: "someone is here", "nobody knows", "one works a lot".',
     vocabulary: [
-      { de: 'dieser',   en: 'this (m, der-words)' },
-      { de: 'diese',    en: 'this (f) / these (pl)' },
-      { de: 'dieses',   en: 'this (n)' },
-      { de: 'jemand',   en: 'someone' },
-      { de: 'niemand',  en: 'nobody' },
-      { de: 'etwas',    en: 'something' },
-      { de: 'nichts',   en: 'nothing' },
-      { de: 'alles',    en: 'everything' },
-      { de: 'man',      en: 'one / people (impersonal)' },
+      // 👉 DEMONSTRATIVES — "this one" (declines like der/die/das)
+      { de: 'dieser',  en: 'this (m · der-words)', emoji: '👨', hint: '⭐ der → dieser · same endings as der',     example: 'Dieser Mann arbeitet hier.',     exampleEn: 'This man works here.' },
+      { de: 'diese',   en: 'this (f) / these (pl)', emoji: '👩', hint: '⭐ die → diese',                          example: 'Diese Frau kocht gut.',          exampleEn: 'This woman cooks well.' },
+      { de: 'dieses',  en: 'this (n · das-words)', emoji: '🧒', hint: '⭐ das → dieses',                          example: 'Dieses Kind ist müde.',          exampleEn: 'This child is tired.' },
+      { de: 'diesen',  en: 'this (m · Akkusativ)', emoji: '➡️', hint: '⚠ Akk masc → diesen (den → diesen)',      example: 'Ich kaufe diesen Tisch.',        exampleEn: 'I am buying this table.' },
+      { de: 'diesem',  en: 'this (m/n · Dativ)',   emoji: '🅿️', hint: '⚠ Dativ → diesem (dem → diesem)',         example: 'Ich helfe diesem Mann.',         exampleEn: 'I help this man.' },
+      { de: 'jeder',   en: 'every / each (m)',     emoji: '🔄', hint: 'declines like dieser · jede/jedes',        example: 'Jeder Tag ist anders.',          exampleEn: 'Every day is different.' },
+      { de: 'welcher', en: 'which? (m)',           emoji: '❓', hint: '🔁 Day 17 · same dieser-endings',           example: 'Welcher Tisch ist neu?',         exampleEn: 'Which table is new?' },
+
+      // 🙋 INDEFINITE PRONOUNS — PEOPLE
+      { de: 'jemand',  en: 'someone',              emoji: '🙋', hint: 'Nom · "Jemand ist hier" · Akk → jemanden',  example: 'Jemand ist an der Tür.',         exampleEn: 'Someone is at the door.' },
+      { de: 'niemand', en: 'nobody',               emoji: '🚷', hint: 'Nom · "Niemand ist da" · Akk → niemanden',  example: 'Niemand ist zu Hause.',          exampleEn: 'Nobody is home.' },
+      { de: 'jemanden', en: 'someone (Akkusativ)', emoji: '➡️', hint: '⚠ Akk adds -en · "Ich sehe jemanden"',     example: 'Ich sehe jemanden.',             exampleEn: 'I see someone.' },
+      { de: 'man',     en: 'one / people / you (general)', emoji: '👥', hint: '⭐ impersonal subject · takes er/sie/es verb', example: 'Man arbeitet hier viel.', exampleEn: 'People work a lot here.' },
+
+      // 📦 INDEFINITE PRONOUNS — THINGS (no change)
+      { de: 'etwas',   en: 'something',            emoji: '📦', hint: 'no change · "Hast du etwas?" · short: was',  example: 'Möchtest du etwas trinken?',     exampleEn: 'Would you like something to drink?' },
+      { de: 'nichts',  en: 'nothing',              emoji: '🚫', hint: 'no change · "Ich habe nichts"',             example: 'Ich verstehe nichts.',           exampleEn: 'I understand nothing.' },
+      { de: 'alles',   en: 'everything',           emoji: '🌍', hint: 'no change · "Alles ist gut"',              example: 'Alles ist in Ordnung.',          exampleEn: 'Everything is fine.' },
+      { de: 'etwas / nichts + Adjektiv', en: 'something/nothing + -es adj.', emoji: '✨', hint: '⚠ "etwas Gutes", "nichts Neues" (capital, -es)', example: 'Ich esse etwas Gutes.', exampleEn: 'I am eating something good.' },
+
+      // 🌍 EVERYBODY / SOMEWHERE — handy extras
+      { de: 'alle',    en: 'everybody / all (pl)', emoji: '👨‍👩‍👧‍👦', hint: 'plural · takes a plural verb · "Alle sind da"', example: 'Alle sind hier.',          exampleEn: 'Everybody is here.' },
+      { de: 'irgendwo', en: 'somewhere',           emoji: '📍', hint: 'irgend- = some- · irgendwann/irgendwer',   example: 'Mein Schlüssel ist irgendwo.',   exampleEn: 'My key is somewhere.' },
     ],
     grammar: [
-      { rule: 'Demonstrative articles — same endings as der/die/das',
+      { rule: '⭐ DEMONSTRATIVES — dieser declines exactly like der/die/das',
         body:
-          '         der → dieser     dieser Mann\n' +
-          '         die → diese      diese Frau\n' +
-          '         das → dieses     dieses Kind\n' +
-          '   plural die → diese     diese Leute\n' +
-          'They take the same case endings as der/die/das. Just swap "d" for "dies-" plus the original ending.',
+          '"dieser" = "this (particular) one". Swap the "d-" of the article for "dies-" and keep the SAME ending:\n\n' +
+          '            der → dieser     dieser Mann\n' +
+          '            die → diese      diese Frau\n' +
+          '            das → dieses     dieses Kind\n' +
+          '     plural die → diese      diese Leute\n\n' +
+          'Across the cases it mirrors der/die/das exactly:\n' +
+          '  Nom. m  dieser   ·  Akk. m  diesen  ·  Dat. m/n  diesem  ·  Dat. f  dieser\n' +
+          '  "Dieser Tisch ist neu." → "Ich kaufe diesen Tisch." → "auf diesem Tisch."\n\n' +
+          '🧠 jeder (every), welcher (which) and jener (that) follow the IDENTICAL ending pattern — learn one, get four.',
       },
-      { rule: 'Indefinite pronouns — quick map',
+      { rule: '🙋 INDEFINITE PRONOUNS — people (jemand · niemand · man)',
         body:
-          'jemand   = someone   "Jemand ist hier."     (Nom)  / "Ich sehe jemanden." (Akk — note +en)\n' +
-          'niemand  = nobody    "Niemand ist da."      (Nom)  / "Ich sehe niemanden." (Akk)\n' +
-          'etwas    = something "Hast du etwas?"        (no change)\n' +
-          'nichts   = nothing   "Ich habe nichts."      (no change)\n' +
-          'alles    = everything "Alles ist gut."        (no change)\n' +
-          'man      = one/people "Man arbeitet viel."    (always subject — uses 3rd-singular verb)',
+          'These stand in for a person you don\'t name:\n\n' +
+          '  jemand   = someone   "Jemand ist hier."     Akk → jemanden ("Ich sehe jemanden.")\n' +
+          '  niemand  = nobody    "Niemand ist da."      Akk → niemanden\n' +
+          '  man      = one / people / you-in-general  (ALWAYS the subject)\n\n' +
+          '⭐ "man" is the workhorse: it expresses what people generally do, and takes the er/sie/es verb form:\n' +
+          '  "Man arbeitet hier viel."  (People work a lot here.)\n' +
+          '  "Wie sagt man das?"        (How does one say that?)\n' +
+          '⚠ Don\'t confuse "man" (one/people) with "der Mann" (the man) — one n vs two.',
+      },
+      { rule: '📦 INDEFINITE PRONOUNS — things (etwas · nichts · alles)',
+        body:
+          'For unnamed things — these never change form:\n\n' +
+          '  etwas   = something   "Möchtest du etwas?"\n' +
+          '  nichts  = nothing     "Ich habe nichts."\n' +
+          '  alles   = everything  "Alles ist gut."\n\n' +
+          '⚠ With an adjective they take a capitalised -es noun-form: "etwas Gutes" (something good), "nichts Neues" (nothing new), "alles Gute" (all the best). The adjective becomes a neuter noun.',
+      },
+      { rule: '⚠ jemand / niemand — the -en in the Akkusativ',
+        body:
+          'jemand and niemand optionally add -en in the Akkusativ and -em in the Dativ:\n\n' +
+          '  Nom: Jemand klopft.            (someone is knocking)\n' +
+          '  Akk: Ich sehe jemanden.         (I see someone)  ← +en\n' +
+          '  Dat: Ich gebe es jemandem.      (I give it to someone)  ← +em\n\n' +
+          'In everyday speech you\'ll hear the bare form too ("Ich sehe jemand"), but the -en/-em forms are the textbook-correct ones. niemand works identically (niemanden / niemandem).',
+      },
+      { rule: '🚦 PITFALLS — demonstrative & indefinite traps',
+        body:
+          '• dieser takes the SAME ending as der/die/das in every case (dieser/diese/dieses/diesen/diesem).\n' +
+          '• "man" ≠ "Mann": man = one/people (impersonal subject), der Mann = the man.\n' +
+          '• "man" always uses the er/sie/es verb: "man macht", "man kann".\n' +
+          '• jemand/niemand add -en in Akkusativ: "Ich sehe niemanden."\n' +
+          '• etwas/nichts/alles never decline — but add a capital -es adjective: "etwas Schönes".\n' +
+          '• "alle" (everybody, plural) takes a PLURAL verb: "Alle sind da" (not "ist").',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: '__ Mann arbeitet heute. (this, masc.)',     answer: 'Dieser' },
-      { type: 'fill-blank', sentence: '__ Frau kocht sehr gut. (this, fem.)',      answer: 'Diese' },
-      { type: 'fill-blank', sentence: '__ Restaurant ist sehr gut. (this, neuter)', answer: 'Dieses' },
-      { type: 'fill-blank', sentence: '__ Tasche ist sehr schön. (this, fem.)',     answer: 'Diese' },
-      { type: 'fill-blank', sentence: 'Indef: __ ist hier. (someone)',              answer: 'Jemand' },
-      { type: 'fill-blank', sentence: 'Indef: Ich sehe __. (someone — Akk gets +en)', answer: 'jemanden' },
-      { type: 'fill-blank', sentence: 'Indef: __ ist bei der Arbeit. (nobody)',     answer: 'Niemand' },
-      { type: 'fill-blank', sentence: 'Indef: Ich habe __. (nothing)',              answer: 'nichts' },
-      { type: 'fill-blank', sentence: 'Indef: __ arbeitet viel. (one / people)',    answer: 'Man' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — demonstrative gender · people pronouns · things pronouns
+      { type: 'match',
+        pairs: [
+          { de: 'dieser (Nom. m)', en: 'der → dieser' },
+          { de: 'diese (Nom. f)',  en: 'die → diese' },
+          { de: 'dieses (Nom. n)', en: 'das → dieses' },
+          { de: 'diesen (Akk. m)', en: 'den → diesen' },
+          { de: 'diesem (Dat. m)', en: 'dem → diesem' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'jemand',  en: '🙋 someone' },
+          { de: 'niemand', en: '🚷 nobody' },
+          { de: 'man',     en: '👥 one / people (general)' },
+          { de: 'alle',    en: '👨‍👩‍👧‍👦 everybody (plural)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'etwas',  en: '📦 something' },
+          { de: 'nichts', en: '🚫 nothing' },
+          { de: 'alles',  en: '🌍 everything' },
+          { de: 'irgendwo', en: '📍 somewhere' },
+        ],
+      },
+
+      // 👉 5 DEMONSTRATIVE fill-blanks (Nom genders + Akk/Dat)
+      { type: 'fill-blank', sentence: '__ Mann arbeitet heute. (this, masc. Nom.)',       answer: 'Dieser' },
+      { type: 'fill-blank', sentence: '__ Frau kocht sehr gut. (this, fem.)',             answer: 'Diese' },
+      { type: 'fill-blank', sentence: '__ Restaurant ist sehr gut. (this, neuter)',        answer: 'Dieses' },
+      { type: 'fill-blank', sentence: 'Ich kaufe __ Tisch. (this, masc. Akk.)',           answer: 'diesen' },
+      { type: 'fill-blank', sentence: 'Ich helfe __ Mann. (this, masc. Dat.)',            answer: 'diesem' },
+
+      // 🙋 5 INDEFINITE fill-blanks (people + things)
+      { type: 'fill-blank', sentence: 'Indef: __ ist hier. (someone)',                    answer: 'Jemand' },
+      { type: 'fill-blank', sentence: 'Indef: Ich sehe __. (someone — Akk gets +en)',     answer: 'jemanden' },
+      { type: 'fill-blank', sentence: 'Indef: __ ist zu Hause. (nobody)',                 answer: 'Niemand' },
+      { type: 'fill-blank', sentence: 'Indef: Ich habe __. (nothing)',                    answer: 'nichts' },
+      { type: 'fill-blank', sentence: 'Indef: __ arbeitet viel. (one / people)',          answer: 'Man' },
+
+      // ⚠ 4 TRAP / CONCEPT MCQs
       { type: 'multiple-choice', q: '"man" takes which verb form?',
         options: ['1st singular (ich)','2nd singular (du)','3rd singular (er/sie/es)','plural (wir)'],
         answer: '3rd singular (er/sie/es)',
         explain: 'man arbeitet, man trinkt, man sagt — like er/sie/es.' },
+      { type: 'multiple-choice', q: '⚠ "man" vs "Mann" — "people work a lot" =',
+        options: ['Mann arbeitet viel.','Man arbeitet viel.','Der Mann arbeiten viel.','Man arbeiten viel.'],
+        answer: 'Man arbeitet viel.',
+        explain: 'man (one n) = people/one; takes the er/sie/es form.' },
+      { type: 'multiple-choice', q: 'Akkusativ of "jemand":',
+        options: ['jemand','jemanden','jemandem','jemands'], answer: 'jemanden',
+        explain: 'jemand adds -en in the Akkusativ.' },
+      { type: 'multiple-choice', q: '"something good" =',
+        options: ['etwas gut','etwas Gutes','etwas gute','gut etwas'], answer: 'etwas Gutes',
+        explain: 'etwas + capitalised -es adjective → etwas Gutes.' },
+
+      // 💬 Mini dialogue — demonstratives + indefinites in conversation
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Möchtest du etwas trinken?',                 en: 'Would you like something to drink?' },
+        { speaker: 'B', de: 'Nein danke, ich brauche nichts.',           en: 'No thanks, I need nothing.' },
+        { speaker: 'A', de: 'Kennst du diesen Mann dort?',               en: 'Do you know this man over there?' },
+        { speaker: 'B', de: 'Nein, niemand kennt ihn.',                  en: 'No, nobody knows him.' },
+        { speaker: 'A', de: 'In dieser Stadt arbeitet man viel.',        en: 'In this city people work a lot.' },
+        { speaker: 'B', de: 'Ja, aber alles ist hier sehr schön!',       en: 'Yes, but everything here is very nice!' },
+      ]},
     ],
     quiz: [
       { type: 'multiple-choice', q: '"This child" — pick the article.',
         options: ['dieser','diese','dieses','das'], answer: 'dieses' },
+      { type: 'fill-blank', sentence: 'Akk masc.: "Ich kaufe __ Tisch." (this)', answer: 'diesen' },
+      { type: 'multiple-choice', q: '"man" uses which verb form?',
+        options: ['ich-form','du-form','er/sie/es-form','wir-form'], answer: 'er/sie/es-form' },
+      { type: 'fill-blank', sentence: 'Akkusativ: "Ich sehe __." (someone)', answer: 'jemanden' },
+      { type: 'multiple-choice', q: '"nothing" =',
+        options: ['etwas','nichts','alles','niemand'], answer: 'nichts' },
+      { type: 'multiple-choice', q: '⚠ "everybody is here" (plural) =',
+        options: ['Alle ist hier.','Alle sind hier.','Alles sind hier.','Man sind hier.'],
+        answer: 'Alle sind hier.', explain: 'alle (plural) takes a plural verb → sind.' },
+      { type: 'fill-blank', sentence: '"something good" → etwas __', answer: 'Gutes', hint: 'capital, -es ending' },
     ],
   },
 

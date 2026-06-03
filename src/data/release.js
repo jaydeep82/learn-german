@@ -11,10 +11,28 @@
  * in sync.
  */
 
-export const VERSION = '3.9.7';
+export const VERSION = '3.9.8';
 export const RELEASE_DATE = '2026-06-04';
 
 export const RELEASES = [
+  {
+    version: '3.9.8',
+    date: '2026-06-04',
+    type: 'improvement',
+    title: 'Day 38 review — Demonstratives (dieser) + indefinite pronouns (jemand/man/etwas)',
+    notes: [
+      'Reviewed Day 38 (Demonstratives & indefinites) end-to-end, parallel to the Day 14-37 full reviews. The previous version had 9 vocab items, 2 grammar bullets and 11 exercises. Reshaped into a complete toolkit covering dieser across the cases and the people/things indefinite split.',
+      'Vocabulary 9 → 18 items (vocabLayout: "spotlight") grouped by role icon: 👉 demonstratives across cases (dieser · diese · dieses · diesen-Akk · diesem-Dat) + the same-pattern jeder/welcher · 🙋 people pronouns (jemand · niemand · jemanden-Akk · man) · 📦 thing pronouns (etwas · nichts · alles · etwas+adj) · 🌍 extras (alle · irgendwo).',
+      'Grammar 2 → 5 callouts: ⭐ DEMONSTRATIVES — dieser declines exactly like der/die/das across all cases (with jeder/welcher/jener riding the same pattern) · 🙋 INDEFINITE PEOPLE (jemand/niemand/man, with "man" the workhorse + the man-vs-Mann warning) · 📦 INDEFINITE THINGS (etwas/nichts/alles + the capitalised -es adjective rule) · ⚠ jemand/niemand -en/-em in Akk/Dat · 🚦 pitfalls (dieser endings · man≠Mann · alle takes plural verb).',
+      'Exercises reshaped (11 → 22 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: demonstrative gender/case · people pronouns · thing pronouns.',
+      '• 5 👉 DEMONSTRATIVE fill-blanks (Nom genders + Akk diesen + Dat diesem).',
+      '• 5 🙋 INDEFINITE fill-blanks (Jemand/jemanden/Niemand/nichts/Man).',
+      '• 4 ⚠ TRAP MCQs (man-verb-form · man-vs-Mann · jemanden-Akk · etwas-Gutes).',
+      '• 💬 Café/people dialogue weaving etwas/nichts, diesen, niemand, man and alles.',
+      'Quiz 1 → 7 items: dieses-child · diesen-Akk · man-verb-form · jemanden-Akk · nichts · alle-plural-verb · etwas-Gutes.',
+    ],
+  },
   {
     version: '3.9.7',
     date: '2026-06-04',
