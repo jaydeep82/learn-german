@@ -4365,36 +4365,141 @@ export const days = [
 
   {
     id: 39, week: 6,
+    vocabLayout: 'spotlight',
     title: 'At the restaurant',
     titleDe: 'Im Restaurant',
     emoji: '🍽️',
-    objective: 'Order food, ask for the bill, talk to the waiter.',
-    intro: 'A full restaurant scenario combining articles, Akkusativ, modals and politeness.',
+    objective: 'Handle a full restaurant visit — arrive, read the menu, order politely, eat, and pay — combining articles, Akkusativ, modals and the politeness ladder.',
+    intro: 'The big real-world scenario! A restaurant visit ties together everything: greetings, "Ich hätte gerne …" + Akkusativ, food & drink vocab, asking the price, and paying (bar oder mit Karte). Follow the arc — ankommen → bestellen → essen → bezahlen — and you can confidently eat out in German.',
     vocabulary: [
-      { de: 'die Speisekarte', en: 'the menu' },
-      { de: 'der Kellner',     en: 'the waiter' },
-      { de: 'das Wasser',      en: 'water' },
-      { de: 'der Kaffee',      en: 'coffee' },
-      { de: 'die Pizza',       en: 'pizza' },
-      { de: 'die Rechnung',    en: 'the bill' },
-      { de: 'lecker',          en: 'delicious' },
-      { de: 'Wie viel kostet das?', en: 'How much does it cost?' },
-      { de: 'Zahlen, bitte.',  en: 'The bill, please.' },
+      // 🪑 ARRIVING
+      { de: 'einen Tisch reservieren', en: 'to reserve a table', emoji: '🪑', hint: 'arrival · "Ich möchte einen Tisch reservieren"', example: 'Ich möchte einen Tisch für zwei.', exampleEn: 'I would like a table for two.' },
+      { de: 'die Speisekarte', en: 'the menu',          emoji: '📋', hint: 'ask: "Die Speisekarte, bitte"',          example: 'Die Speisekarte, bitte.',        exampleEn: 'The menu, please.' },
+      { de: 'der Kellner / die Kellnerin', en: 'waiter / waitress', emoji: '🧑‍🍳', hint: 'who serves you',           example: 'Der Kellner kommt gleich.',      exampleEn: 'The waiter is coming soon.' },
+
+      // 📝 ORDERING — the polite phrases
+      { de: 'Ich hätte gerne …', en: 'I would like … (most natural)', emoji: '⭐', hint: '🔁 Day 36 · THE restaurant phrase', example: 'Ich hätte gerne eine Pizza.', exampleEn: 'I would like a pizza.' },
+      { de: 'Ich möchte …',    en: 'I would like …',     emoji: '🙏', hint: 'polite order · + Akkusativ',           example: 'Ich möchte einen Kaffee.',       exampleEn: 'I would like a coffee.' },
+      { de: 'bestellen',       en: 'to order',           emoji: '✍️', hint: 'the ordering verb',                    example: 'Ich möchte bestellen.',          exampleEn: 'I would like to order.' },
+      { de: 'Noch etwas?',     en: 'Anything else?',     emoji: '➕', hint: 'waiter\'s question',                    example: 'Noch etwas? — Nein, danke.',     exampleEn: 'Anything else? — No, thanks.' },
+      { de: 'als Vorspeise / Hauptgericht', en: 'as a starter / main course', emoji: '🍲', hint: 'menu sections',     example: 'Als Hauptgericht nehme ich Fisch.', exampleEn: 'As a main I\'ll have fish.' },
+
+      // 🍽️ FOOD
+      { de: 'die Suppe',       en: 'soup',               emoji: '🍲', hint: 'fem · eine Suppe',                     example: 'Ich nehme eine Suppe.',          exampleEn: 'I\'ll have a soup.' },
+      { de: 'der Salat',       en: 'salad',              emoji: '🥗', hint: 'masc · einen Salat (Akk!)',            example: 'Ich möchte einen Salat.',        exampleEn: 'I would like a salad.' },
+      { de: 'die Pizza',       en: 'pizza',              emoji: '🍕', hint: 'fem · eine Pizza',                     example: 'Die Pizza ist lecker.',          exampleEn: 'The pizza is delicious.' },
+      { de: 'der Fisch',       en: 'fish',               emoji: '🐟', hint: 'masc · einen/den Fisch',              example: 'Ich nehme den Fisch.',           exampleEn: 'I\'ll have the fish.' },
+      { de: 'das Fleisch',     en: 'meat',               emoji: '🥩', hint: 'neuter · das Fleisch',                example: 'Ich esse kein Fleisch.',         exampleEn: 'I don\'t eat meat.' },
+      { de: 'der Nachtisch',   en: 'dessert',            emoji: '🍰', hint: 'masc · "als Nachtisch"',              example: 'Als Nachtisch möchte ich Kuchen.', exampleEn: 'For dessert I\'d like cake.' },
+
+      // 🥤 DRINKS
+      { de: 'das Wasser',      en: 'water',              emoji: '💧', hint: 'still/sparkling: ohne/mit Kohlensäure', example: 'Ein Wasser, bitte.',            exampleEn: 'A water, please.' },
+      { de: 'der Kaffee',      en: 'coffee',             emoji: '☕', hint: 'masc · einen Kaffee (Akk!)',           example: 'Ich hätte gerne einen Kaffee.',  exampleEn: 'I would like a coffee.' },
+      { de: 'das Bier',        en: 'beer',               emoji: '🍺', hint: 'neuter · ein Bier',                   example: 'Ein Bier, bitte.',               exampleEn: 'A beer, please.' },
+      { de: 'der Wein',        en: 'wine',               emoji: '🍷', hint: 'masc · einen Wein',                   example: 'Ich möchte einen Rotwein.',      exampleEn: 'I would like a red wine.' },
+
+      // 💳 PAYING
+      { de: 'die Rechnung',    en: 'the bill',           emoji: '🧾', hint: '"Die Rechnung, bitte"',               example: 'Die Rechnung, bitte.',           exampleEn: 'The bill, please.' },
+      { de: 'Zahlen, bitte.',  en: 'I\'d like to pay.',  emoji: '💶', hint: '⭐ the standard "check, please"',       example: 'Zahlen, bitte!',                 exampleEn: 'The bill, please!' },
+      { de: 'Getrennt oder zusammen?', en: 'Separately or together?', emoji: '👥', hint: 'the waiter\'s paying question', example: 'Getrennt oder zusammen?', exampleEn: 'Separately or together?' },
+      { de: 'Stimmt so.',      en: 'Keep the change.',   emoji: '🪙', hint: '🔁 Day 19 · tipping phrase',            example: 'Das stimmt so, danke.',          exampleEn: 'Keep the change, thanks.' },
+      { de: 'lecker',          en: 'delicious',          emoji: '😋', hint: 'compliment the food',                  example: 'Das Essen ist sehr lecker!',     exampleEn: 'The food is very delicious!' },
+      { de: 'Guten Appetit!',  en: 'Enjoy your meal!',   emoji: '🍴', hint: 'said before eating',                  example: 'Guten Appetit!',                 exampleEn: 'Enjoy your meal!' },
     ],
     grammar: [
-      { rule: 'möchte + Akkusativ', body: 'Ich möchte einen Kaffee, eine Pizza, ein Wasser.' },
+      { rule: '⭐ THE RESTAURANT ARC — arrive → order → eat → pay',
+        body:
+          'A typical visit follows four steps. Learn one phrase for each and you\'re covered:\n\n' +
+          '  🪑 ARRIVE:  "Einen Tisch für zwei, bitte." · "Die Speisekarte, bitte."\n' +
+          '  📝 ORDER:   "Ich hätte gerne …" / "Ich möchte … bestellen."\n' +
+          '  🍽️ EAT:     "Guten Appetit!" · "Das ist lecker."\n' +
+          '  💳 PAY:     "Zahlen, bitte." / "Die Rechnung, bitte." · "Stimmt so."\n\n' +
+          'The waiter\'s lines to recognise: "Was möchten Sie?" (what would you like?) · "Noch etwas?" (anything else?) · "Getrennt oder zusammen?" (separately or together?).',
+      },
+      { rule: '⭐ ORDERING = möchte / hätte gerne + AKKUSATIV',
+        body:
+          'Whatever you order is a direct object → Akkusativ. Masculine flips to einen/den; fem/neuter stay:\n\n' +
+          '  Ich hätte gerne EINEN Kaffee.   (m → einen)\n' +
+          '  Ich möchte EINEN Salat.          (m → einen)\n' +
+          '  Ich hätte gerne EINE Pizza.      (f → eine)\n' +
+          '  Ich möchte EIN Wasser.           (n → ein)\n\n' +
+          '⚠ The masculine trap bites here: "einen Kaffee", "einen Salat", "einen Wein" — NOT "ein Kaffee". "Ich hätte gerne …" is the most natural restaurant opener (Day 36 ladder).',
+      },
+      { rule: '💳 PAYING — the phrases and the tip',
+        body:
+          'To pay, get the waiter\'s attention and say:\n\n' +
+          '  "Zahlen, bitte."         — I\'d like to pay. (most common)\n' +
+          '  "Die Rechnung, bitte."   — The bill, please.\n\n' +
+          'The waiter may ask "Getrennt oder zusammen?" (separately or together?). Tipping: round up and say the total you want to pay, or just "Stimmt so" (keep the change). Cash or card: "Bar oder mit Karte?" → "Mit Karte, bitte."',
+      },
+      { rule: '🍽️ MENU SECTIONS & "kein" for diets',
+        body:
+          'A German menu (die Speisekarte) is organised into:\n\n' +
+          '  die Vorspeise   — starter\n' +
+          '  das Hauptgericht — main course\n' +
+          '  der Nachtisch   — dessert\n' +
+          '  die Getränke    — drinks\n\n' +
+          'Say what you DON\'T eat with kein (the Akkusativ negative article): "Ich esse KEIN Fleisch" (no meat), "Ich trinke KEINEN Alkohol" (no alcohol — masc → keinen). "Ich bin Vegetarier(in)" = I\'m vegetarian.',
+      },
+      { rule: '🚦 PITFALLS — restaurant traps',
+        body:
+          '• Order in the Akkusativ: masc → einen (einen Kaffee/Salat/Wein), not "ein".\n' +
+          '• "Ich hätte gerne …" / "Ich möchte …" — avoid blunt "Ich will …" with the waiter.\n' +
+          '• "Zahlen, bitte" or "Die Rechnung, bitte" — not "Ich will Geld geben".\n' +
+          '• "kein" for foods you don\'t eat: "kein Fleisch" (n), "keinen Alkohol" (m).\n' +
+          '• "lecker" describes food/taste; "schön" is for things/places — don\'t mix.\n' +
+          '• "Guten Appetit!" is said BEFORE eating, by anyone at the table.',
+      },
     ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — arc step · food/drink → emoji · waiter line → meaning
+      { type: 'match',
+        pairs: [
+          { de: 'Die Speisekarte, bitte.', en: '🪑 arriving' },
+          { de: 'Ich hätte gerne …',       en: '📝 ordering' },
+          { de: 'Guten Appetit!',          en: '🍽️ eating' },
+          { de: 'Zahlen, bitte.',          en: '💳 paying' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'die Suppe',   en: '🍲 soup' },
+          { de: 'der Salat',   en: '🥗 salad' },
+          { de: 'der Fisch',   en: '🐟 fish' },
+          { de: 'der Kaffee',  en: '☕ coffee' },
+          { de: 'das Bier',    en: '🍺 beer' },
+          { de: 'der Nachtisch', en: '🍰 dessert' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Was möchten Sie?',          en: 'What would you like?' },
+          { de: 'Noch etwas?',                en: 'Anything else?' },
+          { de: 'Getrennt oder zusammen?',    en: 'Separately or together?' },
+          { de: 'Stimmt so.',                 en: 'Keep the change.' },
+        ],
+      },
+
+      // ⭐ 3 ORDERING + Akkusativ fill-blanks (the masc trap)
+      { type: 'fill-blank', sentence: 'Ich __ einen Kaffee, bitte. (would like)', answer: 'möchte' },
+      { type: 'fill-blank', sentence: 'Akk masc: "Ich hätte gerne __ Salat." (a)', answer: 'einen' },
+      { type: 'fill-blank', sentence: 'Akk neuter: "Ich möchte __ Wasser." (a)',  answer: 'ein' },
+
+      // 🍽️ Full restaurant dialogue (preserved + extended)
       { type: 'dialogue', lines: [
-        { speaker: 'Kellner', de: 'Guten Tag, was möchten Sie?',         en: 'Good day, what would you like?' },
-        { speaker: 'Gast',    de: 'Ich möchte eine Pizza und ein Wasser.', en: 'I would like a pizza and a water.' },
-        { speaker: 'Kellner', de: 'Sehr gerne. Noch etwas?',              en: 'Gladly. Anything else?' },
-        { speaker: 'Gast',    de: 'Nein, danke. Die Rechnung, bitte.',    en: 'No thanks. The bill, please.' },
-        { speaker: 'Kellner', de: 'Das macht zwölf Euro fünfzig.',        en: 'That is twelve euros fifty.' },
+        { speaker: 'Kellner', de: 'Guten Tag! Möchten Sie die Speisekarte?',   en: 'Good day! Would you like the menu?' },
+        { speaker: 'Gast',    de: 'Ja, bitte. … Ich hätte gerne eine Pizza und ein Wasser.', en: 'Yes, please. … I\'d like a pizza and a water.' },
+        { speaker: 'Kellner', de: 'Sehr gerne. Noch etwas?',                   en: 'Gladly. Anything else?' },
+        { speaker: 'Gast',    de: 'Als Nachtisch möchte ich einen Kuchen.',    en: 'For dessert I\'d like a cake.' },
+        { speaker: 'Kellner', de: 'Guten Appetit!',                            en: 'Enjoy your meal!' },
+        { speaker: 'Gast',    de: 'Danke. … Das war lecker. Zahlen, bitte.',   en: 'Thanks. … That was delicious. The bill, please.' },
+        { speaker: 'Kellner', de: 'Getrennt oder zusammen? Das macht zwölf Euro fünfzig.', en: 'Separately or together? That\'s twelve euros fifty.' },
+        { speaker: 'Gast',    de: 'Zusammen, mit Karte. Stimmt so.',           en: 'Together, by card. Keep the change.' },
       ]},
-      { type: 'fill-blank', sentence: 'Ich __ einen Kaffee, bitte.', answer: 'möchte' },
-      { type: 'fill-blank', sentence: 'Wie viel __ das?', answer: 'kostet' },
-      // Restaurant translation challenge — selected sentences from slide 254
+
+      // 📝 Restaurant translation challenge (preserved)
       { type: 'fill-blank', sentence: '"I come from India and work in a company." → Ich __ aus Indien und arbeite in einer Firma.', answer: 'komme' },
       { type: 'fill-blank', sentence: '"I would like to order a coffee with milk." → Ich möchte einen Kaffee __ Milch bestellen.', answer: 'mit' },
       { type: 'fill-blank', sentence: '"I see the waiter and I speak with him." → Ich sehe den Kellner und ich __ mit ihm.', answer: 'spreche' },
@@ -4402,14 +4507,29 @@ export const days = [
       { type: 'fill-blank', sentence: '"I would like a table, please." → Ich __ gerne einen Tisch, bitte.', answer: 'hätte' },
       { type: 'fill-blank', sentence: '"How much does that cost?" → Wie viel __ das?', answer: 'kostet' },
       { type: 'fill-blank', sentence: '"I would like to pay, please." → Ich möchte __, bitte.', answer: 'zahlen' },
-      { type: 'fill-blank', sentence: '"I always pay with card." → Ich zahle __ mit Karte.', answer: 'immer' },
-      { type: 'fill-blank', sentence: '"I want to learn German and I speak a little German." → Ich will Deutsch lernen und ich __ ein bisschen Deutsch.', answer: 'spreche' },
-      { type: 'fill-blank', sentence: '"I sometimes drink coffee with milk." → Ich trinke __ Kaffee mit Milch.', answer: 'manchmal' },
       { type: 'fill-blank', sentence: '"I read the menu and I order a soup." → Ich lese die Speisekarte und ich __ eine Suppe.', answer: 'bestelle' },
-      { type: 'fill-blank', sentence: '"I meet my friends on the weekend." → Ich treffe meine Freunde __ Wochenende.', answer: 'am' },
+
+      // ⚠ 2 DIET / PHRASE MCQs
+      { type: 'multiple-choice', q: '⚠ "I don\'t eat meat." (Fleisch = neuter)',
+        options: ['Ich esse nicht Fleisch.','Ich esse kein Fleisch.','Ich esse keinen Fleisch.','Ich esse keine Fleisch.'],
+        answer: 'Ich esse kein Fleisch.',
+        explain: 'Use kein for nouns; neuter Fleisch → kein.' },
+      { type: 'multiple-choice', q: 'When is "Guten Appetit!" said?',
+        options: ['when paying','before eating','when leaving','when ordering'], answer: 'before eating' },
     ],
     quiz: [
-      { type: 'multiple-choice', q: 'How do you ask for the bill?', options: ['Was kostet das?','Wo ist die Toilette?','Zahlen, bitte.','Guten Appetit!'], answer: 'Zahlen, bitte.' },
+      { type: 'multiple-choice', q: 'How do you ask for the bill?',
+        options: ['Was kostet das?','Wo ist die Toilette?','Zahlen, bitte.','Guten Appetit!'], answer: 'Zahlen, bitte.' },
+      { type: 'fill-blank', sentence: 'Order politely: "Ich __ gerne einen Kaffee." (would like to have)', answer: 'hätte' },
+      { type: 'fill-blank', sentence: 'Akk masc: "Ich möchte __ Salat." (a)', answer: 'einen' },
+      { type: 'multiple-choice', q: '⚠ "I don\'t drink alcohol." (Alkohol = masc)',
+        options: ['Ich trinke kein Alkohol.','Ich trinke keinen Alkohol.','Ich trinke nicht Alkohol.','Ich trinke keine Alkohol.'],
+        answer: 'Ich trinke keinen Alkohol.', explain: 'masc kein → keinen.' },
+      { type: 'multiple-choice', q: 'The waiter asks "Getrennt oder zusammen?" — it means…',
+        options: ['Cash or card?','Starter or main?','Separately or together?','Here or to go?'], answer: 'Separately or together?' },
+      { type: 'fill-blank', sentence: 'Compliment the food: "Das Essen ist sehr __." (delicious)', answer: 'lecker' },
+      { type: 'multiple-choice', q: 'Most natural way to order:',
+        options: ['Gib mir eine Pizza.','Ich will eine Pizza.','Ich hätte gerne eine Pizza.','Pizza!'], answer: 'Ich hätte gerne eine Pizza.' },
     ],
   },
 

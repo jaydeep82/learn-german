@@ -11,10 +11,28 @@
  * in sync.
  */
 
-export const VERSION = '3.9.8';
+export const VERSION = '3.9.9';
 export const RELEASE_DATE = '2026-06-04';
 
 export const RELEASES = [
+  {
+    version: '3.9.9',
+    date: '2026-06-04',
+    type: 'improvement',
+    title: 'Day 39 review — At the restaurant: the full arrive→order→eat→pay arc',
+    notes: [
+      'Reviewed Day 39 (At the restaurant) end-to-end, parallel to the Day 14-38 full reviews. The previous version had 9 vocab items, 1 grammar bullet and a dialogue + translation drills. Reshaped into a complete dining-scenario toolkit organised around the four-step restaurant arc, preserving all the translation drills.',
+      'Vocabulary 9 → 24 items (vocabLayout: "spotlight") grouped by arc step: 🪑 arriving (Tisch reservieren · Speisekarte · Kellner) · 📝 ordering (Ich hätte gerne · Ich möchte · bestellen · Noch etwas? · Vorspeise/Hauptgericht) · 🍽️ food (Suppe · Salat · Pizza · Fisch · Fleisch · Nachtisch) · 🥤 drinks (Wasser · Kaffee · Bier · Wein) · 💳 paying (Rechnung · Zahlen bitte · Getrennt oder zusammen? · Stimmt so · lecker · Guten Appetit!).',
+      'Grammar 1 → 5 callouts: ⭐ THE RESTAURANT ARC (arrive→order→eat→pay, one phrase each + the waiter\'s lines) · ⭐ ORDERING = möchte/hätte gerne + AKKUSATIV (the masc einen-Kaffee/Salat/Wein trap) · 💳 PAYING (Zahlen bitte · Getrennt oder zusammen? · Stimmt so · bar/Karte) · 🍽️ MENU SECTIONS & kein for diets (Vorspeise/Hauptgericht/Nachtisch + kein Fleisch/keinen Alkohol) · 🚦 pitfalls (Akk masc einen · avoid blunt will · kein for diets · lecker vs schön · Guten Appetit before eating).',
+      'Exercises reshaped (15 → 23 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: arc step · food/drink → emoji · waiter line → meaning.',
+      '• 3 ⭐ ORDERING + Akkusativ fill-blanks (möchte · einen-Salat · ein-Wasser).',
+      '• Extended 8-line full restaurant dialogue (arrive → order → dessert → Guten Appetit → pay → Getrennt/zusammen → Stimmt so).',
+      '• 8 📝 translation-challenge fill-blanks (preserved from the original).',
+      '• 2 ⚠ DIET / PHRASE MCQs (kein Fleisch · Guten-Appetit timing).',
+      'Quiz 1 → 7 items: ask-for-bill · hätte-gerne · einen-Salat · keinen-Alkohol · Getrennt-oder-zusammen · lecker · most-natural-order.',
+    ],
+  },
   {
     version: '3.9.8',
     date: '2026-06-04',
