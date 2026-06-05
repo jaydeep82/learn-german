@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.10.2';
-export const RELEASE_DATE = '2026-06-05';
+export const VERSION = '3.10.3';
+export const RELEASE_DATE = '2026-06-06';
 
 export const RELEASES = [
+  {
+    version: '3.10.3',
+    date: '2026-06-06',
+    type: 'improvement',
+    title: 'Day 43 review — Week 4-6 milestone: cases, modals, connectors, scenarios, negation',
+    notes: [
+      'Reviewed Day 43 (Week 4-6 review) end-to-end, parallel to the other milestone days (15/20/27). The previous version was a thin pass with an empty vocab/grammar block and a strong word-order error-spotting set. Rebuilt as a proper three-week checkpoint with spotlight keystones and recap cards, while PRESERVING all 12 word-order error-spotting exercises.',
+      'Added 18 REVIEW KEYSTONES (vocabLayout: "spotlight") grouped by week so the vocab page is a one-screen Weeks 4-6 recap: 🟩🅿️ the case system (den/dem · mich↔mir · ihn↔ihm · mit/bei/zu · Wechsel in) · 🔑 possessives + time-of-day adverbs · 🛠️🧰 all six modals + the sandwich rule + Ich hätte gerne · 🔗 the three connector groups · 🍽️🛒✈️🚫 scenarios + negation.',
+      'Grammar 0 → 5 recap cards: ✅ Week 4 (the case system — articles grid, wer/wen/wem, pronouns, Dativ preps) · ✅ Week 5 (Dativ pronouns, Wechsel Wo?/Wohin?, possessives, routine V2, modals I) · ✅ Week 6 (modals II, the 3 connector groups, scenarios, kein-vs-nicht) · ⭐ the sandwich + V2 word-order core · 🎯 "the 6 mistakes to never make again".',
+      'Exercises expanded with 3 ⭐ interactive matches (case test-words/prepositions · connector groups · scenario phrases) + 6 case/modal/negation/pronoun fill-blanks + the 2 preserved concept MCQs, all FOLLOWED BY the original 12 word-order error-spotting MCQs (Correct/Wrong with explanations) — kept intact.',
+      'Quiz 0 → 7 items as a final mixed checkpoint: helfen-dem · keinen-Hund · modal-word-order · weil-verb-to-end · Wechsel-die-Stadt · ihn-Akk · hätte-gerne-order.',
+    ],
+  },
   {
     version: '3.10.2',
     date: '2026-06-05',

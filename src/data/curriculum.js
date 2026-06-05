@@ -5076,17 +5076,122 @@ export const days = [
 
   {
     id: 43, week: 7,
+    vocabLayout: 'spotlight',
     title: 'Week 4-6 review',
     titleDe: 'Wiederholung Woche 4-6',
     emoji: '📚',
-    objective: 'Cement modals, Akkusativ, scenarios, negation.',
-    intro: 'Review pass before the final stretch.',
-    vocabulary: [],
-    grammar: [],
+    objective: 'Prove you own three big weeks at once — the case system (Akk/Dat + pronouns), the modal sandwich rule, connectors, the real-life scenarios, and negation — before the past tenses begin.',
+    intro: 'Milestone checkpoint! This pulls Weeks 4-6 together: 🟩 Akkusativ & 🅿️ Dativ (articles + pronouns + prepositions) → 🛠️ all six modals + the sandwich rule → 🔗 connectors (verb-stays / verb-to-end / inversion) → 🍽️🛒✈️ restaurant/shopping/travel → 🚫 negation (kein vs nicht). Scroll the keystones, read the recap cards, then aim for ≥ 80% on the mixed drills — that means you are ready for Week 7\'s past tenses.',
+    vocabulary: [
+      // 🟩🅿️ THE CASE SYSTEM (Week 4)
+      { de: 'den / dem',        en: 'masc. Akk / Dat',          emoji: '🎭', hint: '🔁 W4 · der→den (Akk) →dem (Dat)',      example: 'Ich sehe den Mann. / Ich helfe dem Mann.', exampleEn: 'I see the man. / I help the man.' },
+      { de: 'mich ↔ mir',       en: 'me: Akk ↔ Dat',            emoji: '⚖️', hint: '🔁 W4-5 · sehen mich / helfen mir',     example: 'Er sieht mich. / Er hilft mir.',  exampleEn: 'He sees me. / He helps me.' },
+      { de: 'ihn ↔ ihm',        en: 'him: Akk ↔ Dat',           emoji: '⚖️', hint: '🔁 W4-5 · the killer pronoun pair',     example: 'Ich sehe ihn. / Ich helfe ihm.',  exampleEn: 'I see him. / I help him.' },
+      { de: 'mit / bei / zu',   en: 'always-Dativ prepositions', emoji: '🅿️', hint: '🔁 W4 · + für/um/ohne always-Akk',     example: 'Ich fahre mit dem Bus.',          exampleEn: 'I go by bus.' },
+      { de: 'in (Wo?/Wohin?)',  en: 'Wechsel: Dat / Akk',       emoji: '🔀', hint: '🔁 W5 · location→Dat, movement→Akk',    example: 'Ich bin in der Stadt. / Ich gehe in die Stadt.', exampleEn: 'I am in the city. / I go into the city.' },
+
+      // 🔑 POSSESSIVES + ROUTINE (Week 5)
+      { de: 'mein / dein / sein / ihr', en: 'possessives (decline like ein)', emoji: '👪', hint: '🔁 W5 · meinen/meine/meinem', example: 'Das ist mein Bruder.',          exampleEn: 'That is my brother.' },
+      { de: 'morgens / abends', en: 'time-of-day adverbs',      emoji: '🌅', hint: '🔁 W5 · lead → V2 inversion',           example: 'Morgens trinke ich Kaffee.',      exampleEn: 'In the mornings I drink coffee.' },
+
+      // 🛠️ MODALS (Week 5-6)
+      { de: 'kann / muss / will', en: 'können/müssen/wollen',   emoji: '🛠️', hint: '🔁 W5 · ability/obligation/desire',    example: 'Ich muss heute arbeiten.',        exampleEn: 'I have to work today.' },
+      { de: 'darf / soll / mag', en: 'dürfen/sollen/mögen',     emoji: '🧰', hint: '🔁 W6 · permission/advice/liking',      example: 'Darf ich hier rauchen?',          exampleEn: 'May I smoke here?' },
+      { de: 'Modal + Infinitiv', en: 'the sandwich rule',       emoji: '🥪', hint: '🔁 W5-6 · modal slot 2, infinitive END', example: 'Ich kann heute Deutsch lernen.',  exampleEn: 'I can learn German today.' },
+      { de: 'Ich hätte gerne …', en: 'I would like … (polite)', emoji: '🙏', hint: '🔁 W6 · café/restaurant',              example: 'Ich hätte gerne einen Kaffee.',   exampleEn: 'I would like a coffee.' },
+
+      // 🔗 CONNECTORS (Week 6)
+      { de: 'und / aber / denn', en: 'verb stays slot 2',       emoji: '🟢', hint: '🔁 W6 · coordinating',                 example: 'Ich gehe, denn ich bin müde.',    exampleEn: 'I am going, because I am tired.' },
+      { de: 'weil / dass / wenn', en: 'verb to the END',        emoji: '🔴', hint: '🔁 W6 · subordinating',                example: 'Ich bleibe, weil es regnet.',     exampleEn: 'I stay because it is raining.' },
+      { de: 'deshalb / dann',   en: 'V2 inversion',             emoji: '🟡', hint: '🔁 W6 · adverb-connectors',           example: 'Ich bin müde, deshalb gehe ich.', exampleEn: 'I am tired, so I am going.' },
+
+      // 🍽️🛒✈️ SCENARIOS + 🚫 NEGATION (Week 6)
+      { de: 'Zahlen, bitte.',   en: 'The bill, please.',        emoji: '🍽️', hint: '🔁 W6 · restaurant',                  example: 'Zahlen, bitte!',                  exampleEn: 'The bill, please!' },
+      { de: 'Wie komme ich zu …?', en: 'How do I get to …?',    emoji: '✈️', hint: '🔁 W6 · travel · zu + Dativ',          example: 'Wie komme ich zum Bahnhof?',      exampleEn: 'How do I get to the station?' },
+      { de: 'kein / nicht',     en: 'no/none vs not',           emoji: '🚫', hint: '🔁 W6 · ein-noun→kein, else→nicht',    example: 'Ich habe keine Zeit.',            exampleEn: 'I have no time.' },
+    ],
+    grammar: [
+      { rule: '✅ Week 4 recap — the case system',
+        body:
+          '🟦 Nominativ (subject) · 🟩 Akkusativ (object) · 🅿️ Dativ (to/for whom).\n' +
+          '  Articles:  der→den→dem · die→die→der · das→das→dem · die→die→den+n.\n' +
+          '  Test: Wer? (Nom) · Wen? (Akk) · Wem? (Dat).\n' +
+          '  Pronouns: ich→mich/mir · er→ihn/ihm · sie→sie/ihr.\n' +
+          '  Prepositions: mit/bei/zu/von/nach/aus/seit/gegenüber → always Dativ.',
+      },
+      { rule: '✅ Week 5 recap — pronouns, prepositions, people',
+        body:
+          '👤 Dativ pronouns: mir·dir·ihm·ihr·uns·euch·ihnen·Ihnen.\n' +
+          '🔀 Wechselpräpositionen (in·an·auf…): Wo? → Dativ · Wohin? → Akkusativ.\n' +
+          '👪 Possessives (mein/dein/sein/ihr/unser/euer) decline like ein.\n' +
+          '🌅 Daily routine: time-of-day leads → V2 inversion ("Morgens stehe ich auf").\n' +
+          '🛠️ Modals I: können/müssen/wollen — modal slot 2, infinitive at the end.',
+      },
+      { rule: '✅ Week 6 recap — modals II, glue, scenarios, negation',
+        body:
+          '🧰 Modals II: dürfen (allowed) · sollen (should) · mögen (like) · möchten (polite).\n' +
+          '🔗 Connectors: 🟢 und/aber/denn (no change) · 🔴 weil/dass/wenn (verb to END) · 🟡 deshalb/dann (V2 inversion).\n' +
+          '🍽️🛒✈️ Scenarios: "Ich hätte gerne …" · "Wie komme ich zu …?" · "Zahlen, bitte."\n' +
+          '🚫 Negation: ein-noun → kein (declines like ein); verb/adj/specific noun → nicht.',
+      },
+      { rule: '⭐ THE SANDWICH + V2 RULES (the word-order core)',
+        body:
+          'Two rules run through everything in these weeks:\n\n' +
+          '  📍 V2: the conjugated verb is ALWAYS in slot 2. If time/place leads, the subject moves to slot 3.\n' +
+          '     "Heute arbeite ich." · "Am Wochenende esse ich im Restaurant."\n\n' +
+          '  🥪 SANDWICH: a modal (or separable stem) sits in slot 2, the infinitive/prefix flies to the END.\n' +
+          '     "Ich will heute im Restaurant essen." · "Ich rufe dich heute an."',
+      },
+      { rule: '🎯 The 6 mistakes to never make again',
+        body:
+          '1. "Ich helfe ihn" ✗ → helfen=Dativ → "ihm." ✓\n' +
+          '2. "mit den Kinder" ✗ → plural Dativ +n → "mit den Kindern." ✓\n' +
+          '3. "Ich gehe in der Stadt" ✗ (movement) → "in die Stadt." ✓\n' +
+          '4. "Wir heute wollen essen" ✗ → modal slot 2 → "Wir wollen heute essen." ✓\n' +
+          '5. "Ich rufe an dich" ✗ → prefix to END → "Ich rufe dich an." ✓\n' +
+          '6. "Ich habe nicht ein Auto" ✗ → "kein Auto." ✓',
+      },
+    ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — sweep cases, connectors, scenarios
+      { type: 'match',
+        pairs: [
+          { de: 'Wer?',  en: '🟦 Nominativ (subject)' },
+          { de: 'Wen?',  en: '🟩 Akkusativ (object)' },
+          { de: 'Wem?',  en: '🅿️ Dativ (to whom)' },
+          { de: 'mit / bei / zu', en: '🅿️ always Dativ' },
+          { de: 'für / um / ohne', en: '🟩 always Akkusativ' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'und / aber / denn', en: '🟢 verb stays slot 2' },
+          { de: 'weil / dass / wenn', en: '🔴 verb to the END' },
+          { de: 'deshalb / dann',     en: '🟡 V2 inversion' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Ich hätte gerne …',    en: '🍽️ restaurant order' },
+          { de: 'Wie komme ich zu …?',  en: '✈️ asking directions' },
+          { de: 'Ich suche …',          en: '🛒 shopping' },
+          { de: 'Ich habe keine Zeit.', en: '🚫 negation' },
+        ],
+      },
+
+      // 🟩🅿️ 3 case fill-blanks
+      { type: 'fill-blank', sentence: 'Wir kaufen __ Brot. (the, neuter)',  answer: 'das' },
+      { type: 'fill-blank', sentence: 'Akk vs Dat: "Ich helfe __ Mann." (the, masc. — helfen=Dativ)', answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Wechsel movement: "Ich gehe in __ Stadt." (the, fem. → Akk)', answer: 'die' },
+
+      // 🛠️ 3 modal + negation fill-blanks
       { type: 'fill-blank', sentence: 'Ich __ heute arbeiten. (must)', answer: 'muss' },
-      { type: 'fill-blank', sentence: 'Wir kaufen __ Brot. (the, n.)', answer: 'das' },
-      { type: 'fill-blank', sentence: 'Sie hat __ Zeit.', answer: 'keine' },
+      { type: 'fill-blank', sentence: 'Sie hat __ Zeit. (no, fem.)',   answer: 'keine' },
+      { type: 'fill-blank', sentence: 'Pronoun: "Ich danke __." (you, formal)', answer: 'Ihnen' },
+
+      // 🛠️ 2 concept MCQs (preserved)
       { type: 'multiple-choice', q: 'Polite "I would like…"', options: ['Ich will…','Ich möchte…','Ich muss…','Ich soll…'], answer: 'Ich möchte…' },
       { type: 'multiple-choice', q: 'Where does the infinitive sit with a modal?', options: ['Position 2','Position 1','At the end','Anywhere'], answer: 'At the end' },
       // Word-order error spotting — slide 253. Twelve sentences; pick "Correct" or "Wrong".
@@ -5112,7 +5217,20 @@ export const days = [
       { type: 'multiple-choice', q: '"Wir machen heute das Licht aus."', options: ['Correct','Wrong'], answer: 'Correct',
         explain: 'Separable verb ausmachen split correctly.' },
     ],
-    quiz: [],
+    quiz: [
+      { type: 'fill-blank', sentence: 'Akk vs Dat: "Ich helfe __ Mann." (the, masc. — helfen=Dativ)', answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Negation: "Ich habe __ Hund." (no, masc. Akk.)', answer: 'keinen' },
+      { type: 'multiple-choice', q: 'Modal word order — which is correct?',
+        options: ['Wir heute wollen essen.','Wir wollen heute essen.','Heute wir wollen essen.','Wir wollen essen heute.'],
+        answer: 'Wir wollen heute essen.', explain: 'Modal in slot 2, infinitive at the end.' },
+      { type: 'multiple-choice', q: 'After "weil", the verb goes…',
+        options: ['to slot 1','to slot 2','to the END','nowhere'], answer: 'to the END' },
+      { type: 'fill-blank', sentence: 'Wechsel movement: "Ich gehe in __ Stadt." (the, fem. → Akk)', answer: 'die' },
+      { type: 'multiple-choice', q: 'Pronoun: "Ich sehe __." (him — Akkusativ)',
+        options: ['ihm','ihn','er','ihr'], answer: 'ihn' },
+      { type: 'multiple-choice', q: 'Polite restaurant order:',
+        options: ['Ich will eine Pizza.','Ich hätte gerne eine Pizza.','Gib mir Pizza.','Pizza jetzt.'], answer: 'Ich hätte gerne eine Pizza.' },
+    ],
   },
 
   /* ===================== WEEK 7: review + final ===================== */
