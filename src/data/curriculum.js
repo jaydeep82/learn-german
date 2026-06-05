@@ -4707,48 +4707,205 @@ export const days = [
 
   {
     id: 42, week: 6,
+    vocabLayout: 'spotlight',
     title: 'Negation: nicht & kein',
     titleDe: 'Verneinung',
     emoji: '🚫',
-    objective: 'Say "not" and "no/none" correctly.',
-    intro: '"nicht" negates verbs, adjectives, names. "kein/keine" negates nouns that would otherwise take ein/eine.',
+    objective: 'Negate anything correctly — choose kein (for nouns with ein/no article) vs nicht (for everything else), decline kein like ein, and place nicht in the right spot.',
+    intro: 'German has TWO ways to say "not". The 5-second rule: if the thing you\'re negating is a noun that would take ein/eine (or no article), use kein; for everything else — verbs, adjectives, names, specific der/die/das nouns — use nicht. Then kein declines exactly like ein, and nicht has its own position rules. Master both and you can negate any sentence.',
     vocabulary: [
-      { de: 'nicht',  en: 'not' },
-      { de: 'kein',   en: 'no/none (m, n)' },
-      { de: 'keine',  en: 'no/none (f, pl)' },
+      // 🚫 THE TWO NEGATORS
+      { de: 'nicht',  en: 'not',                emoji: '❌', hint: '⭐ negates verbs, adjectives, names, der/die/das nouns', example: 'Ich arbeite heute nicht.',   exampleEn: 'I am not working today.' },
+      { de: 'kein',   en: 'no / not a (m/n)',   emoji: '🚫', hint: '⭐ negates ein-nouns · declines like ein',          example: 'Ich habe kein Auto.',        exampleEn: 'I have no car.' },
+
+      // 🔢 THE KEIN DECLENSION — all four genders (Akkusativ)
+      { de: 'keinen', en: 'no … (masc. Akk.)',  emoji: '🟦', hint: '⚠ masc Akk → keinen (like einen)',    example: 'Ich habe keinen Hund.',      exampleEn: 'I have no dog.' },
+      { de: 'keine (f)', en: 'no … (feminine)', emoji: '🟥', hint: 'fem → keine',                          example: 'Ich habe keine Zeit.',       exampleEn: 'I have no time.' },
+      { de: 'kein (n)',  en: 'no … (neuter)',   emoji: '🟩', hint: 'neuter → kein (no ending)',           example: 'Ich trinke kein Bier.',      exampleEn: 'I drink no beer.' },
+      { de: 'keine (pl)', en: 'no … (plural)',  emoji: '🟨', hint: 'plural → keine',                       example: 'Ich habe keine Freunde.',    exampleEn: 'I have no friends.' },
+      { de: 'keinem', en: 'no … (m/n Dativ)',   emoji: '🅿️', hint: 'Dativ → keinem (like einem)',         example: 'Ich helfe keinem Kind.',     exampleEn: 'I help no child.' },
+
+      // ✅ NICHT IN ACTION — what it negates
+      { de: 'nicht (verb)',     en: 'negate a verb',       emoji: '🏃', hint: 'goes near the END · "arbeite … nicht"', example: 'Ich arbeite nicht.',      exampleEn: 'I do not work.' },
+      { de: 'nicht (adjective)', en: 'negate an adjective', emoji: '😐', hint: 'goes BEFORE the adjective',           example: 'Das Buch ist nicht gut.',  exampleEn: 'The book is not good.' },
+      { de: 'nicht (specific noun)', en: 'negate a der/die/das noun', emoji: '👉', hint: 'definite noun → nicht, NOT kein', example: 'Ich kaufe das Buch nicht.', exampleEn: 'I am not buying the book.' },
+      { de: 'nicht (name/place)', en: 'negate a name/place', emoji: '🗺️', hint: 'proper nouns → nicht',             example: 'Ich wohne nicht in Berlin.', exampleEn: 'I don\'t live in Berlin.' },
+
+      // 🔁 ANSWER PARTICLES (negation recap)
+      { de: 'nein',   en: 'no (answer)',        emoji: '⛔', hint: '🔁 Day 16 · answer to a question',     example: 'Bist du müde? — Nein.',      exampleEn: 'Are you tired? — No.' },
+      { de: 'doch',   en: 'yes! (contradicting a negative)', emoji: '🔄', hint: '🔁 Day 16 · contradicts a nicht/kein question', example: 'Hast du kein Auto? — Doch!', exampleEn: 'Have you no car? — Yes I do!' },
+      { de: 'gar nicht', en: 'not at all',      emoji: '🚷', hint: 'reinforced nicht',                     example: 'Das gefällt mir gar nicht.', exampleEn: 'I don\'t like that at all.' },
+      { de: 'nichts', en: 'nothing',            emoji: '🕳️', hint: '🔁 Day 38 · "nothing" (pronoun)',      example: 'Ich verstehe nichts.',       exampleEn: 'I understand nothing.' },
+      { de: 'noch nicht', en: 'not yet',        emoji: '⏳', hint: 'time-negation phrase',                example: 'Ich bin noch nicht fertig.', exampleEn: 'I am not finished yet.' },
+      { de: 'nicht mehr', en: 'no longer / not anymore', emoji: '🔚', hint: 'time-negation phrase',        example: 'Ich rauche nicht mehr.',     exampleEn: 'I don\'t smoke anymore.' },
     ],
     grammar: [
-      { rule: 'Pick the right one', body: 'Use "kein" if the positive sentence has "ein"/no article. Use "nicht" otherwise.' },
-      { rule: 'Position of nicht', body: '"nicht" goes near the end, before the part you negate. "Ich arbeite heute nicht."' },
-      { rule: 'Full kein declension table',
+      { rule: '⭐ THE 5-SECOND DECISION — kein or nicht?',
         body:
-          '"kein" takes the same endings as "ein" — and adds them in plural too:\n' +
-          '• masc. (der Kaffee)   → keinen   "Ich möchte keinen Kaffee."\n' +
-          '• fem.  (die Milch)    → keine    "Ich möchte keine Milch."\n' +
-          '• neuter (das Glas)    → kein     "Ich möchte kein Glas Wasser."\n' +
-          '• plural (die Kellner) → keine    "Ich habe keine Freunde im Restaurant."\n' +
-          'Same Akkusativ rule as ein: only the masculine changes.',
+          'Ask ONE question: is the thing you\'re negating a noun that has ein/eine OR no article?\n\n' +
+          '  YES → use kein:\n' +
+          '     "Ich habe ein Auto."  → "Ich habe KEIN Auto."\n' +
+          '     "Ich trinke Kaffee."  → "Ich trinke KEINEN Kaffee."  (no article → still kein)\n\n' +
+          '  NO → use nicht (verbs, adjectives, names, places, and der/die/das nouns):\n' +
+          '     "Ich arbeite."         → "Ich arbeite NICHT."\n' +
+          '     "Das ist gut."         → "Das ist NICHT gut."\n' +
+          '     "Ich kaufe DAS Buch."  → "Ich kaufe das Buch NICHT."  (specific → nicht)\n\n' +
+          '🧠 Rule of thumb: ein/no-article → kein; der/die/das or not-a-noun → nicht.',
+      },
+      { rule: '⭐ kein DECLINES EXACTLY LIKE ein (+ a plural)',
+        body:
+          'kein takes the same endings as ein — and unlike ein, it HAS a plural:\n\n' +
+          '            masc.     fem.     neut.    plural\n' +
+          '  Nom.      kein      keine    kein     keine\n' +
+          '  Akk.      keinen    keine    kein     keine\n' +
+          '  Dat.      keinem    keiner   keinem   keinen +(-n)\n\n' +
+          '  "Ich habe KEINEN Hund."   (m Akk → keinen)\n' +
+          '  "Ich habe KEINE Zeit."    (f → keine)\n' +
+          '  "Ich trinke KEIN Bier."   (n → kein)\n' +
+          '  "Ich habe KEINE Freunde." (pl → keine)\n\n' +
+          '🧠 If you know einen/eine/ein/einem, you already know keinen/keine/kein/keinem — just add "k-".',
+      },
+      { rule: '⭐ WHERE DOES "nicht" GO? — position rules',
+        body:
+          'nicht sits in different spots depending on WHAT it negates:\n\n' +
+          '  • Whole sentence / the verb → at the END:\n' +
+          '     "Ich arbeite heute NICHT."\n' +
+          '  • BEFORE an adjective, adverb or place:\n' +
+          '     "Das ist NICHT gut." · "Ich wohne NICHT in Berlin."\n' +
+          '  • BEFORE a separable prefix / infinitive at the end:\n' +
+          '     "Ich rufe dich NICHT an." · "Ich kann NICHT kommen."\n\n' +
+          'General guide: nicht comes as late as possible, but right BEFORE the specific element it negates.',
+      },
+      { rule: '⚠ kein vs "nicht ein" — never say "nicht ein"',
+        body:
+          'A classic beginner error: negating an ein-noun with "nicht ein". German contracts this into kein:\n\n' +
+          '  "Ich habe nicht ein Auto." ✗\n' +
+          '  "Ich habe kein Auto."       ✓\n\n' +
+          '  "Ich habe nicht eine Idee." ✗\n' +
+          '  "Ich habe keine Idee."       ✓\n\n' +
+          'Whenever you\'re tempted to write "nicht ein/eine", merge it into kein/keine instead.',
+      },
+      { rule: '🔄 NEGATIVE QUESTIONS → answer with DOCH',
+        body:
+          'When someone asks a NEGATIVE question (with nicht or kein) and you want to contradict it, answer "Doch!" not "Ja!" (Day 16):\n\n' +
+          '  "Hast du KEIN Auto?"  — Doch! (= yes, I DO have one)\n' +
+          '  "Bist du NICHT müde?" — Doch! (= yes, I am)\n\n' +
+          'A plain agreement uses nein: "Hast du kein Auto?" — "Nein." (= correct, I don\'t). Useful time-negators: noch nicht (not yet), nicht mehr (not anymore), gar nicht (not at all).',
+      },
+      { rule: '🚦 PITFALLS — negation traps',
+        body:
+          '• ein-noun or no-article noun → kein (kein/keinen/keine/kein).\n' +
+          '• der/die/das (specific) noun → nicht ("Ich kaufe das Buch nicht").\n' +
+          '• Verb / adjective / name / place → nicht.\n' +
+          '• NEVER "nicht ein/eine" → always kein/keine.\n' +
+          '• kein masc Akk → keinen ("Ich habe keinen Hund").\n' +
+          '• Contradict a negative question with DOCH, not Ja.',
       },
     ],
     exercises: [
-      { type: 'fill-blank', sentence: 'Ich habe __ Zeit. (no, fem.)', answer: 'keine' },
-      { type: 'fill-blank', sentence: 'Er trinkt __ Bier. (no, n.)', answer: 'kein' },
-      { type: 'fill-blank', sentence: 'Wir arbeiten heute __.', answer: 'nicht' },
-      { type: 'multiple-choice', q: 'Which is wrong?', options: ['Ich habe keine Idee.','Ich habe nicht eine Idee.','Ich bin nicht müde.','Ich kaufe das Buch nicht.'], answer: 'Ich habe nicht eine Idee.' },
-      // Slide 271 — restaurant kein dialog
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — kein-or-nicht trigger · kein endings · negation phrases
+      { type: 'match',
+        pairs: [
+          { de: 'ein Auto (→ negate)',      en: '🚫 kein' },
+          { de: 'Kaffee, no article (→ negate)', en: '🚫 kein' },
+          { de: 'das Buch (specific →)',     en: '❌ nicht' },
+          { de: 'arbeiten (verb →)',         en: '❌ nicht' },
+          { de: 'gut (adjective →)',          en: '❌ nicht' },
+          { de: 'in Berlin (place →)',        en: '❌ nicht' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'masc. Akk (kein + Hund)',  en: 'keinen' },
+          { de: 'fem. (kein + Zeit)',        en: 'keine' },
+          { de: 'neuter (kein + Bier)',      en: 'kein' },
+          { de: 'plural (kein + Freunde)',   en: 'keine' },
+          { de: 'masc. Dativ (kein + Kind)', en: 'keinem' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'gar nicht',  en: 'not at all' },
+          { de: 'noch nicht', en: 'not yet' },
+          { de: 'nicht mehr', en: 'no longer' },
+          { de: 'nichts',     en: 'nothing' },
+          { de: 'doch',       en: 'yes! (contradicting)' },
+        ],
+      },
+
+      // 🚫 4 KEIN declension fill-blanks (all genders)
+      { type: 'fill-blank', sentence: 'Ich habe __ Zeit. (no, fem.)',     answer: 'keine' },
+      { type: 'fill-blank', sentence: 'Er trinkt __ Bier. (no, neuter)',  answer: 'kein' },
+      { type: 'fill-blank', sentence: 'Ich habe __ Hund. (no, masc. Akk.)', answer: 'keinen' },
+      { type: 'fill-blank', sentence: 'Ich habe __ Freunde. (no, plural)', answer: 'keine' },
+
+      // ❌ 3 NICHT placement / use fill-blanks
+      { type: 'fill-blank', sentence: 'Negate the verb: "Wir arbeiten heute __."', answer: 'nicht' },
+      { type: 'fill-blank', sentence: 'Negate the adjective: "Das Buch ist __ gut."', answer: 'nicht' },
+      { type: 'fill-blank', sentence: 'Specific noun: "Ich kaufe das Buch __."', answer: 'nicht' },
+
+      // ⚖️ 4 KEIN-vs-NICHT decision MCQs
+      { type: 'multiple-choice', q: 'Which is WRONG?',
+        options: ['Ich habe keine Idee.','Ich habe nicht eine Idee.','Ich bin nicht müde.','Ich kaufe das Buch nicht.'],
+        answer: 'Ich habe nicht eine Idee.',
+        explain: 'Never "nicht eine" → use "keine Idee".' },
+      { type: 'multiple-choice', q: '"I have no car." (ein Auto →)',
+        options: ['Ich habe nicht ein Auto.','Ich habe kein Auto.','Ich habe nicht Auto.','Ich habe keinen Auto.'],
+        answer: 'Ich habe kein Auto.',
+        explain: 'ein-noun → kein; Auto is neuter → kein.' },
+      { type: 'multiple-choice', q: '"I am not buying THE book." (das Buch, specific →)',
+        options: ['Ich kaufe kein Buch.','Ich kaufe das Buch nicht.','Ich kaufe nicht das Buch.','Ich kaufe keinen Buch.'],
+        answer: 'Ich kaufe das Buch nicht.',
+        explain: 'Specific der/die/das noun → nicht (at the end).' },
+      { type: 'multiple-choice', q: '"I don\'t live in Berlin." (place →)',
+        options: ['Ich wohne kein Berlin.','Ich wohne nicht in Berlin.','Ich wohne in Berlin nicht kein.','Ich wohne keine Berlin.'],
+        answer: 'Ich wohne nicht in Berlin.',
+        explain: 'Place/name → nicht.' },
+
+      // 🔄 2 DOCH / negative-question MCQs
+      { type: 'multiple-choice', q: '"Hast du kein Auto?" — Yes, I DO. Pick the answer.',
+        options: ['Ja!','Nein!','Doch!','Kein!'], answer: 'Doch!',
+        explain: 'Contradict a negative (kein) question with Doch.' },
+      { type: 'multiple-choice', q: '"not anymore" =',
+        options: ['noch nicht','nicht mehr','gar nicht','nichts'], answer: 'nicht mehr' },
+
+      // 📝 Restaurant kein dialog drills (preserved from slide 271)
       { type: 'fill-blank', sentence: 'Kellner: „Möchtest du einen Kaffee?" Du: „Nein, ich möchte __ Kaffee."', answer: 'keinen' },
       { type: 'fill-blank', sentence: 'Kellner: „Möchtest du Milch?" Du: „Nein, ich möchte __ Milch."', answer: 'keine' },
       { type: 'fill-blank', sentence: 'Kellner: „Möchtest du ein Glas Wasser?" Du: „Nein, ich möchte __ Glas Wasser."', answer: 'kein' },
-      { type: 'fill-blank', sentence: 'Kellner: „Hast du Freunde im Restaurant?" Du: „Nein, ich habe __ Freunde."', answer: 'keine' },
-      // Slide 272 challenge — five fill-blanks
-      { type: 'fill-blank', sentence: 'Ich möchte __ Kaffee. (kein, masc. Akk.)', answer: 'keinen' },
+
+      // 📝 Challenge fill-blanks (preserved from slide 272)
       { type: 'fill-blank', sentence: 'Ich habe __ Schwester. (kein, fem.)', answer: 'keine' },
       { type: 'fill-blank', sentence: 'Ich kaufe __ Brot. (kein, neuter)', answer: 'kein' },
-      { type: 'fill-blank', sentence: 'Ich habe __ Freunde. (kein, plural)', answer: 'keine' },
       { type: 'fill-blank', sentence: 'Ich sehe __ Hund. (kein, masc. Akk.)', answer: 'keinen' },
+
+      // 💬 Mini dialogue — kein + nicht + doch in conversation
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Hast du heute Zeit?',                   en: 'Do you have time today?' },
+        { speaker: 'B', de: 'Nein, heute habe ich keine Zeit.',      en: 'No, today I have no time.' },
+        { speaker: 'A', de: 'Trinkst du einen Kaffee?',              en: 'Will you have a coffee?' },
+        { speaker: 'B', de: 'Nein danke, ich trinke keinen Kaffee.', en: 'No thanks, I don\'t drink coffee.' },
+        { speaker: 'A', de: 'Magst du das Café hier nicht?',         en: 'Don\'t you like this café?' },
+        { speaker: 'B', de: 'Doch! Aber ich bin noch nicht fertig mit der Arbeit.', en: 'Yes I do! But I\'m not done with work yet.' },
+      ]},
     ],
     quiz: [
-      { type: 'fill-blank', sentence: 'Ich habe __ Hund. (no, masc.)', answer: 'keinen' },
+      { type: 'fill-blank', sentence: 'Ich habe __ Hund. (no, masc. Akk.)', answer: 'keinen' },
+      { type: 'multiple-choice', q: '"I have no time." (Zeit, fem.)',
+        options: ['Ich habe nicht Zeit.','Ich habe keine Zeit.','Ich habe kein Zeit.','Ich habe nicht eine Zeit.'],
+        answer: 'Ich habe keine Zeit.' },
+      { type: 'fill-blank', sentence: 'Negate the verb: "Ich arbeite heute __."', answer: 'nicht' },
+      { type: 'multiple-choice', q: '⚠ Which is WRONG?',
+        options: ['Ich habe kein Auto.','Ich habe nicht ein Auto.','Das ist nicht gut.','Ich kaufe das Buch nicht.'],
+        answer: 'Ich habe nicht ein Auto.', explain: 'Never "nicht ein" → kein Auto.' },
+      { type: 'multiple-choice', q: 'Negate the SPECIFIC noun "das Buch":',
+        options: ['Ich kaufe kein Buch.','Ich kaufe das Buch nicht.','Ich kaufe nicht ein Buch.','Ich kaufe keinen Buch.'],
+        answer: 'Ich kaufe das Buch nicht.', explain: 'Specific der/die/das noun → nicht.' },
+      { type: 'multiple-choice', q: '"Bist du nicht müde?" — Yes I am! →',
+        options: ['Ja','Nein','Doch','Kein'], answer: 'Doch' },
+      { type: 'fill-blank', sentence: 'Ich trinke __ Bier. (no, neuter)', answer: 'kein' },
     ],
   },
 

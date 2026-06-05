@@ -11,10 +11,30 @@
  * in sync.
  */
 
-export const VERSION = '3.10.1';
+export const VERSION = '3.10.2';
 export const RELEASE_DATE = '2026-06-05';
 
 export const RELEASES = [
+  {
+    version: '3.10.2',
+    date: '2026-06-05',
+    type: 'improvement',
+    title: 'Day 42 review — Negation: the kein-vs-nicht decision, kein declension, nicht placement',
+    notes: [
+      'Reviewed Day 42 (Negation: nicht & kein) end-to-end, parallel to the Day 14-41 full reviews. The previous version had 3 vocab items, 3 grammar bullets and 13 fill-blanks. Reshaped into a complete negation toolkit; the German was adversarially verified across multiple independent lenses before release.',
+      'Vocabulary 3 → 18 items (vocabLayout: "spotlight") grouped by role icon: 🚫 the two negators (nicht · kein) · 🔢 the full kein declension (keinen · keine-f · kein-n · keine-pl · keinem-Dat) · ✅ nicht-in-action (verb · adjective · specific der/die/das noun · name/place) · 🔁 answer/negation particles (nein · doch · gar nicht · nichts · noch nicht · nicht mehr).',
+      'Grammar 3 → 6 callouts: ⭐ THE 5-SECOND DECISION (ein/no-article noun → kein; verb/adjective/name/specific-noun → nicht, with worked positive→negative pairs) · ⭐ kein DECLINES LIKE ein + a plural (full Nom/Akk/Dat grid) · ⭐ WHERE DOES nicht GO? (end for verbs, before adjectives/places, before separable prefix/infinitive) · ⚠ never "nicht ein/eine" → kein/keine · 🔄 NEGATIVE QUESTIONS → answer with DOCH (+ noch nicht / nicht mehr / gar nicht) · 🚦 pitfalls.',
+      'Exercises reshaped (13 → 22 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: kein-or-nicht trigger · kein endings by gender/case · negation phrases.',
+      '• 4 🚫 KEIN declension fill-blanks (keine/kein/keinen/keine-pl).',
+      '• 3 ❌ NICHT placement/use fill-blanks (verb/adjective/specific-noun).',
+      '• 4 ⚖️ KEIN-vs-NICHT decision MCQs (nicht-eine-wrong · kein-Auto · das-Buch-nicht · place-nicht).',
+      '• 2 🔄 DOCH / negative-question MCQs (Doch · nicht mehr).',
+      '• 6 📝 restaurant + challenge drills preserved from the original (keinen/keine/kein Kaffee/Milch/Glas, keine Schwester, kein Brot, keinen Hund).',
+      '• 💬 Mini dialogue weaving keine Zeit, keinen Kaffee, …nicht, and Doch.',
+      'Quiz 1 → 7 items: keinen-Hund · keine-Zeit · nicht-verb · nicht-ein-wrong · das-Buch-nicht · Doch · kein-Bier.',
+    ],
+  },
   {
     version: '3.10.1',
     date: '2026-06-05',
