@@ -8250,14 +8250,112 @@ export const days = [
   /* ----- Day 44: A2 mid-review ----- */
   {
     id: 44, week: 7,
+    vocabLayout: 'spotlight',
     title: 'A2 mid-review',
     titleDe: 'A2 Zwischenwiederholung',
     emoji: '🎯',
-    objective: 'Lock in pronouns, prepositions, conjunctions and demonstratives before tackling past tenses.',
-    intro: 'Mixed pass through everything new from Days 28-38. Aim for ≥ 80%.',
-    vocabulary: [],
-    grammar: [],
+    objective: 'Lock in everything new from Days 28-38 — Akk/Dat pronouns, the Wechsel prepositions, the three connector groups, and demonstratives/indefinites — before the past tenses begin.',
+    intro: 'A focused A2 checkpoint on the second half of the case-and-glue stretch: 👤 Akkusativ vs Dativ pronouns → 🔀 Wechselpräpositionen (Wo?/Wohin?) → 🔗 connectors (verb-stays / verb-to-end / inversion) → 👉 demonstratives (dieser) & indefinites (jemand/man/etwas). Scroll the keystones, read the recap cards, then aim for ≥ 80% — that means you are ready for Perfekt and the past tenses.',
+    vocabulary: [
+      // 👤 PRONOUNS — Akkusativ vs Dativ (Days 28-29)
+      { de: 'mich ↔ mir',  en: 'me: Akk ↔ Dat',    emoji: '⚖️', hint: '🔁 Day 28-29 · sehen mich / helfen mir',  example: 'Er sieht mich. / Er hilft mir.',   exampleEn: 'He sees me. / He helps me.' },
+      { de: 'dich ↔ dir',  en: 'you: Akk ↔ Dat',   emoji: '⚖️', hint: '🔁 Day 28-29 · lieben dich / danken dir', example: 'Ich liebe dich. / Ich danke dir.', exampleEn: 'I love you. / I thank you.' },
+      { de: 'ihn ↔ ihm',   en: 'him: Akk ↔ Dat',   emoji: '⚖️', hint: '⭐ the killer pair · ihn(Akk)/ihm(Dat)',  example: 'Ich sehe ihn. / Ich helfe ihm.',  exampleEn: 'I see him. / I help him.' },
+      { de: 'sie ↔ ihr',   en: 'her: Akk ↔ Dat',   emoji: '⚖️', hint: '🔁 Day 28-29 · sie(Akk)/ihr(Dat)',       example: 'Ich sehe sie. / Ich danke ihr.',  exampleEn: 'I see her. / I thank her.' },
+
+      // 🔀 WECHSEL PREPOSITIONS (Day 30)
+      { de: 'in (Wo? → Dat)',  en: 'in (location → Dativ)',  emoji: '📍', hint: '🔁 Day 30 · no movement',         example: 'Ich bin in der Stadt.',           exampleEn: 'I am in the city.' },
+      { de: 'in (Wohin? → Akk)', en: 'into (movement → Akk)', emoji: '➡️', hint: '🔁 Day 30 · movement',           example: 'Ich gehe in die Stadt.',          exampleEn: 'I go into the city.' },
+      { de: 'ins / im',    en: 'in+das (Akk) / in+dem (Dat)', emoji: '🔗', hint: '🔁 Day 30 · -s=movement, -m=location', example: 'Ich gehe ins Kino. / Ich bin im Kino.', exampleEn: 'I go into the cinema. / I am in the cinema.' },
+      { de: 'für / um / ohne', en: 'always-Akkusativ preps', emoji: '🎯', hint: '🔁 Day 30 · FUDGO',               example: 'Das ist für dich.',               exampleEn: 'That is for you.' },
+
+      // 🔗 CONNECTORS — the three groups (Day 37)
+      { de: 'und / aber / denn', en: 'verb stays slot 2',   emoji: '🟢', hint: '🔁 Day 37 · coordinating',         example: 'Ich lerne, denn ich will reisen.', exampleEn: 'I learn, because I want to travel.' },
+      { de: 'weil / dass / wenn', en: 'verb to the END',    emoji: '🔴', hint: '🔁 Day 37 · subordinating',        example: 'Ich lerne, weil ich reisen will.', exampleEn: 'I learn because I want to travel.' },
+      { de: 'deshalb / dann',   en: 'V2 inversion',         emoji: '🟡', hint: '🔁 Day 37 · adverb-connectors',    example: 'Ich bin müde, deshalb gehe ich.', exampleEn: 'I am tired, so I am going.' },
+
+      // 👉 DEMONSTRATIVES & INDEFINITES (Day 38)
+      { de: 'dieser / diese / dieses', en: 'this (declines like der)', emoji: '👉', hint: '🔁 Day 38 · same endings as der/die/das', example: 'Dieses Buch ist gut.',     exampleEn: 'This book is good.' },
+      { de: 'jemand / niemand', en: 'someone / nobody',     emoji: '🙋', hint: '🔁 Day 38 · Akk → jemanden',        example: 'Niemand ist hier.',               exampleEn: 'Nobody is here.' },
+      { de: 'man',         en: 'one / people (general)',    emoji: '👥', hint: '🔁 Day 38 · takes er/sie/es verb',  example: 'Man arbeitet hier viel.',         exampleEn: 'People work a lot here.' },
+      { de: 'etwas / nichts', en: 'something / nothing',    emoji: '📦', hint: '🔁 Day 38 · no change',             example: 'Ich habe nichts.',               exampleEn: 'I have nothing.' },
+      { de: 'kein / nicht', en: 'no/none vs not',           emoji: '🚫', hint: '🔁 Day 42 · ein-noun→kein, else→nicht', example: 'Ich habe keine Zeit.',        exampleEn: 'I have no time.' },
+    ],
+    grammar: [
+      { rule: '✅ Pronouns recap — Akkusativ vs Dativ',
+        body:
+          '   Subject   Akkusativ   Dativ\n' +
+          '   ich       mich        mir\n' +
+          '   du        dich        dir\n' +
+          '   er        ihn         ihm     ⚠ the killer pair\n' +
+          '   sie(she)  sie         ihr\n' +
+          '   wir       uns         uns     ✅ same\n' +
+          '   ihr       euch        euch    ✅ same\n' +
+          '   sie/Sie   sie/Sie     ihnen/Ihnen\n\n' +
+          'The VERB or PREPOSITION decides the case: normal Akk verbs → left column; Dativ verbs (helfen/danken) + Dativ preps → right column.',
+      },
+      { rule: '✅ Wechselpräpositionen recap — Wo? vs Wohin?',
+        body:
+          'in · an · auf · über · unter · vor · hinter · neben · zwischen take EITHER case:\n\n' +
+          '  📍 Wo? (location, no movement) → DATIV    "Ich bin in der Stadt."\n' +
+          '  ➡️ Wohin? (movement)           → AKKUSATIV "Ich gehe in die Stadt."\n\n' +
+          'Contractions: ins/ans = movement (Akk) · im/am = location (Dat). Also recall: mit/bei/zu… = always Dativ; für/um/ohne/durch/gegen = always Akkusativ.',
+      },
+      { rule: '✅ Connectors recap — three word-order groups',
+        body:
+          '🟢 und · oder · aber · denn · sondern → word order UNCHANGED (verb stays slot 2).\n' +
+          '🔴 weil · dass · wenn · obwohl · ob → conjugated verb JUMPS to the END.\n' +
+          '🟡 deshalb · dann · trotzdem → V2 inversion (verb 2nd, subject 3rd).\n\n' +
+          '  "Ich lerne, DENN ich will reisen." (denn → normal)\n' +
+          '  "Ich lerne, WEIL ich reisen will." (weil → verb to end)\n' +
+          '  "Ich bin müde, DESHALB gehe ich." (deshalb → inversion)',
+      },
+      { rule: '✅ Demonstratives & indefinites recap',
+        body:
+          '👉 dieser/diese/dieses ("this") declines exactly like der/die/das: dieser→diesen→diesem.\n' +
+          '🙋 jemand (someone) · niemand (nobody) → add -en in Akk (jemanden/niemanden).\n' +
+          '👥 man (one/people) → always subject, takes the er/sie/es verb form.\n' +
+          '📦 etwas (something) · nichts (nothing) · alles (everything) → never change.\n' +
+          '🚫 Negation: ein-noun → kein (declines like ein); verb/adj/specific noun → nicht.',
+      },
+      { rule: '🎯 The 5 A2 mistakes to never make again',
+        body:
+          '1. "Ich helfe ihn" ✗ → Dativ verb → "ihm." ✓\n' +
+          '2. "Ich gehe in der Stadt" ✗ (movement) → "in die Stadt." ✓\n' +
+          '3. "Ich lerne, weil ich will reisen" ✗ → verb to END → "…weil ich reisen will." ✓\n' +
+          '4. "Man arbeiten viel" ✗ → man takes er-form → "Man arbeitet viel." ✓\n' +
+          '5. "Ich habe nicht ein Auto" ✗ → "kein Auto." ✓',
+      },
+    ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — pronoun pairs · connector groups · Wechsel
+      { type: 'match',
+        pairs: [
+          { de: 'sehen / lieben', en: '🟩 Akkusativ pronoun (mich/ihn)' },
+          { de: 'helfen / danken', en: '🅿️ Dativ pronoun (mir/ihm)' },
+          { de: 'mit / bei / zu', en: '🅿️ always-Dativ prepositions' },
+          { de: 'für / um / ohne', en: '🎯 always-Akkusativ prepositions' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'und / aber / denn', en: '🟢 verb stays slot 2' },
+          { de: 'weil / dass / wenn', en: '🔴 verb to the END' },
+          { de: 'deshalb / dann',     en: '🟡 V2 inversion' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Wo? (location)',   en: '📍 → Dativ (in der Stadt)' },
+          { de: 'Wohin? (movement)', en: '➡️ → Akkusativ (in die Stadt)' },
+          { de: 'ins / ans',         en: '🔗 movement contraction (Akk)' },
+          { de: 'im / am',           en: '🔗 location contraction (Dat)' },
+        ],
+      },
+
+      // Mixed-skills fill-blanks + MCQs (preserved from the original)
       { type: 'fill-blank', sentence: 'Akk pronoun: "She loves him." → Sie liebt __.',     answer: 'ihn' },
       { type: 'fill-blank', sentence: 'Dat pronoun: "He helps me." → Er hilft __.',        answer: 'mir' },
       { type: 'fill-blank', sentence: 'Wechsel: Ich gehe __ Restaurant. (in + das)',       answer: 'ins' },
@@ -8270,8 +8368,38 @@ export const days = [
         options: ['mit','bei','für','von'], answer: 'für' },
       { type: 'multiple-choice', q: 'In "Er kommt mit dir.", what is "dir"?',
         options: ['Akk pronoun','Dat pronoun','Possessive','Demonstrative'], answer: 'Dat pronoun' },
+
+      // ⭐ NEW reinforcing items
+      { type: 'fill-blank', sentence: '⚠ Dativ verb: "Ich helfe __." (him)', answer: 'ihm' },
+      { type: 'fill-blank', sentence: 'man + verb: "__ arbeitet hier viel." (one/people)', answer: 'Man' },
+      { type: 'multiple-choice', q: '⚠ "I am going INTO the city" =',
+        options: ['Ich gehe in der Stadt.','Ich gehe in die Stadt.','Ich bin in die Stadt.','Ich gehe im Stadt.'],
+        answer: 'Ich gehe in die Stadt.', explain: 'Movement (Wohin?) → Akkusativ.' },
+      { type: 'multiple-choice', q: 'After "weil", the verb goes…',
+        options: ['to slot 1','to slot 2','to the END','nowhere'], answer: 'to the END' },
+
+      // 💬 Mini dialogue — pronouns + connectors + man
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Kennst du diesen Mann?',                 en: 'Do you know this man?' },
+        { speaker: 'B', de: 'Ja, ich sehe ihn oft, aber ich kenne ihn nicht gut.', en: 'Yes, I see him often, but I don\'t know him well.' },
+        { speaker: 'A', de: 'Hilfst du ihm manchmal?',               en: 'Do you help him sometimes?' },
+        { speaker: 'B', de: 'Ja, weil er neu in der Stadt ist.',     en: 'Yes, because he is new in the city.' },
+        { speaker: 'A', de: 'Schön! Hier hilft man einander.',       en: 'Nice! Here people help one another.' },
+      ]},
     ],
-    quiz: [],
+    quiz: [
+      { type: 'fill-blank', sentence: 'Akk pronoun: "She loves him." → Sie liebt __.', answer: 'ihn' },
+      { type: 'fill-blank', sentence: '⚠ Dat pronoun: "I help him." → Ich helfe __.', answer: 'ihm' },
+      { type: 'multiple-choice', q: '⚠ "I am going into the city" →',
+        options: ['in der Stadt','in die Stadt','im Stadt','zur Stadt'], answer: 'in die Stadt' },
+      { type: 'multiple-choice', q: 'Which connector sends the verb to the END?',
+        options: ['denn','und','weil','deshalb'], answer: 'weil' },
+      { type: 'fill-blank', sentence: 'Demonstrativ: __ Buch ist gut. (this, neuter)', answer: 'Dieses' },
+      { type: 'multiple-choice', q: '"man" takes which verb form?',
+        options: ['ich-form','du-form','er/sie/es-form','wir-form'], answer: 'er/sie/es-form' },
+      { type: 'multiple-choice', q: 'Which preposition is always Akkusativ?',
+        options: ['mit','für','bei','zu'], answer: 'für' },
+    ],
   },
 
   /* ----- Day 45: Perfekt I — haben + Partizip II ----- */

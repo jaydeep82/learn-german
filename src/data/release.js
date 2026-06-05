@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.10.3';
+export const VERSION = '3.10.4';
 export const RELEASE_DATE = '2026-06-06';
 
 export const RELEASES = [
+  {
+    version: '3.10.4',
+    date: '2026-06-06',
+    type: 'improvement',
+    title: 'Day 44 review — A2 mid-review: pronouns, Wechsel, connectors, demonstratives',
+    notes: [
+      'Reviewed Day 44 (A2 mid-review) end-to-end, parallel to the milestone days. The previous version had an empty vocab/grammar block and a 10-item mixed exercise set. Rebuilt as a focused A2 checkpoint on Days 28-38 with spotlight keystones and recap cards, while PRESERVING all the original mixed-skills exercises.',
+      'Added 16 REVIEW KEYSTONES (vocabLayout: "spotlight") grouped by topic so the vocab page is a one-screen Days 28-38 recap: 👤 Akk↔Dat pronoun pairs (mich/mir · dich/dir · ihn/ihm · sie/ihr) · 🔀 Wechsel prepositions (Wo?/Wohin? · ins/im · FUDGO) · 🔗 the three connector groups · 👉 demonstratives & indefinites (dieser · jemand/niemand · man · etwas/nichts · kein/nicht).',
+      'Grammar 0 → 5 recap cards: ✅ the Akk-vs-Dat pronoun table (the ihn/ihm killer pair, uns/euch freebies) · ✅ Wechselpräpositionen (Wo?→Dat / Wohin?→Akk + contractions) · ✅ the three connector groups (verb-stays / verb-to-end / inversion) · ✅ demonstratives & indefinites (dieser declines like der, man takes er-form) · 🎯 "the 5 A2 mistakes to never make again".',
+      'Exercises expanded: 3 ⭐ interactive matches (pronoun-by-verb · connector groups · Wo?/Wohin?) + the 10 preserved mixed fill-blanks/MCQs + 4 NEW reinforcing items (helfe-ihm · man-verb · in-die-Stadt movement · weil-verb-to-end) + a pronouns/connectors/man dialogue.',
+      'Quiz 0 → 7 items: liebt-ihn · helfe-ihm · in-die-Stadt · weil-connector · dieses-Buch · man-verb-form · für-Akkusativ.',
+    ],
+  },
   {
     version: '3.10.3',
     date: '2026-06-06',
