@@ -11,10 +11,28 @@
  * in sync.
  */
 
-export const VERSION = '3.10.0';
-export const RELEASE_DATE = '2026-06-04';
+export const VERSION = '3.10.1';
+export const RELEASE_DATE = '2026-06-05';
 
 export const RELEASES = [
+  {
+    version: '3.10.1',
+    date: '2026-06-05',
+    type: 'improvement',
+    title: 'Day 41 review — Travel: the get-around→ticket→directions→hotel arc',
+    notes: [
+      'Reviewed Day 41 (Travel) end-to-end, parallel to the Day 14-40 full reviews. Was a thin day — 9 vocab items, empty grammar, 2 exercises. Reshaped into a complete travel-scenario toolkit organised around the four-step arc, reusing wo/wohin (Day 17) and the Dativ "mit dem Bus" (Day 25).',
+      'Vocabulary 9 → 23 items (vocabLayout: "spotlight") grouped by role icon: 🚉 places (Bahnhof · Flughafen · Hotel · Haltestelle) · 🚌 transport all with mit+Dativ (Zug · Bus · U-Bahn · Flugzeug · Taxi) · 🎫 tickets & trip (Fahrkarte · einfach/hin und zurück · Bahnsteig/Gleis · abfahren/ankommen) · 🧭 directions (links · rechts · geradeaus · Ecke · in der Nähe) · key questions + hotel (Wo ist…? · Wie komme ich zu…? · ein Zimmer reservieren · die Reise).',
+      'Grammar 0 → 5 callouts: ⭐ THE TRAVEL ARC (get around→ticket→directions→hotel, one phrase each) · ⭐ TRANSPORT = mit + DATIV (mit dem Zug/Bus/Flugzeug, mit der U-Bahn, + the zu Fuß / Ich fliege exceptions) · 🧭 wo? vs wohin? and "Wie komme ich zu…?" (zum/zur) · 🎫 BUYING A TICKET (nach + city, einfach/hin und zurück, Gleis, abfahren) · 🚦 pitfalls (mit+Dativ · U-Bahn feminine · nach for cities · zu→zum/zur · abfahren/ankommen separable · zu Fuß).',
+      'Exercises reshaped (2 → 20 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: arc step · transport → emoji · directions.',
+      '• 4 ⭐ TRANSPORT mit+Dativ fill-blanks (dem-Zug/der-U-Bahn/dem-Flugzeug/zum-Bahnhof).',
+      '• 3 🎫 TICKET / DIRECTION fill-blanks (nach-Berlin · abfahren-ab · geradeaus).',
+      '• 3 ⚠ TRAP MCQs (Wo-ist meaning · mit-der-U-Bahn · nach-Berlin).',
+      '• 💬 Extended directions/travel dialogue (Wie komme ich zum Bahnhof → geradeaus/links → in der Nähe → bus to airport → Gute Reise).',
+      'Quiz 1 → 7 items: Wo-ist · mit-dem-Bus · zum-Bahnhof · mit-der-U-Bahn · nach-Berlin · geradeaus · ankommen-an.',
+    ],
+  },
   {
     version: '3.10.0',
     date: '2026-06-04',

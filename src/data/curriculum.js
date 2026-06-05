@@ -4754,36 +4754,166 @@ export const days = [
 
   {
     id: 41, week: 6,
+    vocabLayout: 'spotlight',
     title: 'Travel',
     titleDe: 'Reisen',
     emoji: '✈️',
-    objective: 'Buy a ticket, ask for directions, check in.',
-    intro: 'Practical scenario for the airport, train station and hotel.',
+    objective: 'Travel confidently — take transport, buy a ticket, ask for and understand directions, and check into a hotel — reusing wo/wohin and the Dativ "mit dem Bus".',
+    intro: 'The travel scenario pulls together transport vocab, the wo/wohin direction split (Day 17), Dativ prepositions ("mit dem Zug", Day 25) and polite questions. Follow the arc — get around → buy a ticket → ask directions → check in — and you can handle a German train station, airport or hotel.',
     vocabulary: [
-      { de: 'der Bahnhof',   en: 'train station' },
-      { de: 'der Flughafen', en: 'airport' },
-      { de: 'das Hotel',     en: 'hotel' },
-      { de: 'die Fahrkarte', en: 'ticket' },
-      { de: 'die Reise',     en: 'trip' },
-      { de: 'links',         en: 'left' },
-      { de: 'rechts',        en: 'right' },
-      { de: 'geradeaus',     en: 'straight on' },
-      { de: 'Wo ist …?',     en: 'Where is …?' },
+      // 🚉 PLACES
+      { de: 'der Bahnhof',     en: 'train station',    emoji: '🚉', hint: 'masc · "zum Bahnhof"',                 example: 'Wo ist der Bahnhof?',            exampleEn: 'Where is the train station?' },
+      { de: 'der Flughafen',   en: 'airport',          emoji: '✈️', hint: 'masc · "zum Flughafen"',               example: 'Ich fahre zum Flughafen.',       exampleEn: 'I am going to the airport.' },
+      { de: 'das Hotel',       en: 'hotel',            emoji: '🏨', hint: 'neuter · cognate',                     example: 'Das Hotel ist im Zentrum.',      exampleEn: 'The hotel is in the centre.' },
+      { de: 'die Haltestelle', en: 'the (bus/tram) stop', emoji: '🚏', hint: 'where the bus stops',               example: 'Die Haltestelle ist dort.',      exampleEn: 'The stop is over there.' },
+
+      // 🚌 TRANSPORT (all take "mit dem/der" — Dativ)
+      { de: 'der Zug',         en: 'train',            emoji: '🚆', hint: 'mit dem Zug = by train',               example: 'Ich fahre mit dem Zug.',         exampleEn: 'I go by train.' },
+      { de: 'der Bus',        en: 'bus',              emoji: '🚌', hint: 'mit dem Bus = by bus',                 example: 'Der Bus kommt um acht.',         exampleEn: 'The bus comes at eight.' },
+      { de: 'die U-Bahn',      en: 'underground / metro', emoji: '🚇', hint: 'mit der U-Bahn (fem!)',             example: 'Ich nehme die U-Bahn.',          exampleEn: 'I take the metro.' },
+      { de: 'das Flugzeug',    en: 'airplane',         emoji: '🛫', hint: 'mit dem Flugzeug = by plane',           example: 'Wir fliegen mit dem Flugzeug.',  exampleEn: 'We travel by plane.' },
+      { de: 'das Taxi',        en: 'taxi',             emoji: '🚕', hint: 'mit dem Taxi',                         example: 'Ich nehme ein Taxi.',            exampleEn: 'I take a taxi.' },
+
+      // 🎫 TICKETS & TRIP
+      { de: 'die Fahrkarte',   en: 'ticket (train/bus)', emoji: '🎫', hint: 'also: das Ticket',                  example: 'Eine Fahrkarte nach Berlin, bitte.', exampleEn: 'A ticket to Berlin, please.' },
+      { de: 'einfach / hin und zurück', en: 'one-way / return', emoji: '🔁', hint: 'ticket type at the counter',  example: 'Einfach oder hin und zurück?',   exampleEn: 'One-way or return?' },
+      { de: 'der Bahnsteig / das Gleis', en: 'platform / track', emoji: '🛤️', hint: '"Gleis 7" = platform 7',     example: 'Der Zug fährt von Gleis 7.',     exampleEn: 'The train leaves from platform 7.' },
+      { de: 'abfahren / ankommen', en: 'to depart / to arrive', emoji: '🕐', hint: '★ both separable · Day 12',    example: 'Der Zug fährt um neun ab.',      exampleEn: 'The train departs at nine.' },
+
+      // 🧭 DIRECTIONS
+      { de: 'links',           en: 'left',             emoji: '⬅️', hint: '"nach links" = to the left',           example: 'Gehen Sie nach links.',          exampleEn: 'Go to the left.' },
+      { de: 'rechts',          en: 'right',            emoji: '➡️', hint: '"nach rechts" = to the right',          example: 'Dann nach rechts.',              exampleEn: 'Then to the right.' },
+      { de: 'geradeaus',       en: 'straight on',      emoji: '⬆️', hint: 'keep going straight',                  example: 'Gehen Sie geradeaus.',           exampleEn: 'Go straight on.' },
+      { de: 'die Ecke',        en: 'the corner',       emoji: '📐', hint: '"an der Ecke" = at the corner',         example: 'Es ist an der Ecke.',            exampleEn: 'It\'s at the corner.' },
+      { de: 'in der Nähe',     en: 'nearby',           emoji: '📍', hint: '"in der Nähe" = close by',              example: 'Ist ein Hotel in der Nähe?',     exampleEn: 'Is there a hotel nearby?' },
+
+      // 🧭 KEY QUESTIONS + 🏨 HOTEL
+      { de: 'Wo ist …?',       en: 'Where is …?',      emoji: '❓', hint: '🔁 Day 17 · location → Dativ answer',   example: 'Wo ist das Hotel?',              exampleEn: 'Where is the hotel?' },
+      { de: 'Wie komme ich zu …?', en: 'How do I get to …?', emoji: '🧭', hint: '⭐ the directions opener · zu + Dativ', example: 'Wie komme ich zum Bahnhof?', exampleEn: 'How do I get to the station?' },
+      { de: 'ein Zimmer reservieren', en: 'to book a room', emoji: '🛏️', hint: 'hotel check-in',                   example: 'Ich möchte ein Zimmer reservieren.', exampleEn: 'I would like to book a room.' },
+      { de: 'die Reise',       en: 'the trip / journey', emoji: '🧳', hint: 'reisen = to travel',                  example: 'Gute Reise!',                    exampleEn: 'Have a good trip!' },
     ],
-    grammar: [],
+    grammar: [
+      { rule: '⭐ THE TRAVEL ARC — get around → ticket → directions → hotel',
+        body:
+          'A travel situation runs through four steps — one phrase each:\n\n' +
+          '  🚌 GET AROUND: "Ich fahre mit dem Zug / Bus." (mit + Dativ)\n' +
+          '  🎫 TICKET:     "Eine Fahrkarte nach Berlin, bitte. Hin und zurück."\n' +
+          '  🧭 DIRECTIONS: "Wie komme ich zum Bahnhof?" → "Geradeaus, dann links."\n' +
+          '  🏨 HOTEL:      "Ich möchte ein Zimmer reservieren."\n\n' +
+          'Open any stranger-question with "Entschuldigung, …" and close with "Vielen Dank!".',
+      },
+      { rule: '⭐ TRANSPORT = "mit" + DATIV (by train, by bus)',
+        body:
+          'To say HOW you travel, use mit + the Dativ (Day 25). Masculine/neuter → dem, feminine → der:\n\n' +
+          '  mit dem Zug      (by train · der → dem)\n' +
+          '  mit dem Bus      (by bus)\n' +
+          '  mit dem Flugzeug (by plane · das → dem)\n' +
+          '  mit dem Taxi     (by taxi)\n' +
+          '  mit der U-Bahn   (by metro · die → der)\n\n' +
+          '⚠ Two exceptions on foot/bike: "zu Fuß" (on foot) and "mit dem Fahrrad" / "mit dem Rad". And "Ich fliege" (I fly) needs no "mit" at all.',
+      },
+      { rule: '🧭 wo? vs wohin? — and "Wie komme ich zu …?"',
+        body:
+          'Two ways to ask directions (Day 17 recap):\n\n' +
+          '  Wo ist …?         — Where IS …? (location → answer in Dativ)\n' +
+          '     "Wo ist der Bahnhof?" — "Er ist in der Nähe."\n' +
+          '  Wie komme ich zu …? — How do I GET TO …? (movement → zu + Dativ)\n' +
+          '     "Wie komme ich zum Bahnhof?" (zu + dem → zum)\n' +
+          '     "Wie komme ich zur Apotheke?" (zu + der → zur)\n\n' +
+          'Answers use direction words: "Gehen Sie geradeaus, dann nach links / rechts." · "Es ist an der Ecke / in der Nähe."',
+      },
+      { rule: '🎫 BUYING A TICKET — the counter phrases',
+        body:
+          'At the ticket counter (der Schalter) or machine:\n\n' +
+          '  "Eine Fahrkarte nach Berlin, bitte."   (nach + city, no article)\n' +
+          '  "Einfach oder hin und zurück?"          — one-way or return?\n' +
+          '  "Von welchem Gleis fährt der Zug?"      — which platform?\n' +
+          '  "Wann fährt der nächste Zug ab?"        — when does the next train leave? (abfahren — separable)\n\n' +
+          'Remember "nach" for cities/countries (nach Berlin, nach Deutschland) and the separable verbs abfahren (depart) / ankommen (arrive): "Der Zug fährt um 9 Uhr AB."',
+      },
+      { rule: '🚦 PITFALLS — travel traps',
+        body:
+          '• Transport uses mit + Dativ: "mit dem Zug" (not "mit den Zug").\n' +
+          '• "die U-Bahn" is feminine → "mit der U-Bahn".\n' +
+          '• Cities/countries take "nach" (nach Berlin), not "zu".\n' +
+          '• "Wie komme ich zu …?" uses zu + Dativ → zum (m/n) / zur (f).\n' +
+          '• abfahren / ankommen are separable: prefix to the end ("Der Zug kommt um 10 an").\n' +
+          '• "zu Fuß" = on foot (fixed phrase, no mit); "Ich fliege" needs no mit.',
+      },
+    ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — arc step · transport → emoji · directions
+      { type: 'match',
+        pairs: [
+          { de: 'mit dem Zug fahren',        en: '🚌 get around' },
+          { de: 'Eine Fahrkarte, bitte.',     en: '🎫 buy a ticket' },
+          { de: 'Wie komme ich zum Bahnhof?', en: '🧭 ask directions' },
+          { de: 'ein Zimmer reservieren',     en: '🏨 hotel' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'der Zug',     en: '🚆 train' },
+          { de: 'der Bus',     en: '🚌 bus' },
+          { de: 'die U-Bahn',  en: '🚇 metro' },
+          { de: 'das Flugzeug', en: '🛫 plane' },
+          { de: 'das Taxi',    en: '🚕 taxi' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'links',     en: '⬅️ left' },
+          { de: 'rechts',    en: '➡️ right' },
+          { de: 'geradeaus', en: '⬆️ straight on' },
+          { de: 'in der Nähe', en: '📍 nearby' },
+        ],
+      },
+
+      // ⭐ 4 TRANSPORT = mit + Dativ fill-blanks
+      { type: 'fill-blank', sentence: 'By train: "Ich fahre mit __ Zug." (the, masc.)',     answer: 'dem' },
+      { type: 'fill-blank', sentence: 'By metro: "Ich fahre mit __ U-Bahn." (the, fem.)',   answer: 'der' },
+      { type: 'fill-blank', sentence: 'By plane: "Wir fahren mit __ Flugzeug." (the, neut.)', answer: 'dem' },
+      { type: 'fill-blank', sentence: 'To the station: "Wie komme ich __ Bahnhof?" (zu + dem)', answer: 'zum' },
+
+      // 🎫 3 TICKET / DIRECTION fill-blanks
+      { type: 'fill-blank', sentence: 'Ticket to Berlin: "Eine Fahrkarte __ Berlin, bitte." (to a city)', answer: 'nach' },
+      { type: 'fill-blank', sentence: 'Separable: "Der Zug fährt um neun __." (abfahren — prefix)', answer: 'ab' },
+      { type: 'fill-blank', sentence: 'Directions: "Gehen Sie __, dann nach links." (straight on)', answer: 'geradeaus' },
+
+      // ⚠ 3 TRAP / CONCEPT MCQs
+      { type: 'multiple-choice', q: '"Wo ist das Hotel?" — what does it ask?',
+        options: ['How is the hotel?','Where is the hotel?','What is the hotel?','When is the hotel?'], answer: 'Where is the hotel?' },
+      { type: 'multiple-choice', q: '⚠ "by metro" (die U-Bahn) =',
+        options: ['mit dem U-Bahn','mit der U-Bahn','mit die U-Bahn','mit den U-Bahn'],
+        answer: 'mit der U-Bahn', explain: 'U-Bahn is feminine → mit der.' },
+      { type: 'multiple-choice', q: '⚠ "I\'m going to Berlin." — pick the preposition:',
+        options: ['zu Berlin','nach Berlin','bei Berlin','in Berlin'],
+        answer: 'nach Berlin', explain: 'Cities/countries take nach.' },
+
+      // 💬 Directions + travel dialogue (preserved opener + extended)
       { type: 'dialogue', lines: [
-        { speaker: 'Tourist', de: 'Entschuldigung, wo ist der Bahnhof?', en: 'Excuse me, where is the station?' },
-        { speaker: 'Person',  de: 'Geradeaus und dann links.',           en: 'Straight on, then left.' },
-        { speaker: 'Tourist', de: 'Vielen Dank!',                        en: 'Many thanks!' },
-      ]},
-      { type: 'match', pairs: [
-        { de: 'links', en: 'left' }, { de: 'rechts', en: 'right' },
-        { de: 'geradeaus', en: 'straight on' }, { de: 'Bahnhof', en: 'station' },
+        { speaker: 'Tourist', de: 'Entschuldigung, wie komme ich zum Bahnhof?', en: 'Excuse me, how do I get to the station?' },
+        { speaker: 'Person',  de: 'Gehen Sie geradeaus und dann nach links.',   en: 'Go straight on and then to the left.' },
+        { speaker: 'Tourist', de: 'Ist es weit?',                               en: 'Is it far?' },
+        { speaker: 'Person',  de: 'Nein, es ist in der Nähe, an der Ecke.',     en: 'No, it\'s nearby, at the corner.' },
+        { speaker: 'Tourist', de: 'Vielen Dank! Fährt ein Bus zum Flughafen?',  en: 'Many thanks! Does a bus go to the airport?' },
+        { speaker: 'Person',  de: 'Ja, die Haltestelle ist dort. Gute Reise!',  en: 'Yes, the stop is over there. Have a good trip!' },
       ]},
     ],
     quiz: [
-      { type: 'multiple-choice', q: '"Wo ist das Hotel?" — what does it ask?', options: ['How is the hotel?','Where is the hotel?','What is the hotel?','When is the hotel?'], answer: 'Where is the hotel?' },
+      { type: 'multiple-choice', q: '"Wo ist das Hotel?" — what does it ask?',
+        options: ['How is the hotel?','Where is the hotel?','What is the hotel?','When is the hotel?'], answer: 'Where is the hotel?' },
+      { type: 'fill-blank', sentence: 'By bus: "Ich fahre mit __ Bus." (the, masc.)', answer: 'dem' },
+      { type: 'fill-blank', sentence: 'To the station: "Wie komme ich __ Bahnhof?" (zu + dem)', answer: 'zum' },
+      { type: 'multiple-choice', q: '"by metro" (die U-Bahn) =',
+        options: ['mit dem U-Bahn','mit der U-Bahn','mit die U-Bahn','mit U-Bahn'], answer: 'mit der U-Bahn' },
+      { type: 'fill-blank', sentence: 'Ticket to a city: "Eine Fahrkarte __ Berlin, bitte."', answer: 'nach' },
+      { type: 'multiple-choice', q: 'Which means "straight on"?',
+        options: ['links','rechts','geradeaus','in der Nähe'], answer: 'geradeaus' },
+      { type: 'fill-blank', sentence: 'Separable: "Der Zug kommt um zehn __." (ankommen — prefix)', answer: 'an' },
     ],
   },
 
