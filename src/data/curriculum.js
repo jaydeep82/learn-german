@@ -4535,35 +4535,173 @@ export const days = [
 
   {
     id: 40, week: 6,
+    vocabLayout: 'spotlight',
     title: 'Shopping',
     titleDe: 'Einkaufen',
     emoji: '🛒',
-    objective: 'Buy clothes and groceries; ask about price and size.',
-    intro: 'Combine numbers, Akkusativ and modals to navigate any shop.',
+    objective: 'Navigate any shop — browse, ask price and size, try things on, decide, and pay — combining numbers, Akkusativ and the polite phrases.',
+    intro: 'Shopping ties together numbers/prices (Days 18-19), Akkusativ (what you buy), and polite requests. Follow the arc — browse → ask price & size → try on → decide → pay — with the right words for clothes shops AND supermarkets, plus the polite "Ich suche …" / "Kann ich … anprobieren?" phrases.',
     vocabulary: [
-      { de: 'das Geschäft',  en: 'shop' },
-      { de: 'der Supermarkt', en: 'supermarket' },
-      { de: 'die Hose',      en: 'trousers' },
-      { de: 'das T-Shirt',   en: 't-shirt' },
-      { de: 'das Brot',      en: 'bread' },
-      { de: 'die Milch',     en: 'milk' },
-      { de: 'der Apfel',     en: 'apple' },
-      { de: 'teuer',         en: 'expensive' },
-      { de: 'billig',        en: 'cheap' },
-      { de: 'Wie viel kostet …?', en: 'How much is …?' },
+      // 🏬 PLACES & PEOPLE
+      { de: 'das Geschäft',    en: 'shop / store',     emoji: '🏬', hint: 'general shop · also der Laden',          example: 'Das Geschäft ist um die Ecke.',  exampleEn: 'The shop is around the corner.' },
+      { de: 'der Supermarkt',  en: 'supermarket',      emoji: '🛒', hint: 'groceries · masc',                      example: 'Ich gehe in den Supermarkt.',    exampleEn: 'I am going to the supermarket.' },
+      { de: 'der Verkäufer / die Verkäuferin', en: 'salesperson', emoji: '🧑‍💼', hint: 'who serves you',           example: 'Der Verkäufer ist nett.',        exampleEn: 'The salesperson is nice.' },
+      { de: 'die Kasse',       en: 'the till / checkout', emoji: '💳', hint: 'where you pay · "an der Kasse"',       example: 'Bitte zahlen Sie an der Kasse.', exampleEn: 'Please pay at the checkout.' },
+
+      // 🔎 BROWSING / ASKING — the polite phrases
+      { de: 'Ich suche …',     en: 'I\'m looking for …', emoji: '🔎', hint: '⭐ the browsing opener · + Akkusativ', example: 'Ich suche eine Hose.',           exampleEn: 'I\'m looking for trousers.' },
+      { de: 'Ich schaue nur.', en: 'I\'m just looking.', emoji: '👀', hint: 'polite brush-off to "Kann ich helfen?"', example: 'Danke, ich schaue nur.',        exampleEn: 'Thanks, I\'m just looking.' },
+      { de: 'Haben Sie …?',    en: 'Do you have …?',   emoji: '🙋', hint: 'asking availability · + Akkusativ',     example: 'Haben Sie das in Blau?',         exampleEn: 'Do you have this in blue?' },
+      { de: 'anprobieren',     en: 'to try on ★',      emoji: '👕', hint: '★ separable · "Kann ich … anprobieren?"', example: 'Kann ich die Hose anprobieren?', exampleEn: 'Can I try on the trousers?' },
+
+      // 👕 CLOTHES
+      { de: 'die Hose',        en: 'trousers',         emoji: '👖', hint: 'fem (singular in German!) · eine Hose', example: 'Die Hose ist zu groß.',          exampleEn: 'The trousers are too big.' },
+      { de: 'das T-Shirt',     en: 't-shirt',          emoji: '👕', hint: 'neuter · ein T-Shirt',                 example: 'Ich kaufe ein T-Shirt.',         exampleEn: 'I am buying a t-shirt.' },
+      { de: 'das Kleid',       en: 'dress',            emoji: '👗', hint: 'neuter · ein Kleid',                   example: 'Das Kleid ist schön.',           exampleEn: 'The dress is beautiful.' },
+      { de: 'die Schuhe',      en: 'shoes (pl)',       emoji: '👟', hint: 'plural · die Schuhe',                  example: 'Die Schuhe sind günstig.',       exampleEn: 'The shoes are good value.' },
+      { de: 'die Größe',       en: 'the size',         emoji: '📏', hint: '"Welche Größe?" = what size?',          example: 'Welche Größe haben Sie?',        exampleEn: 'What size do you take?' },
+
+      // 🥖 GROCERIES
+      { de: 'das Brot',        en: 'bread',            emoji: '🍞', hint: 'neuter · das Brot',                    example: 'Ich kaufe ein Brot.',            exampleEn: 'I am buying a bread (loaf).' },
+      { de: 'die Milch',       en: 'milk',             emoji: '🥛', hint: 'fem · die Milch',                      example: 'Die Milch kostet einen Euro.',   exampleEn: 'The milk costs one euro.' },
+      { de: 'der Apfel',       en: 'apple',            emoji: '🍎', hint: 'masc · einen Apfel (Akk!) · pl Äpfel',  example: 'Ich nehme einen Apfel.',         exampleEn: 'I\'ll take an apple.' },
+      { de: 'das Obst',        en: 'fruit',            emoji: '🍇', hint: 'neuter · uncountable · das Obst',       example: 'Obst ist gesund.',               exampleEn: 'Fruit is healthy.' },
+
+      // 💶 PRICE & DECISION (recap Day 19 register)
+      { de: 'teuer',           en: 'expensive',        emoji: '💸', hint: '🔁 Day 19 · neutral',                  example: 'Das ist zu teuer.',              exampleEn: 'That is too expensive.' },
+      { de: 'günstig',         en: 'good value',       emoji: '👍', hint: '🔁 Day 19 · polite "cheap"',           example: 'Die Schuhe sind günstig.',       exampleEn: 'The shoes are good value.' },
+      { de: 'im Angebot',      en: 'on sale',          emoji: '🏷️', hint: '🔁 Day 19 · "on offer"',               example: 'Heute ist alles im Angebot.',    exampleEn: 'Today everything is on sale.' },
+      { de: 'Ich nehme …',     en: 'I\'ll take …',     emoji: '✅', hint: '⭐ the decision phrase · + Akkusativ',  example: 'Gut, ich nehme das T-Shirt.',    exampleEn: 'OK, I\'ll take the t-shirt.' },
+      { de: 'Wie viel kostet …?', en: 'How much is …?', emoji: '💶', hint: '🔁 Day 18-19 · the price question',   example: 'Wie viel kostet das Kleid?',     exampleEn: 'How much is the dress?' },
     ],
-    grammar: [],
+    grammar: [
+      { rule: '⭐ THE SHOPPING ARC — browse → ask → try → decide → pay',
+        body:
+          'A shop visit follows five steps — one phrase each:\n\n' +
+          '  🔎 BROWSE: "Ich suche eine Hose." / "Danke, ich schaue nur."\n' +
+          '  ❓ ASK:    "Haben Sie das in Größe M?" · "Wie viel kostet das?"\n' +
+          '  👕 TRY:    "Kann ich das anprobieren?"\n' +
+          '  ✅ DECIDE: "Gut, ich nehme es." / "Das ist zu teuer."\n' +
+          '  💳 PAY:    "An der Kasse, bitte." · "Bar oder mit Karte?"\n\n' +
+          'The salesperson\'s opener: "Kann ich Ihnen helfen?" (Can I help you?) → reply "Ja, ich suche …" or "Danke, ich schaue nur."',
+      },
+      { rule: '⭐ BUYING = kaufen / nehmen / suchen + AKKUSATIV',
+        body:
+          'What you buy, take or look for is a direct object → Akkusativ. Masculine flips to einen/den:\n\n' +
+          '  Ich kaufe EINEN Apfel.    (m → einen)\n' +
+          '  Ich nehme DEN Pullover.   (m → den)\n' +
+          '  Ich suche EINE Hose.      (f → eine)\n' +
+          '  Ich kaufe EIN T-Shirt.    (n → ein)\n' +
+          '  Ich nehme DIE Schuhe.     (pl → die)\n\n' +
+          '⚠ "der Apfel" → "einen Apfel"; "der Pullover" → "den Pullover". The masculine trap again — fem/neuter/plural stay unchanged.',
+      },
+      { rule: '📏 SIZES & "in" + colour',
+        body:
+          'Asking about size and colour:\n\n' +
+          '  "Welche Größe haben Sie?"   — What size do you take?\n' +
+          '  "Ich habe Größe 40."        — I\'m a size 40.\n' +
+          '  "Haben Sie das in Blau?"    — Do you have this in blue?\n' +
+          '  "Haben Sie das eine Nummer größer / kleiner?" — a size bigger/smaller?\n\n' +
+          'Fit words: "zu groß" (too big) · "zu klein" (too small) · "Es passt" (it fits) · "Es passt nicht" (it doesn\'t fit).',
+      },
+      { rule: '💶 PRICE & THE billig/günstig REGISTER (recap)',
+        body:
+          'Asking & reacting to prices (Day 18-19):\n\n' +
+          '  "Wie viel kostet das?" / "Was kostet das?"\n' +
+          '  "Das ist (zu) teuer."     — that\'s (too) expensive\n' +
+          '  "Das ist günstig."        — that\'s good value (polite)\n' +
+          '  "Das ist im Angebot."     — that\'s on sale\n\n' +
+          '⚠ Prefer günstig over billig — "billig" can imply cheap QUALITY. To say it\'s too much: "Das ist mir zu teuer."',
+      },
+      { rule: '🚦 PITFALLS — shopping traps',
+        body:
+          '• Buy in the Akkusativ: masc → einen/den (einen Apfel, den Pullover).\n' +
+          '• "die Hose" is SINGULAR in German (trousers = eine Hose), but "die Schuhe" is plural.\n' +
+          '• anprobieren is separable: "Ich probiere die Hose an" / "Kann ich … anprobieren?"\n' +
+          '• günstig (good value) is politer than billig (can imply poor quality).\n' +
+          '• Pay "an der Kasse" (Dativ — location); "in den Supermarkt" gehen (Akk — movement).\n' +
+          '• "Ich nehme …" (I\'ll take it) is the natural decision phrase, not "Ich will es kaufen".',
+      },
+    ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — arc step · clothes/grocery → emoji · phrase → meaning
+      { type: 'match',
+        pairs: [
+          { de: 'Ich suche eine Hose.',     en: '🔎 browse' },
+          { de: 'Wie viel kostet das?',     en: '❓ ask price' },
+          { de: 'Kann ich das anprobieren?', en: '👕 try on' },
+          { de: 'Ich nehme es.',            en: '✅ decide' },
+          { de: 'An der Kasse, bitte.',     en: '💳 pay' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'die Hose',    en: '👖 trousers' },
+          { de: 'das T-Shirt', en: '👕 t-shirt' },
+          { de: 'die Schuhe',  en: '👟 shoes' },
+          { de: 'das Brot',    en: '🍞 bread' },
+          { de: 'die Milch',   en: '🥛 milk' },
+          { de: 'der Apfel',   en: '🍎 apple' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'teuer',       en: '💸 expensive' },
+          { de: 'günstig',     en: '👍 good value' },
+          { de: 'im Angebot',  en: '🏷️ on sale' },
+          { de: 'die Größe',   en: '📏 size' },
+        ],
+      },
+
+      // 🛒 4 BUYING + Akkusativ fill-blanks (the masc trap)
+      { type: 'fill-blank', sentence: 'Ich kaufe __ Apfel. (an, masc.)',          answer: 'einen' },
+      { type: 'fill-blank', sentence: 'Ich nehme __ Pullover. (the, masc.)',      answer: 'den' },
+      { type: 'fill-blank', sentence: 'Ich suche __ Hose. (a, fem.)',             answer: 'eine' },
+      { type: 'fill-blank', sentence: 'Ich kaufe __ T-Shirt. (a, neuter)',        answer: 'ein' },
+
+      // 💶 3 PRICE / PHRASE fill-blanks
+      { type: 'fill-blank', sentence: 'Wie viel __ die Milch? (cost)',            answer: 'kostet' },
+      { type: 'fill-blank', sentence: 'Try on (separable): "Kann ich die Hose __?" (anprobieren)', answer: 'anprobieren' },
+      { type: 'fill-blank', sentence: 'Decide: "Gut, ich __ das Kleid." (take)',  answer: 'nehme' },
+
+      // ⚠ 3 TRAP / REGISTER MCQs
+      { type: 'multiple-choice', q: 'Which means cheap (good value, polite)?',
+        options: ['teuer','günstig','lecker','schnell'], answer: 'günstig',
+        explain: 'günstig = good value; billig can imply poor quality.' },
+      { type: 'multiple-choice', q: '⚠ "I\'ll take the apple." (der Apfel)',
+        options: ['Ich nehme der Apfel.','Ich nehme den Apfel.','Ich nehme dem Apfel.','Ich nehme ein Apfel.'],
+        answer: 'Ich nehme den Apfel.',
+        explain: 'nehmen → Akkusativ; masc der → den.' },
+      { type: 'multiple-choice', q: 'Polite reply to "Kann ich Ihnen helfen?" when browsing:',
+        options: ['Ich will kaufen.','Danke, ich schaue nur.','Gib mir das.','Nein.'],
+        answer: 'Danke, ich schaue nur.' },
+
+      // 💬 Full shopping dialogue — browse → size → price → decide → pay
       { type: 'dialogue', lines: [
-        { speaker: 'Kunde',     de: 'Wie viel kostet das T-Shirt?', en: 'How much is the t-shirt?' },
-        { speaker: 'Verkäufer', de: 'Es kostet zwanzig Euro.',      en: 'It costs twenty euros.' },
-        { speaker: 'Kunde',     de: 'Das ist zu teuer.',            en: 'That is too expensive.' },
+        { speaker: 'Verkäufer', de: 'Guten Tag! Kann ich Ihnen helfen?',          en: 'Good day! Can I help you?' },
+        { speaker: 'Kunde',     de: 'Ja, ich suche ein T-Shirt in Blau.',          en: 'Yes, I\'m looking for a t-shirt in blue.' },
+        { speaker: 'Verkäufer', de: 'Welche Größe haben Sie?',                     en: 'What size do you take?' },
+        { speaker: 'Kunde',     de: 'Größe M. Kann ich es anprobieren?',           en: 'Size M. Can I try it on?' },
+        { speaker: 'Verkäufer', de: 'Natürlich. … Es passt gut! Es kostet zwanzig Euro.', en: 'Of course. … It fits well! It costs twenty euros.' },
+        { speaker: 'Kunde',     de: 'Das ist günstig. Gut, ich nehme es.',         en: 'That\'s good value. OK, I\'ll take it.' },
+        { speaker: 'Verkäufer', de: 'Sehr gerne. Zahlen Sie bar oder mit Karte?',  en: 'Gladly. Are you paying cash or by card?' },
+        { speaker: 'Kunde',     de: 'Mit Karte, bitte.',                           en: 'By card, please.' },
       ]},
-      { type: 'fill-blank', sentence: 'Ich kaufe __ Apfel. (an, masc.)', answer: 'einen' },
-      { type: 'fill-blank', sentence: 'Wie viel __ die Milch?', answer: 'kostet' },
     ],
     quiz: [
-      { type: 'multiple-choice', q: 'Which means cheap?', options: ['teuer','billig','lecker','schnell'], answer: 'billig' },
+      { type: 'multiple-choice', q: 'Which means cheap?',
+        options: ['teuer','billig','lecker','schnell'], answer: 'billig' },
+      { type: 'fill-blank', sentence: 'Akk masc: "Ich kaufe __ Apfel." (an)', answer: 'einen' },
+      { type: 'fill-blank', sentence: 'Decide: "Ich __ das T-Shirt." (take)', answer: 'nehme' },
+      { type: 'multiple-choice', q: 'Polite "good value" (not "cheap quality"):',
+        options: ['billig','teuer','günstig','schlecht'], answer: 'günstig' },
+      { type: 'fill-blank', sentence: 'Try on (separable): "Kann ich die Schuhe __?"', answer: 'anprobieren' },
+      { type: 'multiple-choice', q: '"die Hose" (trousers) in German is…',
+        options: ['always plural','singular','neuter','uncountable'], answer: 'singular',
+        explain: 'eine Hose = one pair of trousers (singular); die Schuhe is plural.' },
+      { type: 'fill-blank', sentence: 'Ask the price: "Wie viel __ das Kleid?"', answer: 'kostet' },
     ],
   },
 

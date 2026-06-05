@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.9.9';
+export const VERSION = '3.10.0';
 export const RELEASE_DATE = '2026-06-04';
 
 export const RELEASES = [
+  {
+    version: '3.10.0',
+    date: '2026-06-04',
+    type: 'improvement',
+    title: 'Day 40 review — Shopping: the browse→ask→try→decide→pay arc',
+    notes: [
+      'Reviewed Day 40 (Shopping) end-to-end, parallel to the Day 14-39 full reviews. Was a thin day — 10 vocab items, empty grammar, 2 exercises. Reshaped into a complete shopping-scenario toolkit organised around the five-step arc, covering clothes shops AND supermarkets.',
+      'Vocabulary 10 → 24 items (vocabLayout: "spotlight") grouped by role icon: 🏬 places & people (Geschäft · Supermarkt · Verkäufer · Kasse) · 🔎 browsing/asking phrases (Ich suche … · Ich schaue nur · Haben Sie …? · anprobieren) · 👕 clothes (Hose · T-Shirt · Kleid · Schuhe · Größe) · 🥖 groceries (Brot · Milch · Apfel · Obst) · 💶 price & decision (teuer · günstig · im Angebot · Ich nehme … · Wie viel kostet …?).',
+      'Grammar 0 → 5 callouts: ⭐ THE SHOPPING ARC (browse→ask→try→decide→pay, one phrase each + the salesperson opener) · ⭐ BUYING = kaufen/nehmen/suchen + AKKUSATIV (the masc einen/den trap) · 📏 SIZES & "in" + colour (Welche Größe? · Haben Sie das in Blau? · zu groß/klein · es passt) · 💶 PRICE & the billig/günstig register recap · 🚦 pitfalls (Akk masc · die-Hose-singular vs die-Schuhe-plural · anprobieren separable · günstig>billig · an der Kasse Dativ · Ich nehme decision phrase).',
+      'Exercises reshaped (2 → 20 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: arc step · clothes/grocery → emoji · price-word → meaning.',
+      '• 4 🛒 BUYING + Akkusativ fill-blanks (einen-Apfel/den-Pullover/eine-Hose/ein-T-Shirt).',
+      '• 3 💶 PRICE / PHRASE fill-blanks (kostet · anprobieren · nehme).',
+      '• 3 ⚠ TRAP / REGISTER MCQs (günstig · nehme-den-Apfel · ich-schaue-nur).',
+      '• 💬 Full 8-line shopping dialogue (browse → size → try on → price → decide → pay by card).',
+      'Quiz 1 → 7 items: cheap=billig · einen-Apfel · nehme · günstig-register · anprobieren · die-Hose-singular · kostet.',
+      'Version rolls the minor over: 3.9.9 → 3.10.0.',
+    ],
+  },
   {
     version: '3.9.9',
     date: '2026-06-04',
