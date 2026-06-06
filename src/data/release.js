@@ -11,10 +11,28 @@
  * in sync.
  */
 
-export const VERSION = '3.10.4';
+export const VERSION = '3.10.5';
 export const RELEASE_DATE = '2026-06-06';
 
 export const RELEASES = [
+  {
+    version: '3.10.5',
+    date: '2026-06-06',
+    type: 'improvement',
+    title: 'Day 45 review — Perfekt I (haben + Partizip II): the four participle patterns',
+    notes: [
+      'Reviewed Day 45 (Perfekt I — haben + Partizip II) end-to-end, parallel to the Day 14-44 full reviews. This is the start of the real past-tense teaching. The previous version had 12 participles, 3 grammar bullets and 8 exercises. Reshaped into a complete haben-Perfekt toolkit covering all four participle-building patterns.',
+      'Vocabulary 12 → 21 items (vocabLayout: "spotlight") grouped by pattern: 🔧 the haben helper · ✅ regular ge…t participles (gemacht/gelernt/gespielt/gekauft/gearbeitet) · ⚡ irregular ge…en participles (getrunken/gegessen/gelesen/gesehen/geschrieben/gesprochen/genommen) · 🌍 -ieren no-ge (studiert/telefoniert) · 🧩 separable ge-in-middle (eingekauft/aufgeräumt) · 🕐 past time markers (gestern/letzte Woche/schon).',
+      'Grammar 3 → 6 callouts: ⭐ THE PERFEKT FORMULA (haben slot 2 + Partizip II at END, = English "have done" AND "did") · ✅ REGULAR ge+stem+t (+ the -t/-d extra-e rule: gearbeitet) · ⚡ IRREGULAR ge+changed-stem+en (memorise the strong verbs) · ⚠ the TWO no-ge/split-ge groups: -ieren (no ge-) and separable (ge in the middle) + inseparable be-/ver-/er-/ent- · 🕐 word order with time words (V2 still applies, participle stays last) · 🚦 pitfalls.',
+      'Exercises reshaped (8 → 21 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: verb → participle (across all 4 patterns) · participle → its pattern · participle → English meaning.',
+      '• 6 ⭐ FULL-PERFEKT fill-blanks (helper + participle: habe gearbeitet / haben getrunken / hast gelesen / hat gekauft / habt gegessen / habe telefoniert).',
+      '• 2 🧩 PARTICIPLE-BUILDING fill-blanks (-ieren studiert · separable eingekauft).',
+      '• 4 ⚠ PATTERN MCQs (participle position · gespielt · studiert-no-ge · eingekauft-separable).',
+      '• 💬 "What did you do yesterday?" dialogue weaving regular, irregular, -ieren and separable participles.',
+      'Quiz 1 → 7 items: gesprochen · haben-getrunken · gemacht · telefoniert-no-ge · participle-at-end · aufgeräumt-separable · spot-the-regular.',
+    ],
+  },
   {
     version: '3.10.4',
     date: '2026-06-06',

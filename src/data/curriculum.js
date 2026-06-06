@@ -8405,70 +8405,182 @@ export const days = [
   /* ----- Day 45: Perfekt I — haben + Partizip II ----- */
   {
     id: 45, week: 7,
+    vocabLayout: 'spotlight',
     title: 'Perfekt I — haben + Partizip II',
     titleDe: 'Perfekt I (haben)',
     emoji: '⏪',
-    objective: 'Speak about the past using haben + Partizip II — the everyday way.',
-    intro: 'In spoken German, the Perfekt is THE past tense for nearly every verb. Two ingredients: a conjugated form of haben (or sein — tomorrow) plus the past participle of the main verb at the END of the sentence.',
+    objective: 'Talk about the past the everyday way — haben (slot 2) + Partizip II (at the end) — and build the participle for regular (ge-…-t), irregular (ge-…-en), -ieren and separable verbs.',
+    intro: 'The Perfekt is THE spoken past tense in German — you use it for almost everything you\'d say in English past tense. Two ingredients: a conjugated form of haben in slot 2, plus the Partizip II (past participle) at the very END. Today: master the haben-Perfekt and the four participle-building patterns (regular ge-t, irregular ge-en, -ieren without ge-, and separable verbs).',
     vocabulary: [
-      { de: 'gearbeitet',  en: 'worked  (Part. II of arbeiten — regular: ge___t)' },
-      { de: 'gelernt',     en: 'learned (Part. II of lernen)' },
-      { de: 'gemacht',     en: 'done (Part. II of machen)' },
-      { de: 'gespielt',    en: 'played (Part. II of spielen)' },
-      { de: 'gekauft',     en: 'bought (Part. II of kaufen)' },
-      { de: 'gewohnt',     en: 'lived (Part. II of wohnen)' },
-      { de: 'getrunken',   en: 'drunk (Part. II of trinken — irregular)' },
-      { de: 'gegessen',    en: 'eaten (Part. II of essen — irregular)' },
-      { de: 'gelesen',     en: 'read (Part. II of lesen — irregular)' },
-      { de: 'gesehen',     en: 'seen (Part. II of sehen — irregular)' },
-      { de: 'geschrieben', en: 'written (Part. II of schreiben — irregular)' },
-      { de: 'gesprochen',  en: 'spoken (Part. II of sprechen — irregular)' },
+      // 🔧 THE HELPER (slot 2)
+      { de: 'haben (Perfekt-Helfer)', en: 'have (the Perfekt auxiliary)', emoji: '🔧', hint: '⭐ conjugate in slot 2 · habe/hast/hat/haben/habt/haben', example: 'Ich habe gelernt.', exampleEn: 'I have learned / I learned.' },
+
+      // ✅ REGULAR PARTIZIP II — ge + stem + t
+      { de: 'gemacht',     en: 'done (machen)',     emoji: '✅', hint: '✅ regular · ge + mach + t',          example: 'Ich habe das gemacht.',          exampleEn: 'I did that.' },
+      { de: 'gelernt',     en: 'learned (lernen)',  emoji: '✅', hint: '✅ regular · ge + lern + t',          example: 'Ich habe Deutsch gelernt.',      exampleEn: 'I learned German.' },
+      { de: 'gespielt',    en: 'played (spielen)',  emoji: '✅', hint: '✅ regular · ge + spiel + t',         example: 'Wir haben Fußball gespielt.',    exampleEn: 'We played football.' },
+      { de: 'gekauft',     en: 'bought (kaufen)',   emoji: '✅', hint: '✅ regular · ge + kauf + t',          example: 'Sie hat ein Brot gekauft.',      exampleEn: 'She bought a bread.' },
+      { de: 'gearbeitet',  en: 'worked (arbeiten)', emoji: '✅', hint: '⚠ -t stem → ge + arbeit + ET',        example: 'Ich habe viel gearbeitet.',      exampleEn: 'I worked a lot.' },
+
+      // ⚡ IRREGULAR PARTIZIP II — ge + (changed stem) + en
+      { de: 'getrunken',   en: 'drunk (trinken)',   emoji: '⚡', hint: '⚡ irregular · vowel change · ge…en',  example: 'Wir haben Kaffee getrunken.',    exampleEn: 'We drank coffee.' },
+      { de: 'gegessen',    en: 'eaten (essen)',     emoji: '⚡', hint: '⚡ irregular · ge + gess + en',        example: 'Ich habe Pizza gegessen.',       exampleEn: 'I ate pizza.' },
+      { de: 'gelesen',     en: 'read (lesen)',      emoji: '⚡', hint: '⚡ irregular · ge + les + en',         example: 'Du hast ein Buch gelesen.',      exampleEn: 'You read a book.' },
+      { de: 'gesehen',     en: 'seen (sehen)',      emoji: '⚡', hint: '⚡ irregular · ge + seh + en',         example: 'Ich habe den Film gesehen.',     exampleEn: 'I saw the film.' },
+      { de: 'geschrieben', en: 'written (schreiben)', emoji: '⚡', hint: '⚡ irregular · ge + schrieb + en',  example: 'Er hat einen Brief geschrieben.', exampleEn: 'He wrote a letter.' },
+      { de: 'gesprochen',  en: 'spoken (sprechen)', emoji: '⚡', hint: '⚡ irregular · vowel change · ge…en',  example: 'Ich habe mit ihm gesprochen.',   exampleEn: 'I spoke with him.' },
+      { de: 'genommen',    en: 'taken (nehmen)',    emoji: '⚡', hint: '⚡ irregular · ge + nomm + en',        example: 'Ich habe den Bus genommen.',     exampleEn: 'I took the bus.' },
+
+      // 🌍 -IEREN VERBS — NO ge-
+      { de: 'studiert',    en: 'studied (studieren)', emoji: '🌍', hint: '⚠ -ieren → NO ge- · just …iert',    example: 'Ich habe Informatik studiert.',  exampleEn: 'I studied computer science.' },
+      { de: 'telefoniert', en: 'phoned (telefonieren)', emoji: '🌍', hint: '⚠ -ieren → NO ge-',               example: 'Ich habe mit Anna telefoniert.', exampleEn: 'I phoned Anna.' },
+
+      // 🧩 SEPARABLE — ge goes in the MIDDLE
+      { de: 'eingekauft',  en: 'shopped (einkaufen)', emoji: '🧩', hint: '⚠ separable · prefix + GE + stem + t', example: 'Ich habe im Supermarkt eingekauft.', exampleEn: 'I shopped at the supermarket.' },
+      { de: 'aufgeräumt',  en: 'tidied up (aufräumen)', emoji: '🧩', hint: '⚠ separable · auf + GE + räum + t', example: 'Ich habe mein Zimmer aufgeräumt.', exampleEn: 'I tidied my room.' },
+
+      // 🕐 TIME MARKERS for the past
+      { de: 'gestern',     en: 'yesterday',         emoji: '📅', hint: 'time word · often leads → V2',         example: 'Gestern habe ich gearbeitet.',   exampleEn: 'Yesterday I worked.' },
+      { de: 'letzte Woche', en: 'last week',        emoji: '🗓️', hint: 'past time phrase',                     example: 'Letzte Woche habe ich Anna gesehen.', exampleEn: 'Last week I saw Anna.' },
+      { de: 'schon',       en: 'already',           emoji: '✔️', hint: '"Hast du schon gegessen?"',            example: 'Ich habe schon gegessen.',       exampleEn: 'I have already eaten.' },
     ],
     grammar: [
-      { rule: 'The Perfekt formula',
+      { rule: '⭐ THE PERFEKT FORMULA — haben (slot 2) + Partizip II (END)',
         body:
-          'subject + haben (slot 2) + … + Partizip II (sentence end)\n' +
-          '  Ich HABE gestern Deutsch GELERNT.\n' +
-          '  Wir HABEN viel Kaffee GETRUNKEN.\n' +
-          '  Du HAST das Buch GELESEN.',
+          'Two ingredients: conjugated haben in slot 2, past participle at the very END.\n\n' +
+          '  Subject   haben   … middle …        Partizip II (END)\n' +
+          '  Ich       habe    gestern Deutsch   GELERNT.\n' +
+          '  Wir       haben   viel Kaffee       GETRUNKEN.\n' +
+          '  Du        hast    das Buch          GELESEN.\n\n' +
+          '🧠 The Perfekt = English "I have done" AND simple past "I did" — German uses it for both in speech. The participle ALWAYS lands last, no matter how long the sentence.',
       },
-      { rule: 'Building Partizip II — regular verbs',
+      { rule: '✅ REGULAR Partizip II — ge + stem + t',
         body:
-          'ge + verb-stem + t.\n' +
-          '  arbeit-en → gearbeitet\n' +
-          '  lern-en   → gelernt\n' +
-          '  mach-en   → gemacht\n' +
-          '  kauf-en   → gekauft',
+          'Most verbs are regular ("weak"): ge + verb-stem + t.\n\n' +
+          '  machen  → ge + mach + t  → gemacht\n' +
+          '  lernen  → ge + lern + t  → gelernt\n' +
+          '  spielen → ge + spiel + t → gespielt\n' +
+          '  kaufen  → ge + kauf + t  → gekauft\n\n' +
+          '⚠ Stems ending in -t or -d add an extra -e- (like the present tense): arbeiten → ge-arbeit-ET, regnen → ge-regn-ET.',
       },
-      { rule: 'Irregular Partizip II — memorise',
+      { rule: '⚡ IRREGULAR Partizip II — ge + (changed stem) + en',
         body:
-          'Many common verbs change the stem vowel and end in -en:\n' +
-          '  trinken  → getrunken\n' +
-          '  essen    → gegessen\n' +
-          '  lesen    → gelesen\n' +
-          '  sehen    → gesehen\n' +
-          '  schreiben → geschrieben\n' +
-          '  sprechen → gesprochen\n' +
-          'Pattern is irregular — learn the participle alongside the verb.',
+          '"Strong" verbs end in -EN (not -t) and often change their stem vowel — memorise them with the verb:\n\n' +
+          '  trinken  → getrunken      essen    → gegessen\n' +
+          '  lesen    → gelesen        sehen    → gesehen\n' +
+          '  sprechen → gesprochen     nehmen   → genommen\n' +
+          '  schreiben → geschrieben   finden   → gefunden\n\n' +
+          'No reliable rule — but they\'re high-frequency, so they stick fast with use. (Flashcards above drill the top ones.)',
+      },
+      { rule: '⚠ TWO NO-ge / split-ge groups — -ieren & separable',
+        body:
+          'Two important exceptions to the ge- prefix:\n\n' +
+          '  🌍 -ieren verbs take NO ge- (they\'re loan-words):\n' +
+          '     studieren → studiert · telefonieren → telefoniert · fotografieren → fotografiert\n\n' +
+          '  🧩 SEPARABLE verbs put -ge- in the MIDDLE (between prefix and stem):\n' +
+          '     einkaufen → ein-GE-kauft → eingekauft\n' +
+          '     aufräumen → auf-GE-räumt → aufgeräumt\n' +
+          '     anrufen   → an-GE-rufen → angerufen\n\n' +
+          '⚠ Also: inseparable prefixes (be-, ver-, er-, ent-) take NO ge-: besuchen → besucht, verstehen → verstanden.',
+      },
+      { rule: '🕐 WORD ORDER with time words',
+        body:
+          'The participle stays at the END even when a time word leads (V2 rule still applies — the subject moves after haben):\n\n' +
+          '  Ich habe gestern gearbeitet.\n' +
+          '  GESTERN habe ich gearbeitet.   (time leads → "ich" after habe)\n' +
+          '  Letzte Woche haben wir Anna gesehen.\n\n' +
+          'Question form: haben to slot 1 → "HAST du schon gegessen?" (Have you eaten yet?) — participle still last.',
+      },
+      { rule: '🚦 PITFALLS — Perfekt traps',
+        body:
+          '• Participle ALWAYS at the end: "Ich habe Deutsch gelernt" (not "Ich habe gelernt Deutsch").\n' +
+          '• Regular = ge…t; irregular = ge…en (memorise the strong ones).\n' +
+          '• -ieren verbs: NO ge- (studiert, not gestudiert).\n' +
+          '• Separable: -ge- in the middle (eingekauft, not geeinkauft).\n' +
+          '• Inseparable be-/ver-/er-/ent-: NO ge- (besucht, verstanden).\n' +
+          '• -t/-d stems add extra -e-: gearbeitet, not gearbeitt.',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — verb→participle · pattern sort · participle→meaning
+      { type: 'match',
+        pairs: [
+          { de: 'machen',   en: 'gemacht (ge…t)' },
+          { de: 'trinken',  en: 'getrunken (ge…en)' },
+          { de: 'studieren', en: 'studiert (no ge-)' },
+          { de: 'einkaufen', en: 'eingekauft (ge in middle)' },
+          { de: 'besuchen', en: 'besucht (no ge-)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'gespielt',   en: '✅ regular ge…t' },
+          { de: 'gelesen',    en: '⚡ irregular ge…en' },
+          { de: 'telefoniert', en: '🌍 -ieren, no ge-' },
+          { de: 'aufgeräumt', en: '🧩 separable, ge in middle' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'getrunken',   en: 'drunk' },
+          { de: 'gegessen',    en: 'eaten' },
+          { de: 'gesehen',     en: 'seen' },
+          { de: 'geschrieben', en: 'written' },
+          { de: 'genommen',    en: 'taken' },
+        ],
+      },
+
+      // ⭐ 6 FULL-PERFEKT fill-blanks (helper + participle) — preserved + extended
       { type: 'fill-blank', sentence: 'Ich __ gestern __. (regular: arbeiten → present perfect)', answer: 'habe gearbeitet', hint: 'two words: helper + participle' },
       { type: 'fill-blank', sentence: 'Wir __ Kaffee __. (irregular: trinken)',                   answer: 'haben getrunken' },
       { type: 'fill-blank', sentence: 'Du __ ein Buch __. (irregular: lesen)',                    answer: 'hast gelesen' },
       { type: 'fill-blank', sentence: 'Sie (she) __ ein Brot __. (regular: kaufen)',              answer: 'hat gekauft' },
-      { type: 'fill-blank', sentence: 'Ich __ Deutsch __. (regular: lernen)',                     answer: 'habe gelernt' },
       { type: 'fill-blank', sentence: 'Ihr __ Pizza __. (irregular: essen)',                      answer: 'habt gegessen' },
+      { type: 'fill-blank', sentence: 'Ich __ mit Anna __. (no-ge: telefonieren)',                answer: 'habe telefoniert' },
+
+      // 🧩 2 PARTICIPLE-BUILDING fill-blanks (-ieren + separable)
+      { type: 'fill-blank', sentence: 'Build the participle: studieren → "Ich habe Informatik __."', answer: 'studiert', hint: '-ieren takes no ge-' },
+      { type: 'fill-blank', sentence: 'Build the participle: einkaufen → "Ich habe __." ', answer: 'eingekauft', hint: 'separable: -ge- in the middle' },
+
+      // ⚠ 4 PATTERN MCQs
       { type: 'multiple-choice', q: 'Where does the Partizip II go?',
         options: ['Position 1','Position 2','Right after the helper','At the very end of the sentence'],
         answer: 'At the very end of the sentence' },
       { type: 'multiple-choice', q: 'Pick the right Partizip II for "spielen".',
-        options: ['gespielen','gespielt','spielt','gespielen'], answer: 'gespielt',
+        options: ['gespielen','gespielt','spielt','spielen'], answer: 'gespielt',
         explain: 'Regular verb → ge + stem + t.' },
+      { type: 'multiple-choice', q: '⚠ Partizip II of "studieren":',
+        options: ['gestudiert','studiert','gestudieren','studieren'], answer: 'studiert',
+        explain: '-ieren verbs take NO ge-.' },
+      { type: 'multiple-choice', q: '⚠ Partizip II of "einkaufen" (separable):',
+        options: ['geeinkauft','eingekauft','einkauft','gekaufein'], answer: 'eingekauft',
+        explain: 'Separable → prefix + ge + stem + t.' },
+
+      // 💬 Mini dialogue — talking about yesterday in the Perfekt
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Was hast du gestern gemacht?',            en: 'What did you do yesterday?' },
+        { speaker: 'B', de: 'Ich habe gearbeitet und Deutsch gelernt.', en: 'I worked and learned German.' },
+        { speaker: 'A', de: 'Hast du auch eingekauft?',                en: 'Did you also go shopping?' },
+        { speaker: 'B', de: 'Ja, und ich habe mit Anna telefoniert.',  en: 'Yes, and I phoned Anna.' },
+        { speaker: 'A', de: 'Habt ihr zusammen gegessen?',             en: 'Did you eat together?' },
+        { speaker: 'B', de: 'Nein, aber wir haben Kaffee getrunken.',  en: 'No, but we drank coffee.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: '"I have spoken German." → Ich habe Deutsch __.', answer: 'gesprochen' },
+      { type: 'fill-blank', sentence: 'Full Perfekt: "We drank coffee." → Wir __ Kaffee __.', answer: 'haben getrunken' },
+      { type: 'multiple-choice', q: 'Partizip II of "machen":',
+        options: ['gemacht','gemachen','macht','gemakt'], answer: 'gemacht' },
+      { type: 'multiple-choice', q: '⚠ Partizip II of "telefonieren":',
+        options: ['getelefoniert','telefoniert','getelefonieren','telefoniert'], answer: 'telefoniert',
+        explain: '-ieren → no ge-.' },
+      { type: 'multiple-choice', q: 'Where does the participle go in a Perfekt sentence?',
+        options: ['slot 1','slot 2','at the END','after the subject'], answer: 'at the END' },
+      { type: 'fill-blank', sentence: 'Separable: aufräumen → "Ich habe mein Zimmer __."', answer: 'aufgeräumt' },
+      { type: 'multiple-choice', q: 'Which is a REGULAR (ge…t) participle?',
+        options: ['getrunken','gelesen','gekauft','gesehen'], answer: 'gekauft' },
     ],
   },
 
