@@ -8755,71 +8755,162 @@ export const days = [
   /* ----- Day 47: Präteritum (sein + haben) ----- */
   {
     id: 47, week: 7,
+    vocabLayout: 'spotlight',
     title: 'Präteritum — war & hatte',
     titleDe: 'Präteritum (sein + haben)',
     emoji: '📜',
-    objective: 'Use the simple past of sein and haben — the only Präteritum forms you need at A1.',
-    intro: 'Most past-tense verbs use Perfekt in spoken German. EXCEPT sein and haben — those almost always use the Präteritum (war / hatte) even in conversation. "Ich war müde" sounds natural; "Ich bin müde gewesen" sounds odd.',
+    objective: 'Use the simple past of sein (war) and haben (hatte) — the forms that stay Präteritum even in speech — and know when to pick Präteritum over Perfekt.',
+    intro: 'Day 45-46 gave you the Perfekt — the everyday spoken past. Today the key EXCEPTION: sein and haben almost always use the Präteritum (war / hatte), even in conversation. "Ich war müde" sounds natural; "Ich bin müde gewesen" sounds odd. Modal verbs lean Präteritum too (musste, konnte). Everything else stays Perfekt in speech.',
     vocabulary: [
-      // sein
-      { de: 'war',     en: 'was (ich / er / sie / es)' },
-      { de: 'warst',   en: 'were (du)' },
-      { de: 'waren',   en: 'were (wir / sie / Sie)' },
-      { de: 'wart',    en: 'were (ihr)' },
-      // haben
-      { de: 'hatte',   en: 'had (ich / er / sie / es)' },
-      { de: 'hattest', en: 'had (du)' },
-      { de: 'hatten',  en: 'had (wir / sie / Sie)' },
-      { de: 'hattet',  en: 'had (ihr)' },
+      // 🟦 SEIN → WAR (all six forms)
+      { de: 'ich war',      en: 'I was',          emoji: '🟦', hint: '⭐ sein Präteritum · no ending',       example: 'Ich war gestern müde.',          exampleEn: 'I was tired yesterday.' },
+      { de: 'du warst',     en: 'you were (1)',   emoji: '👉', hint: 'war + st',                            example: 'Du warst zu spät.',              exampleEn: 'You were too late.' },
+      { de: 'er/sie war',   en: 'he/she/it was',  emoji: '🧑', hint: '⭐ same as ich · no ending',          example: 'Er war im Büro.',                exampleEn: 'He was in the office.' },
+      { de: 'wir waren',    en: 'we were',        emoji: '👥', hint: 'war + en',                            example: 'Wir waren im Restaurant.',       exampleEn: 'We were in the restaurant.' },
+      { de: 'ihr wart',     en: 'you were (group)', emoji: '👨‍👩‍👧', hint: 'war + t',                       example: 'Ihr wart im Park.',              exampleEn: 'You all were in the park.' },
+      { de: 'sie/Sie waren', en: 'they/you (formal) were', emoji: '🧑‍🤝‍🧑', hint: 'war + en',              example: 'Sie waren in Deutschland.',      exampleEn: 'They were in Germany.' },
+
+      // 🟩 HABEN → HATTE (all six forms)
+      { de: 'ich hatte',    en: 'I had',          emoji: '🟩', hint: '⭐ haben Präteritum · double t · no ending', example: 'Ich hatte keine Zeit.',     exampleEn: 'I had no time.' },
+      { de: 'du hattest',   en: 'you had (1)',    emoji: '👉', hint: 'hatte + st',                          example: 'Du hattest viel Arbeit.',        exampleEn: 'You had a lot of work.' },
+      { de: 'er/sie hatte', en: 'he/she/it had',  emoji: '🧑', hint: '⭐ same as ich · no ending',          example: 'Er hatte eine Frage.',           exampleEn: 'He had a question.' },
+      { de: 'wir hatten',   en: 'we had',         emoji: '👥', hint: 'hatte + n',                           example: 'Wir hatten ein Meeting.',        exampleEn: 'We had a meeting.' },
+      { de: 'ihr hattet',   en: 'you had (group)', emoji: '👨‍👩‍👧', hint: 'hatte + t',                     example: 'Ihr hattet eine Pause.',         exampleEn: 'You all had a break.' },
+      { de: 'sie/Sie hatten', en: 'they/you (formal) had', emoji: '🧑‍🤝‍🧑', hint: 'hatte + n',            example: 'Sie hatten einen Bus.',          exampleEn: 'They had a bus.' },
+
+      // 🛠️ MODAL PRÄTERITUM (also natural in speech — preview)
+      { de: 'musste',       en: 'had to (müssen)', emoji: '⏰', hint: '🛠️ modal Präteritum · no umlaut!',   example: 'Ich musste arbeiten.',           exampleEn: 'I had to work.' },
+      { de: 'konnte',       en: 'could (können)',  emoji: '💪', hint: '🛠️ modal Präteritum · no umlaut!',   example: 'Ich konnte nicht kommen.',       exampleEn: 'I could not come.' },
+      { de: 'wollte',       en: 'wanted (wollen)', emoji: '🎯', hint: '🛠️ modal Präteritum',                example: 'Ich wollte nach Hause.',         exampleEn: 'I wanted to go home.' },
+
+      // 🕐 PAST TIME MARKERS
+      { de: 'gestern',      en: 'yesterday',      emoji: '📅', hint: 'leads → V2 inversion',                example: 'Gestern war ich krank.',         exampleEn: 'Yesterday I was sick.' },
+      { de: 'damals',       en: 'back then',      emoji: '⏳', hint: 'narrative past marker',               example: 'Damals hatten wir kein Auto.',   exampleEn: 'Back then we had no car.' },
     ],
     grammar: [
-      { rule: 'sein → war (Präteritum)',
+      { rule: '🟦 sein → war (the full Präteritum)',
         body:
-          'ich  war\n' +
-          'du   warst\n' +
-          'er/sie/es  war\n' +
-          'wir  waren\n' +
-          'ihr  wart\n' +
-          'sie / Sie  waren',
+          '  ich  war          wir  waren\n' +
+          '  du   warst        ihr  wart\n' +
+          '  er/sie/es war     sie/Sie  waren\n\n' +
+          '⭐ Like the present tense, ich and er/sie/es are IDENTICAL (both "war") and take NO ending. "Ich war müde." · "Es war kalt."',
       },
-      { rule: 'haben → hatte (Präteritum)',
+      { rule: '🟩 haben → hatte (the full Präteritum)',
         body:
-          'ich  hatte\n' +
-          'du   hattest\n' +
-          'er/sie/es  hatte\n' +
-          'wir  hatten\n' +
-          'ihr  hattet\n' +
-          'sie / Sie  hatten',
+          '  ich  hatte        wir  hatten\n' +
+          '  du   hattest      ihr  hattet\n' +
+          '  er/sie/es hatte   sie/Sie  hatten\n\n' +
+          '⭐ Note the DOUBLE t (hatte, not "hate") and again ich = er/sie/es. "Ich hatte Zeit." · "Sie hatte eine Idee."',
       },
-      { rule: 'When to use Präteritum vs Perfekt',
+      { rule: '⭐ PRÄTERITUM vs PERFEKT — which past tense?',
         body:
-          '• sein + haben → Präteritum (war / hatte) is normal even in speech.\n' +
-          '• Modal verbs → Präteritum is also natural (musste, konnte, wollte).\n' +
-          '• All other verbs → use Perfekt in conversation. Reserve their Präteritum for written stories.',
+          'Two past tenses, different jobs in SPEECH:\n\n' +
+          '  • sein + haben → Präteritum (war / hatte) — even in conversation.\n' +
+          '       "Ich WAR müde." ✓   (not "Ich bin müde gewesen" ✗-sounding)\n' +
+          '       "Ich HATTE Zeit." ✓ (not "Ich habe Zeit gehabt" ✗-sounding)\n\n' +
+          '  • Modal verbs → Präteritum is also natural: musste · konnte · wollte · durfte · sollte.\n' +
+          '       "Ich MUSSTE arbeiten." ✓\n\n' +
+          '  • ALL OTHER verbs → use Perfekt in speech (Day 45-46): "Ich HABE gearbeitet", "Ich BIN gegangen".\n' +
+          '       Their Präteritum (ich arbeitete, ich ging) is mostly for WRITTEN stories/news.',
+      },
+      { rule: '🛠️ MODAL Präteritum — drop the umlaut',
+        body:
+          'Modal verbs form the Präteritum by dropping any umlaut and adding -te:\n\n' +
+          '  müssen → musste     können → konnte     dürfen → durfte\n' +
+          '  wollen → wollte     sollen → sollte     mögen → mochte\n\n' +
+          '⚠ The umlaut DISAPPEARS: müssen→musste (not "müsste" — that\'s a different mood), können→konnte. "Gestern konnte ich nicht kommen, ich musste arbeiten."',
+      },
+      { rule: '🚦 PITFALLS — Präteritum traps',
+        body:
+          '• sein → war, haben → hatte: use these in speech, NOT their Perfekt.\n' +
+          '• ich = er/sie/es in the Präteritum (war / hatte — no ending).\n' +
+          '• hatte has a DOUBLE t; war has none.\n' +
+          '• Modal Präteritum drops the umlaut: musste/konnte/durfte (not müsste/könnte).\n' +
+          '• Every OTHER verb → Perfekt in conversation (ich habe gemacht, not "ich machte" in speech).\n' +
+          '• Time leads → V2: "Gestern war ich müde" (verb in slot 2).',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      // sein translations — slide
+
+      // ⭐ 3 INTERACTIVE MATCHES — war forms · hatte forms · tense choice
+      { type: 'match',
+        pairs: [
+          { de: 'ich / er / sie / es', en: 'war' },
+          { de: 'du',                  en: 'warst' },
+          { de: 'wir / sie / Sie',     en: 'waren' },
+          { de: 'ihr',                 en: 'wart' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'ich / er / sie / es', en: 'hatte' },
+          { de: 'du',                  en: 'hattest' },
+          { de: 'wir / sie / Sie',     en: 'hatten' },
+          { de: 'ihr',                 en: 'hattet' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'sein / haben (past)', en: '📜 Präteritum (war/hatte)' },
+          { de: 'modal verbs (past)',  en: '📜 Präteritum (musste/konnte)' },
+          { de: 'all other verbs (spoken past)', en: '⏪ Perfekt (habe/bin …)' },
+        ],
+      },
+
+      // 🟦 4 sein → war fill-blanks (preserved core)
       { type: 'fill-blank', sentence: '"I was tired." → Ich __ müde.',                  answer: 'war' },
       { type: 'fill-blank', sentence: '"We were in the restaurant." → Wir __ im Restaurant.', answer: 'waren' },
-      { type: 'fill-blank', sentence: '"He was in the office." → Er __ im Büro.',       answer: 'war' },
-      { type: 'fill-blank', sentence: '"She was not there." → Sie __ nicht da.',        answer: 'war' },
       { type: 'fill-blank', sentence: '"You (1) were late." → Du __ spät.',             answer: 'warst' },
       { type: 'fill-blank', sentence: '"You (group) were in the park." → Ihr __ im Park.', answer: 'wart' },
-      { type: 'fill-blank', sentence: '"They were in Germany." → Sie __ in Deutschland.', answer: 'waren' },
-      // haben translations — slide
+
+      // 🟩 4 haben → hatte fill-blanks (preserved core)
       { type: 'fill-blank', sentence: '"I had time." → Ich __ Zeit.',                   answer: 'hatte' },
       { type: 'fill-blank', sentence: '"We had a meeting." → Wir __ ein Meeting.',      answer: 'hatten' },
-      { type: 'fill-blank', sentence: '"He had a question." → Er __ eine Frage.',       answer: 'hatte' },
       { type: 'fill-blank', sentence: '"You (1) had a lot of work." → Du __ viel Arbeit.', answer: 'hattest' },
       { type: 'fill-blank', sentence: '"You (group) had a break." → Ihr __ eine Pause.', answer: 'hattet' },
+
+      // 🛠️ 2 modal-Präteritum fill-blanks
+      { type: 'fill-blank', sentence: 'Modal past: "I had to work." → Ich __ arbeiten. (müssen)', answer: 'musste' },
+      { type: 'fill-blank', sentence: 'Modal past: "I could not come." → Ich __ nicht kommen. (können)', answer: 'konnte' },
+
+      // ⚠ 4 TENSE-CHOICE / TRAP MCQs
       { type: 'multiple-choice', q: 'Most verbs in spoken German use which past tense?',
         options: ['Präteritum','Perfekt','Konjunktiv','Plusquamperfekt'], answer: 'Perfekt',
         explain: 'Reserve Präteritum for sein, haben, and modal verbs in speech.' },
+      { type: 'multiple-choice', q: 'Which sounds most natural?',
+        options: ['Ich bin müde gewesen.','Ich war müde.','Ich habe müde gewesen.','Ich müde war.'],
+        answer: 'Ich war müde.',
+        explain: 'sein uses the Präteritum (war) in speech.' },
+      { type: 'multiple-choice', q: '⚠ Modal Präteritum of "müssen":',
+        options: ['müsste','musste','gemusst','muste'], answer: 'musste',
+        explain: 'Drop the umlaut + add -te → musste (müsste is a different mood).' },
+      { type: 'multiple-choice', q: 'Präteritum of "haben" for "ich":',
+        options: ['habte','hatte','hate','gehabt'], answer: 'hatte',
+        explain: 'haben → hatte (double t).' },
+
+      // 💬 Mini dialogue — talking about the past with war/hatte + a modal
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Wo warst du gestern?',                     en: 'Where were you yesterday?' },
+        { speaker: 'B', de: 'Ich war zu Hause. Ich hatte keine Zeit.',  en: 'I was at home. I had no time.' },
+        { speaker: 'A', de: 'Warum?',                                   en: 'Why?' },
+        { speaker: 'B', de: 'Ich musste viel arbeiten.',               en: 'I had to work a lot.' },
+        { speaker: 'A', de: 'Wir waren im Restaurant. Es war sehr gut!', en: 'We were at the restaurant. It was very good!' },
+        { speaker: 'B', de: 'Schade, dass ich nicht kommen konnte.',    en: 'Too bad I couldn\'t come.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: '"They had a bus." → Sie __ einen Bus.', answer: 'hatten' },
+      { type: 'fill-blank', sentence: '"He was in the office." → Er __ im Büro.', answer: 'war' },
+      { type: 'multiple-choice', q: 'Which sounds most natural?',
+        options: ['Ich bin müde gewesen.','Ich war müde.','Ich habe Zeit gehabt.','Ich müde war.'],
+        answer: 'Ich war müde.', explain: 'sein → war in speech.' },
+      { type: 'fill-blank', sentence: '"I had no time." → Ich __ keine Zeit.', answer: 'hatte' },
+      { type: 'multiple-choice', q: '⚠ Modal past "I could (können)":',
+        options: ['könnte','konnte','gekonnt','konte'], answer: 'konnte', explain: 'No umlaut → konnte.' },
+      { type: 'multiple-choice', q: 'Which verbs use Präteritum even in speech?',
+        options: ['all verbs','only sein/haben/modals','only motion verbs','none'], answer: 'only sein/haben/modals' },
+      { type: 'fill-blank', sentence: '"We were in Germany." → Wir __ in Deutschland.', answer: 'waren' },
     ],
   },
 

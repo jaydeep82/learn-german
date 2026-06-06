@@ -11,10 +11,28 @@
  * in sync.
  */
 
-export const VERSION = '3.10.6';
+export const VERSION = '3.10.7';
 export const RELEASE_DATE = '2026-06-06';
 
 export const RELEASES = [
+  {
+    version: '3.10.7',
+    date: '2026-06-06',
+    type: 'improvement',
+    title: 'Day 47 review — Präteritum (war & hatte): the spoken-past exceptions + tense choice',
+    notes: [
+      'Reviewed Day 47 (Präteritum — war & hatte) end-to-end, parallel to the Day 14-46 full reviews. The previous version had 8 conjugated forms, 3 grammar bullets and 13 fill-blanks. Reshaped into a complete Präteritum toolkit covering both full conjugations, the modal-Präteritum, and the Perfekt-vs-Präteritum decision.',
+      'Vocabulary 8 → 17 items (vocabLayout: "spotlight") grouped by category: 🟦 sein → war (all six forms with full pronoun labels) · 🟩 haben → hatte (all six forms) · 🛠️ modal Präteritum preview (musste/konnte/wollte — drop the umlaut) · 🕐 past time markers (gestern/damals).',
+      'Grammar 3 → 5 callouts: 🟦 sein→war full table (ich=er, no ending) · 🟩 haben→hatte full table (double t, ich=er) · ⭐ PRÄTERITUM vs PERFEKT — which past tense (sein/haben/modals → Präteritum even in speech; all other verbs → Perfekt in conversation, their Präteritum is for written stories) · 🛠️ MODAL Präteritum drops the umlaut (musste not müsste) · 🚦 pitfalls.',
+      'Exercises reshaped (13 → 22 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: war forms by pronoun · hatte forms by pronoun · tense-choice (Präteritum vs Perfekt).',
+      '• 4 🟦 sein→war fill-blanks + 4 🟩 haben→hatte fill-blanks (preserved core).',
+      '• 2 🛠️ modal-Präteritum fill-blanks (musste/konnte).',
+      '• 4 ⚠ TENSE-CHOICE / TRAP MCQs (most-verbs-Perfekt · Ich-war-müde-natural · musste-no-umlaut · hatte-double-t).',
+      '• 💬 "Where were you yesterday?" dialogue with war/hatte + musste/konnte.',
+      'Quiz 1 → 7 items: hatten-Bus · war-Büro · Ich-war-müde-natural · hatte-keine-Zeit · konnte-no-umlaut · which-verbs-use-Präteritum · waren-Deutschland.',
+    ],
+  },
   {
     version: '3.10.6',
     date: '2026-06-06',
