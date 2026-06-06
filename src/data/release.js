@@ -11,10 +11,28 @@
  * in sync.
  */
 
-export const VERSION = '3.10.5';
+export const VERSION = '3.10.6';
 export const RELEASE_DATE = '2026-06-06';
 
 export const RELEASES = [
+  {
+    version: '3.10.6',
+    date: '2026-06-06',
+    type: 'improvement',
+    title: 'Day 46 review — Perfekt II (sein + motion verbs): the haben-vs-sein decision',
+    notes: [
+      'Reviewed Day 46 (Perfekt II — sein + motion verbs) end-to-end, parallel to the Day 14-45 full reviews. Pairs directly with Day 45 to complete the Perfekt picture. The previous version had 7 participles, 3 grammar bullets and 8 exercises. Reshaped into a complete sein-Perfekt toolkit built around the haben-vs-sein decision.',
+      'Vocabulary 7 → 19 items (vocabLayout: "spotlight") grouped by category: 🔧 the sein helper · 🚶 motion verbs A→B (gegangen/gefahren/gekommen/geflogen/gelaufen/gereist) · 🔄 change-of-state (geworden/aufgestanden/eingeschlafen/gewachsen) · ⚠ the 3 exceptions (geblieben/gewesen/passiert) · 🟩 haben-contrast (gegessen/eingekauft) · 🕐 time markers.',
+      'Grammar 3 → 5 callouts: ⭐ THE DECISION (motion A→B or change of state → sein; everything else → haben, with the three category lists) · ⚠ THE THREE EXCEPTIONS (bleiben/sein/passieren take sein with no motion; gewesen is sein\'s participle; passieren keeps -ieren no-ge) · ⭐ sein conjugates in slot 2 (bin/bist/ist/sind/seid/sind, participle still at END) · 🧩 separable motion/change verbs (sein + ge-in-middle; but separable ≠ automatically sein — einkaufen still haben) · 🚦 pitfalls.',
+      'Exercises reshaped (8 → 22 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: verb → helper (motion/change/exception/haben) · sein-participles → meaning · category → helper.',
+      '• 5 🚶 SEIN-Perfekt fill-blanks (bin gegangen / sind gefahren / bist gekommen / ist geblieben / bin aufgestanden).',
+      '• 3 ⚖️ HABEN-vs-SEIN decide-the-helper fill-blanks (habe eingekauft / ist passiert / habe gegessen).',
+      '• 4 ⚠ HELPER-CHOICE MCQs (fahren-sein · trinken-haben · bleiben-sein · einkaufen-haben).',
+      '• 💬 Past-trip dialogue mixing sein (gefahren/gelaufen/geblieben/zurückgekommen) and haben (gemacht/besucht).',
+      'Quiz 1 → 7 items: bin-geflogen · ist-geworden · gehen-sein · essen-haben · bin-geblieben · gewesen-participle · einkaufen-haben.',
+    ],
+  },
   {
     version: '3.10.5',
     date: '2026-06-06',

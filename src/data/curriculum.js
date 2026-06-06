@@ -8587,62 +8587,168 @@ export const days = [
   /* ----- Day 46: Perfekt II — sein + motion verbs ----- */
   {
     id: 46, week: 7,
+    vocabLayout: 'spotlight',
     title: 'Perfekt II — sein + motion verbs',
     titleDe: 'Perfekt II (sein)',
     emoji: '🚶',
-    objective: 'Switch the helper from haben to sein for verbs of motion or change of state.',
-    intro: 'A small group of verbs use SEIN (not haben) as their Perfekt helper — almost always verbs of MOVEMENT (gehen, fahren, kommen) or CHANGE OF STATE (werden, bleiben). The rule of thumb: did the subject move or change? Use sein.',
+    objective: 'Choose the right Perfekt helper — sein for verbs of motion (A→B) and change of state, haben for everything else — and conjugate sein in slot 2.',
+    intro: 'Day 45 built the Perfekt with haben. Today: the small but vital group that takes SEIN instead. The rule of thumb: did the subject MOVE from A to B (gehen, fahren, kommen, fliegen) or CHANGE STATE (werden, aufstehen, einschlafen)? → sein. Plus three must-know exceptions (bleiben, sein, passieren). Everything else stays with haben.',
     vocabulary: [
-      { de: 'gegangen',  en: 'gone (Part. II of gehen)' },
-      { de: 'gefahren',  en: 'driven / travelled (Part. II of fahren)' },
-      { de: 'gekommen',  en: 'come (Part. II of kommen)' },
-      { de: 'geblieben', en: 'stayed (Part. II of bleiben — change of state-ish)' },
-      { de: 'geflogen',  en: 'flown (Part. II of fliegen)' },
-      { de: 'aufgestanden', en: 'got up (Part. II of aufstehen — separable!)' },
-      { de: 'geworden',  en: 'become (Part. II of werden)' },
+      // 🔧 THE SEIN HELPER (slot 2)
+      { de: 'sein (Perfekt-Helfer)', en: 'be (the sein-Perfekt auxiliary)', emoji: '🔧', hint: '⭐ slot 2 · bin/bist/ist/sind/seid/sind', example: 'Ich bin gegangen.', exampleEn: 'I went / I have gone.' },
+
+      // 🚶 MOTION VERBS (A → B) — sein
+      { de: 'gegangen',  en: 'gone (gehen)',           emoji: '🚶', hint: '🚶 motion → sein · "bin gegangen"',     example: 'Ich bin nach Hause gegangen.',   exampleEn: 'I went home.' },
+      { de: 'gefahren',  en: 'driven/travelled (fahren)', emoji: '🚗', hint: '🚗 motion → sein',                  example: 'Wir sind nach Berlin gefahren.', exampleEn: 'We drove to Berlin.' },
+      { de: 'gekommen',  en: 'come (kommen)',          emoji: '🚪', hint: '🚪 motion → sein',                      example: 'Du bist zu spät gekommen.',      exampleEn: 'You came too late.' },
+      { de: 'geflogen',  en: 'flown (fliegen)',        emoji: '✈️', hint: '✈️ motion → sein',                     example: 'Ich bin nach Indien geflogen.',  exampleEn: 'I flew to India.' },
+      { de: 'gelaufen',  en: 'run/walked (laufen)',    emoji: '🏃', hint: '🏃 motion → sein',                      example: 'Sie ist schnell gelaufen.',      exampleEn: 'She ran fast.' },
+      { de: 'gereist',   en: 'travelled (reisen)',     emoji: '🧳', hint: '🧳 motion → sein · regular ge…t',       example: 'Wir sind viel gereist.',         exampleEn: 'We travelled a lot.' },
+
+      // 🔄 CHANGE-OF-STATE VERBS — sein
+      { de: 'geworden',  en: 'become (werden)',        emoji: '🔄', hint: '🔄 change of state → sein',            example: 'Er ist Arzt geworden.',          exampleEn: 'He became a doctor.' },
+      { de: 'aufgestanden', en: 'got up (aufstehen ★)', emoji: '⏰', hint: '🔄 change + separable → sein',         example: 'Ich bin um 7 Uhr aufgestanden.', exampleEn: 'I got up at 7.' },
+      { de: 'eingeschlafen', en: 'fallen asleep (einschlafen ★)', emoji: '💤', hint: '🔄 change + separable → sein', example: 'Das Kind ist eingeschlafen.',  exampleEn: 'The child fell asleep.' },
+      { de: 'gewachsen', en: 'grown (wachsen)',        emoji: '🌱', hint: '🔄 change of state → sein',            example: 'Der Baum ist gewachsen.',        exampleEn: 'The tree has grown.' },
+
+      // ⚠ THE THREE EXCEPTIONS — no motion, but still sein
+      { de: 'geblieben', en: 'stayed (bleiben)',       emoji: '🛑', hint: '⚠ exception · no motion but → sein',    example: 'Ich bin zu Hause geblieben.',    exampleEn: 'I stayed home.' },
+      { de: 'gewesen',   en: 'been (sein)',            emoji: '⭐', hint: '⚠ exception · sein\'s own participle → sein', example: 'Ich bin in Berlin gewesen.',  exampleEn: 'I have been in Berlin.' },
+      { de: 'passiert',  en: 'happened (passieren)',   emoji: '❗', hint: '⚠ exception · -ieren no ge- · → sein',  example: 'Was ist passiert?',              exampleEn: 'What happened?' },
+
+      // 🟩 CONTRAST — these stay with HABEN (recap Day 45)
+      { de: 'gegessen (haben)', en: 'eaten — takes HABEN', emoji: '🍽️', hint: '🟩 no motion → haben',            example: 'Ich habe Pizza gegessen.',       exampleEn: 'I ate pizza.' },
+      { de: 'eingekauft (haben)', en: 'shopped — separable BUT haben', emoji: '🛒', hint: '⚠ separable ≠ motion → haben', example: 'Ich habe eingekauft.',     exampleEn: 'I went shopping.' },
+
+      // 🕐 TIME MARKERS
+      { de: 'gestern',   en: 'yesterday',              emoji: '📅', hint: 'leads → V2 inversion',                 example: 'Gestern bin ich nach Hause gegangen.', exampleEn: 'Yesterday I went home.' },
+      { de: 'letztes Jahr', en: 'last year',          emoji: '🗓️', hint: 'past time phrase',                      example: 'Letztes Jahr sind wir gereist.', exampleEn: 'Last year we travelled.' },
     ],
     grammar: [
-      { rule: 'sein-helper rule',
+      { rule: '⭐ THE DECISION — sein or haben?',
         body:
-          'Use sein + Partizip II for:\n' +
-          '• verbs of MOTION from A to B: gehen, fahren, kommen, fliegen, laufen, reisen\n' +
-          '• verbs of CHANGE OF STATE: werden (become), aufstehen (get up), einschlafen (fall asleep)\n' +
-          '• exceptions: bleiben (to stay), sein (to be), passieren (to happen)\n' +
-          'Everything else uses haben.',
+          'Ask: did the subject MOVE from A to B, or CHANGE STATE? → sein. Otherwise → haben.\n\n' +
+          '  🚶 MOTION (A → B):  gehen · fahren · kommen · fliegen · laufen · reisen · schwimmen\n' +
+          '     "Ich BIN nach Hause gegangen."\n\n' +
+          '  🔄 CHANGE OF STATE: werden (become) · aufstehen (get up) · einschlafen (fall asleep) · wachsen (grow) · sterben (die)\n' +
+          '     "Er IST Arzt geworden."\n\n' +
+          '  🟩 EVERYTHING ELSE → haben:\n' +
+          '     "Ich HABE Pizza gegessen." · "Ich HABE gearbeitet."',
       },
-      { rule: 'Examples',
+      { rule: '⚠ THE THREE EXCEPTIONS — bleiben · sein · passieren',
         body:
-          '  Ich BIN nach Hause GEGANGEN.\n' +
-          '  Wir SIND in die Stadt GEFAHREN.\n' +
-          '  Du BIST aus der Schule GEKOMMEN.\n' +
-          '  Sie IST im Restaurant GEBLIEBEN.\n' +
-          '  Ich BIN um 7 Uhr AUFGESTANDEN.   (separable verb! prefix glues to participle)',
+          'These three take sein even though there\'s no obvious motion — just memorise them:\n\n' +
+          '  bleiben (to stay)    → Ich BIN zu Hause GEBLIEBEN.\n' +
+          '  sein (to be)         → Ich BIN in Berlin GEWESEN.   (sein\'s own participle = gewesen)\n' +
+          '  passieren (to happen) → Was IST PASSIERT?            (-ieren → no ge-)\n\n' +
+          '🧠 "bleiben/sein" are the famous no-motion sein-verbs. Note "gewesen" (been) and that passieren keeps the -ieren no-ge rule.',
       },
-      { rule: 'Separable verbs in Perfekt',
+      { rule: '⭐ sein CONJUGATES in slot 2 — same participle position',
         body:
-          'For separable verbs the prefix re-attaches AND the "ge-" goes BETWEEN them:\n' +
-          '  aufstehen   → aufgestanden    (ich bin aufgestanden)\n' +
-          '  einkaufen   → eingekauft      (ich habe eingekauft)\n' +
-          '  anrufen     → angerufen       (ich habe angerufen)',
+          'The structure is identical to the haben-Perfekt — only the helper changes to sein:\n\n' +
+          '  ich    BIN  … gegangen        wir   SIND … gegangen\n' +
+          '  du     BIST … gegangen        ihr   SEID … gegangen\n' +
+          '  er/sie IST  … gegangen        sie   SIND … gegangen\n\n' +
+          '  "Ich BIN nach Hause GEGANGEN." · "Wir SIND in die Stadt GEFAHREN." · "Du BIST zu spät GEKOMMEN."\n' +
+          'The Partizip II still lands at the very END.',
+      },
+      { rule: '🧩 SEPARABLE motion/change verbs — sein + ge-in-middle',
+        body:
+          'Separable verbs of motion/change take sein, and (as on Day 45) the -ge- goes between prefix and stem:\n\n' +
+          '  aufstehen   → aufgestanden   "Ich BIN um 7 aufgestanden."   (change of state → sein)\n' +
+          '  einschlafen → eingeschlafen  "Ich BIN eingeschlafen."        (change → sein)\n' +
+          '  ankommen    → angekommen     "Der Zug IST angekommen."       (motion → sein)\n\n' +
+          '⚠ But a separable verb that is NOT motion/change still takes haben: "Ich HABE eingekauft" (einkaufen). Separable ≠ automatically sein — the motion/change test still rules.',
+      },
+      { rule: '🚦 PITFALLS — sein-Perfekt traps',
+        body:
+          '• Motion A→B or change of state → sein; everything else → haben.\n' +
+          '• The 3 exceptions: bleiben, sein, passieren → sein (no motion).\n' +
+          '• "gewesen" is the participle of sein (Ich bin … gewesen).\n' +
+          '• Separable ≠ sein: einkaufen → "habe eingekauft" (not motion); aufstehen → "bin aufgestanden" (change).\n' +
+          '• passieren → no ge- (-ieren rule): "ist passiert".\n' +
+          '• Participle still at the END; sein conjugates in slot 2.',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: 'Ich __ nach Hause __. (gehen)',                       answer: 'bin gegangen' },
-      { type: 'fill-blank', sentence: 'Wir __ in die Stadt __. (fahren)',                    answer: 'sind gefahren' },
-      { type: 'fill-blank', sentence: 'Du __ aus der Stadt __. (kommen)',                    answer: 'bist gekommen' },
-      { type: 'fill-blank', sentence: 'Er __ im Restaurant __. (bleiben)',                   answer: 'ist geblieben' },
-      { type: 'fill-blank', sentence: 'Ich __ um 7 Uhr __. (aufstehen — separable!)',        answer: 'bin aufgestanden' },
-      { type: 'fill-blank', sentence: 'Ich __ am Samstag __. (einkaufen — separable, but takes haben!)', answer: 'habe eingekauft', hint: 'einkaufen is not motion — uses haben' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — verb→helper · sein-participles · motion vs change vs exception
+      { type: 'match',
+        pairs: [
+          { de: 'gehen / fahren / fliegen', en: '🚶 sein (motion)' },
+          { de: 'werden / aufstehen',        en: '🔄 sein (change of state)' },
+          { de: 'bleiben / sein / passieren', en: '⚠ sein (exceptions)' },
+          { de: 'essen / trinken / arbeiten', en: '🟩 haben (everything else)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'gegangen',  en: 'gone (gehen)' },
+          { de: 'gefahren',  en: 'driven (fahren)' },
+          { de: 'geflogen',  en: 'flown (fliegen)' },
+          { de: 'geblieben', en: 'stayed (bleiben)' },
+          { de: 'geworden',  en: 'become (werden)' },
+          { de: 'gewesen',   en: 'been (sein)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'fahren',    en: '🚶 motion → sein' },
+          { de: 'werden',    en: '🔄 change → sein' },
+          { de: 'bleiben',   en: '⚠ exception → sein' },
+          { de: 'essen',     en: '🟩 → haben' },
+        ],
+      },
+
+      // 🚶 5 SEIN-Perfekt fill-blanks (preserved + extended)
+      { type: 'fill-blank', sentence: 'Ich __ nach Hause __. (gehen)',                answer: 'bin gegangen' },
+      { type: 'fill-blank', sentence: 'Wir __ in die Stadt __. (fahren)',             answer: 'sind gefahren' },
+      { type: 'fill-blank', sentence: 'Du __ aus der Stadt __. (kommen)',             answer: 'bist gekommen' },
+      { type: 'fill-blank', sentence: 'Er __ im Restaurant __. (bleiben — exception!)', answer: 'ist geblieben' },
+      { type: 'fill-blank', sentence: 'Ich __ um 7 Uhr __. (aufstehen — separable, change!)', answer: 'bin aufgestanden' },
+
+      // ⚖️ 3 HABEN-vs-SEIN decide-the-helper fill-blanks
+      { type: 'fill-blank', sentence: '⚠ Ich __ am Samstag __. (einkaufen — separable, but NOT motion!)', answer: 'habe eingekauft', hint: 'not motion → haben' },
+      { type: 'fill-blank', sentence: 'Was __ __? (passieren — exception, -ieren)', answer: 'ist passiert' },
+      { type: 'fill-blank', sentence: 'Ich __ Pizza __. (essen — no motion)', answer: 'habe gegessen' },
+
+      // ⚠ 4 HELPER-CHOICE MCQs
       { type: 'multiple-choice', q: '"to drive / travel" → which helper?',
         options: ['haben','sein','either works','depends on subject'], answer: 'sein',
         explain: 'fahren is motion → sein.' },
       { type: 'multiple-choice', q: '"to drink" → which helper?',
         options: ['haben','sein','either works','depends on subject'], answer: 'haben',
         explain: 'No motion, no change of state → haben.' },
+      { type: 'multiple-choice', q: '⚠ "to stay (bleiben)" → which helper?',
+        options: ['haben','sein','either','none'], answer: 'sein',
+        explain: 'bleiben is an exception — no motion, but takes sein.' },
+      { type: 'multiple-choice', q: '⚠ "Ich ___ eingekauft." (einkaufen)',
+        options: ['bin','habe','ist','sind'], answer: 'habe',
+        explain: 'Separable but NOT motion → haben.' },
+
+      // 💬 Mini dialogue — a past trip, sein vs haben mixed
+      { type: 'dialogue', lines: [
+        { speaker: 'A', de: 'Wie war dein Wochenende?',                  en: 'How was your weekend?' },
+        { speaker: 'B', de: 'Ich bin nach Berlin gefahren.',            en: 'I drove to Berlin.' },
+        { speaker: 'A', de: 'Schön! Was hast du dort gemacht?',         en: 'Nice! What did you do there?' },
+        { speaker: 'B', de: 'Ich bin viel gelaufen und habe Museen besucht.', en: 'I walked a lot and visited museums.' },
+        { speaker: 'A', de: 'Bist du im Hotel geblieben?',              en: 'Did you stay in a hotel?' },
+        { speaker: 'B', de: 'Ja, und am Sonntag bin ich zurückgekommen.', en: 'Yes, and on Sunday I came back.' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: '"I have flown to Berlin." → Ich __ nach Berlin __.', answer: 'bin geflogen' },
+      { type: 'fill-blank', sentence: 'Change of state: "Er __ Arzt __." (werden)', answer: 'ist geworden' },
+      { type: 'multiple-choice', q: '"to go (gehen)" → which helper?',
+        options: ['haben','sein','either','none'], answer: 'sein', explain: 'Motion → sein.' },
+      { type: 'multiple-choice', q: '⚠ "to eat (essen)" → which helper?',
+        options: ['haben','sein','either','none'], answer: 'haben', explain: 'No motion/change → haben.' },
+      { type: 'fill-blank', sentence: 'Exception: "Ich __ zu Hause __." (bleiben)', answer: 'bin geblieben' },
+      { type: 'multiple-choice', q: 'Participle of "sein" (to be) is…',
+        options: ['gesein','gewesen','geseint','gewest'], answer: 'gewesen' },
+      { type: 'multiple-choice', q: '⚠ "Ich ___ am Samstag eingekauft." (einkaufen)',
+        options: ['bin','habe','ist','sind'], answer: 'habe', explain: 'Separable but not motion → haben.' },
     ],
   },
 
