@@ -11,10 +11,29 @@
  * in sync.
  */
 
-export const VERSION = '3.10.7';
+export const VERSION = '3.10.8';
 export const RELEASE_DATE = '2026-06-06';
 
 export const RELEASES = [
+  {
+    version: '3.10.8',
+    date: '2026-06-06',
+    type: 'improvement',
+    title: 'Day 48 review — Konjunktiv II + Imperativ: the polite-forms finale',
+    notes: [
+      'Reviewed Day 48 (Konjunktiv II + Imperative) end-to-end, parallel to the Day 14-47 full reviews. This is the last teaching day (Week 7 finale). The previous version had 13 vocab items, 4 grammar bullets and 9 exercises. Reshaped into a complete polite-forms toolkit covering the Konjunktiv II family and all three Imperativ registers.',
+      'Vocabulary 13 → 17 items (vocabLayout: "spotlight") grouped by category: 🙏 möchte (would like) · 🔁 würde (would + verb) · ✨ könnte / hätte gern / wäre (extra polite forms) · 📣 du-Imperativ (Komm/Geh/Iss/Sei/Ruf an) · 📣 ihr & Sie forms (Kommt/Kommen Sie) + bitte softener.',
+      'Grammar 4 → 6 callouts: 🙏 Konjunktiv II — what it is (politeness/wishes, not past; the 5-form A1 set) · 🙏 möchte & würde full tables (ich=er, würde + infinitive at END) · 🪄 könnte & hätte gern (the politeness ranking: hätte gern / könnten Sie > möchte > will) · 📣 THE IMPERATIV in du/ihr/Sie (drop -st for du, keep pronoun for Sie, irregular Sei!) · ⚠ separable verbs in the Imperativ (prefix to the END) · 🚦 pitfalls.',
+      'Exercises reshaped (9 → 23 mixed):',
+      '• 3 ⭐ INTERACTIVE matches: Konj-II form → base verb · politeness ladder · imperative registers (du/ihr/Sie).',
+      '• 4 🙏 KONJUNKTIV II fill-blanks (möchte/würdest/möchten/hätte-gern).',
+      '• 4 📣 IMPERATIV fill-blanks (Komm/Iss/Ruf an/Kommen Sie).',
+      '• 4 ⚠ CONCEPT / TRAP MCQs (Konj-II-purpose · möchten-from-mögen · du-Komm · Sie-Helfen-Sie).',
+      '• 💬 Café dialogue weaving hätte gern, möchten, würde, könnten Sie and a Sie-Imperativ.',
+      'Quiz 1 → 7 items: Kauf-ein · möchte · Konj-II-purpose · Sei-irregular · hätte-gern · Kommen-Sie · Ruf-an-separable.',
+      'This completes the full Day 1-48 spotlight migration + comprehensive review across all teaching days.',
+    ],
+  },
   {
     version: '3.10.7',
     date: '2026-06-06',

@@ -8917,84 +8917,177 @@ export const days = [
   /* ----- Day 48: Konjunktiv II + Imperative ----- */
   {
     id: 48, week: 7,
+    vocabLayout: 'spotlight',
     title: 'Konjunktiv II + Imperative',
     titleDe: 'Konjunktiv II + Imperativ',
     emoji: '🙏',
-    objective: 'Sound polite with möchte/würde, and bark (kindly) commands with the Imperativ.',
-    intro: 'Two unrelated tools that you already half-know. "möchte" and "würde" are the two Konjunktiv II forms you need at A1 — they make wishes and polite requests. The Imperativ is for commands: Komm! Iss! Ruf an!',
+    objective: 'Sound polite with möchte / würde / könnte / hätte gern, and give (kind) commands with the Imperativ in all three forms — du, ihr and Sie.',
+    intro: 'The polite-forms finale! "möchte" and "würde" are the two Konjunktiv II forms you need at A1 — they soften wishes and requests into polite German. The Imperativ gives commands and invitations: Komm! Iss! Ruf an! Today you master both, including the three command registers (du / ihr / Sie) and the separable-verb split.',
     vocabulary: [
-      // Konjunktiv II — möchten
-      { de: 'möchte',     en: 'would like (ich / er / sie / es)' },
-      { de: 'möchtest',   en: 'would like (du)' },
-      { de: 'möchten',    en: 'would like (wir / sie / Sie)' },
-      { de: 'möchtet',    en: 'would like (ihr)' },
-      // Konjunktiv II — würden
-      { de: 'würde',      en: 'would (ich / er / sie / es)' },
-      { de: 'würdest',    en: 'would (du)' },
-      { de: 'würden',     en: 'would (wir / sie / Sie)' },
-      { de: 'würdet',     en: 'would (ihr)' },
-      // Imperative samples
-      { de: 'Komm!',      en: 'Come!' },
-      { de: 'Geh!',       en: 'Go!' },
-      { de: 'Iss!',       en: 'Eat!' },
-      { de: 'Ruf an!',    en: 'Call (someone)!' },
-      { de: 'Kauf ein!',  en: 'Go shopping!' },
+      // 🙏 KONJUNKTIV II — möchte (would like)
+      { de: 'ich möchte',   en: 'I would like',        emoji: '🙏', hint: '⭐ Konj. II of mögen · ich=er, no ending', example: 'Ich möchte einen Kaffee.',     exampleEn: 'I would like a coffee.' },
+      { de: 'du möchtest',  en: 'you would like (1)',  emoji: '👉', hint: 'möchte + st',                         example: 'Möchtest du etwas essen?',     exampleEn: 'Would you like something to eat?' },
+      { de: 'wir möchten',  en: 'we would like',       emoji: '👥', hint: 'möchte + n',                          example: 'Wir möchten bezahlen.',        exampleEn: 'We would like to pay.' },
+
+      // 🔁 KONJUNKTIV II — würde (would + verb)
+      { de: 'ich würde',    en: 'I would',             emoji: '🔁', hint: '⭐ Konj. II of werden · + infinitive at END', example: 'Ich würde gern reisen.',  exampleEn: 'I would like to travel.' },
+      { de: 'du würdest',   en: 'you would (1)',       emoji: '👉', hint: 'würde + st',                          example: 'Würdest du mir helfen?',       exampleEn: 'Would you help me?' },
+      { de: 'wir würden',   en: 'we would',            emoji: '👥', hint: 'würde + n',                           example: 'Wir würden später kommen.',    exampleEn: 'We would come later.' },
+
+      // ✨ MORE POLITE Konjunktiv II forms (high-frequency)
+      { de: 'könnte',       en: 'could (polite)',      emoji: '🪄', hint: 'Konj. II of können · softens a request', example: 'Könnten Sie mir helfen?',     exampleEn: 'Could you help me?' },
+      { de: 'hätte gern',   en: 'would like to have',  emoji: '☕', hint: '⭐ Konj. II of haben · THE shop/café phrase', example: 'Ich hätte gern einen Tee.', exampleEn: 'I would like a tea.' },
+      { de: 'wäre',         en: 'would be',            emoji: '🌟', hint: 'Konj. II of sein · "das wäre toll"',  example: 'Das wäre super!',              exampleEn: 'That would be great!' },
+
+      // 📣 IMPERATIV — du-form (drop -st, drop pronoun)
+      { de: 'Komm!',        en: 'Come! (du)',          emoji: '📣', hint: '⭐ du kommst → Komm! · drop -st + pronoun', example: 'Komm her!',                  exampleEn: 'Come here!' },
+      { de: 'Geh!',         en: 'Go! (du)',            emoji: '🚶', hint: 'du gehst → Geh!',                     example: 'Geh nach Hause!',              exampleEn: 'Go home!' },
+      { de: 'Iss!',         en: 'Eat! (du)',           emoji: '🍽️', hint: '⚠ stem-changer keeps it: du isst → Iss!', example: 'Iss die Suppe!',           exampleEn: 'Eat the soup!' },
+      { de: 'Sei ruhig!',   en: 'Be quiet! (du)',      emoji: '🤫', hint: '⚠ irregular · sein → Sei!',          example: 'Sei bitte ruhig!',             exampleEn: 'Please be quiet!' },
+      { de: 'Ruf an!',      en: 'Call! (du, separable)', emoji: '📞', hint: '⚠ separable · prefix to the END',   example: 'Ruf mich an!',                 exampleEn: 'Call me!' },
+
+      // 📣 IMPERATIV — ihr & Sie forms
+      { de: 'Kommt!',       en: 'Come! (ihr)',         emoji: '👨‍👩‍👧', hint: 'ihr-form = present tense, drop pronoun', example: 'Kommt herein!',          exampleEn: 'Come in! (you all)' },
+      { de: 'Kommen Sie!',  en: 'Come! (formal Sie)',  emoji: '🤝', hint: '⭐ verb + Sie (keep the pronoun!)',   example: 'Kommen Sie bitte herein!',     exampleEn: 'Please come in! (formal)' },
+      { de: 'bitte',        en: 'please (softener)',   emoji: '🙇', hint: 'add to ANY imperative to soften it',  example: 'Hilf mir bitte!',              exampleEn: 'Please help me!' },
     ],
     grammar: [
-      { rule: 'Konjunktiv II — what it is',
+      { rule: '🙏 KONJUNKTIV II — what it is (politeness, not past)',
         body:
-          'NOT a tense (not past). It expresses politeness, wishes, hypotheticals.\n' +
-          'At A1 you only need TWO verbs:\n' +
-          '  möchten — Konjunktiv II of mögen → "would like"\n' +
-          '  würden  — Konjunktiv II of werden → "would"\n' +
-          '  Ich MÖCHTE einen Kaffee (haben).\n' +
-          '  Ich WÜRDE später essen.',
+          'Konjunktiv II is a MOOD, not a tense — it expresses politeness, wishes and hypotheticals (English "would"). At A1 you need a handful of ready forms:\n\n' +
+          '  möchte  — would like        (Konj. II of mögen)\n' +
+          '  würde   — would (+ verb)    (Konj. II of werden)\n' +
+          '  könnte  — could             (Konj. II of können)\n' +
+          '  hätte   — would have        (Konj. II of haben) → "ich hätte gern …"\n' +
+          '  wäre    — would be          (Konj. II of sein)  → "das wäre toll"\n\n' +
+          '  "Ich MÖCHTE einen Kaffee." · "Ich WÜRDE gern reisen." · "KÖNNTEN Sie helfen?"',
       },
-      { rule: 'möchten conjugation',
+      { rule: '🙏 möchte & würde — the two A1 workhorses',
         body:
-          'ich  möchte\n' +
-          'du   möchtest\n' +
-          'er/sie/es  möchte\n' +
-          'wir  möchten\n' +
-          'ihr  möchtet\n' +
-          'sie / Sie  möchten',
+          '  möchte (would like)            würde (would)\n' +
+          '  ich  möchte                    ich  würde\n' +
+          '  du   möchtest                  du   würdest\n' +
+          '  er/sie möchte                  er/sie würde\n' +
+          '  wir  möchten                   wir  würden\n' +
+          '  ihr  möchtet                   ihr  würdet\n' +
+          '  sie/Sie möchten                sie/Sie würden\n\n' +
+          '⭐ ich = er/sie/es (möchte / würde — no ending). "würde" works with ANY verb: würde + infinitive at the END → "Ich würde gern Deutsch lernen."',
       },
-      { rule: 'würden conjugation',
+      { rule: '🪄 könnte & hätte gern — extra polish',
         body:
-          'ich  würde\n' +
-          'du   würdest\n' +
-          'er/sie/es  würde\n' +
-          'wir  würden\n' +
-          'ihr  würdet\n' +
-          'sie / Sie  würden',
+          'Two more high-value polite forms:\n\n' +
+          '  könnte — softens a request to "could you …?"\n' +
+          '     "KÖNNTEN Sie mir helfen?" (Could you help me?) — gentler than "Können Sie …?"\n\n' +
+          '  hätte gern — the natural shop/café order ("I\'d like to have …")\n' +
+          '     "Ich HÄTTE GERN einen Kaffee." · "Ich HÄTTE GERN die Rechnung."\n\n' +
+          'These rank politest: "Ich hätte gern …" / "Könnten Sie …?" outrank "Ich möchte …", which outranks the blunt "Ich will …".',
       },
-      { rule: 'The Imperativ — talking to one person (du-form)',
+      { rule: '📣 THE IMPERATIV — du · ihr · Sie',
         body:
-          'Take the du-present-tense, drop the -st ending, drop the pronoun:\n' +
-          '  du kommst → Komm!\n' +
-          '  du gehst  → Geh!\n' +
-          '  du isst   → Iss!\n' +
-          '  du rufst an → Ruf an!   (separable: prefix to end)\n' +
-          '  du kaufst ein → Kauf ein!\n' +
-          '"Sei!" is the irregular du-form for sein.',
+          'Three command forms for the three "you"s:\n\n' +
+          '  du   → take the du-form, DROP -st and the pronoun:\n' +
+          '         du kommst → Komm! · du gehst → Geh! · du isst → Iss! (stem-change stays)\n' +
+          '  ihr  → just the ihr-form, drop the pronoun:\n' +
+          '         ihr kommt → Kommt! · ihr geht → Geht!\n' +
+          '  Sie  → verb + Sie (KEEP the pronoun, verb first):\n' +
+          '         Kommen Sie! · Gehen Sie! · Helfen Sie mir!\n\n' +
+          '⚠ Irregular du-imperative: sein → Sei! ("Sei ruhig!"). Add "bitte" to soften any command.',
+      },
+      { rule: '⚠ SEPARABLE verbs in the Imperativ — prefix to the END',
+        body:
+          'A separable verb splits in the command, just like a normal sentence — the prefix flies to the end:\n\n' +
+          '  anrufen   → Ruf (mich) AN!\n' +
+          '  einkaufen → Kauf EIN!\n' +
+          '  aufstehen → Steh AUF!\n' +
+          '  zumachen  → Mach die Tür ZU!\n\n' +
+          'Two words: the stem-command first, the prefix last. With Sie: "Rufen Sie mich an!"',
+      },
+      { rule: '🚦 PITFALLS — polite-forms & command traps',
+        body:
+          '• Konjunktiv II = politeness/wishes, NOT past tense.\n' +
+          '• ich = er/sie/es: möchte / würde / könnte / hätte / wäre (no ending).\n' +
+          '• würde + infinitive at the END: "Ich würde gern kommen."\n' +
+          '• du-Imperativ drops -st AND the pronoun: Komm! (not "Du komm!" or "Kommst!").\n' +
+          '• Sie-Imperativ KEEPS the pronoun, verb first: "Kommen Sie!".\n' +
+          '• Separable command → prefix at the END: "Ruf an!", "Kauf ein!".\n' +
+          '• sein is irregular: Sei! (du) / Seid! (ihr) / Seien Sie! (formal).',
       },
     ],
     exercises: [
       { type: 'flashcards', items: 'vocabulary' },
-      { type: 'fill-blank', sentence: 'Polite: Ich __ einen Kaffee, bitte. (would like)',           answer: 'möchte' },
-      { type: 'fill-blank', sentence: 'Polite: Du __ später essen. (would)',                        answer: 'würdest' },
-      { type: 'fill-blank', sentence: 'Polite: Wir __ ins Restaurant gehen. (would like)',          answer: 'möchten' },
-      { type: 'fill-blank', sentence: 'Polite: Ihr __ am Samstag arbeiten. (would)',                answer: 'würdet' },
+
+      // ⭐ 3 INTERACTIVE MATCHES — Konj II form→base verb · politeness ladder · imperative registers
+      { type: 'match',
+        pairs: [
+          { de: 'möchte',  en: 'Konj. II of mögen (would like)' },
+          { de: 'würde',   en: 'Konj. II of werden (would)' },
+          { de: 'könnte',  en: 'Konj. II of können (could)' },
+          { de: 'hätte',   en: 'Konj. II of haben (would have)' },
+          { de: 'wäre',    en: 'Konj. II of sein (would be)' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Ich will einen Kaffee.',        en: '😠 blunt' },
+          { de: 'Ich möchte einen Kaffee.',       en: '🙂 polite' },
+          { de: 'Ich hätte gern einen Kaffee.',   en: '⭐ most polite' },
+          { de: 'Könnten Sie mir helfen?',        en: '🪄 gentle request' },
+        ],
+      },
+      { type: 'match',
+        pairs: [
+          { de: 'Komm!',       en: '📣 du command' },
+          { de: 'Kommt!',      en: '👨‍👩‍👧 ihr command' },
+          { de: 'Kommen Sie!', en: '🤝 Sie command (keep pronoun)' },
+          { de: 'Sei ruhig!',  en: '⚠ irregular (sein)' },
+        ],
+      },
+
+      // 🙏 4 KONJUNKTIV II fill-blanks (preserved + extended)
+      { type: 'fill-blank', sentence: 'Polite: Ich __ einen Kaffee, bitte. (would like)',  answer: 'möchte' },
+      { type: 'fill-blank', sentence: 'Polite: Du __ später essen. (would)',               answer: 'würdest' },
+      { type: 'fill-blank', sentence: 'Polite: Wir __ ins Restaurant gehen. (would like)', answer: 'möchten' },
+      { type: 'fill-blank', sentence: 'Most polite café order: "Ich __ gern einen Tee." (would like to have)', answer: 'hätte' },
+
+      // 📣 4 IMPERATIV fill-blanks (du / separable / Sie)
       { type: 'fill-blank', sentence: 'Imperativ (du): "Come into the office!" → __ in die Arbeit!', answer: 'Komm' },
       { type: 'fill-blank', sentence: 'Imperativ (du): "Eat the soup!" → __ die Suppe!',            answer: 'Iss' },
       { type: 'fill-blank', sentence: 'Imperativ (du, separable): "Call your friend!" → __ deinen Freund __!', answer: 'Ruf an', hint: 'two words separated by a space — prefix to end' },
+      { type: 'fill-blank', sentence: 'Imperativ (formal): "Come in, please!" → __ Sie bitte herein! (kommen)', answer: 'Kommen' },
+
+      // ⚠ 4 CONCEPT / TRAP MCQs
       { type: 'multiple-choice', q: 'Konjunktiv II is used to express…',
         options: ['the past','the future','politeness / wishes','negation'], answer: 'politeness / wishes' },
       { type: 'multiple-choice', q: '"möchten" is the Konjunktiv II form of which verb?',
         options: ['mögen','machen','müssen','möcht'], answer: 'mögen' },
+      { type: 'multiple-choice', q: '⚠ du-Imperativ of "kommen":',
+        options: ['Du komm!','Komm!','Kommst!','Kommen!'], answer: 'Komm!',
+        explain: 'Drop -st AND the pronoun → Komm!' },
+      { type: 'multiple-choice', q: '⚠ Formal Sie-Imperativ of "helfen":',
+        options: ['Helf Sie!','Helfen Sie!','Sie helfen!','Hilf Sie!'], answer: 'Helfen Sie!',
+        explain: 'Sie-command keeps the pronoun, verb first.' },
+
+      // 💬 Mini dialogue — polite forms + imperatives in a café
+      { type: 'dialogue', lines: [
+        { speaker: 'Gast',    de: 'Guten Tag! Ich hätte gern einen Kaffee.',     en: 'Good day! I would like a coffee.' },
+        { speaker: 'Kellner', de: 'Gern. Möchten Sie auch etwas essen?',         en: 'Gladly. Would you also like something to eat?' },
+        { speaker: 'Gast',    de: 'Ja, ich würde gern ein Stück Kuchen nehmen.', en: 'Yes, I would like to have a piece of cake.' },
+        { speaker: 'Kellner', de: 'Natürlich. Nehmen Sie bitte Platz!',          en: 'Of course. Please take a seat!' },
+        { speaker: 'Gast',    de: 'Könnten Sie mir auch die Rechnung bringen?',  en: 'Could you also bring me the bill?' },
+        { speaker: 'Kellner', de: 'Sehr gern. Einen Moment, bitte!',             en: 'Very gladly. One moment, please!' },
+      ]},
     ],
     quiz: [
       { type: 'fill-blank', sentence: 'Imperativ: "Buy the bread!" → __ das Brot __!', answer: 'Kauf ein' },
+      { type: 'fill-blank', sentence: 'Polite: "I would like a coffee." → Ich __ einen Kaffee.', answer: 'möchte' },
+      { type: 'multiple-choice', q: 'Konjunktiv II expresses…',
+        options: ['the past','politeness / wishes','the future','a command'], answer: 'politeness / wishes' },
+      { type: 'multiple-choice', q: '⚠ du-Imperativ of "sein" (be quiet!):',
+        options: ['Sei!','Bist!','Sein!','Du sei!'], answer: 'Sei!', explain: 'sein is irregular → Sei!' },
+      { type: 'fill-blank', sentence: 'Most polite: "I would like to have a tea." → Ich __ gern einen Tee.', answer: 'hätte' },
+      { type: 'multiple-choice', q: 'Formal Sie-Imperativ of "kommen":',
+        options: ['Komm Sie!','Kommen Sie!','Sie kommen!','Kommt Sie!'], answer: 'Kommen Sie!' },
+      { type: 'fill-blank', sentence: 'Separable command (du): "Call me!" → __ mich __! (anrufen)', answer: 'Ruf an' },
     ],
   },
 ];
