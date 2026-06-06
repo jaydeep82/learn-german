@@ -5236,14 +5236,65 @@ export const days = [
   /* ===================== WEEK 7: review + final ===================== */
   {
     id: 49, week: 8,
+    vocabLayout: 'spotlight',
     title: 'Mega review · Say it back',
     titleDe: 'Großes Review · Mündlich',
     emoji: '🧠',
-    objective: 'Recall every grammar pillar aloud, then drill the patterns one more time.',
-    intro: 'Two halves: 35 oral prompts (slides 266-267) where you say the answer aloud and self-grade, then a written drill of the high-frequency patterns. The more you speak, the more it sticks.',
-    vocabulary: [],
-    grammar: [],
+    objective: 'Recall every grammar pillar of the whole course aloud, then drill the high-frequency patterns one last time before the final exam.',
+    intro: 'The grand recall! This is the everything-at-once checkpoint: 🔑 the course\'s grammar pillars as keystones → 📖 a master recap of all 8 weeks → 🗣️ 35 oral "say it back" prompts (say the answer aloud and self-grade) → ✍️ a written drill of the most-used patterns. The more you speak, the more it sticks. Aim to answer every oral prompt without peeking.',
+    vocabulary: [
+      // 🔑 THE COURSE PILLARS — one keystone per big idea
+      { de: 'der/die/das',     en: 'the 3 genders + plural die', emoji: '🪪', hint: '🔁 W1 · learn the article WITH the noun', example: 'der Tisch · die Lampe · das Buch', exampleEn: 'the table · the lamp · the book' },
+      { de: 'Verb in slot 2',  en: 'the V2 rule',               emoji: '📍', hint: '🔁 W2 · conjugated verb always position 2', example: 'Heute lerne ich Deutsch.',   exampleEn: 'Today I am learning German.' },
+      { de: 'der → den → dem', en: 'Nom → Akk → Dat (masc.)',   emoji: '🎭', hint: '🔁 W4 · the case system in one row', example: 'Ich gebe dem Mann den Ball.', exampleEn: 'I give the man the ball.' },
+      { de: 'mich / mir',      en: 'Akk / Dat pronouns',        emoji: '⚖️', hint: '🔁 W4-5 · sehen mich / helfen mir',  example: 'Er sieht mich. / Er hilft mir.', exampleEn: 'He sees me. / He helps me.' },
+      { de: 'mit + Dativ',     en: 'preposition cases',         emoji: '🅿️', hint: '🔁 W4-6 · mit/bei/zu→Dat · für/um/ohne→Akk · Wechsel', example: 'Ich fahre mit dem Bus.', exampleEn: 'I go by bus.' },
+      { de: 'Modal + Infinitiv', en: 'the sandwich rule',       emoji: '🥪', hint: '🔁 W5-6 · modal slot 2, infinitive END', example: 'Ich kann Deutsch sprechen.', exampleEn: 'I can speak German.' },
+      { de: 'Präfix … ans Ende', en: 'separable verbs',         emoji: '🧩', hint: '🔁 W2 · prefix flies to the end',   example: 'Ich stehe um 7 Uhr auf.',    exampleEn: 'I get up at 7.' },
+      { de: 'weil → Verb ans Ende', en: 'connectors',           emoji: '🔗', hint: '🔁 W6 · und/aber stay · weil/dass→end · deshalb→V2', example: 'Ich bleibe, weil es regnet.', exampleEn: 'I stay because it is raining.' },
+      { de: 'haben/sein + Partizip II', en: 'the Perfekt (past)', emoji: '⏪', hint: '🔁 W7 · helper slot 2, participle END', example: 'Ich habe gelernt. / Ich bin gegangen.', exampleEn: 'I learned. / I went.' },
+      { de: 'war / hatte',     en: 'Präteritum of sein/haben',  emoji: '📜', hint: '🔁 W7 · the spoken-past exceptions', example: 'Ich war müde. Ich hatte Zeit.', exampleEn: 'I was tired. I had time.' },
+      { de: 'kein / nicht',    en: 'the two negators',          emoji: '🚫', hint: '🔁 W6 · ein-noun→kein, else→nicht', example: 'Ich habe keine Zeit.',       exampleEn: 'I have no time.' },
+      { de: 'möchte / hätte gern', en: 'polite Konjunktiv II',  emoji: '🙏', hint: '🔁 W7 · would-like / would',        example: 'Ich hätte gern einen Kaffee.', exampleEn: 'I would like a coffee.' },
+      { de: 'Komm! / Kommen Sie!', en: 'the Imperativ',         emoji: '📣', hint: '🔁 W7 · du / ihr / Sie commands',   example: 'Komm her! / Kommen Sie herein!', exampleEn: 'Come here! / Come in!' },
+      { de: 'Ich hätte gern …', en: 'the politeness ladder',    emoji: '☕', hint: '🔁 W6 · order/request politely',     example: 'Ich hätte gern die Rechnung, bitte.', exampleEn: 'I would like the bill, please.' },
+    ],
+    grammar: [
+      { rule: '📖 THE WHOLE COURSE ON ONE CARD — Weeks 1-7',
+        body:
+          '🔤 W1 Foundations: V→F, W→soft-V, Z→ts · numbers (flip: einundzwanzig) · pronouns · der/die/das · sein/haben/werden.\n' +
+          '🧱 W2 Sentences: V2 rule (verb slot 2) · regular endings -e/-st/-t/-en · stem-changers · separable verbs (prefix to END) · TFP order · self-intro.\n' +
+          '❓ W3 Questions: yes/no (verb first) · W-words · wo/wohin/woher · numbers to 1 000 000 · prices.\n' +
+          '🎭 W4 Cases: Nom (Wer?) · Akk (Wen?, der→den) · Dat (Wem?, →dem) · Akk pronouns.\n' +
+          '👤 W5 Pronouns & people: Dat pronouns · Wechsel (Wo?/Wohin?) · possessives · routine · modals I.\n' +
+          '🧰 W6 Modals & glue: modals II · connectors (3 groups) · scenarios · negation (kein/nicht).\n' +
+          '⏪ W7 Past & polite: Perfekt (haben/sein) · Präteritum (war/hatte) · Konjunktiv II · Imperativ.',
+      },
+      { rule: '⭐ THE 6 IRON RULES (never break these)',
+        body:
+          '1. Verb in SLOT 2 — even when time/place leads ("Heute lerne ich").\n' +
+          '2. Capitalise EVERY noun, mid-sentence too ("Ich habe Hunger").\n' +
+          '3. Modal/separable: the second piece flies to the END (infinitive / prefix).\n' +
+          '4. The case follows the verb/preposition: helfen→Dativ, für→Akkusativ.\n' +
+          '5. Perfekt = helper (haben/sein) in slot 2 + Partizip II at the END.\n' +
+          '6. weil/dass send the verb to the END; und/aber/denn don\'t.',
+      },
+      { rule: '🎯 THE TOP 10 MISTAKES — a final checklist',
+        body:
+          '1. "Heute ich lerne" ✗ → "Heute lerne ich" ✓ (V2).\n' +
+          '2. "Ich bin Hunger" ✗ → "Ich habe Hunger" ✓.\n' +
+          '3. "Ich sehe der Mann" ✗ → "den Mann" ✓.\n' +
+          '4. "Ich helfe den Mann" ✗ → "dem Mann" ✓ (Dativ verb).\n' +
+          '5. "mit den Kinder" ✗ → "mit den Kindern" ✓ (plural Dativ +n).\n' +
+          '6. "Ich gehe in der Stadt" (movement) ✗ → "in die Stadt" ✓.\n' +
+          '7. "Ich will lernen Deutsch" ✗ → "Ich will Deutsch lernen" ✓.\n' +
+          '8. "Ich habe nicht ein Auto" ✗ → "kein Auto" ✓.\n' +
+          '9. "Ich habe gegangen" ✗ → "Ich bin gegangen" ✓ (motion → sein).\n' +
+          '10. "Ich bin müde gewesen" (speech) ✗ → "Ich war müde" ✓ (Präteritum).',
+      },
+    ],
     exercises: [
+      { type: 'flashcards', items: 'vocabulary' },
       // ---- Oral prompts batch ----  (PPT slides 266-267, 35 prompts)
       { type: 'oral-prompt', prompts: [
         // Grammar Q&A — slide 266
@@ -5294,7 +5345,19 @@ export const days = [
       { type: 'multiple-choice', q: 'Which is correct?', options: ['Ich kann Deutsch lerne.','Ich kann Deutsch lernen.','Ich Deutsch kann lernen.','Ich lernen kann Deutsch.'], answer: 'Ich kann Deutsch lernen.' },
       { type: 'fill-blank', sentence: 'Ich habe __ Idee. (no, fem.)', answer: 'keine' },
     ],
-    quiz: [],
+    quiz: [
+      { type: 'multiple-choice', q: 'Where is the conjugated verb in a normal sentence?',
+        options: ['slot 1','slot 2','at the END','anywhere'], answer: 'slot 2' },
+      { type: 'fill-blank', sentence: 'Akk masc: "Ich sehe __ Mann." (the)', answer: 'den' },
+      { type: 'fill-blank', sentence: '⚠ Dativ verb: "Ich helfe __ Mann." (the, masc.)', answer: 'dem' },
+      { type: 'fill-blank', sentence: 'Perfekt (motion): "Ich __ nach Hause __." (gehen)', answer: 'bin gegangen' },
+      { type: 'multiple-choice', q: 'Modal word order — which is correct?',
+        options: ['Ich kann Deutsch lerne.','Ich kann Deutsch lernen.','Ich kann lernen Deutsch.','Ich Deutsch lernen kann.'],
+        answer: 'Ich kann Deutsch lernen.', explain: 'Modal slot 2, infinitive at the END.' },
+      { type: 'fill-blank', sentence: 'Negation: "Ich habe __ Zeit." (no, fem.)', answer: 'keine' },
+      { type: 'multiple-choice', q: 'Polite café order:',
+        options: ['Ich will einen Kaffee.','Ich hätte gern einen Kaffee.','Gib mir Kaffee.','Kaffee!'], answer: 'Ich hätte gern einen Kaffee.' },
+    ],
   },
 
   {

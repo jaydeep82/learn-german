@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.10.8';
+export const VERSION = '3.10.9';
 export const RELEASE_DATE = '2026-06-06';
 
 export const RELEASES = [
+  {
+    version: '3.10.9',
+    date: '2026-06-06',
+    type: 'improvement',
+    title: 'Day 49 review — Mega review · Say it back: whole-course keystones + recap',
+    notes: [
+      'Reviewed Day 49 (Mega review · Say it back) end-to-end, parallel to the milestone days. The previous version had an empty vocab/grammar block plus an excellent 35-prompt oral batch and written drill. Rebuilt as a whole-course capstone with spotlight keystones and recap cards, PRESERVING the 35 oral prompts and the written drill intact.',
+      'Added 14 COURSE-PILLAR KEYSTONES (vocabLayout: "spotlight") — one per big idea across all 8 weeks: der/die/das · the V2 rule · der→den→dem (cases) · mich/mir (pronouns) · mit+Dativ (preposition cases) · the modal sandwich · separable prefix-to-end · weil→verb-to-end (connectors) · haben/sein+Partizip (Perfekt) · war/hatte (Präteritum) · kein/nicht · möchte/hätte gern · the Imperativ · the politeness ladder.',
+      'Grammar 0 → 3 recap cards: 📖 THE WHOLE COURSE ON ONE CARD (Weeks 1-7 condensed) · ⭐ THE 6 IRON RULES (V2 · capitalise nouns · second-piece-to-end · case-follows-verb/prep · Perfekt structure · weil-to-end) · 🎯 THE TOP 10 MISTAKES final checklist.',
+      'Exercises: added a vocabulary flashcard pass, then KEPT the full 35-prompt oral "say it back" batch (slides 266-267) and the 8-item written drill exactly as they were.',
+      'Quiz 0 → 7 items as a final mixed checkpoint: verb-slot-2 · Akk-den · Dativ-dem · Perfekt-bin-gegangen · modal-word-order · keine-Zeit · polite-hätte-gern.',
+    ],
+  },
   {
     version: '3.10.8',
     date: '2026-06-06',
