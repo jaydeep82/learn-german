@@ -639,13 +639,16 @@ export const days = [
           'In flashcards, write the article in the SAME COLOUR as the noun — they belong together.\n' +
           'When you guess the article wrong, fix the WHOLE pair in your mind, not just the article.',
       },
-      { rule: 'Article → pronoun map',
+      { rule: '🔁 Article → pronoun map',
         body:
           'Replace any noun with its pronoun by reading the article:\n' +
-          '• der → er    "der Laptop ist neu." → "Er ist neu."\n' +
-          '• die → sie   "die Tasche ist groß." → "Sie ist groß."\n' +
-          '• das → es    "das Buch ist gut." → "Es ist gut."\n' +
-          '• die (pl) → sie  "die Bücher sind neu." → "Sie sind neu."',
+          '• der → er  ·  die → sie  ·  das → es  ·  die (pl) → sie',
+        examples: [
+          { de: 'Der Laptop ist neu. → Er ist neu.',   en: 'The laptop is new. → It is new.',   note: 'der → er' },
+          { de: 'Die Tasche ist groß. → Sie ist groß.', en: 'The bag is big. → It is big.',      note: 'die → sie' },
+          { de: 'Das Buch ist gut. → Es ist gut.',     en: 'The book is good. → It is good.',    note: 'das → es' },
+          { de: 'Die Bücher sind neu. → Sie sind neu.', en: 'The books are new. → They are new.', note: 'die (pl) → sie' },
+        ],
       },
       { rule: 'Suffix gender clues — when the ending TELLS you the article',
         body:
@@ -658,18 +661,22 @@ export const days = [
           '• -er denoting a profession or doer → der (Lehrer, Bäcker, Verkäufer)\n' +
           'Spot the suffix → guess the article instantly.',
       },
-      { rule: 'Trust the article, not real-life logic',
+      { rule: '⚠ Trust the article, not real-life logic',
         body:
-          '"das Mädchen" (the girl) is NEUTER because the -chen suffix forces it.\n' +
-          '"die Person" (the person, any gender) is FEMININE.\n' +
           'When the German word\'s gender disagrees with English logic, the GERMAN gender wins for grammar.',
+        examples: [
+          { de: 'das Mädchen', en: 'the girl',   note: 'NEUTER — the -chen suffix forces das, even though a girl is female in life' },
+          { de: 'die Person',  en: 'the person', note: 'FEMININE — any person, any gender, is die Person' },
+        ],
       },
-      { rule: 'Plurals collapse to "die"',
+      { rule: '🔢 Plurals collapse to "die"',
         body:
-          'der Tisch → die Tische (the tables)\n' +
-          'die Tasche → die Taschen (the bags)\n' +
-          'das Buch → die Bücher (the books)\n' +
           'No matter the singular gender, every plural noun uses "die" + a plural pronoun "sie".',
+        examples: [
+          { de: 'der Tisch → die Tische',  en: 'the table → the tables',  note: 'masc → die' },
+          { de: 'die Tasche → die Taschen', en: 'the bag → the bags',     note: 'fem → die' },
+          { de: 'das Buch → die Bücher',   en: 'the book → the books',    note: 'neuter → die' },
+        ],
       },
     ],
     exercises: [

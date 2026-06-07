@@ -1,3 +1,5 @@
+import AudioButton from '../AudioButton.jsx';
+import Pron from '../Pron.jsx';
 import { splitRuleIcon, weekTheme } from '../../lib/weekTheme.js';
 
 /**
@@ -21,6 +23,21 @@ export function isRich(g) {
   return Boolean(g && (g.summary || g.table || g.bullets || g.examples || g.tip || g.warn));
 }
 
+/** One tappable worked example: German (+ 🔊 + [pron]) and its English gloss. */
+function ExampleRow({ ex }) {
+  return (
+    <div className="rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 px-3 py-2">
+      <div className="flex items-start gap-2">
+        <span className="text-sm font-medium text-slate-800 dark:text-slate-100 flex-1">{ex.de}</span>
+        <AudioButton text={ex.de} size="sm" />
+      </div>
+      <Pron de={ex.de} />
+      {ex.en && <div className="text-xs text-slate-500 mt-0.5">{ex.en}</div>}
+      {ex.note && <div className="text-xs italic text-slate-400 mt-0.5">💡 {ex.note}</div>}
+    </div>
+  );
+}
+
 function Callout({ kind, children }) {
   const styles = kind === 'warn'
     ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800 text-amber-900 dark:text-amber-100'
@@ -33,7 +50,7 @@ function Callout({ kind, children }) {
   );
 }
 
-export default function GrammarItem({ g, week, RichExtras = null }) {
+export default function GrammarItem({ g, week }) {
   const theme = weekTheme(week);
   const { icon, text } = splitRuleIcon(g.rule);
 
@@ -67,15 +84,23 @@ export default function GrammarItem({ g, week, RichExtras = null }) {
           </ul>
         )}
 
-        {/* Table + examples slot — filled by later steps via RichExtras */}
-        {RichExtras}
-
-        {/* Legacy multi-line body (always rendered unless a rich layout fully
-            replaces it). Monospace + horizontal scroll keeps ASCII tables aligned. */}
+        {/* Legacy multi-line body. Kept whenever there's no structured
+            replacement (summary/bullets). It can coexist WITH examples — the
+            body explains the rule, the examples make it tappable/audible.
+            Monospace + horizontal scroll keeps ASCII tables aligned. */}
         {g.body && !g.summary && !g.bullets && (
           <p className="mt-0.5 whitespace-pre font-mono text-sm overflow-x-auto text-slate-700 dark:text-slate-200">
             {g.body}
           </p>
+        )}
+
+        {/* Worked examples — tappable audio + pronunciation (VocabCard style) */}
+        {g.examples?.length > 0 && (
+          <div className="mt-2 space-y-1.5">
+            {g.examples.map((ex, i) => (
+              <ExampleRow key={i} ex={ex} />
+            ))}
+          </div>
         )}
 
         {/* Callouts (rich) */}

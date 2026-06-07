@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.11.1';
+export const VERSION = '3.11.2';
 export const RELEASE_DATE = '2026-06-07';
 
 export const RELEASES = [
+  {
+    version: '3.11.2',
+    date: '2026-06-07',
+    type: 'improvement',
+    title: 'Grammar page revamp · Step 3 — tappable audio examples (Articles day)',
+    notes: [
+      'Third step of the day-by-day Grammar-page revamp: grammar rules can now carry worked EXAMPLES that are tappable for audio + pronunciation, exactly like the Vocabulary page.',
+      'GrammarItem renderer: implemented the examples[] sub-render (an ExampleRow showing the German sentence + a 🔊 audio button + the [pron] phonetic guide + the English gloss + an optional 💡 note). It uses the same AudioButton (Web Speech TTS) and Pron components as VocabCard, so grammar examples now sound and read identically to vocab examples. Examples coexist with the rule body — the body explains, the examples let you hear it.',
+      'Day 4 (Articles: der/die/das) is the first day enriched with structured examples: the 🔁 article→pronoun map (der→er, die→sie, das→es, plural→sie — 4 tappable pairs), the ⚠ trust-the-article rule (das Mädchen, die Person), and the 🔢 plurals-collapse-to-die rule (3 singular→plural pairs). 9 worked examples in total, each with audio.',
+      'Backward-compatible and additive: only Day 4\'s grammar gained the optional examples field; every other day still renders through the Step-2 path unchanged. Next steps: real responsive HTML tables (article grid, case grid), then wiring DayLesson + Review through GrammarItem, then week-grouped navigation.',
+    ],
+  },
   {
     version: '3.11.1',
     date: '2026-06-07',
