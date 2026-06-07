@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { days, CONJ } from '../data/curriculum.js';
 import { pronounce, PRONUNCIATION_KEY } from '../lib/pronounce.js';
+import GrammarItem from '../components/grammar/GrammarItem.jsx';
+import { weekTheme } from '../lib/weekTheme.js';
 
 export default function Grammar() {
   const grammarDays = days.filter((d) => d.grammar?.length);
@@ -28,23 +30,26 @@ export default function Grammar() {
         </div>
       </section>
 
-      {grammarDays.map((d) => (
-        <section key={d.id} className="card" aria-labelledby={`g-${d.id}`}>
-          <header className="flex items-center gap-2 mb-2">
-            <span aria-hidden>{d.emoji}</span>
-            <h2 id={`g-${d.id}`} className="font-bold">Day {d.id} · {d.title}</h2>
-            <Link to={`/day/${d.id}`} className="ml-auto text-xs text-brand-600 hover:underline">Practise →</Link>
-          </header>
-          <ul className="space-y-2">
-            {d.grammar.map((g) => (
-              <li key={g.rule}>
-                <div className="font-semibold text-brand-700 dark:text-brand-300">{g.rule}</div>
-                <p className="text-slate-700 dark:text-slate-200 whitespace-pre font-mono text-sm overflow-x-auto">{g.body}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))}
+      {grammarDays.map((d) => {
+        const theme = weekTheme(d.week);
+        return (
+          <section key={d.id} className="card overflow-hidden p-0" aria-labelledby={`g-${d.id}`}>
+            <header className={`flex items-center gap-2 px-4 py-3 bg-gradient-to-br ${theme.headerGradient}`}>
+              <span className="text-xl" aria-hidden>{d.emoji}</span>
+              <h2 id={`g-${d.id}`} className="font-bold">
+                <span className={`text-xs font-semibold uppercase tracking-wide ${theme.accent} mr-2`}>Week {d.week}</span>
+                Day {d.id} · {d.title}
+              </h2>
+              <Link to={`/day/${d.id}`} className={`ml-auto text-xs font-semibold ${theme.accent} hover:underline`}>Practise →</Link>
+            </header>
+            <ul className="space-y-3 px-4 py-3">
+              {d.grammar.map((g, i) => (
+                <GrammarItem key={`${g.rule}-${i}`} g={g} week={d.week} />
+              ))}
+            </ul>
+          </section>
+        );
+      })}
 
       <section className="card" aria-labelledby="conj">
         <h2 id="conj" className="font-bold mb-3">Conjugation cheat-sheet</h2>

@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.11.0';
-export const RELEASE_DATE = '2026-06-06';
+export const VERSION = '3.11.1';
+export const RELEASE_DATE = '2026-06-07';
 
 export const RELEASES = [
+  {
+    version: '3.11.1',
+    date: '2026-06-07',
+    type: 'improvement',
+    title: 'Grammar page revamp · Step 2 — shared GrammarItem renderer + emoji icon tiles + week colours',
+    notes: [
+      'Second step of the day-by-day Grammar-page revamp: a visual unification pass, still with ZERO grammar-data changes.',
+      'NEW src/lib/weekTheme.js — an 8-week colour palette (W1 sky · W2 emerald · W3 rose · W4 violet · W5 teal · W6 orange · W7 amber · W8 slate) matching the existing Cheatsheet identities, with every Tailwind class written as a full static string so the JIT keeps them in the production build (verified: all 24 gradient/tile/accent classes present in the shipped CSS).',
+      'NEW src/components/grammar/GrammarItem.jsx — ONE shared renderer for a grammar rule. It promotes the leading emoji already in ~211 of 259 rule titles (⭐ 🟦 🚫 🔗 🎯 …) into a rounded coloured icon tile, shows the clean title beside it in the week accent colour, and renders the multi-line body in the fixed monospace block. Rules with no leading emoji get a neutral 📝 tile. The renderer also already supports the richer optional fields (summary · bullets · examples · table · tip · warn) so later steps light up automatically; an isRich() detector is exported for the upcoming DayLesson/Review wiring.',
+      'Grammar page: each day-section card now has a per-week gradient header (emoji + "Week N" chip + Day title + a colour-matched "Practise →" link) and renders its rules through GrammarItem. The endless grey scroll now reads as a colour-coded, icon-led reference.',
+      'Backward-compatible: data shape untouched (still { rule, body }); all 251 rules across 49 days render through the new path. Next steps: tappable audio examples (VocabCard-style), real responsive HTML tables, then week-grouped navigation.',
+    ],
+  },
   {
     version: '3.11.0',
     date: '2026-06-06',
