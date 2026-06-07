@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.10.9';
+export const VERSION = '3.11.0';
 export const RELEASE_DATE = '2026-06-06';
 
 export const RELEASES = [
+  {
+    version: '3.11.0',
+    date: '2026-06-06',
+    type: 'fix',
+    title: 'Grammar page revamp · Step 1 — fix misaligned ASCII tables (monospace)',
+    notes: [
+      'First step of the day-by-day Grammar-page revamp (planned via a multi-approach design review). This is the smallest, highest-value site-wide win: a one-line fix that corrects EVERY grammar rule across all 49 days at once.',
+      'The bug: grammar rule bodies on /grammar were rendered with whitespace-pre-line in a proportional font, so the hand-aligned ASCII tables (the article grid der/den/dem, the modal "sandwich" slots, conjugation tables, decision trees) collapsed into misaligned, hard-to-read columns. Only the bottom conjugation cheat-sheet was monospace.',
+      'The fix: render bodies with whitespace-pre + font-mono + overflow-x-auto. Alignment spaces are now preserved, the monospace font makes every column line up, and the few genuinely-wide tables scroll horizontally on small screens instead of wrapping and breaking.',
+      'No data changed — all 251 grammar rules now display correctly. Next steps in the plan: a shared GrammarItem renderer with emoji icon tiles, real responsive HTML tables, tappable audio examples (VocabCard-style), and week-grouped navigation.',
+    ],
+  },
   {
     version: '3.10.9',
     date: '2026-06-06',
