@@ -3,3 +3,6 @@ dist
 .vite
 .DS_Store
 *.log
+
+# Claude Code personal settings
+.claude/settings.local.json
