@@ -5,6 +5,7 @@ import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
 import AudioButton from '../components/AudioButton.jsx';
 import Pron from '../components/Pron.jsx';
 import VocabCard from '../components/VocabCard.jsx';
+import GrammarItem from '../components/grammar/GrammarItem.jsx';
 import { useApp } from '../store/AppContext.jsx';
 
 function Confetti() {
@@ -110,11 +111,10 @@ function Intro({ day, onStart }) {
         <section aria-labelledby="grammar">
           <h2 id="grammar" className="text-xl font-bold mb-3">Grammar pointers</h2>
           <div className="grid sm:grid-cols-2 gap-3">
-            {day.grammar.map((g) => (
-              <div key={g.rule} className="card">
-                <div className="text-sm font-bold text-brand-700 dark:text-brand-300">{g.rule}</div>
-                <p className="mt-1 text-slate-700 dark:text-slate-200 whitespace-pre-line">{g.body}</p>
-              </div>
+            {day.grammar.map((g, i) => (
+              <ul key={`${g.rule}-${i}`} className="card">
+                <GrammarItem g={g} week={day.week} />
+              </ul>
             ))}
           </div>
         </section>

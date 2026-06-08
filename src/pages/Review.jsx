@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { days, caseReview } from '../data/curriculum.js';
 import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
 import VocabCard from '../components/VocabCard.jsx';
+import GrammarItem from '../components/grammar/GrammarItem.jsx';
 import { useApp } from '../store/AppContext.jsx';
 
 /**
@@ -63,11 +64,10 @@ function CaseSystemReview() {
       <section aria-labelledby="cr-grammar">
         <h2 id="cr-grammar" className="text-xl font-bold mb-3">Recap cards</h2>
         <div className="grid sm:grid-cols-2 gap-3">
-          {r.grammar.map((g) => (
-            <div key={g.rule} className="card">
-              <div className="text-sm font-bold text-violet-700 dark:text-violet-300">{g.rule}</div>
-              <p className="mt-1 text-slate-700 dark:text-slate-200 whitespace-pre-line font-mono text-sm">{g.body}</p>
-            </div>
+          {r.grammar.map((g, i) => (
+            <ul key={`${g.rule}-${i}`} className="card">
+              <GrammarItem g={g} week={4} />
+            </ul>
           ))}
         </div>
       </section>

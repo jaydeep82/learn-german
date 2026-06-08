@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.11.2';
+export const VERSION = '3.11.3';
 export const RELEASE_DATE = '2026-06-07';
 
 export const RELEASES = [
+  {
+    version: '3.11.3',
+    date: '2026-06-07',
+    type: 'improvement',
+    title: 'Grammar page revamp · Step 5 — DayLesson + Review now use the shared GrammarItem renderer',
+    notes: [
+      'Fifth step of the day-by-day Grammar-page revamp: the grammar pointers in the daily lesson intro AND the recap cards in the Case System Review now render through the SAME GrammarItem component as the Grammar page.',
+      'DayLesson (lesson intro): "Grammar pointers" cards previously showed the rule title + a whitespace-pre-line body in a proportional font (so ASCII tables misaligned there too, and there were no icon tiles or audio examples). They now render via GrammarItem — emoji icon tiles in the day\'s week colour, aligned monospace tables, and tappable audio examples wherever a day has them (e.g. Day 4 Articles).',
+      'Review (Case System Review recap cards): the local font-mono workaround is removed and absorbed into GrammarItem; cards now get the icon tiles + structured rendering, themed to the case-system\'s violet identity (week 4).',
+      'Net effect: one renderer, three consumers (Grammar page · DayLesson · Review) — no more divergence, and every future grammar enrichment (examples, tables, callouts) appears everywhere at once. No grammar data changed in this step.',
+    ],
+  },
   {
     version: '3.11.2',
     date: '2026-06-07',
