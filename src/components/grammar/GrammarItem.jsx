@@ -1,5 +1,6 @@
 import AudioButton from '../AudioButton.jsx';
 import Pron from '../Pron.jsx';
+import GrammarTable from './GrammarTable.jsx';
 import { splitRuleIcon, weekTheme } from '../../lib/weekTheme.js';
 
 /**
@@ -84,11 +85,14 @@ export default function GrammarItem({ g, week }) {
           </ul>
         )}
 
+        {/* Real responsive table (rich) — replaces an ASCII grid */}
+        {g.table && <GrammarTable table={g.table} week={week} />}
+
         {/* Legacy multi-line body. Kept whenever there's no structured
-            replacement (summary/bullets). It can coexist WITH examples — the
-            body explains the rule, the examples make it tappable/audible.
-            Monospace + horizontal scroll keeps ASCII tables aligned. */}
-        {g.body && !g.summary && !g.bullets && (
+            replacement (summary/bullets/table). It can coexist WITH examples —
+            the body explains the rule, the examples make it tappable/audible.
+            Monospace + horizontal scroll keeps any remaining ASCII aligned. */}
+        {g.body && !g.summary && !g.bullets && !g.table && (
           <p className="mt-0.5 whitespace-pre font-mono text-sm overflow-x-auto text-slate-700 dark:text-slate-200">
             {g.body}
           </p>

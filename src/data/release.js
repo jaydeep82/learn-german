@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.11.3';
+export const VERSION = '3.11.4';
 export const RELEASE_DATE = '2026-06-07';
 
 export const RELEASES = [
+  {
+    version: '3.11.4',
+    date: '2026-06-07',
+    type: 'improvement',
+    title: 'Grammar page revamp · Step 4 — real responsive HTML tables (article + case grids)',
+    notes: [
+      'Fourth step of the day-by-day Grammar-page revamp: the worst hand-aligned ASCII grids are now genuine HTML tables — proper columns, a coloured header row, highlighted "what changes" cells, and horizontal scroll on small screens.',
+      'NEW src/components/grammar/GrammarTable.jsx — renders a { head, rows } table where any cell can be a plain string or { t, hl } to highlight it. Row labels are semibold in the week accent colour; highlighted cells use the week chip colour; the whole table wraps in overflow-x-auto so wide grids scroll instead of squashing. Wired into GrammarItem via the optional table field.',
+      'Converted the two worst grids: Day 4 "🗂️ The four article slots" (der/die/das/die × ein/eine/ein) and the Case System Review "⭐ Master article grid" (all 12 definite + indefinite cells). In the master grid, every form that CHANGES from the Nominativ baseline (den · dem · der-fem · den+n · einen · einem · einer) is highlighted, so the eye lands on exactly what to memorise.',
+      'Thanks to Step 5, these tables appear everywhere at once — the Grammar page, the Day-4 lesson intro, and the Case System Review. Additive/backward-compatible: only those two rules changed shape; every other grid still renders via the Step-1 monospace fallback (e.g. the Day-27 recap grid, left for a later enrich step).',
+    ],
+  },
   {
     version: '3.11.3',
     date: '2026-06-07',

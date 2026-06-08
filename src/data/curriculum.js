@@ -626,12 +626,16 @@ export const days = [
       { de: 'eine', en: 'a / an  (fem.)',           emoji: '🅰️', hint: 'indefinite → eine · for die nouns',                   example: 'Das ist eine Tasche.',       exampleEn: 'That is a bag.' },
     ],
     grammar: [
-      { rule: 'The four article slots',
-        body:
-          'Definite (the):    der · die · das · die\n' +
-          '                  masc. fem. neut. plural\n' +
-          'Indefinite (a):    ein · eine · ein · — (no plural)\n' +
-          'In the dative and accusative cases the forms change — that\'s Week 4. Today, just learn the four basic slots.',
+      { rule: '🗂️ The four article slots',
+        summary: 'Every noun picks ONE article from each row, by gender.',
+        table: {
+          head: ['', 'masc.', 'fem.', 'neut.', 'plural'],
+          rows: [
+            ['the (definite)', 'der', 'die', 'das', 'die'],
+            ['a (indefinite)', 'ein', 'eine', 'ein', '—'],
+          ],
+        },
+        tip: 'In the dative & accusative cases these forms change — that\'s Week 4. Today, just learn the four basic slots.',
       },
       { rule: 'Iron rule — learn the article WITH the noun',
         body:
@@ -9221,16 +9225,19 @@ export const caseReview = {
   ],
   grammar: [
     { rule: '⭐ THE MASTER ARTICLE GRID — all 12 + indefinite',
-      body:
-        '              masc.   fem.   neuter  plural\n' +
-        '  Nominativ   der     die    das     die\n' +
-        '  Akkusativ   den     die    das     die\n' +
-        '  Dativ       dem     der    dem     den +n\n' +
-        '  ─────────────────────────────────────────\n' +
-        '  Indef. Nom. ein     eine   ein     —\n' +
-        '  Indef. Akk. einen   eine   ein     —\n' +
-        '  Indef. Dat. einem   einer  einem   —\n\n' +
-        '🧠 Three shortcuts: (1) only MASCULINE changes in the Akkusativ; (2) masc. & neuter are identical in the Dativ (dem/einem); (3) plural Dativ adds -n to the noun (den Kindern).',
+      summary: 'Highlighted cells are the forms that CHANGE from the Nominativ baseline.',
+      table: {
+        head: ['', 'masc.', 'fem.', 'neut.', 'plural'],
+        rows: [
+          ['Nominativ',   'der',                  'die',                  'das',   'die'],
+          ['Akkusativ',   { t: 'den', hl: true }, 'die',                  'das',   'die'],
+          ['Dativ',       { t: 'dem', hl: true }, { t: 'der', hl: true }, { t: 'dem', hl: true }, { t: 'den +n', hl: true }],
+          ['ein (Nom.)',  'ein',                   'eine',                'ein',   '—'],
+          ['ein (Akk.)',  { t: 'einen', hl: true }, 'eine',               'ein',   '—'],
+          ['ein (Dat.)',  { t: 'einem', hl: true }, { t: 'einer', hl: true }, { t: 'einem', hl: true }, '—'],
+        ],
+      },
+      tip: 'Three shortcuts: (1) only MASCULINE changes in the Akkusativ; (2) masc. & neuter are identical in the Dativ (dem/einem); (3) plural Dativ adds -n to the noun (den Kindern).',
     },
     { rule: '🔍 THE QUESTION TEST + 🅿️ THE DECISION TREE',
       body:
