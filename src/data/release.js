@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.11.4';
+export const VERSION = '3.11.5';
 export const RELEASE_DATE = '2026-06-07';
 
 export const RELEASES = [
+  {
+    version: '3.11.5',
+    date: '2026-06-07',
+    type: 'improvement',
+    title: 'Grammar page revamp · Step 6 — week-grouped accordion + sticky jump nav',
+    notes: [
+      'Sixth step of the day-by-day Grammar-page revamp: the final structural piece. The old 251-rule endless scroll is now organised into collapsible week groups with a sticky jump-to-week bar.',
+      'STICKY WEEK TABS: a colour-coded "Week 1 … Week 8" tab bar sticks below the app header. Tap a week to smooth-scroll to it (and auto-expand it). A "Collapse all / Expand all" toggle sits at the end.',
+      'COLLAPSIBLE WEEK GROUPS: the 49 grammar days are grouped under their 8 weeks, each with a gradient week header (week number · title · tagline · ▾/▸ chevron). Click a week header to collapse/expand it — the way to tame the scroll. All weeks start expanded.',
+      'Day cards now nest inside their week group with a lighter header (emoji · Day N · title · Practise link) and render rules through GrammarItem as before, so emoji tiles, audio examples and tables all carry over.',
+      'Sticky offsets + scroll-margin tuned to the app header height (≈53px desktop / ≈102px mobile) so jump targets land cleanly below the nav. No grammar data changed.',
+    ],
+  },
   {
     version: '3.11.4',
     date: '2026-06-07',
