@@ -773,36 +773,43 @@ export const days = [
       { de: 'Softwareentwickler', en: 'software developer', emoji: '💻', hint: 'compound — break up: Soft-ware-ent-wick-ler', example: 'Ich bin Softwareentwickler.', exampleEn: 'I am a software developer.' },
     ],
     grammar: [
-      { rule: 'sein — full conjugation table',
-        body:
-          'sein is irregular — none of the forms look like the infinitive:\n' +
-          '   ich        bin     I am\n' +
-          '   du         bist    you (1 friend) are\n' +
-          '   er/sie/es  ist     he / she / it is\n' +
-          '   wir        sind    we are\n' +
-          '   ihr        seid    you all (group of friends) are\n' +
-          '   sie / Sie  sind    they / formal you are',
+      { rule: '🟦 sein — full conjugation table',
+        summary: 'sein is fully irregular — none of the forms look like the infinitive, so memorise all six.',
+        table: {
+          head: ['person', 'form', 'English'],
+          rows: [
+            ['ich',        { t: 'bin',  hl: true }, 'I am'],
+            ['du',         { t: 'bist', hl: true }, 'you are (1 friend)'],
+            ['er/sie/es',  { t: 'ist',  hl: true }, 'he / she / it is'],
+            ['wir',        { t: 'sind', hl: true }, 'we are'],
+            ['ihr',        { t: 'seid', hl: true }, 'you all are'],
+            ['sie / Sie',  { t: 'sind', hl: true }, 'they / formal you are'],
+          ],
+        },
       },
-      { rule: 'Three patterns you can already build',
-        body:
-          'STATE / FEELING:    Subject + sein + adjective\n' +
-          '  "Ich bin müde."  /  "Du bist krank."  /  "Wir sind bereit."\n' +
-          'PROFESSION:         Subject + sein + Beruf  (no article!)\n' +
-          '  "Ich bin Lehrer."  /  "Sie ist Softwareentwicklerin."\n' +
-          'PLACE / ORIGIN:     Subject + sein + place\n' +
-          '  "Ich bin hier."  /  "Wir sind in Berlin."  /  "Ich bin aus Indien."',
+      { rule: '🧩 Three patterns you can already build',
+        summary: 'sein links the subject to a state, a profession, or a place/origin.',
+        examples: [
+          { de: 'Ich bin müde.',                en: 'I am tired.',              note: 'STATE / FEELING: subject + sein + adjective' },
+          { de: 'Ich bin Lehrer.',              en: 'I am a teacher.',          note: 'PROFESSION: no article!' },
+          { de: 'Ich bin aus Indien.',          en: 'I am from India.',         note: 'ORIGIN: sein + aus + country' },
+          { de: 'Wir sind in Berlin.',          en: 'We are in Berlin.',        note: 'PLACE: sein + in + city' },
+        ],
       },
-      { rule: 'Verb in slot 2',
-        body:
-          'In a main sentence, the conjugated verb ALWAYS sits in position 2.\n' +
-          '  "Ich bin müde."     subject (slot 1) + verb (slot 2) + rest.\n' +
-          '  "Heute bin ich müde."   time (slot 1) + verb (slot 2) + subject moves to slot 3.',
+      { rule: '📍 Verb in slot 2',
+        summary: 'In a main sentence the conjugated verb ALWAYS sits in position 2.',
+        examples: [
+          { de: 'Ich bin müde.',       en: 'I am tired.',          note: 'subject (1) + verb (2) + rest' },
+          { de: 'Heute bin ich müde.', en: 'Today I am tired.',    note: 'time (1) + verb (2) → subject moves to slot 3' },
+        ],
       },
-      { rule: 'sein vs haben for body states',
-        body:
-          'English uses "to be" for hunger / thirst / fear: "I AM hungry."\n' +
-          'German uses "haben" instead: "Ich HABE Hunger." (literally "I have hunger" — Day 6).\n' +
-          'But for tired / sick / happy / ready, German keeps sein: "Ich BIN müde / krank / glücklich / bereit".',
+      { rule: '⚠ sein vs haben for body states',
+        summary: 'English "to be" for hunger/thirst/fear becomes haben in German.',
+        examples: [
+          { de: 'Ich habe Hunger.',  en: 'I am hungry. (lit. I have hunger)', note: 'haben, NOT sein — Day 6' },
+          { de: 'Ich bin müde.',     en: 'I am tired.',                        note: 'but tired / sick / happy / ready keep sein' },
+        ],
+        warn: 'Don\'t say "Ich bin Hunger" — hunger/thirst/fear use haben: "Ich habe Hunger / Durst / Angst".',
       },
     ],
     exercises: [
@@ -905,48 +912,58 @@ export const days = [
       { de: 'der Hund',    en: 'a dog',      emoji: '🐕', hint: 'masc. — Akk. preview: "Ich habe EINEN Hund" (Week 4)',             example: 'Sie haben einen Hund.',    exampleEn: 'They have a dog.' },
     ],
     grammar: [
-      { rule: 'haben — full conjugation table',
-        body:
-          '   ich        habe   I have\n' +
-          '   du         hast   you (1 friend) have\n' +
-          '   er/sie/es  hat    he / she / it has\n' +
-          '   wir        haben  we have\n' +
-          '   ihr        habt   you all (group of friends) have\n' +
-          '   sie / Sie  haben  they / formal you have\n' +
-          'Pattern: du and er/sie/es DROP the "b" (du HAST not du habst, er HAT not er habt). Whisper "ha-st, ha-t, ha-ben" three times — it sticks.',
+      { rule: '🟩 haben — full conjugation table',
+        summary: 'du and er/sie/es DROP the "b": du HAST (not habst), er HAT (not habt).',
+        table: {
+          head: ['person', 'form', 'English'],
+          rows: [
+            ['ich',       'habe',                 'I have'],
+            ['du',        { t: 'hast', hl: true }, 'you have (1 friend)'],
+            ['er/sie/es', { t: 'hat',  hl: true }, 'he / she / it has'],
+            ['wir',       'haben',                'we have'],
+            ['ihr',       { t: 'habt', hl: true }, 'you all have'],
+            ['sie / Sie', 'haben',                'they / formal you have'],
+          ],
+        },
+        tip: 'Whisper "ha-st, ha-t, ha-ben" three times — the dropped b sticks.',
       },
       { rule: '⚠ haben (not sein!) for body states',
-        body:
-          'English says "I am hungry / thirsty / afraid". German uses haben:\n' +
-          '  ✗ Ich bin Hunger.       ✓ Ich habe Hunger.        I am hungry.\n' +
-          '  ✗ Ich bin Durst.        ✓ Ich habe Durst.          I am thirsty.\n' +
-          '  ✗ Ich bin Angst.        ✓ Ich habe Angst.          I am afraid.\n' +
-          'The German nouns Hunger / Durst / Angst are LITERAL feelings you POSSESS.\n' +
-          'If you instead want to describe yourself as a TYPE, use sein + adjective: "Ich bin hungrig / durstig / ängstlich" — but this sounds less natural in conversation.',
+        summary: 'English "I am hungry/thirsty/afraid" → German uses haben + a noun you POSSESS.',
+        examples: [
+          { de: 'Ich habe Hunger.', en: 'I am hungry.',  note: '✓ habe Hunger — NOT "bin Hunger"' },
+          { de: 'Ich habe Durst.',  en: 'I am thirsty.', note: '✓ habe Durst' },
+          { de: 'Ich habe Angst.',  en: 'I am afraid.',  note: '✓ habe Angst' },
+        ],
+        warn: 'Hunger / Durst / Angst are nouns you HAVE. You can say "Ich bin hungrig/durstig" (sein + adjective), but the haben-noun version is far more natural.',
       },
-      { rule: 'Common haben patterns',
-        body:
-          'POSSESSION:    Ich habe + ein/einen/eine + noun.\n' +
-          '  "Ich habe ein Buch."  /  "Wir haben einen Hund."\n' +
-          'ABSTRACT:      Ich habe + bare noun (often no article).\n' +
-          '  "Ich habe Hunger."  /  "Sie hat Stress."  /  "Wir haben Zeit."\n' +
-          'QUESTION:      Hast du …?  /  Haben Sie …?\n' +
-          '  "Hast du Zeit am Wochenende?"  /  "Haben Sie eine Frage?"',
+      { rule: '🧩 Common haben patterns',
+        summary: 'Possession, abstract nouns, and questions.',
+        examples: [
+          { de: 'Ich habe ein Buch.',          en: 'I have a book.',                 note: 'POSSESSION: haben + ein/einen/eine + noun' },
+          { de: 'Wir haben Zeit.',             en: 'We have time.',                  note: 'ABSTRACT: often a bare noun, no article' },
+          { de: 'Hast du Zeit am Wochenende?', en: 'Do you have time at the weekend?', note: 'QUESTION: verb first (Hast du …? / Haben Sie …?)' },
+        ],
       },
       {
         rule: '⚠ The three "sies" — don\'t panic',
-        body:
-          'German has THREE words spelled "sie/Sie". The verb form tells you which one:\n' +
-          '• sie hat / sie ist  → "she" (singular)\n' +
-          '• sie haben / sie sind → "they" (plural, lowercase)\n' +
-          '• Sie haben / Sie sind → "you" formal (capital S, used with bosses, strangers, officials).\n' +
-          'Trick: if the verb ending is the singular one ("hat", "ist"), it must be "she". If it is the plural form ("haben", "sind"), it is either "they" or formal "you" — context tells you which.',
+        summary: 'Three words spelled sie/Sie — the verb form tells you which.',
+        table: {
+          head: ['form', 'meaning', 'example'],
+          rows: [
+            ['sie + hat/ist',      'she (singular)',      'Sie hat Zeit.'],
+            ['sie + haben/sind',   'they (plural)',       'Sie haben Zeit.'],
+            ['Sie + haben/sind',   'you (formal, capital S)', 'Haben Sie Zeit?'],
+          ],
+        },
+        tip: 'Singular ending (hat/ist) → "she". Plural ending (haben/sind) → "they" or formal "you" — context decides.',
       },
       {
-        rule: 'Quick pronoun map',
-        body:
-          'ich = I  |  du = you (1 friend)  |  er = he  |  sie = she  |  es = it\n' +
-          'wir = we  |  ihr = you all (group of friends)  |  sie = they  |  Sie = you (formal)',
+        rule: '🗺️ Quick pronoun map',
+        summary: 'The six persons at a glance.',
+        bullets: [
+          'ich = I · du = you (1 friend) · er = he · sie = she · es = it',
+          'wir = we · ihr = you all · sie = they · Sie = you (formal)',
+        ],
       },
     ],
     exercises: [
@@ -1043,57 +1060,66 @@ export const days = [
       { de: 'Ärztin',    en: 'doctor (f)',    emoji: '👩‍⚕️', hint: '"EHRTS-tin" — -in suffix = female form',              example: 'Sie wird Ärztin.',         exampleEn: 'She is becoming a doctor.' },
     ],
     grammar: [
-      { rule: 'werden — full conjugation (vowel changes in singular)',
-        body:
-          '   ich        werde    I become / am becoming\n' +
-          '   du         wirst    you become      ⚠ vowel changes e → i\n' +
-          '   er/sie/es  wird     he / she / it becomes  ⚠ also e → i\n' +
-          '   wir        werden   we become       (e returns)\n' +
-          '   ihr        werdet   you all become\n' +
-          '   sie / Sie  werden   they / formal you become\n' +
-          'Pattern: e → i ONLY in the singular du/er/sie/es. Plural goes back to e.',
+      { rule: '🟨 werden — full conjugation (vowel changes in singular)',
+        summary: 'e → i ONLY in the singular du/er/sie/es. Plural goes back to e.',
+        table: {
+          head: ['person', 'form', 'English'],
+          rows: [
+            ['ich',       'werde',                 'I become'],
+            ['du',        { t: 'wirst', hl: true }, 'you become  (e → i)'],
+            ['er/sie/es', { t: 'wird',  hl: true }, 'he/she/it becomes  (e → i)'],
+            ['wir',       'werden',                'we become'],
+            ['ihr',       'werdet',                'you all become'],
+            ['sie / Sie', 'werden',                'they / formal you become'],
+          ],
+        },
       },
-      { rule: 'What werden actually means at A1',
-        body:
-          '1. CHANGE OF STATE (today): something is becoming X — "Es wird kalt" (It IS GETTING cold).\n' +
-          '2. PROFESSION you are TRAINING TOWARDS — "Ich werde Arzt" (I am becoming a doctor).\n' +
-          '3. FUTURE TENSE (preview, full lesson Day 45): werden + infinitive at the end.\n' +
-          '   "Ich werde morgen lernen" (I will study tomorrow).\n' +
-          'For everyday spoken German, native speakers usually skip future-werden and use the present tense + a time word: "Morgen lerne ich" works fine.',
+      { rule: '🔄 What werden actually means at A1',
+        summary: 'Three jobs: change of state, profession-in-training, and (later) the future.',
+        examples: [
+          { de: 'Es wird kalt.',          en: 'It is getting cold.',     note: 'CHANGE OF STATE — the everyday use today' },
+          { de: 'Ich werde Arzt.',        en: 'I am becoming a doctor.', note: 'PROFESSION you train towards (no article)' },
+          { de: 'Ich werde morgen lernen.', en: 'I will study tomorrow.', note: 'FUTURE (preview, Day 45) — but "Morgen lerne ich" is more natural in speech' },
+        ],
       },
-      { rule: 'sein vs werden — STATE vs BECOMING',
-        body:
-          'sein   = describes a current state.        "Es IST kalt."     It is cold (now).\n' +
-          'werden = describes change towards a state. "Es WIRD kalt."    It is getting cold.\n' +
-          'Same drill for adjectives:\n' +
-          '  Ich BIN müde.        I am tired.\n' +
-          '  Ich WERDE müde.      I am getting tired (felt fresh five minutes ago).',
+      { rule: '⚖️ sein vs werden — STATE vs BECOMING',
+        summary: 'sein = a state right now · werden = changing towards a state.',
+        examples: [
+          { de: 'Es ist kalt.',   en: 'It is cold (now).',       note: 'sein — current state' },
+          { de: 'Es wird kalt.',  en: 'It is getting cold.',     note: 'werden — change towards' },
+          { de: 'Ich bin müde.',  en: 'I am tired.',             note: 'sein' },
+          { de: 'Ich werde müde.', en: 'I am getting tired.',    note: 'werden — was fresh five minutes ago' },
+        ],
       },
       { rule: '⭐ Iron rule 1 — the conjugated verb sits in position 2',
-        body:
-          'In a main clause, the conjugated verb is ALWAYS the second slot — even if the time / place / object leads.\n' +
-          '  "Ich werde müde."        slot 1 = ich, slot 2 = werde.\n' +
-          '  "Heute werde ich müde."   slot 1 = heute, slot 2 = werde, subject moved to slot 3.\n' +
-          'NEVER "Heute ich werde müde" — that puts the verb in slot 3 and is wrong.',
+        summary: 'Even if time/place/object leads, the verb stays in slot 2.',
+        examples: [
+          { de: 'Ich werde müde.',       en: 'I am getting tired.',  note: 'slot 1 = ich, slot 2 = werde' },
+          { de: 'Heute werde ich müde.', en: 'Today I am getting tired.', note: 'time leads → subject moves to slot 3' },
+        ],
+        warn: 'NEVER "Heute ich werde müde" — that puts the verb in slot 3 and is wrong.',
       },
       { rule: '⭐ Iron rule 2 — every noun starts with a capital letter',
-        body:
-          'EVERY noun, anywhere in the sentence, starts with a capital. The first word of a sentence also gets a capital (regardless of word class).\n' +
-          '  "Ich habe Hunger."  — Hunger capitalised.\n' +
-          '  "Heute werde ich Lehrer." — Lehrer capitalised.\n' +
-          '  "Wir kaufen das Buch." — Buch capitalised.\n' +
-          'If you skip capitalisation, your sentence still parses but reads "wrong" to every German.',
+        summary: 'Every noun, anywhere in the sentence, is capitalised.',
+        examples: [
+          { de: 'Ich habe Hunger.',        en: 'I am hungry.',           note: 'Hunger capitalised' },
+          { de: 'Heute werde ich Lehrer.', en: 'Today I become a teacher.', note: 'Lehrer capitalised' },
+          { de: 'Wir kaufen das Buch.',    en: 'We are buying the book.', note: 'Buch capitalised' },
+        ],
       },
-      { rule: 'Week 1 recap — three aux verbs side by side',
-        body:
-          '              sein            haben           werden\n' +
-          '   ich        bin             habe            werde\n' +
-          '   du         bist            hast            wirst\n' +
-          '   er/sie/es  ist             hat             wird\n' +
-          '   wir        sind            haben           werden\n' +
-          '   ihr        seid            habt            werdet\n' +
-          '   sie/Sie    sind            haben           werden\n' +
-          'sein = state + identity · haben = possession + body needs · werden = becoming + future.',
+      { rule: '🏁 Week 1 recap — three aux verbs side by side',
+        summary: 'sein = state + identity · haben = possession + body needs · werden = becoming + future.',
+        table: {
+          head: ['person', 'sein', 'haben', 'werden'],
+          rows: [
+            ['ich',       'bin',  'habe',  'werde'],
+            ['du',        'bist', 'hast',  'wirst'],
+            ['er/sie/es', 'ist',  'hat',   'wird'],
+            ['wir',       'sind', 'haben', 'werden'],
+            ['ihr',       'seid', 'habt',  'werdet'],
+            ['sie / Sie', 'sind', 'haben', 'werden'],
+          ],
+        },
       },
     ],
     exercises: [

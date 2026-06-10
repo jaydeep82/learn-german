@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.11.5';
-export const RELEASE_DATE = '2026-06-07';
+export const VERSION = '3.11.6';
+export const RELEASE_DATE = '2026-06-10';
 
 export const RELEASES = [
+  {
+    version: '3.11.6',
+    date: '2026-06-10',
+    type: 'improvement',
+    title: 'Grammar revamp · Step 7a — enrich the three auxiliaries (sein · haben · werden)',
+    notes: [
+      'First per-day enrichment release: the foundational auxiliary verbs Days 5-7 (sein, haben, werden) are converted from plain monospace bodies to the rich structured grammar shape — real tables, tappable audio examples, and tip/warn callouts. These appear everywhere at once (Grammar page · lesson intros · reviews) via the shared GrammarItem renderer.',
+      'Day 5 (sein): the conjugation becomes a highlighted table; the three patterns (state · profession · origin), the V2 rule, and the sein-vs-haben distinction become tappable audio examples, with a ⚠ "don\'t say Ich bin Hunger" warn callout.',
+      'Day 6 (haben): conjugation table highlighting the b-dropping forms (hast/hat/habt); body-states as audio examples + a warn callout; the common patterns as examples; the three-"sie" decoder and the pronoun map as clean tables/bullets.',
+      'Day 7 (werden): conjugation table highlighting the e→i singular forms; meaning, sein-vs-werden, and both iron rules as audio examples; and — the showcase — the Week-1 recap as a real side-by-side table of all three auxiliaries (sein/haben/werden × six persons).',
+      'Additive/backward-compatible: only Days 5-7 grammar gained structured fields; every other day still uses the monospace fallback. More foundational days (cases, Perfekt) follow in the next enrichment releases.',
+    ],
+  },
   {
     version: '3.11.5',
     date: '2026-06-07',
