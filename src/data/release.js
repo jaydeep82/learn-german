@@ -11,10 +11,24 @@
  * in sync.
  */
 
-export const VERSION = '3.11.6';
+export const VERSION = '3.11.7';
 export const RELEASE_DATE = '2026-06-10';
 
 export const RELEASES = [
+  {
+    version: '3.11.7',
+    date: '2026-06-10',
+    type: 'improvement',
+    title: 'Grammar revamp · Step 7b — Day 1 (Sounds) enriched: hear every sound rule',
+    notes: [
+      'Day 1 (Sounds — the pronunciation foundation) converted from 11 plain-text rules to 8 rich visual rules. On a sounds day the audio examples ARE the lesson: every sound rule now has tappable words so you can HEAR the rule, not just read it. Content was adversarially verified across phonetics / example-word / pedagogy lenses before release.',
+      '🔤 THE FOUR LETTER SWAPS: one highlighted table (V→F · W→soft V · Z→ts · J→Y) + four tappable audio words (Vater, Wasser, Zeit, ja) — tap to hear the swap.',
+      '🎭 HARD vs SOFT ch: a trigger-vowel table (a/o/u/au → hard like Scottish "loch"; e/i/umlauts → soft front hiss) with Buch-vs-ich audio contrast, plus the six 🐱 hard-ch tricks and five 👄 ö-articulation tricks as clean bullet lists with practice words (machen · schön · hören · möchte).',
+      '🔡 UMLAUT TYPING as a table (ä→ae · ö→oe · ü→ue with worked pairs) · 🇬🇧 English loan words (Software/Computer/Job) and 🧱 compound chunking (Soft·ware·ent·wick·lung, Wo·chen·en·de …) as tappable audio examples with chunk notes.',
+      'Simplification: the four separate one-liner letter rules merged into one scannable table-card; the eight ö tricks tightened to five. Everything appears in the Grammar reference AND the Day-1 lesson intro via the shared GrammarItem renderer.',
+      'VERIFICATION FIXES — the adversarial review (20 agents, 3 lenses) confirmed and fixed 8 real issues, several pre-existing: ✓ Verkäufer removed from the compound-stress card (ver- is an unstressed prefix → ver-KÄU-fer; replaced with Kühlschrank + a prefix tip) ✓ soft-ch hints rewritten from "ikh/nikht/milkh" to the "h as in huge" cue so they no longer teach the HARD sound ✓ the ö card now teaches tongue-FORWARD (not "relaxed middle") and short-vs-long ö (möchte vs schön) ✓ hören note corrected (one ö + unrounded ending) ✓ soft-ch trigger list gains ei/eu/äu (euch!) and the summary says "usually" with a chs→ks pointer ✓ the "dsch does not exist" exercise corrected (Dschungel exists!) to "appears only in loanwords" ✓ the ö-counting quiz reworded to count umlaut SPELLINGS (äu is the "oy" diphthong, not an ö) ✓ "Der Bäcker ist schön" → "Die Bäckerei ist schön" to match its gloss.',
+    ],
+  },
   {
     version: '3.11.6',
     date: '2026-06-10',

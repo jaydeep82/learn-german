@@ -129,9 +129,9 @@ export const days = [
       { de: 'kochen',  en: 'to cook',  emoji: '🍳', hint: 'hard ch (after a / o / u): "KOKH-en"', example: 'Ich koche Wasser.', exampleEn: 'I boil water.' },
       { de: 'machen',  en: 'to do',    emoji: '🛠️', hint: 'hard ch: "MAKH-en"',     example: 'Ich mache viel.',     exampleEn: 'I do a lot.' },
       // Soft ch — front of mouth
-      { de: 'ich',     en: 'I',        emoji: '🙋', hint: 'soft ch (after i / e / consonants): "ikh"', example: 'Ich bin müde.', exampleEn: 'I am tired.' },
-      { de: 'nicht',   en: 'not',      emoji: '🚫', hint: 'soft ch: "nikht"',       example: 'Das ist nicht schön.', exampleEn: 'That is not nice.' },
-      { de: 'Milch',   en: 'milk',     emoji: '🥛', hint: 'soft ch: "milkh"',       example: 'Das ist Milch.',      exampleEn: 'That is milk.' },
+      { de: 'ich',     en: 'I',        emoji: '🙋', hint: 'soft ch (after i / e / consonants): "ih" — like the h in "huge"', example: 'Ich bin müde.', exampleEn: 'I am tired.' },
+      { de: 'nicht',   en: 'not',      emoji: '🚫', hint: 'soft ch: "niht" (h as in "huge")',  example: 'Das ist nicht schön.', exampleEn: 'That is not nice.' },
+      { de: 'Milch',   en: 'milk',     emoji: '🥛', hint: 'soft ch: "milh" (h as in "huge")',  example: 'Das ist Milch.',      exampleEn: 'That is milk.' },
       // sch = English sh
       { de: 'Schule',  en: 'school',   emoji: '🏫', hint: 'sch = English "sh": "SHOO-luh"', example: 'Die Schule ist schön.', exampleEn: 'The school is nice.' },
       // Umlauts
@@ -145,57 +145,104 @@ export const days = [
       { de: 'Softwareentwicklung', en: 'software development', emoji: '💻', hint: 'chunk it: Soft-ware-ent-wick-lung', example: 'Das ist Softwareentwicklung.', exampleEn: 'That is software development.' },
     ],
     grammar: [
-      { rule: 'V → F', body: 'Vater, Vogel, viel — the V is pronounced like English F.' },
-      { rule: 'W → soft V', body: 'Wasser, Wein, was — softer than English V.' },
-      { rule: 'Z → ts', body: 'Zeit, Zoo, zehn — never like English Z.' },
-      { rule: 'J → Y', body: 'ja, Jahr, Junge — never like English J.' },
-      { rule: 'ch / sch', body: 'ch = airy sound (Bach). sch = English sh (Schule).' },
-      { rule: 'Hard ch vs soft ch',
-        body:
-          'German has TWO "ch" sounds — same spelling, different mouth position:\n' +
-          '• Hard ch (after a / o / u / au): Bach, kochen, machen, lachen, Buch — air from the BACK of the throat. Like Scottish "loch".\n' +
-          '• Soft ch (after e / i / ä / ö / ü / consonants): ich, nicht, Milch, möchte, Mädchen — air from the FRONT, near the roof of the mouth. Almost a hiss.\n' +
-          'If you can\'t produce the hard ch yet, that\'s normal — it sits deeper than any English sound.',
+      { rule: '🔤 The four letter swaps — V · W · Z · J',
+        summary: 'Four letters that sound different from English. Tap each word below to HEAR the swap.',
+        table: {
+          head: ['letter', 'sounds like', 'examples'],
+          rows: [
+            ['V', { t: 'English F', hl: true },      'Vater · Vogel · viel'],
+            ['W', { t: 'soft English V', hl: true }, 'Wasser · Wein · was'],
+            ['Z', { t: '"ts"', hl: true },           'Zeit · Zoo · zehn'],
+            ['J', { t: 'English Y', hl: true },      'ja · Jahr · Junge'],
+          ],
+        },
+        examples: [
+          { de: 'Vater',  en: 'father', note: 'V → F' },
+          { de: 'Wasser', en: 'water',  note: 'W → soft V' },
+          { de: 'Zeit',   en: 'time',   note: 'Z → ts (never English Z)' },
+          { de: 'ja',     en: 'yes',    note: 'J → Y (never English J)' },
+        ],
       },
-      { rule: 'Unlocking the hard "ch"',
-        body:
-          'Six tricks to find the sound:\n' +
-          '1. Imagine a cat hissing — but deeper in the throat.\n' +
-          '2. A quiet "k" without closing the mouth — air flows, but no full "k".\n' +
-          '3. Pretend your glasses are dirty — breathe on them: "hhh…" then push it deeper.\n' +
-          '4. Like fogging up a mirror — long warm air, then stronger.\n' +
-          '5. Imagine a hair in your throat — soft clearing sound.\n' +
-          '6. Strong whisper — push the "h" backward.',
+      { rule: '🌬️ ch / sch — the two airy sounds',
+        summary: 'ch = airy throat sound · sch = plain English "sh".',
+        examples: [
+          { de: 'Bach',   en: 'stream',  note: 'ch — air from the throat' },
+          { de: 'Schule', en: 'school',  note: 'sch = English sh' },
+        ],
       },
-      { rule: 'Unlocking the "ö" — front-rounded vowel',
-        body:
-          'Eight tricks to find the umlauted ö:\n' +
-          '1. Say "e" (like in "bed"), then ROUND your lips → becomes ö.\n' +
-          '2. Think of English "bird" — similar but shorter and clearer.\n' +
-          '3. Start with "e", then move your lips forward and round them.\n' +
-          '4. Tongue stays relaxed in the middle (not high, not low).\n' +
-          '5. Round your lips gently (like saying "o", but not too strong).\n' +
-          '6. The sound sits in the middle of your mouth — not deep in the throat.\n' +
-          '7. Keep it short and clean, not stretched.\n' +
-          '8. Listen for ö in: schön, hören, möchte, Brötchen, Öl.',
+      { rule: '🎭 Hard ch vs soft ch',
+        summary: 'Same spelling, two sounds — the letter before the ch usually decides.',
+        table: {
+          head: ['after…', 'sound', 'examples'],
+          rows: [
+            ['a / o / u / au',       { t: 'HARD — back of throat, like Scottish "loch"', hl: true }, 'Bach · kochen · Buch'],
+            ['e / i / ä / ö / ü / ei / eu / äu / consonants', { t: 'SOFT — front hiss near the roof of the mouth', hl: true }, 'ich · nicht · möchte · euch'],
+          ],
+        },
+        examples: [
+          { de: 'Buch', en: 'book', note: 'hard ch — after u' },
+          { de: 'ich',  en: 'I',    note: 'soft ch — after i' },
+        ],
+        tip: 'Can\'t produce the hard ch yet? Totally normal — it sits deeper in the throat than any English sound. (One exception to file away: ch + s merges to "ks" — sechs, wachsen. Day 2 covers it.)',
       },
-      { rule: 'Umlauts ä ö ü', body: 'On a US keyboard you may type ae, oe, ue.' },
-      { rule: 'English loan words keep English sounds',
-        body:
-          'Some everyday German words are imported from English and KEEP their English pronunciation:\n' +
-          '• Software, Sport, Service — start with English "S" (not the German Z-sound).\n' +
-          '• Computer — sounds like English "computer".\n' +
-          '• Job, Manager — pronounced English-style.\n' +
-          'When you see one of these inside a compound (e.g. Softwareentwicklung), pronounce the loan part as English, the rest as German.',
+      { rule: '🐱 Unlocking the hard "ch"',
+        summary: 'Six tricks to find the sound — try them in order:',
+        bullets: [
+          'Imagine a cat hissing — but deeper in the throat.',
+          'A quiet "k" without closing the mouth — air flows, but no full "k".',
+          'Pretend your glasses are dirty — breathe on them: "hhh…" then push it deeper.',
+          'Like fogging up a mirror — long warm air, then stronger.',
+          'Imagine a hair in your throat — soft clearing sound.',
+          'Strong whisper — push the "h" backward.',
+        ],
+        examples: [
+          { de: 'machen', en: 'to do / make', note: 'practise the hard ch here' },
+        ],
       },
-      { rule: 'Long compound words — break them up',
-        body:
-          'German loves to glue nouns together. Don\'t try to say the whole word at once — chunk it:\n' +
-          '• Softwareentwicklung → Soft-ware-ent-wick-lung\n' +
-          '• Wochenende → Wo-chen-en-de\n' +
-          '• Hausaufgabe → Haus-auf-ga-be\n' +
-          '• Verkäufer → Ver-käu-fer\n' +
-          'Reading hint: most compounds are stressed on the FIRST chunk.',
+      { rule: '👄 Unlocking the "ö" — front-rounded vowel',
+        summary: 'Say "e" (as in "bed"), then ROUND your lips — that\'s ö.',
+        bullets: [
+          'Think of English "bird" — similar, but shorter and clearer.',
+          'Start with "e", then move your lips forward and round them.',
+          'Tongue forward, as for "e" in "bed"; lips gently rounded (like "o", but softer).',
+          'The sound sits in the front of your mouth — not deep in the throat.',
+          'ö can be short (möchte) or long (schön, hören, Öl) — match the audio. Either way it is ONE clean vowel, never a glide.',
+        ],
+        examples: [
+          { de: 'schön',  en: 'beautiful',  note: 'listen for the long ö' },
+          { de: 'hören',  en: 'to hear',    note: 'one rounded ö — the -en ending is a relaxed, unrounded "uh"' },
+          { de: 'möchte', en: 'would like', note: 'the politeness word — short ö in the middle' },
+        ],
+      },
+      { rule: '🔡 Umlauts ä ö ü — typing them',
+        summary: 'No umlaut keys? Type ae / oe / ue instead — always correct.',
+        table: {
+          head: ['umlaut', 'type as', 'example'],
+          rows: [
+            ['ä', { t: 'ae', hl: true }, 'Mädchen → Maedchen'],
+            ['ö', { t: 'oe', hl: true }, 'schön → schoen'],
+            ['ü', { t: 'ue', hl: true }, 'früh → frueh'],
+          ],
+        },
+      },
+      { rule: '🇬🇧 English loan words keep English sounds',
+        summary: 'Imported words keep their English pronunciation — even inside compounds.',
+        examples: [
+          { de: 'Software', en: 'software', note: 'English "S" — not the German Z-sound' },
+          { de: 'Computer', en: 'computer', note: 'sounds like English' },
+          { de: 'Job',      en: 'job',      note: 'English-style J' },
+        ],
+        tip: 'In a compound like Softwareentwicklung, say the loan part as English and the rest as German.',
+      },
+      { rule: '🧱 Long compound words — break them up',
+        summary: 'Don\'t say the whole word at once — chunk it. Stress lands on the FIRST chunk.',
+        examples: [
+          { de: 'Softwareentwicklung', en: 'software development', note: 'Soft·ware·ent·wick·lung' },
+          { de: 'Wochenende',          en: 'weekend',              note: 'Wo·chen·en·de' },
+          { de: 'Hausaufgabe',         en: 'homework',             note: 'Haus·auf·ga·be' },
+          { de: 'Kühlschrank',         en: 'fridge',               note: 'Kühl·schrank — lit. "cool cupboard"' },
+        ],
+        tip: 'Prefixes like ver- / be- / ge- are never stressed — so Verkäufer is ver-KÄU-fer. The first-chunk stress rule is for noun+noun compounds.',
       },
     ],
     exercises: [
@@ -254,10 +301,10 @@ export const days = [
       },
       {
         type: 'multiple-choice',
-        q: 'Which letter combination does NOT exist in standard German?',
+        q: 'Which letter combination appears ONLY in loanwords?',
         options: ['sch', 'ch', 'tsch', 'dsch'],
         answer: 'dsch',
-        explain: 'sch = English "sh". ch = the air sound. tsch = English "ch" (Deutsch). "dsch" is not a standard German cluster.',
+        explain: 'sch = English "sh". ch = the air sound. tsch = English "ch" (Deutsch). dsch = English "j" — it only appears in loanwords like Dschungel (jungle).',
       },
       {
         type: 'multiple-choice',
@@ -281,7 +328,7 @@ export const days = [
         type: 'dialogue',
         lines: [
           { speaker: 'ö-text',  de: 'Ich höre Musik und ich möchte ein Brötchen essen.',  en: 'I am listening to music and I would like to eat a bread roll.' },
-          { speaker: 'ö-text',  de: 'Der Bäcker ist schön und ich spreche mit dem Verkäufer.', en: 'The bakery is beautiful and I speak with the salesperson.' },
+          { speaker: 'ö-text',  de: 'Die Bäckerei ist schön und ich spreche mit dem Verkäufer.', en: 'The bakery is beautiful and I speak with the salesperson.' },
           { speaker: 'ö-text',  de: 'Ich kaufe ein Brötchen und ein Öl.',                 en: 'I buy a bread roll and an oil.' },
           { speaker: 'ö-text',  de: 'Der Verkäufer ist höflich und ich sage: „Danke schön!"', en: 'The salesperson is polite and I say: "Thank you very much!"' },
         ],
@@ -296,10 +343,10 @@ export const days = [
       },
       {
         type: 'multiple-choice',
-        q: 'How many ö-sounds appear in: „Der Verkäufer ist höflich"?',
+        q: 'How many UMLAUT spellings (ä, ö, ü — including äu) appear in: „Der Verkäufer ist höflich"?',
         options: ['0', '1', '2', '3'],
         answer: '2',
-        explain: 'Verkäufer (äu — diphthong, sounds like English "oy") · höflich (ö — front-rounded vowel). Two umlaut sounds, but only one is the pure ö.',
+        explain: 'Verkäufer (äu — the diphthong that sounds like English "oy") · höflich (ö — the pure front-rounded vowel). Two umlaut spellings, but only höflich has the true ö sound.',
       },
     ],
     quiz: [
