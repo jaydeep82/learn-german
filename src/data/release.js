@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.11.7';
+export const VERSION = '3.11.8';
 export const RELEASE_DATE = '2026-06-10';
 
 export const RELEASES = [
+  {
+    version: '3.11.8',
+    date: '2026-06-10',
+    type: 'improvement',
+    title: 'Grammar revamp · Step 7c — Days 2-3 enriched (numbers + pronouns): Week 1 complete',
+    notes: [
+      'Days 2 and 3 converted to the rich visual grammar shape — completing Week 1 (Days 1-7 now all enriched). Content adversarially verified across numbers / pronouns / critic lenses before release.',
+      'Day 2 (Numbers 0-29): 🧱 the three building blocks as a highlighted table (0-12 memorise · 13-19 unit+zehn · 21-29 the FLIP) with audio for dreizehn/einundzwanzig and a ⚠ "21 drops the -s of eins" callout · 🎯 the pronunciation traps as a 16-vs-26 / 17-vs-27 contrast table (sechzehn drops the -s, sechsundzwanzig keeps it) plus tappable audio for sechs/sechzehn/siebzehn/zehn and the regional -ig tip · 🗓️ everyday uses (age sentence + digit-by-digit phone numbers) as audio examples.',
+      'Day 3 (Pronouns): 👥 the six grammatical persons as a table with the formal-Sie row highlighted · ⚠ the three "sies" as a decoder table (sie ist=she · sie sind=they · Sie sind=formal you) with three tappable example sentences · 🤝 du-vs-Sie register as clean bullets + the "Wir können uns duzen" ceremony tip · 🪪 pronoun-by-article as four audio transformation examples with the das-Mädchen→es trap called out in a ⚠ callout · 🔠 capitalised Sie with two formal-question examples.',
+      'Everything appears in the Grammar reference AND the Day 2/3 lesson intros via the shared GrammarItem renderer.',
+      'VERIFICATION FIXES — the adversarial review (14 agents, 3 lenses) confirmed 10 issues, several pre-existing, all fixed: ✓ TRANSLITERATOR BUG: the chs→ks rule fired across morpheme boundaries, so "machst" rendered as "makst" and "nächste" as "nekstuh" app-wide — now chs(?!t), giving makhst / nehkh-stuh while keeping zeks / vaksen ✓ the sechs quiz explanation wrongly listed nächste as a chs→ks word (replaced with Fuchs + an endings caveat) ✓ "zwo on the phone" re-attributed from kids to general German usage ✓ southern -ig corrected to a hard "k" (TSVAN-tsik, not voiced -tsig) with the ich-sound marked as the codified standard ✓ quiz "Sie sind eine Lehrerin" → "Sie sind Lehrerin" (professions drop the article) ✓ the three-sies card retitled "verb + context decode them" (the verb cannot split they from formal-you in speech) with the capital-S tip now scoped to mid-sentence ✓ Day-3 intro corrected to THREE ways to say "you" (du · ihr · Sie).',
+    ],
+  },
   {
     version: '3.11.7',
     date: '2026-06-10',

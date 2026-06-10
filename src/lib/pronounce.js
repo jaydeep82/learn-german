@@ -27,9 +27,11 @@ function transliterate(word) {
   s = s.replace(/^sp/, 'shp');
   s = s.replace(/^st/, 'sht');
 
-  // 1a. "chs" is pronounced like English [ks] — sechs, wachsen, nächste.
-  //     Must run BEFORE the ch→kh rule so the cluster is captured intact.
-  s = s.replace(/chs/g, 'ks');
+  // 1a. "chs" inside a word ROOT is pronounced like English [ks] — sechs,
+  //     wachsen, Fuchs. Must run BEFORE the ch→kh rule. But the merge never
+  //     crosses a morpheme boundary where the s belongs to an ending
+  //     (du machst, nächste keep the ch sound) — so skip when a "t" follows.
+  s = s.replace(/chs(?!t)/g, 'ks');
 
   // 2. ch → kh (breathy)
   s = s.replace(/ch/g, 'kh');

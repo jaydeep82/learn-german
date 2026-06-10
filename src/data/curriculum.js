@@ -379,7 +379,7 @@ export const days = [
       // 0-12 — unique words, all to be memorised
       { de: 'null',   en: '0',  emoji: '0️⃣', hint: 'simple "nool"', example: 'Ich habe null Euro.', exampleEn: 'I have zero euros.' },
       { de: 'eins',   en: '1',  emoji: '1️⃣', hint: 'rhymes with English "rhinos" (start)', example: 'Eins plus eins ist zwei.', exampleEn: 'One plus one is two.' },
-      { de: 'zwei',   en: '2',  emoji: '✌️', hint: 'tsv-eye — kids often say "zwo" on the phone to avoid confusion with drei', example: 'Ich habe zwei Hände.', exampleEn: 'I have two hands.' },
+      { de: 'zwei',   en: '2',  emoji: '✌️', hint: 'tsv-eye — Germans often say "zwo" on the phone (and in announcements) to avoid confusion with drei', example: 'Ich habe zwei Hände.', exampleEn: 'I have two hands.' },
       { de: 'drei',   en: '3',  emoji: '🚀', hint: 'rhymes with English "fly"', example: 'Drei, zwei, eins — los!', exampleEn: 'Three, two, one — go!' },
       { de: 'vier',   en: '4',  emoji: '🚗', hint: 'V→F: "feer", same as English "fear"', example: 'Ein Auto hat vier Räder.', exampleEn: 'A car has four wheels.' },
       { de: 'fünf',   en: '5',  emoji: '🖐️', hint: 'ü = lips for oo, say ee → "fuenf"', example: 'Eine Hand hat fünf Finger.', exampleEn: 'A hand has five fingers.' },
@@ -411,27 +411,48 @@ export const days = [
       { de: 'neunundzwanzig',    en: '29', emoji: '➕', hint: 'nine-and-twenty', example: 'Neunundzwanzig plus eins ist dreißig.', exampleEn: 'Twenty-nine plus one is thirty.' },
     ],
     grammar: [
-      { rule: 'Three building blocks for any 0-29 number',
-        body:
-          '• 0-12   — unique words, just memorise them.\n' +
-          '• 13-19  — UNIT + zehn, written as ONE word: drei-zehn, vier-zehn, fünf-zehn …\n' +
-          '• 20     — zwanzig, then 21-29 FLIP: UNIT + und + zwanzig (einundzwanzig).\n' +
-          '21 drops the -s of "eins" → ein-und-zwanzig (not eins-und-zwanzig).',
+      { rule: '🧱 Three building blocks for any 0-29 number',
+        summary: 'Memorise 0-12, build 13-19, flip 21-29 — that\'s the whole system.',
+        table: {
+          head: ['range', 'rule', 'example'],
+          rows: [
+            ['0–12',  'unique words — just memorise',                'drei · sieben · zwölf'],
+            ['13–19', { t: 'UNIT + zehn (one word)', hl: true },     'drei·zehn → dreizehn'],
+            ['21–29', { t: 'UNIT + und + zwanzig (the FLIP)', hl: true }, 'ein·und·zwanzig'],
+          ],
+        },
+        examples: [
+          { de: 'dreizehn',       en: '13', note: 'drei + zehn — one word' },
+          { de: 'einundzwanzig',  en: '21', note: 'the flip: one-and-twenty' },
+        ],
+        warn: '21 drops the -s of "eins": ein-und-zwanzig, never eins-und-zwanzig.',
       },
-      { rule: 'Pronunciation traps in numbers',
-        body:
-          '• sechs (6) — the "chs" cluster sounds like English [ks]. Say "zeks", NOT "zekh-s".\n' +
-          '• sechzehn (16) — drops the -s- before zehn: sech-zehn (zekh-tsayn).\n' +
-          '• siebzehn (17) — drops the -en- of sieben before zehn: sieb-zehn (zeep-tsayn).\n' +
-          '  But sechsundzwanzig (26) and siebenundzwanzig (27) keep the FULL form (sechs-, sieben-).\n' +
-          '• zehn (10) — silent h lengthens the e: "tsayn", not "tsen".\n' +
-          '• -ig endings — zwanzig is pronounced "TSVAN-tsikh" in northern German, "TSVAN-tsig" in the south. Both fine.',
+      { rule: '🎯 Pronunciation traps in numbers',
+        summary: 'Four little traps — tap each word to hear it right.',
+        table: {
+          head: ['number', 'form', 'what happens'],
+          rows: [
+            ['16', { t: 'sechzehn', hl: true },        'drops the -s of sechs'],
+            ['26', 'sechsundzwanzig',                  'keeps the FULL sechs'],
+            ['17', { t: 'siebzehn', hl: true },        'drops the -en of sieben'],
+            ['27', 'siebenundzwanzig',                 'keeps the FULL sieben'],
+          ],
+        },
+        examples: [
+          { de: 'sechs',    en: '6',  note: 'chs = "ks" → "zeks", not "zekh-s"' },
+          { de: 'sechzehn', en: '16', note: 'sech-zehn — the s is gone' },
+          { de: 'siebzehn', en: '17', note: 'sieb-zehn — the -en is gone' },
+          { de: 'zehn',     en: '10', note: 'silent h lengthens the e: "tsayn"' },
+        ],
+        tip: '-ig endings: zwanzig = "TSVAN-tsikh" (soft ich-sound) in standard/northern German, "TSVAN-tsik" (hard k) in the south. Both are understood everywhere.',
       },
-      { rule: 'Where you\'ll use these every day',
-        body:
-          '• Age: "Ich bin 25 Jahre alt." → "Ich bin fünfundzwanzig Jahre alt."\n' +
-          '• Phone numbers: spoken as pairs — 0151 → null-eins-fünf-eins.\n' +
-          '• Prices and time come in Days 18-19; today\'s numbers are the foundation.',
+      { rule: '🗓️ Where you\'ll use these every day',
+        summary: 'Age, phone numbers — and soon prices and time.',
+        examples: [
+          { de: 'Ich bin fünfundzwanzig Jahre alt.', en: 'I am 25 years old.',            note: 'age — the most common use' },
+          { de: 'null eins fünf eins',               en: '0151 (phone prefix)',            note: 'phone numbers are read digit by digit' },
+        ],
+        tip: 'Prices and clock times build on these — they arrive on Days 18-19.',
       },
     ],
     exercises: [
@@ -447,7 +468,7 @@ export const days = [
           'Sekhs (English S + kh)',
         ],
         answer: 'Zeks — "chs" sounds like English [ks]',
-        explain: 'In German, "chs" inside a word merges to [ks]. Sechs, wachsen, nächste all use this rule.',
+        explain: 'In German, "chs" inside a word root merges to [ks]. Sechs, wachsen, Fuchs all use this rule. (Watch out: when the s is an ending — du machst, nächste — the ch keeps its own sound.)',
       },
       {
         type: 'multiple-choice',
@@ -519,7 +540,7 @@ export const days = [
     titleDe: 'Personalpronomen',
     emoji: '👤',
     objective: 'Use the eight personal pronouns confidently — and decode the THREE different "sie" / "Sie" forms.',
-    intro: 'German has more pronouns than English: TWO ways to say "you" (informal du / formal Sie), and the same word "sie" means three different things (she / they / formal you) — the verb form tells them apart. Master these eight today and every sentence in the rest of Week 1 falls into place.',
+    intro: 'German has more pronouns than English: THREE ways to say "you" (du for one friend, ihr for a group, formal Sie), and the same word "sie" means three different things (she / they / formal you) — the verb form and context tell them apart. Master these eight today and every sentence in the rest of Week 1 falls into place.',
     vocabulary: [
       // Singular
       { de: 'ich',  en: 'I',                  emoji: '🙋', hint: '"ikh" — soft ch (front of mouth)', example: 'Ich bin müde.',        exampleEn: 'I am tired.' },
@@ -535,42 +556,62 @@ export const days = [
       { de: 'Sie',  en: 'you (formal — singular OR plural)', emoji: '🤝', hint: '"Zee" — ALWAYS capital S, even mid-sentence', example: 'Wie heißen Sie?', exampleEn: 'What is your name? (formal)' },
     ],
     grammar: [
-      { rule: 'The 6 grammatical persons',
-        body:
-          'Three singular + three plural — every verb conjugates across all six:\n' +
-          '• 1st singular   ich       I\n' +
-          '• 2nd singular   du        you (one friend)\n' +
-          '• 3rd singular   er/sie/es he / she / it\n' +
-          '• 1st plural     wir       we\n' +
-          '• 2nd plural     ihr       you all (group of friends)\n' +
-          '• 3rd plural     sie       they\n' +
-          'Plus the formal "Sie" — always capital, used as a singular OR plural "you" with the same conjugation as 3rd plural.',
+      { rule: '👥 The 6 grammatical persons',
+        summary: 'Three singular + three plural — every verb conjugates across all six.',
+        table: {
+          head: ['person', 'pronoun', 'English'],
+          rows: [
+            ['1st singular', 'ich',        'I'],
+            ['2nd singular', 'du',         'you (one friend)'],
+            ['3rd singular', 'er/sie/es',  'he / she / it'],
+            ['1st plural',   'wir',        'we'],
+            ['2nd plural',   'ihr',        'you all (group of friends)'],
+            ['3rd plural',   'sie',        'they'],
+            ['formal',       { t: 'Sie', hl: true }, 'you (always capital — same verb form as "they")'],
+          ],
+        },
       },
-      { rule: '⚠ The three "sies" — verb form decodes them',
-        body:
-          'Three different words share the spelling sie / Sie. The verb form tells you which:\n' +
-          '• "Sie ist Lehrerin."          ist (singular)  →  she\n' +
-          '• "Sie sind Kollegen."          sind (plural)  →  they  (or formal you — context decides)\n' +
-          '• "Sie haben einen Termin."     haben (plural) →  formal you  (or they — context decides)\n' +
-          'Capital "S" only ever marks the formal you; lower-case "sie" is she or they.',
+      { rule: '⚠ The three "sies" — verb + context decode them',
+        summary: 'The verb splits "she" from the two plurals; context splits "they" from formal "you" (capital S marks it in writing).',
+        table: {
+          head: ['you hear/read…', 'cue', 'meaning'],
+          rows: [
+            ['sie ist …',   'singular verb', { t: 'she', hl: true }],
+            ['sie sind …',  'plural verb',   { t: 'they', hl: true }],
+            ['Sie sind …',  'plural verb — you are being addressed (capital S in writing)', { t: 'you (formal)', hl: true }],
+          ],
+        },
+        examples: [
+          { de: 'Sie ist Lehrerin.',        en: 'She is a teacher.',          note: 'ist (singular) → she' },
+          { de: 'Sie sind Kollegen.',       en: 'They are colleagues.',       note: 'sind (plural) → they — or formal you; context decides' },
+          { de: 'Haben Sie einen Termin?',  en: 'Do you have an appointment?', note: 'plural verb + addressing someone → formal you' },
+        ],
+        tip: 'Mid-sentence, a capital S reliably marks formal you (Wie heißen Sie?). At the START of a sentence every word is capitalised — there, rely on the verb (ist = she) and context.',
       },
-      { rule: 'du vs Sie — choosing the register',
-        body:
-          'Use du with: family, close friends, children, animals, God in prayer, between students or young colleagues, on most social media.\n' +
-          'Use Sie with: strangers, customer service, doctors, professors (until invited otherwise), in formal business settings.\n' +
-          'Switching from Sie to du is a small ceremony — let the older / more senior person offer it first ("Wir können uns duzen").',
+      { rule: '🤝 du vs Sie — choosing the register',
+        summary: 'du = close & casual · Sie = distant & formal.',
+        bullets: [
+          'du — family, close friends, children, animals, between students and young colleagues, most social media.',
+          'Sie — strangers, customer service, doctors, professors (until invited otherwise), formal business.',
+        ],
+        tip: 'Switching from Sie to du is a small ceremony — let the older or more senior person offer it first: "Wir können uns duzen."',
       },
-      { rule: 'er / sie / es match the noun\'s ARTICLE — not its meaning',
-        body:
-          'Replace any noun with its pronoun by looking at the article, NOT what the thing is in real life:\n' +
-          '• der Laptop → er\n' +
-          '• die Tasche → sie    (a bag, but feminine article → sie)\n' +
-          '• das Mädchen → es    (a girl, but neuter article → es!)\n' +
-          'Plural always becomes sie:  die Bücher → sie.',
+      { rule: '🪪 er / sie / es match the noun\'s ARTICLE — not its meaning',
+        summary: 'Read the article, not real life: der → er · die → sie · das → es · plural → sie.',
+        examples: [
+          { de: 'Der Laptop ist neu. → Er ist neu.',     en: 'The laptop is new. → It is new.',   note: 'der → er' },
+          { de: 'Die Tasche ist groß. → Sie ist groß.',  en: 'The bag is big. → It is big.',      note: 'die → sie' },
+          { de: 'Das Mädchen ist nett. → Es ist nett.',  en: 'The girl is nice. → She is nice.',  note: '⚠ das Mädchen → es — the article wins!' },
+          { de: 'Die Bücher sind alt. → Sie sind alt.',  en: 'The books are old. → They are old.', note: 'plural → sie' },
+        ],
+        warn: 'das Mädchen (the girl) takes es because -chen makes every noun neuter — the German article beats real-life logic.',
       },
-      { rule: 'Capitalised Sie',
-        body:
-          'Formal "Sie" — and its possessive "Ihr" / "Ihnen" — keep the capital wherever they appear: "Wie heißen Sie?", "Können Sie mir helfen?". Inside a sentence, capital "Sie" is your reliable cue that the speaker means formal "you".',
+      { rule: '🔠 Capitalised Sie',
+        summary: 'Formal Sie — and its Ihr / Ihnen — keep the capital everywhere.',
+        examples: [
+          { de: 'Wie heißen Sie?',          en: 'What is your name? (formal)', note: 'capital S mid-sentence = formal you' },
+          { de: 'Können Sie mir helfen?',   en: 'Can you help me? (formal)',   note: 'your reliable formality cue' },
+        ],
       },
     ],
     exercises: [
@@ -631,7 +672,7 @@ export const days = [
       { type: 'multiple-choice', q: 'Which is the FORMAL "you", written correctly?',
         options: ['sie','Sie','ihr','Ihr'], answer: 'Sie' },
       { type: 'multiple-choice', q: '"das Buch" → which pronoun?', options: ['er','sie','es','der'], answer: 'es' },
-      { type: 'fill-blank', sentence: '____ sind eine Lehrerin. (formal you)', answer: 'Sie' },
+      { type: 'fill-blank', sentence: '____ sind Lehrerin. (formal you)', answer: 'Sie' },
       { type: 'fill-blank', sentence: '__ ist mein Bruder. (he)', answer: 'Er' },
     ],
   },
@@ -1327,7 +1368,7 @@ export const days = [
           '  zwanzig → "TSVAN-tsikh"\n' +
           '  fünfzig → "FUENF-tsikh"\n' +
           '  hungrig → "HOON-grikh"\n' +
-          'In southern Germany, Austria and Switzerland it is often pronounced as a hard "g": "TSVAN-tsig". Both are accepted; northern is the standard taught at A1.',
+          'In southern Germany, Austria and Switzerland it is often pronounced as a hard "k": "TSVAN-tsik". Both are accepted; the soft ich-sound is the codified standard taught at A1.',
       },
       { rule: 'hundert: with or without "ein"',
         body:
