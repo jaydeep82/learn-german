@@ -1346,45 +1346,57 @@ export const days = [
       { de: 'das Prozent',  en: 'percent',          emoji: '📊', hint: '"pro-TSENT"',                                          example: 'Das sind fünfzig Prozent.',        exampleEn: 'That is fifty percent.' },
     ],
     grammar: [
-      { rule: 'Three spelling oddities you must memorise',
-        body:
-          '• 30 → dreißig.   ß instead of -zig, NOT "dreizig".\n' +
-          '• 60 → sechzig.   sechs LOSES its -s- before -zig.\n' +
-          '• 70 → siebzig.   sieben LOSES its -en- before -zig.\n' +
-          'BUT in the flip-numbers, the UNIT side keeps the full word: 66 = sechs-und-sechzig (full sechs, dropped -s- sechzig). 77 = sieben-und-siebzig (full sieben, dropped -en- siebzig).',
+      { rule: '🎯 Three spelling oddities you must memorise',
+        summary: 'Three tens break the normal pattern — but the unit side stays full.',
+        table: {
+          head: ['number', 'spelling', 'why it\'s odd'],
+          rows: [
+            ['30', { t: 'dreißig', hl: true }, 'ß instead of -zig (not "dreizig")'],
+            ['60', { t: 'sechzig', hl: true }, 'sechs LOSES its -s'],
+            ['70', { t: 'siebzig', hl: true }, 'sieben LOSES its -en'],
+          ],
+        },
+        examples: [
+          { de: 'sechsundsechzig', en: '66', note: 'full sechs on the unit side, dropped-s sechzig on the tens side' },
+          { de: 'siebenundsiebzig', en: '77', note: 'full sieben on the unit side, dropped-en siebzig' },
+        ],
       },
-      { rule: 'The flip rule keeps working — read units before tens',
-        body:
-          'Like 21-29, every two-digit number 21-99 puts the UNIT first, then "und", then the tens — written as ONE WORD:\n' +
-          '  31 = ein-und-dreißig   (no -s of eins)\n' +
-          '  42 = zwei-und-vierzig\n' +
-          '  67 = sieben-und-sechzig\n' +
-          '  99 = neun-und-neunzig\n' +
-          'It feels backwards because English reads tens first ("sixty-seven"); German reads units first ("seven-and-sixty"). Your brain re-wires after about 50 reps.',
+      { rule: '🔄 The flip rule keeps working — units before tens',
+        summary: 'Every two-digit number 21-99: UNIT + und + tens, written as ONE word.',
+        examples: [
+          { de: 'einunddreißig', en: '31', note: 'no -s of eins' },
+          { de: 'zweiundvierzig', en: '42', note: 'two-and-forty' },
+          { de: 'siebenundsechzig', en: '67', note: 'seven-and-sixty' },
+          { de: 'neunundneunzig', en: '99', note: 'nine-and-ninety' },
+        ],
+        tip: 'It feels backwards because English reads tens first ("sixty-seven"); German reads units first ("seven-and-sixty"). Your brain re-wires after about 50 reps.',
       },
-      { rule: '-ig endings sound like soft ich',
-        body:
-          'Final -ig is pronounced like the soft ch in "ich" — "ikh" — in standard / northern German:\n' +
-          '  zwanzig → "TSVAN-tsikh"\n' +
-          '  fünfzig → "FUENF-tsikh"\n' +
-          '  hungrig → "HOON-grikh"\n' +
-          'In southern Germany, Austria and Switzerland it is often pronounced as a hard "k": "TSVAN-tsik". Both are accepted; the soft ich-sound is the codified standard taught at A1.',
+      { rule: '🔊 -ig endings sound like soft ich',
+        summary: 'Final -ig = the soft ch in "ich" ("ikh") in standard German.',
+        examples: [
+          { de: 'zwanzig', en: '20', note: '"TSVAN-tsikh"' },
+          { de: 'fünfzig', en: '50', note: '"FUENF-tsikh"' },
+          { de: 'hungrig', en: 'hungry', note: '"HOON-grikh"' },
+        ],
+        tip: 'In the south (and Austria/Switzerland) it\'s often a hard "k" ("TSVAN-tsik"). Both are understood; the soft ich-sound is the codified A1 standard.',
       },
-      { rule: 'hundert: with or without "ein"',
-        body:
-          '100 = hundert  /  einhundert  — both correct.\n' +
-          '"Einhundert" is the safer form on the phone or when you must avoid being misheard.\n' +
-          'Bigger 3-digit numbers ALWAYS need "hundert" before, then the flipped 2-digit suffix:\n' +
-          '  125 = ein-hundert-fünf-und-zwanzig.\n' +
-          '  365 = drei-hundert-fünf-und-sechzig.\n' +
-          'These bigger numbers come back on Day 18 (Numbers 100-1000).',
+      { rule: '💯 hundert: with or without "ein"',
+        summary: '100 = hundert OR einhundert — both correct.',
+        examples: [
+          { de: 'einhundert', en: '100', note: 'the safer form on the phone (harder to mishear)' },
+          { de: 'einhundertfünfundzwanzig', en: '125', note: 'hundert + the flipped 2-digit suffix' },
+          { de: 'dreihundertfünfundsechzig', en: '365', note: 'three-hundred + five-and-sixty' },
+        ],
+        tip: 'These bigger 3-digit numbers come back on Day 18 (Numbers 100-1000).',
       },
-      { rule: 'Where you\'ll use these every day',
-        body:
-          '• Age: "Ich bin 35 Jahre alt." → "Ich bin fünfunddreißig Jahre alt."\n' +
-          '• Year: "Ich bin 1991 geboren" — read in pairs (no flip): "neunzehn-hundert-ein-und-neunzig" (years up to 1999 use the special "hundred" reading).\n' +
-          '• Price: "60 Euro" → "sechzig Euro"  (full pricing pattern arrives on Day 19).\n' +
-          '• Phone numbers: speak each digit OR each pair separately. "0151" → "null-eins-fünf-eins".',
+      { rule: '🗓️ Where you\'ll use these every day',
+        summary: 'Age, years, prices and phone numbers.',
+        examples: [
+          { de: 'Ich bin fünfunddreißig Jahre alt.', en: 'I am 35 years old.', note: 'age — the most common use' },
+          { de: 'neunzehnhunderteinundneunzig', en: '1991 (birth year)', note: 'years up to 1999 read as "nineteen-hundred + flip", no und between hundred and the rest' },
+          { de: 'sechzig Euro', en: '60 euros', note: 'prices — full pattern on Day 19' },
+        ],
+        tip: 'Phone numbers: speak each digit or each pair. "0151" → "null eins fünf eins".',
       },
     ],
     exercises: [
@@ -1475,51 +1487,55 @@ export const days = [
       { de: 'fragen',      en: 'to ask',       emoji: '🙋', hint: 'takes an object: fragt + den Lehrer',                     example: 'Ich frage den Lehrer.',            exampleEn: 'I ask the teacher.' },
     ],
     grammar: [
-      { rule: 'The three sentence roles',
-        body:
-          '🟦 SUBJECT — who or what does the action.\n' +
-          '🟧 VERB    — the action itself, conjugated to match the subject.\n' +
-          '🟩 OBJECT  — who or what receives the action.\n' +
-          'Worked example:\n' +
-          '   Der Student        schreibt        den Satz.\n' +
-          '   🟦 SUBJECT            🟧 VERB            🟩 OBJECT\n' +
-          '   "The student writes the sentence."',
+      { rule: '🎨 The three sentence roles',
+        summary: 'Subject does it · Verb is the action · Object receives it.',
+        table: {
+          head: ['role', 'job', 'in "Der Student schreibt den Satz"'],
+          rows: [
+            ['🟦 Subject', 'who/what does the action', 'der Student'],
+            ['🟧 Verb',    'the action, matched to the subject', 'schreibt'],
+            ['🟩 Object',  'who/what receives it', 'den Satz'],
+          ],
+        },
+        examples: [
+          { de: 'Der Student schreibt den Satz.', en: 'The student writes the sentence.', note: '🟦 subject · 🟧 verb · 🟩 object' },
+        ],
       },
       { rule: '⭐ The two-question test — find S and O in 5 seconds',
-        body:
-          'Step 1: find the verb (the action).\n' +
-          'Step 2: ask "Wer / Was [verb]?" (Who / What is doing it?) — that\'s the SUBJECT.\n' +
-          'Step 3: ask "Wen / Was [verb] der Subjekt?" (Whom / What does the subject verb?) — that\'s the OBJECT.\n' +
-          '\n' +
-          'Worked example: "Der Lehrer erklärt das Wort."\n' +
-          '   verb = erklärt.\n' +
-          '   Wer erklärt? → der Lehrer.   🟦 subject\n' +
-          '   Was erklärt der Lehrer? → das Wort.   🟩 object',
+        summary: 'Wer/Was [verb]? → subject. Wen/Was [verb] der Subjekt? → object.',
+        examples: [
+          { de: 'Der Lehrer erklärt das Wort.', en: 'The teacher explains the word.', note: 'Wer erklärt? → der Lehrer (subject). Was erklärt er? → das Wort (object).' },
+        ],
+        tip: 'Step 1: find the verb. Step 2: "Wer/Was?" finds the subject. Step 3: "Wen/Was?" finds the object.',
       },
       { rule: '⭐ The verb is GLUED to slot 2',
-        body:
-          'No matter what you put first, the conjugated verb stays in position 2.\n' +
-          '   Position 1     Position 2 (verb)   Position 3+\n' +
-          '   Ich            lerne                Deutsch.\n' +
-          '   Heute          lerne                ich Deutsch.   ← time leads, subject moves to 3\n' +
-          '   In Berlin      lernt                er Deutsch.    ← place leads, subject moves to 3\n' +
-          '   Deutsch        lerne                ich heute.     ← object leads, subject still after verb\n' +
-          'This "verb-second" rule (V2) is the single most important word-order law in German.',
+        summary: 'Whatever leads the sentence, the conjugated verb stays in position 2 (the V2 rule).',
+        table: {
+          head: ['slot 1', 'slot 2 (verb)', 'slot 3+'],
+          rows: [
+            ['Ich',       { t: 'lerne', hl: true }, 'Deutsch.'],
+            ['Heute',     { t: 'lerne', hl: true }, 'ich Deutsch.'],
+            ['In Berlin', { t: 'lernt', hl: true }, 'er Deutsch.'],
+            ['Deutsch',   { t: 'lerne', hl: true }, 'ich heute.'],
+          ],
+        },
+        tip: 'When time/place/object leads, the subject moves to slot 3 — but the verb never leaves slot 2. This is the single most important word-order law in German.',
       },
-      { rule: 'Not every sentence has an object',
-        body:
-          'Some sentences have no object — just subject and verb (with maybe an adjective or a time/place):\n' +
-          '   Ich bin müde.        🟦 ich · 🟧 bin · adjective.\n' +
-          '   Wir arbeiten heute.  🟦 wir · 🟧 arbeiten · time.\n' +
-          'These verbs don\'t need a receiver. The Wer/Was test still finds the subject; there\'s simply no Wen/Was answer.',
+      { rule: '🔵 Not every sentence has an object',
+        summary: 'Some verbs need no receiver — just subject + verb (+ maybe an adjective or time).',
+        examples: [
+          { de: 'Ich bin müde.',      en: 'I am tired.',        note: '🟦 ich · 🟧 bin · adjective — no object' },
+          { de: 'Wir arbeiten heute.', en: 'We work today.',    note: '🟦 wir · 🟧 arbeiten · time — no object' },
+        ],
+        tip: 'The Wer/Was test still finds the subject; there\'s simply no Wen/Was answer.',
       },
       { rule: '🚦 Common pitfalls',
-        body:
-          '✗ Heute ich lerne Deutsch.   ← verb in slot 3, broken.\n' +
-          '✓ Heute lerne ich Deutsch.   ← verb in slot 2, subject in slot 3.\n' +
-          '✗ Ich lerne heute Deutsch und ich arbeite heute.   ← double "heute", awkward.\n' +
-          '✓ Ich lerne heute Deutsch und arbeite viel.\n' +
-          'When two clauses share a subject, you can drop the second "ich".',
+        summary: 'The classic V2 and double-time mistakes.',
+        examples: [
+          { de: 'Heute lerne ich Deutsch.', en: 'Today I learn German.', note: '✓ verb slot 2 (NOT "Heute ich lerne")' },
+          { de: 'Ich lerne heute Deutsch und arbeite viel.', en: 'I learn German today and work a lot.', note: '✓ shared subject → drop the second "ich"' },
+        ],
+        warn: 'NEVER "Heute ich lerne Deutsch" — that puts the verb in slot 3 and is wrong.',
       },
     ],
     exercises: [
@@ -1675,46 +1691,54 @@ export const days = [
     ],
     grammar: [
       { rule: '⭐ The 4-second recipe',
-        body:
-          '1️⃣  Start with the infinitive:                machen\n' +
-          '2️⃣  Drop the final -en (or sometimes just -n):  mach-\n' +
-          '3️⃣  Look at the subject pronoun:                ich\n' +
-          '4️⃣  Glue on the matching ending:                mache\n' +
-          '\n' +
-          'That is it. The same recipe works for hundreds of verbs.',
+        summary: 'Infinitive → drop -en → read the pronoun → glue on the ending.',
+        bullets: [
+          '1️⃣  Start with the infinitive: machen',
+          '2️⃣  Drop the final -en (sometimes just -n): mach-',
+          '3️⃣  Look at the subject pronoun: ich',
+          '4️⃣  Glue on the matching ending: mache',
+        ],
+        tip: 'That\'s it — the same recipe works for hundreds of verbs.',
       },
-      { rule: 'The 6 endings cheat-sheet',
-        body:
-          '   ich         -e        ich  mach + e      → mache\n' +
-          '   du          -st       du   mach + st     → machst\n' +
-          '   er/sie/es   -t        er   mach + t      → macht\n' +
-          '   wir         -en       wir  mach + en     → machen\n' +
-          '   ihr         -t        ihr  mach + t      → macht\n' +
-          '   sie / Sie   -en       sie  mach + en     → machen\n' +
-          'Notice: the wir form and the infinitive look identical (machen). The ihr form and the er-form look identical (macht).',
+      { rule: '📋 The 6 endings cheat-sheet',
+        summary: 'Learn these six endings once and every regular verb conjugates itself.',
+        table: {
+          head: ['pronoun', 'ending', 'machen →'],
+          rows: [
+            ['ich',       { t: '-e', hl: true },  'mache'],
+            ['du',        { t: '-st', hl: true }, 'machst'],
+            ['er/sie/es', { t: '-t', hl: true },  'macht'],
+            ['wir',       { t: '-en', hl: true }, 'machen'],
+            ['ihr',       { t: '-t', hl: true },  'macht'],
+            ['sie / Sie', { t: '-en', hl: true }, 'machen'],
+          ],
+        },
+        tip: 'wir = the infinitive (machen). ihr = the er-form (macht). Two freebies.',
       },
       { rule: '⚠ Stem ends in -t or -d? Sneak in an extra e',
-        body:
-          'When the verb stem ends in -t (arbeiten) or -d (finden), the consonant clusters at "-tst" or "-dt" are awkward. German inserts an "e" to make it pronounceable:\n' +
-          '   du   arbeit + e + st → arbeitest   (NOT arbeitst)\n' +
-          '   er   arbeit + e + t  → arbeitet    (NOT arbeitt)\n' +
-          '   ihr  arbeit + e + t  → arbeitet\n' +
-          'Same rule: finden → du findest · er findet · ihr findet.\n' +
-          'The wir / sie / ich forms don\'t need it: arbeite, arbeiten.',
+        summary: 'arbeiten / finden insert an -e- before -st and -t so the cluster is sayable.',
+        examples: [
+          { de: 'du arbeitest', en: 'you work', note: 'arbeit + e + st (NOT arbeitst)' },
+          { de: 'er arbeitet',  en: 'he works', note: 'arbeit + e + t (NOT arbeitt)' },
+          { de: 'er findet',    en: 'he finds', note: 'find + e + t — same -d rule' },
+        ],
+        tip: 'The wir / sie / ich forms don\'t need it: arbeite, arbeiten.',
       },
-      { rule: '⭐ Where the conjugated verb sits — same V2 rule as Day 9',
-        body:
-          'Whatever verb you build, it goes in slot 2 of a main sentence:\n' +
-          '   Ich       lerne      Deutsch.\n' +
-          '   Heute     lerne      ich Deutsch.   ← time leads, subject moves to 3\n' +
-          '   In Berlin wohnen     wir.            ← place leads, subject moves to 3',
+      { rule: '⭐ Where the conjugated verb sits — same V2 rule',
+        summary: 'Whatever verb you build, it lands in slot 2 of a main sentence.',
+        examples: [
+          { de: 'Ich lerne Deutsch.',     en: 'I learn German.',       note: 'subject + verb' },
+          { de: 'Heute lerne ich Deutsch.', en: 'Today I learn German.', note: 'time leads → subject to slot 3' },
+          { de: 'In Berlin wohnen wir.',  en: 'We live in Berlin.',    note: 'place leads → subject to slot 3' },
+        ],
       },
-      { rule: 'Regular vs irregular — a quick preview',
-        body:
-          'Most verbs are regular and follow the recipe above. A small group is irregular:\n' +
-          '• sein / haben / werden — already drilled on Days 5-7. Memorise their tables.\n' +
-          '• Stem-changing verbs — they look regular EXCEPT for the du and er/sie/es forms, where the vowel changes (essen → du isst, lesen → er liest, sehen → er sieht). You meet these on Day 11.\n' +
-          'Until tomorrow, assume any new verb is regular — you will be right 80% of the time.',
+      { rule: '🔮 Regular vs irregular — a quick preview',
+        summary: 'Most verbs are regular; a small irregular group needs memorising.',
+        bullets: [
+          'sein / haben / werden — drilled on Days 5-7. Memorise the tables.',
+          'Stem-changers — look regular EXCEPT du and er/sie/es, where the vowel shifts (essen → du isst, sehen → er sieht). You meet these tomorrow, Day 11.',
+        ],
+        tip: 'Until tomorrow, assume any new verb is regular — you\'ll be right ~80% of the time.',
       },
     ],
     exercises: [
@@ -1870,40 +1894,56 @@ export const days = [
       { de: 'warten',      en: 'to wait',                 emoji: '⏳', hint: '✓ regular bonus · stem ends in -t → wartet', example: 'Ich warte hier.',     exampleEn: 'I am waiting here.' },
     ],
     grammar: [
-      { rule: '⭐ The three stem-change patterns',
-        body:
-          'Three vowel swaps cover ~90% of stem-changers:\n' +
-          '🔁 e → i    essen → du isst, er isst    (sprechen, nehmen, geben, helfen)\n' +
-          '🔁 e → ie   sehen → du siehst, er sieht (lesen)\n' +
-          '🔁 a → ä    fahren → du fährst, er fährt (schlafen, tragen, laufen)\n' +
-          'You CANNOT predict which verb takes which pattern from the infinitive — you have to memorise. But once you know a verb, the pattern is rock-solid.',
+      { rule: '⭐ The stem-change patterns',
+        summary: 'Three main vowel swaps (e→i, e→ie, a→ä) cover ~90%, plus one au→äu verb.',
+        table: {
+          head: ['pattern', 'example', 'others'],
+          rows: [
+            ['🔁 e → i',  { t: 'essen → du isst', hl: true },   'sprechen · nehmen · geben · helfen'],
+            ['🔁 e → ie', { t: 'sehen → er sieht', hl: true },  'lesen'],
+            ['🔁 a → ä',  { t: 'fahren → du fährst', hl: true }, 'schlafen · tragen'],
+            ['🔁 au → äu', { t: 'laufen → er läuft', hl: true },  'the one au-verb — NOT a→ä'],
+          ],
+        },
+        examples: [
+          { de: 'Du isst Pizza.',       en: 'You eat pizza.',      note: 'e → i' },
+          { de: 'Er sieht ein Bild.',   en: 'He sees a picture.',  note: 'e → ie' },
+          { de: 'Sie fährt nach Berlin.', en: 'She drives to Berlin.', note: 'a → ä' },
+        ],
+        tip: 'You can\'t predict the pattern from the infinitive — memorise it with the verb. But once known, it\'s rock-solid.',
       },
       { rule: '⭐ The change happens in TWO forms only',
-        body:
-          'Only du and er / sie / es switch the vowel. The other four forms stay regular:\n' +
-          '   ich       esse        ✓ no change\n' +
-          '   du        ISST        🔁 e → i\n' +
-          '   er/sie/es ISST        🔁 e → i\n' +
-          '   wir       essen       ✓ no change\n' +
-          '   ihr       esst        ✓ no change  (uses normal stem)\n' +
-          '   sie/Sie   essen       ✓ no change\n' +
-          'So: if you ever say "ich isse" or "wir issen" — that\'s wrong. Only du / er-sie-es flip.',
+        summary: 'Only du and er/sie/es switch the vowel; the other four stay regular.',
+        table: {
+          head: ['pronoun', 'essen', 'change?'],
+          rows: [
+            ['ich',       'esse',                 '✓ no change'],
+            ['du',        { t: 'isst', hl: true }, '🔁 e → i'],
+            ['er/sie/es', { t: 'isst', hl: true }, '🔁 e → i'],
+            ['wir',       'essen',                '✓ no change'],
+            ['ihr',       'esst',                 '✓ no change'],
+            ['sie / Sie', 'essen',                '✓ no change'],
+          ],
+        },
+        warn: 'So "ich isse" or "wir issen" is wrong — only du / er-sie-es flip the vowel.',
       },
       { rule: '⚠ Two extra-quirk verbs',
-        body:
-          '• nehmen — e→i + the consonant DOUBLES: du nimmst, er nimmt. The "h" disappears.\n' +
-          '• lesen — the stem ends in -s. When -st gets added, "s + st" merges into just "-st": du LIEST (not "liesst"), er LIEST. Same trick as essen → du isst (not isst-st).',
+        summary: 'nehmen and lesen add a spelling twist on top of the vowel change.',
+        examples: [
+          { de: 'du nimmst', en: 'you take', note: 'nehmen: e→i AND the consonant doubles — the h disappears' },
+          { de: 'du liest',  en: 'you read', note: 'lesen: stem ends in -s, so s + st merges to just -st (not "liesst")' },
+        ],
       },
-      { rule: 'Same V2 word-order rule',
-        body:
-          'Stem-changers still obey position 2:\n' +
-          '   Heute      isst       er Pizza.\n' +
-          '   Am Morgen  fährt      sie nach Berlin.\n' +
-          '   Im Buch    sieht      er ein Bild.',
+      { rule: '📍 Same V2 word-order rule',
+        summary: 'Stem-changers still obey slot 2.',
+        examples: [
+          { de: 'Heute isst er Pizza.',         en: 'Today he eats pizza.',         note: 'time leads → verb still slot 2' },
+          { de: 'Am Morgen fährt sie nach Berlin.', en: 'In the morning she drives to Berlin.', note: 'verb in slot 2' },
+        ],
       },
-      { rule: 'How to spot one — the honest answer',
-        body:
-          'You can\'t spot a stem-changer from the infinitive alone. The trick: when you learn a NEW verb, learn the du-form alongside it. If du-form differs from the regular pattern, mark the verb as a stem-changer in your flashcards. Most stem-changers are everyday verbs (eat, sleep, drive, see, speak) — by Day 20 you\'ll know them all.',
+      { rule: '🔎 How to spot one — the honest answer',
+        summary: 'You can\'t tell from the infinitive — so learn the du-form alongside every new verb.',
+        tip: 'If the du-form breaks the regular pattern, flag the verb as a stem-changer in your flashcards. Most are everyday verbs (eat, sleep, drive, see, speak) — by Day 20 you\'ll know them all.',
       },
     ],
     exercises: [

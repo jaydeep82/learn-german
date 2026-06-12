@@ -11,10 +11,25 @@
  * in sync.
  */
 
-export const VERSION = '3.11.8';
-export const RELEASE_DATE = '2026-06-10';
+export const VERSION = '3.11.9';
+export const RELEASE_DATE = '2026-06-11';
 
 export const RELEASES = [
+  {
+    version: '3.11.9',
+    date: '2026-06-11',
+    type: 'improvement',
+    title: 'Grammar revamp · Step 7d — Week 2 batch 1 enriched (Days 8-11)',
+    notes: [
+      'Days 8-11 converted to the rich visual grammar shape — the verb-heavy heart of Week 2. Content adversarially verified before release.',
+      'Day 8 (Numbers 30-100): the three spelling oddities (dreißig/sechzig/siebzig) as a highlighted table; the flip rule, -ig pronunciation, hundert forms, and everyday uses as tappable audio examples (einunddreißig, zweiundvierzig, einhundertfünfundzwanzig, the 1991 year-reading …).',
+      'Day 9 (S-V-O): the three sentence roles as a colour-coded table; the ⭐ V2 rule as a slot-1/slot-2/slot-3 table with the verb highlighted; the Wer/Wen test, object-less sentences, and pitfalls as audio examples + a "never Heute ich lerne" warn.',
+      'Day 10 (Regular verbs): the 4-second recipe as bullets; ⭐ the 6 endings as a machen table; the -t/-d extra-e rule (du arbeitest, er findet) and the V2 rule as audio examples.',
+      'Day 11 (Stem-changers): ⭐ the three patterns (e→i, e→ie, a→ä) as a highlighted table; the change-in-two-forms-only essen table; the nehmen/lesen quirks and V2 as audio examples.',
+      'Everything appears in the Grammar reference AND the Day 8-11 lesson intros via the shared GrammarItem renderer.',
+      'VERIFICATION FIX — the adversarial review (5 agents, 3 lenses) confirmed 1 real, pre-existing error: laufen was listed under the a→ä stem-change pattern, but laufen is au→äu (du läufst, er läuft) — a learner applying the a→ä rule would wrongly produce "läft". Split into its own au→äu row labelled "NOT a→ä".',
+    ],
+  },
   {
     version: '3.11.8',
     date: '2026-06-10',
