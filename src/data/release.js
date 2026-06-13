@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.13.1';
+export const VERSION = '3.13.2';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.13.2',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 3 batch 3 — Day 21 enriched (Akkusativ)',
+    notes: [
+      'Day 21 (Akkusativ — masculine flips) converted to the rich visual grammar shape — the first case in the course. Adversarially verified before release.',
+      'The Nominativ/Akkusativ role table; the ⭐ only-masculine-flips gender table (der→den, ein→einen; f/n/pl unchanged); the Wer/Was vs Wen/Was test with a worked example; the ein-word table (kein/mein/dein/sein/ihr/unser all take -en); the Akk-trigger verb list with the sein-takes-Nominativ exception; pitfalls incl. weak masculine nouns (den Studenten, den Jungen, den Herrn, den Kollegen).',
+      'Two accuracy fixes applied from verification: removed a fabricated "90 % of the accusative" claim from the intro (rescoped to the article system), and broadened the verb-case summary so sein is no longer framed as the only Nominativ exception (werden/bleiben link too; some verbs take other cases).',
+      'Everything appears in the Grammar reference AND the Day 21 lesson intro via the shared GrammarItem renderer.',
+    ],
+  },
   {
     version: '3.13.1',
     date: '2026-06-14',

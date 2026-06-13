@@ -3049,7 +3049,7 @@ export const days = [
     titleDe: 'Akkusativ (m)',
     emoji: '➡️',
     objective: 'Master the FIRST case change: when a masculine noun receives the action, der → den and ein → einen. Everything else (f / n / pl) stays the same.',
-    intro: 'Welcome to the German case system! Until now articles never changed. From here, the article shows a noun\'s JOB in the sentence. The good news for the Akkusativ (the "receiving" case): only the MASCULINE article flips — der → den, ein → einen. Feminine, neuter and plural look exactly the same as before. Learn this one flip and you\'ve cracked 90 % of the accusative.',
+    intro: 'Welcome to the German case system! Until now articles never changed. From here, the article shows a noun\'s JOB in the sentence. The good news for the Akkusativ (the "receiving" case): only the MASCULINE article flips — der → den, ein → einen. Feminine, neuter and plural look exactly the same as before. Learn this one flip — der → den, ein → einen — and you have the core of the accusative article system.',
     vocabulary: [
       // ➡️ THE CORE FLIP — der → den (the ONLY definite article that changes)
       { de: 'der Mann → den Mann',     en: 'the man (subject → object)',  emoji: '👨', hint: '⭐ THE flip · der → den when it RECEIVES',     example: 'Ich sehe den Mann.',          exampleEn: 'I see the man.' },
@@ -3084,67 +3084,82 @@ export const days = [
       { de: 'nehmen',    en: 'to take',               emoji: '🤲', hint: '🔁 Day 11 stem-changer · take WHAT? → Akk', example: 'Ich nehme den Bus.',          exampleEn: 'I take the bus.' },
     ],
     grammar: [
-      { rule: '⭐ WHAT IS THE AKKUSATIV? — the "receiving" case',
-        body:
-          'German marks a noun\'s JOB with its article. Two jobs so far:\n\n' +
-          '  🟦 NOMINATIV (subject) — the DOER of the action.\n' +
-          '  🟩 AKKUSATIV (direct object) — the THING/PERSON receiving the action.\n\n' +
-          'Worked example — "The man sees the dog":\n' +
-          '  Der Mann   sieht   den Hund.\n' +
-          '  └ subject ┘        └ object ┘\n' +
-          '  (Nominativ)        (Akkusativ → der flipped to den)\n\n' +
-          'The man DOES the seeing (stays der). The dog RECEIVES it (der → den). Flip the meaning and the articles flip too: "Den Mann sieht der Hund" = the DOG sees the man.',
+      { rule: '⭐ What is the Akkusativ? — the "receiving" case',
+        summary: 'The article marks each noun by its JOB: Nominativ = the doer (subject); Akkusativ = what receives the action (object).',
+        table: {
+          head: ['role', 'job', 'example'],
+          rows: [
+            [{ t: 'Nominativ', hl: true }, 'the DOER (subject)',              'Der Mann sieht …'],
+            [{ t: 'Akkusativ', hl: true }, 'what RECEIVES the action (object)', '… sieht den Hund.'],
+          ],
+        },
+        examples: [
+          { de: 'Der Mann sieht den Hund.', en: 'The man sees the dog.', note: 'Mann = subject (der), Hund = object (der → den)' },
+          { de: 'Den Mann sieht der Hund.', en: 'The dog sees the man.', note: 'flip the articles → flip who does what' },
+        ],
+        tip: 'The doer stays der; the receiver flips der → den. Word order can move, but the articles tell you who does what.',
       },
-      { rule: '⭐ THE ONE RULE — only MASCULINE changes',
-        body:
-          'This is the whole lesson. In the Akkusativ, ONLY the masculine article changes:\n\n' +
-          '            NOMINATIV  →  AKKUSATIV\n' +
-          '  masc.  m   der        →  den        ⭐ THE flip\n' +
-          '             ein        →  einen      ⭐ +en\n' +
-          '  fem.   f   die        →  die        ✅ same\n' +
-          '             eine       →  eine       ✅ same\n' +
-          '  neut.  n   das        →  das        ✅ same\n' +
-          '             ein        →  ein        ✅ same\n' +
-          '  plur.  pl  die        →  die        ✅ same\n\n' +
-          '🧠 Memory hook: "der → den, ein → einen — everything else stays the same." Feminine, neuter and plural give you a free pass.',
+      { rule: '⭐ The one rule — only MASCULINE changes',
+        summary: 'In the Akkusativ ONLY the masculine article changes. Feminine, neuter and plural stay identical.',
+        table: {
+          head: ['gender', 'Nominativ', 'Akkusativ', 'note'],
+          rows: [
+            ['m',  'der / ein', { t: 'den / einen', hl: true }, '⭐ changes'],
+            ['f',  'die / eine', 'die / eine',                  '✅ same'],
+            ['n',  'das / ein',  'das / ein',                   '✅ same'],
+            ['pl', 'die',        'die',                         '✅ same'],
+          ],
+        },
+        tip: 'Memory hook: "der → den, ein → einen — everything else stays the same." Feminine, neuter and plural are a free pass.',
       },
-      { rule: '⭐ THE 5-SECOND TEST — Wer/Was vs Wen/Was',
-        body:
-          'To find which noun is the object, ask the verb a question:\n\n' +
-          '  WER / WAS + verb?  → the answer is the SUBJECT (Nominativ)\n' +
-          '  WEN / WAS + verb?  → the answer is the OBJECT  (Akkusativ)\n\n' +
-          'Sentence: "Ich kaufe den Tisch."\n' +
-          '  Wer kauft?  → Ich.        (subject)\n' +
-          '  Wen/Was kaufe ich? → den Tisch.   (object → Akkusativ → der became den)\n\n' +
-          '"Wen" literally means "whom" — German kept the -m/-n ending English mostly dropped. If "whom/what" fits the slot, that noun is in the Akkusativ.',
+      { rule: '⭐ The 5-second test — Wer/Was vs Wen/Was',
+        summary: 'Ask the verb a question: WER/WAS finds the subject; WEN/WAS finds the object.',
+        table: {
+          head: ['question', 'finds', 'case'],
+          rows: [
+            ['Wer / Was + verb?', 'the subject', 'Nominativ'],
+            ['Wen / Was + verb?', 'the object',  { t: 'Akkusativ', hl: true }],
+          ],
+        },
+        examples: [
+          { de: 'Ich kaufe den Tisch.', en: 'I am buying the table.', note: 'Wer kauft? → ich. Wen/Was? → den Tisch (Akk)' },
+        ],
+        tip: '"Wen" means "whom" — German kept the -n ending English mostly dropped. If "whom/what" fits the slot, that noun is Akkusativ.',
       },
       { rule: '🚫 kein / mein / dein all follow "ein"',
-        body:
-          'Any word built on the "ein"-pattern takes the SAME masculine -en ending in the Akkusativ:\n\n' +
-          '  ein   → einen     Ich habe einen Hund.\n' +
-          '  kein  → keinen    Ich habe keinen Hund.   (no dog)\n' +
-          '  mein  → meinen    Ich besuche meinen Bruder.\n' +
-          '  dein  → deinen    Ich sehe deinen Vater.\n' +
-          '  sein  → seinen / ihr → ihren / unser → unseren …\n\n' +
-          'They are called "ein-words" for exactly this reason — learn the ein → einen flip and they ALL come free. (Feminine/neuter/plural of these stay unchanged too: meine / mein / meine.)',
+        summary: 'Every "ein-word" takes the same masculine -en ending in the Akkusativ.',
+        table: {
+          head: ['word', 'Akk masc', 'example'],
+          rows: [
+            ['ein',  { t: 'einen', hl: true },  'Ich habe einen Hund.'],
+            ['kein', { t: 'keinen', hl: true }, 'Ich habe keinen Hund.'],
+            ['mein', { t: 'meinen', hl: true }, 'Ich besuche meinen Bruder.'],
+            ['dein', { t: 'deinen', hl: true }, 'Ich sehe deinen Vater.'],
+            ['sein / ihr / unser', 'seinen / ihren / unseren', 'all add -en'],
+          ],
+        },
+        tip: 'Learn the ein → einen flip and every ein-word comes free. Their feminine / neuter / plural forms stay unchanged (meine / mein / meine).',
       },
-      { rule: '🎬 WHICH VERBS TRIGGER IT? — the action-on-a-thing verbs',
-        body:
-          'Most everyday verbs take an Akkusativ object — the thing being acted on:\n\n' +
-          '  sehen (see) · haben (have) · kaufen (buy) · brauchen (need) ·\n' +
-          '  besuchen (visit) · essen (eat) · trinken (drink) · nehmen (take) ·\n' +
-          '  lesen (read) · suchen (look for) · finden (find) · machen (do)\n\n' +
-          '⚠ EXCEPTION — "sein" (to be) takes NO object, it takes Nominativ on BOTH sides:\n' +
-          '  "Er ist ein Lehrer." (NOT einen) — sein is an equals-sign, not an action.\n' +
-          '  Compare: "Er hat einen Hund" (haben → Akk) vs "Das ist ein Hund" (sein → Nom).',
+      { rule: '🎬 Which verbs trigger it? — action-on-a-thing verbs',
+        summary: 'Many common action verbs take an Akkusativ object. Linking verbs (sein, werden, bleiben) take Nominativ on both sides; a few verbs take other cases you will meet later.',
+        bullets: [
+          'Akk verbs: sehen (see) · haben (have) · kaufen (buy) · brauchen (need) · besuchen (visit) · essen (eat) · trinken (drink) · nehmen (take) · lesen (read) · suchen (look for) · finden (find) · machen (do).',
+        ],
+        examples: [
+          { de: 'Er hat einen Hund.', en: 'He has a dog.',    note: 'haben → Akkusativ (einen)' },
+          { de: 'Das ist ein Hund.',  en: 'That is a dog.',   note: 'sein → Nominativ (ein, NOT einen)' },
+        ],
+        warn: 'sein (to be) takes NO object — it is an equals-sign: "Er ist ein Lehrer" (NOT einen). Compare haben (Akk) with sein (Nom).',
       },
-      { rule: '🚦 PITFALLS — the masculine traps',
-        body:
-          '• The flip is INVISIBLE on f / n / pl — "Ich sehe die Frau / das Kind / die Kinder" never change. Don\'t over-correct them.\n' +
-          '• It only happens to the OBJECT. The subject masculine stays der: "Der Hund sieht den Mann."\n' +
-          '• -en ending is the masculine Akk fingerprint: einen / keinen / meinen / deinen all end -en.\n' +
-          '• sein (to be) is the big exception — "Ich bin ein Mann" (Nom), never "einen".\n' +
-          '• Weak masculine nouns (der Student, der Junge, der Herr, der Kollege) ALSO add -n/-en to the NOUN in the Akk: "Ich sehe den Studenten / den Jungen / den Herrn / den Kollegen." (A small advanced group — just notice it for now.)',
+      { rule: '🚦 Pitfalls — the masculine traps',
+        summary: 'The traps that come with the very first case.',
+        bullets: [
+          'The flip is INVISIBLE on f / n / pl: "Ich sehe die Frau / das Kind / die Kinder" never change — do not over-correct them.',
+          'It only hits the OBJECT. A masculine subject stays der: "Der Hund sieht den Mann."',
+          'The -en ending is the masculine Akk fingerprint: einen / keinen / meinen / deinen.',
+          'sein is the big exception: "Ich bin ein Mann" (Nom), never "einen".',
+          'Weak masculine nouns also add -n/-en to the NOUN itself: den Studenten · den Jungen · den Herrn · den Kollegen. (A small group — just notice it for now.)',
+        ],
       },
     ],
     exercises: [
