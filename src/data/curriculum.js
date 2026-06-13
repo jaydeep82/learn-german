@@ -3671,7 +3671,7 @@ export const days = [
     titleDe: 'Verben mit Akkusativ',
     emoji: '🎯',
     objective: 'Know which everyday verbs trigger an Akkusativ object — and, just as important, which verbs DON\'T (sein/werden take Nominativ; a few take Dativ).',
-    intro: 'Most German verbs describe doing something TO a thing — and that thing goes in the Akkusativ. Today you collect the high-frequency "Akkusativ verbs" so the masculine flip becomes automatic. You\'ll also learn the must-know "es gibt" (always Akkusativ!), the first-mention→ein / second-mention→der rhythm, and the key exceptions: sein/werden take NO object, and a handful of verbs (helfen, danken) take Dativ instead — coming next.',
+    intro: 'Most German verbs describe doing something TO a thing — and that thing goes in the Akkusativ. Today you collect the high-frequency "Akkusativ verbs" so the masculine flip becomes automatic. You\'ll also learn the must-know "es gibt" (always Akkusativ!), the first-mention→ein / second-mention→der rhythm, and the key exceptions: sein/werden/bleiben take NO object (Nominativ on both sides), and a handful of verbs (helfen, danken) take Dativ instead — coming next.',
     vocabulary: [
       // 🎯 CORE AKKUSATIV VERBS — action-on-a-thing (the big everyday set)
       { de: 'haben',     en: 'to have',          emoji: '✋', hint: '🔁 Day 6 · have WHAT? → Akk',           example: 'Ich habe einen Hund.',       exampleEn: 'I have a dog.' },
@@ -3704,64 +3704,77 @@ export const days = [
       { de: 'danken',    en: 'to thank (takes DATIV!)', emoji: '🙏', hint: '⚠ Day 26 preview · "Ich danke dem Lehrer" — NOT den', example: 'Ich danke dem Lehrer.', exampleEn: 'I thank the teacher.' },
     ],
     grammar: [
-      { rule: '⭐ WHAT IS AN "AKKUSATIV VERB"? — the action-on-a-thing test',
-        body:
-          'A transitive verb does its action TO a direct object — and that object goes in the Akkusativ. Find it with the Day-23 test:\n\n' +
-          '  verb + WEN / WAS?  → the answer is the Akkusativ object.\n\n' +
-          '  Ich kaufe … was?      → einen Tisch.   (kaufen → Akk)\n' +
-          '  Ich sehe … wen?       → den Mann.      (sehen → Akk)\n' +
-          '  Ich brauche … was?    → eine Lampe.    (brauchen → Akk)\n\n' +
-          'The big everyday Akkusativ verbs to memorise as a block:\n' +
-          '  haben · brauchen · kaufen · suchen · finden · nehmen · sehen ·\n' +
-          '  essen · trinken · lesen · schreiben · hören · kennen · mögen ·\n' +
-          '  fragen · besuchen · machen · möchten.',
+      { rule: '⭐ What is an "Akkusativ verb"? — the action-on-a-thing test',
+        summary: 'A transitive verb does its action TO a direct object — and that object is Akkusativ. Find it with WEN/WAS.',
+        examples: [
+          { de: 'Ich kaufe einen Tisch.', en: 'I am buying a table.', note: 'kaufe … was? → einen Tisch (Akk)' },
+          { de: 'Ich sehe den Mann.',     en: 'I see the man.',       note: 'sehe … wen? → den Mann (Akk)' },
+          { de: 'Ich brauche eine Lampe.', en: 'I need a lamp.',      note: 'brauche … was? → eine Lampe (Akk)' },
+        ],
+        bullets: [
+          'The everyday Akkusativ verbs, as one block to memorise: haben · brauchen · kaufen · suchen · finden · nehmen · sehen · essen · trinken · lesen · schreiben · hören · kennen · mögen · fragen · besuchen · machen · möchten.',
+        ],
       },
-      { rule: '✨ ES GIBT — the construction that ALWAYS takes Akkusativ',
-        body:
-          '"es gibt" = "there is / there are". It is one fixed phrase and its noun is ALWAYS Akkusativ — so masculine always flips to den/einen:\n\n' +
-          '  Es gibt einen Supermarkt.   (m → einen) ⚠\n' +
-          '  Es gibt eine Apotheke.      (f → eine)\n' +
-          '  Es gibt ein Problem.        (n → ein)\n' +
-          '  Es gibt viele Leute.        (pl → viele)\n\n' +
-          'The literal logic: "es" is the subject (Nominativ), so the thing that exists is the OBJECT. Question form: "Gibt es einen Supermarkt hier?" — super common when asking for directions.',
+      { rule: '✨ es gibt — the construction that ALWAYS takes Akkusativ',
+        summary: '"es gibt" = "there is / there are". Its noun is ALWAYS Akkusativ, so masculine always flips.',
+        table: {
+          head: ['gender', 'es gibt …', 'note'],
+          rows: [
+            ['m',  { t: 'einen Supermarkt', hl: true }, '⚠ flips'],
+            ['f',  'eine Apotheke', ''],
+            ['n',  'ein Problem', ''],
+            ['pl', 'viele Leute', ''],
+          ],
+        },
+        examples: [
+          { de: 'Gibt es einen Supermarkt hier?', en: 'Is there a supermarket here?', note: 'question form — very common when asking for directions' },
+        ],
+        tip: '"es" is the subject (Nominativ), so the thing that exists is the object → Akkusativ.',
       },
-      { rule: '⚠ THE EXCEPTION — sein / werden take NO object (Nominativ)',
-        body:
-          'Not every verb has an Akkusativ object. The "equals-sign" verbs link two things that are the SAME — so both sides stay Nominativ:\n\n' +
-          '  sein   (to be)        Er ist ein Lehrer.    (NOT einen) ✓\n' +
-          '  werden (to become)    Er wird ein guter Arzt. (NOT einen) ✓\n' +
-          '  heißen (to be called) Das heißt ein Problem.  (Nominativ)\n' +
-          '  bleiben (to stay)     Er bleibt mein Freund.  (Nominativ)\n\n' +
-          '🧠 Think of sein/werden as "=" : "Er = ein Lehrer." Both sides are the same person, so there is no receiver, no Akkusativ. This is THE most common case mistake — "Ich bin einen Student" ✗ → "Ich bin ein Student" ✓.',
+      { rule: '⚠ The exception — sein / werden / bleiben take NO object (Nominativ)',
+        summary: 'The "equals-sign" verbs link two things that are the SAME — so both sides stay Nominativ.',
+        table: {
+          head: ['verb', 'example', 'note'],
+          rows: [
+            ['sein (to be)',       'Er ist ein Lehrer.',     'NOT einen ✓'],
+            ['werden (to become)', 'Er wird ein guter Arzt.', 'NOT einen ✓'],
+            ['bleiben (to stay)',  'Er bleibt mein Freund.',  'Nominativ'],
+          ],
+        },
+        warn: 'Think of sein/werden/bleiben as "=" : both sides are the same person, so there is no receiver and no Akkusativ. THE most common case mistake: "Ich bin einen Student" ✗ → "Ich bin ein Student" ✓.',
       },
-      { rule: '🅿️ NOT ALL OBJECTS ARE AKKUSATIV — the Dativ verbs (preview)',
-        body:
-          'A small but very common group of verbs takes a DATIV object instead of Akkusativ. You meet the Dativ properly on Day 25-26, but flag these now so you don\'t auto-flip them to den:\n\n' +
-          '  helfen   (to help)        Ich helfe dem Mann.    (dem, NOT den) ⚠\n' +
-          '  danken   (to thank)       Ich danke dem Lehrer.  (dem) ⚠\n' +
-          '  gehören  (to belong to)   Das Buch gehört dem Kind.\n' +
-          '  gefallen (to please)      Das Buch gefällt dem Mann.\n' +
-          '  antworten (to answer)     Ich antworte dem Freund.\n\n' +
-          'These are worth memorising as "the Dativ verbs". Everything NOT on this short list almost always takes Akkusativ.',
+      { rule: '🅿️ Not all objects are Akkusativ — the Dativ verbs (preview)',
+        summary: 'A small but very common group takes a DATIV object — flag them now so you do not auto-flip them to den. Full Dativ on Days 25-26.',
+        table: {
+          head: ['verb', 'meaning', 'example'],
+          rows: [
+            ['helfen',    'to help',      'Ich helfe dem Mann. (dem, NOT den) ⚠'],
+            ['danken',    'to thank',     'Ich danke dem Lehrer.'],
+            ['gehören',   'to belong to', 'Das Buch gehört dem Kind.'],
+            ['gefallen',  'to please',    'Das Buch gefällt dem Mann.'],
+            ['antworten', 'to answer',    'Ich antworte dem Freund.'],
+          ],
+        },
+        tip: 'Memorise these as the high-frequency Dativ verbs to watch for. Akkusativ is the common default for action verbs — but remember sein/werden/bleiben take Nominativ, and many verbs take no object at all (schlafen, gehen, arbeiten).',
       },
-      { rule: '📖 FIRST MENTION vs SECOND MENTION — ein → der',
-        body:
-          'Within a story or paragraph the article also tracks NEW vs KNOWN information:\n\n' +
-          '• First time you introduce a thing → ein / eine / einen (one of many).\n' +
-          '• Every time after → der / die / das (now we both know which one).\n\n' +
-          '  „Ich habe einen Hund. Der Hund ist klein."\n' +
-          '       first mention → einen        second → der (subject again)\n' +
-          '  „Ich kaufe ein Buch. Das Buch ist gut."\n\n' +
-          'This is the same logic as English "a … the …". Combine it with the case rules: first mention of a masculine OBJECT = einen, then as the subject of the next sentence = der.',
+      { rule: '📖 First mention vs second mention — ein → der',
+        summary: 'The article also tracks NEW vs KNOWN: first mention → ein/eine/einen; every time after → der/die/das.',
+        examples: [
+          { de: 'Ich habe einen Hund. Der Hund ist klein.', en: 'I have a dog. The dog is small.', note: 'first mention einen (object) → then der (subject)' },
+          { de: 'Ich kaufe ein Buch. Das Buch ist gut.',    en: 'I am buying a book. The book is good.', note: 'first ein → then das' },
+        ],
+        tip: 'Same logic as English "a … the …". First mention of a masculine object = einen; as the subject of the next sentence = der.',
       },
-      { rule: '🚦 PITFALLS — pick the right case per verb',
-        body:
-          '• Most action verbs → Akkusativ (masc der→den, ein→einen).\n' +
-          '• sein / werden / heißen / bleiben → Nominativ, no flip ("Er ist ein Mann").\n' +
-          '• helfen / danken / gehören / gefallen / antworten → Dativ (dem/der), NOT Akkusativ.\n' +
-          '• "fragen" takes Akkusativ in German even though English "ask TO someone" feels indirect: "Ich frage den Lehrer." ✓\n' +
-          '• "es gibt" is always Akkusativ — "Gibt es einen Bahnhof?" not "ein Bahnhof".\n' +
-          '• kennen (people/places you\'re familiar with) vs wissen (facts) — both common, but only kennen takes a simple Akk noun.',
+      { rule: '🚦 Pitfalls — pick the right case per verb',
+        summary: 'Match the case to the verb, not to a guess.',
+        bullets: [
+          'Most action verbs → Akkusativ (masc der→den, ein→einen).',
+          'sein / werden / heißen / bleiben → Nominativ, no flip ("Er ist ein Mann").',
+          'helfen / danken / gehören / gefallen / antworten → Dativ (dem/der), NOT Akkusativ.',
+          '"fragen" takes Akkusativ in German even though English "ask TO someone" feels indirect: "Ich frage den Lehrer." ✓',
+          '"es gibt" is always Akkusativ — "Gibt es einen Bahnhof?", not "ein Bahnhof".',
+          'kennen (people/places you are familiar with) vs wissen (facts) — both common, but only kennen takes a simple Akkusativ noun.',
+        ],
       },
     ],
     exercises: [

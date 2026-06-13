@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.14.0';
+export const VERSION = '3.14.1';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.14.1',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 4 batch 2 — Day 24 enriched (verbs that take Akkusativ)',
+    notes: [
+      'Day 24 converted to the rich visual grammar shape and adversarially verified.',
+      'The WEN/WAS transitive test + the Akkusativ-verb block; the es-gibt table (always Akkusativ); the sein/werden/bleiben copula table (Nominativ on both sides — replaced the original awkward "Das heißt ein Problem" example with bleiben); the Dativ-verb preview (helfen/danken/gehören/gefallen/antworten → dem); first/second-mention ein→der; per-verb pitfalls.',
+      'Two accuracy fixes from verification: softened the over-absolute "everything not on the Dativ list takes Akkusativ" tip (it ignored sein/werden/bleiben and intransitive verbs), and aligned the intro to name sein/werden/bleiben (it previously listed only two no-object verbs).',
+      'Everything appears in the Grammar reference AND the Day 24 lesson intro via the shared GrammarItem renderer.',
+    ],
+  },
   {
     version: '3.14.0',
     date: '2026-06-14',
