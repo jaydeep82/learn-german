@@ -2841,70 +2841,79 @@ export const days = [
       { de: 'genau',          en: 'exactly',            emoji: '🎯', hint: 'hardens the number · "precisely"',              example: 'Genau dreihundert Euro.',              exampleEn: 'Exactly three hundred euros.' },
     ],
     grammar: [
-      { rule: '⭐ THE 3-DIGIT FORMULA — one Lego rule for ALL 3-digit numbers',
-        body:
-          'Read it like Lego — biggest unit first, all glued into ONE word:\n\n' +
-          '  multiplier-hundert + (units-UND-tens)\n\n' +
-          'Worked examples (the underscores show the Lego seams):\n\n' +
-          '  125 = ein_hundert + fünf_und_zwanzig   → hundertfünfundzwanzig\n' +
-          '  234 = zwei_hundert + vier_und_dreißig  → zweihundertvierunddreißig\n' +
-          '  365 = drei_hundert + fünf_und_sechzig  → dreihundertfünfundsechzig\n' +
-          '  678 = sechs_hundert + acht_und_siebzig → sechshundertachtundsiebzig\n' +
-          '  999 = neun_hundert + neun_und_neunzig  → neunhundertneunundneunzig\n\n' +
-          '🧠 The "und" only appears INSIDE the tens-units flip (fünf-und-zwanzig). NEVER between the hundreds and the rest.\n' +
-          '  hundertfünfundzwanzig ✓\n' +
-          '  hundert und fünfundzwanzig ✗',
+      { rule: '⭐ The 3-digit formula — one Lego rule for every 3-digit number',
+        summary: 'multiplier-hundert + (units-UND-tens), all glued into ONE word.',
+        table: {
+          head: ['number', 'Lego seams', 'one word'],
+          rows: [
+            ['125', 'einhundert + fünfundzwanzig',  { t: 'hundertfünfundzwanzig', hl: true }],
+            ['234', 'zweihundert + vierunddreißig', { t: 'zweihundertvierunddreißig', hl: true }],
+            ['365', 'dreihundert + fünfundsechzig', { t: 'dreihundertfünfundsechzig', hl: true }],
+            ['678', 'sechshundert + achtundsiebzig', { t: 'sechshundertachtundsiebzig', hl: true }],
+            ['999', 'neunhundert + neunundneunzig', { t: 'neunhundertneunundneunzig', hl: true }],
+          ],
+        },
+        tip: 'Read biggest unit first and glue it into one word — no spaces, no hyphens.',
+        warn: 'The "und" appears ONLY inside the tens-units flip (fünfUNDzwanzig). NEVER between the hundreds and the rest: hundertfünfundzwanzig ✓, hundert und fünfundzwanzig ✗.',
       },
-      { rule: '⭐ HUNDREDS & THOUSANDS — same Lego rule, all one word',
-        body:
-          'Hundreds (multiplier + hundert):\n' +
-          '  100 = (ein)hundert     500 = fünfhundert\n' +
-          '  200 = zweihundert      600 = sechshundert  ⚠ keeps full -s\n' +
-          '  300 = dreihundert      700 = siebenhundert ⚠ keeps full -en\n' +
-          '  400 = vierhundert      900 = neunhundert\n\n' +
-          'Thousands work the same way (multiplier + tausend):\n' +
-          '  1 000 = (ein)tausend\n' +
-          '  2 000 = zweitausend\n' +
-          '  10 000 = zehntausend\n' +
-          '  1 234 = ein_tausend + zwei_hundert + vier_und_dreißig → eintausendzweihundertvierunddreißig\n\n' +
-          '🧠 Spelling traps to memorise: only 16 (sechzehn) and 60 (sechzig) drop the -s of sechs. In sechshundert (600) the -s comes BACK because of the linking position. Same for 70: 17 (siebzehn) / 70 (siebzig) drop the -en — but siebenhundert (700) keeps it.',
+      { rule: '⭐ Hundreds & thousands — same rule, all one word',
+        summary: 'Multiplier + hundert (or + tausend). Thousands work exactly like hundreds.',
+        table: {
+          head: ['number', 'one word', 'note'],
+          rows: [
+            ['100',    '(ein)hundert', 'ein- is optional'],
+            ['200',    'zweihundert', ''],
+            ['600',    'sechshundert', '⚠ keeps the full -s'],
+            ['700',    'siebenhundert', '⚠ keeps the full -en'],
+            ['1 000',  '(ein)tausend', 'ein- is optional'],
+            ['10 000', 'zehntausend', ''],
+            ['1 234',  'eintausendzweihundertvierunddreißig', 'tausend + hundert + flip'],
+          ],
+        },
+        warn: 'Spelling traps: 16 (sechzehn) and 60 (sechzig) drop the -s of sechs, but 600 (sechshundert) brings it back. 17 (siebzehn) / 70 (siebzig) drop the -en, but 700 (siebenhundert) keeps it.',
       },
-      { rule: '⭐ READING YEARS — the German shortcut',
-        body:
-          'German has TWO ways to read a year, depending on the century:\n\n' +
-          '  📅 1100 – 1999 → "<XX>hundert + <YY>"  (read as HUNDREDS, not thousands)\n' +
-          '    1989 = neunzehnhundert + neunundachtzig\n' +
-          '         = neunzehnhundertneunundachtzig\n' +
-          '    1492 = vierzehnhundertzweiundneunzig\n' +
-          '    1900 = neunzehnhundert\n\n' +
-          '  📅 2000 +     → "zweitausend + units"  (normal thousands rule)\n' +
-          '    2000 = zweitausend\n' +
-          '    2024 = zweitausendvierundzwanzig\n' +
-          '    2026 = zweitausendsechsundzwanzig\n\n' +
-          '⚠ English speakers default to "twenty twenty-four" (= zwanzig vierundzwanzig). That sounds wrong in German — use the thousands form. The neunzehnhundert trick is only for years STARTING with 11–19.',
+      { rule: '⭐ Reading years — the German shortcut',
+        summary: 'Two ways, by century: 1100–1999 read as hundreds; 2000+ read as thousands.',
+        table: {
+          head: ['year', 'read as', 'spoken'],
+          rows: [
+            ['1989', 'neunzehnhundert + 89', { t: 'neunzehnhundertneunundachtzig', hl: true }],
+            ['1492', 'vierzehnhundert + 92', 'vierzehnhundertzweiundneunzig'],
+            ['1900', 'neunzehnhundert',      'neunzehnhundert'],
+            ['2000', 'zweitausend',          'zweitausend'],
+            ['2024', 'zweitausend + 24',     { t: 'zweitausendvierundzwanzig', hl: true }],
+            ['2026', 'zweitausend + 26',     'zweitausendsechsundzwanzig'],
+          ],
+        },
+        warn: 'The neunzehnhundert trick is only for years starting 11–19. From 2000 on, use the thousands form — never "zwanzig vierundzwanzig" for 2024.',
       },
-      { rule: '💶 PRICES — putting big numbers to work',
-        body:
-          'The two checkout phrases you\'ll hear daily:\n\n' +
-          '  Q: Wie viel kostet das?       (formal · written prices)\n' +
-          '  A: Das kostet 199 Euro.       — Das kostet hundertneunundneunzig Euro.\n\n' +
-          '  Q: Was kostet das?            (casual)\n' +
-          '  A: Das macht 25 Euro fünfzig. — Das macht fünfundzwanzig Euro fünfzig.\n\n' +
-          'Speaking tip: cents are usually dropped if they\'re ,00. Otherwise just say the cent number after Euro — "fünfundzwanzig Euro fünfzig" is enough; the word "Cent" is optional.\n\n' +
-          'Number-softeners + hardeners:\n' +
-          '  ungefähr hundert Euro  — about €100\n' +
-          '  genau hundert Euro     — exactly €100\n' +
-          '  ca. hundert Euro       — circa €100 (very common in writing)',
+      { rule: '💶 Prices — putting big numbers to work',
+        summary: 'Ask with "Wie viel kostet das?", answer with "Das kostet …" or "Das macht …".',
+        table: {
+          head: ['phrase', 'register', 'example'],
+          rows: [
+            ['Wie viel kostet das?', 'neutral / standard', 'the everyday ask'],
+            ['Was kostet das?',      'casual',           'shorter'],
+            ['Das kostet …',         'answer',           'Das kostet 199 Euro.'],
+            ['Das macht …',          'at checkout',      'Das macht 25 Euro fünfzig.'],
+          ],
+        },
+        examples: [
+          { de: 'Das kostet hundertneunundneunzig Euro.', en: 'That costs 199 euros.',        note: '199 = hundert + neunundneunzig' },
+          { de: 'Das macht fünfundzwanzig Euro fünfzig.', en: 'That comes to 25.50 euros.',   note: 'cents said after Euro; the word "Cent" is optional' },
+        ],
+        tip: 'Cents at ,00 are dropped. Soften or harden with ungefähr (about), genau (exactly), or ca. (circa, in writing).',
       },
-      { rule: '🚦 PITFALLS & SPOKEN SHORTCUTS',
-        body:
-          '• ONE WORD always. "zweihundertvierunddreißig" — no spaces, no hyphens. The flip "und" is the only "und" in the whole number.\n' +
-          '• "ein" is optional at the start of round hundreds/thousands: hundert ≈ einhundert · tausend ≈ eintausend. In speech the short forms win; in writing or for phone-clarity, use the full einhundert / eintausend.\n' +
-          '• ⚠ Never insert "und" between hundreds and the rest. hundert und fünf ✗ → hundertfünf ✓.\n' +
-          '• 16 / 60 drop the -s of sechs (sechzehn · sechzig), but 600 (sechshundert) keeps the full sechs. Same for 17 / 70 vs 700.\n' +
-          '• German uses , for decimals and . for thousands — opposite of English. 1.234,56 € is "one thousand two hundred thirty-four euros fifty-six".\n' +
-          '• Years 1100-1999: read as "neunzehnhundert + last two", NOT as four digits in pairs.\n' +
-          '• Phone / room / house numbers use "Nummer", not "Zahl". "Welche Nummer hast du?" not "Welche Zahl?".',
+      { rule: '🚦 Pitfalls & spoken shortcuts',
+        summary: 'The number traps to avoid.',
+        bullets: [
+          'ONE WORD always: zweihundertvierunddreißig — no spaces, no hyphens.',
+          '"ein" is optional on round hundreds/thousands: hundert ≈ einhundert. Speech drops it; writing or phone-clarity keeps einhundert / eintausend.',
+          'Never insert "und" between the hundreds and the rest: hundert und fünf ✗ → hundertfünf ✓.',
+          '16 / 60 drop the -s of sechs, but 600 (sechshundert) keeps it. Same for 17 / 70 vs 700.',
+          'German swaps the separators: "," is the decimal and "." is the thousands mark — 1.234,56 €.',
+          'Phone / room / house = die Nummer, not die Zahl: "Welche Nummer hast du?".',
+        ],
       },
     ],
     exercises: [
@@ -6304,83 +6313,85 @@ export const days = [
       { de: 'der Rabatt',     en: 'discount',                      emoji: '🎯', hint: '"10 % Rabatt" = 10 % off',                     example: 'Es gibt zehn Prozent Rabatt.',             exampleEn: 'There is a ten percent discount.' },
     ],
     grammar: [
-      { rule: '⭐ BIG NUMBERS — same Lego rule, more bricks',
-        body:
-          'Past 1 000 the formula stays the same. Read biggest-first, glue everything into ONE word:\n\n' +
-          '  multiplier·tausend  +  multiplier·hundert  +  units-UND-tens\n\n' +
-          'Worked examples (underscores show the Lego seams):\n\n' +
-          '  1 234  = ein_tausend + zwei_hundert + vier_und_dreißig\n' +
-          '         → eintausendzweihundertvierunddreißig\n' +
-          '  9 876  = neun_tausend + acht_hundert + sechs_und_siebzig\n' +
-          '         → neuntausendachthundertsechsundsiebzig\n' +
-          '  24 499 = vier_und_zwanzig·tausend + vier_hundert + neun_und_neunzig\n' +
-          '         → vierundzwanzigtausendvierhundertneunundneunzig\n\n' +
-          '⭐ THE TWIST AT 21 000+: the multiplier in front of "tausend" itself uses the FLIP rule.\n' +
-          '  24 000 = vier-UND-zwanzig + tausend → vierundzwanzigtausend (NOT "zwanzigvierhausend")\n' +
-          '  73 000 = drei-UND-siebzig + tausend → dreiundsiebzigtausend\n\n' +
-          '🧠 Quick parse: chunk the digits from the right in 3s (24 499 → 24 | 499) and read each chunk with its unit label (tausend / hundert / nothing).',
+      { rule: '⭐ Big numbers — same Lego rule, more bricks',
+        summary: 'multiplier·tausend + multiplier·hundert + units-UND-tens, all one word.',
+        table: {
+          head: ['number', 'Lego seams', 'one word'],
+          rows: [
+            ['1 234',  'eintausend + zweihundert + vierunddreißig',          { t: 'eintausendzweihundertvierunddreißig', hl: true }],
+            ['9 876',  'neuntausend + achthundert + sechsundsiebzig',        { t: 'neuntausendachthundertsechsundsiebzig', hl: true }],
+            ['24 499', 'vierundzwanzigtausend + vierhundert + neunundneunzig', { t: 'vierundzwanzigtausendvierhundertneunundneunzig', hl: true }],
+          ],
+        },
+        tip: 'Chunk the digits from the right in 3s (24 499 → 24 | 499) and read each chunk with its label (tausend / hundert / —).',
+        warn: 'The twist at 21 000+: the multiplier before "tausend" itself flips. 24 000 = vierundzwanzigtausend ✓ (not "zwanzigviertausend"); 73 000 = dreiundsiebzigtausend.',
       },
-      { rule: '⭐ MILLION & MILLIARDE — different rules + the BILLION trap',
-        body:
-          'Million and Milliarde are NOUNS, not number-suffixes. They behave differently from tausend:\n\n' +
-          '  • Feminine (DIE): die Million · die Milliarde\n' +
-          '  • Take the indefinite article "eine" — "eine Million" (NOT "ein Million") ✓\n' +
-          '  • Stand as SEPARATE words — "eine Million Euro" (not "einmillioneuro")\n' +
-          '  • Capital first letter — "eine Million" (always capitalised)\n' +
-          '  • Plural: Millionen / Milliarden — "drei Millionen Euro"\n\n' +
-          '⚠ THE FALSE-FRIEND BILLION TRAP:\n' +
-          '  English BILLION  = 1 000 000 000 (10⁹)     →  German MILLIARDE\n' +
-          '  English TRILLION = 1 000 000 000 000 (10¹²) →  German BILLION\n\n' +
-          'Reading "der Staat hat 1 Billion Euro Schulden" as "1 billion" loses you a factor of 1 000! Always use Milliarde for the English billion.',
+      { rule: '⭐ Million & Milliarde — the false-friend billion trap',
+        summary: 'Million and Milliarde are feminine NOUNS, not suffixes — and Milliarde = the English billion.',
+        table: {
+          head: ['feature', 'rule', 'example'],
+          rows: [
+            ['gender',  'feminine → eine (not ein)',     'eine Million Euro'],
+            ['spacing', 'separate, capitalised word',    'eine Million Euro'],
+            ['plural',  'Millionen / Milliarden',        'drei Millionen Euro'],
+          ],
+        },
+        examples: [
+          { de: 'Eine Million Menschen leben hier.', en: 'One million people live here.', note: 'eine, not ein' },
+          { de: 'Eine Milliarde Sterne.',            en: 'A billion stars.',              note: 'Milliarde = the English billion' },
+        ],
+        warn: 'False-friend trap: English BILLION (a thousand million) = German MILLIARDE; English TRILLION (a million million) = German BILLION. Use Milliarde for the English billion — getting it wrong is a factor of 1000.',
       },
-      { rule: '⭐ DECIMALS & THOUSANDS — German swaps the . and ,',
-        body:
-          'German uses , for decimals and . for thousands — the OPPOSITE of English/US convention:\n\n' +
-          '  German  1.234,56 €   ↔   English  1,234.56\n' +
-          '  German  3,14 (Pi)    ↔   English  3.14\n' +
-          '  German  1.000        ↔   English  1,000\n\n' +
-          'Spoken decimals use the word "Komma":\n' +
-          '  3,14   →  drei Komma eins vier\n' +
-          '  9,99 € →  neun Komma neun neun Euro  (or just "neun Euro neunundneunzig")\n\n' +
-          '💶 PRICE SPEECH SHORTCUT:\n' +
-          '  Written:  12,50 €\n' +
-          '  Spoken:   "zwölf Euro fünfzig" (Cent is usually dropped)\n' +
-          '  Formal:   "zwölf Euro fünfzig Cent"',
+      { rule: '⭐ Decimals & thousands — German swaps the . and ,',
+        summary: 'German uses "," for decimals and "." for thousands — the opposite of English.',
+        table: {
+          head: ['German', 'English', 'note'],
+          rows: [
+            ['1.234,56 €', '1,234.56', 'separators swapped'],
+            ['3,14',       '3.14',     'Pi'],
+            ['1.000',      '1,000',    'thousands dot'],
+          ],
+        },
+        examples: [
+          { de: 'drei Komma eins vier',     en: '3.14 (three point one four)', note: 'spoken decimals use "Komma"' },
+          { de: 'neun Euro neunundneunzig', en: '9.99 euros',                  note: 'price shortcut — "Cent" dropped' },
+        ],
+        tip: 'Written 12,50 € → spoken "zwölf Euro fünfzig" (Cent usually dropped); formal "zwölf Euro fünfzig Cent".',
       },
-      { rule: '💶 PRICES — ask, answer, pay',
-        body:
-          'ASKING:\n' +
-          '  Wie viel kostet das?   — How much does this cost? (most common)\n' +
-          '  Was kostet das?         — same, slightly shorter\n' +
-          '  Was macht das?          — What does it come to? (at checkout)\n' +
-          '  Was ist der Preis?      — What\'s the price? (more formal)\n\n' +
-          'ANSWERING:\n' +
-          '  Das kostet 13 Euro.            — formal\n' +
-          '  Das macht 25 Euro fünfzig.     — checkout\n' +
-          '  Zehn Euro, bitte.              — a tip-or-stall reply\n' +
-          '  Hundert Euro inkl. MwSt.       — including VAT (you\'ll see "inkl. MwSt" on every receipt)\n\n' +
-          'PAYING:\n' +
-          '  Q: Bar oder mit Karte?   — Cash or card?\n' +
-          '  A: Mit Karte, bitte.     — Card, please.\n' +
-          '  A: Bar.                  — Cash.\n' +
-          '  "Stimmt so!"             — "Keep the change!" (one of the most-used checkout phrases)',
+      { rule: '💶 Prices — ask, answer, pay',
+        summary: 'The full checkout script — asking, answering and paying.',
+        table: {
+          head: ['stage', 'German', 'English'],
+          rows: [
+            ['ask',          'Wie viel kostet das?',      'How much is this?'],
+            ['ask (formal)', 'Was ist der Preis?',        'What is the price?'],
+            ['answer',       'Das macht 25 Euro fünfzig.', 'That comes to 25.50.'],
+            ['pay',          'Bar oder mit Karte?',        'Cash or card?'],
+            ['pay',          'Mit Karte, bitte.',          'Card, please.'],
+          ],
+        },
+        tip: '"Stimmt so!" = "Keep the change!" — one of the most-used checkout phrases. "inkl. MwSt" (incl. VAT) is on every receipt.',
       },
-      { rule: '🏷️ DESCRIBING PRICES — pick the right word (it\'s social!)',
-        body:
-          'The teuer / billig / günstig ladder is a REGISTER question, not just translation:\n\n' +
-          '  💸 teuer    — "expensive" · neutral observation\n' +
-          '                "Das Auto ist teuer."\n\n' +
-          '  👎 billig   — "cheap" · BEWARE: in German this often implies CHEAP QUALITY (= shoddy)\n' +
-          '                "Die Tasche ist billig" sounds dismissive\n' +
-          '                Use only when you DO mean "low quality"\n\n' +
-          '  👍 günstig  — ⭐ "affordable / good value" · the polite default\n' +
-          '                "Die Wohnung ist günstig" = "the apartment is well-priced"\n' +
-          '                In shops you\'ll hear "ein günstiges Angebot" not "ein billiges Angebot"\n\n' +
-          'SHOPPING WORDS:\n' +
-          '  im Angebot       — on sale / on offer (window-poster magic word)\n' +
-          '  X % Rabatt       — X % off (Rabatt = discount)\n' +
-          '  reduziert         — reduced ("alles reduziert")\n\n' +
-          '⚠ PITFALLS: don\'t say "kostet teuer" — that\'s "ist teuer" or "kostet viel". And don\'t call a friend\'s gift "billig" — say "günstig" to keep things polite.',
+      { rule: '🏷️ Describing prices — pick the right word (it is social!)',
+        summary: 'teuer / billig / günstig is a register choice, not just translation.',
+        table: {
+          head: ['word', 'meaning', 'use it for'],
+          rows: [
+            ['teuer',                    'expensive',                    'a neutral observation'],
+            [{ t: 'billig', hl: true },  'cheap (often = poor quality)', 'only when you mean shoddy'],
+            [{ t: 'günstig', hl: true }, 'affordable / good value',      'the polite default'],
+          ],
+        },
+        examples: [
+          { de: 'Die Wohnung ist sehr günstig.', en: 'The apartment is very good value.', note: 'günstig = well-priced, polite' },
+          { de: 'Die Tasche ist billig.',        en: 'The bag is cheap.',                 note: 'sounds dismissive — implies low quality' },
+        ],
+        bullets: [
+          'im Angebot — on sale / on offer (the shop-window magic word).',
+          'X % Rabatt — X % off (Rabatt = discount).',
+          'reduziert — reduced ("alles reduziert").',
+        ],
+        warn: 'Do not say "kostet teuer" — it is "ist teuer" or "kostet viel". And do not call a gift "billig"; say "günstig" to stay polite.',
       },
     ],
     exercises: [

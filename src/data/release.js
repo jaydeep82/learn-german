@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.13.0';
+export const VERSION = '3.13.1';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.13.1',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 3 batch 2 — Days 18-19 enriched (numbers & prices)',
+    notes: [
+      'Days 18-19 converted to the rich visual grammar shape — the numbers-and-money core of Week 3. Every compound number was adversarially verified letter-by-letter before release.',
+      'Day 18 (Numbers 100-1000): the ⭐ 3-digit Lego table (number → seams → one word); the hundreds/thousands table with the sechshundert -s and siebenhundert -en traps; the year-reading table (1100-1999 read as hundreds vs 2000+ as thousands); the prices table with audio examples; pitfalls as bullets.',
+      'Day 19 (Big numbers & prices): the ⭐ big-number Lego table plus the 21 000+ multiplier-flip; Million/Milliarde as feminine nouns with the false-friend BILLION trap (English billion = Milliarde); the German decimal/thousands separator swap (1.234,56 €); the ask/answer/pay checkout table; the teuer/billig/günstig register ladder.',
+      'Consistency fix: aligned the Day 18 price-phrase register labels with Day 19 ("Wie viel kostet das?" is the neutral default, "Was ist der Preis?" the formal one).',
+      'Everything appears in the Grammar reference AND the Day 18-19 lesson intros via the shared GrammarItem renderer.',
+    ],
+  },
   {
     version: '3.13.0',
     date: '2026-06-14',
