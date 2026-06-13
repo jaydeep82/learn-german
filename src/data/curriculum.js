@@ -7217,58 +7217,75 @@ export const days = [
       { de: 'gefällt mir',      en: 'I like it (the flip)',     emoji: '🔄', hint: '🔁 Day 26 · thing = subject',         example: 'Die Stadt gefällt mir.',  exampleEn: 'I like the city.' },
     ],
     grammar: [
-      { rule: '⭐ THE ARTICLE CHEAT-SHEET — all 12 + indefinite',
-        body:
-          '              masc.   fem.   neuter  plural\n' +
-          '  Nominativ   der     die    das     die\n' +
-          '  Akkusativ   den     die    das     die\n' +
-          '  Dativ       dem     der    dem     den +n\n' +
-          '  ─────────────────────────────────────────\n' +
-          '  Indef. Nom. ein     eine   ein     —\n' +
-          '  Indef. Akk. einen   eine   ein     —\n' +
-          '  Indef. Dat. einem   einer  einem   —\n\n' +
-          '🧠 Three shortcuts cover almost everything:\n' +
-          '  1. Only MASCULINE changes in the Akkusativ (der→den).\n' +
-          '  2. In the Dativ, masc. & neuter are identical (dem/einem).\n' +
-          '  3. Plural Dativ adds -n to the noun (den Kindern).',
+      { rule: '⭐ The article cheat-sheet — all 12 + indefinite',
+        summary: 'All three cases across four genders, definite and indefinite, on one card.',
+        table: {
+          head: ['case', 'masc', 'fem', 'neuter', 'plural'],
+          rows: [
+            ['Nominativ',  'der',                  'die',                  'das',                  'die'],
+            ['Akkusativ',  { t: 'den', hl: true }, 'die',                  'das',                  'die'],
+            ['Dativ',      { t: 'dem', hl: true }, { t: 'der', hl: true }, { t: 'dem', hl: true }, { t: 'den + -n', hl: true }],
+            ['ein · Nom',  'ein',                  'eine',                 'ein',                  '—'],
+            ['ein · Akk',  'einen',                'eine',                 'ein',                  '—'],
+            ['ein · Dat',  'einem',                'einer',                'einem',                '—'],
+          ],
+        },
+        bullets: [
+          'Three shortcuts cover almost everything: 1) only MASCULINE changes in the Akkusativ (der→den); 2) in the Dativ, masculine & neuter are identical (dem/einem); 3) plural Dativ adds -n to the noun (den Kindern).',
+        ],
       },
-      { rule: '🔍 THE QUESTION TEST — wer · wen · wem',
-        body:
-          'Identify any noun\'s case by asking the verb a question:\n\n' +
-          '  Wer + verb?  → Nominativ (subject)\n' +
-          '  Wen + verb?  → Akkusativ (direct object)\n' +
-          '  Wem + verb?  → Dativ (indirect object)\n\n' +
-          'Sentence: "Der Mann gibt dem Kind den Ball."\n' +
-          '  Wer gibt?       → Der Mann.  (Nominativ)\n' +
-          '  Wem gibt er …?  → dem Kind.  (Dativ — the receiver-person)\n' +
-          '  Was gibt er?    → den Ball.  (Akkusativ — the thing given)\n\n' +
-          '🧠 The endings echo: weR→deR (Nom), weN→deN (Akk masc.), weM→deM (Dativ).',
+      { rule: '🔍 The question test — wer · wen · wem',
+        summary: 'Identify any noun by asking the verb a question: WER → Nominativ, WEN → Akkusativ, WEM → Dativ.',
+        table: {
+          head: ['question', 'case', 'finds'],
+          rows: [
+            ['Wer + verb?', { t: 'Nominativ', hl: true }, 'the subject'],
+            ['Wen + verb?', { t: 'Akkusativ', hl: true }, 'the direct object'],
+            ['Wem + verb?', { t: 'Dativ', hl: true },     'the indirect object'],
+          ],
+        },
+        examples: [
+          { de: 'Der Mann gibt dem Kind den Ball.', en: 'The man gives the child the ball.', note: 'Wer? der Mann (Nom) · Wem? dem Kind (Dat) · Was? den Ball (Akk)' },
+        ],
+        tip: 'The endings echo: weR → deR (Nom), weN → deN (Akk masc), weM → deM (Dativ).',
       },
-      { rule: '⭐ THE 5-STEP DECISION TREE — which case?',
-        body:
-          'For any noun, ask in order:\n\n' +
-          '  1. Is it the SUBJECT (who does it)?            → Nominativ\n' +
-          '  2. Is it the DIRECT object (what is verbed)?    → Akkusativ\n' +
-          '  3. After mit/bei/zu/von/nach/aus/seit/gegenüber? → Dativ\n' +
-          '  4. After helfen/danken/gehören/gefallen/antworten/glauben? → Dativ\n' +
-          '  5. None of the above?                          → default Akkusativ\n\n' +
-          'This tree resolves the vast majority of A1 sentences. Steps 3-4 (the Dativ triggers) are the ones to over-learn, because they override the "default Akkusativ" instinct.',
+      { rule: '⭐ The 5-step decision tree — which case?',
+        summary: 'For any noun, ask in order — the first match wins.',
+        table: {
+          head: ['step', 'question', 'case'],
+          rows: [
+            ['1', 'Subject (who does it) — or a predicate noun after sein/werden/bleiben?', 'Nominativ'],
+            ['2', 'Is it the DIRECT object (what is verbed)?',              'Akkusativ'],
+            ['3', 'After mit/bei/zu/von/nach/aus/seit/gegenüber?',         { t: 'Dativ', hl: true }],
+            ['4', 'After helfen/danken/gehören/gefallen/antworten/glauben?', { t: 'Dativ', hl: true }],
+            ['5', 'None of the above?',                                     'most often Akkusativ'],
+          ],
+        },
+        tip: 'Steps 3-4 (the Dativ triggers) are the ones to over-learn — they override the "default Akkusativ" instinct.',
       },
-      { rule: '⭐ THE GIVE-SENTENCE — Dativ + Akkusativ together',
-        body:
-          'Verbs like geben, zeigen, schenken, schicken take TWO objects: a PERSON (Dativ) and a THING (Akkusativ). Default order = Dativ before Akkusativ:\n\n' +
-          '  Subject(Nom)  Verb   Person(Dat)  Thing(Akk)\n' +
-          '  Ich           gebe   dem Mann     das Buch.\n' +
-          '  Sie           zeigt  dem Kind     den Weg.\n\n' +
-          'Rule of thumb: "to/for whom" (Dativ) comes BEFORE "what" (Akkusativ) — unless the thing is a pronoun, then it flips (Ich gebe es dem Mann). At A1, Dativ-then-Akkusativ is your safe default.',
+      { rule: '⭐ The give-sentence — Dativ + Akkusativ together',
+        summary: 'Verbs like geben, zeigen, schenken, schicken take TWO objects: a PERSON (Dativ) and a THING (Akkusativ). Default order: Dativ before Akkusativ.',
+        table: {
+          head: ['subject (Nom)', 'verb', 'person (Dat)', 'thing (Akk)'],
+          rows: [
+            ['Ich', 'gebe',  'dem Mann', 'das Buch.'],
+            ['Sie', 'zeigt', 'dem Kind', 'den Weg.'],
+          ],
+        },
+        tip: '"to/for whom" (Dativ) comes BEFORE "what" (Akkusativ) — unless the thing is a pronoun, then it flips ("Ich gebe es dem Mann"). At A1, Dativ-then-Akkusativ is your safe default.',
       },
       { rule: '🎯 The 5 case mistakes to never make again',
-        body:
-          '1. "Ich sehe der Mann" ✗ → object → "Ich sehe den Mann." ✓\n' +
-          '2. "Ich helfe den Mann" ✗ → helfen takes Dativ → "Ich helfe dem Mann." ✓\n' +
-          '3. "mit den Kinder" ✗ → plural Dativ adds -n → "mit den Kindern." ✓\n' +
-          '4. "Das Buch gefällt mich" ✗ → gefallen takes Dativ → "… gefällt mir." ✓\n' +
-          '5. "Ich helfe ihn" ✗ → Dativ pronoun → "Ich helfe ihm." ✓',
+        summary: 'The case errors to leave behind for good.',
+        table: {
+          head: ['✗ wrong', '✓ right', 'why'],
+          rows: [
+            ['Ich sehe der Mann',     { t: 'Ich sehe den Mann', hl: true },  'object → Akkusativ'],
+            ['Ich helfe den Mann',    { t: 'Ich helfe dem Mann', hl: true }, 'helfen takes Dativ'],
+            ['mit den Kinder',        { t: 'mit den Kindern', hl: true },    'plural Dativ adds -n'],
+            ['Das Buch gefällt mich', { t: '… gefällt mir', hl: true },      'gefallen takes Dativ'],
+            ['Ich helfe ihn',         { t: 'Ich helfe ihm', hl: true },      'Dativ pronoun'],
+          ],
+        },
       },
     ],
     exercises: [
@@ -7739,7 +7756,7 @@ export const days = [
     titleDe: 'Akkusativ-Pronomen',
     emoji: '👀',
     objective: 'Replace any direct-object noun with the right Akkusativ pronoun (mich · dich · ihn …) — and contrast it instantly with the Dativ set (mir · dir · ihm …) you met on Day 26.',
-    intro: 'You know the subject pronouns (ich · du · er · sie · es · wir · ihr · sie/Sie). When the SAME person becomes the DIRECT object, most shape-shift: ich → mich, du → dich, er → ihn. Today you lock in the full Akkusativ set, see which ones DON\'T change (sie/es/uns/euch), and put them head-to-head with the Dativ pronouns so mich-vs-mir never trips you up.',
+    intro: 'You know the subject pronouns (ich · du · er · sie · es · wir · ihr · sie/Sie). When the SAME person becomes the DIRECT object, most shape-shift: ich → mich, du → dich, er → ihn. Today you lock in the full Akkusativ set, see which ones DON\'T change (sie · es · sie/Sie), and put them head-to-head with the Dativ pronouns so mich-vs-mir never trips you up.',
     vocabulary: [
       // 🔄 THE SHAPE-SHIFTERS — change from Nominativ to Akkusativ
       { de: 'ich → mich', en: 'me',                  emoji: '🙋', hint: '🔄 ich becomes mich · Dativ = mir',          example: 'Er liebt mich.',          exampleEn: 'He loves me.' },
@@ -7766,57 +7783,68 @@ export const days = [
       { de: 'verstehen', en: 'to understand',   emoji: '💡', hint: 'Akk · "Ich verstehe dich"',        example: 'Ich verstehe dich nicht.', exampleEn: 'I don\'t understand you.' },
     ],
     grammar: [
-      { rule: '⭐ THE FULL AKKUSATIV-PRONOUN TABLE',
-        body:
-          '              Subject (Nom)   →   Direct object (Akk)\n' +
-          '   1st sg     ich              →   mich\n' +
-          '   2nd sg     du               →   dich\n' +
-          '   3rd m      er               →   ihn      ⚠ big change\n' +
-          '   3rd f      sie              →   sie      ✅ unchanged\n' +
-          '   3rd n      es               →   es       ✅ unchanged\n' +
-          '   1st pl     wir              →   uns\n' +
-          '   2nd pl     ihr              →   euch\n' +
-          '   3rd pl     sie / Sie        →   sie / Sie ✅ unchanged\n\n' +
-          '🧠 Only FOUR forms actually change: ich→mich, du→dich, er→ihn, wir→uns, ihr→euch. The 3rd-person sie/es and formal Sie stay put.',
+      { rule: '⭐ The full Akkusativ-pronoun table',
+        summary: 'When a person becomes the direct object, most pronouns shape-shift. Only five forms actually change.',
+        table: {
+          head: ['person', 'subject (Nom)', 'direct object (Akk)', 'note'],
+          rows: [
+            ['1 sg',          'ich',       { t: 'mich', hl: true }, ''],
+            ['2 sg',          'du',        { t: 'dich', hl: true }, ''],
+            ['3 m',           'er',        { t: 'ihn', hl: true },  '⚠ big change'],
+            ['3 f',           'sie',       'sie',                    '✅ unchanged'],
+            ['3 n',           'es',        'es',                     '✅ unchanged'],
+            ['1 pl',          'wir',       { t: 'uns', hl: true },  ''],
+            ['2 pl',          'ihr',       { t: 'euch', hl: true }, ''],
+            ['3 pl / formal', 'sie / Sie', 'sie / Sie',              '✅ unchanged'],
+          ],
+        },
+        tip: 'Only five forms change: ich→mich, du→dich, er→ihn, wir→uns, ihr→euch. The 3rd-person sie/es and the formal Sie stay put.',
       },
-      { rule: '⚖️ AKKUSATIV vs DATIV PRONOUNS — the table that prevents 90% of errors',
-        body:
-          'Put the two object-pronoun sets side by side. The VERB decides which column you need (Day 26 Dativ verbs → right column; normal verbs → left):\n\n' +
-          '   Subject   Akkusativ      Dativ\n' +
-          '   ich       mich           mir\n' +
-          '   du        dich           dir\n' +
-          '   er        ihn            ihm\n' +
-          '   sie(she)  sie            ihr\n' +
-          '   es        es             ihm\n' +
-          '   wir       uns            uns    ✅ same\n' +
-          '   ihr       euch           euch   ✅ same\n' +
-          '   sie(they) sie            ihnen\n' +
-          '   Sie       Sie            Ihnen\n\n' +
-          '⚠ The killer pair is er: ihn (Akk) vs ihm (Dat). "Ich sehe ihn" (I see him) but "Ich helfe ihm" (I help him). uns and euch are identical in both — a freebie.',
+      { rule: '⚖️ Akkusativ vs Dativ pronouns — the table that prevents most errors',
+        summary: 'Put both object sets side by side. The VERB decides the column: Dativ verbs → Dativ; normal verbs → Akkusativ.',
+        table: {
+          head: ['subject', 'Akkusativ', 'Dativ'],
+          rows: [
+            ['ich',        'mich',                 'mir'],
+            ['du',         'dich',                 'dir'],
+            ['er',         { t: 'ihn', hl: true }, { t: 'ihm', hl: true }],
+            ['sie (she)',  'sie',                  'ihr'],
+            ['es',         'es',                   'ihm'],
+            ['wir',        'uns',                  'uns'],
+            ['ihr',        'euch',                 'euch'],
+            ['sie (they)', 'sie',                  'ihnen'],
+            ['Sie',        'Sie',                  'Ihnen'],
+          ],
+        },
+        warn: 'The killer pair is er: ihn (Akk) vs ihm (Dat). "Ich sehe ihn" (I see him) but "Ich helfe ihm" (I help him). uns and euch are identical in both — a freebie.',
       },
-      { rule: '🎯 WHEN TO USE AKKUSATIV PRONOUNS',
-        body:
-          'Use them as the DIRECT object of a normal (Akkusativ) verb — sehen, haben, kaufen, lieben, treffen, besuchen, einladen, anrufen, verstehen…\n\n' +
-          '  Wrong: „Ich sehe du!"        Right: „Ich sehe dich!"\n' +
-          '  Wrong: „Er liebt ich."        Right: „Er liebt mich."\n' +
-          '  Wrong: „Ich rufe er an."      Right: „Ich rufe ihn an."\n\n' +
-          'The pronoun slots in exactly where the noun object would go. With separable verbs the prefix still flies to the end: "Ich rufe dich an", "Ich lade euch ein".',
+      { rule: '🎯 When to use Akkusativ pronouns',
+        summary: 'Use them as the direct object of a normal (Akkusativ) verb — sehen, haben, kaufen, lieben, treffen, besuchen, einladen, anrufen, verstehen.',
+        examples: [
+          { de: 'Ich sehe dich!',     en: 'I see you!',   note: 'NOT "Ich sehe du"' },
+          { de: 'Er liebt mich.',     en: 'He loves me.', note: 'NOT "Er liebt ich"' },
+          { de: 'Ich rufe ihn an.',   en: 'I call him.',  note: 'separable: pronoun early, prefix at the end' },
+        ],
+        tip: 'The pronoun slots in exactly where the noun object would go. With separable verbs the prefix still flies to the end: "Ich rufe dich an", "Ich lade euch ein".',
       },
-      { rule: '📍 WORD ORDER — where the object pronoun sits',
-        body:
-          'A pronoun object likes to come EARLY — right after the conjugated verb:\n\n' +
-          '  Ich sehe ihn morgen.        (pronoun before the time word)\n' +
-          '  Morgen sehe ich ihn.        (after V2 inversion, still early)\n' +
-          '  Ich rufe dich später an.     (separable: stem-…-prefix)\n\n' +
-          'If there are TWO objects and both are pronouns, Akkusativ comes BEFORE Dativ (the reverse of the noun order): "Ich gebe es dir." (it=Akk, dir=Dat). At A1 you\'ll mostly use one pronoun at a time — just keep it close to the verb.',
+      { rule: '📍 Word order — where the object pronoun sits',
+        summary: 'A pronoun object likes to come EARLY — right after the conjugated verb.',
+        examples: [
+          { de: 'Ich sehe ihn morgen.',    en: 'I see him tomorrow.',   note: 'pronoun before the time word' },
+          { de: 'Morgen sehe ich ihn.',    en: 'Tomorrow I see him.',   note: 'after V2 inversion, still early' },
+          { de: 'Ich rufe dich später an.', en: 'I call you later.',     note: 'separable: stem … prefix' },
+        ],
+        tip: 'If both objects are pronouns, Akkusativ comes BEFORE Dativ (the reverse of the noun order): "Ich gebe es dir." At A1 you mostly use one at a time — just keep it close to the verb.',
       },
-      { rule: '🚦 PITFALLS — Akkusativ-pronoun traps',
-        body:
-          '• er → ihn (Akk), NOT ihm (that\'s Dativ). The #1 mix-up.\n' +
-          '• sie, es, uns, euch, Sie do NOT change — don\'t invent forms like "sien".\n' +
-          '• Don\'t use the subject form as an object: "Er liebt ich" ✗ → "Er liebt mich" ✓.\n' +
-          '• Dativ verbs (helfen, danken, gefallen) still take the DATIV pronoun: "Ich helfe dir", not "dich".\n' +
-          '• mich/dich are Akkusativ; mir/dir are Dativ — check the verb before you choose.',
+      { rule: '🚦 Pitfalls — Akkusativ-pronoun traps',
+        summary: 'The mix-ups to avoid.',
+        bullets: [
+          'er → ihn (Akk), NOT ihm (that is Dativ). The number-one mix-up.',
+          'sie, es, uns, euch, Sie do NOT change — do not invent forms like "sien".',
+          'Do not use the subject form as an object: "Er liebt ich" ✗ → "Er liebt mich" ✓.',
+          'Dativ verbs (helfen, danken, gefallen) still take the DATIV pronoun: "Ich helfe dir", not "dich".',
+          'mich/dich are Akkusativ; mir/dir are Dativ — check the verb before you choose.',
+        ],
       },
     ],
     exercises: [

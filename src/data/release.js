@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.14.2';
+export const VERSION = '3.14.3';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.14.3',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 4 complete — Days 27-28 enriched (case review + Akkusativ pronouns)',
+    notes: [
+      'Days 27-28 converted to the rich visual grammar shape, completing Week 4 — every grammar day from 1 to 28 is now enriched.',
+      'Day 28 (Akkusativ pronouns): the full Akkusativ-pronoun table; the Akkusativ-vs-Dativ side-by-side (the ihn/ihm killer pair); when-to-use and word-order examples; pitfalls. Fixed an original miscount ("four forms change" → five: mich/dich/ihn/uns/euch).',
+      'Day 27 (cases review): the full 12-cell article cheat-sheet + indefinites; the wer/wen/wem question test; the 5-step decision tree; the give-sentence (Dativ + Akkusativ) table; the 5-mistakes table.',
+      'Three accuracy fixes from verification: Day 28 intro no longer lists uns/euch as unchanged (they are the changed forms of wir/ihr — unchanged are sie · es · sie/Sie); Day 27 decision tree now routes predicate nouns after sein/werden/bleiben to Nominativ (step 1) and softens the step-5 fallback to "most often Akkusativ".',
+      'Everything appears in the Grammar reference AND the Day 27-28 lesson intros via the shared GrammarItem renderer. Weeks 1-4 (Days 1-28) are now fully enriched.',
+    ],
+  },
   {
     version: '3.14.2',
     date: '2026-06-14',
