@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.13.2';
+export const VERSION = '3.13.3';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.13.3',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 3 complete — review days 15 & 20 enriched',
+    notes: [
+      'Days 15 (Week 1+2 review) and 20 (Week 3 review) converted to the rich visual grammar shape, completing Week 3 — every grammar day from 15 to 21 is now enriched.',
+      'Day 15: the dense monospace recap blocks became clean themed bullets plus a sein/haben/werden conjugation table and a wrong→right "5 mistakes" table.',
+      'Day 20: question/number/price recaps as bullets, the wo-triple as a table, and a wrong→right "5 mistakes" table. Baked in the two Day-17 consistency fixes (the W-pattern no longer claims slot 3 is always the subject and notes the subject-question case; the wo rule now allows the split "Wo gehst du hin?" form).',
+      'Verification fix: the "all one word, no spaces" number rule is now scoped to below a million (Million/Milliarde are separate capitalized nouns: "eine Million dreihunderttausend").',
+      'Recap content now renders consistently with the rest of the Grammar reference and reads far better on mobile than the old pre-formatted text blocks.',
+    ],
+  },
   {
     version: '3.13.2',
     date: '2026-06-14',

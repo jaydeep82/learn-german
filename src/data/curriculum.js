@@ -2666,31 +2666,49 @@ export const days = [
     ],
     grammar: [
       { rule: '✅ Week 1 recap — the foundations',
-        body:
-          '🔤 Sounds: V→F · W→soft V · Z→ts · J→Y · ch (hard/soft) · sch→sh · ä/ö/ü · chs→ks.\n' +
-          '🔢 Numbers: 0-12 unique · 13-19 = unit+zehn · 21-99 FLIP (einundzwanzig). 30 dreißig · 60 sechzig · 70 siebzig.\n' +
-          '👤 Pronouns: ich · du · er/sie/es · wir · ihr · sie/Sie. Three "sies" — verb form decodes them.\n' +
-          '🪪 Articles: der (m) · die (f) · das (n) · die (pl). Learn the article WITH the noun.\n' +
-          '🟦 sein: bin · bist · ist · sind · seid · sind.\n' +
-          '🟩 haben: habe · hast · hat · haben · habt · haben — body states (Hunger/Durst) use HABEN.\n' +
-          '🟨 werden: werde · wirst · wird · werden · werdet · werden.',
+        summary: 'Sounds, numbers, pronouns, articles and the three auxiliaries.',
+        bullets: [
+          '🔤 Sounds: V→F · W→soft V · Z→ts · J→Y · ch (hard/soft) · sch→sh · ä/ö/ü · chs→ks.',
+          '🔢 Numbers: 0-12 unique · 13-19 = unit+zehn · 21-99 FLIP (einundzwanzig). 30 dreißig · 60 sechzig · 70 siebzig.',
+          '👤 Pronouns: ich · du · er/sie/es · wir · ihr · sie/Sie. Three "sies" — the verb form tells them apart.',
+          '🪪 Articles: der (m) · die (f) · das (n) · die (pl). Always learn the article WITH the noun.',
+        ],
+        table: {
+          head: ['pron.', 'sein 🟦', 'haben 🟩', 'werden 🟨'],
+          rows: [
+            ['ich',       'bin',  'habe',  'werde'],
+            ['du',        'bist', 'hast',  'wirst'],
+            ['er/sie/es', 'ist',  'hat',   'wird'],
+            ['wir',       'sind', 'haben', 'werden'],
+            ['ihr',       'seid', 'habt',  'werdet'],
+            ['sie/Sie',   'sind', 'haben', 'werden'],
+          ],
+        },
+        tip: 'Body states (Hunger, Durst, Angst) use HABEN, not sein: "Ich habe Hunger."',
       },
       { rule: '✅ Week 2 recap — building sentences',
-        body:
-          '🔁 Regular verbs: stem + -e/-st/-t/-en/-t/-en. Stem ends in -t/-d → add extra e (arbeitest).\n' +
-          '⚡ Stem-changers: e→i (essen→isst) · e→ie (sehen→sieht) · a→ä (fahren→fährt). Only du + er/sie/es change.\n' +
-          '🧩 Separable verbs: stem in slot 2, prefix flies to the END (Ich stehe um 7 Uhr AUF). Re-glues after a modal.\n' +
-          '📍 V2 rule: the conjugated verb is ALWAYS in position 2. If time/place leads, the subject moves to slot 3.\n' +
-          '🕒 TFP-O order: Time → Frequency → Preference → Object (Ich höre in meiner Freizeit oft gerne Musik).\n' +
+        summary: 'Three verb types and the word-order rules that hold a German sentence together.',
+        bullets: [
+          '🔁 Regular verbs: stem + -e / -st / -t / -en / -t / -en. Stem ending in -t/-d adds an extra e (du arbeitest).',
+          '⚡ Stem-changers: e→i (essen→isst) · e→ie (sehen→sieht) · a→ä (fahren→fährt). Only du + er/sie/es change.',
+          '🧩 Separable verbs: stem in slot 2, prefix flies to the END (Ich stehe um 7 Uhr AUF). Re-glues after a modal.',
+          '📍 V2 rule: the conjugated verb is ALWAYS in position 2. If time or place leads, the subject moves to slot 3.',
+          '🕒 TFP-O order: Time → Frequency → Preference → Object (Ich höre in meiner Freizeit oft gerne Musik).',
           '👋 Self-intro: greeting → name → age → origin (aus) → residence (in) → profession (no article!).',
+        ],
       },
       { rule: '🎯 The 5 mistakes to never make again',
-        body:
-          '1. ✗ Ich bin Hunger.  →  ✓ Ich habe Hunger.  (body states use haben)\n' +
-          '2. ✗ Ich isse.  →  ✓ Ich esse.  (only du/er/sie/es stem-change)\n' +
-          '3. ✗ Ich aufstehe.  →  ✓ Ich stehe … auf.  (prefix to the end)\n' +
-          '4. ✗ Heute ich lerne.  →  ✓ Heute lerne ich.  (V2 — verb stays slot 2)\n' +
-          '5. ✗ Ich bin ein Lehrer.  →  ✓ Ich bin Lehrer.  (no article with profession)',
+        summary: 'The Week 1-2 errors to leave behind for good.',
+        table: {
+          head: ['✗ wrong', '✓ right', 'why'],
+          rows: [
+            ['Ich bin Hunger.',     { t: 'Ich habe Hunger.', hl: true },  'body states use haben'],
+            ['Ich isse.',           { t: 'Ich esse.', hl: true },          'only du/er/sie/es stem-change'],
+            ['Ich aufstehe.',       { t: 'Ich stehe … auf.', hl: true },   'prefix to the end'],
+            ['Heute ich lerne.',    { t: 'Heute lerne ich.', hl: true },   'V2 — verb stays slot 2'],
+            ['Ich bin ein Lehrer.', { t: 'Ich bin Lehrer.', hl: true },    'no article with profession'],
+          ],
+        },
       },
     ],
     exercises: [
@@ -6559,49 +6577,58 @@ export const days = [
     ],
     grammar: [
       { rule: '✅ Week 3 recap — questions',
-        body:
-          '❓ YES/NO question = conjugated verb to SLOT 1:\n' +
-          '   "Du bist müde." → "Bist du müde?"  (no "do" helper)\n' +
-          '   Separable verb? prefix STILL at the end: "Stehst du um 7 auf?"\n\n' +
-          '🔁 ANSWER PARTICLES: ja (yes) · nein (no) · DOCH (yes — to contradict a nicht/kein question).\n' +
-          '   "Bist du nicht müde?" — Doch! (= yes I am)\n\n' +
-          '🔍 W-QUESTION = W-word (slot 1) + verb (slot 2) + subject (slot 3):\n' +
-          '   "Wo wohnst du?"  ·  "Wann kommst du?"  ·  "Warum lernst du Deutsch?"\n' +
-          '   welcher/welche/welches matches the noun\'s gender.',
+        summary: 'Yes/no flips, the doch particle, and W-questions.',
+        bullets: [
+          '❓ Yes/no question = conjugated verb to SLOT 1: "Du bist müde." → "Bist du müde?" (no "do" helper). Separable verb? the prefix STILL lands at the end: "Stehst du um 7 auf?".',
+          '🔁 Answer particles: ja (yes) · nein (no) · DOCH (yes — to contradict a nicht/kein question). "Bist du nicht müde?" — Doch!',
+          '🔍 W-question = W-word (slot 1) + verb (slot 2), then the subject and the rest: "Wo wohnst du?" · "Wann kommst du?". When wer/was IS the subject, no extra subject follows ("Wer ist das?").',
+          '🔵 welcher / welche / welches matches the noun gender.',
+        ],
       },
       { rule: '✅ Week 3 recap — the wo-triple',
-        body:
-          '📍 wo    = where (AT · no movement) → sein, wohnen, bleiben\n' +
-          '            "Wo ist der Bahnhof?"\n' +
-          '➡️ wohin = where TO (destination) → gehen, fahren, fliegen\n' +
-          '            "Wohin gehst du?" — Ich gehe nach Hause.\n' +
-          '🌍 woher = where FROM (origin) → pairs with "aus …"\n' +
-          '            "Woher kommst du?" — Ich komme aus Indien.\n\n' +
-          '⚠ Any verb of MOTION needs wohin / woher — never plain "wo".',
+        summary: 'English "where" splits three ways in German, by movement.',
+        table: {
+          head: ['word', 'meaning', 'verbs', 'example'],
+          rows: [
+            [{ t: 'wo', hl: true },    'where (AT, no movement)', 'sein, wohnen, bleiben',  'Wo ist der Bahnhof?'],
+            [{ t: 'wohin', hl: true }, 'where TO (destination)',  'gehen, fahren, fliegen', 'Wohin gehst du?'],
+            [{ t: 'woher', hl: true }, 'where FROM (origin)',     'pairs with aus …',       'Woher kommst du?'],
+          ],
+        },
+        warn: 'A motion verb needs a direction: wohin/woher merged, or the common split form "Wo gehst du hin?" / "Wo kommst du her?". Only bare "Wo gehst du?" with no hin/her is wrong.',
       },
       { rule: '✅ Week 3 recap — numbers as Lego',
-        body:
-          '🔢 0-12 unique · 13-19 = unit+zehn · 21-99 = units-UND-tens flip (einundzwanzig).\n' +
-          '🧮 3-digit: multiplier-hundert + flip → 365 = dreihundertfünfundsechzig.\n' +
-          '🔟 Thousands: multiplier-tausend (the multiplier itself flips at 21 000+ → vierundzwanzigtausend).\n' +
-          '🪙 eine Million / eine Milliarde — FEMININE, separate word, capital letter. ⚠ Milliarde = English BILLION.\n' +
-          'All one word, no spaces; "und" lives ONLY inside the tens-units flip.',
+        summary: 'Every German number is Lego — biggest unit first, all one word.',
+        bullets: [
+          '🔢 0-12 unique · 13-19 = unit+zehn · 21-99 = units-UND-tens flip (einundzwanzig).',
+          '🧮 3-digit: multiplier-hundert + flip → 365 = dreihundertfünfundsechzig.',
+          '🔟 Thousands: multiplier-tausend (the multiplier itself flips at 21 000+ → vierundzwanzigtausend).',
+          '🪙 eine Million / eine Milliarde — feminine, separate word, capital letter. ⚠ Milliarde = the English billion.',
+          'Below a million it is all one word, no spaces (vierundzwanzigtausend). From eine Million up, the unit is a separate capitalized noun (eine Million dreihunderttausend). "und" lives ONLY inside the tens-units flip.',
+        ],
       },
       { rule: '✅ Week 3 recap — prices & politeness',
-        body:
-          '💶 Ask: "Wie viel kostet das?" / "Was macht das?" (checkout).\n' +
-          '💶 German money writes 1.234,56 € — . for thousands, , for decimals (opposite of English).\n' +
-          '🏷️ Describe: teuer (expensive) · günstig (affordable — polite) · billig (cheap — often = poor quality!).\n' +
-          '💳 Pay: "Bar oder mit Karte?" · "Stimmt so!" (keep the change).\n' +
+        summary: 'Shop, pay and stay polite.',
+        bullets: [
+          '💶 Ask: "Wie viel kostet das?" / "Was macht das?" (at the checkout).',
+          '💶 German money writes 1.234,56 € — "." for thousands, "," for decimals (the opposite of English).',
+          '🏷️ Describe: teuer (expensive) · günstig (affordable — polite) · billig (cheap — often = poor quality!).',
+          '💳 Pay: "Bar oder mit Karte?" · "Stimmt so!" (keep the change).',
           '🙏 Politeness: bitte · danke · Entschuldigung — open every stranger-question with Entschuldigung.',
+        ],
       },
       { rule: '🎯 The 5 Week-3 mistakes to never make again',
-        body:
-          '1. "Du kommst aus Berlin?" ✗ → yes/no needs the FLIP: "Kommst du aus Berlin?" ✓\n' +
-          '2. "Bist du nicht müde?" — "Ja!" ✗ → contradicting a negative needs "Doch!" ✓\n' +
-          '3. "Wo gehst du?" ✗ → movement needs "Wohin gehst du?" ✓\n' +
-          '4. "hundert und fünf" ✗ → no und between hundreds & rest: "hundertfünf" ✓\n' +
-          '5. "ein Million" ✗ → Million is feminine: "eine Million" ✓',
+        summary: 'The Week 3 errors to leave behind.',
+        table: {
+          head: ['✗ wrong', '✓ right', 'why'],
+          rows: [
+            ['Du kommst aus Berlin?',     { t: 'Kommst du aus Berlin?', hl: true }, 'yes/no needs the flip'],
+            ['Bist du nicht müde? — Ja!', { t: '… — Doch!', hl: true },             'contradict a negative with doch'],
+            ['Wo gehst du?',              { t: 'Wohin gehst du?', hl: true },        'movement needs wohin'],
+            ['hundert und fünf',          { t: 'hundertfünf', hl: true },            'no und between hundreds & rest'],
+            ['ein Million',               { t: 'eine Million', hl: true },           'Million is feminine'],
+          ],
+        },
       },
     ],
     exercises: [
