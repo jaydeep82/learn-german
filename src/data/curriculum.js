@@ -6794,64 +6794,87 @@ export const days = [
       { de: 'die Arbeit', en: 'work / the job', emoji: '💼', hint: 'bei der Arbeit = at work · nach der Arbeit = after work', example: 'Ich bin bei der Arbeit.', exampleEn: 'I am at work.' },
     ],
     grammar: [
-      { rule: '⭐ THE 8 ALWAYS-DATIV PREPOSITIONS — memorise the block',
-        body:
-          'These eight prepositions ALWAYS take the Dativ — no exceptions, no thinking required. Any noun after one of them is Dativ:\n\n' +
-          '  mit   — with / by         bei  — at / near\n' +
-          '  zu    — to (person/place) von  — from / of\n' +
-          '  nach  — to / after        aus  — out of / from\n' +
-          '  seit  — since / for       gegenüber — opposite\n\n' +
-          '🧠 Memory hook — say them in a rhythm: "mit-bei-zu-von, nach-aus-seit, gegenüber." Some learners use the song "Aus-bei-mit-nach-seit-von-zu" (alphabetical). Pick one and drill it until it\'s automatic.',
+      { rule: '⭐ The 8 always-Dativ prepositions — memorise the block',
+        summary: 'Eight prepositions ALWAYS take the Dativ — any noun after one is Dativ, no thinking required.',
+        table: {
+          head: ['preposition', 'meaning'],
+          rows: [
+            ['mit',       'with / by'],
+            ['bei',       'at / near'],
+            ['zu',        'to (person / place)'],
+            ['von',       'from / of'],
+            ['nach',      'to / after'],
+            ['aus',       'out of / from'],
+            ['seit',      'since / for'],
+            ['gegenüber', 'opposite'],
+          ],
+        },
+        tip: 'Drill them in a rhythm: "aus-bei-mit-nach-seit-von-zu" (alphabetical), then add gegenüber. Make it automatic.',
       },
-      { rule: '⭐ THE DATIV ARTICLE TABLE — der/die/das all shift',
-        body:
-          'In the Dativ, EVERY article changes (unlike Akkusativ where only masc. flipped):\n\n' +
-          '            NOM   →  DATIV       example\n' +
-          '  masc.  m  der   →  dem         mit dem Mann\n' +
-          '  fem.   f  die   →  der         mit der Frau   ⚠ looks like Nom. "der"!\n' +
-          '  neut.  n  das   →  dem         mit dem Kind   (same as masc.)\n' +
-          '  plur.  pl die   →  den +(-n)   mit den Kindern\n\n' +
-          'Indefinite + possessive follow the same endings:\n' +
-          '  ein → einem (m/n) · eine → einer (f)\n' +
-          '  mein → meinem (m/n) · meiner (f) · meinen+(-n) (pl)\n\n' +
-          '🧠 Shortcut: masc. & neuter are IDENTICAL in Dativ (both dem / einem). Only feminine (der/einer) and plural (den + noun-n) stand apart.',
+      { rule: '⭐ The Dativ article table — der/die/das all shift',
+        summary: 'In the Dativ EVERY article changes (unlike the Akkusativ, where only masculine flipped).',
+        table: {
+          head: ['gender', 'Nom', 'Dativ', 'example'],
+          rows: [
+            ['m',  'der', { t: 'dem', hl: true },     'mit dem Mann'],
+            ['f',  'die', { t: 'der', hl: true },     'mit der Frau ⚠ looks like Nom der!'],
+            ['n',  'das', { t: 'dem', hl: true },     'mit dem Kind'],
+            ['pl', 'die', { t: 'den …-n', hl: true }, 'mit den Kindern'],
+          ],
+        },
+        bullets: [
+          'Indefinite + possessive take the same endings: ein → einem (m/n) · eine → einer (f); mein → meinem (m/n) · meiner (f) · meinen + noun-n (pl).',
+        ],
+        tip: 'Shortcut: masculine & neuter are IDENTICAL in the Dativ (both dem / einem). Only feminine (der / einer) and plural (den + noun-n) stand apart.',
       },
-      { rule: '⚠ THE PLURAL -n RULE — the most-forgotten detail',
-        body:
-          'Plural Dativ does TWO things: article → den AND the noun gets an extra -n (if it doesn\'t already end in -n or -s):\n\n' +
-          '  die Kinder  → mit den Kindern   (+n)\n' +
-          '  die Bücher  → mit den Büchern   (+n)\n' +
-          '  die Freunde → mit den Freunden  (+n)\n' +
-          '  die Frauen  → mit den Frauen    (already ends in -n, no change)\n' +
-          '  die Autos   → mit den Autos     (-s plural, no -n)\n\n' +
-          'This is the #1 thing beginners forget. If it\'s plural Dativ, check the noun ending.',
+      { rule: '⚠ The plural -n rule — the most-forgotten detail',
+        summary: 'Plural Dativ does TWO things: the article becomes den AND the noun adds -n (unless it already ends in -n or -s).',
+        table: {
+          head: ['plural noun', 'Dativ', 'note'],
+          rows: [
+            ['die Kinder',  'mit den Kindern',  '+n'],
+            ['die Bücher',  'mit den Büchern',  '+n'],
+            ['die Freunde', 'mit den Freunden', '+n'],
+            ['die Frauen',  'mit den Frauen',   'already -n, no change'],
+            ['die Autos',   'mit den Autos',    '-s plural, no -n'],
+          ],
+        },
+        warn: 'This is the number-one thing beginners forget. If it is plural Dativ, check the noun ending.',
       },
-      { rule: '🔗 THE 4 CONTRACTIONS — say beim/vom/zum/zur',
-        body:
-          'In speech, preposition + dem/der almost always contracts. Using the long form sounds stiff:\n\n' +
-          '  bei + dem → beim    beim Bäcker   (at the baker\'s)\n' +
-          '  von + dem → vom     vom Bahnhof   (from the station)\n' +
-          '  zu  + dem → zum     zum Arzt      (to the doctor)\n' +
-          '  zu  + der → zur     zur Schule    (to school)\n\n' +
-          '⚠ "zu" has TWO contractions because it meets both dem (zum) and der (zur). Match the gender: zum Supermarkt (m) but zur Apotheke (f).',
+      { rule: '🔗 The 4 contractions — say beim / vom / zum / zur',
+        summary: 'In speech, preposition + dem/der almost always contracts — the long form sounds stiff.',
+        table: {
+          head: ['long form', 'contraction', 'example'],
+          rows: [
+            ['bei + dem', { t: 'beim', hl: true }, 'beim Bäcker (at the bakery)'],
+            ['von + dem', { t: 'vom', hl: true },  'vom Bahnhof (from the station)'],
+            ['zu + dem',  { t: 'zum', hl: true },  'zum Arzt (to the doctor)'],
+            ['zu + der',  { t: 'zur', hl: true },  'zur Schule (to school)'],
+          ],
+        },
+        warn: '"zu" has TWO contractions because it meets both dem (zum) and der (zur). Match the gender: zum Supermarkt (m) but zur Apotheke (f).',
       },
       { rule: '⚠ "nach" vs "zu" — both mean "to", different uses',
-        body:
-          'A classic A1 confusion. Both are Dativ, but:\n\n' +
-          '  nach — for CITIES, COUNTRIES & "home" (NO article)\n' +
-          '         nach Berlin · nach Deutschland · nach Hause\n' +
-          '  zu   — for PEOPLE and specific PLACES (with article → contraction)\n' +
-          '         zum Arzt · zur Schule · zu meiner Mutter\n\n' +
-          'Exceptions that take an article use "in die": "in die Türkei", "in die Schweiz" — but at A1, "nach + city/country (no article)" covers the vast majority. And "nach Hause" (going home) is a fixed phrase worth memorising.',
+        summary: 'Both are Dativ — but nach is for cities/countries/home (no article); zu is for people and specific places (with article → contraction).',
+        table: {
+          head: ['use', 'preposition', 'examples'],
+          rows: [
+            ['cities / countries / home', { t: 'nach', hl: true }, 'nach Berlin · nach Deutschland · nach Hause'],
+            ['people / specific places',  { t: 'zu', hl: true },   'zum Arzt · zur Schule · zu meiner Mutter'],
+          ],
+        },
+        tip: 'A few countries take an article and use "in die" (in die Türkei, in die Schweiz), but at A1 "nach + city/country (no article)" covers almost everything. "nach Hause" (going home) is a fixed phrase.',
       },
-      { rule: '🚦 PITFALLS — Dativ-preposition traps',
-        body:
-          '• für / ohne / gegen / um / durch are AKKUSATIV — do NOT use Dativ after them.\n' +
-          '• fem. Dativ "der" looks exactly like masc. Nominativ "der" — context tells them apart (a preposition before it = Dativ).\n' +
-          '• Don\'t forget the plural -n: "mit den Kindern", not "mit den Kinder".\n' +
-          '• "seit" = since/for a duration and ALWAYS Dativ: "seit einem Jahr", "seit zwei Wochen".\n' +
-          '• Use the contractions in speech: "Ich gehe zu dem Arzt" is understandable but says "zum Arzt".\n' +
-          '• "gegenüber" usually comes AFTER the noun/pronoun: "mir gegenüber", "dem Park gegenüber".',
+      { rule: '🚦 Pitfalls — Dativ-preposition traps',
+        summary: 'The traps that come with the new case.',
+        bullets: [
+          'für / ohne / gegen / um / durch are AKKUSATIV — do NOT use Dativ after them.',
+          'Feminine Dativ "der" looks exactly like masculine Nominativ "der" — a preposition in front of it means Dativ.',
+          'Do not forget the plural -n: "mit den Kindern", not "mit den Kinder".',
+          '"seit" = since / for a duration and is ALWAYS Dativ: "seit einem Jahr", "seit zwei Wochen".',
+          'Use the contractions in speech: "Ich gehe zu dem Arzt" is understood, but say "zum Arzt".',
+          '"gegenüber" usually comes AFTER the noun/pronoun: "mir gegenüber", "dem Park gegenüber".',
+        ],
       },
     ],
     exercises: [
@@ -6982,64 +7005,81 @@ export const days = [
       { de: 'Ihnen', en: 'to/for you (formal)', emoji: '🤝', hint: '👤 Dativ of Sie · capital I', example: 'Ich danke Ihnen.',     exampleEn: 'I thank you. (formal)' },
     ],
     grammar: [
-      { rule: '⭐ THE DATIV-VERB SHORTLIST — memorise these',
-        body:
-          'A small group of verbs takes its object in the DATIV (not Akkusativ). Most involve helping, giving or reacting to a PERSON:\n\n' +
-          '  helfen      — to help          Ich helfe dem Mann.\n' +
-          '  danken      — to thank         Ich danke der Frau.\n' +
-          '  antworten   — to answer        Ich antworte dem Freund.\n' +
-          '  glauben     — to believe (sb)  Ich glaube dir.\n' +
-          '  gratulieren — to congratulate  Wir gratulieren dem Chef.\n' +
-          '  folgen      — to follow        Der Hund folgt mir.\n' +
-          '  zuhören     — to listen to     Ich höre dem Lehrer zu.\n' +
-          '  gehören     — to belong to     Das Buch gehört dem Kind.\n' +
-          '  passen      — to fit / suit    Das Hemd passt dir.\n\n' +
-          '🧠 There is no rule that predicts these — they must be memorised. The good news: there are only a handful, and they\'re all everyday verbs.',
+      { rule: '⭐ The Dativ-verb shortlist — memorise these',
+        summary: 'A small group of verbs takes its object in the DATIV (not Akkusativ) — mostly helping, giving or reacting to a PERSON.',
+        table: {
+          head: ['verb', 'meaning', 'example'],
+          rows: [
+            ['helfen',      'to help',          'Ich helfe dem Mann.'],
+            ['danken',      'to thank',         'Ich danke der Frau.'],
+            ['antworten',   'to answer',        'Ich antworte dem Freund.'],
+            ['glauben',     'to believe (sb)',  'Ich glaube dir.'],
+            ['gratulieren', 'to congratulate',  'Wir gratulieren dem Chef.'],
+            ['folgen',      'to follow',        'Der Hund folgt mir.'],
+            ['zuhören',     'to listen to',     'Ich höre dem Lehrer zu.'],
+            ['gehören',     'to belong to',     'Das Buch gehört dem Kind.'],
+            ['passen',      'to fit / suit',    'Das Hemd passt dir.'],
+          ],
+        },
+        tip: 'No rule predicts these — they must be memorised. The good news: only a handful, and all everyday verbs.',
       },
-      { rule: '🔄 THE GEFALLEN FLIP — the thing is the subject',
-        body:
-          'gefallen, schmecken, gehören, passen and fehlen work BACKWARDS compared to English. The THING is the subject; the PERSON is in the Dativ:\n\n' +
-          '  English: "I    like   the city."   (I = subject)\n' +
-          '  German:  "Die Stadt gefällt mir."  (die Stadt = subject, mir = Dativ)\n' +
-          '            └ subject  └ verb  └ Dativ person\n\n' +
-          'More flips:\n' +
-          '  Die Pizza schmeckt mir.   — I like the pizza (taste).\n' +
-          '  Das Buch gehört mir.       — The book is mine.\n' +
-          '  Das Hemd passt dir.        — The shirt suits you.\n' +
-          '  Du fehlst mir.             — I miss you.  (lit. "you are missing to me")\n\n' +
-          '⚠ Because the THING is the subject, the verb agrees with the THING, not the person:\n' +
-          '  Die Schuhe gefallen mir.  (plural thing → gefallen)\n' +
-          '  Das Auto gefällt mir.     (singular thing → gefällt)',
+      { rule: '🔄 The gefallen flip — the thing is the subject',
+        summary: 'gefallen, schmecken, gehören, passen and fehlen work backwards: the THING is the subject, the PERSON is in the Dativ.',
+        table: {
+          head: ['German', 'literal', 'meaning'],
+          rows: [
+            ['Die Stadt gefällt mir.',  'the city pleases to-me',   'I like the city'],
+            ['Die Pizza schmeckt mir.', 'the pizza tastes to-me',   'I like the pizza (taste)'],
+            ['Das Buch gehört mir.',    'the book belongs to-me',   'the book is mine'],
+            ['Das Hemd passt dir.',     'the shirt suits to-you',   'the shirt suits you'],
+            ['Du fehlst mir.',          'you are-missing to-me',    'I miss you'],
+          ],
+        },
+        warn: 'The verb agrees with the THING, not the person: "Die Schuhe gefallen mir" (plural → gefallen) vs "Das Auto gefällt mir" (singular → gefällt).',
       },
-      { rule: '👤 THE DATIV PRONOUNS — the full set',
-        body:
-          'When the Dativ object is a pronoun, use these forms:\n\n' +
-          '  ich → mir          wir → uns\n' +
-          '  du  → dir          ihr → euch\n' +
-          '  er  → ihm          sie (they) → ihnen\n' +
-          '  sie → ihr          Sie (formal) → Ihnen\n' +
-          '  es  → ihm\n\n' +
-          '⚠ Watch the er/sie pair: er → IHM (not "ihn" — that\'s Akkusativ!), sie → IHR.\n' +
-          '🧠 uns and euch are identical in Akkusativ and Dativ — one less thing to learn.\n\n' +
-          'Examples: Ich helfe dir. · Das gehört ihm. · Wir danken Ihnen. · Sie glaubt mir.',
+      { rule: '👤 The Dativ pronouns — the full set',
+        summary: 'When the Dativ object is a pronoun, use these forms.',
+        table: {
+          head: ['pronoun', 'Dativ'],
+          rows: [
+            ['ich',          { t: 'mir', hl: true }],
+            ['du',           { t: 'dir', hl: true }],
+            ['er / es',      { t: 'ihm', hl: true }],
+            ['sie (she)',    { t: 'ihr', hl: true }],
+            ['wir',          'uns'],
+            ['ihr',          'euch'],
+            ['sie (they)',   { t: 'ihnen', hl: true }],
+            ['Sie (formal)', { t: 'Ihnen', hl: true }],
+          ],
+        },
+        examples: [
+          { de: 'Ich helfe dir.',   en: 'I help you.',            note: 'dir = Dativ of du' },
+          { de: 'Das gehört ihm.',  en: 'That belongs to him.',   note: 'ihm, not ihn' },
+        ],
+        warn: 'Watch er/sie: er → IHM (not "ihn" — that is Akkusativ!), sie → IHR. uns and euch are identical in the Akkusativ and Dativ.',
       },
-      { rule: '⚖️ DATIV vs AKKUSATIV — which case does THIS verb take?',
-        body:
-          'Most verbs take Akkusativ; the shortlist above takes Dativ. Compare:\n\n' +
-          '  AKKUSATIV (the majority)        DATIV (the shortlist)\n' +
-          '  Ich sehe den Mann.       ⚠      Ich helfe dem Mann.\n' +
-          '  Ich frage den Lehrer.    ⚠      Ich danke dem Lehrer.\n' +
-          '  Ich besuche den Freund.  ⚠      Ich glaube dem Freund.\n\n' +
-          'The same person (der Mann) becomes den with a normal verb but dem with a Dativ verb. The VERB decides the case — so you must know which list the verb is on.',
+      { rule: '⚖️ Dativ vs Akkusativ — which case does THIS verb take?',
+        summary: 'Most verbs take Akkusativ; the shortlist takes Dativ. The VERB decides — the same person is den or dem depending on the verb.',
+        table: {
+          head: ['Akkusativ (the majority)', 'Dativ (the shortlist)'],
+          rows: [
+            ['Ich sehe den Mann.',      'Ich helfe dem Mann.'],
+            ['Ich frage den Lehrer.',   'Ich danke dem Lehrer.'],
+            ['Ich besuche den Freund.', 'Ich glaube dem Freund.'],
+          ],
+        },
+        tip: 'Same person (der Mann) → den with a normal verb, dem with a Dativ verb. You must know which list the verb is on.',
       },
-      { rule: '🚦 PITFALLS — Dativ-verb traps',
-        body:
-          '• helfen / danken / antworten / glauben / gratulieren / folgen / gehören / passen → Dativ, NOT Akkusativ.\n' +
-          '• er → ihm (Dativ), NOT ihn (that\'s Akkusativ). Same trap: wer→wem in the Dativ question.\n' +
-          '• gefallen agrees with the THING: "Die Bücher gefallen mir" (plural verb).\n' +
-          '• "Ich mag die Stadt" (Akk) and "Die Stadt gefällt mir" (Dativ) both mean "I like the city" — both are correct.\n' +
-          '• glauben takes Dativ for a PERSON (Ich glaube dir) but Akkusativ for a thing/fact (Ich glaube das).\n' +
-          '• zuhören is separable AND Dativ: "Ich höre dir zu."',
+      { rule: '🚦 Pitfalls — Dativ-verb traps',
+        summary: 'The traps that mix up the two object cases.',
+        bullets: [
+          'helfen / danken / antworten / glauben / gratulieren / folgen / gehören / passen → Dativ, NOT Akkusativ.',
+          'er → ihm (Dativ), NOT ihn (Akkusativ). Same trap: the Dativ question word is wem, not wen.',
+          'gefallen agrees with the THING: "Die Bücher gefallen mir" (plural verb).',
+          '"Ich mag die Stadt" (Akk) and "Die Stadt gefällt mir" (Dativ) both mean "I like the city" — both correct.',
+          'glauben takes Dativ for a PERSON (Ich glaube dir) but Akkusativ for a thing/fact (Ich glaube das).',
+          'zuhören is separable AND Dativ: "Ich höre dir zu."',
+        ],
       },
     ],
     exercises: [

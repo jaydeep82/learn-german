@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.14.1';
+export const VERSION = '3.14.2';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.14.2',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 4 batch 3 — Days 25-26 enriched (the Dativ)',
+    notes: [
+      'Days 25-26 introduce the third case. Both converted to the rich visual grammar shape and adversarially verified (clean, zero issues).',
+      'Day 25 (Dativ prepositions): the 8 always-Dativ prepositions block; the full Dativ article table (der→dem, die→der, das→dem, die-pl→den + noun-n); the plural -n rule table; the 4 contractions (beim/vom/zum/zur); nach vs zu; pitfalls.',
+      'Day 26 (Dativ verbs): the Dativ-verb shortlist table; the gefallen flip (German / literal / meaning columns) with the verb-agreement warn; the full Dativ pronoun table (mir/dir/ihm…); the Dativ-vs-Akkusativ contrast table; pitfalls.',
+      'Everything appears in the Grammar reference AND the Day 25-26 lesson intros via the shared GrammarItem renderer.',
+    ],
+  },
   {
     version: '3.14.1',
     date: '2026-06-14',
