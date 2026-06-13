@@ -5841,66 +5841,85 @@ export const days = [
       { de: 'Rufst du … an?',   en: 'Will you call …?',      emoji: '📞', hint: '🔁 Day 12 · an- flies to end',                   example: 'Rufst du mich heute an?',                              exampleEn: 'Will you call me today?' },
     ],
     grammar: [
-      { rule: '⭐ THE VERB-FIRST FLIP — yes/no questions in one rule',
-        body:
-          'To make a yes/no question, the conjugated verb moves to SLOT 1.\n' +
-          'Subject and verb just swap places — no "do" helper like English.\n\n' +
-          '  Statement                       Question\n' +
-          '  ─────────                       ────────\n' +
-          '  Du   bist müde.            →    Bist du müde?\n' +
-          '  Sie  hat  Hunger.          →    Hat sie Hunger?\n' +
-          '  Wir  wohnen in Berlin.     →    Wohnen wir in Berlin?\n' +
-          '  Er   kommt aus Indien.     →    Kommt er aus Indien?\n' +
-          '  Sie  sprechen Deutsch.     →    Sprechen Sie Deutsch?\n\n' +
-          'No "tust du …?" — German never uses "do" as a helper. The main verb is enough.',
+      { rule: '⭐ The verb-first flip — yes/no questions in one rule',
+        summary: 'To ask yes/no, move the conjugated verb to slot 1. Subject and verb just swap — no "do" helper.',
+        table: {
+          head: ['statement', 'yes/no question'],
+          rows: [
+            ['Du bist müde.',          { t: 'Bist du müde?', hl: true }],
+            ['Sie hat Hunger.',        { t: 'Hat sie Hunger?', hl: true }],
+            ['Wir wohnen in Berlin.',  { t: 'Wohnen wir in Berlin?', hl: true }],
+            ['Er kommt aus Indien.',   { t: 'Kommt er aus Indien?', hl: true }],
+            ['Sie sprechen Deutsch.',  { t: 'Sprechen Sie Deutsch?', hl: true }],
+          ],
+        },
+        examples: [
+          { de: 'Bist du müde?',        en: 'Are you tired?',       note: 'sein flips to slot 1' },
+          { de: 'Sprichst du Deutsch?', en: 'Do you speak German?', note: 'main verb leads — no "do"' },
+        ],
+        tip: 'German never uses "do" as a helper — there is no "Tust du …?". The conjugated verb in slot 1 does all the work.',
       },
-      { rule: '⭐ THREE ANSWER PARTICLES — ja · nein · DOCH',
-        body:
-          'ja   — yes  → answer to a POSITIVE question.\n' +
-          '         "Bist du müde?" — Ja, ich bin müde.\n\n' +
-          'nein — no   → negative answer to any question.\n' +
-          '         "Bist du müde?" — Nein, ich bin nicht müde.\n\n' +
-          '⭐ DOCH — the killer particle. Use ONLY to contradict a NEGATIVE question.\n' +
-          '         "Bist du NICHT müde?" — Doch! (= yes I AM, despite your "not")\n' +
-          '         "Hast du KEIN Geld?"  — Doch! (= yes I do have money)\n\n' +
-          'English has no single word for this — that\'s why doch is special. If you say "ja" to a negative question, Germans get confused. Train yourself: a "nicht" or "kein" in the question → reach for DOCH.',
+      { rule: '⭐ Three answer particles — ja · nein · doch',
+        summary: 'ja answers a positive question; nein is any no; DOCH contradicts a NEGATIVE question.',
+        table: {
+          head: ['particle', 'use', 'example'],
+          rows: [
+            ['ja',                    'yes — to a positive question',              'Bist du müde? — Ja.'],
+            ['nein',                  'no — to any question',                      'Bist du müde? — Nein.'],
+            [{ t: 'doch', hl: true }, 'YES — contradicts a nicht/kein question',   'Bist du nicht müde? — Doch!'],
+          ],
+        },
+        examples: [
+          { de: 'Bist du nicht müde? — Doch!', en: 'Are you not tired? — Yes I am!',  note: 'nicht in the question → DOCH' },
+          { de: 'Hast du kein Geld? — Doch!',  en: 'Do you have no money? — Yes I do!', note: 'kein in the question → DOCH' },
+        ],
+        warn: 'English has no single word for doch. Answering "ja" to a negative question confuses Germans — a nicht or kein in the question means reach for DOCH.',
       },
-      { rule: '⚠ SEPARABLE VERBS — the prefix STILL flies to the end',
-        body:
-          'In a yes/no question the conjugated stem goes to slot 1, but the prefix STILL lands at the very end — exactly like a statement.\n\n' +
-          '  Statement                            Question\n' +
-          '  ─────────                            ────────\n' +
-          '  Du stehst um 7 Uhr AUF.         →    Stehst du um 7 Uhr AUF?\n' +
-          '  Wir kaufen am Samstag EIN.      →    Kaufen wir am Samstag EIN?\n' +
-          '  Sie ruft mich heute AN.         →    Ruft sie mich heute AN?\n' +
-          '  Er fängt um 8 Uhr AN.           →    Fängt er um 8 Uhr AN?\n\n' +
-          'Rule of thumb: stem at the FRONT, prefix at the BACK — everything else in the middle. The sandwich still works.',
+      { rule: '⚠ Separable verbs — the prefix STILL flies to the end',
+        summary: 'In a question the stem leads (slot 1) but the prefix still lands at the very end.',
+        table: {
+          head: ['statement', 'yes/no question'],
+          rows: [
+            ['Du stehst um 7 Uhr auf.',    { t: 'Stehst du um 7 Uhr auf?', hl: true }],
+            ['Wir kaufen am Samstag ein.', { t: 'Kaufen wir am Samstag ein?', hl: true }],
+            ['Sie ruft mich heute an.',    { t: 'Ruft sie mich heute an?', hl: true }],
+            ['Er fängt um 8 Uhr an.',      { t: 'Fängt er um 8 Uhr an?', hl: true }],
+          ],
+        },
+        tip: 'Stem at the front, prefix at the back, everything else in the middle — the Day 12 sandwich still works.',
       },
-      { rule: '⭐ POLITE YES/NO QUESTIONS — möchten · können · mögen',
-        body:
-          'These three modal verbs make yes/no questions sound polite. They\'re Week 5 grammar but you can use them as ready-made phrases NOW.\n\n' +
-          '  Möchtest du …?  — Would you like …?         (most polite invitation)\n' +
-          '                    Möchtest du einen Kaffee?\n' +
-          '  Möchten Sie …?  — Would you like …? (formal)\n' +
-          '                    Möchten Sie eine Frage?\n' +
-          '  Kannst du …?    — Can you …? (ability / favour)\n' +
-          '                    Kannst du mir helfen?\n' +
-          '  Magst du …?     — Do you like …?\n' +
-          '                    Magst du Pizza?\n\n' +
-          'Polite tip: "Möchtest du …?" never offends. "Willst du …?" sounds blunt — save it for close friends.',
+      { rule: '⭐ Polite yes/no questions — möchten · können · mögen',
+        summary: 'Three modal verbs make a yes/no question polite — ready-made phrases you can use now.',
+        table: {
+          head: ['ask', 'meaning', 'example'],
+          rows: [
+            ['Möchtest du …?', 'Would you like …? (invitation)', 'Möchtest du einen Kaffee?'],
+            ['Möchten Sie …?', 'Would you like …? (formal)',     'Möchten Sie einen Tee?'],
+            ['Kannst du …?',   'Can you …? (favour)',            'Kannst du mir helfen?'],
+            ['Magst du …?',    'Do you like …?',                 'Magst du Pizza?'],
+          ],
+        },
+        examples: [
+          { de: 'Möchtest du einen Kaffee?', en: 'Would you like a coffee?', note: 'the politest invitation' },
+        ],
+        tip: '"Möchtest du …?" never offends. "Willst du …?" (do you want) sounds blunt — save it for close friends.',
       },
-      { rule: '🚦 ANSWER MENU — pick the right register',
-        body:
-          'Match the energy of the question:\n\n' +
-          '  Strong yes  : Natürlich! · Klar! · Sicher!\n' +
-          '  Neutral yes : Ja.\n' +
-          '  Polite yes  : Ja, gerne. · Ja, bitte.\n' +
-          '  Hedged      : Vielleicht. · Ich denke ja. · Ich glaube nicht.\n' +
-          '  Neutral no  : Nein.\n' +
-          '  Polite no   : Nein, danke. · Leider nicht.\n' +
-          '  Strong no   : Gar nicht. · Auf keinen Fall.\n' +
-          '  Contradict-the-negative : DOCH!\n\n' +
-          'Tip: in everyday speech Germans often just say the particle alone ("Ja." / "Doch." / "Nein.") and trust context. Repeating the full sentence (Ja, ich habe Zeit.) is polite but optional.',
+      { rule: '🚦 Answer menu — pick the right register',
+        summary: 'Match the energy of the question, from enthusiastic yes to absolute no.',
+        table: {
+          head: ['register', 'answers'],
+          rows: [
+            ['Strong yes',  'Natürlich! · Klar! · Sicher!'],
+            ['Neutral yes', 'Ja.'],
+            ['Polite yes',  'Ja, gerne. · Ja, bitte.'],
+            ['Hedged',      'Vielleicht. · Ich denke ja. · Ich glaube nicht.'],
+            ['Neutral no',  'Nein.'],
+            ['Polite no',   'Nein, danke. · Leider nicht.'],
+            ['Strong no',   'Gar nicht. · Auf keinen Fall.'],
+            [{ t: 'Contradict a "no"', hl: true }, { t: 'Doch!', hl: true }],
+          ],
+        },
+        tip: 'In everyday speech Germans often reply with the particle alone ("Ja." / "Doch." / "Nein.") and trust context. The full sentence is polite but optional.',
       },
     ],
     exercises: [
@@ -6020,7 +6039,7 @@ export const days = [
     titleDe: 'W-Fragen',
     emoji: '🔍',
     objective: 'Open ANY question with a W-word — who · what · where (at/to/from) · when · why · how · which — keeping the verb glued to slot 2.',
-    intro: 'A W-question starts with a question word in slot 1, then the verb in slot 2, then the subject, then everything else. "Wer bist du? Wo wohnst du? Wann kommst du?" The verb-2 rule from Day 9 still rules — the W-word just fills slot 1.',
+    intro: 'A W-question starts with a question word in slot 1, then the verb in slot 2, then the subject and everything else. "Wo wohnst du? Wann kommst du?" The verb-2 rule from Day 9 still rules — the W-word just fills slot 1. One exception: when wer or was IS the subject ("Wer ist das?"), no extra subject follows.',
     vocabulary: [
       // 🔤 THE CORE W-WORDS (the 12 you actually use every day)
       { de: 'wer',       en: 'who',                        emoji: '🧑',  hint: 'asks about a PERSON · "Wer ist das?"',                example: 'Wer kommt heute Abend?',          exampleEn: 'Who is coming this evening?' },
@@ -6053,61 +6072,73 @@ export const days = [
       { de: 'welches',               en: 'which (n · das-words)',         emoji: '🟢',  hint: '⭐ neuter ending -es',                         example: 'Welches Buch liest du?',               exampleEn: 'Which book are you reading?' },
     ],
     grammar: [
-      { rule: '⭐ THE W-QUESTION PATTERN — W-word · verb · subject · …',
-        body:
-          'A W-question fills slot 1 with the W-word, slot 2 with the conjugated verb, slot 3 with the subject. The V2 rule from Day 9 still rules — the W-word just IS slot 1.\n\n' +
-          '  Slot 1     Slot 2  Slot 3   …\n' +
-          '  ──────     ──────  ──────   ─────\n' +
-          '  Wer        ist     das?\n' +
-          '  Was        machst  du       heute?\n' +
-          '  Wo         wohnst  du?\n' +
-          '  Wann       kommst  du       nach Hause?\n' +
-          '  Warum      lernst  du       Deutsch?\n' +
-          '  Wie        heißt   du?\n' +
-          '  Wie viel   kostet  das?\n\n' +
-          'No "do" helper — German never says "Was tust du machen?" The conjugated verb does all the work.',
+      { rule: '⭐ The W-question pattern — W-word · verb · subject · …',
+        summary: 'Slot 1 = W-word, slot 2 = conjugated verb, then the subject and the rest. The Day 9 V2 rule still rules.',
+        table: {
+          head: ['slot 1 · W-word', 'slot 2 · verb', 'slot 3 · …'],
+          rows: [
+            ['Wer',      { t: 'ist', hl: true },    'das?'],
+            ['Was',      { t: 'machst', hl: true }, 'du heute?'],
+            ['Wo',       { t: 'wohnst', hl: true }, 'du?'],
+            ['Wann',     { t: 'kommst', hl: true }, 'du nach Hause?'],
+            ['Warum',    { t: 'lernst', hl: true }, 'du Deutsch?'],
+            ['Wie viel', { t: 'kostet', hl: true }, 'das?'],
+          ],
+        },
+        examples: [
+          { de: 'Wo wohnst du?',   en: 'Where do you live?',   note: 'verb glued to slot 2' },
+          { de: 'Wann kommst du?', en: 'When are you coming?', note: 'W-word, then verb, then subject' },
+        ],
+        tip: 'No "do" helper — German never says "Was tust du machen?". The conjugated verb does all the work.',
+        warn: 'Subject-question exception: when wer or was IS the subject, it already fills slot 1 — no extra subject follows. "Wer ist das?", "Was passiert?", "Wie viel kostet das?".',
       },
-      { rule: '⭐ ⚠ THE WO TRIPLE — wo · wohin · woher',
-        body:
-          'English uses "where" for everything. German splits it three ways depending on movement:\n\n' +
-          '  📍 wo    = where (AT, no movement)  → pairs with "in / an / auf" + STATIC verbs (sein, wohnen, bleiben)\n' +
-          '             "Wo ist der Bahnhof?"\n' +
-          '             "Wo wohnst du?"\n\n' +
-          '  ➡️ wohin = where TO (destination)   → pairs with "nach / zu / in" + MOVEMENT verbs (gehen, fahren, fliegen)\n' +
-          '             "Wohin gehst du?"  — Ich gehe nach Hause.\n' +
-          '             "Wohin fährst du?" — Ich fahre nach Berlin.\n\n' +
-          '  🌍 woher = where FROM (origin)      → pairs with "aus …"\n' +
-          '             "Woher kommst du?" — Ich komme aus Indien.\n\n' +
-          '⚠ Common mistake: "Wo gehst du?" ✗ — if there\'s movement, you NEED wohin. Train your ear: any verb of motion → wohin / woher.',
+      { rule: '⭐ ⚠ The wo-triple — wo · wohin · woher',
+        summary: 'English "where" splits three ways in German, depending on movement.',
+        table: {
+          head: ['word', 'meaning', 'pairs with', 'example'],
+          rows: [
+            [{ t: 'wo', hl: true },    'where (AT, no movement)', 'in / an / auf · sein, wohnen',   'Wo wohnst du?'],
+            [{ t: 'wohin', hl: true }, 'where TO (destination)',  'nach / zu / in · gehen, fahren', 'Wohin gehst du?'],
+            [{ t: 'woher', hl: true }, 'where FROM (origin)',     'aus …',                          'Woher kommst du?'],
+          ],
+        },
+        examples: [
+          { de: 'Wohin gehst du? — Ich gehe nach Hause.',   en: 'Where are you going? — I am going home.', note: 'movement → wohin … nach' },
+          { de: 'Woher kommst du? — Ich komme aus Indien.', en: 'Where are you from? — I come from India.', note: 'origin → woher … aus' },
+        ],
+        warn: 'Bare "Wo gehst du?" ✗ — a motion verb needs a direction. Use wohin/woher merged ("Wohin gehst du?", "Woher kommst du?") OR the very common split form "Wo gehst du hin?" / "Wo kommst du her?" ✓. What is wrong is wo with NO hin/her, not wo itself.',
       },
-      { rule: '🔵 WELCHER — gender-matched "which"',
-        body:
-          'welcher is THE only W-word that changes shape. It follows the article it replaces:\n\n' +
-          '  Gender   article  →  welcher-form    Example\n' +
-          '  ──────   ───────     ───────────     ───────\n' +
-          '  m  (der)  → welcher                 Welcher Tisch ist neu?\n' +
-          '  f  (die)  → welche                  Welche Tasche ist neu?\n' +
-          '  n  (das)  → welches                 Welches Buch liest du?\n' +
-          '  pl (die)  → welche                  Welche Bücher liest du?\n\n' +
-          'Tip: welcher rhymes with der · welches rhymes with das · welche rhymes with die. Same endings as the article — that\'s the whole rule.',
+      { rule: '🔵 welcher — the gender-matched "which"',
+        summary: 'welcher is the only W-word that changes shape — it copies the ending of the article it replaces.',
+        table: {
+          head: ['gender', 'article', 'which-form', 'example'],
+          rows: [
+            ['m',  'der', { t: 'welcher', hl: true }, 'Welcher Tisch ist neu?'],
+            ['f',  'die', { t: 'welche', hl: true },  'Welche Tasche ist neu?'],
+            ['n',  'das', { t: 'welches', hl: true }, 'Welches Buch liest du?'],
+            ['pl', 'die', { t: 'welche', hl: true },  'Welche Bücher liest du?'],
+          ],
+        },
+        tip: 'welcher rhymes with der · welches with das · welche with die. Same endings as the article — that is the whole rule.',
       },
-      { rule: '⚠ WAS FÜR vs WELCHER — kind vs which-specific',
-        body:
-          'These two are NOT interchangeable:\n\n' +
-          '  Welcher / welche / welches  =  WHICH specific one? (from a known set)\n' +
-          '    "Welches Buch liest du?"   — meaning: of the books we both know, which one?\n\n' +
-          '  Was für (ein) …?            =  What KIND / TYPE? (open-ended)\n' +
-          '    "Was für ein Buch liest du?" — meaning: tell me about the type / genre / topic.\n\n' +
-          '"Was für" stays unchanged (the "ein" inside it follows normal article rules). Use it when you want a description, not a choice.',
+      { rule: '⚠ was für vs welcher — kind vs which-specific',
+        summary: 'welcher asks WHICH one from a known set; was für asks what KIND / type.',
+        examples: [
+          { de: 'Welches Buch liest du?',     en: 'Which book are you reading?',        note: 'welcher → pick one from a known set' },
+          { de: 'Was für ein Buch liest du?', en: 'What kind of book are you reading?', note: 'was für → describe the type / genre' },
+        ],
+        tip: '"Was für" itself does not change; the "ein" inside it follows normal article rules. Use it when you want a description, not a choice.',
       },
-      { rule: '🚦 COMMON PITFALLS & SPOKEN SHORTCUTS',
-        body:
-          '• wer (WHO) ≠ was (WHAT) — "Wer ist das?" for people, "Was ist das?" for things.\n' +
-          '• "Wie heißt du?" is the natural choice for name — "Wie ist dein Name?" is grammatically fine but stiff.\n' +
-          '• In casual speech, "Wieso?" replaces "Warum?" all the time — they mean the same thing.\n' +
-          '• "Warum nicht?" is a one-word polite acceptance: Möchtest du …? — Warum nicht?\n' +
-          '• Verb stays in slot 2 even with a long W-phrase: "Wie viel kostet das?" — wie viel is ONE unit in slot 1.\n' +
-          '• German has no "do" helper. "Was machst du?" ✓ · "Was tust du machen?" ✗.',
+      { rule: '🚦 Common pitfalls & spoken shortcuts',
+        summary: 'The traps that trip up beginners — and the shortcuts natives actually use.',
+        bullets: [
+          'wer (WHO) ≠ was (WHAT): "Wer ist das?" for people, "Was ist das?" for things.',
+          '"Wie heißt du?" is the natural way to ask a name — "Wie ist dein Name?" is correct but stiff.',
+          'In casual speech "Wieso?" replaces "Warum?" all the time — same meaning.',
+          '"Warum nicht?" is a one-word polite yes: Möchtest du …? — Warum nicht?',
+          'The verb stays in slot 2 even after a long W-phrase: "Wie viel kostet das?" — wie viel is ONE unit in slot 1.',
+          'German has no "do" helper: "Was machst du?" ✓, "Was tust du machen?" ✗.',
+        ],
       },
     ],
     exercises: [

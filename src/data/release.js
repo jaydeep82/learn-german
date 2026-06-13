@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.12.1';
+export const VERSION = '3.13.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.13.0',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 3 batch 1 — Days 16-17 enriched (questions)',
+    notes: [
+      'Days 16-17 converted to the rich visual grammar shape — the question-forming heart of Week 3. Content adversarially verified before release.',
+      'Day 16 (Yes/No questions): the ⭐ verb-first flip as a statement→question table; the ja/nein/DOCH particle table with audio examples and a doch warn; the separable-verb question table (stem leads, prefix at end); the polite-modal table (möchten/können/mögen); the register answer-menu table.',
+      'Day 17 (W-questions): the ⭐ W-word/verb/subject slot table; the ⚠ wo-triple (wo/wohin/woher) as a 4-column table with movement pairings and examples; the welcher gender table (welcher/welche/welches); was-für vs welcher; pitfalls as bullets. Includes a subject-question note (Wer ist das?) and the split wo … hin / wo … her form.',
+      'Everything appears in the Grammar reference AND the Day 16-17 lesson intros via the shared GrammarItem renderer.',
+    ],
+  },
   {
     version: '3.12.1',
     date: '2026-06-14',
