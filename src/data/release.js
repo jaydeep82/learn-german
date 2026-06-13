@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.12.0';
-export const RELEASE_DATE = '2026-06-11';
+export const VERSION = '3.12.1';
+export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.12.1',
+    date: '2026-06-14',
+    type: 'fix',
+    title: 'Days 12-14 — German accuracy fixes from adversarial content review',
+    notes: [
+      'Day 12 (Separable verbs): fixed a broken dialogue line — "Schläfst du gerade fern?" (which fused schlafen + fern into a non-word) is now the correct fernsehen du-form "Siehst du gerade fern?", matching the day\'s own teaching (du siehst fern).',
+      'Day 13 (Time/Frequency/Preference): the model TFP-O sentence no longer stacks the clashing "jeden Tag" (every day) + "oft" (often). It now reads "Ich höre in meiner Freizeit oft gerne Musik" everywhere it appears (intro, slot table, example, build exercises, both spot-the-error MCQs, dialogue, and the Week 2 recap), with one consistent, idiomatic English gloss.',
+      'Day 13 (gerne rule): softened the overstated claim that "Ich trinke Kaffee gern" is wrong — post-object gern is correct, just less neutral. The matching quiz now keys a genuine V2 error ("Ich gerne trinke Kaffee") instead of a valid sentence.',
+      'Day 14 (Introducing yourself): the intro\'s 6-block order now matches the recipe table and worked example (greeting → name → age → origin → residence → profession).',
+    ],
+  },
   {
     version: '3.12.0',
     date: '2026-06-11',

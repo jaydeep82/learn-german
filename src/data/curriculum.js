@@ -2095,7 +2095,7 @@ export const days = [
     titleDe: 'Zeit · Häufigkeit · Präferenz',
     emoji: '🕒',
     objective: 'Layer 🕒 time, 🔄 frequency and ❤️ preference words into a sentence in the right order — and know that V2 still wins when one of them leads.',
-    intro: 'You can already build S-V-O sentences. Today you add three more "spice" words: 🕒 WHEN (heute, morgen, jeden Tag), 🔄 HOW OFTEN (oft, manchmal, immer, nie) and ❤️ HOW MUCH YOU LIKE IT (gerne, sehr gerne). They go in a fixed order: 🕒 → 🔄 → ❤️ → 🎯 object. So "I gladly listen to music every day often" becomes: "Ich höre jeden Tag oft gerne Musik." Memorise the chain TFP-O — it unlocks every hobby sentence, every routine, every weekend plan.',
+    intro: 'You can already build S-V-O sentences. Today you add three more "spice" words: 🕒 WHEN (heute, morgen, jeden Tag), 🔄 HOW OFTEN (oft, manchmal, immer, nie) and ❤️ HOW MUCH YOU LIKE IT (gerne, sehr gerne). They go in a fixed order: 🕒 → 🔄 → ❤️ → 🎯 object. So "In my free time I often like to listen to music" becomes: "Ich höre in meiner Freizeit oft gerne Musik." Memorise the chain TFP-O — it unlocks every hobby sentence, every routine, every weekend plan.',
     vocabulary: [
       // 🕒 Time
       { de: 'heute',              en: 'today',           emoji: '📅', hint: '🕒 time · "HOY-tuh"',                     example: 'Heute lerne ich Deutsch.',            exampleEn: 'Today I learn German.' },
@@ -2144,13 +2144,13 @@ export const days = [
         table: {
           head: ['subject', 'verb', '🕒 time', '🔄 freq', '❤️ pref', '🎯 object'],
           rows: [
-            ['Ich', 'höre',    'jeden Tag',       'oft',      'gerne',      'Musik.'],
+            ['Ich', 'höre',    'in meiner Freizeit', 'oft',   'gerne',      'Musik.'],
             ['Wir', 'spielen', 'am Wochenende',   'manchmal', 'gerne',      'Fußball.'],
             ['Du',  'liest',   'nach der Arbeit', 'immer',    'sehr gerne', 'Bücher.'],
           ],
         },
         examples: [
-          { de: 'Ich höre jeden Tag oft gerne Musik.', en: 'I often happily listen to music every day.', note: 'all four slots filled, in order' },
+          { de: 'Ich höre in meiner Freizeit oft gerne Musik.', en: 'In my free time I often like to listen to music.', note: 'all four slots filled, in order' },
         ],
         tip: 'Not every slot must be filled — drop what you don\'t need. But when two or three appear together, this is the order.',
       },
@@ -2185,7 +2185,7 @@ export const days = [
           { de: 'Du liest sehr gerne Bücher.', en: 'You really like reading books.', note: 'sehr gerne = really like' },
           { de: 'Am liebsten esse ich Pizza.', en: 'Most of all I eat pizza.', note: 'am liebsten = most of all (the top of the scale)' },
         ],
-        warn: 'gerne lives BEFORE the object: "Ich trinke gerne Kaffee" ✓, not "Ich trinke Kaffee gerne" ✗. Escalation: gerne → sehr gerne → am liebsten.',
+        warn: 'gerne normally comes BEFORE the object — "Ich trinke gerne Kaffee" is the natural default. ("Ich trinke Kaffee gern" is also correct, just less neutral.) Escalation: gerne → sehr gerne → am liebsten.',
       },
       { rule: '🔮 TeKaMoLo — the full grown-up rule (preview)',
         summary: 'When place joins too, the order is Te-Ka-Mo-Lo.',
@@ -2235,8 +2235,8 @@ export const days = [
 
       // 🛠 BUILD-THE-SENTENCE — assemble the full TFP-O chain
       { type: 'fill-blank',
-        sentence: '🛠 Ich + hören + 🕒 jeden Tag + 🔄 oft + ❤️ gerne + 🎯 Musik → __',
-        answer: 'Ich höre jeden Tag oft gerne Musik' },
+        sentence: '🛠 Ich + hören + 🕒 in meiner Freizeit + 🔄 oft + ❤️ gerne + 🎯 Musik → __',
+        answer: 'Ich höre in meiner Freizeit oft gerne Musik' },
       { type: 'fill-blank',
         sentence: '🛠 Wir + spielen + 🕒 am Wochenende + 🔄 manchmal + 🎯 Fußball → __',
         answer: 'Wir spielen am Wochenende manchmal Fußball' },
@@ -2257,12 +2257,12 @@ export const days = [
         type: 'multiple-choice',
         q: '⚠ Which sentence is WRONG?',
         options: [
-          'Ich höre jeden Tag oft gerne Musik.',
-          'Ich höre Musik jeden Tag oft gerne.',
+          'Ich höre in meiner Freizeit oft gerne Musik.',
+          'Ich höre Musik in meiner Freizeit oft gerne.',
           'Heute höre ich Musik.',
           'Wir spielen am Wochenende Fußball.',
         ],
-        answer: 'Ich höre Musik jeden Tag oft gerne.',
+        answer: 'Ich höre Musik in meiner Freizeit oft gerne.',
         explain: 'The 🎯 object goes LAST. Time / frequency / preference all come BEFORE the object.',
       },
       {
@@ -2270,12 +2270,12 @@ export const days = [
         q: '⚠ Which sentence is WRONG?',
         options: [
           'Ich trinke gerne Kaffee.',
-          'Ich trinke Kaffee gerne.',
+          'Ich gerne trinke Kaffee.',
           'Wir essen am Wochenende oft gerne Pizza.',
           'Heute kocht sie sehr gerne.',
         ],
-        answer: 'Ich trinke Kaffee gerne.',
-        explain: '"gerne" must come BEFORE the object, not after. → "Ich trinke gerne Kaffee."',
+        answer: 'Ich gerne trinke Kaffee.',
+        explain: 'The verb must stay in slot 2. "gerne" comes AFTER the verb (and before the object): "Ich trinke gerne Kaffee."',
       },
 
       // Word-order MCQs
@@ -2291,12 +2291,12 @@ export const days = [
       { type: 'multiple-choice',
         q: 'Pick the natural order: subject + verb + Time + Frequency + Preference + Object.',
         options: [
-          'Ich Musik höre jeden Tag oft gerne.',
-          'Ich höre jeden Tag oft gerne Musik.',
-          'Jeden Tag oft gerne Musik ich höre.',
-          'Ich höre Musik jeden Tag oft gerne.',
+          'Ich Musik höre in meiner Freizeit oft gerne.',
+          'Ich höre in meiner Freizeit oft gerne Musik.',
+          'In meiner Freizeit oft gerne Musik ich höre.',
+          'Ich höre Musik in meiner Freizeit oft gerne.',
         ],
-        answer: 'Ich höre jeden Tag oft gerne Musik.',
+        answer: 'Ich höre in meiner Freizeit oft gerne Musik.',
         explain: 'Time → Frequency → Preference → Object. The verb stays in slot 2.' },
 
       // Hobby-sentence builders — fill the verb (existing, kept)
@@ -2317,7 +2317,7 @@ export const days = [
       { type: 'dialogue', lines: [
         { speaker: 'A', de: 'Was machst du am Wochenende?',                          en: 'What do you do on the weekend?' },
         { speaker: 'B', de: 'Ich koche oft gerne. Und du?',                          en: 'I often gladly cook. And you?' },
-        { speaker: 'A', de: 'Ich höre jeden Tag oft gerne Musik. Reist du gerne?',   en: 'I listen to music every day often gladly. Do you like to travel?' },
+        { speaker: 'A', de: 'Ich höre in meiner Freizeit oft gerne Musik. Reist du gerne?',   en: 'In my free time I often like to listen to music. Do you like to travel?' },
         { speaker: 'B', de: 'Ja, sehr gerne! Am liebsten reise ich nach Italien.',   en: 'Yes, very much! Most of all, I travel to Italy.' },
         { speaker: 'A', de: 'Spielst du auch Sport?',                                en: 'Do you also play sport?' },
         { speaker: 'B', de: 'Manchmal. Ich spiele selten Fußball, aber ich tanze gerne.', en: 'Sometimes. I rarely play football, but I like to dance.' },
@@ -2349,7 +2349,7 @@ export const days = [
     titleDe: 'Sich vorstellen',
     emoji: '👋',
     objective: 'Hold a 60-second self-introduction in German — formal AND informal — using the 6-block recipe.',
-    intro: 'You now own enough verbs and structure to TALK ABOUT YOURSELF in German. The trick is a recipe — six blocks in a reliable order: 👋 greeting → 🪪 name → 🌍 origin → 🏠 residence → 🎂 age → 💼 profession (+ optional 🎮 hobby). Today you assemble the blocks, in BOTH the du-form (friends) and the Sie-form (strangers / professors / customer service), and finish with a personalised mini-speech.',
+    intro: 'You now own enough verbs and structure to TALK ABOUT YOURSELF in German. The trick is a recipe — six blocks in a reliable order: 👋 greeting → 🪪 name → 🎂 age → 🌍 origin → 🏠 residence → 💼 profession (+ optional 🎮 hobby). Today you assemble the blocks, in BOTH the du-form (friends) and the Sie-form (strangers / professors / customer service), and finish with a personalised mini-speech.',
     vocabulary: [
       // 👋 Greetings (by time of day + register)
       { de: 'Hallo',          en: 'hello (anytime, informal)',         emoji: '👋', hint: '👋 informal / casual',                              example: 'Hallo! Ich heiße Anna.',          exampleEn: 'Hello! I am called Anna.' },
@@ -2681,7 +2681,7 @@ export const days = [
           '⚡ Stem-changers: e→i (essen→isst) · e→ie (sehen→sieht) · a→ä (fahren→fährt). Only du + er/sie/es change.\n' +
           '🧩 Separable verbs: stem in slot 2, prefix flies to the END (Ich stehe um 7 Uhr AUF). Re-glues after a modal.\n' +
           '📍 V2 rule: the conjugated verb is ALWAYS in position 2. If time/place leads, the subject moves to slot 3.\n' +
-          '🕒 TFP-O order: Time → Frequency → Preference → Object (Ich höre jeden Tag oft gerne Musik).\n' +
+          '🕒 TFP-O order: Time → Frequency → Preference → Object (Ich höre in meiner Freizeit oft gerne Musik).\n' +
           '👋 Self-intro: greeting → name → age → origin (aus) → residence (in) → profession (no article!).',
       },
       { rule: '🎯 The 5 mistakes to never make again',
@@ -2749,8 +2749,8 @@ export const days = [
         explain: 'V2 — when time leads, the verb stays slot 2 and the subject moves to slot 3.' },
 
       // ── 🛠 Build-the-sentence (synthesis) ──
-      { type: 'fill-blank', sentence: '🛠 Ich + hören + 🕒 jeden Tag + 🔄 oft + ❤️ gerne + 🎯 Musik → __',
-        answer: 'Ich höre jeden Tag oft gerne Musik' },
+      { type: 'fill-blank', sentence: '🛠 Ich + hören + 🕒 in meiner Freizeit + 🔄 oft + ❤️ gerne + 🎯 Musik → __',
+        answer: 'Ich höre in meiner Freizeit oft gerne Musik' },
       { type: 'fill-blank', sentence: '🛠 V2 inversion: 🕒 Heute + ich + stehen…auf + um 7 Uhr → __',
         answer: 'Heute stehe ich um 7 Uhr auf', hint: 'separable verb splits · time leads · subject after verb' },
 
@@ -5760,7 +5760,7 @@ export const days = [
         { speaker: 'B', de: 'Ich stehe um sieben Uhr auf.',                              en: 'I get up at seven.' },
         { speaker: 'A', de: 'Wir kaufen am Samstag ein. Kommst du mit?',                en: 'We are shopping on Saturday. Are you coming along?' },
         { speaker: 'B', de: 'Klar! Ich bringe meinen Hund mit. Ruf mich vorher an, ja?', en: 'Of course! I will bring my dog. Call me beforehand, yeah?' },
-        { speaker: 'A', de: 'Ich rufe dich morgen früh an. Schläfst du gerade fern?',    en: 'I will call you tomorrow morning. Are you watching TV right now?' },
+        { speaker: 'A', de: 'Ich rufe dich morgen früh an. Siehst du gerade fern?',    en: 'I will call you tomorrow morning. Are you watching TV right now?' },
         { speaker: 'B', de: 'Nein, ich bereite das Essen vor.',                          en: 'No, I am preparing the food.' },
       ]},
 
