@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.13.3';
+export const VERSION = '3.14.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.14.0',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 4 batch 1 — Days 22-23 enriched (Akkusativ completion)',
+    notes: [
+      'Week 4 begins — the core of the case system. Days 22-23 converted to the rich visual grammar shape and adversarially verified (clean, zero issues).',
+      'Day 22 (Akkusativ f/n/pl): the no-change gender table; the full four-gender definite+indefinite Akkusativ table; the neuter trap (ein Brötchen, NOT einen) with audio examples; mixing-genders examples; over-correction pitfalls.',
+      'Day 23 (Nominativ vs Akkusativ): the Wer/Wen test table; why the article tag lets German move word order (the object-first "Den Mann sieht der Hund", with the masculine-only caveat); role-stays/article-flips; the definite-vs-indefinite table; classic Nom-vs-Akk pitfalls.',
+      'Everything appears in the Grammar reference AND the Day 22-23 lesson intros via the shared GrammarItem renderer.',
+    ],
+  },
   {
     version: '3.13.3',
     date: '2026-06-14',

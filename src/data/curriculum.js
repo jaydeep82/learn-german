@@ -3314,61 +3314,65 @@ export const days = [
       { de: 'meine Tasche', en: 'my bag (f · NO change)', emoji: '👝', hint: '✅ meine → meine (feminine)',           example: 'Ich nehme meine Tasche.',      exampleEn: 'I take my bag.' },
     ],
     grammar: [
-      { rule: '⭐ THE NO-CHANGE RULE — f / n / pl look identical',
-        body:
-          'In the Akkusativ, feminine, neuter and plural articles are EXACTLY the same as in the Nominativ. Nothing to memorise — just leave them alone:\n\n' +
-          '            NOMINATIV  →  AKKUSATIV\n' +
-          '  fem.   f   die        →  die        ✅ same\n' +
-          '             eine       →  eine       ✅ same\n' +
-          '  neut.  n   das        →  das        ✅ same\n' +
-          '             ein        →  ein        ✅ same\n' +
-          '  plur.  pl  die        →  die        ✅ same\n\n' +
-          'Compare with the one that DOES change:\n' +
-          '  masc.  m   der → den   ·   ein → einen   ⚠ the only flip\n\n' +
-          '🧠 So in any sentence, scan for a MASCULINE object. If it\'s feminine, neuter or plural, you\'re already done.',
+      { rule: '⭐ The no-change rule — f / n / pl look identical',
+        summary: 'In the Akkusativ, feminine, neuter and plural articles are identical to the Nominativ — leave them alone.',
+        table: {
+          head: ['gender', 'Nominativ', 'Akkusativ', 'note'],
+          rows: [
+            ['f',  'die / eine', 'die / eine',                  '✅ same'],
+            ['n',  'das / ein',  'das / ein',                   '✅ same'],
+            ['pl', 'die',        'die',                         '✅ same'],
+            ['m',  'der / ein',  { t: 'den / einen', hl: true }, '⚠ the only flip'],
+          ],
+        },
+        tip: 'In any sentence, scan for a MASCULINE object. If the object is feminine, neuter or plural, you are already done.',
       },
-      { rule: '⭐ THE FULL AKKUSATIV TABLE — all four genders at once',
-        body:
-          'Here is the entire definite + indefinite Akkusativ on one card. The masculine row is the ONLY one with an arrow:\n\n' +
-          '          DEFINITE        INDEFINITE\n' +
-          '  m   →   den  ⚠          einen ⚠\n' +
-          '  f   →   die             eine\n' +
-          '  n   →   das             ein\n' +
-          '  pl  →   die             — (no plural "ein"; use keine / meine / plain noun)\n\n' +
-          'Worked sentences (object underlined by the article):\n' +
-          '  Ich sehe den Mann.   (m → den) ⚠\n' +
-          '  Ich sehe die Frau.   (f → die)\n' +
-          '  Ich sehe das Kind.   (n → das)\n' +
-          '  Ich sehe die Kinder. (pl → die)',
+      { rule: '⭐ The full Akkusativ table — all four genders at once',
+        summary: 'The entire definite + indefinite Akkusativ on one card. Only the masculine row flips.',
+        table: {
+          head: ['gender', 'definite', 'indefinite'],
+          rows: [
+            ['m',  { t: 'den', hl: true }, { t: 'einen', hl: true }],
+            ['f',  'die', 'eine'],
+            ['n',  'das', 'ein'],
+            ['pl', 'die', '— (use keine / meine / plain noun)'],
+          ],
+        },
+        examples: [
+          { de: 'Ich sehe den Mann.',   en: 'I see the man.',      note: 'm → den ⚠' },
+          { de: 'Ich sehe die Frau.',   en: 'I see the woman.',    note: 'f → die' },
+          { de: 'Ich sehe das Kind.',   en: 'I see the child.',    note: 'n → das' },
+          { de: 'Ich sehe die Kinder.', en: 'I see the children.', note: 'pl → die' },
+        ],
       },
-      { rule: '⚠ THE NEUTER TRAP — ein stays ein (never einen)',
-        body:
-          'The most common beginner mistake on this day: adding -en to a NEUTER "ein".\n\n' +
-          '  Ich esse ein Brötchen.   ✓  (neuter → ein, no ending)\n' +
-          '  Ich esse einen Brötchen. ✗  (that -en is masculine only!)\n\n' +
-          'The -en ending is the masculine fingerprint and NOTHING else gets it:\n' +
-          '  einen Apfel (m) ✓   ·   ein Brötchen (n) ✓   ·   eine Banane (f) ✓\n\n' +
-          'Same for the ein-words: keinen/meinen are masculine only; neuter stays kein/mein, feminine becomes keine/meine.',
+      { rule: '⚠ The neuter trap — ein stays ein (never einen)',
+        summary: 'The most common mistake today: adding -en to a NEUTER "ein".',
+        examples: [
+          { de: 'Ich esse ein Brötchen.', en: 'I eat a bread roll.', note: '✓ neuter → ein, no ending' },
+          { de: 'Ich esse einen Apfel.',  en: 'I eat an apple.',     note: '✓ masculine → einen' },
+          { de: 'Ich esse eine Banane.',  en: 'I eat a banana.',     note: '✓ feminine → eine' },
+        ],
+        warn: '"Ich esse einen Brötchen" ✗ — the -en ending is the masculine fingerprint and nothing else gets it. Same for the ein-words: keinen/meinen are masculine only; neuter stays kein/mein, feminine becomes keine/meine.',
       },
-      { rule: '⭐ MIXING GENDERS — the real skill',
-        body:
-          'Real sentences mix genders. Flip ONLY the masculine and leave the rest:\n\n' +
-          '  "Ich kaufe einen Tisch (m) und eine Lampe (f)."\n' +
-          '       → einen ⚠         → eine ✅\n\n' +
-          '  "Er hat den Hund (m), das Auto (n) und die Bücher (pl)."\n' +
-          '       → den ⚠   → das ✅   → die ✅\n\n' +
-          'Decision routine for every object:\n' +
-          '  1. What gender is the noun?\n' +
-          '  2. Masculine? → flip (der→den / ein→einen).\n' +
-          '  3. Feminine / neuter / plural? → leave it exactly as is.',
+      { rule: '⭐ Mixing genders — the real skill',
+        summary: 'Real sentences mix genders. Flip ONLY the masculine; leave the rest.',
+        examples: [
+          { de: 'Ich kaufe einen Tisch und eine Lampe.',     en: 'I am buying a table and a lamp.',        note: 'einen (m) ⚠ · eine (f) ✅' },
+          { de: 'Er hat den Hund, das Auto und die Bücher.', en: 'He has the dog, the car and the books.', note: 'den (m) ⚠ · das (n) ✅ · die (pl) ✅' },
+        ],
+        bullets: [
+          'For every object: 1) What gender is the noun? 2) Masculine? → flip (der→den / ein→einen). 3) Feminine / neuter / plural? → leave it exactly as is.',
+        ],
       },
-      { rule: '🚦 PITFALLS — over-correcting the easy genders',
-        body:
-          '• Don\'t "fix" what isn\'t broken: die Frau / das Kind / die Kinder NEVER change in the Akk.\n' +
-          '• ein Brötchen (n) and eine Banane (f) keep their plain forms — only der/ein masculine gets -en/den.\n' +
-          '• Plural has no indefinite article: "Ich kaufe Bücher" (some books) or "keine Bücher" (no books) — never "einen Bücher".\n' +
-          '• The flip depends on GENDER + JOB, not on the verb alone. Same verb, different object: "Ich sehe den Mann / die Frau."\n' +
-          '• Remember the Day-21 contrast lives on: masculine subject also stays der — "Der Hund sieht die Frau."',
+      { rule: '🚦 Pitfalls — over-correcting the easy genders',
+        summary: 'The traps that come from over-correcting.',
+        bullets: [
+          'Do not "fix" what is not broken: die Frau / das Kind / die Kinder NEVER change in the Akkusativ.',
+          'ein Brötchen (n) and eine Banane (f) keep their plain forms — only masculine der/ein gets den / -en.',
+          'Plural has no indefinite article: "Ich kaufe Bücher" (some books) or "keine Bücher" (no books) — never "einen Bücher".',
+          'The flip depends on GENDER + JOB, not on the verb alone: "Ich sehe den Mann / die Frau."',
+          'The Day-21 contrast lives on: a masculine subject also stays der — "Der Hund sieht die Frau."',
+        ],
       },
     ],
     exercises: [
@@ -3501,51 +3505,60 @@ export const days = [
       { de: 'fragen',   en: 'to ask (someone)', emoji: '🙋', hint: 'subject asks object → Akk', example: 'Der Student fragt den Lehrer.', exampleEn: 'The student asks the teacher.' },
     ],
     grammar: [
-      { rule: '⭐ THE 5-SECOND TEST — Wer (subject) vs Wen (object)',
-        body:
-          'Every two-noun sentence has a doer and a receiver. Ask the verb two questions:\n\n' +
-          '  WER + verb?   → the answer is the SUBJECT  (🟦 Nominativ)\n' +
-          '  WEN + verb?   → the answer is the OBJECT   (🟩 Akkusativ)\n\n' +
-          'Sentence: "Der Hund sieht den Mann."\n' +
-          '  Wer sieht?        → Der Hund.   (subject → Nominativ → der)\n' +
-          '  Wen sieht der Hund? → den Mann. (object → Akkusativ → den)\n\n' +
-          '🧠 "Wen" carries the same -n as "den" — both are the Akkusativ tag. If "whom" fits the slot, that noun is the object.',
+      { rule: '⭐ The 5-second test — Wer (subject) vs Wen (object)',
+        summary: 'Ask the verb two questions: WER finds the subject (Nominativ); WEN finds the object (Akkusativ).',
+        table: {
+          head: ['question', 'finds', 'case'],
+          rows: [
+            ['Wer + verb?', 'the subject (doer)',     { t: '🟦 Nominativ', hl: true }],
+            ['Wen + verb?', 'the object (receiver)',  { t: '🟩 Akkusativ', hl: true }],
+          ],
+        },
+        examples: [
+          { de: 'Der Hund sieht den Mann.', en: 'The dog sees the man.', note: 'Wer sieht? → der Hund. Wen? → den Mann.' },
+        ],
+        tip: '"Wen" carries the same -n as "den" — both are the Akkusativ tag. If "whom" fits the slot, that noun is the object.',
       },
-      { rule: '⭐ WHY THE ARTICLE TAG MATTERS — word order can move',
-        body:
-          'English relies on WORD ORDER: "The dog sees the man" ≠ "The man sees the dog". German relies on the ARTICLE, so it can shuffle words and keep the meaning:\n\n' +
-          '  Der Hund sieht den Mann.   = The dog sees the man.\n' +
-          '  Den Mann sieht der Hund.   = The dog sees the man.  (SAME meaning!)\n' +
-          '      └ object first         └ subject later\n\n' +
-          'Because "den Mann" is tagged as the object, you can lead with it for emphasis and German still knows the dog is doing the seeing. The verb stays in slot 2 (V2 rule) — only the nouns move.\n\n' +
-          '⚠ This ONLY works clearly when one noun is masculine (der vs den shows the role). With "Die Frau sieht die Katze" both are die, so order DOES carry the meaning.',
+      { rule: '⭐ Why the article tag matters — word order can move',
+        summary: 'English relies on word order; German relies on the article, so it can move words and keep the meaning.',
+        examples: [
+          { de: 'Der Hund sieht den Mann.', en: 'The dog sees the man.', note: 'subject first' },
+          { de: 'Den Mann sieht der Hund.', en: 'The dog sees the man.', note: 'object first — SAME meaning (den Mann is tagged object)' },
+        ],
+        warn: 'This only works clearly when one noun is masculine (der vs den shows the role). In "Die Frau sieht die Katze" both are die, so word order DOES carry the meaning. The verb stays in slot 2 — only the nouns move.',
       },
-      { rule: '⭐ ROLE STAYS, ARTICLE FLIPS — the same noun, two jobs',
-        body:
-          'A noun is not "a subject" or "an object" by nature — its JOB in the sentence decides:\n\n' +
-          '  Der Mann sieht den Hund.   — Mann is subject (der)\n' +
-          '  Den Mann sieht der Hund.   — Mann is object (den), Hund is now subject\n\n' +
-          'Routine for building a correct sentence:\n' +
-          '  1. Who DOES it? → that noun is Nominativ (der/die/das).\n' +
-          '  2. Who RECEIVES it? → that noun is Akkusativ (masc → den/einen; f/n/pl unchanged).\n' +
-          '  3. Put the verb in slot 2; either noun can take slot 1.',
+      { rule: '⭐ Role stays, article flips — the same noun, two jobs',
+        summary: 'A noun is not a subject or object by nature — its JOB in the sentence decides.',
+        examples: [
+          { de: 'Der Mann sieht den Hund.', en: 'The man sees the dog.', note: 'Mann = subject (der)' },
+          { de: 'Den Mann sieht der Hund.', en: 'The dog sees the man.', note: 'Mann = object (den); Hund is now the subject' },
+        ],
+        bullets: [
+          '1) Who DOES it? → Nominativ (der/die/das). 2) Who RECEIVES it? → Akkusativ (masc → den/einen; f/n/pl unchanged). 3) Verb in slot 2; either noun can take slot 1.',
+        ],
       },
-      { rule: '⚖️ definite vs indefinite does NOT change the role',
-        body:
-          'der/die/das (specific) vs ein/eine (any) only changes "the" vs "a" — NOT who is subject or object:\n\n' +
-          '  Ein Freund besucht eine Studentin. — a friend visits a student\n' +
-          '  Der Freund besucht eine Studentin. — the friend visits a student\n' +
-          '  Ein Freund besucht die Studentin.  — a friend visits the student\n' +
-          '  Die Freundin besucht die Studentin. — the friend visits the student\n\n' +
-          'In all four, the FIRST noun is the subject (it does the visiting) and the second is the object. Swapping the/a never swaps the roles — only re-ordering or re-tagging does.',
+      { rule: '⚖️ Definite vs indefinite does NOT change the role',
+        summary: 'der/die/das vs ein/eine only changes "the" vs "a" — not who is subject or object.',
+        table: {
+          head: ['sentence', 'meaning'],
+          rows: [
+            ['Ein Freund besucht eine Studentin.',   'a friend visits a student'],
+            ['Der Freund besucht eine Studentin.',   'the friend visits a student'],
+            ['Ein Freund besucht die Studentin.',    'a friend visits the student'],
+            ['Die Freundin besucht die Studentin.',  'the friend visits the student'],
+          ],
+        },
+        tip: 'In each, the FIRST noun is the subject (it does the visiting) and the second is the object. Swapping the/a never swaps the roles — only re-ordering or re-tagging does.',
       },
-      { rule: '🚦 PITFALLS — the classic Nom-vs-Akk errors',
-        body:
-          '• "Ich sehe der Tisch" ✗ → Tisch is the object → "Ich sehe den Tisch." ✓\n' +
-          '• "Der Tisch ist groß" ✓ — after sein the noun stays Nominativ (no object).\n' +
-          '• Don\'t assume slot 1 = subject. "Den Mann sieht der Hund" — slot 1 is the OBJECT here.\n' +
-          '• Weak masculine nouns add -n in the Akk: den Studenten / den Jungen / den Herrn.\n' +
-          '• With two same-gender nouns (die Frau / die Katze) word order is the ONLY clue — keep subject first.',
+      { rule: '🚦 Pitfalls — the classic Nom-vs-Akk errors',
+        summary: 'The errors that mix up the two cases.',
+        bullets: [
+          '"Ich sehe der Tisch" ✗ → Tisch is the object → "Ich sehe den Tisch." ✓',
+          '"Der Tisch ist groß" ✓ — after sein the noun stays Nominativ (no object).',
+          'Do not assume slot 1 = subject: "Den Mann sieht der Hund" — slot 1 is the OBJECT here.',
+          'Weak masculine nouns add -n in the Akkusativ: den Studenten / den Jungen / den Herrn.',
+          'With two same-gender nouns (die Frau / die Katze) word order is the ONLY clue — keep the subject first.',
+        ],
       },
     ],
     exercises: [
