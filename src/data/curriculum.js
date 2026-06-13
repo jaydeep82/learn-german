@@ -2140,65 +2140,60 @@ export const days = [
     ],
     grammar: [
       { rule: '⭐ The TFP-O order — your hobby-sentence template',
-        body:
-          'Subject + Verb (slot 2) + 🕒 Time + 🔄 Frequency + ❤️ Preference + 🎯 Object\n' +
-          '\n' +
-          '   Ich    höre    jeden Tag        oft       gerne     Musik.\n' +
-          '   Wir    spielen am Wochenende    manchmal  gerne     Fußball.\n' +
-          '   Du     liest   nach der Arbeit  immer     sehr gerne Bücher.\n' +
-          '   Sie    kocht   am Wochenende    oft       gerne     Pasta.\n' +
-          '\n' +
-          'Not every slot has to be filled. Drop whichever you do not need. But when two or three appear together, they go in this order.',
+        summary: 'Subject + Verb + 🕒 Time + 🔄 Frequency + ❤️ Preference + 🎯 Object.',
+        table: {
+          head: ['subject', 'verb', '🕒 time', '🔄 freq', '❤️ pref', '🎯 object'],
+          rows: [
+            ['Ich', 'höre',    'jeden Tag',       'oft',      'gerne',      'Musik.'],
+            ['Wir', 'spielen', 'am Wochenende',   'manchmal', 'gerne',      'Fußball.'],
+            ['Du',  'liest',   'nach der Arbeit', 'immer',    'sehr gerne', 'Bücher.'],
+          ],
+        },
+        examples: [
+          { de: 'Ich höre jeden Tag oft gerne Musik.', en: 'I often happily listen to music every day.', note: 'all four slots filled, in order' },
+        ],
+        tip: 'Not every slot must be filled — drop what you don\'t need. But when two or three appear together, this is the order.',
       },
       { rule: '⚠ V2 still wins — if 🕒 time leads, the subject moves',
-        body:
-          'When you put a TIME word in slot 1 for emphasis, the conjugated verb still keeps slot 2 — so the subject moves to slot 3:\n' +
-          '\n' +
-          '   slot 1            slot 2 (verb)   slot 3 (subject)\n' +
-          '   Heute             höre            ich       jeden Tag oft gerne Musik.   ✓\n' +
-          '   Am Wochenende     spielen         wir       oft Fußball.                  ✓\n' +
-          '\n' +
-          'Same V2 rule from Day 9 — it never sleeps.',
+        summary: 'Put a time word in slot 1 and the verb stays slot 2 → subject jumps to slot 3.',
+        examples: [
+          { de: 'Heute höre ich Musik.',           en: 'Today I listen to music.',         note: 'time leads → ich after the verb' },
+          { de: 'Am Wochenende spielen wir Fußball.', en: 'At the weekend we play football.', note: 'verb still slot 2' },
+        ],
+        tip: 'Same V2 rule from Day 9 — it never sleeps.',
       },
       { rule: '🔄 The frequency scale — picture it',
-        body:
-          'Frequency words live on a sliding scale from 100% to 0%:\n' +
-          '\n' +
-          '   100% ████████  immer       always\n' +
-          '    80% ██████░░  oft         often\n' +
-          '    40% ████░░░░  manchmal    sometimes\n' +
-          '    10% █░░░░░░░  selten      rarely\n' +
-          '     0% ░░░░░░░░  nie         never\n' +
-          '\n' +
-          'In a sentence, the frequency word always goes between 🕒 time and ❤️ preference. Putting it FIRST (slot 1) pushes the subject out — same V2 rule: "Manchmal höre ich Musik."',
+        summary: 'From always (100%) to never (0%), the frequency word sits between time and preference.',
+        table: {
+          head: ['%', 'word', 'English'],
+          rows: [
+            ['100%', { t: 'immer', hl: true },    'always'],
+            ['~80%', { t: 'oft', hl: true },      'often'],
+            ['~40%', { t: 'manchmal', hl: true }, 'sometimes'],
+            ['~10%', { t: 'selten', hl: true },   'rarely'],
+            ['0%',   { t: 'nie', hl: true },      'never'],
+          ],
+        },
+        examples: [
+          { de: 'Manchmal höre ich Musik.', en: 'Sometimes I listen to music.', note: 'frequency in slot 1 → subject moves (V2)' },
+        ],
       },
       { rule: '❤️ "gerne" — the most-loved A1 word',
-        body:
-          'gerne (or its short form "gern") expresses ENJOYMENT. It sits between the frequency word and the object:\n' +
-          '\n' +
-          '   Ich trinke    gerne     Kaffee.       I like drinking coffee.\n' +
-          '   Wir spielen   gerne     Fußball.      We like playing football.\n' +
-          '   Du liest      sehr gerne Bücher.       You really like reading books.\n' +
-          '\n' +
-          'Three escalation forms:\n' +
-          '   gerne        →  I like it\n' +
-          '   sehr gerne   →  I really like it\n' +
-          '   am liebsten  →  most of all  ("Am liebsten esse ich Pizza.")\n' +
-          '\n' +
-          'Tip: gerne lives BEFORE the object, NOT after.\n' +
-          '   ✗ Ich trinke Kaffee gerne.\n' +
-          '   ✓ Ich trinke gerne Kaffee.',
+        summary: 'gerne (or "gern") = enjoyment. It sits BEFORE the object.',
+        examples: [
+          { de: 'Ich trinke gerne Kaffee.',  en: 'I like drinking coffee.',   note: 'gerne before the object' },
+          { de: 'Du liest sehr gerne Bücher.', en: 'You really like reading books.', note: 'sehr gerne = really like' },
+          { de: 'Am liebsten esse ich Pizza.', en: 'Most of all I eat pizza.', note: 'am liebsten = most of all (the top of the scale)' },
+        ],
+        warn: 'gerne lives BEFORE the object: "Ich trinke gerne Kaffee" ✓, not "Ich trinke Kaffee gerne" ✗. Escalation: gerne → sehr gerne → am liebsten.',
       },
-      { rule: 'TeKaMoLo — the full grown-up rule (preview)',
-        body:
-          'When place comes in too, German uses the order TeKaMoLo:\n' +
-          '   Te = TEmporal (when)\n' +
-          '   Ka = KAusal (why)\n' +
-          '   Mo = MOdal (how / preference)\n' +
-          '   Lo = LOkal (where)\n' +
-          '\n' +
-          'Example: "Ich fahre heute / wegen der Arbeit / mit dem Bus / nach Berlin."\n' +
-          'For Week 2 you only need TFP-O. The full TeKaMoLo arrives once you have prepositions of place under your belt.',
+      { rule: '🔮 TeKaMoLo — the full grown-up rule (preview)',
+        summary: 'When place joins too, the order is Te-Ka-Mo-Lo.',
+        bullets: [
+          'Te = TEmporal (when) · Ka = KAusal (why) · Mo = MOdal (how/preference) · Lo = LOkal (where)',
+          'Example: "Ich fahre heute / wegen der Arbeit / mit dem Bus / nach Berlin."',
+        ],
+        tip: 'For Week 2 you only need TFP-O. Full TeKaMoLo arrives once you have prepositions of place.',
       },
     ],
     exercises: [
@@ -2397,68 +2392,63 @@ export const days = [
     ],
     grammar: [
       { rule: '⭐ The 6-block recipe',
-        body:
-          'Every solid self-introduction follows this order:\n' +
-          '\n' +
-          '   1. 👋 GREETING        Hallo · Guten Tag · Guten Morgen\n' +
-          '   2. 🪪 NAME            Ich heiße … / Mein Name ist …\n' +
-          '   3. 🎂 AGE             Ich bin … Jahre alt.\n' +
-          '   4. 🌍 ORIGIN          Ich komme aus … (country)\n' +
-          '   5. 🏠 RESIDENCE       Ich wohne in … (city)\n' +
-          '   6. 💼 PROFESSION      Ich bin … / Ich arbeite als … / Ich studiere …\n' +
-          '   ✨ Bonus: 🎮 hobby     In meiner Freizeit + verb (Day 13!).\n' +
-          '\n' +
-          'Order is flexible AFTER the greeting+name pair, but going top-to-bottom always sounds natural.',
+        summary: 'Greeting → name → age → origin → residence → profession (+ bonus hobby).',
+        table: {
+          head: ['#', 'block', 'say it like'],
+          rows: [
+            ['1', '👋 greeting',   'Hallo · Guten Tag · Guten Morgen'],
+            ['2', '🪪 name',       'Ich heiße … / Mein Name ist …'],
+            ['3', '🎂 age',        'Ich bin … Jahre alt.'],
+            ['4', '🌍 origin',     'Ich komme aus … (country)'],
+            ['5', '🏠 residence',  'Ich wohne in … (city)'],
+            ['6', '💼 profession', 'Ich bin … / Ich arbeite als … / Ich studiere …'],
+          ],
+        },
+        examples: [
+          { de: 'Hallo! Ich heiße Anna. Ich bin 25 Jahre alt. Ich komme aus Indien und wohne in Berlin. Ich bin Lehrerin.', en: 'Hi! My name is Anna. I am 25. I come from India and live in Berlin. I am a teacher.', note: 'the whole recipe in one breath' },
+        ],
+        tip: 'Order is flexible after the greeting+name pair, but top-to-bottom always sounds natural. Bonus: 🎮 "In meiner Freizeit …" + a hobby (Day 13).',
       },
       { rule: '👤 The two registers — du vs Sie',
-        body:
-          'Same recipe, two voicings. Pick the right one BEFORE you open your mouth:\n' +
-          '\n' +
-          '   Situation                              Use\n' +
-          '   ──────────────────────────────────────────────────────\n' +
-          '   meeting a friend / classmate            du\n' +
-          '   chatting with a child                   du\n' +
-          '   social media / casual chat              du\n' +
-          '   meeting your boss / a stranger          Sie\n' +
-          '   talking to a doctor or professor        Sie\n' +
-          '   customer service / shop staff           Sie\n' +
-          '\n' +
-          'Question swap when you go formal:\n' +
-          '   du-form                              Sie-form\n' +
-          '   Wie heißt du?                       →  Wie heißen Sie?\n' +
-          '   Woher kommst du?                    →  Woher kommen Sie?\n' +
-          '   Wo wohnst du?                       →  Wo wohnen Sie?\n' +
-          '   Wie alt bist du?                    →  Wie alt sind Sie?',
+        summary: 'Same recipe, two voicings — pick before you open your mouth.',
+        bullets: [
+          'du — a friend, classmate, child, casual chat, social media.',
+          'Sie — your boss, a stranger, doctor, professor, shop/customer service.',
+        ],
+        table: {
+          head: ['du-form', 'Sie-form'],
+          rows: [
+            ['Wie heißt du?',    { t: 'Wie heißen Sie?', hl: true }],
+            ['Woher kommst du?', { t: 'Woher kommen Sie?', hl: true }],
+            ['Wo wohnst du?',    { t: 'Wo wohnen Sie?', hl: true }],
+            ['Wie alt bist du?', { t: 'Wie alt sind Sie?', hl: true }],
+          ],
+        },
       },
       { rule: '⚠ Woher vs Wo — the killer pair',
-        body:
-          'Both translate to "where" but point in OPPOSITE directions:\n' +
-          '\n' +
-          '   Woher kommst du?       →  Where are you FROM (origin)?\n' +
-          '   Ich komme AUS Indien.\n' +
-          '\n' +
-          '   Wo wohnst du?          →  Where (located) do you live?\n' +
-          '   Ich wohne IN Berlin.\n' +
-          '\n' +
-          'Pair the question word with the right preposition: woher … aus / wo … in. (There is also "wohin" = where TO — Day 17 will dive deeper.)',
+        summary: 'Both mean "where" but point opposite ways: woher = FROM, wo = located.',
+        examples: [
+          { de: 'Woher kommst du? — Ich komme aus Indien.', en: 'Where are you from? — I come from India.', note: 'woher … aus (origin)' },
+          { de: 'Wo wohnst du? — Ich wohne in Berlin.',     en: 'Where do you live? — I live in Berlin.',  note: 'wo … in (location)' },
+        ],
+        tip: 'Pair the question word with the right preposition: woher … aus / wo … in. (There\'s also wohin = where TO — Day 17.)',
       },
       { rule: '💼 Professions — no article!',
-        body:
-          'When you state your job, drop the article:\n' +
-          '\n' +
-          '   ✓ Ich bin Lehrer.       (not "Ich bin EIN Lehrer.")\n' +
-          '   ✓ Sie ist Ärztin.        (not "Sie ist EINE Ärztin.")\n' +
-          '   ✓ Wir sind Studenten.    (not "Wir sind DIE Studenten.")\n' +
-          '\n' +
-          'For female forms, add -in: Lehrer → Lehrerin · Arzt → Ärztin · Student → Studentin · Verkäufer → Verkäuferin.',
+        summary: 'State your job with NO article: "Ich bin Lehrer" (not "ein Lehrer").',
+        examples: [
+          { de: 'Ich bin Lehrer.',     en: 'I am a teacher.',   note: '✓ no article (not "ein Lehrer")' },
+          { de: 'Sie ist Ärztin.',     en: 'She is a doctor.',  note: 'female form adds -in: Arzt → Ärztin' },
+          { de: 'Wir sind Studenten.', en: 'We are students.',  note: 'plural, still no article' },
+        ],
+        tip: 'Female forms add -in: Lehrer → Lehrerin · Arzt → Ärztin · Student → Studentin · Verkäufer → Verkäuferin.',
       },
       { rule: '🤝 Closing the introduction',
-        body:
-          'After you introduce yourself, the other person usually replies "Sehr angenehm" (very nice) or "Es freut mich" (pleased to meet you). End with one of:\n' +
-          '   Tschüss             — informal bye\n' +
-          '   Auf Wiedersehen     — formal / neutral goodbye\n' +
-          '   Bis bald            — see you soon\n' +
-          '   Bis morgen          — see you tomorrow (when you know you\'ll meet)',
+        summary: 'They reply "Sehr angenehm" / "Es freut mich"; you sign off.',
+        examples: [
+          { de: 'Tschüss!',         en: 'Bye! (informal)',          note: 'casual goodbye' },
+          { de: 'Auf Wiedersehen!', en: 'Goodbye. (formal/neutral)', note: 'the safe formal sign-off' },
+          { de: 'Bis bald!',        en: 'See you soon!',            note: 'Bis morgen = see you tomorrow' },
+        ],
       },
     ],
     exercises: [
@@ -5595,64 +5585,62 @@ export const days = [
     ],
     grammar: [
       { rule: '⭐ The sandwich pattern — splitting in a main sentence',
-        body:
-          'A main-clause separable verb makes a SANDWICH. The stem sits in position 2; everything else goes between; the prefix lands at the very end:\n' +
-          '\n' +
-          '   slot 1     slot 2 (stem)        ……  middle  ……      slot ∞ (prefix)\n' +
-          '   Ich        STEHE                um 7 Uhr               AUF.\n' +
-          '   Wir        KAUFEN               am Samstag             EIN.\n' +
-          '   Du         MACHST               das Fenster            AUF.\n' +
-          '   Er         RUFT                 seine Freundin          AN.\n' +
-          '   Ich        HOLE                 dich am Bahnhof         AB.\n' +
-          '\n' +
-          'The longer the sentence, the wider the sandwich.',
+        summary: 'Stem in slot 2, everything in the middle, prefix at the very end.',
+        table: {
+          head: ['slot 1', 'slot 2 (stem)', 'middle', 'end (prefix)'],
+          rows: [
+            ['Ich', { t: 'stehe', hl: true },  'um 7 Uhr',       { t: 'auf', hl: true }],
+            ['Wir', { t: 'kaufen', hl: true }, 'am Samstag',     { t: 'ein', hl: true }],
+            ['Er',  { t: 'ruft', hl: true },   'seine Freundin', { t: 'an', hl: true }],
+            ['Ich', { t: 'hole', hl: true },   'dich am Bahnhof', { t: 'ab', hl: true }],
+          ],
+        },
+        examples: [
+          { de: 'Ich stehe um 7 Uhr auf.', en: 'I get up at 7.',       note: 'aufstehen splits: stehe … auf' },
+          { de: 'Wir kaufen am Samstag ein.', en: 'We shop on Saturday.', note: 'einkaufen splits: kaufen … ein' },
+        ],
+        tip: 'The longer the sentence, the wider the sandwich.',
       },
-      { rule: 'Common separable prefixes — and their meanings',
-        body:
-          '   auf-   "up / open"     →  aufstehen, aufmachen, aufwachen, aufhören\n' +
-          '   ein-   "in / into"      →  einkaufen, einladen, einsteigen\n' +
-          '   aus-   "out"            →  ausgehen, ausfüllen, aussteigen\n' +
-          '   ab-    "off / away"     →  abholen, abfahren\n' +
-          '   an-    "on / at"        →  anrufen, anfangen, ankommen\n' +
-          '   mit-   "along / with"   →  mitkommen, mitnehmen\n' +
-          '   zu-    "to / closed"    →  zumachen, zuhören\n' +
-          '   vor-   "before / pre-"  →  vorbereiten, vorstellen\n' +
-          '   nach-  "after"          →  nachfragen\n' +
-          '   fern-  "far / TV"       →  fernsehen',
+      { rule: '🧩 Common separable prefixes — and their meanings',
+        summary: 'Most separable prefixes are little German words in their own right.',
+        table: {
+          head: ['prefix', 'meaning', 'verbs'],
+          rows: [
+            ['auf-', 'up / open',    'aufstehen · aufmachen · aufwachen'],
+            ['ein-', 'in / into',    'einkaufen · einladen · einsteigen'],
+            ['aus-', 'out',          'ausgehen · ausfüllen · aussteigen'],
+            ['ab-',  'off / away',   'abholen · abfahren'],
+            ['an-',  'on / at',      'anrufen · anfangen · ankommen'],
+            ['mit-', 'along / with', 'mitkommen · mitnehmen'],
+            ['zu-',  'to / closed',  'zumachen · zuhören'],
+            ['fern-','TV',           'fernsehen'],
+          ],
+        },
       },
       { rule: '⭐ Spot a separable verb — the 3-second test',
-        body:
-          'Two clues identify a separable verb in the dictionary:\n' +
-          '1. STRESS — the prefix is stressed when you say the infinitive: AUFstehen, EINkaufen, ANrufen. Compare to NON-separable: beSUchen, verSTEhen — stress on the stem.\n' +
-          '2. PREFIX from the list above. Most separable prefixes are themselves common little German words (auf, an, mit, aus). Non-separable prefixes (be-, ver-, ent-, er-, zer-, ge-) are not.\n' +
-          'Rule of thumb: if the prefix can stand alone as a German word, it usually separates.',
+        summary: 'Stress on the prefix + a stand-alone prefix word = it separates.',
+        bullets: [
+          'STRESS — the prefix is stressed: AUFstehen, EINkaufen, ANrufen. (Non-separable: beSUchen, verSTEhen — stress on the stem.)',
+          'PREFIX — separable prefixes (auf, an, mit, aus) are common little words. Non-separable ones (be-, ver-, ent-, er-, zer-, ge-) are not.',
+        ],
+        tip: 'Rule of thumb: if the prefix can stand alone as a German word, it usually separates.',
       },
       { rule: '⚠ With a modal verb, the prefix RE-GLUES',
-        body:
-          'When a modal verb (kann · muss · will · darf · soll · möchte) takes slot 2, the separable verb goes to the END as a SINGLE infinitive — no splitting:\n' +
-          '\n' +
-          '   Ich         stehe   um 7 Uhr         auf.            (present, splits)\n' +
-          '   Ich  MUSS   um 7 Uhr                 AUFSTEHEN.       (modal, glued)\n' +
-          '\n' +
-          '   Wir         kaufen  am Samstag       ein.            (present, splits)\n' +
-          '   Wir  WOLLEN am Samstag               EINKAUFEN.       (modal, glued)\n' +
-          '\n' +
-          'In a yes/no question, the stem still leads (slot 1) and the prefix still flies to the end:\n' +
-          '   Stehst   du um 7 Uhr     auf?\n' +
-          '   Rufst    du mich morgen   an?\n' +
-          'Negation glues "nicht" right BEFORE the prefix:\n' +
-          '   Ich rufe dich heute       nicht an.',
+        summary: 'After a modal, the separable verb goes to the end as ONE infinitive — no split.',
+        examples: [
+          { de: 'Ich stehe um 7 Uhr auf.',   en: 'I get up at 7.',         note: 'present → splits (stehe … auf)' },
+          { de: 'Ich muss um 7 Uhr aufstehen.', en: 'I have to get up at 7.', note: 'modal → glued at the end (aufstehen)' },
+          { de: 'Stehst du um 7 Uhr auf?',   en: 'Do you get up at 7?',    note: 'yes/no question → stem leads, prefix still at end' },
+          { de: 'Ich rufe dich heute nicht an.', en: 'I am not calling you today.', note: 'negation → nicht right before the prefix' },
+        ],
       },
       { rule: '🚦 Common pitfalls',
-        body:
-          '✗ Ich aufstehe um 7 Uhr.       ← prefix glued, stem buried in slot 2 — broken.\n' +
-          '✓ Ich stehe um 7 Uhr auf.\n' +
-          '\n' +
-          '✗ Ich stehe auf um 7 Uhr.      ← prefix not at the end.\n' +
-          '✓ Ich stehe um 7 Uhr auf.\n' +
-          '\n' +
-          '✗ Ich muss aufstehen um 7 Uhr. ← infinitive should be at the very end after the modal.\n' +
-          '✓ Ich muss um 7 Uhr aufstehen.',
+        summary: 'The three classic separable-verb mistakes.',
+        examples: [
+          { de: 'Ich stehe um 7 Uhr auf.',     en: 'I get up at 7.',          note: '✓ NOT "Ich aufstehe …" (prefix glued) and NOT "Ich stehe auf um 7 Uhr" (prefix not last)' },
+          { de: 'Ich muss um 7 Uhr aufstehen.', en: 'I have to get up at 7.', note: '✓ infinitive at the very end after a modal' },
+        ],
+        warn: '"Ich aufstehe um 7 Uhr" ✗ and "Ich muss aufstehen um 7 Uhr" ✗ — the prefix/infinitive must land last.',
       },
     ],
     exercises: [

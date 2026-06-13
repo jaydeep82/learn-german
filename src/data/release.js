@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.11.9';
+export const VERSION = '3.12.0';
 export const RELEASE_DATE = '2026-06-11';
 
 export const RELEASES = [
+  {
+    version: '3.12.0',
+    date: '2026-06-11',
+    type: 'improvement',
+    title: 'Grammar revamp · Step 7e — Week 2 batch 2 enriched (Days 12-14): Week 2 complete',
+    notes: [
+      'Days 12-14 converted to the rich visual grammar shape — completing Week 2 (Days 8-14 now all enriched).',
+      'Day 12 (Separable verbs): the ⭐ sandwich pattern as a slot table (stem + prefix highlighted); the common-prefixes-and-meanings table; the 3-second spot test as bullets; the modal re-glue + question + negation behaviour, and the pitfalls, as audio examples + a warn.',
+      'Day 13 (Time/Frequency/Preference): the ⭐ TFP-O order as a 6-column slot table; the V2-inversion rule; the 🔄 frequency scale (immer→nie) as a highlighted percentage table; the gerne placement rule with audio examples + a warn; the TeKaMoLo preview as bullets.',
+      'Day 14 (Introducing yourself): the ⭐ 6-block recipe as a numbered table with a full worked self-intro; the du-vs-Sie register as bullets + a question-swap table; the Woher-vs-Wo killer pair; professions-no-article and closings as audio examples.',
+      'Everything appears in the Grammar reference AND the Day 12-14 lesson intros via the shared GrammarItem renderer. Weeks 1 and 2 (Days 1-14) are now fully enriched.',
+    ],
+  },
   {
     version: '3.11.9',
     date: '2026-06-11',
