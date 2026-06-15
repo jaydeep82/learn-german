@@ -7966,67 +7966,79 @@ export const days = [
       { de: 'gehören / gefallen', en: 'belong to / please sb',   emoji: '🔄', hint: '🔁 Day 26 · "Das gehört mir", "gefällt mir"', example: 'Das gehört mir.',     exampleEn: 'That belongs to me.' },
     ],
     grammar: [
-      { rule: '⭐ THE FULL DATIV-PRONOUN TABLE',
-        body:
-          '              Subject (Nom)   →   Indirect object (Dat)\n' +
-          '   1st sg     ich              →   mir\n' +
-          '   2nd sg     du               →   dir\n' +
-          '   3rd m      er               →   ihm\n' +
-          '   3rd f      sie              →   ihr\n' +
-          '   3rd n      es               →   ihm     (same as er)\n' +
-          '   1st pl     wir              →   uns     ✅ unchanged\n' +
-          '   2nd pl     ihr              →   euch    ✅ unchanged\n' +
-          '   3rd pl     sie              →   ihnen\n' +
-          '   formal     Sie              →   Ihnen   (capital I)\n\n' +
-          '🧠 Most singular forms end in -r (miR, diR, ihR) or -m (ihM). uns & euch don\'t change.',
+      { rule: '⭐ The full Dativ-pronoun table',
+        summary: 'When a person becomes the indirect object (to/for whom), the pronoun shifts to the Dativ.',
+        table: {
+          head: ['person', 'subject (Nom)', 'indirect object (Dat)', 'note'],
+          rows: [
+            ['1 sg',   'ich', { t: 'mir', hl: true },   ''],
+            ['2 sg',   'du',  { t: 'dir', hl: true },   ''],
+            ['3 m',    'er',  { t: 'ihm', hl: true },   ''],
+            ['3 f',    'sie', { t: 'ihr', hl: true },   ''],
+            ['3 n',    'es',  { t: 'ihm', hl: true },   'same as er'],
+            ['1 pl',   'wir', 'uns',                     '✅ unchanged'],
+            ['2 pl',   'ihr', 'euch',                    '✅ unchanged'],
+            ['3 pl',   'sie', { t: 'ihnen', hl: true }, ''],
+            ['formal', 'Sie', { t: 'Ihnen', hl: true }, 'capital I'],
+          ],
+        },
+        tip: 'Most singular forms end in -r (miR, diR, ihR) or -m (ihM). uns and euch do not change.',
       },
-      { rule: '⚖️ DATIV vs AKKUSATIV — the mir/mich · ihm/ihn trap',
-        body:
-          'Both are object pronouns; the VERB (or preposition) decides which set you need. Day-26 Dativ verbs + Day-25 Dativ preps → Dativ; normal verbs → Akkusativ:\n\n' +
-          '   Subject   Akkusativ      Dativ\n' +
-          '   ich       mich           mir\n' +
-          '   du        dich           dir\n' +
-          '   er        ihn            ihm\n' +
-          '   sie(she)  sie            ihr\n' +
-          '   wir       uns            uns    ✅ same\n' +
-          '   ihr       euch           euch   ✅ same\n' +
-          '   sie(they) sie            ihnen\n\n' +
-          'Worked contrast:\n' +
-          '  Er SIEHT mich.   (sehen = Akk)   Er HILFT mir.   (helfen = Dat)\n' +
-          '  Ich SEHE ihn.    (Akk)           Ich HELFE ihm.  (Dat)\n\n' +
-          '⚠ The single most-tested pair: ihn (Akk) vs ihm (Dat).',
+      { rule: '⚖️ Dativ vs Akkusativ — the mir/mich · ihm/ihn trap',
+        summary: 'Both are object pronouns; the verb or preposition decides. Dativ verbs/preps → Dativ; normal verbs → Akkusativ.',
+        table: {
+          head: ['subject', 'Akkusativ', 'Dativ'],
+          rows: [
+            ['ich',        'mich', { t: 'mir', hl: true }],
+            ['du',         'dich', { t: 'dir', hl: true }],
+            ['er',         'ihn',  { t: 'ihm', hl: true }],
+            ['sie (she)',  'sie',  { t: 'ihr', hl: true }],
+            ['wir',        'uns',  'uns'],
+            ['ihr',        'euch', 'euch'],
+            ['sie (they)', 'sie',  { t: 'ihnen', hl: true }],
+          ],
+        },
+        examples: [
+          { de: 'Er sieht mich. / Er hilft mir.', en: 'He sees me. / He helps me.', note: 'sehen → Akk (mich); helfen → Dat (mir)' },
+          { de: 'Ich sehe ihn. / Ich helfe ihm.', en: 'I see him. / I help him.',   note: 'the most-tested pair: ihn (Akk) vs ihm (Dat)' },
+        ],
       },
-      { rule: '🅿️ THE TWO TRIGGERS — when a pronoun goes Dativ',
-        body:
-          'A pronoun takes the Dativ in exactly two situations:\n\n' +
-          '  1. After a DATIV VERB (Day 26):\n' +
-          '     helfen · danken · gehören · gefallen · antworten · glauben · gratulieren\n' +
-          '     "Ich helfe dir." · "Das gehört mir." · "Es gefällt ihr."\n\n' +
-          '  2. After a DATIV PREPOSITION (Day 25):\n' +
-          '     mit · bei · zu · von · nach · aus · seit · gegenüber\n' +
-          '     "Kommst du mit mir?" · "Ich wohne bei ihr." · "Ich gehe zu ihm."\n\n' +
-          '  Wrong: „Das Buch gehört ich!"   Right: „Das Buch gehört mir!"\n' +
-          '  Wrong: „Er kommt mit du."        Right: „Er kommt mit dir."',
+      { rule: '🅿️ The two triggers — when a pronoun goes Dativ',
+        summary: 'A pronoun takes the Dativ in exactly two situations: after a Dativ verb, or after a Dativ preposition.',
+        table: {
+          head: ['trigger', 'examples', 'in use'],
+          rows: [
+            ['Dativ verb (Day 26)',        'helfen · danken · gehören · gefallen · antworten · glauben', 'Ich helfe dir. · Das gehört mir.'],
+            ['Dativ preposition (Day 25)', 'mit · bei · zu · von · nach · aus · seit · gegenüber',       'Kommst du mit mir? · Ich gehe zu ihm.'],
+          ],
+        },
+        warn: '"Das Buch gehört ich" ✗ → "Das Buch gehört mir" ✓. "Er kommt mit du" ✗ → "Er kommt mit dir" ✓.',
       },
-      { rule: '🎁 THE GIVE-SENTENCE — Dativ person + Akkusativ thing',
-        body:
-          'Verbs like geben, zeigen, schenken, schicken take a PERSON (Dativ) and a THING (Akkusativ) at once:\n\n' +
-          '  Ich gebe   dir       das Buch.\n' +
-          '             └ Dat person └ Akk thing\n' +
-          '  Sie zeigt  ihm        die Stadt.\n\n' +
-          '⭐ The pronoun-order flip: with TWO noun objects it\'s Dativ-then-Akkusativ, but when the THING becomes a pronoun, Akkusativ jumps in FRONT of Dativ:\n' +
-          '  Ich gebe dir das Buch.   →   Ich gebe es dir.\n' +
-          '            (Dat → Akk)              (Akk → Dat)\n' +
-          'Rule: a pronoun object comes before a noun object, and Akk-pronoun before Dat-pronoun.',
+      { rule: '🎁 The give-sentence — Dativ person + Akkusativ thing',
+        summary: 'geben, zeigen, schenken, schicken take a PERSON (Dativ) and a THING (Akkusativ) at once.',
+        table: {
+          head: ['subject', 'verb', 'person (Dat)', 'thing (Akk)'],
+          rows: [
+            ['Ich', 'gebe',  'dir', 'das Buch.'],
+            ['Sie', 'zeigt', 'ihm', 'die Stadt.'],
+          ],
+        },
+        examples: [
+          { de: 'Ich gebe dir das Buch.', en: 'I give you the book.', note: 'two objects: Dativ then Akkusativ' },
+          { de: 'Ich gebe es dir.',       en: 'I give it to you.',    note: 'the thing is now a pronoun → Akkusativ jumps in FRONT' },
+        ],
+        tip: 'A pronoun object comes before a noun object, and an Akkusativ pronoun comes before a Dativ pronoun: "Ich gebe es dir."',
       },
-      { rule: '🚦 PITFALLS — Dativ-pronoun traps',
-        body:
-          '• er → ihm (Dativ), NOT ihn (that\'s Akkusativ). The classic flip.\n' +
-          '• sie (she) → ihr in the Dativ — don\'t leave it as sie.\n' +
-          '• sie (they) → ihnen (lowercase); formal Sie → Ihnen (capital I).\n' +
-          '• uns and euch are identical in Akk and Dativ — no change.\n' +
-          '• After mit/bei/zu… always Dativ: "mit mir", never "mit mich".\n' +
-          '• gefallen/gehören take Dativ: "Das gefällt mir" (not mich), "Das gehört mir" (not mich).',
+      { rule: '🚦 Pitfalls — Dativ-pronoun traps',
+        summary: 'The mix-ups to avoid.',
+        bullets: [
+          'er → ihm (Dativ), NOT ihn (that is Akkusativ). The classic flip.',
+          'sie (she) → ihr in the Dativ — do not leave it as sie.',
+          'sie (they) → ihnen (lowercase); formal Sie → Ihnen (capital I).',
+          'uns and euch are identical in the Akkusativ and Dativ — no change.',
+          'After mit/bei/zu… always Dativ: "mit mir", never "mit mich".',
+          'gefallen/gehören take Dativ: "Das gefällt mir" (not mich), "Das gehört mir" (not mich).',
+        ],
       },
     ],
     exercises: [
@@ -8154,62 +8166,76 @@ export const days = [
       { de: 'am',   en: 'an + dem (at the)',    emoji: '🔗', hint: '🔗 Dat · "am Fenster" = at the window',           example: 'Ich stehe am Fenster.',    exampleEn: 'I stand at the window.' },
     ],
     grammar: [
-      { rule: '🎯 THE ALWAYS-AKKUSATIV PREPOSITIONS — memorise the block',
-        body:
-          'These prepositions ALWAYS take the Akkusativ — no thinking, just flip masculine to den/einen:\n\n' +
-          '  für   — for          Das ist für den Mann.\n' +
-          '  um    — at / around  Wir essen um acht Uhr.\n' +
-          '  ohne  — without      Ich gehe ohne den Schlüssel.\n' +
-          '  durch — through      Wir gehen durch den Park.\n' +
-          '  gegen — against      Der Ball fliegt gegen die Wand.\n\n' +
-          '🧠 Memory hook: "FUDGO" — Für · Um · Durch · Gegen · Ohne. Pair it against the Day-25 Dativ block (mit/bei/zu/von/nach/aus/seit/gegenüber) so you always know which case a preposition forces.',
+      { rule: '🎯 The always-Akkusativ prepositions — memorise the block',
+        summary: 'Five prepositions ALWAYS take the Akkusativ — just flip masculine to den/einen.',
+        table: {
+          head: ['preposition', 'meaning', 'example'],
+          rows: [
+            ['für',   'for',          'Das ist für den Mann.'],
+            ['um',    'at / around',  'Wir essen um acht Uhr.'],
+            ['ohne',  'without',      'Ich gehe ohne den Schlüssel.'],
+            ['durch', 'through',      'Wir gehen durch den Park.'],
+            ['gegen', 'against',      'Der Ball fliegt gegen die Wand.'],
+          ],
+        },
+        tip: 'Memory hook "FUDGO": Für · Um · Durch · Gegen · Ohne. Pair it against the Day-25 Dativ block so you always know which case a preposition forces.',
       },
-      { rule: '⭐ WECHSELPRÄPOSITIONEN — the Wo?/Wohin? switch',
-        body:
-          'Nine prepositions take EITHER case. One question decides:\n\n' +
-          '  📍 Wo?    (location · NO movement)   → DATIV\n' +
-          '  ➡️ Wohin? (movement · direction)      → AKKUSATIV\n\n' +
-          '  Ich bin  IN DER Stadt.    (Wo? → Dativ — der)\n' +
-          '  Ich gehe IN DIE Stadt.    (Wohin? → Akk — die)\n\n' +
-          '  Das Bild hängt AN DER Wand.   (Wo? → Dativ)\n' +
-          '  Ich hänge es AN DIE Wand.     (Wohin? → Akk)\n\n' +
-          '  Das Buch ist AUF DEM Tisch.   (Wo? → Dativ)\n' +
-          '  Ich lege es AUF DEN Tisch.    (Wohin? → Akk)\n\n' +
-          '🧠 Trick: if the verb is a "where to / put / go" verb (gehen, legen, stellen, hängen-action), it\'s movement → Akkusativ. If it\'s a "stay / be / located" verb (sein, liegen, stehen, hängen-state), it\'s location → Dativ.',
+      { rule: '⭐ Wechselpräpositionen — the Wo?/Wohin? switch',
+        summary: 'Nine prepositions take EITHER case. One question decides: Wo? (location) → Dativ; Wohin? (movement) → Akkusativ.',
+        table: {
+          head: ['question', 'meaning', 'case', 'example'],
+          rows: [
+            [{ t: 'Wo?', hl: true },    'location · no movement', 'Dativ',     'Ich bin in der Stadt.'],
+            [{ t: 'Wohin?', hl: true }, 'movement · direction',   'Akkusativ', 'Ich gehe in die Stadt.'],
+          ],
+        },
+        examples: [
+          { de: 'Das Bild hängt an der Wand.', en: 'The picture hangs on the wall.', note: 'Wo? → Dativ (der)' },
+          { de: 'Ich hänge es an die Wand.',   en: 'I hang it on the wall.',         note: 'Wohin? → Akkusativ (die)' },
+        ],
+        tip: 'A "put / go" verb (gehen, legen, stellen, hängen-action) = movement → Akkusativ. A "be / located" verb (sein, liegen, stehen) = location → Dativ.',
       },
-      { rule: '🔀 THE 9 WECHSEL PREPOSITIONS — the full set',
-        body:
-          'Learn them as one block (they\'re all about position):\n\n' +
-          '  in       — in / into\n' +
-          '  an       — at / on (vertical surface, edge)\n' +
-          '  auf      — on / onto (horizontal surface)\n' +
-          '  über     — over / above\n' +
-          '  unter    — under / below\n' +
-          '  vor      — in front of / before\n' +
-          '  hinter   — behind\n' +
-          '  neben    — next to\n' +
-          '  zwischen — between\n\n' +
-          '⚠ an vs auf: an = vertical contact / edges (an der Wand, am Fenster); auf = horizontal top surfaces (auf dem Tisch, auf dem Boden).',
+      { rule: '🔀 The 9 Wechsel prepositions — the full set',
+        summary: 'Learn them as one block — they are all about position.',
+        table: {
+          head: ['preposition', 'meaning'],
+          rows: [
+            ['in',       'in / into'],
+            ['an',       'at / on (vertical surface, edge)'],
+            ['auf',      'on / onto (horizontal surface)'],
+            ['über',     'over / above'],
+            ['unter',    'under / below'],
+            ['vor',      'in front of / before'],
+            ['hinter',   'behind'],
+            ['neben',    'next to'],
+            ['zwischen', 'between'],
+          ],
+        },
+        warn: 'an vs auf: an = vertical contact / edges (an der Wand, am Fenster); auf = horizontal top surfaces (auf dem Tisch, auf dem Boden).',
       },
-      { rule: '🔗 WECHSEL CONTRACTIONS — ins/ans (Akk) · im/am (Dat)',
-        body:
-          'The two-way prepositions contract with the article in BOTH cases:\n\n' +
-          '  Movement (Akkusativ + das):\n' +
-          '    in + das → ins    "Ich gehe ins Restaurant."\n' +
-          '    an + das → ans    "Ich gehe ans Fenster."\n\n' +
-          '  Location (Dativ + dem):\n' +
-          '    in + dem → im     "Ich bin im Restaurant."\n' +
-          '    an + dem → am     "Ich stehe am Fenster."\n\n' +
-          '🧠 -s ending (ins/ans) signals MOVEMENT (Akk); -m ending (im/am) signals LOCATION (Dat). The little letter tells you the case.',
+      { rule: '🔗 Wechsel contractions — ins/ans (Akk) · im/am (Dat)',
+        summary: 'The two-way prepositions contract in BOTH cases — and the ending tells you which.',
+        table: {
+          head: ['contraction', 'from', 'case', 'example'],
+          rows: [
+            ['ins', 'in + das', { t: 'movement → Akk', hl: true }, 'Ich gehe ins Restaurant.'],
+            ['ans', 'an + das', { t: 'movement → Akk', hl: true }, 'Ich gehe ans Fenster.'],
+            ['im',  'in + dem', 'location → Dat',                  'Ich bin im Restaurant.'],
+            ['am',  'an + dem', 'location → Dat',                  'Ich stehe am Fenster.'],
+          ],
+        },
+        tip: '-s ending (ins/ans) signals MOVEMENT (Akk); -m ending (im/am) signals LOCATION (Dat). The little letter tells you the case.',
       },
-      { rule: '🚦 PITFALLS — preposition-case traps',
-        body:
-          '• für/um/ohne/durch/gegen → ALWAYS Akkusativ (never Dativ).\n' +
-          '• mit/bei/zu… → ALWAYS Dativ (Day 25) — don\'t mix the two blocks.\n' +
-          '• Wechsel prepositions need the Wo?/Wohin? test EVERY time — there is no default.\n' +
-          '• Movement → Akkusativ (in die Stadt); location → Dativ (in der Stadt). The verb usually tells you.\n' +
-          '• ins/ans = movement (Akk); im/am = location (Dat). Don\'t say "Ich gehe im Restaurant" for "going into".\n' +
-          '• an (vertical/edge) vs auf (horizontal top) — pick by the physical surface.',
+      { rule: '🚦 Pitfalls — preposition-case traps',
+        summary: 'The traps in the full preposition picture.',
+        bullets: [
+          'für / um / ohne / durch / gegen → ALWAYS Akkusativ (never Dativ).',
+          'mit / bei / zu… → ALWAYS Dativ (Day 25) — do not mix the two blocks.',
+          'Wechsel prepositions need the Wo?/Wohin? test EVERY time — there is no default.',
+          'Movement → Akkusativ (in die Stadt); location → Dativ (in der Stadt). The verb usually tells you.',
+          'ins/ans = movement (Akk); im/am = location (Dat). Do not say "Ich gehe im Restaurant" for "going into".',
+          'an (vertical/edge) vs auf (horizontal top) — pick by the physical surface.',
+        ],
       },
     ],
     exercises: [

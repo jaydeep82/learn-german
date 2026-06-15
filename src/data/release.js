@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.14.3';
+export const VERSION = '3.15.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.15.0',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 5 batch 1 — Days 29-30 enriched (Dativ pronouns + Wechsel prepositions)',
+    notes: [
+      'Week 5 begins. Days 29-30 converted to the rich visual grammar shape and adversarially verified (clean, zero issues).',
+      'Day 29 (Dativ pronouns): the full Dativ-pronoun table; the Akkusativ-vs-Dativ contrast (the mir/mich · ihm/ihn trap); the two triggers (Dativ verbs + Dativ prepositions); the give-sentence with the pronoun-order flip (Ich gebe es dir); pitfalls.',
+      'Day 30 (Akkusativ + Wechsel prepositions): the always-Akkusativ block (FUDGO: für/um/durch/gegen/ohne); the Wo?→Dativ / Wohin?→Akkusativ switch; the 9 two-way Wechselpräpositionen with the an-vs-auf rule; the ins/ans (movement) vs im/am (location) contractions; pitfalls.',
+      'Everything appears in the Grammar reference AND the Day 29-30 lesson intros via the shared GrammarItem renderer.',
+    ],
+  },
   {
     version: '3.14.3',
     date: '2026-06-14',
