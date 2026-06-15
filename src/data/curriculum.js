@@ -3911,53 +3911,75 @@ export const days = [
       { de: 'Ihr',   en: 'your (Sie · formal)',    emoji: '🤝', hint: '⚠ formal · ALWAYS capital I',             example: 'Ist das Ihr Auto?',        exampleEn: 'Is that your car? (formal)' },
     ],
     grammar: [
-      { rule: '⭐ THE 8 POSSESSIVES — one per person',
-        body:
-          'Every subject pronoun has its own possessive word:\n\n' +
-          '  ich → mein   (my)            wir → unser  (our)\n' +
-          '  du  → dein   (your, friend)  ihr → euer   (your, group)\n' +
-          '  er  → sein   (his)           sie → ihr    (their)\n' +
-          '  es  → sein   (its)           Sie → Ihr    (your, formal · capital)\n' +
-          '  sie → ihr    (her)\n\n' +
-          '⚠ Two traps to watch: (1) er AND es both → sein. (2) ihr means BOTH "her" (sie=she) AND "their" (sie=they) — context decides. Formal "Ihr" is always capitalised.',
+      { rule: '⭐ The 8 possessives — one per person',
+        summary: 'Every subject pronoun has its own possessive word.',
+        table: {
+          head: ['person', 'possessive', 'meaning'],
+          rows: [
+            ['ich',          'mein',  'my'],
+            ['du',           'dein',  'your (friend)'],
+            ['er / es',      'sein',  'his / its'],
+            ['sie (she)',    'ihr',   'her'],
+            ['wir',          'unser', 'our'],
+            ['ihr (group)',  'euer',  'your (group)'],
+            ['sie (they)',   'ihr',   'their'],
+            ['Sie (formal)', 'Ihr',   'your (formal · capital I)'],
+          ],
+        },
+        warn: 'Two traps: (1) er AND es both → sein. (2) ihr means BOTH "her" (sie=she) AND "their" (sie=they) — context decides. Formal "Ihr" is always capitalised.',
       },
-      { rule: '⭐ THEY ALL DECLINE LIKE "EIN" — that\'s the whole rule',
-        body:
-          'A possessive takes the SAME endings as ein/eine. Learn the masculine row and you know the system:\n\n' +
-          '            masc.     fem.      neut.     plural\n' +
-          '  Nom.      mein      meine     mein      meine\n' +
-          '  Akk.      meinen    meine     mein      meine\n' +
-          '  Dat.      meinem    meiner    meinem    meinen +(-n)\n\n' +
-          '  "Mein Bruder ist hier."        (Nom. masc.)\n' +
-          '  "Ich sehe meinen Bruder."      (Akk. masc. → -en)\n' +
-          '  "Ich helfe meinem Bruder."     (Dat. masc. → -em)\n\n' +
-          'Swap the stem (mein → dein/sein/ihr/unser/euer/Ihr) and the SAME endings apply. So "deinen", "seinem", "ihre", "unseren" all follow the ein-pattern.',
+      { rule: '⭐ They all decline like "ein" — that is the whole rule',
+        summary: 'A possessive takes the SAME endings as ein/eine. Learn the masculine column and you know the system.',
+        table: {
+          head: ['case', 'masc', 'fem', 'neut', 'plural'],
+          rows: [
+            ['Nom', 'mein',                   'meine',                  'mein',                   'meine'],
+            ['Akk', { t: 'meinen', hl: true }, 'meine',                  'mein',                   'meine'],
+            ['Dat', { t: 'meinem', hl: true }, { t: 'meiner', hl: true }, { t: 'meinem', hl: true }, { t: 'meinen + -n', hl: true }],
+          ],
+        },
+        examples: [
+          { de: 'Mein Bruder ist hier.',     en: 'My brother is here.', note: 'Nom masc' },
+          { de: 'Ich sehe meinen Bruder.',   en: 'I see my brother.',   note: 'Akk masc → -en' },
+          { de: 'Ich helfe meinem Bruder.',  en: 'I help my brother.',  note: 'Dat masc → -em' },
+        ],
+        tip: 'Swap the stem (mein → dein/sein/ihr/unser/euer/Ihr) and the same endings apply: deinen, seinem, ihre, unseren.',
       },
-      { rule: '⚠ EUER — the e-dropping irregular',
-        body:
-          'euer (your, group) is the one odd stem: when it takes an ending, the middle -e- drops:\n\n' +
-          '  euer  → eure  (not "euere")     "eure Familie"\n' +
-          '  euer  → euren (not "eueren")    "euren Bruder" (Akk.)\n' +
-          '  euer  → eurem                   "eurem Vater" (Dat.)\n\n' +
-          'Only the bare Nominativ-masc/neuter form stays "euer" (euer Vater, euer Kind). Everywhere else it\'s eur-.',
+      { rule: '⚠ euer — the e-dropping irregular',
+        summary: 'euer (your, group) is the one odd stem: when it takes an ending, the middle -e- drops.',
+        table: {
+          head: ['base', 'with ending', 'example'],
+          rows: [
+            ['euer', { t: 'eure', hl: true },  'eure Familie'],
+            ['euer', { t: 'euren', hl: true }, 'euren Bruder (Akk)'],
+            ['euer', { t: 'eurem', hl: true }, 'eurem Vater (Dat)'],
+          ],
+        },
+        tip: 'Only the bare Nominativ masc/neuter form stays "euer" (euer Vater, euer Kind). Everywhere else it is eur-.',
       },
-      { rule: '⚠ ihr — the triple-meaning word',
-        body:
-          'The little word "ihr" wears three hats — keep them apart by role:\n\n' +
-          '  ihr  = "her"          (possessive, sie=she):  Ihr Mann → her husband\n' +
-          '  ihr  = "their"        (possessive, sie=they): Ihr Haus → their house\n' +
-          '  ihr  = "you (group)"  (subject pronoun):      Ihr seid nett → you are nice\n' +
-          '  Ihr  = "your" formal  (capital I):            Ihr Auto → your car\n\n' +
-          'Plus the Dativ pronoun "ihr" = "to her" (Day 29). Context and capitalisation are your guides.',
+      { rule: '⚠ ihr — the four-way word',
+        summary: 'The little word "ihr" wears four hats — keep them apart by role.',
+        table: {
+          head: ['form', 'meaning', 'example'],
+          rows: [
+            ['ihr', 'her (possessive, sie = she)',    'Ihr Mann → her husband'],
+            ['ihr', 'their (possessive, sie = they)', 'Ihr Haus → their house'],
+            ['ihr', 'you (group, subject pronoun)',   'Ihr seid nett → you are nice'],
+            ['Ihr', 'your (formal · capital I)',      'Ihr Auto → your car'],
+          ],
+        },
+        tip: 'Plus the Dativ pronoun "ihr" = "to her" (Day 29). Context and capitalisation are your guides.',
       },
-      { rule: '🚦 PITFALLS — possessive traps',
-        body:
-          '• das Kind is NEUTER → "mein Kind" (not meine), "meinem Kind" in Dativ.\n' +
-          '• er and es both take sein; only sie (she) takes ihr.\n' +
-          '• euer drops its -e- before endings: eure / euren / eurem.\n' +
-          '• Possessive endings = ein endings: masc Akk adds -en (meinen Bruder).\n' +
-          '• Eltern, Geschwister, Großeltern are PLURAL-only — always meine/deine + plural verb.\n' +
-          '• Formal "Ihr" is capitalised; "ihr" (her/their/you-group) is not.',
+      { rule: '🚦 Pitfalls — possessive traps',
+        summary: 'The traps to avoid.',
+        bullets: [
+          'das Kind is NEUTER → "mein Kind" (not meine), "meinem Kind" in the Dativ.',
+          'er and es both take sein; only sie (she) takes ihr.',
+          'euer drops its -e- before endings: eure / euren / eurem.',
+          'Possessive endings = ein endings: masc Akk adds -en (meinen Bruder).',
+          'Eltern, Geschwister, Großeltern are PLURAL-only — always meine/deine + a plural verb.',
+          'Formal "Ihr" is capitalised; "ihr" (her / their / you-group) is not.',
+        ],
       },
     ],
     exercises: [
@@ -4092,63 +4114,79 @@ export const days = [
       { de: 'schließlich', en: 'finally',    emoji: '🔚', hint: 'last step · leads → V2',          example: 'Schließlich gehe ich ins Bett.', exampleEn: 'Finally I go to bed.' },
     ],
     grammar: [
-      { rule: '⭐ TIME-FIRST → V2 INVERSION (the key move)',
-        body:
-          'When a time word OPENS the sentence, the conjugated verb STILL keeps slot 2 — so the subject jumps to slot 3, right after the verb:\n\n' +
-          '  Slot 1        Slot 2   Slot 3   …\n' +
-          '  ──────        ──────   ──────   ─────\n' +
-          '  Ich           stehe    —        um 7 Uhr auf.   (normal)\n' +
-          '  Morgens       stehe    ich      um 7 Uhr auf.   (time leads → ich moves)\n' +
-          '  Um 7 Uhr      stehe    ich      auf.\n' +
-          '  Dann          frühstücke ich.\n\n' +
-          '⚠ NOT "Morgens ich stehe auf" ✗. The verb is glued to position 2; only the subject moves. This is the same V2 rule from Day 9/13 — now applied to time openers.',
+      { rule: '⭐ Time-first → V2 inversion (the key move)',
+        summary: 'When a time word OPENS the sentence, the verb keeps slot 2 — so the subject jumps to slot 3.',
+        table: {
+          head: ['slot 1', 'slot 2 (verb)', 'slot 3', '…'],
+          rows: [
+            ['Ich',      { t: 'stehe', hl: true },      '—',   'um 7 Uhr auf.'],
+            ['Morgens',  { t: 'stehe', hl: true },      'ich', 'um 7 Uhr auf.'],
+            ['Um 7 Uhr', { t: 'stehe', hl: true },      'ich', 'auf.'],
+            ['Dann',     { t: 'frühstücke', hl: true }, 'ich', ''],
+          ],
+        },
+        warn: 'NOT "Morgens ich stehe auf" ✗. The verb is glued to position 2; only the subject moves — the same V2 rule from Day 9/13, now applied to time openers.',
       },
-      { rule: '★ SEPARABLE ROUTINE VERBS — stem in 2, prefix at the end',
-        body:
-          'Many routine verbs are separable (Day 12). The stem takes slot 2, the prefix flies to the very end:\n\n' +
-          '  aufstehen  → Ich stehe um 7 Uhr AUF.\n' +
-          '  aufwachen  → Ich wache früh AUF.\n' +
-          '  einkaufen  → Ich kaufe am Abend EIN.\n' +
-          '  fernsehen  → Ich sehe abends FERN.\n\n' +
-          'With a time opener BOTH rules stack: "Abends sehe ich FERN." — abends (slot 1), sehe (slot 2), ich (slot 3), fern (end).',
+      { rule: '★ Separable routine verbs — stem in 2, prefix at the end',
+        summary: 'Many routine verbs are separable (Day 12): the stem takes slot 2, the prefix flies to the very end.',
+        table: {
+          head: ['verb', 'in a sentence'],
+          rows: [
+            ['aufstehen', 'Ich stehe um 7 Uhr auf.'],
+            ['aufwachen', 'Ich wache früh auf.'],
+            ['einkaufen', 'Ich kaufe am Abend ein.'],
+            ['fernsehen', 'Ich sehe abends fern.'],
+          ],
+        },
+        tip: 'With a time opener BOTH rules stack: "Abends sehe ich fern." — abends (1), sehe (2), ich (3), fern (end).',
       },
-      { rule: '🕐 TELLING THE TIME — um, halb, Viertel',
-        body:
-          'AT a clock time: um + number + Uhr → "um sieben Uhr" (at 7).\n\n' +
-          '  halb        → ⚠ counts to the NEXT hour:\n' +
-          '                 halb acht = 7:30 (half-way TO eight, not "half eight"!)\n' +
-          '  Viertel nach → quarter past: "Viertel nach drei" = 3:15\n' +
-          '  Viertel vor  → quarter to:   "Viertel vor vier"  = 3:45\n\n' +
-          'The "halb" trap is the #1 beginner mistake: German halb looks AHEAD to the coming hour. halb neun = 8:30.',
+      { rule: '🕐 Telling the time — um, halb, Viertel',
+        summary: 'um + number + Uhr = "at …"; halb counts to the NEXT hour; Viertel nach/vor = quarter past/to.',
+        table: {
+          head: ['German', 'clock', 'note'],
+          rows: [
+            ['um sieben Uhr',     '7:00', 'um + number + Uhr'],
+            [{ t: 'halb acht', hl: true }, '7:30', '⚠ half-way TO eight'],
+            ['Viertel nach drei', '3:15', 'quarter past'],
+            ['Viertel vor vier',  '3:45', 'quarter to'],
+          ],
+        },
+        warn: 'The "halb" trap is the number-one beginner mistake: German halb looks AHEAD to the coming hour. halb neun = 8:30.',
       },
-      { rule: '🌅 TIME-OF-DAY ADVERBS — the -s words',
-        body:
-          'Add -s to a part of the day to mean "(habitually) during that time":\n\n' +
-          '  der Morgen   → morgens   (in the mornings)\n' +
-          '  der Mittag   → mittags   (at midday)\n' +
-          '  der Nachmittag → nachmittags (afternoons)\n' +
-          '  der Abend    → abends    (in the evenings)\n' +
-          '  die Nacht    → nachts    (at night)\n\n' +
-          'These are adverbs (lowercase, no article) and they love to lead the sentence → V2 inversion: "Abends koche ich."',
+      { rule: '🌅 Time-of-day adverbs — the -s words',
+        summary: 'Add -s to a part of the day to mean "(habitually) during that time".',
+        table: {
+          head: ['noun', 'adverb', 'meaning'],
+          rows: [
+            ['der Morgen',     'morgens',     'in the mornings'],
+            ['der Mittag',     'mittags',     'at midday'],
+            ['der Nachmittag', 'nachmittags', 'afternoons'],
+            ['der Abend',      'abends',      'in the evenings'],
+            ['die Nacht',      'nachts',      'at night'],
+          ],
+        },
+        tip: 'These are adverbs (lowercase, no article) and they love to lead the sentence → V2 inversion: "Abends koche ich."',
       },
-      { rule: '🔗 SEQUENCING A DAY — zuerst · dann · danach · schließlich',
-        body:
-          'Chain the steps of your day with sequence words. Each one leads the clause → verb stays in slot 2:\n\n' +
-          '  Zuerst stehe ich auf.\n' +
-          '  Dann frühstücke ich.\n' +
-          '  Danach fahre ich zur Arbeit.\n' +
-          '  Am Abend koche ich.\n' +
-          '  Schließlich gehe ich ins Bett.\n\n' +
-          'Notice every one triggers the inversion — subject after the verb. String them together and you have a complete spoken day.',
+      { rule: '🔗 Sequencing a day — zuerst · dann · danach · schließlich',
+        summary: 'Chain the steps of your day with sequence words — each one leads the clause, so the verb stays in slot 2.',
+        examples: [
+          { de: 'Zuerst stehe ich auf.',         en: 'First I get up.',          note: 'zuerst leads → verb slot 2' },
+          { de: 'Dann frühstücke ich.',          en: 'Then I have breakfast.',   note: 'dann → inversion' },
+          { de: 'Danach fahre ich zur Arbeit.',  en: 'After that I go to work.', note: 'danach → inversion' },
+          { de: 'Schließlich gehe ich ins Bett.', en: 'Finally I go to bed.',    note: 'schließlich → inversion' },
+        ],
+        tip: 'Every one triggers the inversion — subject after the verb. String them together and you have a complete spoken day.',
       },
-      { rule: '🚦 PITFALLS — daily-routine traps',
-        body:
-          '• Time leads → verb still slot 2, subject slot 3: "Morgens stehe ICH auf." (not "Morgens ich stehe").\n' +
-          '• Separable prefix goes to the END: "Ich sehe abends fern" (not "Ich fernsehe").\n' +
-          '• halb acht = 7:30, NOT 8:30 — German counts to the next hour.\n' +
-          '• "nach Hause" (going home) vs "zu Hause" (being at home) — movement vs location.\n' +
-          '• arbeiten has a -t stem → "du arbeitest, er arbeitet" (extra -e-).\n' +
-          '• schlafen is a stem-changer a→ä → "du schläfst, er schläft".',
+      { rule: '🚦 Pitfalls — daily-routine traps',
+        summary: 'The routine-talk traps.',
+        bullets: [
+          'Time leads → verb still slot 2, subject slot 3: "Morgens stehe ICH auf" (not "Morgens ich stehe").',
+          'Separable prefix goes to the END: "Ich sehe abends fern" (not "Ich fernsehe").',
+          'halb acht = 7:30, NOT 8:30 — German counts to the next hour.',
+          '"nach Hause" (going home) vs "zu Hause" (being at home) — movement vs location.',
+          'arbeiten has a -t stem → "du arbeitest, er arbeitet" (extra -e-).',
+          'schlafen is a stem-changer a→ä → "du schläfst, er schläft".',
+        ],
       },
     ],
     exercises: [

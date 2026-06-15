@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.15.0';
+export const VERSION = '3.15.1';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.15.1',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 5 batch 2 — Days 31-32 enriched (possessives + daily routine)',
+    notes: [
+      'Days 31-32 converted to the rich visual grammar shape and adversarially verified.',
+      'Day 31 (Family/possessives): the 8-possessives table; the decline-like-ein paradigm (Nom/Akk/Dat × 4 genders); the euer e-drop (eure/euren/eurem); the multi-meaning ihr table; pitfalls.',
+      'Day 32 (Daily routine): the time-first V2-inversion slot table; separable routine verbs; telling the clock (incl. the halb acht = 7:30 trap); the -s time-of-day adverbs; day-sequencing (zuerst/dann/danach/schließlich); pitfalls.',
+      'Verification fix: the Day 31 ihr rule was titled "triple-meaning" but enumerated four forms (her / their / you-group / formal Ihr) — relabeled to "four-way" / "four hats" to match the table.',
+      'Everything appears in the Grammar reference AND the Day 31-32 lesson intros via the shared GrammarItem renderer.',
+    ],
+  },
   {
     version: '3.15.0',
     date: '2026-06-14',
