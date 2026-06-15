@@ -4320,53 +4320,69 @@ export const days = [
       { de: 'der Infinitiv', en: 'the infinitive (at the END)', emoji: '🔚', hint: 'the second verb · flies to the end · -en form', example: 'Der Infinitiv ist „lernen".', exampleEn: 'The infinitive is "to learn".' },
     ],
     grammar: [
-      { rule: '⭐ THE SANDWICH RULE — modal in slot 2, infinitive at the END',
-        body:
-          'A modal verb almost always pairs with a SECOND verb. The modal is conjugated in slot 2; the second verb goes to the very END as an infinitive (-en form):\n\n' +
-          '  Slot 1   Slot 2(modal)   …middle…        END(infinitive)\n' +
-          '  ──────   ─────────────   ────────        ───────────────\n' +
-          '  Ich      kann            heute Deutsch   lernen.\n' +
-          '  Ich      muss            morgen früh     arbeiten.\n' +
-          '  Wir      wollen          am Wochenende   schwimmen.\n\n' +
-          '⚠ NOT "Ich will lernen Deutsch" ✗ — the infinitive MUST be last: "Ich will Deutsch lernen" ✓. Everything else (time, object) sits in the middle.',
+      { rule: '⭐ The sandwich rule — modal in slot 2, infinitive at the END',
+        summary: 'A modal pairs with a second verb: the modal is conjugated in slot 2; the second verb goes to the very END as an infinitive.',
+        table: {
+          head: ['slot 1', 'slot 2 (modal)', 'middle', 'END (infinitive)'],
+          rows: [
+            ['Ich', { t: 'kann', hl: true },   'heute Deutsch', { t: 'lernen.', hl: true }],
+            ['Ich', { t: 'muss', hl: true },   'morgen früh',   { t: 'arbeiten.', hl: true }],
+            ['Wir', { t: 'wollen', hl: true }, 'am Wochenende', { t: 'schwimmen.', hl: true }],
+          ],
+        },
+        warn: 'NOT "Ich will lernen Deutsch" ✗ — the infinitive MUST be last: "Ich will Deutsch lernen" ✓. Everything else (time, object) sits in the middle.',
       },
-      { rule: '⭐ THE SINGULAR VOWEL-CHANGE + no -e/-t endings',
-        body:
-          'Modals change their vowel in the singular (ich/du/er-sie-es), and ich/er take NO ending:\n\n' +
-          '           können    müssen    wollen\n' +
-          '  ich      kann      muss      will      ← vowel change, no -e\n' +
-          '  du       kannst    musst     willst\n' +
-          '  er/sie   kann      muss      will      ← no -t\n' +
-          '  wir      können    müssen    wollen    ← back to infinitive\n' +
-          '  ihr      könnt     müsst     wollt\n' +
-          '  sie/Sie  können    müssen    wollen\n\n' +
-          '🧠 Two quirks: (1) ich and er/sie/es are IDENTICAL (kann / muss / will). (2) the plural forms (wir/sie/Sie) = the infinitive. The vowel only changes in the three singular forms.',
+      { rule: '⭐ The singular vowel-change + no -e/-t endings',
+        summary: 'Modals change their vowel in the singular, and ich/er take no ending; wir and sie/Sie equal the infinitive (ihr adds -t: könnt/müsst/wollt).',
+        table: {
+          head: ['', 'können', 'müssen', 'wollen'],
+          rows: [
+            ['ich',     { t: 'kann', hl: true }, { t: 'muss', hl: true }, { t: 'will', hl: true }],
+            ['du',      'kannst',                'musst',                 'willst'],
+            ['er/sie',  { t: 'kann', hl: true }, { t: 'muss', hl: true }, { t: 'will', hl: true }],
+            ['wir',     'können',                'müssen',                'wollen'],
+            ['ihr',     'könnt',                 'müsst',                 'wollt'],
+            ['sie/Sie', 'können',                'müssen',                'wollen'],
+          ],
+        },
+        tip: 'Two quirks: (1) ich and er/sie/es are identical (kann / muss / will). (2) the plural forms (wir/sie/Sie) equal the infinitive.',
       },
       { rule: '⚠ "ich will" ≠ English "I will"',
-        body:
-          'The biggest false friend in German modals:\n\n' +
-          '  Ich will …  = I WANT to …   (present desire, NOT future!)\n' +
-          '  "Ich will Deutsch lernen."  = I want to learn German.\n\n' +
-          'To say English "I will" (future), German uses werden: "Ich werde Deutsch lernen." So never read "will" as future — it always means "want".',
+        summary: 'The biggest false friend: "ich will" means I WANT to (a present desire), not the future.',
+        examples: [
+          { de: 'Ich will Deutsch lernen.',   en: 'I want to learn German.', note: 'will = want, NOT future' },
+          { de: 'Ich werde Deutsch lernen.',  en: 'I will learn German.',    note: 'real future uses werden' },
+        ],
+        warn: 'Never read "will" as future — it always means "want". English "I will" (future) = German werden.',
       },
       { rule: '🙏 möchten — the polite "would like"',
-        body:
-          'wollen ("want") can sound blunt or demanding to strangers. The polite version is möchten ("would like"):\n\n' +
-          '  ich möchte      wir möchten\n' +
-          '  du möchtest     ihr möchtet\n' +
-          '  er/sie möchte   sie/Sie möchten\n\n' +
-          '  Blunt:  "Ich will einen Kaffee."   (I want a coffee)\n' +
-          '  Polite: "Ich möchte einen Kaffee." (I would like a coffee)\n\n' +
-          'It follows the same sandwich rule ("Ich möchte jetzt bezahlen") and can also stand alone with a noun ("Ich möchte einen Tee"). Use möchten in shops, restaurants and with people you don\'t know.',
+        summary: 'wollen can sound blunt; möchten ("would like") is the polite version — and it follows the same sandwich rule.',
+        table: {
+          head: ['person', 'form'],
+          rows: [
+            ['ich',             'möchte'],
+            ['du',              'möchtest'],
+            ['er/sie/es',       'möchte'],
+            ['ihr',             'möchtet'],
+            ['wir / sie / Sie', 'möchten'],
+          ],
+        },
+        examples: [
+          { de: 'Ich will einen Kaffee.',    en: 'I want a coffee.',        note: 'blunt' },
+          { de: 'Ich möchte einen Kaffee.',  en: 'I would like a coffee.',  note: 'polite' },
+        ],
+        tip: 'Use möchten in shops, restaurants and with people you do not know. It can also stand alone with a noun: "Ich möchte einen Tee."',
       },
-      { rule: '🚦 PITFALLS — modal traps',
-        body:
-          '• Infinitive goes to the END: "Ich muss heute arbeiten" (not "Ich muss arbeiten heute").\n' +
-          '• ich/er take NO ending: "er kann" (not "er kannt"), "ich muss" (not "ich musse").\n' +
-          '• "ich will" = I want, NOT I will. Future = werden.\n' +
-          '• Use möchten (not wollen) to be polite with strangers.\n' +
-          '• The vowel change is singular-only: wir/sie/Sie keep the full infinitive (können/müssen/wollen).\n' +
-          '• A modal can stand alone if the meaning is clear: "Ich kann Deutsch" (I know German), "Ich muss nach Hause" (I must go home).',
+      { rule: '🚦 Pitfalls — modal traps',
+        summary: 'The modal traps.',
+        bullets: [
+          'The infinitive goes to the END: "Ich muss heute arbeiten" (not "Ich muss arbeiten heute").',
+          'ich/er take NO ending: "er kann" (not "er kannt"), "ich muss" (not "ich musse").',
+          '"ich will" = I want, NOT I will. Future = werden.',
+          'Use möchten (not wollen) to be polite with strangers.',
+          'The vowel change is singular-only: wir/sie/Sie keep the full infinitive (können/müssen/wollen).',
+          'A modal can stand alone if the meaning is clear: "Ich kann Deutsch" (I know German), "Ich muss nach Hause" (I must go home).',
+        ],
       },
     ],
     exercises: [
@@ -7461,49 +7477,66 @@ export const days = [
       { de: 'am Wochenende', en: 'at the weekend',   emoji: '🏖️', hint: 'time phrase · often leads → V2', example: 'Am Wochenende spiele ich Fußball.', exampleEn: 'At the weekend I play football.' },
     ],
     grammar: [
-      { rule: '⭐ THE THREE "DO A HOBBY" PATTERNS — spielen · machen · gehen',
-        body:
-          'German picks a different verb depending on the hobby:\n\n' +
-          '  ⚽ spielen + GAME / SPORT / INSTRUMENT (no article)\n' +
-          '     Ich spiele Fußball / Tennis / Gitarre / Videospiele.\n\n' +
-          '  🧘 [Activity] + machen\n' +
-          '     Ich mache Sport / Yoga / Musik.\n\n' +
-          '  🚶 [Infinitive] + gehen  (go and do it)\n' +
-          '     Ich gehe schwimmen / tanzen / spazieren.\n\n' +
-          '🧠 Rule of thumb: a ball game or instrument → spielen; a named activity → machen; "go do X" → X-infinitive + gehen. Many hobbies also have their own verb (reisen, kochen, lesen, malen) — just conjugate those normally.',
+      { rule: '⭐ The three "do a hobby" patterns — spielen · machen · gehen',
+        summary: 'German picks a different verb by hobby type: spielen + game/sport/instrument; activity + machen; infinitive + gehen.',
+        table: {
+          head: ['pattern', 'use for', 'examples'],
+          rows: [
+            [{ t: 'spielen + X', hl: true }, 'games · sports · instruments (no article)', 'Fußball / Tennis / Gitarre spielen'],
+            [{ t: 'X machen', hl: true },    'named activities',                          'Sport / Yoga / Musik machen'],
+            [{ t: 'X-en gehen', hl: true },  'go and do it (infinitive + gehen)',         'schwimmen / tanzen / spazieren gehen'],
+          ],
+        },
+        tip: 'Many hobbies also have their own verb (reisen, kochen, lesen, malen) — just conjugate those normally.',
       },
-      { rule: '⭐ TFP-O WORD ORDER — Time · Frequency · Preference · Object',
-        body:
-          'After the verb, modifiers line up in a fixed order (recap from Day 13):\n\n' +
-          '  Subject + Verb + TIME + FREQUENCY + PREFERENCE + OBJECT\n' +
-          '  Ich       höre   am Wochenende  oft   gerne   Musik.\n' +
-          '  Wir       spielen jeden Tag    manchmal  —    Fußball.\n\n' +
-          '⚠ "gerne" comes right BEFORE the object: "Ich koche gerne indisches Essen." If a TIME phrase leads the sentence, the verb still keeps slot 2 → "Am Wochenende spiele ich Fußball."',
+      { rule: '⭐ TFP-O word order — Time · Frequency · Preference · Object',
+        summary: 'After the verb, modifiers line up: Subject + Verb + Time + Frequency + Preference + Object (recap from Day 13).',
+        table: {
+          head: ['subj', 'verb', '🕒 time', '🔄 freq', '❤️ pref', '🎯 object'],
+          rows: [
+            ['Ich', 'höre',    'am Wochenende', 'oft',      'gerne', 'Musik.'],
+            ['Wir', 'spielen', 'abends',        'manchmal', '—',     'Fußball.'],
+          ],
+        },
+        warn: 'gerne comes right before the object: "Ich koche gerne indisches Essen." If a time phrase leads, the verb still keeps slot 2: "Am Wochenende spiele ich Fußball."',
       },
-      { rule: '❤️ THE PREFERENCE LADDER — gerne · lieber · am liebsten',
-        body:
-          'Express how much you like an activity by escalating:\n\n' +
-          '  gerne        — I like to …        Ich koche gerne.\n' +
-          '  lieber       — I prefer to …      Ich koche lieber. (rather than X)\n' +
-          '  am liebsten  — most of all …      Am liebsten koche ich.\n\n' +
-          'Use "lieber" to compare two hobbies: "Ich spiele gern Tennis, aber ich schwimme lieber." (I like tennis, but I prefer swimming.) "am liebsten" names your absolute favourite.',
+      { rule: '❤️ The preference ladder — gerne · lieber · am liebsten',
+        summary: 'Escalate how much you like an activity: gerne → lieber → am liebsten.',
+        table: {
+          head: ['word', 'meaning', 'example'],
+          rows: [
+            ['gerne',       'I like to',    'Ich koche gerne.'],
+            ['lieber',      'I prefer to',  'Ich koche lieber.'],
+            ['am liebsten', 'most of all',  'Am liebsten koche ich.'],
+          ],
+        },
+        examples: [
+          { de: 'Ich spiele gern Tennis, aber ich schwimme lieber.', en: 'I like tennis, but I prefer swimming.', note: 'lieber compares two hobbies' },
+        ],
+        tip: 'Use lieber to compare two hobbies; am liebsten names your absolute favourite.',
       },
-      { rule: '🔁 FREQUENCY — how often',
-        body:
-          'Common free-time frequency markers (from Day 13\'s scale + time phrases):\n\n' +
-          '  immer (always) · oft (often) · manchmal (sometimes) · selten (rarely) · nie (never)\n' +
-          '  jeden Tag (every day) · einmal/zweimal pro Woche (once/twice a week)\n' +
-          '  am Wochenende (at the weekend) · in meiner Freizeit (in my free time)\n\n' +
-          'These sit in the FREQUENCY/TIME slots: "Ich mache zweimal pro Woche Sport." A time phrase can also lead → V2 inversion.',
+      { rule: '🔁 Frequency — how often',
+        summary: 'Free-time frequency markers, from always to never, plus time phrases.',
+        table: {
+          head: ['type', 'words'],
+          rows: [
+            ['scale',        'immer (always) · oft (often) · manchmal (sometimes) · selten (rarely) · nie (never)'],
+            ['counts',       'jeden Tag · einmal / zweimal pro Woche'],
+            ['time phrases', 'am Wochenende · in meiner Freizeit'],
+          ],
+        },
+        tip: 'These sit in the Frequency/Time slots: "Ich mache zweimal pro Woche Sport." A time phrase can also lead → V2 inversion.',
       },
-      { rule: '🚦 PITFALLS — hobby-talk traps',
-        body:
-          '• Ball games & instruments use spielen (Fußball spielen, Gitarre spielen) — NOT machen.\n' +
-          '• "go swimming" = schwimmen gehen (infinitive + gehen), not "gehen schwimmen".\n' +
-          '• gerne goes before the object: "Ich höre gerne Musik" (not "Ich höre Musik gerne" — acceptable but gerne-first is cleaner).\n' +
-          '• Sports take NO article after spielen: "Ich spiele Fußball" (not "den Fußball").\n' +
-          '• Time leads → verb slot 2: "Am Wochenende gehe ich schwimmen."\n' +
-          '• lesen (e→ie: du liest) and Fahrrad fahren (a→ä: du fährst) are stem-changers.',
+      { rule: '🚦 Pitfalls — hobby-talk traps',
+        summary: 'The hobby-talk traps.',
+        bullets: [
+          'Ball games & instruments use spielen (Fußball spielen, Gitarre spielen) — NOT machen.',
+          '"go swimming" = schwimmen gehen (infinitive + gehen), not "gehen schwimmen".',
+          'gerne comes before a noun object: "Ich höre gern Musik." With a pronoun object it goes after: "Ich höre es gern."',
+          'Sports take NO article after spielen: "Ich spiele Fußball" (not "den Fußball").',
+          'Time leads → verb slot 2: "Am Wochenende gehe ich schwimmen."',
+          'lesen (e→ie: du liest) and Fahrrad fahren (a→ä: du fährst) are stem-changers.',
+        ],
       },
     ],
     exercises: [
@@ -7645,43 +7678,56 @@ export const days = [
       { de: 'der Kaffee',      en: 'the coffee',         emoji: '☕', hint: '🆓 near-identical · "coffee"',      example: 'Ich trinke einen Kaffee.',     exampleEn: 'I drink a coffee.' },
     ],
     grammar: [
-      { rule: '⭐ THE 4-STEP READING STRATEGY',
-        body:
-          '1. GIST FIRST — read the whole paragraph once without stopping. Do NOT translate every word.\n' +
-          '2. FIND THE VERBS — they tell you who does what. The conjugated verb is in slot 2 (or slot 1 in a question).\n' +
-          '3. SECOND READ — now look up ONLY the words you genuinely need for meaning.\n' +
-          '4. ANSWER — answer in German when you can, reusing words and grammar straight from the text.',
+      { rule: '⭐ The 4-step reading strategy',
+        summary: 'Read for gist, find the verbs, second-read for key words, then answer in German.',
+        table: {
+          head: ['step', 'what to do'],
+          rows: [
+            ['1 · Gist first',     'read the whole paragraph once without stopping — do NOT translate every word.'],
+            ['2 · Find the verbs', 'they tell you who does what (conjugated verb in slot 2, or slot 1 in a question).'],
+            ['3 · Second read',    'now look up ONLY the words you genuinely need for meaning.'],
+            ['4 · Answer',         'answer in German when you can, reusing words and grammar from the text.'],
+          ],
+        },
       },
-      { rule: '🆓 LEAN ON COGNATES — free vocabulary',
-        body:
-          'Hundreds of German words look or sound like English. Recognise them and you read faster:\n\n' +
-          '  Restaurant · Kaffee · Computer · Telefon · Firma · Information · Musik · Familie ·\n' +
-          '  Hotel · Bus · Park · Problem · Student · Adresse · Supermarkt · Apartment\n\n' +
-          '⚠ Watch the "false friends": "bekommen" = to RECEIVE (not become), "also" = therefore (not also), "Gift" = poison. But true cognates far outnumber the traps — guess first, verify if it matters.',
+      { rule: '🆓 Lean on cognates — free vocabulary',
+        summary: 'Hundreds of German words look or sound like English — recognise them and read faster.',
+        bullets: [
+          'Free words: Restaurant · Kaffee · Computer · Telefon · Firma · Information · Musik · Familie · Hotel · Bus · Park · Problem · Student · Adresse · Supermarkt · Apartment.',
+        ],
+        warn: 'Watch the false friends: "bekommen" = to RECEIVE (not become), "also" = therefore (not also), "Gift" = poison. But true cognates far outnumber the traps — guess first, verify if it matters.',
       },
-      { rule: '🔍 FIND THE VERB = find the meaning',
-        body:
-          'German can move things around, but the conjugated verb is anchored:\n\n' +
-          '  • Statement → verb in SLOT 2:  "Heute arbeitet er in der Firma." (arbeitet)\n' +
-          '  • Yes/No question → verb in SLOT 1: "Kommt Anna aus Indien?"\n' +
-          '  • After weil/dass → verb at the END: "…, weil sie arbeiten muss."\n\n' +
-          'Find that verb, ask "Wer?" (who does it → subject) and "Wen/Was?" (what is affected → object), and the sentence unlocks — even if you don\'t know every word.',
+      { rule: '🔍 Find the verb = find the meaning',
+        summary: 'German moves things around, but the conjugated verb is anchored — find it, then ask Wer? and Wen?.',
+        table: {
+          head: ['sentence type', 'verb position', 'example'],
+          rows: [
+            ['statement',       'slot 2',      'Heute arbeitet er in der Firma.'],
+            ['yes/no question', 'slot 1',      'Kommt Anna aus Indien?'],
+            ['after weil/dass', 'at the END',  '…, weil sie arbeiten muss.'],
+          ],
+        },
+        tip: 'Find the verb, ask "Wer?" (subject) and "Wen/Was?" (object), and the sentence unlocks — even if you do not know every word.',
       },
-      { rule: '🔗 SIGNAL WORDS MAP THE LOGIC',
-        body:
-          'Little connecting words tell you HOW ideas relate — they\'re sign-posts:\n\n' +
-          '  und (and) · aber (but) · oder (or)        → add / contrast / choose\n' +
-          '  denn / weil (because)                      → a REASON follows\n' +
-          '  zuerst → dann → danach → schließlich      → SEQUENCE / order of events\n' +
-          '  heute · jetzt · am Wochenende             → WHEN it happens\n\n' +
-          '⚠ "weil" sends its verb to the END of the clause; "denn" keeps normal order. Both mean "because".',
+      { rule: '🔗 Signal words map the logic',
+        summary: 'Little connecting words tell you HOW ideas relate — they are sign-posts.',
+        table: {
+          head: ['signal words', 'what they mark'],
+          rows: [
+            ['und · aber · oder',                        'add / contrast / choose'],
+            ['denn · weil',                              'a REASON follows'],
+            ['zuerst → dann → danach → schließlich',     'sequence / order of events'],
+            ['heute · jetzt · am Wochenende',            'WHEN it happens'],
+          ],
+        },
+        warn: '"weil" sends its verb to the END of the clause; "denn" keeps normal order. Both mean "because".',
       },
-      { rule: '🙋 ANSWERING IN GERMAN — recycle the text',
-        body:
-          'When a question asks "Woher kommt Anna?", build the answer from the text\'s own words:\n\n' +
-          '  Q: Woher kommt Anna?      Text: "Anna kommt aus Indien."\n' +
-          '  A: Anna kommt aus Indien. / Aus Indien.\n\n' +
-          'Match the W-word to the case (Day 17): Wer→subject, Wen→Akk object, Wo→location, Wann→time, Warum→reason (answer with weil). You rarely need new vocabulary — the answer is usually hiding in the sentence.',
+      { rule: '🙋 Answering in German — recycle the text',
+        summary: 'Build the answer from the words already in the text — the answer is usually right there in the sentence.',
+        examples: [
+          { de: 'Woher kommt Anna? — Anna kommt aus Indien.', en: 'Where is Anna from? — Anna comes from India.', note: 'reuse the text: "Anna kommt aus Indien"' },
+        ],
+        tip: 'Match the W-word to the case (Day 17): Wer→subject, Wen→Akk object, Wo→location, Wann→time, Warum→reason (answer with weil).',
       },
     ],
     exercises: [

@@ -11,10 +11,24 @@
  * in sync.
  */
 
-export const VERSION = '3.15.1';
+export const VERSION = '3.15.2';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.15.2',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 5 complete — Days 33-35 enriched (hobbies, reading, modals)',
+    notes: [
+      'Days 33-35 converted to the rich visual grammar shape, completing Week 5 — every grammar day from 1 to 35 is now enriched.',
+      'Day 33 (Hobbies): the spielen/machen/gehen patterns; the TFP-O table; the gerne/lieber/am liebsten ladder; frequency; pitfalls.',
+      'Day 34 (Reading practice): the 4-step reading strategy; cognates + false friends (bekommen/also/Gift); the find-the-verb table; the signal-words table; answering in German.',
+      'Day 35 (Modals): the sandwich rule (modal slot 2, infinitive at end); the full können/müssen/wollen conjugation table; ich-will ≠ "I will"; the möchten paradigm; pitfalls.',
+      'Three accuracy fixes from verification: removed a jeden-Tag/manchmal frequency clash in a Day 33 model sentence (→ "abends manchmal"); tightened the Day 33 gerne rule (before a noun object; after a pronoun); and scoped the Day 35 summary so "plural = infinitive" no longer wrongly includes ihr (könnt/müsst/wollt).',
+      'Weeks 1-5 (Days 1-35) are now fully enriched.',
+    ],
+  },
   {
     version: '3.15.1',
     date: '2026-06-14',
