@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.16.1';
+export const VERSION = '3.16.2';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.16.2',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 6 batch 3 — Days 40-41 enriched (shopping + travel)',
+    notes: [
+      'Days 40-41 converted to the rich visual grammar shape and adversarially verified (clean, zero issues).',
+      'Day 40 (Shopping): the browse→ask→try→decide→pay arc; buying = Akkusativ (the einen/den masculine trap); sizes & fit; the günstig/billig register; pitfalls (die Hose singular vs die Schuhe plural, anprobieren separable).',
+      'Day 41 (Travel): the get-around→ticket→directions→hotel arc; transport = mit + Dativ (with the zu-Fuß / Ich-fliege exceptions); wo ist…? vs Wie komme ich zu…? (zum/zur); the ticket-counter phrases; pitfalls.',
+      'Everything appears in the Grammar reference AND the Day 40-41 lesson intros via the shared GrammarItem renderer.',
+    ],
+  },
   {
     version: '3.16.1',
     date: '2026-06-14',

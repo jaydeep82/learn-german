@@ -4890,52 +4890,69 @@ export const days = [
       { de: 'Wie viel kostet …?', en: 'How much is …?', emoji: '💶', hint: '🔁 Day 18-19 · the price question',   example: 'Wie viel kostet das Kleid?',     exampleEn: 'How much is the dress?' },
     ],
     grammar: [
-      { rule: '⭐ THE SHOPPING ARC — browse → ask → try → decide → pay',
-        body:
-          'A shop visit follows five steps — one phrase each:\n\n' +
-          '  🔎 BROWSE: "Ich suche eine Hose." / "Danke, ich schaue nur."\n' +
-          '  ❓ ASK:    "Haben Sie das in Größe M?" · "Wie viel kostet das?"\n' +
-          '  👕 TRY:    "Kann ich das anprobieren?"\n' +
-          '  ✅ DECIDE: "Gut, ich nehme es." / "Das ist zu teuer."\n' +
-          '  💳 PAY:    "An der Kasse, bitte." · "Bar oder mit Karte?"\n\n' +
-          'The salesperson\'s opener: "Kann ich Ihnen helfen?" (Can I help you?) → reply "Ja, ich suche …" or "Danke, ich schaue nur."',
+      { rule: '⭐ The shopping arc — browse → ask → try → decide → pay',
+        summary: 'A shop visit follows five steps — one phrase each.',
+        table: {
+          head: ['step', 'what to say'],
+          rows: [
+            ['🔎 browse', 'Ich suche eine Hose. / Danke, ich schaue nur.'],
+            ['❓ ask',    'Haben Sie das in Größe M? · Wie viel kostet das?'],
+            ['👕 try',    'Kann ich das anprobieren?'],
+            ['✅ decide', 'Gut, ich nehme es. / Das ist zu teuer.'],
+            ['💳 pay',    'An der Kasse, bitte. · Bar oder mit Karte?'],
+          ],
+        },
+        tip: 'The salesperson opens with "Kann ich Ihnen helfen?" → reply "Ja, ich suche …" or "Danke, ich schaue nur."',
       },
-      { rule: '⭐ BUYING = kaufen / nehmen / suchen + AKKUSATIV',
-        body:
-          'What you buy, take or look for is a direct object → Akkusativ. Masculine flips to einen/den:\n\n' +
-          '  Ich kaufe EINEN Apfel.    (m → einen)\n' +
-          '  Ich nehme DEN Pullover.   (m → den)\n' +
-          '  Ich suche EINE Hose.      (f → eine)\n' +
-          '  Ich kaufe EIN T-Shirt.    (n → ein)\n' +
-          '  Ich nehme DIE Schuhe.     (pl → die)\n\n' +
-          '⚠ "der Apfel" → "einen Apfel"; "der Pullover" → "den Pullover". The masculine trap again — fem/neuter/plural stay unchanged.',
+      { rule: '⭐ Buying = kaufen / nehmen / suchen + Akkusativ',
+        summary: 'What you buy, take or look for is a direct object → Akkusativ. Masculine flips to einen/den.',
+        table: {
+          head: ['gender', 'form', 'example'],
+          rows: [
+            ['m',  { t: 'einen / den', hl: true }, 'Ich kaufe einen Apfel. · Ich nehme den Pullover.'],
+            ['f',  'eine / die',                   'Ich suche eine Hose.'],
+            ['n',  'ein / das',                    'Ich kaufe ein T-Shirt.'],
+            ['pl', 'die',                          'Ich nehme die Schuhe.'],
+          ],
+        },
+        warn: 'The masculine trap again: "der Apfel" → "einen Apfel"; "der Pullover" → "den Pullover". Fem/neuter/plural stay unchanged.',
       },
-      { rule: '📏 SIZES & "in" + colour',
-        body:
-          'Asking about size and colour:\n\n' +
-          '  "Welche Größe haben Sie?"   — What size do you take?\n' +
-          '  "Ich habe Größe 40."        — I\'m a size 40.\n' +
-          '  "Haben Sie das in Blau?"    — Do you have this in blue?\n' +
-          '  "Haben Sie das eine Nummer größer / kleiner?" — a size bigger/smaller?\n\n' +
-          'Fit words: "zu groß" (too big) · "zu klein" (too small) · "Es passt" (it fits) · "Es passt nicht" (it doesn\'t fit).',
+      { rule: '📏 Sizes & "in" + colour',
+        summary: 'Ask about size and colour, and describe the fit.',
+        table: {
+          head: ['phrase', 'meaning'],
+          rows: [
+            ['Welche Größe haben Sie?',       'What size do you take?'],
+            ['Ich habe Größe 40.',            'I am a size 40.'],
+            ['Haben Sie das in Blau?',        'Do you have this in blue?'],
+            ['eine Nummer größer / kleiner',  'a size bigger / smaller'],
+          ],
+        },
+        tip: 'Fit words: "zu groß" (too big) · "zu klein" (too small) · "Es passt" (it fits) · "Es passt nicht" (it does not fit).',
       },
-      { rule: '💶 PRICE & THE billig/günstig REGISTER (recap)',
-        body:
-          'Asking & reacting to prices (Day 18-19):\n\n' +
-          '  "Wie viel kostet das?" / "Was kostet das?"\n' +
-          '  "Das ist (zu) teuer."     — that\'s (too) expensive\n' +
-          '  "Das ist günstig."        — that\'s good value (polite)\n' +
-          '  "Das ist im Angebot."     — that\'s on sale\n\n' +
-          '⚠ Prefer günstig over billig — "billig" can imply cheap QUALITY. To say it\'s too much: "Das ist mir zu teuer."',
+      { rule: '💶 Price & the billig/günstig register (recap)',
+        summary: 'Ask and react to prices (Days 18-19) — and prefer günstig over billig.',
+        table: {
+          head: ['phrase', 'meaning'],
+          rows: [
+            ['Wie viel kostet das?',  'How much is it?'],
+            ['Das ist (zu) teuer.',   'That is (too) expensive.'],
+            ['Das ist günstig.',      'That is good value (polite).'],
+            ['Das ist im Angebot.',   'That is on sale.'],
+          ],
+        },
+        warn: 'Prefer günstig over billig — "billig" can imply cheap QUALITY. To say it costs too much: "Das ist mir zu teuer."',
       },
-      { rule: '🚦 PITFALLS — shopping traps',
-        body:
-          '• Buy in the Akkusativ: masc → einen/den (einen Apfel, den Pullover).\n' +
-          '• "die Hose" is SINGULAR in German (trousers = eine Hose), but "die Schuhe" is plural.\n' +
-          '• anprobieren is separable: "Ich probiere die Hose an" / "Kann ich … anprobieren?"\n' +
-          '• günstig (good value) is politer than billig (can imply poor quality).\n' +
-          '• Pay "an der Kasse" (Dativ — location); "in den Supermarkt" gehen (Akk — movement).\n' +
-          '• "Ich nehme …" (I\'ll take it) is the natural decision phrase, not "Ich will es kaufen".',
+      { rule: '🚦 Pitfalls — shopping traps',
+        summary: 'The shopping traps.',
+        bullets: [
+          'Buy in the Akkusativ: masc → einen/den (einen Apfel, den Pullover).',
+          '"die Hose" is SINGULAR in German (trousers = eine Hose), but "die Schuhe" is plural.',
+          'anprobieren is separable: "Ich probiere die Hose an" / "Kann ich … anprobieren?".',
+          'günstig (good value) is politer than billig (can imply poor quality).',
+          'Pay "an der Kasse" (Dativ — location); "in den Supermarkt" gehen (Akk — movement).',
+          '"Ich nehme …" (I will take it) is the natural decision phrase, not "Ich will es kaufen".',
+        ],
       },
     ],
     exercises: [
@@ -5266,52 +5283,67 @@ export const days = [
       { de: 'die Reise',       en: 'the trip / journey', emoji: '🧳', hint: 'reisen = to travel',                  example: 'Gute Reise!',                    exampleEn: 'Have a good trip!' },
     ],
     grammar: [
-      { rule: '⭐ THE TRAVEL ARC — get around → ticket → directions → hotel',
-        body:
-          'A travel situation runs through four steps — one phrase each:\n\n' +
-          '  🚌 GET AROUND: "Ich fahre mit dem Zug / Bus." (mit + Dativ)\n' +
-          '  🎫 TICKET:     "Eine Fahrkarte nach Berlin, bitte. Hin und zurück."\n' +
-          '  🧭 DIRECTIONS: "Wie komme ich zum Bahnhof?" → "Geradeaus, dann links."\n' +
-          '  🏨 HOTEL:      "Ich möchte ein Zimmer reservieren."\n\n' +
-          'Open any stranger-question with "Entschuldigung, …" and close with "Vielen Dank!".',
+      { rule: '⭐ The travel arc — get around → ticket → directions → hotel',
+        summary: 'A travel situation runs through four steps — one phrase each.',
+        table: {
+          head: ['step', 'what to say'],
+          rows: [
+            ['🚌 get around', 'Ich fahre mit dem Zug / Bus. (mit + Dativ)'],
+            ['🎫 ticket',     'Eine Fahrkarte nach Berlin, bitte. Hin und zurück.'],
+            ['🧭 directions', 'Wie komme ich zum Bahnhof? → Geradeaus, dann links.'],
+            ['🏨 hotel',      'Ich möchte ein Zimmer reservieren.'],
+          ],
+        },
+        tip: 'Open any stranger-question with "Entschuldigung, …" and close with "Vielen Dank!".',
       },
-      { rule: '⭐ TRANSPORT = "mit" + DATIV (by train, by bus)',
-        body:
-          'To say HOW you travel, use mit + the Dativ (Day 25). Masculine/neuter → dem, feminine → der:\n\n' +
-          '  mit dem Zug      (by train · der → dem)\n' +
-          '  mit dem Bus      (by bus)\n' +
-          '  mit dem Flugzeug (by plane · das → dem)\n' +
-          '  mit dem Taxi     (by taxi)\n' +
-          '  mit der U-Bahn   (by metro · die → der)\n\n' +
-          '⚠ Two exceptions on foot/bike: "zu Fuß" (on foot) and "mit dem Fahrrad" / "mit dem Rad". And "Ich fliege" (I fly) needs no "mit" at all.',
+      { rule: '⭐ Transport = "mit" + Dativ (by train, by bus)',
+        summary: 'To say HOW you travel, use mit + the Dativ (Day 25). Masculine/neuter → dem, feminine → der.',
+        table: {
+          head: ['transport', 'mit + Dativ', 'note'],
+          rows: [
+            ['der Zug',      'mit dem Zug',      'der → dem'],
+            ['der Bus',      'mit dem Bus',      ''],
+            ['das Flugzeug', 'mit dem Flugzeug', 'das → dem'],
+            ['das Taxi',     'mit dem Taxi',     ''],
+            ['die U-Bahn',   'mit der U-Bahn',   'die → der'],
+          ],
+        },
+        warn: 'On foot/bike: "zu Fuß" (on foot, no mit) and "mit dem Fahrrad / mit dem Rad". And "Ich fliege" (I fly) needs no "mit".',
       },
       { rule: '🧭 wo? vs wohin? — and "Wie komme ich zu …?"',
-        body:
-          'Two ways to ask directions (Day 17 recap):\n\n' +
-          '  Wo ist …?         — Where IS …? (location → answer in Dativ)\n' +
-          '     "Wo ist der Bahnhof?" — "Er ist in der Nähe."\n' +
-          '  Wie komme ich zu …? — How do I GET TO …? (movement → zu + Dativ)\n' +
-          '     "Wie komme ich zum Bahnhof?" (zu + dem → zum)\n' +
-          '     "Wie komme ich zur Apotheke?" (zu + der → zur)\n\n' +
-          'Answers use direction words: "Gehen Sie geradeaus, dann nach links / rechts." · "Es ist an der Ecke / in der Nähe."',
+        summary: 'Two ways to ask directions (Day 17): Wo ist …? (location) and Wie komme ich zu …? (movement → zu + Dativ).',
+        table: {
+          head: ['question', 'use', 'example'],
+          rows: [
+            ['Wo ist …?',           'where IS … (location)',         'Wo ist der Bahnhof? — Er ist in der Nähe.'],
+            ['Wie komme ich zu …?', 'how do I GET TO … (movement)',  'Wie komme ich zum Bahnhof?'],
+          ],
+        },
+        tip: 'zu + dem → zum, zu + der → zur. Answers use direction words: "Gehen Sie geradeaus, dann nach links / rechts." · "Es ist an der Ecke."',
       },
-      { rule: '🎫 BUYING A TICKET — the counter phrases',
-        body:
-          'At the ticket counter (der Schalter) or machine:\n\n' +
-          '  "Eine Fahrkarte nach Berlin, bitte."   (nach + city, no article)\n' +
-          '  "Einfach oder hin und zurück?"          — one-way or return?\n' +
-          '  "Von welchem Gleis fährt der Zug?"      — which platform?\n' +
-          '  "Wann fährt der nächste Zug ab?"        — when does the next train leave? (abfahren — separable)\n\n' +
-          'Remember "nach" for cities/countries (nach Berlin, nach Deutschland) and the separable verbs abfahren (depart) / ankommen (arrive): "Der Zug fährt um 9 Uhr AB."',
+      { rule: '🎫 Buying a ticket — the counter phrases',
+        summary: 'At the ticket counter (der Schalter) or machine.',
+        table: {
+          head: ['phrase', 'meaning'],
+          rows: [
+            ['Eine Fahrkarte nach Berlin, bitte.', 'A ticket to Berlin, please. (nach + city, no article)'],
+            ['Einfach oder hin und zurück?',       'One-way or return?'],
+            ['Von welchem Gleis fährt der Zug?',   'Which platform does the train leave from?'],
+            ['Wann fährt der nächste Zug ab?',     'When does the next train leave? (abfahren — separable)'],
+          ],
+        },
+        tip: 'Use "nach" for cities/countries (nach Berlin). abfahren (depart) / ankommen (arrive) are separable: "Der Zug fährt um 9 Uhr ab."',
       },
-      { rule: '🚦 PITFALLS — travel traps',
-        body:
-          '• Transport uses mit + Dativ: "mit dem Zug" (not "mit den Zug").\n' +
-          '• "die U-Bahn" is feminine → "mit der U-Bahn".\n' +
-          '• Cities/countries take "nach" (nach Berlin), not "zu".\n' +
-          '• "Wie komme ich zu …?" uses zu + Dativ → zum (m/n) / zur (f).\n' +
-          '• abfahren / ankommen are separable: prefix to the end ("Der Zug kommt um 10 an").\n' +
-          '• "zu Fuß" = on foot (fixed phrase, no mit); "Ich fliege" needs no mit.',
+      { rule: '🚦 Pitfalls — travel traps',
+        summary: 'The travel traps.',
+        bullets: [
+          'Transport uses mit + Dativ: "mit dem Zug" (not "mit den Zug").',
+          '"die U-Bahn" is feminine → "mit der U-Bahn".',
+          'Cities/countries take "nach" (nach Berlin), not "zu".',
+          '"Wie komme ich zu …?" uses zu + Dativ → zum (m/n) / zur (f).',
+          'abfahren / ankommen are separable: the prefix goes to the end ("Der Zug kommt um 10 an").',
+          '"zu Fuß" = on foot (a fixed phrase, no mit); "Ich fliege" needs no mit.',
+        ],
       },
     ],
     exercises: [
