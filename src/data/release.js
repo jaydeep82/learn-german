@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.16.0';
+export const VERSION = '3.16.1';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.16.1',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 6 batch 2 — Days 38-39 enriched (demonstratives + restaurant)',
+    notes: [
+      'Days 38-39 converted to the rich visual grammar shape and adversarially verified (clean, zero issues).',
+      'Day 38 (Demonstratives & indefinites): the dieser declension table (mirrors der/die/das across all cases); indefinite pronouns for people (jemand/niemand/man) and things (etwas/nichts/alles + the capital -es adjective); the jemand/niemand Akk/Dat endings; pitfalls.',
+      'Day 39 (At the restaurant): the arrive→order→eat→pay arc table; ordering = Akkusativ (the einen-Kaffee masculine trap); the paying phrases; menu sections + kein for diets; pitfalls.',
+      'Everything appears in the Grammar reference AND the Day 38-39 lesson intros via the shared GrammarItem renderer.',
+    ],
+  },
   {
     version: '3.16.0',
     date: '2026-06-14',

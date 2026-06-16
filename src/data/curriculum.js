@@ -4699,48 +4699,71 @@ export const days = [
       { de: 'Guten Appetit!',  en: 'Enjoy your meal!',   emoji: '🍴', hint: 'said before eating',                  example: 'Guten Appetit!',                 exampleEn: 'Enjoy your meal!' },
     ],
     grammar: [
-      { rule: '⭐ THE RESTAURANT ARC — arrive → order → eat → pay',
-        body:
-          'A typical visit follows four steps. Learn one phrase for each and you\'re covered:\n\n' +
-          '  🪑 ARRIVE:  "Einen Tisch für zwei, bitte." · "Die Speisekarte, bitte."\n' +
-          '  📝 ORDER:   "Ich hätte gerne …" / "Ich möchte … bestellen."\n' +
-          '  🍽️ EAT:     "Guten Appetit!" · "Das ist lecker."\n' +
-          '  💳 PAY:     "Zahlen, bitte." / "Die Rechnung, bitte." · "Stimmt so."\n\n' +
-          'The waiter\'s lines to recognise: "Was möchten Sie?" (what would you like?) · "Noch etwas?" (anything else?) · "Getrennt oder zusammen?" (separately or together?).',
+      { rule: '⭐ The restaurant arc — arrive → order → eat → pay',
+        summary: 'A visit follows four steps — learn one phrase for each and you are covered.',
+        table: {
+          head: ['step', 'what to say'],
+          rows: [
+            ['🪑 arrive', 'Einen Tisch für zwei, bitte. · Die Speisekarte, bitte.'],
+            ['📝 order',  'Ich hätte gerne … / Ich möchte … bestellen.'],
+            ['🍽️ eat',    'Guten Appetit! · Das ist lecker.'],
+            ['💳 pay',    'Zahlen, bitte. / Die Rechnung, bitte. · Stimmt so.'],
+          ],
+        },
+        tip: 'Lines you will hear from the waiter: "Was möchten Sie?" · "Noch etwas?" · "Getrennt oder zusammen?".',
       },
-      { rule: '⭐ ORDERING = möchte / hätte gerne + AKKUSATIV',
-        body:
-          'Whatever you order is a direct object → Akkusativ. Masculine flips to einen/den; fem/neuter stay:\n\n' +
-          '  Ich hätte gerne EINEN Kaffee.   (m → einen)\n' +
-          '  Ich möchte EINEN Salat.          (m → einen)\n' +
-          '  Ich hätte gerne EINE Pizza.      (f → eine)\n' +
-          '  Ich möchte EIN Wasser.           (n → ein)\n\n' +
-          '⚠ The masculine trap bites here: "einen Kaffee", "einen Salat", "einen Wein" — NOT "ein Kaffee". "Ich hätte gerne …" is the most natural restaurant opener (Day 36 ladder).',
+      { rule: '⭐ Ordering = möchte / hätte gerne + Akkusativ',
+        summary: 'Whatever you order is a direct object → Akkusativ. Masculine flips to einen/den; fem/neuter stay.',
+        table: {
+          head: ['gender', 'order', 'example'],
+          rows: [
+            ['m', { t: 'einen', hl: true }, 'Ich hätte gerne einen Kaffee.'],
+            ['f', 'eine',                   'Ich hätte gerne eine Pizza.'],
+            ['n', 'ein',                    'Ich möchte ein Wasser.'],
+          ],
+        },
+        warn: 'The masculine trap bites here: "einen Kaffee", "einen Salat", "einen Wein" — NOT "ein Kaffee". "Ich hätte gerne …" is the most natural opener (Day 36 ladder).',
       },
-      { rule: '💳 PAYING — the phrases and the tip',
-        body:
-          'To pay, get the waiter\'s attention and say:\n\n' +
-          '  "Zahlen, bitte."         — I\'d like to pay. (most common)\n' +
-          '  "Die Rechnung, bitte."   — The bill, please.\n\n' +
-          'The waiter may ask "Getrennt oder zusammen?" (separately or together?). Tipping: round up and say the total you want to pay, or just "Stimmt so" (keep the change). Cash or card: "Bar oder mit Karte?" → "Mit Karte, bitte."',
+      { rule: '💳 Paying — the phrases and the tip',
+        summary: 'Get attention and ask for the bill; round up or say "Stimmt so" to leave a tip.',
+        table: {
+          head: ['phrase', 'meaning'],
+          rows: [
+            ['Zahlen, bitte.',            'I would like to pay (most common)'],
+            ['Die Rechnung, bitte.',      'The bill, please.'],
+            ['Getrennt oder zusammen?',   'Separately or together? (the waiter asks)'],
+            ['Stimmt so.',                'Keep the change.'],
+          ],
+        },
+        tip: 'Cash or card: "Bar oder mit Karte?" → "Mit Karte, bitte." To tip, round up and name the total you want to pay.',
       },
-      { rule: '🍽️ MENU SECTIONS & "kein" for diets',
-        body:
-          'A German menu (die Speisekarte) is organised into:\n\n' +
-          '  die Vorspeise   — starter\n' +
-          '  das Hauptgericht — main course\n' +
-          '  der Nachtisch   — dessert\n' +
-          '  die Getränke    — drinks\n\n' +
-          'Say what you DON\'T eat with kein (the Akkusativ negative article): "Ich esse KEIN Fleisch" (no meat), "Ich trinke KEINEN Alkohol" (no alcohol — masc → keinen). "Ich bin Vegetarier(in)" = I\'m vegetarian.',
+      { rule: '🍽️ Menu sections & "kein" for diets',
+        summary: 'A German menu (die Speisekarte) is organised into sections; say what you do not eat with kein.',
+        table: {
+          head: ['section', 'meaning'],
+          rows: [
+            ['die Vorspeise',    'starter'],
+            ['das Hauptgericht', 'main course'],
+            ['der Nachtisch',    'dessert'],
+            ['die Getränke',     'drinks'],
+          ],
+        },
+        examples: [
+          { de: 'Ich esse kein Fleisch.',     en: 'I do not eat meat.',     note: 'kein + neuter Fleisch' },
+          { de: 'Ich trinke keinen Alkohol.', en: 'I do not drink alcohol.', note: 'masc Alkohol → keinen' },
+        ],
+        tip: '"Ich bin Vegetarier(in)" = I am vegetarian.',
       },
-      { rule: '🚦 PITFALLS — restaurant traps',
-        body:
-          '• Order in the Akkusativ: masc → einen (einen Kaffee/Salat/Wein), not "ein".\n' +
-          '• "Ich hätte gerne …" / "Ich möchte …" — avoid blunt "Ich will …" with the waiter.\n' +
-          '• "Zahlen, bitte" or "Die Rechnung, bitte" — not "Ich will Geld geben".\n' +
-          '• "kein" for foods you don\'t eat: "kein Fleisch" (n), "keinen Alkohol" (m).\n' +
-          '• "lecker" describes food/taste; "schön" is for things/places — don\'t mix.\n' +
-          '• "Guten Appetit!" is said BEFORE eating, by anyone at the table.',
+      { rule: '🚦 Pitfalls — restaurant traps',
+        summary: 'The restaurant traps.',
+        bullets: [
+          'Order in the Akkusativ: masc → einen (einen Kaffee/Salat/Wein), not "ein".',
+          '"Ich hätte gerne …" / "Ich möchte …" — avoid blunt "Ich will …" with the waiter.',
+          '"Zahlen, bitte" or "Die Rechnung, bitte" — not "Ich will Geld geben".',
+          '"kein" for foods you do not eat: "kein Fleisch" (n), "keinen Alkohol" (m).',
+          '"lecker" describes food/taste; "schön" is for things/places — do not mix them.',
+          '"Guten Appetit!" is said BEFORE eating, by anyone at the table.',
+        ],
       },
     ],
     exercises: [
@@ -8648,53 +8671,69 @@ export const days = [
       { de: 'irgendwo', en: 'somewhere',           emoji: '📍', hint: 'irgend- = some- · irgendwann/irgendwer',   example: 'Mein Schlüssel ist irgendwo.',   exampleEn: 'My key is somewhere.' },
     ],
     grammar: [
-      { rule: '⭐ DEMONSTRATIVES — dieser declines exactly like der/die/das',
-        body:
-          '"dieser" = "this (particular) one". Swap the "d-" of the article for "dies-" and keep the SAME ending:\n\n' +
-          '            der → dieser     dieser Mann\n' +
-          '            die → diese      diese Frau\n' +
-          '            das → dieses     dieses Kind\n' +
-          '     plural die → diese      diese Leute\n\n' +
-          'Across the cases it mirrors der/die/das exactly:\n' +
-          '  Nom. m  dieser   ·  Akk. m  diesen  ·  Dat. m/n  diesem  ·  Dat. f  dieser\n' +
-          '  "Dieser Tisch ist neu." → "Ich kaufe diesen Tisch." → "auf diesem Tisch."\n\n' +
-          '🧠 jeder (every), welcher (which) and jener (that) follow the IDENTICAL ending pattern — learn one, get four.',
+      { rule: '⭐ Demonstratives — dieser declines exactly like der/die/das',
+        summary: '"dieser" = "this (particular) one". Swap the d- of the article for dies- and keep the SAME ending.',
+        table: {
+          head: ['case', 'masc', 'fem', 'neut', 'plural'],
+          rows: [
+            ['Nom', { t: 'dieser', hl: true }, 'diese',                  'dieses',                 'diese'],
+            ['Akk', { t: 'diesen', hl: true }, 'diese',                  'dieses',                 'diese'],
+            ['Dat', { t: 'diesem', hl: true }, { t: 'dieser', hl: true }, { t: 'diesem', hl: true }, { t: 'diesen + -n', hl: true }],
+          ],
+        },
+        examples: [
+          { de: 'Dieser Tisch ist neu.',    en: 'This table is new.',      note: 'Nom masc → dieser' },
+          { de: 'Ich kaufe diesen Tisch.',  en: 'I am buying this table.', note: 'Akk masc → diesen' },
+          { de: 'Ich helfe diesem Mann.',   en: 'I help this man.',        note: 'Dat masc → diesem' },
+        ],
+        tip: 'jeder (every), welcher (which) and jener (that) follow the identical ending pattern — learn one, get four.',
       },
-      { rule: '🙋 INDEFINITE PRONOUNS — people (jemand · niemand · man)',
-        body:
-          'These stand in for a person you don\'t name:\n\n' +
-          '  jemand   = someone   "Jemand ist hier."     Akk → jemanden ("Ich sehe jemanden.")\n' +
-          '  niemand  = nobody    "Niemand ist da."      Akk → niemanden\n' +
-          '  man      = one / people / you-in-general  (ALWAYS the subject)\n\n' +
-          '⭐ "man" is the workhorse: it expresses what people generally do, and takes the er/sie/es verb form:\n' +
-          '  "Man arbeitet hier viel."  (People work a lot here.)\n' +
-          '  "Wie sagt man das?"        (How does one say that?)\n' +
-          '⚠ Don\'t confuse "man" (one/people) with "der Mann" (the man) — one n vs two.',
+      { rule: '🙋 Indefinite pronouns — people (jemand · niemand · man)',
+        summary: 'Stand in for a person you do not name: jemand (someone), niemand (nobody), man (one/people, always the subject).',
+        table: {
+          head: ['word', 'meaning', 'example'],
+          rows: [
+            ['jemand',                'someone',                     'Jemand ist hier. (Akk → jemanden)'],
+            ['niemand',               'nobody',                      'Niemand ist da. (Akk → niemanden)'],
+            [{ t: 'man', hl: true },  'one / people / you (general)', 'Man arbeitet hier viel.'],
+          ],
+        },
+        warn: '"man" (one/people) ≠ "der Mann" (the man) — one n vs two. "man" always takes the er/sie/es verb: "Man arbeitet", "Wie sagt man das?".',
       },
-      { rule: '📦 INDEFINITE PRONOUNS — things (etwas · nichts · alles)',
-        body:
-          'For unnamed things — these never change form:\n\n' +
-          '  etwas   = something   "Möchtest du etwas?"\n' +
-          '  nichts  = nothing     "Ich habe nichts."\n' +
-          '  alles   = everything  "Alles ist gut."\n\n' +
-          '⚠ With an adjective they take a capitalised -es noun-form: "etwas Gutes" (something good), "nichts Neues" (nothing new), "alles Gute" (all the best). The adjective becomes a neuter noun.',
+      { rule: '📦 Indefinite pronouns — things (etwas · nichts · alles)',
+        summary: 'For unnamed things — these never change form.',
+        table: {
+          head: ['word', 'meaning', 'example'],
+          rows: [
+            ['etwas',  'something',  'Möchtest du etwas?'],
+            ['nichts', 'nothing',    'Ich habe nichts.'],
+            ['alles',  'everything', 'Alles ist gut.'],
+          ],
+        },
+        warn: 'With an adjective they take a capitalised -es noun-form: "etwas Gutes" (something good), "nichts Neues" (nothing new), "alles Gute" (all the best).',
       },
       { rule: '⚠ jemand / niemand — the -en in the Akkusativ',
-        body:
-          'jemand and niemand optionally add -en in the Akkusativ and -em in the Dativ:\n\n' +
-          '  Nom: Jemand klopft.            (someone is knocking)\n' +
-          '  Akk: Ich sehe jemanden.         (I see someone)  ← +en\n' +
-          '  Dat: Ich gebe es jemandem.      (I give it to someone)  ← +em\n\n' +
-          'In everyday speech you\'ll hear the bare form too ("Ich sehe jemand"), but the -en/-em forms are the textbook-correct ones. niemand works identically (niemanden / niemandem).',
+        summary: 'jemand and niemand optionally add -en in the Akkusativ and -em in the Dativ.',
+        table: {
+          head: ['case', 'form', 'example'],
+          rows: [
+            ['Nom', 'jemand',                    'Jemand klopft.'],
+            ['Akk', { t: 'jemanden', hl: true }, 'Ich sehe jemanden.'],
+            ['Dat', { t: 'jemandem', hl: true }, 'Ich gebe es jemandem.'],
+          ],
+        },
+        tip: 'In everyday speech you will hear the bare form too ("Ich sehe jemand"), but the -en/-em forms are textbook-correct. niemand works identically (niemanden / niemandem).',
       },
-      { rule: '🚦 PITFALLS — demonstrative & indefinite traps',
-        body:
-          '• dieser takes the SAME ending as der/die/das in every case (dieser/diese/dieses/diesen/diesem).\n' +
-          '• "man" ≠ "Mann": man = one/people (impersonal subject), der Mann = the man.\n' +
-          '• "man" always uses the er/sie/es verb: "man macht", "man kann".\n' +
-          '• jemand/niemand add -en in Akkusativ: "Ich sehe niemanden."\n' +
-          '• etwas/nichts/alles never decline — but add a capital -es adjective: "etwas Schönes".\n' +
-          '• "alle" (everybody, plural) takes a PLURAL verb: "Alle sind da" (not "ist").',
+      { rule: '🚦 Pitfalls — demonstrative & indefinite traps',
+        summary: 'The demonstrative & indefinite traps.',
+        bullets: [
+          'dieser takes the SAME ending as der/die/das in every case (dieser/diese/dieses/diesen/diesem).',
+          '"man" ≠ "Mann": man = one/people (impersonal subject), der Mann = the man.',
+          '"man" always uses the er/sie/es verb: "man macht", "man kann".',
+          'jemand/niemand add -en in the Akkusativ: "Ich sehe niemanden."',
+          'etwas/nichts/alles never decline — but add a capital -es adjective: "etwas Schönes".',
+          '"alle" (everybody, plural) takes a PLURAL verb: "Alle sind da" (not "ist").',
+        ],
       },
     ],
     exercises: [
