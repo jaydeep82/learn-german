@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.16.2';
+export const VERSION = '3.16.3';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.16.3',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 6 complete — Day 42 enriched (negation)',
+    notes: [
+      'Day 42 converted to the rich visual grammar shape, completing Week 6 — every grammar day from 1 to 42 is now enriched.',
+      'Day 42 (Negation: nicht & kein): the 5-second kein-or-nicht decision table; the kein declension (= ein + a plural); the nicht position rules; kein vs "nicht ein"; negative questions answered with Doch; pitfalls.',
+      'Adversarially verified — clean, zero issues.',
+      'Weeks 1-6 (Days 1-42) are now fully enriched.',
+    ],
+  },
   {
     version: '3.16.2',
     date: '2026-06-14',

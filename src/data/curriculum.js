@@ -5072,66 +5072,82 @@ export const days = [
       { de: 'nicht mehr', en: 'no longer / not anymore', emoji: '🔚', hint: 'time-negation phrase',        example: 'Ich rauche nicht mehr.',     exampleEn: 'I don\'t smoke anymore.' },
     ],
     grammar: [
-      { rule: '⭐ THE 5-SECOND DECISION — kein or nicht?',
-        body:
-          'Ask ONE question: is the thing you\'re negating a noun that has ein/eine OR no article?\n\n' +
-          '  YES → use kein:\n' +
-          '     "Ich habe ein Auto."  → "Ich habe KEIN Auto."\n' +
-          '     "Ich trinke Kaffee."  → "Ich trinke KEINEN Kaffee."  (no article → still kein)\n\n' +
-          '  NO → use nicht (verbs, adjectives, names, places, and der/die/das nouns):\n' +
-          '     "Ich arbeite."         → "Ich arbeite NICHT."\n' +
-          '     "Das ist gut."         → "Das ist NICHT gut."\n' +
-          '     "Ich kaufe DAS Buch."  → "Ich kaufe das Buch NICHT."  (specific → nicht)\n\n' +
-          '🧠 Rule of thumb: ein/no-article → kein; der/die/das or not-a-noun → nicht.',
+      { rule: '⭐ The 5-second decision — kein or nicht?',
+        summary: 'Ask one question: is the thing you negate a noun with ein/eine (or no article)? Yes → kein. No → nicht.',
+        table: {
+          head: ['negating…', 'use', 'example'],
+          rows: [
+            ['an ein-noun',                  { t: 'kein', hl: true },  'Ich habe ein Auto → Ich habe kein Auto.'],
+            ['a no-article noun',            { t: 'kein', hl: true },  'Ich trinke Kaffee → Ich trinke keinen Kaffee.'],
+            ['a verb',                       { t: 'nicht', hl: true }, 'Ich arbeite → Ich arbeite nicht.'],
+            ['an adjective',                 { t: 'nicht', hl: true }, 'Das ist gut → Das ist nicht gut.'],
+            ['a specific der/die/das noun',  { t: 'nicht', hl: true }, 'Ich kaufe das Buch → … das Buch nicht.'],
+          ],
+        },
+        tip: 'Rule of thumb: ein / no-article → kein; der/die/das or not-a-noun → nicht.',
       },
-      { rule: '⭐ kein DECLINES EXACTLY LIKE ein (+ a plural)',
-        body:
-          'kein takes the same endings as ein — and unlike ein, it HAS a plural:\n\n' +
-          '            masc.     fem.     neut.    plural\n' +
-          '  Nom.      kein      keine    kein     keine\n' +
-          '  Akk.      keinen    keine    kein     keine\n' +
-          '  Dat.      keinem    keiner   keinem   keinen +(-n)\n\n' +
-          '  "Ich habe KEINEN Hund."   (m Akk → keinen)\n' +
-          '  "Ich habe KEINE Zeit."    (f → keine)\n' +
-          '  "Ich trinke KEIN Bier."   (n → kein)\n' +
-          '  "Ich habe KEINE Freunde." (pl → keine)\n\n' +
-          '🧠 If you know einen/eine/ein/einem, you already know keinen/keine/kein/keinem — just add "k-".',
+      { rule: '⭐ kein declines exactly like ein (+ a plural)',
+        summary: 'kein takes the same endings as ein — and, unlike ein, it HAS a plural.',
+        table: {
+          head: ['case', 'masc', 'fem', 'neut', 'plural'],
+          rows: [
+            ['Nom', 'kein',                   'keine',                  'kein',                   'keine'],
+            ['Akk', { t: 'keinen', hl: true }, 'keine',                  'kein',                   'keine'],
+            ['Dat', { t: 'keinem', hl: true }, { t: 'keiner', hl: true }, { t: 'keinem', hl: true }, { t: 'keinen + -n', hl: true }],
+          ],
+        },
+        examples: [
+          { de: 'Ich habe keinen Hund.',    en: 'I have no dog.',     note: 'm Akk → keinen' },
+          { de: 'Ich habe keine Zeit.',     en: 'I have no time.',    note: 'f → keine' },
+          { de: 'Ich trinke kein Bier.',    en: 'I drink no beer.',   note: 'n → kein' },
+          { de: 'Ich habe keine Freunde.',  en: 'I have no friends.', note: 'pl → keine' },
+        ],
+        tip: 'If you know einen/eine/ein/einem, you already know keinen/keine/kein/keinem — just add "k-".',
       },
-      { rule: '⭐ WHERE DOES "nicht" GO? — position rules',
-        body:
-          'nicht sits in different spots depending on WHAT it negates:\n\n' +
-          '  • Whole sentence / the verb → at the END:\n' +
-          '     "Ich arbeite heute NICHT."\n' +
-          '  • BEFORE an adjective, adverb or place:\n' +
-          '     "Das ist NICHT gut." · "Ich wohne NICHT in Berlin."\n' +
-          '  • BEFORE a separable prefix / infinitive at the end:\n' +
-          '     "Ich rufe dich NICHT an." · "Ich kann NICHT kommen."\n\n' +
-          'General guide: nicht comes as late as possible, but right BEFORE the specific element it negates.',
+      { rule: '⭐ Where does "nicht" go? — position rules',
+        summary: 'nicht sits in different spots depending on WHAT it negates — generally as late as possible, but right before that element.',
+        table: {
+          head: ['negating…', 'position', 'example'],
+          rows: [
+            ['the whole sentence / the verb',  'at the END',           'Ich arbeite heute nicht.'],
+            ['an adjective / adverb / place',  'BEFORE it',            'Das ist nicht gut. · Ich wohne nicht in Berlin.'],
+            ['a separable prefix / infinitive', 'BEFORE the end-piece', 'Ich rufe dich nicht an. · Ich kann nicht kommen.'],
+          ],
+        },
+        tip: 'General guide: nicht comes as late as possible, but right BEFORE the specific element it negates.',
       },
       { rule: '⚠ kein vs "nicht ein" — never say "nicht ein"',
-        body:
-          'A classic beginner error: negating an ein-noun with "nicht ein". German contracts this into kein:\n\n' +
-          '  "Ich habe nicht ein Auto." ✗\n' +
-          '  "Ich habe kein Auto."       ✓\n\n' +
-          '  "Ich habe nicht eine Idee." ✗\n' +
-          '  "Ich habe keine Idee."       ✓\n\n' +
-          'Whenever you\'re tempted to write "nicht ein/eine", merge it into kein/keine instead.',
+        summary: 'A classic beginner error: negating an ein-noun with "nicht ein". German merges it into kein.',
+        table: {
+          head: ['✗ wrong', '✓ right'],
+          rows: [
+            ['Ich habe nicht ein Auto.',  { t: 'Ich habe kein Auto.', hl: true }],
+            ['Ich habe nicht eine Idee.', { t: 'Ich habe keine Idee.', hl: true }],
+          ],
+        },
+        tip: 'Whenever you are tempted to write "nicht ein/eine", merge it into kein/keine instead.',
       },
-      { rule: '🔄 NEGATIVE QUESTIONS → answer with DOCH',
-        body:
-          'When someone asks a NEGATIVE question (with nicht or kein) and you want to contradict it, answer "Doch!" not "Ja!" (Day 16):\n\n' +
-          '  "Hast du KEIN Auto?"  — Doch! (= yes, I DO have one)\n' +
-          '  "Bist du NICHT müde?" — Doch! (= yes, I am)\n\n' +
-          'A plain agreement uses nein: "Hast du kein Auto?" — "Nein." (= correct, I don\'t). Useful time-negators: noch nicht (not yet), nicht mehr (not anymore), gar nicht (not at all).',
+      { rule: '🔄 Negative questions → answer with DOCH',
+        summary: 'To contradict a NEGATIVE question (with nicht or kein), answer "Doch!" not "Ja!" (Day 16).',
+        table: {
+          head: ['negative question', 'to contradict', 'to agree'],
+          rows: [
+            ['Hast du kein Auto?',  { t: 'Doch! (yes, I do)', hl: true }, 'Nein. (correct, I do not)'],
+            ['Bist du nicht müde?', { t: 'Doch! (yes, I am)', hl: true }, 'Nein. (no, I am not)'],
+          ],
+        },
+        tip: 'Useful time-negators: noch nicht (not yet), nicht mehr (not anymore), gar nicht (not at all).',
       },
-      { rule: '🚦 PITFALLS — negation traps',
-        body:
-          '• ein-noun or no-article noun → kein (kein/keinen/keine/kein).\n' +
-          '• der/die/das (specific) noun → nicht ("Ich kaufe das Buch nicht").\n' +
-          '• Verb / adjective / name / place → nicht.\n' +
-          '• NEVER "nicht ein/eine" → always kein/keine.\n' +
-          '• kein masc Akk → keinen ("Ich habe keinen Hund").\n' +
-          '• Contradict a negative question with DOCH, not Ja.',
+      { rule: '🚦 Pitfalls — negation traps',
+        summary: 'The negation traps.',
+        bullets: [
+          'ein-noun or no-article noun → kein (kein/keinen/keine/kein).',
+          'der/die/das (specific) noun → nicht ("Ich kaufe das Buch nicht").',
+          'verb / adjective / name / place → nicht.',
+          'NEVER "nicht ein/eine" → always kein/keine.',
+          'kein masc Akk → keinen ("Ich habe keinen Hund").',
+          'Contradict a negative question with DOCH, not Ja.',
+        ],
       },
     ],
     exercises: [
