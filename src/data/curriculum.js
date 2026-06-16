@@ -4476,7 +4476,7 @@ export const days = [
     titleDe: 'Modalverben II',
     emoji: '🧰',
     objective: 'Complete the modal set — dürfen (permission), sollen (advice/obligation), mögen (liking) and möchten (polite would-like) — and climb the café/restaurant politeness ladder.',
-    intro: 'Day 35 gave you können/müssen/wollen. Today finishes the family: dürfen = be allowed (permission), sollen = should (advice or someone else\'s instruction), mögen = like (a thing), and möchten = would like (the polite ordering verb). Same sandwich rule, same singular vowel-change — plus the real-world politeness ladder for cafés and shops.',
+    intro: 'Day 35 gave you können/müssen/wollen. Today finishes the family: dürfen = be allowed (permission), sollen = should (advice or someone else\'s instruction), mögen = like (a thing), and möchten = would like (the polite ordering verb). Same sandwich rule, and the same singular vowel-change for dürfen (ü→a) and mögen (ö→a) — but watch sollen, which keeps its vowel (ich soll). Plus the real-world politeness ladder for cafés and shops.',
     vocabulary: [
       // 🧰 THE THREE NEW MODALS + möchten
       { de: 'dürfen',  en: 'to be allowed to',  emoji: '✅', hint: '⭐ permission · ich DARF (rf→r)',           example: 'Darf ich hier rauchen?',        exampleEn: 'May I smoke here?' },
@@ -4505,57 +4505,72 @@ export const days = [
       { de: 'Modal + Infinitiv', en: 'modal slot 2, infinitive at END', emoji: '🥪', hint: '🔁 Day 35 · same rule for all 6 modals', example: 'Ich darf heute früher gehen.', exampleEn: 'I may leave earlier today.' },
     ],
     grammar: [
-      { rule: '⭐ THE SIX MODALS — what each one means',
-        body:
-          'Day 35 gave you three; here are the other three (+ möchten). Each has a distinct job:\n\n' +
-          '  können  — can / ability        (Day 35)\n' +
-          '  müssen  — must / obligation    (Day 35)\n' +
-          '  wollen  — want / desire        (Day 35)\n' +
-          '  dürfen  — be ALLOWED / permission   "Darf ich …?"\n' +
-          '  sollen  — SHOULD / advice or instruction   "Du sollst …"\n' +
-          '  mögen   — to LIKE (usually + a noun)   "Ich mag Kaffee."\n' +
-          '  möchten — would LIKE (polite)   "Ich möchte …"\n\n' +
-          'All seven follow the SAME sandwich rule: conjugated modal in slot 2, any second verb to the END as an infinitive.',
+      { rule: '⭐ The six modals — what each one means',
+        summary: 'Day 35 gave three (können/müssen/wollen); here are the other three plus möchten — each with a distinct job.',
+        table: {
+          head: ['modal', 'meaning', 'example'],
+          rows: [
+            ['können',                  'can / ability (Day 35)',          'Ich kann schwimmen.'],
+            ['müssen',                  'must / obligation (Day 35)',      'Ich muss arbeiten.'],
+            ['wollen',                  'want / desire (Day 35)',          'Ich will lernen.'],
+            [{ t: 'dürfen', hl: true }, 'be ALLOWED / permission',         'Darf ich …?'],
+            [{ t: 'sollen', hl: true }, 'SHOULD / advice or instruction',  'Du sollst mehr schlafen.'],
+            [{ t: 'mögen', hl: true },  'to LIKE (usually + a noun)',      'Ich mag Kaffee.'],
+            ['möchten',                 'would LIKE (polite)',             'Ich möchte einen Tee.'],
+          ],
+        },
+        tip: 'All follow the SAME sandwich rule: conjugated modal in slot 2, any second verb to the END as an infinitive.',
       },
-      { rule: '⭐ THE SINGULAR VOWEL-CHANGE (and sollen\'s exception)',
-        body:
-          '           dürfen    sollen    mögen\n' +
-          '  ich      darf      soll      mag       ← darf/mag change vowel; soll does NOT\n' +
-          '  du       darfst    sollst    magst\n' +
-          '  er/sie   darf      soll      mag       ← no -t\n' +
-          '  wir      dürfen    sollen    mögen\n' +
-          '  ihr      dürft     sollt     mögt\n' +
-          '  sie/Sie  dürfen    sollen    mögen\n\n' +
-          '🧠 dürfen (ü→a) and mögen (ö→a) change their vowel in the singular — but ⚠ sollen does NOT (ich soll, not "süll"). As always, ich = er/sie (no ending), and the plural = the infinitive.',
+      { rule: '⭐ The singular vowel-change (and sollen\'s exception)',
+        summary: 'dürfen (ü→a) and mögen (ö→a) change their vowel in the singular — but sollen does NOT.',
+        table: {
+          head: ['', 'dürfen', 'sollen', 'mögen'],
+          rows: [
+            ['ich',     { t: 'darf', hl: true }, 'soll',   { t: 'mag', hl: true }],
+            ['du',      'darfst',                'sollst', 'magst'],
+            ['er/sie',  { t: 'darf', hl: true }, 'soll',   { t: 'mag', hl: true }],
+            ['wir',     'dürfen',                'sollen', 'mögen'],
+            ['ihr',     'dürft',                 'sollt',  'mögt'],
+            ['sie/Sie', 'dürfen',                'sollen', 'mögen'],
+          ],
+        },
+        warn: 'sollen does NOT change its vowel (ich soll, not "süll"). As always ich = er/sie (no ending); wir and sie/Sie equal the infinitive (ihr adds -t: dürft/sollt/mögt).',
       },
-      { rule: '⚠ dürfen vs müssen in the NEGATIVE — a key safety trap',
-        body:
-          'In the negative these two are NOT the same — getting it wrong can be dangerous:\n\n' +
-          '  nicht dürfen  = MUST NOT / forbidden\n' +
-          '     "Du darfst hier nicht rauchen." = You are NOT allowed to smoke here.\n' +
-          '  nicht müssen  = don\'t HAVE to (but you may)\n' +
-          '     "Du musst nicht kommen." = You don\'t have to come (optional).\n\n' +
-          'So "darf nicht" = prohibition; "muss nicht" = no obligation. English "must not" maps to darf nicht, NOT muss nicht.',
+      { rule: '⚠ dürfen vs müssen in the negative — a key safety trap',
+        summary: 'In the negative these two are NOT the same — and getting it wrong can be dangerous.',
+        table: {
+          head: ['phrase', 'meaning', 'example'],
+          rows: [
+            [{ t: 'nicht dürfen', hl: true }, 'MUST NOT / forbidden',           'Du darfst hier nicht rauchen. (not allowed)'],
+            [{ t: 'nicht müssen', hl: true }, 'do not HAVE to (but you may)',   'Du musst nicht kommen. (optional)'],
+          ],
+        },
+        warn: 'English "must not" maps to darf nicht (prohibition), NOT muss nicht (no obligation).',
       },
       { rule: '😍 mögen vs möchten — like vs would-like',
-        body:
-          'Same root, different jobs:\n\n' +
-          '  mögen   = to LIKE something (a standing preference, usually + noun, no second verb):\n' +
-          '            "Ich mag Kaffee." · "Magst du Pizza?"\n' +
-          '  möchten = would LIKE (a polite request / wish, right now):\n' +
-          '            "Ich möchte einen Kaffee." · "Ich möchte bezahlen."\n\n' +
-          'Rule of thumb: mögen describes taste in general; möchten places an order or states a wish for now. (Grammatically möchten is the Konjunktiv II of mögen — the polite "would" form.)',
+        summary: 'Same root, different jobs: mögen = like something (general taste); möchten = would like (a polite request, now).',
+        table: {
+          head: ['verb', 'use', 'example'],
+          rows: [
+            ['mögen',   'a standing preference (usually + noun)', 'Ich mag Kaffee. · Magst du Pizza?'],
+            ['möchten', 'a polite request / wish, right now',    'Ich möchte einen Kaffee. · Ich möchte bezahlen.'],
+          ],
+        },
+        tip: 'mögen describes taste in general; möchten places an order or states a wish for now. (Grammatically möchten is the Konjunktiv II of mögen — the polite "would" form.)',
       },
-      { rule: '☕ THE POLITENESS LADDER — ordering like a local',
-        body:
-          'Climb the ladder to sound natural in cafés, shops and offices:\n\n' +
-          '  1. Ich möchte einen Kaffee.                  (basic polite)\n' +
-          '  2. Ich möchte gerne einen Kaffee.            (warmer — "gladly")\n' +
-          '  3. Ich möchte gerne einen Kaffee, bitte.     (very polite)\n' +
-          '  4. Ich möchte einen Kaffee mit Milch, bitte. (specifying)\n' +
-          '  5. Ich hätte gerne einen Kaffee mit Milch.   (⭐ most natural in restaurants)\n\n' +
-          '"Ich hätte gerne …" (lit. "I would have gladly") is what waiters hear most. Add "bitte" anywhere — it always softens. AVOID "Ich will …" with strangers — it sounds demanding.\n\n' +
-          'Bonus — den vs einen: "Ich möchte EINEN Fisch" = any fish (you choose); "Ich möchte DEN Fisch" = the specific fish (pointing at the menu). Both correct — meaning shifts.',
+      { rule: '☕ The politeness ladder — ordering like a local',
+        summary: 'Climb the ladder to sound natural in cafés, shops and offices.',
+        table: {
+          head: ['phrase', 'register'],
+          rows: [
+            ['Ich will einen Kaffee.',           '😠 demanding — avoid with strangers'],
+            ['Ich möchte einen Kaffee.',          '🙂 basic polite'],
+            ['Ich möchte gerne einen Kaffee.',    '😊 warmer'],
+            ['Ich möchte einen Kaffee, bitte.',   '🙏 very polite'],
+            [{ t: 'Ich hätte gerne einen Kaffee.', hl: true }, '⭐ most natural in restaurants'],
+          ],
+        },
+        tip: '"Ich hätte gerne …" (lit. "I would have gladly") is what waiters hear most — add "bitte" anywhere. Bonus: "einen Fisch" = any fish (you choose); "den Fisch" = the specific fish (pointing at the menu).',
       },
     ],
     exercises: [
@@ -8441,51 +8456,68 @@ export const days = [
       { de: 'der Nebensatz', en: 'subordinate clause (verb at END)', emoji: '2️⃣', hint: 'depends on a main clause · weil/dass…', example: '…, weil ich müde bin.',  exampleEn: '…, because I am tired.' },
     ],
     grammar: [
-      { rule: '🟢 GROUP 1 — COORDINATING (verb stays in slot 2)',
-        body:
-          'und · oder · aber · denn · sondern — these join two equal main clauses and leave word order ALONE (they sit in "position 0", not counted):\n\n' +
-          '  Ich lerne Deutsch UND ich arbeite viel.\n' +
-          '  Trinkst du Kaffee ODER (trinkst du) Tee?\n' +
-          '  Das ist lecker, ABER es ist teuer.\n' +
-          '  Ich gehe ins Restaurant, DENN ich bin hungrig.\n' +
-          '  Ich will keinen Tee, SONDERN Kaffee.   (sondern = "but rather", only after a negative)\n\n' +
-          '🧠 Memory aid: the German "ADUSO" set (Aber · Denn · Und · Sondern · Oder) never changes word order.',
+      { rule: '🟢 Group 1 — coordinating (verb stays in slot 2)',
+        summary: 'und · oder · aber · denn · sondern join two equal clauses and leave word order alone.',
+        table: {
+          head: ['connector', 'meaning', 'example'],
+          rows: [
+            ['und',     'and',                          'Ich lerne Deutsch und ich arbeite.'],
+            ['oder',    'or',                           'Trinkst du Kaffee oder Tee?'],
+            ['aber',    'but',                          'Das ist lecker, aber teuer.'],
+            ['denn',    'because (normal order)',       'Ich gehe, denn ich bin müde.'],
+            ['sondern', 'but rather (after a negative)', 'Nicht Tee, sondern Kaffee.'],
+          ],
+        },
+        tip: 'Memory aid — the "ADUSO" set (Aber · Denn · Und · Sondern · Oder) never changes word order.',
       },
-      { rule: '🔴 GROUP 2 — SUBORDINATING (verb JUMPS to the end)',
-        body:
-          'weil · wenn · dass · obwohl · ob — these open a Nebensatz (subordinate clause) and kick the conjugated verb to the VERY END:\n\n' +
-          '  Ich lerne Deutsch, WEIL ich in Deutschland ARBEITE.\n' +
-          '  Ich komme, WENN ich Zeit HABE.\n' +
-          '  Ich denke, DASS er müde IST.\n' +
-          '  Ich gehe, OBWOHL es REGNET.\n' +
-          '  Ich weiß nicht, OB er KOMMT.\n\n' +
-          '⚠ Always a COMMA before the connector, and the conjugated verb lands last. With a modal, the modal goes last: "…, weil ich arbeiten MUSS."',
+      { rule: '🔴 Group 2 — subordinating (verb JUMPS to the end)',
+        summary: 'weil · wenn · dass · obwohl · ob open a subordinate clause and kick the conjugated verb to the very END.',
+        table: {
+          head: ['connector', 'meaning', 'example (verb at end)'],
+          rows: [
+            ['weil',   'because',    'Ich lerne Deutsch, weil ich hier arbeite.'],
+            ['wenn',   'if / when',  'Ich komme, wenn ich Zeit habe.'],
+            ['dass',   'that',       'Ich denke, dass er müde ist.'],
+            ['obwohl', 'although',   'Ich gehe, obwohl es regnet.'],
+            ['ob',     'whether',    'Ich weiß nicht, ob er kommt.'],
+          ],
+        },
+        warn: 'Always a COMMA before the connector, and the conjugated verb lands last. With a modal, the modal goes last: "…, weil ich arbeiten muss."',
       },
-      { rule: '🟡 GROUP 3 — ADVERB-CONNECTORS (V2 inversion)',
-        body:
-          'deshalb · dann · trotzdem · danach · sonst are ADVERBS, not real conjunctions. When they lead the second clause they fill slot 1, so the verb stays in slot 2 and the SUBJECT moves to slot 3:\n\n' +
-          '  Ich bin müde, DESHALB gehe ICH nach Hause.\n' +
-          '  Zuerst esse ich, DANN schlafe ICH.\n' +
-          '  Es regnet, TROTZDEM gehe ICH spazieren.\n\n' +
-          '⚠ NOT "deshalb ich gehe" ✗. These behave like any time/place word that leads a sentence (the Day-9/32 V2 rule): verb second, subject right after.',
+      { rule: '🟡 Group 3 — adverb-connectors (V2 inversion)',
+        summary: 'deshalb · dann · trotzdem are ADVERBS: leading the second clause they fill slot 1, so the verb stays slot 2 and the subject moves to slot 3.',
+        table: {
+          head: ['connector', 'meaning', 'example (verb 2nd)'],
+          rows: [
+            ['deshalb',  'therefore / so', 'Ich bin müde, deshalb gehe ich.'],
+            ['dann',     'then',           'Zuerst esse ich, dann schlafe ich.'],
+            ['trotzdem', 'nevertheless',   'Es regnet, trotzdem gehe ich.'],
+          ],
+        },
+        warn: 'NOT "deshalb ich gehe" ✗. They behave like any time/place word that leads (the Day-9/32 V2 rule): verb second, subject right after.',
       },
       { rule: '⚖️ denn vs weil — same meaning, different word order',
-        body:
-          'Both mean "because" — choose by the word order you want:\n\n' +
-          '  Ich gehe, DENN ich bin müde.   (Group 1 · verb stays slot 2)\n' +
-          '  Ich gehe, WEIL ich müde bin.   (Group 2 · verb to the end)\n\n' +
-          'Same idea: deshalb is the "flip side" — it states the RESULT, not the reason:\n' +
-          '  Ich bin müde, DESHALB gehe ich. (I am tired, therefore I go.)\n\n' +
-          'Modern spoken German uses "weil" most; "denn" sounds a touch more formal/written.',
+        summary: 'Both mean "because" — choose by the word order you want; deshalb is the flip side (it states the result).',
+        table: {
+          head: ['connector', 'group', 'example'],
+          rows: [
+            ['denn',    'Group 1 — verb stays slot 2',         'Ich gehe, denn ich bin müde.'],
+            ['weil',    'Group 2 — verb to the end',           'Ich gehe, weil ich müde bin.'],
+            ['deshalb', 'Group 3 — V2 inversion (the result)', 'Ich bin müde, deshalb gehe ich.'],
+          ],
+        },
+        tip: 'Modern spoken German uses "weil" most; "denn" sounds a touch more formal/written.',
       },
-      { rule: '🚦 PITFALLS — connector traps',
-        body:
-          '• und/oder/aber/denn/sondern → word order UNCHANGED (no verb movement).\n' +
-          '• weil/wenn/dass/obwohl/ob → conjugated verb to the END, comma before.\n' +
-          '• deshalb/dann/trotzdem → V2 inversion: verb 2nd, subject 3rd (NOT "deshalb ich…").\n' +
-          '• "denn" (because) ≠ "dann" (then) — one letter, totally different jobs.\n' +
-          '• sondern only after a negative ("nicht X, sondern Y"); otherwise use aber.\n' +
-          '• With a modal in a weil-clause, the MODAL goes last: "…, weil ich gehen muss."',
+      { rule: '🚦 Pitfalls — connector traps',
+        summary: 'The connector traps.',
+        bullets: [
+          'und/oder/aber/denn/sondern → word order UNCHANGED (no verb movement).',
+          'weil/wenn/dass/obwohl/ob → conjugated verb to the END, comma before.',
+          'deshalb/dann/trotzdem → V2 inversion: verb 2nd, subject 3rd (NOT "deshalb ich…").',
+          '"denn" (because) ≠ "dann" (then) — one letter, totally different jobs.',
+          'sondern only after a negative ("nicht X, sondern Y"); otherwise use aber.',
+          'With a modal in a weil-clause, the MODAL goes last: "…, weil ich gehen muss."',
+        ],
       },
     ],
     exercises: [

@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.15.2';
+export const VERSION = '3.16.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.16.0',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 6 batch 1 — Days 36-37 enriched (Modals II + connectors)',
+    notes: [
+      'Week 6 begins. Days 36-37 converted to the rich visual grammar shape and adversarially verified.',
+      'Day 36 (Modals II): the six-modals meaning table; the dürfen/sollen/mögen vowel-change table (with the sollen no-change exception); the darf-nicht (forbidden) vs muss-nicht (optional) safety trap; mögen vs möchten; the café politeness ladder.',
+      'Day 37 (Sentence connections): the three connector groups — Group 1 coordinating (ADUSO, verb stays slot 2), Group 2 subordinating (verb to the END, comma before), Group 3 adverb-connectors (V2 inversion); the denn/weil/deshalb contrast; pitfalls.',
+      'Verification fix: the Day 36 intro claimed "same singular vowel-change" for all three new modals — corrected to carve out sollen (which keeps its vowel: ich soll), matching the lesson body.',
+      'Everything appears in the Grammar reference AND the Day 36-37 lesson intros via the shared GrammarItem renderer.',
+    ],
+  },
   {
     version: '3.15.2',
     date: '2026-06-14',
