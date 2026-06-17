@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.17.0';
+export const VERSION = '3.17.1';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.17.1',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 7 batch 2 — Days 45-46 enriched (the Perfekt)',
+    notes: [
+      'Days 45-46 (the spoken past tense) converted to the rich visual grammar shape and adversarially verified — every participle reconstructed from scratch.',
+      'Day 45 (Perfekt I — haben): the haben + Partizip II formula table; regular (ge-t) and irregular (ge-en, 8 strong verbs) participle tables; the no-ge / split-ge exceptions; word order with time words; pitfalls.',
+      'Day 46 (Perfekt II — sein): the sein-or-haben decision (motion / change-of-state → sein); the three exceptions (bleiben/sein/passieren); sein conjugation in slot 2; separable motion/change verbs; pitfalls.',
+      'Two accuracy fixes from verification (German itself correct): the Day 45 participle-exceptions rule and intro miscounted — the rule now says "three groups" (it lists -ieren, separable AND inseparable) and the intro says "five patterns", matching the lesson body.',
+      'Everything appears in the Grammar reference AND the Day 45-46 lesson intros via the shared GrammarItem renderer.',
+    ],
+  },
   {
     version: '3.17.0',
     date: '2026-06-14',

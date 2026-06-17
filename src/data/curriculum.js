@@ -9066,7 +9066,7 @@ export const days = [
     titleDe: 'Perfekt I (haben)',
     emoji: '⏪',
     objective: 'Talk about the past the everyday way — haben (slot 2) + Partizip II (at the end) — and build the participle for regular (ge-…-t), irregular (ge-…-en), -ieren and separable verbs.',
-    intro: 'The Perfekt is THE spoken past tense in German — you use it for almost everything you\'d say in English past tense. Two ingredients: a conjugated form of haben in slot 2, plus the Partizip II (past participle) at the very END. Today: master the haben-Perfekt and the four participle-building patterns (regular ge-t, irregular ge-en, -ieren without ge-, and separable verbs).',
+    intro: 'The Perfekt is THE spoken past tense in German — you use it for almost everything you\'d say in English past tense. Two ingredients: a conjugated form of haben in slot 2, plus the Partizip II (past participle) at the very END. Today: master the haben-Perfekt and the five participle patterns (regular ge-t, irregular ge-en, -ieren without ge-, separable verbs with -ge- in the middle, and inseparable be-/ver-/er-/ent- without ge-).',
     vocabulary: [
       // 🔧 THE HELPER (slot 2)
       { de: 'haben (Perfekt-Helfer)', en: 'have (the Perfekt auxiliary)', emoji: '🔧', hint: '⭐ conjugate in slot 2 · habe/hast/hat/haben/habt/haben', example: 'Ich habe gelernt.', exampleEn: 'I have learned / I learned.' },
@@ -9101,60 +9101,79 @@ export const days = [
       { de: 'schon',       en: 'already',           emoji: '✔️', hint: '"Hast du schon gegessen?"',            example: 'Ich habe schon gegessen.',       exampleEn: 'I have already eaten.' },
     ],
     grammar: [
-      { rule: '⭐ THE PERFEKT FORMULA — haben (slot 2) + Partizip II (END)',
-        body:
-          'Two ingredients: conjugated haben in slot 2, past participle at the very END.\n\n' +
-          '  Subject   haben   … middle …        Partizip II (END)\n' +
-          '  Ich       habe    gestern Deutsch   GELERNT.\n' +
-          '  Wir       haben   viel Kaffee       GETRUNKEN.\n' +
-          '  Du        hast    das Buch          GELESEN.\n\n' +
-          '🧠 The Perfekt = English "I have done" AND simple past "I did" — German uses it for both in speech. The participle ALWAYS lands last, no matter how long the sentence.',
+      { rule: '⭐ The Perfekt formula — haben (slot 2) + Partizip II (END)',
+        summary: 'Two ingredients: conjugated haben in slot 2, the past participle at the very END.',
+        table: {
+          head: ['subject', 'haben', 'middle', 'Partizip II (END)'],
+          rows: [
+            ['Ich', { t: 'habe', hl: true },  'gestern Deutsch', { t: 'gelernt.', hl: true }],
+            ['Wir', { t: 'haben', hl: true }, 'viel Kaffee',     { t: 'getrunken.', hl: true }],
+            ['Du',  { t: 'hast', hl: true },  'das Buch',        { t: 'gelesen.', hl: true }],
+          ],
+        },
+        tip: 'The Perfekt = English "I have done" AND simple past "I did" — German uses it for both in speech. The participle always lands last.',
       },
-      { rule: '✅ REGULAR Partizip II — ge + stem + t',
-        body:
-          'Most verbs are regular ("weak"): ge + verb-stem + t.\n\n' +
-          '  machen  → ge + mach + t  → gemacht\n' +
-          '  lernen  → ge + lern + t  → gelernt\n' +
-          '  spielen → ge + spiel + t → gespielt\n' +
-          '  kaufen  → ge + kauf + t  → gekauft\n\n' +
-          '⚠ Stems ending in -t or -d add an extra -e- (like the present tense): arbeiten → ge-arbeit-ET, regnen → ge-regn-ET.',
+      { rule: '✅ Regular Partizip II — ge + stem + t',
+        summary: 'Most verbs are regular ("weak"): ge + verb-stem + t.',
+        table: {
+          head: ['verb', 'build', 'participle'],
+          rows: [
+            ['machen',  'ge + mach + t',  { t: 'gemacht', hl: true }],
+            ['lernen',  'ge + lern + t',  { t: 'gelernt', hl: true }],
+            ['spielen', 'ge + spiel + t', { t: 'gespielt', hl: true }],
+            ['kaufen',  'ge + kauf + t',  { t: 'gekauft', hl: true }],
+          ],
+        },
+        warn: 'Stems ending in -t or -d add an extra -e- (like the present): arbeiten → gearbeitet, regnen → geregnet.',
       },
-      { rule: '⚡ IRREGULAR Partizip II — ge + (changed stem) + en',
-        body:
-          '"Strong" verbs end in -EN (not -t) and often change their stem vowel — memorise them with the verb:\n\n' +
-          '  trinken  → getrunken      essen    → gegessen\n' +
-          '  lesen    → gelesen        sehen    → gesehen\n' +
-          '  sprechen → gesprochen     nehmen   → genommen\n' +
-          '  schreiben → geschrieben   finden   → gefunden\n\n' +
-          'No reliable rule — but they\'re high-frequency, so they stick fast with use. (Flashcards above drill the top ones.)',
+      { rule: '⚡ Irregular Partizip II — ge + (changed stem) + en',
+        summary: '"Strong" verbs end in -EN (not -t) and often change their stem vowel — memorise them with the verb.',
+        table: {
+          head: ['verb', 'participle'],
+          rows: [
+            ['trinken',   { t: 'getrunken', hl: true }],
+            ['essen',     { t: 'gegessen', hl: true }],
+            ['lesen',     { t: 'gelesen', hl: true }],
+            ['sehen',     { t: 'gesehen', hl: true }],
+            ['sprechen',  { t: 'gesprochen', hl: true }],
+            ['nehmen',    { t: 'genommen', hl: true }],
+            ['schreiben', { t: 'geschrieben', hl: true }],
+            ['finden',    { t: 'gefunden', hl: true }],
+          ],
+        },
+        tip: 'No reliable rule — but these are high-frequency, so they stick fast with use.',
       },
-      { rule: '⚠ TWO NO-ge / split-ge groups — -ieren & separable',
-        body:
-          'Two important exceptions to the ge- prefix:\n\n' +
-          '  🌍 -ieren verbs take NO ge- (they\'re loan-words):\n' +
-          '     studieren → studiert · telefonieren → telefoniert · fotografieren → fotografiert\n\n' +
-          '  🧩 SEPARABLE verbs put -ge- in the MIDDLE (between prefix and stem):\n' +
-          '     einkaufen → ein-GE-kauft → eingekauft\n' +
-          '     aufräumen → auf-GE-räumt → aufgeräumt\n' +
-          '     anrufen   → an-GE-rufen → angerufen\n\n' +
-          '⚠ Also: inseparable prefixes (be-, ver-, er-, ent-) take NO ge-: besuchen → besucht, verstehen → verstanden.',
+      { rule: '⚠ Three no-ge / split-ge groups — -ieren, separable & inseparable',
+        summary: 'Three deviations from plain ge-: -ieren verbs take no ge-; separable verbs put -ge- in the middle; inseparable be-/ver-/er-/ent- take no ge-.',
+        table: {
+          head: ['type', 'rule', 'example'],
+          rows: [
+            ['🌍 -ieren',           'NO ge- (loan-words)',  'studieren → studiert · telefonieren → telefoniert'],
+            ['🧩 separable',        '-ge- in the MIDDLE',   'einkaufen → eingekauft · aufräumen → aufgeräumt'],
+            ['be-/ver-/er-/ent-',   'NO ge- (inseparable)', 'besuchen → besucht · verstehen → verstanden'],
+          ],
+        },
+        tip: 'einkaufen → eingekauft (not "geeinkauft"); studieren → studiert (not "gestudiert").',
       },
-      { rule: '🕐 WORD ORDER with time words',
-        body:
-          'The participle stays at the END even when a time word leads (V2 rule still applies — the subject moves after haben):\n\n' +
-          '  Ich habe gestern gearbeitet.\n' +
-          '  GESTERN habe ich gearbeitet.   (time leads → "ich" after habe)\n' +
-          '  Letzte Woche haben wir Anna gesehen.\n\n' +
-          'Question form: haben to slot 1 → "HAST du schon gegessen?" (Have you eaten yet?) — participle still last.',
+      { rule: '🕐 Word order with time words',
+        summary: 'The participle stays at the END even when a time word leads (the V2 rule still applies).',
+        examples: [
+          { de: 'Ich habe gestern gearbeitet.', en: 'I worked yesterday.', note: 'normal order' },
+          { de: 'Gestern habe ich gearbeitet.', en: 'Yesterday I worked.', note: 'time leads → ich after habe' },
+          { de: 'Hast du schon gegessen?',      en: 'Have you eaten yet?', note: 'question → haben to slot 1, participle still last' },
+        ],
+        tip: 'haben sits in slot 1 (question) or slot 2 (statement); the participle is always last.',
       },
-      { rule: '🚦 PITFALLS — Perfekt traps',
-        body:
-          '• Participle ALWAYS at the end: "Ich habe Deutsch gelernt" (not "Ich habe gelernt Deutsch").\n' +
-          '• Regular = ge…t; irregular = ge…en (memorise the strong ones).\n' +
-          '• -ieren verbs: NO ge- (studiert, not gestudiert).\n' +
-          '• Separable: -ge- in the middle (eingekauft, not geeinkauft).\n' +
-          '• Inseparable be-/ver-/er-/ent-: NO ge- (besucht, verstanden).\n' +
-          '• -t/-d stems add extra -e-: gearbeitet, not gearbeitt.',
+      { rule: '🚦 Pitfalls — Perfekt traps',
+        summary: 'The Perfekt traps.',
+        bullets: [
+          'Participle ALWAYS at the end: "Ich habe Deutsch gelernt" (not "… gelernt Deutsch").',
+          'Regular = ge…t; irregular = ge…en (memorise the strong ones).',
+          '-ieren verbs: NO ge- (studiert, not "gestudiert").',
+          'Separable: -ge- in the middle (eingekauft, not "geeinkauft").',
+          'Inseparable be-/ver-/er-/ent-: NO ge- (besucht, verstanden).',
+          '-t/-d stems add an extra -e-: gearbeitet, not "gearbeitt".',
+        ],
       },
     ],
     exercises: [
@@ -9281,49 +9300,66 @@ export const days = [
       { de: 'letztes Jahr', en: 'last year',          emoji: '🗓️', hint: 'past time phrase',                      example: 'Letztes Jahr sind wir gereist.', exampleEn: 'Last year we travelled.' },
     ],
     grammar: [
-      { rule: '⭐ THE DECISION — sein or haben?',
-        body:
-          'Ask: did the subject MOVE from A to B, or CHANGE STATE? → sein. Otherwise → haben.\n\n' +
-          '  🚶 MOTION (A → B):  gehen · fahren · kommen · fliegen · laufen · reisen · schwimmen\n' +
-          '     "Ich BIN nach Hause gegangen."\n\n' +
-          '  🔄 CHANGE OF STATE: werden (become) · aufstehen (get up) · einschlafen (fall asleep) · wachsen (grow) · sterben (die)\n' +
-          '     "Er IST Arzt geworden."\n\n' +
-          '  🟩 EVERYTHING ELSE → haben:\n' +
-          '     "Ich HABE Pizza gegessen." · "Ich HABE gearbeitet."',
+      { rule: '⭐ The decision — sein or haben?',
+        summary: 'Did the subject MOVE from A to B, or CHANGE STATE? → sein. Otherwise → haben.',
+        table: {
+          head: ['category', 'verbs', 'example'],
+          rows: [
+            [{ t: '🚶 motion (A→B)', hl: true },    'gehen · fahren · kommen · fliegen · laufen · reisen', 'Ich bin nach Hause gegangen.'],
+            [{ t: '🔄 change of state', hl: true }, 'werden · aufstehen · einschlafen · wachsen · sterben', 'Er ist Arzt geworden.'],
+            ['🟩 everything else',                  'essen · arbeiten · kaufen …',                          'Ich habe Pizza gegessen.'],
+          ],
+        },
+        tip: 'The motion/change test decides — not whether the verb is separable.',
       },
-      { rule: '⚠ THE THREE EXCEPTIONS — bleiben · sein · passieren',
-        body:
-          'These three take sein even though there\'s no obvious motion — just memorise them:\n\n' +
-          '  bleiben (to stay)    → Ich BIN zu Hause GEBLIEBEN.\n' +
-          '  sein (to be)         → Ich BIN in Berlin GEWESEN.   (sein\'s own participle = gewesen)\n' +
-          '  passieren (to happen) → Was IST PASSIERT?            (-ieren → no ge-)\n\n' +
-          '🧠 "bleiben/sein" are the famous no-motion sein-verbs. Note "gewesen" (been) and that passieren keeps the -ieren no-ge rule.',
+      { rule: '⚠ The three exceptions — bleiben · sein · passieren',
+        summary: 'These three take sein even though there is no obvious motion — just memorise them.',
+        table: {
+          head: ['verb', 'Perfekt', 'note'],
+          rows: [
+            ['bleiben (stay)',     'Ich bin zu Hause geblieben.', 'no motion, still sein'],
+            ['sein (be)',          'Ich bin in Berlin gewesen.',  'its own participle = gewesen'],
+            ['passieren (happen)', 'Was ist passiert?',           '-ieren → no ge-'],
+          ],
+        },
+        tip: 'bleiben and sein are the famous no-motion sein-verbs; passieren keeps the -ieren no-ge rule.',
       },
-      { rule: '⭐ sein CONJUGATES in slot 2 — same participle position',
-        body:
-          'The structure is identical to the haben-Perfekt — only the helper changes to sein:\n\n' +
-          '  ich    BIN  … gegangen        wir   SIND … gegangen\n' +
-          '  du     BIST … gegangen        ihr   SEID … gegangen\n' +
-          '  er/sie IST  … gegangen        sie   SIND … gegangen\n\n' +
-          '  "Ich BIN nach Hause GEGANGEN." · "Wir SIND in die Stadt GEFAHREN." · "Du BIST zu spät GEKOMMEN."\n' +
-          'The Partizip II still lands at the very END.',
+      { rule: '⭐ sein conjugates in slot 2 — same participle position',
+        summary: 'The structure is identical to the haben-Perfekt — only the helper changes to sein.',
+        table: {
+          head: ['person', 'sein + …', 'example'],
+          rows: [
+            ['ich',          'bin … gegangen',  'Ich bin nach Hause gegangen.'],
+            ['du',           'bist … gegangen', 'Du bist zu spät gekommen.'],
+            ['er/sie/es',    'ist … gegangen',  'Sie ist schnell gelaufen.'],
+            ['wir / sie/Sie', 'sind … gegangen', 'Wir sind nach Berlin gefahren.'],
+            ['ihr',          'seid … gegangen', 'Ihr seid viel gereist.'],
+          ],
+        },
+        tip: 'The Partizip II still lands at the very END.',
       },
-      { rule: '🧩 SEPARABLE motion/change verbs — sein + ge-in-middle',
-        body:
-          'Separable verbs of motion/change take sein, and (as on Day 45) the -ge- goes between prefix and stem:\n\n' +
-          '  aufstehen   → aufgestanden   "Ich BIN um 7 aufgestanden."   (change of state → sein)\n' +
-          '  einschlafen → eingeschlafen  "Ich BIN eingeschlafen."        (change → sein)\n' +
-          '  ankommen    → angekommen     "Der Zug IST angekommen."       (motion → sein)\n\n' +
-          '⚠ But a separable verb that is NOT motion/change still takes haben: "Ich HABE eingekauft" (einkaufen). Separable ≠ automatically sein — the motion/change test still rules.',
+      { rule: '🧩 Separable motion/change verbs — sein + ge-in-middle',
+        summary: 'Separable motion/change verbs take sein, and the -ge- goes between prefix and stem (Day 45).',
+        table: {
+          head: ['verb', 'participle', 'example'],
+          rows: [
+            ['aufstehen',   'aufgestanden',  'Ich bin um 7 aufgestanden. (change → sein)'],
+            ['einschlafen', 'eingeschlafen', 'Ich bin eingeschlafen. (change → sein)'],
+            ['ankommen',    'angekommen',    'Der Zug ist angekommen. (motion → sein)'],
+          ],
+        },
+        warn: 'Separable ≠ automatically sein: "Ich habe eingekauft" (einkaufen is not motion → haben). The motion/change test still rules.',
       },
-      { rule: '🚦 PITFALLS — sein-Perfekt traps',
-        body:
-          '• Motion A→B or change of state → sein; everything else → haben.\n' +
-          '• The 3 exceptions: bleiben, sein, passieren → sein (no motion).\n' +
-          '• "gewesen" is the participle of sein (Ich bin … gewesen).\n' +
-          '• Separable ≠ sein: einkaufen → "habe eingekauft" (not motion); aufstehen → "bin aufgestanden" (change).\n' +
-          '• passieren → no ge- (-ieren rule): "ist passiert".\n' +
-          '• Participle still at the END; sein conjugates in slot 2.',
+      { rule: '🚦 Pitfalls — sein-Perfekt traps',
+        summary: 'The sein-Perfekt traps.',
+        bullets: [
+          'Motion A→B or change of state → sein; everything else → haben.',
+          'The 3 exceptions: bleiben, sein, passieren → sein (no motion).',
+          '"gewesen" is the participle of sein (Ich bin … gewesen).',
+          'Separable ≠ sein: einkaufen → "habe eingekauft" (not motion); aufstehen → "bin aufgestanden" (change).',
+          'passieren → no ge- (-ieren rule): "ist passiert".',
+          'Participle still at the END; sein conjugates in slot 2.',
+        ],
       },
     ],
     exercises: [
