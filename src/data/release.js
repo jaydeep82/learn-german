@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.17.1';
+export const VERSION = '3.17.2';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.17.2',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 7 complete — Days 47-48 enriched (Präteritum + Konjunktiv II/Imperativ)',
+    notes: [
+      'Days 47-48 converted to the rich visual grammar shape, completing Week 7 — every grammar day from 1 to 48 is now enriched.',
+      'Day 47 (Präteritum — war & hatte): the full war and hatte conjugation tables; the Präteritum-vs-Perfekt choice; the modal Präteritum (umlaut-drop: musste/konnte/mochte); pitfalls.',
+      'Day 48 (Konjunktiv II + Imperative): the Konj-II forms (möchte/würde/könnte/hätte/wäre); the möchte & würde tables; the politeness ranking; the du/ihr/Sie Imperativ; separable commands; pitfalls.',
+      'Verification fix: the Day 48 möchte/würde table labelled the 3rd-person row "er/sie" — corrected to "er/sie/es" to match the other paradigm tables and the block\'s own rule.',
+      'Weeks 1-7 (Days 1-48) are now fully enriched.',
+    ],
+  },
   {
     version: '3.17.1',
     date: '2026-06-14',

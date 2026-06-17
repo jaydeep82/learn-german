@@ -9481,45 +9481,72 @@ export const days = [
     ],
     grammar: [
       { rule: '🟦 sein → war (the full Präteritum)',
-        body:
-          '  ich  war          wir  waren\n' +
-          '  du   warst        ihr  wart\n' +
-          '  er/sie/es war     sie/Sie  waren\n\n' +
-          '⭐ Like the present tense, ich and er/sie/es are IDENTICAL (both "war") and take NO ending. "Ich war müde." · "Es war kalt."',
+        summary: 'The simple past of sein — used in speech even though most other verbs prefer the Perfekt.',
+        table: {
+          head: ['person', 'sein → war'],
+          rows: [
+            ['ich',       { t: 'war', hl: true }],
+            ['du',        'warst'],
+            ['er/sie/es', { t: 'war', hl: true }],
+            ['wir',       'waren'],
+            ['ihr',       'wart'],
+            ['sie/Sie',   'waren'],
+          ],
+        },
+        tip: 'Like the present, ich and er/sie/es are identical (both "war") and take no ending: "Ich war müde." · "Es war kalt."',
       },
       { rule: '🟩 haben → hatte (the full Präteritum)',
-        body:
-          '  ich  hatte        wir  hatten\n' +
-          '  du   hattest      ihr  hattet\n' +
-          '  er/sie/es hatte   sie/Sie  hatten\n\n' +
-          '⭐ Note the DOUBLE t (hatte, not "hate") and again ich = er/sie/es. "Ich hatte Zeit." · "Sie hatte eine Idee."',
+        summary: 'The simple past of haben — also the everyday spoken form.',
+        table: {
+          head: ['person', 'haben → hatte'],
+          rows: [
+            ['ich',       { t: 'hatte', hl: true }],
+            ['du',        'hattest'],
+            ['er/sie/es', { t: 'hatte', hl: true }],
+            ['wir',       'hatten'],
+            ['ihr',       'hattet'],
+            ['sie/Sie',   'hatten'],
+          ],
+        },
+        warn: 'Note the DOUBLE t (hatte, not "hate"), and again ich = er/sie/es: "Ich hatte Zeit." · "Sie hatte eine Idee."',
       },
-      { rule: '⭐ PRÄTERITUM vs PERFEKT — which past tense?',
-        body:
-          'Two past tenses, different jobs in SPEECH:\n\n' +
-          '  • sein + haben → Präteritum (war / hatte) — even in conversation.\n' +
-          '       "Ich WAR müde." ✓   (not "Ich bin müde gewesen" ✗-sounding)\n' +
-          '       "Ich HATTE Zeit." ✓ (not "Ich habe Zeit gehabt" ✗-sounding)\n\n' +
-          '  • Modal verbs → Präteritum is also natural: musste · konnte · wollte · durfte · sollte.\n' +
-          '       "Ich MUSSTE arbeiten." ✓\n\n' +
-          '  • ALL OTHER verbs → use Perfekt in speech (Day 45-46): "Ich HABE gearbeitet", "Ich BIN gegangen".\n' +
-          '       Their Präteritum (ich arbeitete, ich ging) is mostly for WRITTEN stories/news.',
+      { rule: '⭐ Präteritum vs Perfekt — which past tense?',
+        summary: 'Two past tenses, different jobs in speech.',
+        table: {
+          head: ['verbs', 'spoken past', 'example'],
+          rows: [
+            ['sein + haben',     { t: 'Präteritum', hl: true }, 'Ich war müde. · Ich hatte Zeit.'],
+            ['modal verbs',      { t: 'Präteritum', hl: true }, 'Ich musste arbeiten.'],
+            ['all other verbs',  { t: 'Perfekt', hl: true },    'Ich habe gearbeitet. · Ich bin gegangen.'],
+          ],
+        },
+        tip: '"Ich war müde" sounds natural; "Ich bin müde gewesen" sounds odd. The Präteritum of other verbs (ich arbeitete, ich ging) is mostly for written stories and news.',
       },
-      { rule: '🛠️ MODAL Präteritum — drop the umlaut',
-        body:
-          'Modal verbs form the Präteritum by dropping any umlaut and adding -te:\n\n' +
-          '  müssen → musste     können → konnte     dürfen → durfte\n' +
-          '  wollen → wollte     sollen → sollte     mögen → mochte\n\n' +
-          '⚠ The umlaut DISAPPEARS: müssen→musste (not "müsste" — that\'s a different mood), können→konnte. "Gestern konnte ich nicht kommen, ich musste arbeiten."',
+      { rule: '🛠️ Modal Präteritum — drop the umlaut',
+        summary: 'Modal verbs form the Präteritum by dropping any umlaut and adding -te.',
+        table: {
+          head: ['modal', 'Präteritum'],
+          rows: [
+            ['müssen', { t: 'musste', hl: true }],
+            ['können', { t: 'konnte', hl: true }],
+            ['dürfen', { t: 'durfte', hl: true }],
+            ['wollen', 'wollte'],
+            ['sollen', 'sollte'],
+            ['mögen',  { t: 'mochte', hl: true }],
+          ],
+        },
+        warn: 'The umlaut DISAPPEARS: müssen→musste (not "müsste" — that is the Konjunktiv mood), können→konnte. "Gestern konnte ich nicht kommen, ich musste arbeiten."',
       },
-      { rule: '🚦 PITFALLS — Präteritum traps',
-        body:
-          '• sein → war, haben → hatte: use these in speech, NOT their Perfekt.\n' +
-          '• ich = er/sie/es in the Präteritum (war / hatte — no ending).\n' +
-          '• hatte has a DOUBLE t; war has none.\n' +
-          '• Modal Präteritum drops the umlaut: musste/konnte/durfte (not müsste/könnte).\n' +
-          '• Every OTHER verb → Perfekt in conversation (ich habe gemacht, not "ich machte" in speech).\n' +
-          '• Time leads → V2: "Gestern war ich müde" (verb in slot 2).',
+      { rule: '🚦 Pitfalls — Präteritum traps',
+        summary: 'The Präteritum traps.',
+        bullets: [
+          'sein → war, haben → hatte: use these in speech, NOT their Perfekt.',
+          'ich = er/sie/es in the Präteritum (war / hatte — no ending).',
+          'hatte has a DOUBLE t; war has none.',
+          'Modal Präteritum drops the umlaut: musste/konnte/durfte (not müsste/könnte).',
+          'Every OTHER verb → Perfekt in conversation (ich habe gemacht, not "ich machte" in speech).',
+          'Time leads → V2: "Gestern war ich müde" (verb in slot 2).',
+        ],
       },
     ],
     exercises: [
@@ -9644,65 +9671,85 @@ export const days = [
       { de: 'bitte',        en: 'please (softener)',   emoji: '🙇', hint: 'add to ANY imperative to soften it',  example: 'Hilf mir bitte!',              exampleEn: 'Please help me!' },
     ],
     grammar: [
-      { rule: '🙏 KONJUNKTIV II — what it is (politeness, not past)',
-        body:
-          'Konjunktiv II is a MOOD, not a tense — it expresses politeness, wishes and hypotheticals (English "would"). At A1 you need a handful of ready forms:\n\n' +
-          '  möchte  — would like        (Konj. II of mögen)\n' +
-          '  würde   — would (+ verb)    (Konj. II of werden)\n' +
-          '  könnte  — could             (Konj. II of können)\n' +
-          '  hätte   — would have        (Konj. II of haben) → "ich hätte gern …"\n' +
-          '  wäre    — would be          (Konj. II of sein)  → "das wäre toll"\n\n' +
-          '  "Ich MÖCHTE einen Kaffee." · "Ich WÜRDE gern reisen." · "KÖNNTEN Sie helfen?"',
+      { rule: '🙏 Konjunktiv II — what it is (politeness, not past)',
+        summary: 'Konjunktiv II is a MOOD, not a tense — it expresses politeness, wishes and hypotheticals (English "would"). A1 needs a handful of ready forms.',
+        table: {
+          head: ['form', 'meaning', 'base verb'],
+          rows: [
+            ['möchte', 'would like',     'mögen'],
+            ['würde',  'would (+ verb)', 'werden'],
+            ['könnte', 'could',          'können'],
+            ['hätte',  'would have',     'haben → "ich hätte gern …"'],
+            ['wäre',   'would be',       'sein → "das wäre toll"'],
+          ],
+        },
+        examples: [
+          { de: 'Ich möchte einen Kaffee.', en: 'I would like a coffee.',   note: 'möchte' },
+          { de: 'Ich würde gern reisen.',   en: 'I would like to travel.',  note: 'würde + infinitive at the end' },
+        ],
       },
       { rule: '🙏 möchte & würde — the two A1 workhorses',
-        body:
-          '  möchte (would like)            würde (would)\n' +
-          '  ich  möchte                    ich  würde\n' +
-          '  du   möchtest                  du   würdest\n' +
-          '  er/sie möchte                  er/sie würde\n' +
-          '  wir  möchten                   wir  würden\n' +
-          '  ihr  möchtet                   ihr  würdet\n' +
-          '  sie/Sie möchten                sie/Sie würden\n\n' +
-          '⭐ ich = er/sie/es (möchte / würde — no ending). "würde" works with ANY verb: würde + infinitive at the END → "Ich würde gern Deutsch lernen."',
+        summary: 'The two forms you use most — both have ich = er/sie/es (no ending).',
+        table: {
+          head: ['person', 'möchte', 'würde'],
+          rows: [
+            ['ich',     { t: 'möchte', hl: true }, { t: 'würde', hl: true }],
+            ['du',      'möchtest',                'würdest'],
+            ['er/sie/es', { t: 'möchte', hl: true }, { t: 'würde', hl: true }],
+            ['wir',     'möchten',                 'würden'],
+            ['ihr',     'möchtet',                 'würdet'],
+            ['sie/Sie', 'möchten',                 'würden'],
+          ],
+        },
+        tip: '"würde" works with ANY verb: würde + infinitive at the END → "Ich würde gern Deutsch lernen."',
       },
       { rule: '🪄 könnte & hätte gern — extra polish',
-        body:
-          'Two more high-value polite forms:\n\n' +
-          '  könnte — softens a request to "could you …?"\n' +
-          '     "KÖNNTEN Sie mir helfen?" (Could you help me?) — gentler than "Können Sie …?"\n\n' +
-          '  hätte gern — the natural shop/café order ("I\'d like to have …")\n' +
-          '     "Ich HÄTTE GERN einen Kaffee." · "Ich HÄTTE GERN die Rechnung."\n\n' +
-          'These rank politest: "Ich hätte gern …" / "Könnten Sie …?" outrank "Ich möchte …", which outranks the blunt "Ich will …".',
+        summary: 'Two more high-value polite forms — the politest way to ask and to order.',
+        table: {
+          head: ['form', 'use', 'example'],
+          rows: [
+            ['könnte',     'softens a request',  'Könnten Sie mir helfen? (gentler than "Können Sie …?")'],
+            ['hätte gern', 'the shop/café order', 'Ich hätte gern einen Kaffee.'],
+          ],
+        },
+        tip: 'Politeness ranking: "Ich hätte gern …" / "Könnten Sie …?" > "Ich möchte …" > the blunt "Ich will …".',
       },
-      { rule: '📣 THE IMPERATIV — du · ihr · Sie',
-        body:
-          'Three command forms for the three "you"s:\n\n' +
-          '  du   → take the du-form, DROP -st and the pronoun:\n' +
-          '         du kommst → Komm! · du gehst → Geh! · du isst → Iss! (stem-change stays)\n' +
-          '  ihr  → just the ihr-form, drop the pronoun:\n' +
-          '         ihr kommt → Kommt! · ihr geht → Geht!\n' +
-          '  Sie  → verb + Sie (KEEP the pronoun, verb first):\n' +
-          '         Kommen Sie! · Gehen Sie! · Helfen Sie mir!\n\n' +
-          '⚠ Irregular du-imperative: sein → Sei! ("Sei ruhig!"). Add "bitte" to soften any command.',
+      { rule: '📣 The Imperativ — du · ihr · Sie',
+        summary: 'Three command forms — one for each "you" (du, ihr, Sie).',
+        table: {
+          head: ['form', 'how to build', 'example'],
+          rows: [
+            ['du',  'du-form, DROP -st and the pronoun',          'du kommst → Komm! · du isst → Iss!'],
+            ['ihr', 'the ihr-form, drop the pronoun',             'ihr kommt → Kommt!'],
+            ['Sie', 'verb + Sie (KEEP the pronoun, verb first)',  'Kommen Sie! · Helfen Sie mir!'],
+          ],
+        },
+        warn: 'Irregular du-imperative: sein → Sei! ("Sei ruhig!"). Add "bitte" to soften any command.',
       },
-      { rule: '⚠ SEPARABLE verbs in the Imperativ — prefix to the END',
-        body:
-          'A separable verb splits in the command, just like a normal sentence — the prefix flies to the end:\n\n' +
-          '  anrufen   → Ruf (mich) AN!\n' +
-          '  einkaufen → Kauf EIN!\n' +
-          '  aufstehen → Steh AUF!\n' +
-          '  zumachen  → Mach die Tür ZU!\n\n' +
-          'Two words: the stem-command first, the prefix last. With Sie: "Rufen Sie mich an!"',
+      { rule: '⚠ Separable verbs in the Imperativ — prefix to the END',
+        summary: 'A separable verb splits in the command too — the prefix flies to the end.',
+        table: {
+          head: ['verb', 'du command'],
+          rows: [
+            ['anrufen',   'Ruf (mich) an!'],
+            ['einkaufen', 'Kauf ein!'],
+            ['aufstehen', 'Steh auf!'],
+            ['zumachen',  'Mach die Tür zu!'],
+          ],
+        },
+        tip: 'Two words: the stem-command first, the prefix last. With Sie: "Rufen Sie mich an!".',
       },
-      { rule: '🚦 PITFALLS — polite-forms & command traps',
-        body:
-          '• Konjunktiv II = politeness/wishes, NOT past tense.\n' +
-          '• ich = er/sie/es: möchte / würde / könnte / hätte / wäre (no ending).\n' +
-          '• würde + infinitive at the END: "Ich würde gern kommen."\n' +
-          '• du-Imperativ drops -st AND the pronoun: Komm! (not "Du komm!" or "Kommst!").\n' +
-          '• Sie-Imperativ KEEPS the pronoun, verb first: "Kommen Sie!".\n' +
-          '• Separable command → prefix at the END: "Ruf an!", "Kauf ein!".\n' +
-          '• sein is irregular: Sei! (du) / Seid! (ihr) / Seien Sie! (formal).',
+      { rule: '🚦 Pitfalls — polite-forms & command traps',
+        summary: 'The polite-form and command traps.',
+        bullets: [
+          'Konjunktiv II = politeness/wishes, NOT past tense.',
+          'ich = er/sie/es: möchte / würde / könnte / hätte / wäre (no ending).',
+          'würde + infinitive at the END: "Ich würde gern kommen."',
+          'du-Imperativ drops -st AND the pronoun: Komm! (not "Du komm!" or "Kommst!").',
+          'Sie-Imperativ KEEPS the pronoun, verb first: "Kommen Sie!".',
+          'Separable command → prefix at the END: "Ruf an!", "Kauf ein!".',
+          'sein is irregular: Sei! (du) / Seid! (ihr) / Seien Sie! (formal).',
+        ],
       },
     ],
     exercises: [
