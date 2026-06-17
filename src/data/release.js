@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.16.3';
+export const VERSION = '3.17.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.17.0',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp · Week 7 batch 1 — Days 43-44 enriched (review days)',
+    notes: [
+      'Week 7 begins. The two review days converted from monospace recap blocks to the rich GrammarItem schema (bullets + tables), and adversarially verified.',
+      'Day 43 (Week 4-6 review): recap bullets for the case system, modals, connectors, scenarios and negation; the V2 + Sandwich word-order table; a wrong→right 6-mistakes table.',
+      'Day 44 (A2 mid-review): the Akk-vs-Dat pronoun grid; the Wo?/Wohin? Wechsel table; the three-group connectors table; demonstratives/indefinites bullets; a 5-mistakes table.',
+      'Verification fix: the Day 43 V2 cell claimed the verb is "ALWAYS in slot 2" — scoped to main clauses (it contradicted the weil/dass/wenn verb-to-end rule taught in the same review).',
+      'Recaps now render consistently with the rest of the Grammar reference.',
+    ],
+  },
   {
     version: '3.16.3',
     date: '2026-06-14',

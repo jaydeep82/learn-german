@@ -5475,44 +5475,56 @@ export const days = [
     ],
     grammar: [
       { rule: '✅ Week 4 recap — the case system',
-        body:
-          '🟦 Nominativ (subject) · 🟩 Akkusativ (object) · 🅿️ Dativ (to/for whom).\n' +
-          '  Articles:  der→den→dem · die→die→der · das→das→dem · die→die→den+n.\n' +
-          '  Test: Wer? (Nom) · Wen? (Akk) · Wem? (Dat).\n' +
-          '  Pronouns: ich→mich/mir · er→ihn/ihm · sie→sie/ihr.\n' +
-          '  Prepositions: mit/bei/zu/von/nach/aus/seit/gegenüber → always Dativ.',
+        summary: 'Nominativ (subject) · Akkusativ (object) · Dativ (to/for whom) — articles, the wer/wen/wem test, pronouns, and the always-Dativ prepositions.',
+        bullets: [
+          '🟦🟩🅿️ Articles: der→den→dem · die→die→der · das→das→dem · die→die→den+n.',
+          'Test: Wer? (Nom) · Wen? (Akk) · Wem? (Dat).',
+          'Pronouns: ich→mich/mir · er→ihn/ihm · sie→sie/ihr.',
+          'Prepositions: mit/bei/zu/von/nach/aus/seit/gegenüber → always Dativ.',
+        ],
       },
       { rule: '✅ Week 5 recap — pronouns, prepositions, people',
-        body:
-          '👤 Dativ pronouns: mir·dir·ihm·ihr·uns·euch·ihnen·Ihnen.\n' +
-          '🔀 Wechselpräpositionen (in·an·auf…): Wo? → Dativ · Wohin? → Akkusativ.\n' +
-          '👪 Possessives (mein/dein/sein/ihr/unser/euer) decline like ein.\n' +
-          '🌅 Daily routine: time-of-day leads → V2 inversion ("Morgens stehe ich auf").\n' +
+        summary: 'Dativ pronouns, the Wechsel prepositions, possessives, the daily-routine inversion, and modals I.',
+        bullets: [
+          '👤 Dativ pronouns: mir · dir · ihm · ihr · uns · euch · ihnen · Ihnen.',
+          '🔀 Wechselpräpositionen (in/an/auf…): Wo? → Dativ · Wohin? → Akkusativ.',
+          '👪 Possessives (mein/dein/sein/ihr/unser/euer) decline like ein.',
+          '🌅 Daily routine: a time-of-day word leads → V2 inversion ("Morgens stehe ich auf").',
           '🛠️ Modals I: können/müssen/wollen — modal slot 2, infinitive at the end.',
+        ],
       },
       { rule: '✅ Week 6 recap — modals II, glue, scenarios, negation',
-        body:
-          '🧰 Modals II: dürfen (allowed) · sollen (should) · mögen (like) · möchten (polite).\n' +
-          '🔗 Connectors: 🟢 und/aber/denn (no change) · 🔴 weil/dass/wenn (verb to END) · 🟡 deshalb/dann (V2 inversion).\n' +
-          '🍽️🛒✈️ Scenarios: "Ich hätte gerne …" · "Wie komme ich zu …?" · "Zahlen, bitte."\n' +
-          '🚫 Negation: ein-noun → kein (declines like ein); verb/adj/specific noun → nicht.',
+        summary: 'The other three modals, the three connector groups, the scenario phrases, and negation.',
+        bullets: [
+          '🧰 Modals II: dürfen (allowed) · sollen (should) · mögen (like) · möchten (polite).',
+          '🔗 Connectors: 🟢 und/aber/denn (no change) · 🔴 weil/dass/wenn (verb to END) · 🟡 deshalb/dann (V2 inversion).',
+          '🍽️🛒✈️ Scenarios: "Ich hätte gerne …" · "Wie komme ich zu …?" · "Zahlen, bitte."',
+          '🚫 Negation: ein-noun → kein (declines like ein); verb/adjective/specific noun → nicht.',
+        ],
       },
-      { rule: '⭐ THE SANDWICH + V2 RULES (the word-order core)',
-        body:
-          'Two rules run through everything in these weeks:\n\n' +
-          '  📍 V2: the conjugated verb is ALWAYS in slot 2. If time/place leads, the subject moves to slot 3.\n' +
-          '     "Heute arbeite ich." · "Am Wochenende esse ich im Restaurant."\n\n' +
-          '  🥪 SANDWICH: a modal (or separable stem) sits in slot 2, the infinitive/prefix flies to the END.\n' +
-          '     "Ich will heute im Restaurant essen." · "Ich rufe dich heute an."',
+      { rule: '⭐ The sandwich + V2 rules (the word-order core)',
+        summary: 'Two rules run through everything in these weeks.',
+        table: {
+          head: ['rule', 'what it says', 'example'],
+          rows: [
+            [{ t: 'V2', hl: true },       'in a MAIN clause the conjugated verb is in slot 2; if time/place leads, the subject moves to slot 3', 'Heute arbeite ich.'],
+            [{ t: 'Sandwich', hl: true }, 'a modal (or separable stem) sits in slot 2, the infinitive/prefix flies to the END',  'Ich will heute essen. · Ich rufe dich an.'],
+          ],
+        },
       },
       { rule: '🎯 The 6 mistakes to never make again',
-        body:
-          '1. "Ich helfe ihn" ✗ → helfen=Dativ → "ihm." ✓\n' +
-          '2. "mit den Kinder" ✗ → plural Dativ +n → "mit den Kindern." ✓\n' +
-          '3. "Ich gehe in der Stadt" ✗ (movement) → "in die Stadt." ✓\n' +
-          '4. "Wir heute wollen essen" ✗ → modal slot 2 → "Wir wollen heute essen." ✓\n' +
-          '5. "Ich rufe an dich" ✗ → prefix to END → "Ich rufe dich an." ✓\n' +
-          '6. "Ich habe nicht ein Auto" ✗ → "kein Auto." ✓',
+        summary: 'The Week 4-6 errors to leave behind for good.',
+        table: {
+          head: ['✗ wrong', '✓ right', 'why'],
+          rows: [
+            ['Ich helfe ihn',          { t: 'Ich helfe ihm', hl: true },        'helfen = Dativ'],
+            ['mit den Kinder',         { t: 'mit den Kindern', hl: true },      'plural Dativ +n'],
+            ['Ich gehe in der Stadt',  { t: 'Ich gehe in die Stadt', hl: true }, 'movement → Akkusativ'],
+            ['Wir heute wollen essen', { t: 'Wir wollen heute essen', hl: true }, 'modal in slot 2'],
+            ['Ich rufe an dich',       { t: 'Ich rufe dich an', hl: true },      'prefix to the END'],
+            ['Ich habe nicht ein Auto', { t: 'Ich habe kein Auto', hl: true },  'nicht ein → kein'],
+          ],
+        },
       },
     ],
     exercises: [
@@ -8906,48 +8918,69 @@ export const days = [
     ],
     grammar: [
       { rule: '✅ Pronouns recap — Akkusativ vs Dativ',
-        body:
-          '   Subject   Akkusativ   Dativ\n' +
-          '   ich       mich        mir\n' +
-          '   du        dich        dir\n' +
-          '   er        ihn         ihm     ⚠ the killer pair\n' +
-          '   sie(she)  sie         ihr\n' +
-          '   wir       uns         uns     ✅ same\n' +
-          '   ihr       euch        euch    ✅ same\n' +
-          '   sie/Sie   sie/Sie     ihnen/Ihnen\n\n' +
-          'The VERB or PREPOSITION decides the case: normal Akk verbs → left column; Dativ verbs (helfen/danken) + Dativ preps → right column.',
+        summary: 'Both object-pronoun sets side by side; the verb or preposition decides the column.',
+        table: {
+          head: ['subject', 'Akkusativ', 'Dativ'],
+          rows: [
+            ['ich',      'mich',                 'mir'],
+            ['du',       'dich',                 'dir'],
+            ['er',       { t: 'ihn', hl: true }, { t: 'ihm', hl: true }],
+            ['sie (she)', 'sie',                 'ihr'],
+            ['wir',      'uns',                  'uns'],
+            ['ihr',      'euch',                 'euch'],
+            ['sie/Sie',  'sie/Sie',              'ihnen/Ihnen'],
+          ],
+        },
+        tip: 'Normal Akk verbs → left column; Dativ verbs (helfen/danken) and Dativ prepositions → right column.',
       },
       { rule: '✅ Wechselpräpositionen recap — Wo? vs Wohin?',
-        body:
-          'in · an · auf · über · unter · vor · hinter · neben · zwischen take EITHER case:\n\n' +
-          '  📍 Wo? (location, no movement) → DATIV    "Ich bin in der Stadt."\n' +
-          '  ➡️ Wohin? (movement)           → AKKUSATIV "Ich gehe in die Stadt."\n\n' +
-          'Contractions: ins/ans = movement (Akk) · im/am = location (Dat). Also recall: mit/bei/zu… = always Dativ; für/um/ohne/durch/gegen = always Akkusativ.',
+        summary: 'in · an · auf · über · unter · vor · hinter · neben · zwischen take EITHER case.',
+        table: {
+          head: ['question', 'case', 'example'],
+          rows: [
+            [{ t: 'Wo?', hl: true },    'Dativ (location)',    'Ich bin in der Stadt.'],
+            [{ t: 'Wohin?', hl: true }, 'Akkusativ (movement)', 'Ich gehe in die Stadt.'],
+          ],
+        },
+        tip: 'Contractions: ins/ans = movement (Akk) · im/am = location (Dat). Also: mit/bei/zu… = always Dativ; für/um/ohne/durch/gegen = always Akkusativ.',
       },
       { rule: '✅ Connectors recap — three word-order groups',
-        body:
-          '🟢 und · oder · aber · denn · sondern → word order UNCHANGED (verb stays slot 2).\n' +
-          '🔴 weil · dass · wenn · obwohl · ob → conjugated verb JUMPS to the END.\n' +
-          '🟡 deshalb · dann · trotzdem → V2 inversion (verb 2nd, subject 3rd).\n\n' +
-          '  "Ich lerne, DENN ich will reisen." (denn → normal)\n' +
-          '  "Ich lerne, WEIL ich reisen will." (weil → verb to end)\n' +
-          '  "Ich bin müde, DESHALB gehe ich." (deshalb → inversion)',
+        summary: 'Three groups, three behaviours.',
+        table: {
+          head: ['group', 'connectors', 'word order'],
+          rows: [
+            ['🟢', 'und · oder · aber · denn · sondern', 'unchanged (verb slot 2)'],
+            ['🔴', 'weil · dass · wenn · obwohl · ob',   'verb JUMPS to the END'],
+            ['🟡', 'deshalb · dann · trotzdem',          'V2 inversion (verb 2nd, subject 3rd)'],
+          ],
+        },
+        examples: [
+          { de: 'Ich lerne, denn ich will reisen.', en: 'I learn, because I want to travel.', note: 'denn → normal order' },
+          { de: 'Ich lerne, weil ich reisen will.', en: 'I learn because I want to travel.',  note: 'weil → verb to the end' },
+        ],
       },
       { rule: '✅ Demonstratives & indefinites recap',
-        body:
-          '👉 dieser/diese/dieses ("this") declines exactly like der/die/das: dieser→diesen→diesem.\n' +
-          '🙋 jemand (someone) · niemand (nobody) → add -en in Akk (jemanden/niemanden).\n' +
-          '👥 man (one/people) → always subject, takes the er/sie/es verb form.\n' +
-          '📦 etwas (something) · nichts (nothing) · alles (everything) → never change.\n' +
-          '🚫 Negation: ein-noun → kein (declines like ein); verb/adj/specific noun → nicht.',
+        summary: 'dieser declines like der; the people/things indefinite pronouns; negation.',
+        bullets: [
+          '👉 dieser/diese/dieses ("this") declines exactly like der/die/das: dieser→diesen→diesem.',
+          '🙋 jemand (someone) · niemand (nobody) → add -en in the Akkusativ (jemanden/niemanden).',
+          '👥 man (one/people) → always the subject, takes the er/sie/es verb form.',
+          '📦 etwas (something) · nichts (nothing) · alles (everything) → never change.',
+          '🚫 Negation: ein-noun → kein (declines like ein); verb/adjective/specific noun → nicht.',
+        ],
       },
       { rule: '🎯 The 5 A2 mistakes to never make again',
-        body:
-          '1. "Ich helfe ihn" ✗ → Dativ verb → "ihm." ✓\n' +
-          '2. "Ich gehe in der Stadt" ✗ (movement) → "in die Stadt." ✓\n' +
-          '3. "Ich lerne, weil ich will reisen" ✗ → verb to END → "…weil ich reisen will." ✓\n' +
-          '4. "Man arbeiten viel" ✗ → man takes er-form → "Man arbeitet viel." ✓\n' +
-          '5. "Ich habe nicht ein Auto" ✗ → "kein Auto." ✓',
+        summary: 'The A2 errors to leave behind for good.',
+        table: {
+          head: ['✗ wrong', '✓ right', 'why'],
+          rows: [
+            ['Ich helfe ihn',           { t: 'Ich helfe ihm', hl: true },         'Dativ verb'],
+            ['Ich gehe in der Stadt',   { t: 'Ich gehe in die Stadt', hl: true }, 'movement → Akkusativ'],
+            ['…weil ich will reisen',   { t: '…weil ich reisen will', hl: true }, 'verb to the END'],
+            ['Man arbeiten viel',       { t: 'Man arbeitet viel', hl: true },     'man takes the er-form'],
+            ['Ich habe nicht ein Auto', { t: 'Ich habe kein Auto', hl: true },    'nicht ein → kein'],
+          ],
+        },
       },
     ],
     exercises: [
