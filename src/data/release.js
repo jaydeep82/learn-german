@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.19.1';
+export const VERSION = '3.19.2';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.19.2',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Vocabulary · Goethe A1 alphabetical list — G–M added',
+    notes: [
+      'Added G–M (152 words) to the "Children & young people" (Goethe A1) alphabetical Wortliste — each with article (der/die/das) and the official example sentence.',
+      'Adversarially verified; 2 example fixes applied (die Karte → "unseren", lang → "…zu lang").',
+      'The collection now holds 507 words (18 thematic groups + A–M). Remaining: N–S, T–Z.',
+    ],
+  },
   {
     version: '3.19.1',
     date: '2026-06-14',
