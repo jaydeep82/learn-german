@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.19.2';
+export const VERSION = '3.19.3';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.19.3',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Vocabulary · Goethe A1 alphabetical list — N–S added',
+    notes: [
+      'Added N–S (101 words) to the "Children & young people" (Goethe A1) alphabetical Wortliste — each with article and the official example sentence. Adversarially verified, clean.',
+      'Also hardened the example extraction: strips leading dashes and avoids merged-headword leaks (fixed "nein" and the verb "sein", whose PDF example had the possessive "sein, -e" merged in).',
+      'The collection now holds 608 words (18 thematic groups + A–S). Remaining: T–Z (the final batch).',
+    ],
+  },
   {
     version: '3.19.2',
     date: '2026-06-14',
