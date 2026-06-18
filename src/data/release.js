@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.18.0';
+export const VERSION = '3.19.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.19.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Vocabulary · new tagged collection — Children & young people (Goethe A1 · Fit in Deutsch 1)',
+    notes: [
+      'Added the official Goethe-Zertifikat A1 "Fit in Deutsch 1" word list as a new, separately tagged Vocabulary collection — the youth A1 exam list, tagged "Children & young people". It lives alongside the 50-day course vocab (not tied to any lesson day).',
+      'The Vocabulary page now has a scope filter (All · Course·50 days · 🧒 Children & young people); the new collection renders as theme sub-groups with a tag chip + source line, and search spans both collections (Goethe hits get a 🧒 A1 badge).',
+      'This first batch ships the 18 thematic word-groups (187 items): family, numbers, colours, weekdays, months, seasons, times of day, time units, telling-the-time, school subjects, jobs, countries & nationalities, compass directions, measures, currency, holidays, anglicisms, and exam-instruction words. Adversarially verified (genders, number words, clock readings, translations) — clean.',
+      'Next batches will add the full alphabetical A–Z Wortliste (~490 entries with the PDF example sentences).',
+    ],
+  },
   {
     version: '3.18.0',
     date: '2026-06-14',
