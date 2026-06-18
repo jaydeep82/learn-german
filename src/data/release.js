@@ -11,10 +11,23 @@
  * in sync.
  */
 
-export const VERSION = '3.17.2';
+export const VERSION = '3.18.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.18.0',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Grammar revamp COMPLETE — Day 49 mega-review + Day 4 cleanup (100%)',
+    notes: [
+      'The grammar revamp is now complete: all 250 grammar items across Days 1-49 are in the rich visual shape (tables, audio examples, bullets, tips, warns). Day 50 is the final exam and has no grammar section.',
+      'Day 49 (Mega review): the whole-course week-by-week table (W1-W7); the 6 iron rules; the top-10-mistakes wrong→right table.',
+      'Day 4 (cleanup): the last two plain items found by a full-course audit — the learn-the-article-with-the-noun iron rule (now bullets) and the suffix→gender clues (now a table: -ung→die, -chen/-lein→das, -heit/-keit/-tion/-tät→die, agentive -er→der).',
+      'Verification fix: softened the Day 4 suffix summary from "100%-reliable" to "very reliable" (only the diminutives -chen/-lein are truly exceptionless; agentive -er is masculine but bare -er is not).',
+      'Every grammar day (1-49) now renders consistently in the Grammar reference and the lesson intros via the shared GrammarItem renderer. Weeks 1-8 done.',
+    ],
+  },
   {
     version: '3.17.2',
     date: '2026-06-14',

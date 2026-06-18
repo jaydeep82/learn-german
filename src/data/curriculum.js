@@ -725,11 +725,13 @@ export const days = [
         },
         tip: 'In the dative & accusative cases these forms change — that\'s Week 4. Today, just learn the four basic slots.',
       },
-      { rule: 'Iron rule — learn the article WITH the noun',
-        body:
-          'Memorise "der Tisch", not "Tisch". Memorise "die Tasche", not "Tasche".\n' +
-          'In flashcards, write the article in the SAME COLOUR as the noun — they belong together.\n' +
-          'When you guess the article wrong, fix the WHOLE pair in your mind, not just the article.',
+      { rule: '⭐ Iron rule — learn the article WITH the noun',
+        summary: 'Always store a noun together with its article — they are one unit.',
+        bullets: [
+          'Memorise "der Tisch", not "Tisch"; "die Tasche", not "Tasche".',
+          'In flashcards, write the article in the SAME COLOUR as the noun — they belong together.',
+          'Guessed the article wrong? Fix the WHOLE pair in your mind, not just the article.',
+        ],
       },
       { rule: '🔁 Article → pronoun map',
         body:
@@ -742,16 +744,20 @@ export const days = [
           { de: 'Die Bücher sind neu. → Sie sind neu.', en: 'The books are new. → They are new.', note: 'die (pl) → sie' },
         ],
       },
-      { rule: 'Suffix gender clues — when the ending TELLS you the article',
-        body:
-          'Some endings have a 100% reliable gender:\n' +
-          '• -ung → die (Wohnung, Zeitung, Übung, Achtung)\n' +
-          '• -chen → das (Mädchen, Brötchen, Hähnchen, Kätzchen) — diminutives are neuter\n' +
-          '• -lein → das (Fräulein, Büchlein) — same diminutive rule\n' +
-          '• -heit / -keit → die (Freiheit, Möglichkeit)\n' +
-          '• -tion / -tät → die (Information, Universität)\n' +
-          '• -er denoting a profession or doer → der (Lehrer, Bäcker, Verkäufer)\n' +
-          'Spot the suffix → guess the article instantly.',
+      { rule: '🔍 Suffix gender clues — when the ending TELLS you the article',
+        summary: 'Some endings are very reliable gender clues — spot the suffix, know the article. (The diminutives -chen / -lein are exceptionless → das.)',
+        table: {
+          head: ['suffix', 'gender', 'examples'],
+          rows: [
+            ['-ung',                  { t: 'die', hl: true }, 'Wohnung · Zeitung · Übung'],
+            ['-chen',                 { t: 'das', hl: true }, 'Mädchen · Brötchen (diminutive → neuter)'],
+            ['-lein',                 { t: 'das', hl: true }, 'Fräulein · Büchlein (diminutive)'],
+            ['-heit / -keit',         { t: 'die', hl: true }, 'Freiheit · Möglichkeit'],
+            ['-tion / -tät',          { t: 'die', hl: true }, 'Information · Universität'],
+            ['-er (doer / profession)', { t: 'der', hl: true }, 'Lehrer · Bäcker · Verkäufer'],
+          ],
+        },
+        tip: 'Spot the suffix → guess the article instantly.',
       },
       { rule: '⚠ Trust the article, not real-life logic',
         body:
@@ -5635,37 +5641,49 @@ export const days = [
       { de: 'Ich hätte gern …', en: 'the politeness ladder',    emoji: '☕', hint: '🔁 W6 · order/request politely',     example: 'Ich hätte gern die Rechnung, bitte.', exampleEn: 'I would like the bill, please.' },
     ],
     grammar: [
-      { rule: '📖 THE WHOLE COURSE ON ONE CARD — Weeks 1-7',
-        body:
-          '🔤 W1 Foundations: V→F, W→soft-V, Z→ts · numbers (flip: einundzwanzig) · pronouns · der/die/das · sein/haben/werden.\n' +
-          '🧱 W2 Sentences: V2 rule (verb slot 2) · regular endings -e/-st/-t/-en · stem-changers · separable verbs (prefix to END) · TFP order · self-intro.\n' +
-          '❓ W3 Questions: yes/no (verb first) · W-words · wo/wohin/woher · numbers to 1 000 000 · prices.\n' +
-          '🎭 W4 Cases: Nom (Wer?) · Akk (Wen?, der→den) · Dat (Wem?, →dem) · Akk pronouns.\n' +
-          '👤 W5 Pronouns & people: Dat pronouns · Wechsel (Wo?/Wohin?) · possessives · routine · modals I.\n' +
-          '🧰 W6 Modals & glue: modals II · connectors (3 groups) · scenarios · negation (kein/nicht).\n' +
-          '⏪ W7 Past & polite: Perfekt (haben/sein) · Präteritum (war/hatte) · Konjunktiv II · Imperativ.',
+      { rule: '📖 The whole course on one card — Weeks 1-7',
+        summary: 'Every grammar pillar of the course, week by week.',
+        table: {
+          head: ['week', 'focus'],
+          rows: [
+            ['🔤 W1 Foundations',       'sounds (V→F, W→soft-V, Z→ts) · numbers (flip: einundzwanzig) · pronouns · der/die/das · sein/haben/werden'],
+            ['🧱 W2 Sentences',         'V2 rule · regular endings -e/-st/-t/-en · stem-changers · separable verbs (prefix to END) · TFP order · self-intro'],
+            ['❓ W3 Questions',         'yes/no (verb first) · W-words · wo/wohin/woher · numbers to 1 000 000 · prices'],
+            ['🎭 W4 Cases',            'Nom (Wer?) · Akk (Wen?, der→den) · Dat (Wem?, →dem) · Akkusativ pronouns'],
+            ['👤 W5 Pronouns & people', 'Dativ pronouns · Wechsel (Wo?/Wohin?) · possessives · daily routine · modals I'],
+            ['🧰 W6 Modals & glue',     'modals II · connectors (3 groups) · scenarios · negation (kein/nicht)'],
+            ['⏪ W7 Past & polite',     'Perfekt (haben/sein) · Präteritum (war/hatte) · Konjunktiv II · Imperativ'],
+          ],
+        },
       },
-      { rule: '⭐ THE 6 IRON RULES (never break these)',
-        body:
-          '1. Verb in SLOT 2 — even when time/place leads ("Heute lerne ich").\n' +
-          '2. Capitalise EVERY noun, mid-sentence too ("Ich habe Hunger").\n' +
-          '3. Modal/separable: the second piece flies to the END (infinitive / prefix).\n' +
-          '4. The case follows the verb/preposition: helfen→Dativ, für→Akkusativ.\n' +
-          '5. Perfekt = helper (haben/sein) in slot 2 + Partizip II at the END.\n' +
-          '6. weil/dass send the verb to the END; und/aber/denn don\'t.',
+      { rule: '⭐ The 6 iron rules (never break these)',
+        summary: 'The six rules that hold German together.',
+        bullets: [
+          'Verb in SLOT 2 — even when a time/place word leads ("Heute lerne ich").',
+          'Capitalise EVERY noun, mid-sentence too ("Ich habe Hunger").',
+          'Modal / separable: the second piece flies to the END (infinitive / prefix).',
+          'The case follows the verb or preposition: helfen → Dativ, für → Akkusativ.',
+          'Perfekt = helper (haben/sein) in slot 2 + Partizip II at the END.',
+          'weil/dass send the verb to the END; und/aber/denn do not.',
+        ],
       },
-      { rule: '🎯 THE TOP 10 MISTAKES — a final checklist',
-        body:
-          '1. "Heute ich lerne" ✗ → "Heute lerne ich" ✓ (V2).\n' +
-          '2. "Ich bin Hunger" ✗ → "Ich habe Hunger" ✓.\n' +
-          '3. "Ich sehe der Mann" ✗ → "den Mann" ✓.\n' +
-          '4. "Ich helfe den Mann" ✗ → "dem Mann" ✓ (Dativ verb).\n' +
-          '5. "mit den Kinder" ✗ → "mit den Kindern" ✓ (plural Dativ +n).\n' +
-          '6. "Ich gehe in der Stadt" (movement) ✗ → "in die Stadt" ✓.\n' +
-          '7. "Ich will lernen Deutsch" ✗ → "Ich will Deutsch lernen" ✓.\n' +
-          '8. "Ich habe nicht ein Auto" ✗ → "kein Auto" ✓.\n' +
-          '9. "Ich habe gegangen" ✗ → "Ich bin gegangen" ✓ (motion → sein).\n' +
-          '10. "Ich bin müde gewesen" (speech) ✗ → "Ich war müde" ✓ (Präteritum).',
+      { rule: '🎯 The top 10 mistakes — a final checklist',
+        summary: 'The ten errors to leave behind for the exam.',
+        table: {
+          head: ['✗ wrong', '✓ right', 'why'],
+          rows: [
+            ['Heute ich lerne',         { t: 'Heute lerne ich', hl: true },       'V2'],
+            ['Ich bin Hunger',          { t: 'Ich habe Hunger', hl: true },       'body states → haben'],
+            ['Ich sehe der Mann',       { t: 'Ich sehe den Mann', hl: true },     'Akkusativ'],
+            ['Ich helfe den Mann',      { t: 'Ich helfe dem Mann', hl: true },    'helfen → Dativ'],
+            ['mit den Kinder',          { t: 'mit den Kindern', hl: true },       'plural Dativ +n'],
+            ['Ich gehe in der Stadt',   { t: 'Ich gehe in die Stadt', hl: true }, 'movement → Akkusativ'],
+            ['Ich will lernen Deutsch', { t: 'Ich will Deutsch lernen', hl: true }, 'infinitive to the END'],
+            ['Ich habe nicht ein Auto', { t: 'Ich habe kein Auto', hl: true },    'nicht ein → kein'],
+            ['Ich habe gegangen',       { t: 'Ich bin gegangen', hl: true },      'motion → sein'],
+            ['Ich bin müde gewesen',    { t: 'Ich war müde', hl: true },          'sein → Präteritum in speech'],
+          ],
+        },
       },
     ],
     exercises: [
