@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.19.3';
+export const VERSION = '3.19.4';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.19.4',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Vocabulary · Goethe A1 (Fit 1) collection COMPLETE — full A–Z added (T–Z)',
+    notes: [
+      'Added the final T–Z batch (81 words), completing the official Goethe-Zertifikat A1 "Fit in Deutsch 1" word list as the "Children & young people" collection.',
+      'The collection now holds 689 words: 18 thematic word-groups (187) + the full alphabetical A–Z Wortliste (502), every entry with article (der/die/das) and the official example sentence. Adversarially verified across all letter ranges; 0 missing fields, 0 example artifacts.',
+      'Browse via the Vocabulary page scope chip "🧒 Children & young people" (theme + per-letter sub-groups), or search — results across both the course and Goethe collections, Goethe hits badged 🧒 A1.',
+    ],
+  },
   {
     version: '3.19.3',
     date: '2026-06-14',
