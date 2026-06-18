@@ -14,6 +14,8 @@
  * 2. Auflage 2024 (www.goethe.de/pruefungen).
  */
 
+import { alphaGroups } from './goetheA1Alpha.js';
+
 export const GOETHE_A1_TAG = 'Children & young people';
 export const GOETHE_A1_SOURCE = 'Goethe-Zertifikat A1 · Fit in Deutsch 1';
 
@@ -250,9 +252,12 @@ const groups = [
   ]},
 ];
 
-export const goetheA1 = { tag: GOETHE_A1_TAG, source: GOETHE_A1_SOURCE, groups };
+// Thematic word-groups first, then the alphabetical A–Z letter-groups.
+const allGroups = [...groups, ...alphaGroups];
+
+export const goetheA1 = { tag: GOETHE_A1_TAG, source: GOETHE_A1_SOURCE, groups: allGroups };
 
 /** Flat list of every Goethe item, each carrying its group + tag (for search). */
-export const goetheA1Flat = groups.flatMap((g) =>
+export const goetheA1Flat = allGroups.flatMap((g) =>
   g.items.map((v) => ({ ...v, group: g.title, tag: GOETHE_A1_TAG }))
 );

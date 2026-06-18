@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.19.0';
+export const VERSION = '3.19.1';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.19.1',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Vocabulary · Goethe A1 alphabetical list — A–F added',
+    notes: [
+      'Started adding the alphabetical A–Z Wortliste to the "Children & young people" (Goethe A1) collection — this batch is A–F (168 words), each as a per-letter sub-group with the article (der/die/das) and the official example sentence.',
+      'Generated from the PDF + a translation map; examples are picked to contain the headword. Adversarially verified — the 4 flagged example mismatches (Apotheke, ander-, Disco, dort) were corrected.',
+      'The collection now holds 355 words (18 thematic groups + A–F). Remaining: G–M, N–S, T–Z.',
+    ],
+  },
   {
     version: '3.19.0',
     date: '2026-06-14',
