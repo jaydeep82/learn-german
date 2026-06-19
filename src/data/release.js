@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.20.1';
+export const VERSION = '3.20.2';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.20.2',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Vocabulary · Adults (Start Deutsch 1) alphabetical list — C–E added',
+    notes: [
+      'Added C–E (~80 words) to the "Adults" (Start Deutsch 1) collection. Dropped parser noise (derived nouns whose article collapsed; letter-leak singletons).',
+      'Adversarially verified; fixed the "die Disco" example spelling (heute abend → heute Abend, post-1996 rule).',
+      'The Adults collection now holds ~301 words (12 thematic groups + A–E). Remaining: F–Z.',
+    ],
+  },
   {
     version: '3.20.1',
     date: '2026-06-14',
