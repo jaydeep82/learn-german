@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.20.0';
+export const VERSION = '3.20.1';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.20.1',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Vocabulary · Adults (Start Deutsch 1) alphabetical list — A–B added',
+    notes: [
+      'Started the alphabetical A–Z Wortliste for the "Adults" (Start Deutsch 1) collection: A–B (130 words), each with article + the official example sentence.',
+      'Adversarially verified; fixed the split "der Anrufbeantworter" headword and two example issues (also → a complete sentence; sich ausziehen → a reflexive example).',
+      'The Adults collection now holds 240 words (12 thematic groups + A–B). Remaining: C–Z.',
+    ],
+  },
   {
     version: '3.20.0',
     date: '2026-06-14',
