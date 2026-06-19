@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.20.5';
+export const VERSION = '3.20.6';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.20.6',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Vocabulary · Adults (Start Deutsch 1) — full A–Z complete (739 words)',
+    notes: [
+      'Added the final T–Z (~106 words), completing the entire alphabetical A–Z Start Deutsch 1 Wortliste.',
+      'The "Adults" collection is now complete: 12 thematic word-groups + the full A–Z, ~739 words, each with article + the official Goethe example sentence — every batch adversarially verified.',
+      'Both official Goethe A1 lists now live on the Vocabulary page: 🧒 Children & young people (Fit in Deutsch 1) and 🧑 Adults (Start Deutsch 1), each its own filter chip and searchable.',
+    ],
+  },
   {
     version: '3.20.5',
     date: '2026-06-14',
