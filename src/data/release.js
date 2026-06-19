@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.20.3';
+export const VERSION = '3.20.4';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.20.4',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Vocabulary · Adults (Start Deutsch 1) alphabetical list — I–M added',
+    notes: [
+      'Added I–M (~110 words) to the "Adults" (Start Deutsch 1) collection, each with article + the official example.',
+      'Adversarially verified — clean. Dropped duplicate sentence-fragment headwords and fixed separable-verb examples (mitkommen, mitbringen).',
+      'The Adults collection now holds ~513 words (12 thematic groups + A–M). Remaining: N–Z.',
+    ],
+  },
   {
     version: '3.20.3',
     date: '2026-06-14',
