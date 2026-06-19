@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.20.4';
+export const VERSION = '3.20.5';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.20.5',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Vocabulary · Adults (Start Deutsch 1) alphabetical list — N–S added',
+    notes: [
+      'Added N–S (~118 words) to the "Adults" (Start Deutsch 1) collection, each with article + the official example.',
+      'Adversarially verified — clean. Reassembled split headwords ("Rad fahren", "der Satz") and dropped sentence-fragment/letter-leak noise.',
+      'The Adults collection now holds ~637 words (12 thematic groups + A–S). Remaining: T–Z (final batch).',
+    ],
+  },
   {
     version: '3.20.4',
     date: '2026-06-14',
