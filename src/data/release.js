@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.20.2';
+export const VERSION = '3.20.3';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.20.3',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Vocabulary · Adults (Start Deutsch 1) alphabetical list — F–H added',
+    notes: [
+      'Added F–H (~115 words) to the "Adults" (Start Deutsch 1) collection, each with article + the official example.',
+      'Adversarially verified; cleaned up several source artifacts (truncated numbers in examples, (pl.) stubs, a singular/plural mismatch for "der Familienname").',
+      'The Adults collection now holds 416 words (12 thematic groups + A–H). Remaining: I–Z.',
+    ],
+  },
   {
     version: '3.20.2',
     date: '2026-06-14',
