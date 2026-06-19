@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.19.4';
+export const VERSION = '3.20.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.20.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Vocabulary · new tagged collection — Adults (Goethe A1 · Start Deutsch 1)',
+    notes: [
+      'Added the official Goethe-Zertifikat A1 "Start Deutsch 1" word list as a second tagged Vocabulary collection — the ADULT A1 exam list, tagged "Adults" (🧑), alongside the youth "Children & young people" (🧒) list and the 50-day course vocab.',
+      'Generalised the Vocabulary page to a registry of tagged collections (src/data/taggedVocab.js): the scope filter now reads All · Course·50 days · 🧒 Children & young people · 🧑 Adults, each collection renders as theme sub-groups, and search spans every collection.',
+      'This first batch ships the 12 thematic word-groups (110 items): numbers (incl. Million/Milliarde, ordinals, fractions), telling-the-time, time units, weekdays, times of day, months, seasons, currency, measures & weights (incl. Grad/Prozent/Pfund), countries & nationalities, colours, compass directions. Adversarially verified — clean.',
+      'Next batches will add the full alphabetical A–Z Start Deutsch 1 Wortliste (~700 entries with the PDF example sentences).',
+    ],
+  },
   {
     version: '3.19.4',
     date: '2026-06-14',
