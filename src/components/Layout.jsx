@@ -29,6 +29,7 @@ export default function Layout({ children }) {
           <nav aria-label="Primary" className="hidden md:flex items-center gap-1 ml-4">
             <NavLink to="/"           end className={navCls}>Dashboard</NavLink>
             <NavLink to="/vocabulary"     className={navCls}>Vocabulary</NavLink>
+            <NavLink to="/practice"       className={navCls}>Practice</NavLink>
             <NavLink to="/grammar"        className={navCls}>Grammar</NavLink>
             <NavLink to="/review/weekly"  className={navCls}>Review</NavLink>
           </nav>
@@ -63,6 +64,7 @@ export default function Layout({ children }) {
           <div className="max-w-6xl mx-auto px-2 py-2 flex gap-1 overflow-x-auto">
             <NavLink to="/"           end className={navCls}>Dashboard</NavLink>
             <NavLink to="/vocabulary"     className={navCls}>Vocab</NavLink>
+            <NavLink to="/practice"       className={navCls}>Practice</NavLink>
             <NavLink to="/grammar"        className={navCls}>Grammar</NavLink>
             <NavLink to="/review/weekly"  className={navCls}>Review</NavLink>
           </div>

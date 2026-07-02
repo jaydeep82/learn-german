@@ -119,6 +119,9 @@ export default function Vocabulary() {
                     <span className="shrink-0 rounded-full bg-brand-50 dark:bg-slate-800 text-brand-700 dark:text-brand-300 border border-brand-100 dark:border-slate-700 px-2 py-0.5 text-[11px] font-semibold">
                       {c.emoji} {c.tag}
                     </span>
+                    <Link to={`/practice/${c.key}`} className="ml-auto btn-primary text-sm py-1.5 px-3 shrink-0">
+                      Practice these →
+                    </Link>
                   </div>
                   <p className="text-sm text-slate-500 mt-1">
                     {c.flat.length} words from the official <strong>{c.source}</strong> word list, grouped by theme.

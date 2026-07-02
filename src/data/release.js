@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.20.6';
+export const VERSION = '3.21.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.21.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Practice mode — drill any word set with flashcards or a quiz',
+    notes: [
+      'New Practice page (in the nav): pick a word set — the 50-day course or either Goethe A1 collection (🧒 Children & young people / 🧑 Adults) — optionally narrow to one theme/letter group, then drill it.',
+      'Two modes: Flashcards (flip & self-rate, with the example on the back) and Quiz (German → the right English meaning, 4 options, with the word’s example shown as the explanation).',
+      'Turns the ~1,400 browse-only Goethe words into an active study tool. Practice earns XP and keeps your streak alive, reusing the same exercise engine as the daily lessons.',
+      'Each collection on the Vocabulary page now has a "Practice these →" button.',
+    ],
+  },
   {
     version: '3.20.6',
     date: '2026-06-14',
