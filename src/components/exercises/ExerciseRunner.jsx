@@ -6,6 +6,12 @@ import DragDropMatch from './DragDropMatch.jsx';
 import ConjugationTable from './ConjugationTable.jsx';
 import Dialogue from './Dialogue.jsx';
 import OralPrompt from './OralPrompt.jsx';
+// Goethe A1 exam-format tasks
+import RichtigFalsch from './RichtigFalsch.jsx';
+import PictureMCQ from './PictureMCQ.jsx';
+import AdMatch from './AdMatch.jsx';
+import FormFill from './FormFill.jsx';
+import SpeakingCard from './SpeakingCard.jsx';
 import { ProgressBar } from '../ProgressUI.jsx';
 import { useApp } from '../../store/AppContext.jsx';
 
@@ -66,6 +72,16 @@ export default function ExerciseRunner({ exercises, vocabulary = [], dayId, onFi
         return <Dialogue key={idx} lines={current.lines} onDone={handleDone} />;
       case 'oral-prompt':
         return <OralPrompt key={idx} prompts={current.prompts} onDone={handleDone} />;
+      case 'richtig-falsch':
+        return <RichtigFalsch key={idx} {...current} onDone={handleDone} />;
+      case 'picture-mcq':
+        return <PictureMCQ key={idx} {...current} onDone={handleDone} />;
+      case 'ad-match':
+        return <AdMatch key={idx} {...current} onDone={handleDone} />;
+      case 'form-fill':
+        return <FormFill key={idx} {...current} onDone={handleDone} />;
+      case 'speaking-card':
+        return <SpeakingCard key={idx} {...current} onDone={handleDone} />;
       default:
         return <div className="card">Unknown exercise: {String(current.type)}</div>;
     }

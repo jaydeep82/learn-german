@@ -5,6 +5,7 @@ import DayLesson from './pages/DayLesson.jsx';
 import Review from './pages/Review.jsx';
 import Vocabulary from './pages/Vocabulary.jsx';
 import Practice from './pages/Practice.jsx';
+import ExamFormats from './pages/ExamFormats.jsx';
 import Grammar from './pages/Grammar.jsx';
 import Cheatsheet from './pages/Cheatsheet.jsx';
 import About from './pages/About.jsx';
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/vocabulary" element={<Vocabulary />} />
         <Route path="/practice" element={<Practice />} />
         <Route path="/practice/:preset" element={<Practice />} />
+        <Route path="/exam-formats" element={<ExamFormats />} />
         <Route path="/grammar" element={<Grammar />} />
         <Route path="/cheatsheet/:slug" element={<Cheatsheet />} />
         <Route path="/about" element={<About />} />

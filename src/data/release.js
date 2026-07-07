@@ -11,10 +11,22 @@
  * in sync.
  */
 
-export const VERSION = '3.21.0';
+export const VERSION = '3.22.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.22.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Exam trainer · foundations — the five Goethe A1 task formats',
+    notes: [
+      'Built the exam-format exercise types that the upcoming Hören / Lesen / Schreiben / Sprechen modules ride on: richtig-falsch, picture multiple-choice, advert-matching, form-fill, and speaking cards.',
+      'They plug into the existing exercise engine, so scoring, XP and streaks work automatically. Form-fill checking is umlaut- and accent-tolerant (e.g. “Gomez” matches “Gómez”).',
+      'New “Exam formats” preview page (linked in the footer) shows all five, fully interactive, with authentic A1 sample content — a live catalogue for building the real modules next.',
+      'Engineering: added a GitHub Actions CI workflow that runs the test suite and build on every push.',
+    ],
+  },
   {
     version: '3.21.0',
     date: '2026-06-14',

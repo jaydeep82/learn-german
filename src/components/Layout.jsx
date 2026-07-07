@@ -88,6 +88,7 @@ export default function Layout({ children }) {
           </Link>
           <Link to="/settings" className="hover:underline">Settings</Link>
           <Link to="/grammar" className="hover:underline">Grammar</Link>
+          <Link to="/exam-formats" className="hover:underline">Exam formats</Link>
         </div>
       </footer>
     </div>
