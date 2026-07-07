@@ -30,6 +30,7 @@ export default function Layout({ children }) {
             <NavLink to="/"           end className={navCls}>Dashboard</NavLink>
             <NavLink to="/vocabulary"     className={navCls}>Vocabulary</NavLink>
             <NavLink to="/practice"       className={navCls}>Practice</NavLink>
+            <NavLink to="/exam"           className={navCls}>Exam</NavLink>
             <NavLink to="/grammar"        className={navCls}>Grammar</NavLink>
             <NavLink to="/review/weekly"  className={navCls}>Review</NavLink>
           </nav>
@@ -65,6 +66,7 @@ export default function Layout({ children }) {
             <NavLink to="/"           end className={navCls}>Dashboard</NavLink>
             <NavLink to="/vocabulary"     className={navCls}>Vocab</NavLink>
             <NavLink to="/practice"       className={navCls}>Practice</NavLink>
+            <NavLink to="/exam"           className={navCls}>Exam</NavLink>
             <NavLink to="/grammar"        className={navCls}>Grammar</NavLink>
             <NavLink to="/review/weekly"  className={navCls}>Review</NavLink>
           </div>

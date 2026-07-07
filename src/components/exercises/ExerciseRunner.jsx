@@ -90,6 +90,9 @@ export default function ExerciseRunner({ exercises, vocabulary = [], dayId, onFi
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-3 text-sm text-slate-500">
+        {current.label && (
+          <span className="font-semibold uppercase tracking-wide text-brand-600 text-xs">{current.label}</span>
+        )}
         <span>Step {idx + 1} of {list.length}</span>
         <span aria-hidden>·</span>
         <span>{score.correct}/{score.total} correct</span>

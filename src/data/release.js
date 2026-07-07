@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.22.0';
+export const VERSION = '3.23.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.23.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Exam trainer · Lesen (Reading) module + Exam hub',
+    notes: [
+      'New “Exam” section in the main navigation — a hub for Goethe A1 practice by skill. Reading is live; Hören, Schreiben, Sprechen and the timed mock are marked coming soon.',
+      'Lesen (Reading) module: the real three-part reading test — short emails (true/false), advert matching, and signs & notices — 13 questions with instant feedback and a 60% pass indicator.',
+      'The runner now shows which Teil you’re on. Added tests that validate every exam task spec is well-formed (answer points at a real option, no duplicate keys); CI runs them.',
+    ],
+  },
   {
     version: '3.22.0',
     date: '2026-06-14',
