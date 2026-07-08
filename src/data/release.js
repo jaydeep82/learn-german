@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.23.0';
+export const VERSION = '3.24.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.24.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Exam trainer · Schreiben (Writing) module',
+    notes: [
+      'Second exam module is live: Schreiben (Writing) — Teil 1 completes a form, Teil 2 writes a short ~30-word message covering three points.',
+      'New guided-writing task: a live word count, then compare your message with a model answer (with audio) and self-check which points you covered. Reading and Writing are now both open in the Exam hub.',
+      'Also added the writing format to the /exam-formats preview and extended the automated spec-validation tests (CI runs them).',
+    ],
+  },
   {
     version: '3.23.0',
     date: '2026-06-14',

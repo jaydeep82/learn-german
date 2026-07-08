@@ -80,6 +80,25 @@ export const EXAM_FORMATS = [
     },
   },
   {
+    id: 'schreiben-write',
+    skill: 'Schreiben',
+    emoji: '✍️',
+    part: 'Teil 2 · Writing',
+    heading: 'Write a short guided message',
+    blurb: 'Write ~30 words covering three given points, with a live word count, then compare against a model answer and self-check.',
+    spec: {
+      type: 'guided-writing',
+      situation: 'Ihre Freundin Marie hat am Samstag Geburtstag und macht eine Party. Schreiben Sie ihr eine kurze Nachricht (ca. 30 Wörter).',
+      points: [
+        'Gratulieren Sie Marie zum Geburtstag.',
+        'Sagen Sie, dass Sie zur Party kommen.',
+        'Fragen Sie, was Sie mitbringen sollen.',
+      ],
+      minWords: 25,
+      model: 'Liebe Marie,\nherzlichen Glückwunsch zum Geburtstag! Natürlich komme ich gern zu deiner Party am Samstag. Soll ich etwas mitbringen, zum Beispiel einen Salat? Bis Samstag!\nDeine Anna',
+    },
+  },
+  {
     id: 'sprechen-card',
     skill: 'Sprechen',
     emoji: '🗣️',

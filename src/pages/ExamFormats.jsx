@@ -6,6 +6,7 @@ import PictureMCQ from '../components/exercises/PictureMCQ.jsx';
 import AdMatch from '../components/exercises/AdMatch.jsx';
 import FormFill from '../components/exercises/FormFill.jsx';
 import SpeakingCard from '../components/exercises/SpeakingCard.jsx';
+import GuidedWriting from '../components/exercises/GuidedWriting.jsx';
 
 /**
  * Preview of the Goethe A1 exam-format exercise types (roadmap A1).
@@ -20,6 +21,7 @@ const COMPONENTS = {
   'ad-match': AdMatch,
   'form-fill': FormFill,
   'speaking-card': SpeakingCard,
+  'guided-writing': GuidedWriting,
 };
 
 const SKILL_TONE = {

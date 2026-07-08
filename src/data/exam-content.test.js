@@ -1,13 +1,14 @@
 import { describe, it, expect } from 'vitest';
 import { EXAM_FORMATS } from './examFormats.js';
 import { LESEN_EXERCISES, LESEN_ITEM_COUNT, LESEN_PARTS } from './lesenModule.js';
+import { SCHREIBEN_EXERCISES, SCHREIBEN_ITEM_COUNT, SCHREIBEN_PARTS } from './schreibenModule.js';
 
 /**
  * Integrity tests for exam-format content (roadmap A1/A2). Guards that every
  * exercise spec is well-formed so a malformed task can't slip into the trainer:
  * known type, an answer that points at a real option, no duplicate keys.
  */
-const KNOWN_TYPES = new Set(['richtig-falsch', 'picture-mcq', 'ad-match', 'form-fill', 'speaking-card']);
+const KNOWN_TYPES = new Set(['richtig-falsch', 'picture-mcq', 'ad-match', 'form-fill', 'speaking-card', 'guided-writing']);
 const isNonEmptyString = (v) => typeof v === 'string' && v.trim().length > 0;
 
 // Validate one exercise spec; returns an array of problem strings (empty = ok).
@@ -61,6 +62,13 @@ function validate(spec) {
       });
       break;
     }
+    case 'guided-writing': {
+      if (!isNonEmptyString(spec.situation)) problems.push('no situation');
+      if (!Array.isArray(spec.points) || spec.points.length === 0) problems.push('no points');
+      if (!(spec.points || []).every(isNonEmptyString)) problems.push('empty point');
+      if (!isNonEmptyString(spec.model)) problems.push('no model answer');
+      break;
+    }
     default:
       break;
   }
@@ -97,5 +105,32 @@ describe('Lesen (Reading) module', () => {
     const teile = new Set(LESEN_EXERCISES.map((e) => e.label));
     expect(teile.size).toBe(3);
     expect(LESEN_PARTS).toHaveLength(3);
+  });
+});
+
+describe('Schreiben (Writing) module', () => {
+  it('every exercise is a well-formed exam task', () => {
+    const bad = SCHREIBEN_EXERCISES.map((ex, i) => ({ i, problems: validate(ex) })).filter((r) => r.problems.length);
+    expect(bad, JSON.stringify(bad)).toEqual([]);
+  });
+
+  it('only uses writing task types (form-fill, guided-writing)', () => {
+    const types = [...new Set(SCHREIBEN_EXERCISES.map((e) => e.type))];
+    expect(types.every((t) => t === 'form-fill' || t === 'guided-writing')).toBe(true);
+  });
+
+  it('every exercise carries a Teil label', () => {
+    expect(SCHREIBEN_EXERCISES.every((e) => /Schreiben · Teil [12]/.test(e.label))).toBe(true);
+  });
+
+  it('SCHREIBEN_ITEM_COUNT matches the scorable items', () => {
+    const counted = SCHREIBEN_EXERCISES.reduce((n, ex) => n + (ex.type === 'form-fill' ? ex.fields.length : ex.points.length), 0);
+    expect(SCHREIBEN_ITEM_COUNT).toBe(counted);
+  });
+
+  it('covers both Teile', () => {
+    const teile = new Set(SCHREIBEN_EXERCISES.map((e) => e.label));
+    expect(teile.size).toBe(2);
+    expect(SCHREIBEN_PARTS).toHaveLength(2);
   });
 });

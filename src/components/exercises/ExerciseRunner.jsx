@@ -12,6 +12,7 @@ import PictureMCQ from './PictureMCQ.jsx';
 import AdMatch from './AdMatch.jsx';
 import FormFill from './FormFill.jsx';
 import SpeakingCard from './SpeakingCard.jsx';
+import GuidedWriting from './GuidedWriting.jsx';
 import { ProgressBar } from '../ProgressUI.jsx';
 import { useApp } from '../../store/AppContext.jsx';
 
@@ -82,6 +83,8 @@ export default function ExerciseRunner({ exercises, vocabulary = [], dayId, onFi
         return <FormFill key={idx} {...current} onDone={handleDone} />;
       case 'speaking-card':
         return <SpeakingCard key={idx} {...current} onDone={handleDone} />;
+      case 'guided-writing':
+        return <GuidedWriting key={idx} {...current} onDone={handleDone} />;
       default:
         return <div className="card">Unknown exercise: {String(current.type)}</div>;
     }
