@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.27.0';
+export const VERSION = '3.28.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.28.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Daily review — real spaced repetition',
+    notes: [
+      'New Daily Review (🔁 on the dashboard): a spaced-repetition system that schedules each word by when you’re about to forget it. Rate your recall — Again / Good / Easy — and the next review moves further out as words stick.',
+      'Each day it serves the words that are due plus a few new ones (course first, then the Goethe A1 lists), so vocabulary moves into long-term memory a little at a time. A lapsed word comes back before the session ends.',
+      'The dashboard shows how many words are due; your schedule is saved on your device.',
+    ],
+  },
   {
     version: '3.27.0',
     date: '2026-06-14',

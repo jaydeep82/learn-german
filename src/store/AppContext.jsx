@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage.js';
 import { BADGES } from '../data/badges.js';
+import { gradeCard, todayStr } from '../data/srs.js';
 
 /**
  * Single source of truth for learner state. Persisted to localStorage so
@@ -31,6 +32,7 @@ const defaults = {
   completed: {},
   answered: {},
   badges: [],
+  srs: {},
   settings: { audio: true, kid: false, theme: 'system' },
 };
 
@@ -114,6 +116,14 @@ export function AppProvider({ children }) {
     setState((s) => ({ ...s, settings: { ...s.settings, ...patch } }));
   }, [setState]);
 
+  /* Spaced repetition: reschedule a word after a review (grade: again|good|easy). */
+  const reviewSrs = useCallback((de, grade) => {
+    setState((s) => {
+      const srs = s.srs || {};
+      return { ...s, srs: { ...srs, [de]: gradeCard(srs[de], grade, todayStr()) } };
+    });
+  }, [setState]);
+
   const resetAll = useCallback(() => {
     if (!confirm('Reset all progress, XP, badges and settings? This cannot be undone.')) return;
     setState(defaults);
@@ -136,8 +146,8 @@ export function AppProvider({ children }) {
   const value = useMemo(() => ({
     state, setState,
     addXP, touchStreak, recordAnswer, completeDay, updateSettings, resetAll,
-    isUnlocked,
-  }), [state, setState, addXP, touchStreak, recordAnswer, completeDay, updateSettings, resetAll, isUnlocked]);
+    reviewSrs, isUnlocked,
+  }), [state, setState, addXP, touchStreak, recordAnswer, completeDay, updateSettings, resetAll, reviewSrs, isUnlocked]);
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useApp } from '../store/AppContext.jsx';
 import { days, weeks } from '../data/curriculum.js';
+import { dueCount, learningCount, todayStr } from '../data/srs.js';
 import { ProgressBar, BadgeWall, XPBadge, StreakIndicator } from '../components/ProgressUI.jsx';
 
 function DayCard({ day, unlocked, score }) {
@@ -33,6 +34,8 @@ export default function Home() {
   const { state, isUnlocked } = useApp();
   const completedCount = Object.values(state.completed || {}).filter((c) => c.score >= 0.7).length;
   const ratio = completedCount / days.length;
+  const due = dueCount(state.srs, todayStr());
+  const learning = learningCount(state.srs);
 
   return (
     <div className="space-y-8">
@@ -60,10 +63,30 @@ export default function Home() {
           <Link to={`/day/${Math.min(days.length, completedCount + 1)}`} className="btn bg-white text-brand-700 hover:bg-brand-50">
             ▶ Continue learning
           </Link>
-          <Link to="/review/weekly"  className="btn bg-white/10 text-white hover:bg-white/20">Review</Link>
+          <Link to="/daily"          className="btn bg-white/10 text-white hover:bg-white/20">🔁 Daily review{due > 0 ? ` · ${due}` : ''}</Link>
           <Link to="/vocabulary"     className="btn bg-white/10 text-white hover:bg-white/20">Vocabulary</Link>
         </div>
       </section>
+
+      <Link to="/daily" className="block card bg-gradient-to-br from-amber-50 to-brand-50 dark:from-slate-900 dark:to-slate-900 hover:shadow-md transition">
+        <div className="flex items-center gap-4">
+          <div className="text-4xl" aria-hidden>🔁</div>
+          <div className="flex-1">
+            <div className="font-bold text-lg flex items-center gap-2">
+              Daily review
+              {due > 0 && <span className="pill bg-amber-500 text-white">{due} due</span>}
+            </div>
+            <div className="text-sm text-slate-500">
+              {due > 0
+                ? `${due} ${due === 1 ? 'word is' : 'words are'} ready — spaced repetition keeps them in long-term memory.`
+                : learning > 0
+                  ? 'All caught up for today. Tap to learn a few new words.'
+                  : 'Start spaced repetition — learn and lock in vocabulary a little every day.'}
+            </div>
+          </div>
+          <span aria-hidden className="text-xl">→</span>
+        </div>
+      </Link>
 
       {weeks.map((w) => {
         const wDays = days.filter((d) => d.week === w.n);

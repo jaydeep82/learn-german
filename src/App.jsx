@@ -3,6 +3,7 @@ import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
 import DayLesson from './pages/DayLesson.jsx';
 import Review from './pages/Review.jsx';
+import DailyReview from './pages/DailyReview.jsx';
 import Vocabulary from './pages/Vocabulary.jsx';
 import Practice from './pages/Practice.jsx';
 import Exam from './pages/Exam.jsx';
@@ -23,6 +24,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/day/:dayId" element={<DayLesson />} />
+        <Route path="/daily" element={<DailyReview />} />
         <Route path="/review/:kind" element={<Review />} />
         <Route path="/vocabulary" element={<Vocabulary />} />
         <Route path="/practice" element={<Practice />} />
