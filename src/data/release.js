@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.24.0';
+export const VERSION = '3.25.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.25.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Exam trainer · Hören (Listening) module + reliable audio',
+    notes: [
+      'Third exam module is live: Hören (Listening) — dialogues → pick the picture, announcements → richtig/falsch, and phone messages → multiple choice.',
+      'New listening player makes audio dependable: replay, a slower-playback option, and — crucially — a “show the text” transcript that appears on demand and automatically when your device has no German voice, so a listening task is never a dead end.',
+      'Audio still uses the browser voice for now; pre-generated audio clips are a planned upgrade. Three of the four skill modules (Lesen, Schreiben, Hören) are now open in the Exam hub.',
+    ],
+  },
   {
     version: '3.24.0',
     date: '2026-06-14',

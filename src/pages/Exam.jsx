@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
  */
 const MODULES = [
   { to: '/lesen', emoji: '📖', de: 'Lesen', en: 'Reading', desc: 'Emails, adverts and signs — true/false and matching.', ready: true, tone: 'emerald' },
-  { emoji: '🎧', de: 'Hören', en: 'Listening', desc: 'Dialogues, announcements and messages — with audio.', ready: false, tone: 'blue' },
+  { to: '/hoeren', emoji: '🎧', de: 'Hören', en: 'Listening', desc: 'Dialogues, announcements and messages — with audio.', ready: true, tone: 'blue' },
   { to: '/schreiben', emoji: '✍️', de: 'Schreiben', en: 'Writing', desc: 'Fill a form and write a short message.', ready: true, tone: 'violet' },
   { emoji: '🗣️', de: 'Sprechen', en: 'Speaking', desc: 'Introduce yourself, ask & answer, make requests.', ready: false, tone: 'amber' },
 ];

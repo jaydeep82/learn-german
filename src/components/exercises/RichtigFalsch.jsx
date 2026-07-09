@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AudioButton from '../AudioButton.jsx';
+import ListeningPlayer from '../ListeningPlayer.jsx';
 
 /**
  * Goethe A1 "richtig / falsch" task — used in Hören Teil 2 (announcements) and
@@ -30,12 +31,7 @@ export default function RichtigFalsch({ title, context, audioText, statements = 
     <div className="space-y-4">
       {title && <h3 className="text-lg font-bold">{title}</h3>}
 
-      {audioText && (
-        <div className="card flex items-center gap-3 bg-brand-50 dark:bg-slate-800">
-          <AudioButton text={audioText} size="lg" label="Play the recording" />
-          <span className="text-sm text-slate-500">Listen — you can replay it.</span>
-        </div>
-      )}
+      {audioText && <ListeningPlayer text={audioText} />}
 
       {context && (
         <div className="card">

@@ -2,13 +2,14 @@ import { describe, it, expect } from 'vitest';
 import { EXAM_FORMATS } from './examFormats.js';
 import { LESEN_EXERCISES, LESEN_ITEM_COUNT, LESEN_PARTS } from './lesenModule.js';
 import { SCHREIBEN_EXERCISES, SCHREIBEN_ITEM_COUNT, SCHREIBEN_PARTS } from './schreibenModule.js';
+import { HOEREN_EXERCISES, HOEREN_ITEM_COUNT, HOEREN_PARTS } from './hoerenModule.js';
 
 /**
  * Integrity tests for exam-format content (roadmap A1/A2). Guards that every
  * exercise spec is well-formed so a malformed task can't slip into the trainer:
  * known type, an answer that points at a real option, no duplicate keys.
  */
-const KNOWN_TYPES = new Set(['richtig-falsch', 'picture-mcq', 'ad-match', 'form-fill', 'speaking-card', 'guided-writing']);
+const KNOWN_TYPES = new Set(['richtig-falsch', 'picture-mcq', 'ad-match', 'form-fill', 'speaking-card', 'guided-writing', 'multiple-choice']);
 const isNonEmptyString = (v) => typeof v === 'string' && v.trim().length > 0;
 
 // Validate one exercise spec; returns an array of problem strings (empty = ok).
@@ -67,6 +68,13 @@ function validate(spec) {
       if (!Array.isArray(spec.points) || spec.points.length === 0) problems.push('no points');
       if (!(spec.points || []).every(isNonEmptyString)) problems.push('empty point');
       if (!isNonEmptyString(spec.model)) problems.push('no model answer');
+      break;
+    }
+    case 'multiple-choice': {
+      if (!isNonEmptyString(spec.q)) problems.push('no question');
+      if (!Array.isArray(spec.options) || spec.options.length < 2) problems.push('needs at least 2 options');
+      if (new Set(spec.options).size !== (spec.options || []).length) problems.push('duplicate options');
+      if (!(spec.options || []).includes(spec.answer)) problems.push('answer is not one of the options');
       break;
     }
     default:
@@ -132,5 +140,32 @@ describe('Schreiben (Writing) module', () => {
     const teile = new Set(SCHREIBEN_EXERCISES.map((e) => e.label));
     expect(teile.size).toBe(2);
     expect(SCHREIBEN_PARTS).toHaveLength(2);
+  });
+});
+
+describe('Hören (Listening) module', () => {
+  it('every exercise is a well-formed exam task', () => {
+    const bad = HOEREN_EXERCISES.map((ex, i) => ({ i, problems: validate(ex) })).filter((r) => r.problems.length);
+    expect(bad, JSON.stringify(bad)).toEqual([]);
+  });
+
+  it('every exercise has an audio recording (audioText)', () => {
+    const missing = HOEREN_EXERCISES.filter((e) => !isNonEmptyString(e.audioText));
+    expect(missing).toEqual([]);
+  });
+
+  it('every exercise carries a Teil label', () => {
+    expect(HOEREN_EXERCISES.every((e) => /Hören · Teil [123]/.test(e.label))).toBe(true);
+  });
+
+  it('HOEREN_ITEM_COUNT matches the scorable items', () => {
+    const counted = HOEREN_EXERCISES.reduce((n, ex) => n + (ex.type === 'richtig-falsch' ? ex.statements.length : 1), 0);
+    expect(HOEREN_ITEM_COUNT).toBe(counted);
+  });
+
+  it('covers all three Teile', () => {
+    const teile = new Set(HOEREN_EXERCISES.map((e) => e.label));
+    expect(teile.size).toBe(3);
+    expect(HOEREN_PARTS).toHaveLength(3);
   });
 });

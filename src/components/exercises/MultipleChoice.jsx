@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import AudioButton from '../AudioButton.jsx';
+import ListeningPlayer from '../ListeningPlayer.jsx';
 
-export default function MultipleChoice({ q, options, answer, explain, onDone }) {
+export default function MultipleChoice({ q, options, answer, explain, audioText, onDone }) {
   const [picked, setPicked] = useState(null);
   const decided = picked != null;
 
@@ -16,10 +17,11 @@ export default function MultipleChoice({ q, options, answer, explain, onDone }) 
 
   return (
     <div className="space-y-4">
+      {audioText && <ListeningPlayer text={audioText} />}
       <div className="card">
         <div className="flex items-start gap-3">
           <h3 className="text-xl font-semibold flex-1">{q}</h3>
-          {/^[A-Za-zäöüÄÖÜß ?!.,]+$/.test(q) && <AudioButton text={q.replace(/[?_]/g,'').trim()} />}
+          {!audioText && /^[A-Za-zäöüÄÖÜß ?!.,]+$/.test(q) && <AudioButton text={q.replace(/[?_]/g,'').trim()} />}
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

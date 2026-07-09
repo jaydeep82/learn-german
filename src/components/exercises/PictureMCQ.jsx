@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import AudioButton from '../AudioButton.jsx';
+import ListeningPlayer from '../ListeningPlayer.jsx';
 
 /**
  * Goethe A1 picture multiple-choice — used in Hören Teil 1 (listen to a short
@@ -17,11 +17,9 @@ export default function PictureMCQ({ q, audioText, options = [], answer, explain
 
   return (
     <div className="space-y-4">
+      {audioText && <ListeningPlayer text={audioText} />}
       <div className="card">
-        <div className="flex items-start gap-3">
-          <h3 className="text-lg font-semibold flex-1">{q}</h3>
-          {audioText && <AudioButton text={audioText} size="lg" label="Play the recording" />}
-        </div>
+        <h3 className="text-lg font-semibold">{q}</h3>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3" role="group" aria-label="Picture options">
