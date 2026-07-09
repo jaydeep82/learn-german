@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
+import { useApp } from '../store/AppContext.jsx';
 import { SPRECHEN_PARTS, SPRECHEN_EXERCISES, SPRECHEN_ITEM_COUNT } from '../data/sprechenModule.js';
 
 /**
@@ -10,6 +11,7 @@ import { SPRECHEN_PARTS, SPRECHEN_EXERCISES, SPRECHEN_ITEM_COUNT } from '../data
  * marked as "I could say it"; the result screen is encouraging, not pass/fail.
  */
 export default function Sprechen() {
+  const { recordSkillResult } = useApp();
   const [stage, setStage] = useState('intro');
   const [result, setResult] = useState(null);
 
@@ -43,7 +45,7 @@ export default function Sprechen() {
         <ExerciseRunner
           exercises={SPRECHEN_EXERCISES}
           dayId="sprechen"
-          onFinish={(r) => { setResult(r); setStage('done'); }}
+          onFinish={(r) => { recordSkillResult('sprechen', { ...r, mock: false }); setResult(r); setStage('done'); }}
         />
       </div>
     );

@@ -33,6 +33,7 @@ const defaults = {
   answered: {},
   badges: [],
   srs: {},
+  skillResults: {},
   settings: { audio: true, kid: false, theme: 'system' },
 };
 
@@ -124,6 +125,18 @@ export function AppProvider({ children }) {
     });
   }, [setState]);
 
+  /* Exam readiness: log a finished skill-module session (standalone or mock). */
+  const recordSkillResult = useCallback((skill, { correct, total, ratio, mock = false }) => {
+    setState((s) => {
+      const prev = s.skillResults?.[skill] || [];
+      const entry = { d: todayStr(), c: correct, t: total, r: ratio, mock: !!mock };
+      return {
+        ...s,
+        skillResults: { ...(s.skillResults || {}), [skill]: [...prev, entry].slice(-20) },
+      };
+    });
+  }, [setState]);
+
   /* Mastery: toggle a word between "known" and not-known (removed from the SRS). */
   const toggleKnown = useCallback((de) => {
     setState((s) => {
@@ -160,8 +173,8 @@ export function AppProvider({ children }) {
   const value = useMemo(() => ({
     state, setState,
     addXP, touchStreak, recordAnswer, completeDay, updateSettings, resetAll,
-    reviewSrs, toggleKnown, isUnlocked,
-  }), [state, setState, addXP, touchStreak, recordAnswer, completeDay, updateSettings, resetAll, reviewSrs, toggleKnown, isUnlocked]);
+    reviewSrs, toggleKnown, recordSkillResult, isUnlocked,
+  }), [state, setState, addXP, touchStreak, recordAnswer, completeDay, updateSettings, resetAll, reviewSrs, toggleKnown, recordSkillResult, isUnlocked]);
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }

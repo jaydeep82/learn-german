@@ -5,12 +5,13 @@ A prioritized plan to turn **Deutsch30** from a strong daily study app into a fa
 practice in the **exact four exam formats**, plus the retention and polish that keep learners
 coming back.
 
-**Current state:** `v3.27.0` (live on AWS) · **full A1 exam trainer — all four skills + a timed mock** ·
-2,407 words (979 course · 689 Fit-1 · 739 SD1) · 50-day course + grammar · Practice mode · CI + 59 tests.
+**Current state:** `v3.30.0` (live on AWS) · **full A1 exam trainer + retention layer** — all four skills,
+a timed mock, spaced repetition, word mastery, and a readiness dashboard · 2,407 words (979 course ·
+689 Fit-1 · 739 SD1) · 50-day course + grammar · Practice mode · CI + 88 tests.
 
-> **Progress — Track A is ✅ complete** (shipped v3.22.0 → v3.27.0). The headline gap below is closed:
-> learners can now practise every Goethe A1 skill in its real format and sit a full timed mock exam.
-> Tracks B–D (retention, UX, content) are the next priorities.
+> **Progress — Tracks A and B are ✅ complete** (v3.22.0 → v3.30.0). The headline gap below is closed,
+> and daily study now sticks: SRS review, per-word mastery, and an "am I ready?" gauge per skill.
+> Tracks C–D (UX polish, content depth) are the remaining priorities.
 
 **Legend** — Priority: **P0** Now · **P1** Next · **P2** Later ·  Effort: **S** / **M** / **L** ·
 Skills: 🎧 Hören · 📖 Lesen · ✍️ Schreiben · 🗣️ Sprechen
@@ -59,15 +60,16 @@ assembled them into per-skill practice and a full timed mock. **All shipped, v3.
 | A6 | **Sprechen (Speaking) module** | ✅ v3.26 | 🗣️ | `/sprechen` — introduce yourself, keyword Q&A, polite requests; say aloud → model answer with audio → self-rate. |
 | A7 | **Full timed mock exam** | ✅ v3.27 | — | `/mock` — all four modules back to back with per-module countdowns; one overall score (skills weighted equally) vs the 60% pass mark, an “on track to pass?” verdict, and a per-skill breakdown. |
 
-## Track B · Make it stick — retention & effectiveness
+## Track B · Make it stick — ✅ COMPLETE
 
 Turns browsing into remembering, and tells each learner exactly what to study next.
+**All shipped, v3.28.0 → v3.30.0.**
 
-| # | Task | Pri | Effort | Why |
-|---|---|---|---|---|
-| B1 | **Real spaced repetition** | P1 | L | Today’s “mistakes only” is just a filter. Add a proper scheduler (SM-2 / Leitner) with per-item due dates and a daily review queue across vocab + missed exercises. |
-| B2 | **Per-word mastery & collection progress** | P1 | M | Mark words known/learning and show real coverage — *“412 / 739 Start Deutsch 1 words”* — so the 1,428 Goethe words feel like a finishable goal. |
-| B3 | **Exam-readiness dashboard** | P1 | M | A %-ready gauge per skill driven by mock/practice performance, pointing the learner at their weakest module. _Needs A7._ |
+| # | Task | Done | What shipped |
+|---|---|---|---|
+| B1 | **Real spaced repetition** | ✅ v3.28 | `/daily` — Leitner-style scheduler (per-word level + due date, growing intervals), Again/Good/Easy grading, lapsed cards requeued, “N due” on the dashboard. |
+| B2 | **Per-word mastery & collection progress** | ✅ v3.29 | Coverage bars per collection (*“412 / 739 known”*), ○/✓ mark-as-known on every card, “Hide known” filter — all shared with the SRS. |
+| B3 | **Exam-readiness dashboard** | ✅ v3.30 | `/readiness` — every module/mock sitting recorded; recency-weighted (mock-boosted) %-ready gauge per skill, overall verdict, “Focus next” weakest-skill callout, vocab-memory stats. |
 
 ## Track C · Experience — UX & polish
 
@@ -105,8 +107,8 @@ foundations moving alongside.
 2. ~~**Ship reading & writing (A2, A3)** — two real exam modules, no audio needed.~~ ✅ **done**
 3. ~~**Make listening trustworthy (A4 → A5)** — fix audio, then build Hören.~~ ✅ **done**
 4. ~~**Add speaking & the mock (A6, A7)** — all four skills, then the capstone timed exam.~~ ✅ **done**
-5. **Turn on retention (B1–B3)** ← **next** — spaced repetition and the readiness dashboard, now that mock data exists to drive them.
-6. **Polish & reach (C1–C6, D-track)** — PWA, accessibility, dashboards, and the remaining content depth.
+5. ~~**Turn on retention (B1–B3)** — spaced repetition, word mastery, and the readiness dashboard.~~ ✅ **done**
+6. **Polish & reach (C1–C6, D-track)** ← **next** — PWA, accessibility, dashboards, and the remaining content depth.
 
 ---
 

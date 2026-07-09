@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.29.0';
+export const VERSION = '3.30.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.30.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Exam readiness dashboard — your “am I ready?” answer',
+    notes: [
+      'New 📈 Readiness page (linked from the Exam hub and the mock results): every finished skill module or mock sitting is now recorded, and turned into a %-ready gauge per skill plus one overall verdict — Exam-ready · Almost there · Keep practising.',
+      'Recent sessions count more and mock sittings count extra, so the gauge reflects how you’d do today. A “Focus next” callout points at your weakest skill with a one-tap jump into that module.',
+      'Supporting stats tie in your vocabulary memory — words known, learning, and due today. This completes the retention track: spaced repetition (v3.28) + word mastery (v3.29) + readiness (v3.30).',
+    ],
+  },
   {
     version: '3.29.0',
     date: '2026-06-14',

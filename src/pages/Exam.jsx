@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { useApp } from '../store/AppContext.jsx';
+import { readinessReport } from '../data/readiness.js';
 
 /**
  * Exam trainer hub — the home for Goethe A1 exam practice. Lists the four skill
@@ -20,6 +22,8 @@ const TONE = {
 };
 
 export default function Exam() {
+  const { state } = useApp();
+  const report = readinessReport(state.skillResults);
   return (
     <div className="space-y-6">
       <header>
@@ -29,6 +33,21 @@ export default function Exam() {
           Start with Reading; the other modules are on the way.
         </p>
       </header>
+
+      <Link to="/readiness" className="block">
+        <div className="card flex items-center gap-3 hover:shadow-md transition">
+          <span className="text-2xl" aria-hidden>📈</span>
+          <div className="flex-1">
+            <div className="font-bold">Exam readiness</div>
+            <div className="text-sm text-slate-500">
+              {report.tested === 0
+                ? 'Take a skill module or the mock to see how ready you are.'
+                : `${Math.round(report.overall * 100)}% overall · ${report.tested}/4 skills tested`}
+            </div>
+          </div>
+          <span aria-hidden className="text-xl">→</span>
+        </div>
+      </Link>
 
       <div className="grid sm:grid-cols-2 gap-3">
         {MODULES.map((m) => {

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
+import { useApp } from '../store/AppContext.jsx';
 import { HOEREN_PARTS, HOEREN_EXERCISES, HOEREN_ITEM_COUNT } from '../data/hoerenModule.js';
 
 /**
@@ -9,6 +10,7 @@ import { HOEREN_PARTS, HOEREN_EXERCISES, HOEREN_ITEM_COUNT } from '../data/hoere
  * pass indicator. Audio plays via the browser voice with a transcript fallback.
  */
 export default function Hoeren() {
+  const { recordSkillResult } = useApp();
   const [stage, setStage] = useState('intro');
   const [result, setResult] = useState(null);
 
@@ -45,7 +47,7 @@ export default function Hoeren() {
         <ExerciseRunner
           exercises={HOEREN_EXERCISES}
           dayId="hoeren"
-          onFinish={(r) => { setResult(r); setStage('done'); }}
+          onFinish={(r) => { recordSkillResult('hoeren', { ...r, mock: false }); setResult(r); setStage('done'); }}
         />
       </div>
     );

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
+import { useApp } from '../store/AppContext.jsx';
 import { SCHREIBEN_PARTS, SCHREIBEN_EXERCISES, SCHREIBEN_ITEM_COUNT } from '../data/schreibenModule.js';
 
 /**
@@ -10,6 +11,7 @@ import { SCHREIBEN_PARTS, SCHREIBEN_EXERCISES, SCHREIBEN_ITEM_COUNT } from '../d
  * message points you mark as covered.
  */
 export default function Schreiben() {
+  const { recordSkillResult } = useApp();
   const [stage, setStage] = useState('intro');
   const [result, setResult] = useState(null);
 
@@ -49,7 +51,7 @@ export default function Schreiben() {
         <ExerciseRunner
           exercises={SCHREIBEN_EXERCISES}
           dayId="schreiben"
-          onFinish={(r) => { setResult(r); setStage('done'); }}
+          onFinish={(r) => { recordSkillResult('schreiben', { ...r, mock: false }); setResult(r); setStage('done'); }}
         />
       </div>
     );

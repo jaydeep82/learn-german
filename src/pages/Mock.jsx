@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
+import { useApp } from '../store/AppContext.jsx';
 import { MOCK_MODULES, MOCK_PASS_RATIO, MOCK_TOTAL_MINUTES, overallRatio } from '../data/mockExam.js';
 
 /**
@@ -9,6 +10,7 @@ import { MOCK_MODULES, MOCK_PASS_RATIO, MOCK_TOTAL_MINUTES, overallRatio } from 
  * combined result: overall %, 60% pass verdict, and a per-skill breakdown.
  */
 export default function Mock() {
+  const { recordSkillResult } = useApp();
   const [phase, setPhase] = useState('intro'); // intro | module | break | done
   const [modIdx, setModIdx] = useState(0);
   const [results, setResults] = useState([]); // [{ key, name, emoji, ratio, correct, total, timedOut }]
@@ -18,6 +20,7 @@ export default function Mock() {
   const start = () => { setResults([]); setModIdx(0); setPhase('module'); };
 
   const finishModule = (r) => {
+    recordSkillResult(mod.key, { correct: r.correct, total: r.total, ratio: r.ratio, mock: true });
     const entry = { key: mod.key, name: mod.name, emoji: mod.emoji, ...r };
     setResults((prev) => {
       const next = [...prev, entry];
@@ -75,6 +78,7 @@ export default function Mock() {
 
         <div className="flex flex-wrap gap-2 justify-center">
           <button className="btn-primary" onClick={start}>Retake mock</button>
+          <Link to="/readiness" className="btn-secondary">📈 Readiness</Link>
           <Link to="/exam" className="btn-secondary">Exam trainer</Link>
           <Link to="/" className="btn-secondary">Dashboard</Link>
         </div>

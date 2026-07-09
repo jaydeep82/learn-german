@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
+import { useApp } from '../store/AppContext.jsx';
 import { LESEN_PARTS, LESEN_EXERCISES, LESEN_ITEM_COUNT } from '../data/lesenModule.js';
 
 /**
@@ -9,6 +10,7 @@ import { LESEN_PARTS, LESEN_EXERCISES, LESEN_ITEM_COUNT } from '../data/lesenMod
  * 60% pass indicator (the real exam's threshold).
  */
 export default function Lesen() {
+  const { recordSkillResult } = useApp();
   const [stage, setStage] = useState('intro');
   const [result, setResult] = useState(null);
 
@@ -45,7 +47,7 @@ export default function Lesen() {
         <ExerciseRunner
           exercises={LESEN_EXERCISES}
           dayId="lesen"
-          onFinish={(r) => { setResult(r); setStage('done'); }}
+          onFinish={(r) => { recordSkillResult('lesen', { ...r, mock: false }); setResult(r); setStage('done'); }}
         />
       </div>
     );
