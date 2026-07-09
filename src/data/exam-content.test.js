@@ -4,6 +4,7 @@ import { LESEN_EXERCISES, LESEN_ITEM_COUNT, LESEN_PARTS } from './lesenModule.js
 import { SCHREIBEN_EXERCISES, SCHREIBEN_ITEM_COUNT, SCHREIBEN_PARTS } from './schreibenModule.js';
 import { HOEREN_EXERCISES, HOEREN_ITEM_COUNT, HOEREN_PARTS } from './hoerenModule.js';
 import { SPRECHEN_EXERCISES, SPRECHEN_ITEM_COUNT, SPRECHEN_PARTS } from './sprechenModule.js';
+import { MOCK_MODULES, MOCK_PASS_RATIO, MOCK_TOTAL_MINUTES, overallRatio } from './mockExam.js';
 
 /**
  * Integrity tests for exam-format content (roadmap A1/A2). Guards that every
@@ -202,5 +203,31 @@ describe('Sprechen (Speaking) module', () => {
     const teile = new Set(SPRECHEN_EXERCISES.map((e) => e.label));
     expect(teile.size).toBe(3);
     expect(SPRECHEN_PARTS).toHaveLength(3);
+  });
+});
+
+describe('Full mock exam', () => {
+  it('includes all four skill modules in exam order', () => {
+    expect(MOCK_MODULES.map((m) => m.key)).toEqual(['hoeren', 'lesen', 'schreiben', 'sprechen']);
+  });
+
+  it('every module has a positive time limit and a non-empty exercise list', () => {
+    const bad = MOCK_MODULES.filter((m) => !(m.minutes > 0) || !Array.isArray(m.exercises) || m.exercises.length === 0);
+    expect(bad.map((m) => m.key)).toEqual([]);
+  });
+
+  it('every mock exercise is a well-formed exam task', () => {
+    const bad = MOCK_MODULES.flatMap((m) => m.exercises).map((ex, i) => ({ i, problems: validate(ex) })).filter((r) => r.problems.length);
+    expect(bad, JSON.stringify(bad)).toEqual([]);
+  });
+
+  it('total time is the sum of the module minutes', () => {
+    expect(MOCK_TOTAL_MINUTES).toBe(MOCK_MODULES.reduce((n, m) => n + m.minutes, 0));
+  });
+
+  it('overallRatio equal-weights the modules and pass mark is 60%', () => {
+    expect(MOCK_PASS_RATIO).toBe(0.6);
+    expect(overallRatio([{ ratio: 0.5 }, { ratio: 0.7 }, { ratio: 0.6 }, { ratio: 0.8 }])).toBeCloseTo(0.65, 5);
+    expect(overallRatio([])).toBe(0);
   });
 });

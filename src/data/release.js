@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.26.0';
+export const VERSION = '3.27.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.27.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Exam trainer · full timed mock exam — the trainer is complete',
+    notes: [
+      'The capstone: a full Goethe A1 mock exam that runs all four skills back to back — Hören, Lesen, Schreiben, Sprechen — each with its own countdown timer. If time runs out, that module is submitted and the exam moves on.',
+      'One overall score (the four skills weighted equally) against the 60% pass mark, an “on track to pass?” verdict, and a per-skill breakdown showing your weakest module.',
+      'The Exam trainer now covers the whole exam: practise each skill on its own, or sit the complete timed mock from the Exam hub.',
+    ],
+  },
   {
     version: '3.26.0',
     date: '2026-06-14',

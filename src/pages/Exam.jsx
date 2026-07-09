@@ -51,13 +51,15 @@ export default function Exam() {
         })}
       </div>
 
-      <div className="card flex flex-col sm:flex-row sm:items-center gap-3">
-        <div className="flex-1">
-          <h2 className="font-bold">🏁 Full mock exam</h2>
-          <p className="text-sm text-slate-500">All four skill modules are ready — next they come together as one timed, scored mock exam.</p>
+      <Link to="/mock" className="block">
+        <div className="card flex flex-col sm:flex-row sm:items-center gap-3 bg-gradient-to-br from-brand-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-md transition">
+          <div className="flex-1">
+            <h2 className="font-bold">🏁 Full mock exam</h2>
+            <p className="text-sm text-slate-500">All four skills back to back, each timed — one overall score against the 60% pass mark.</p>
+          </div>
+          <span className="text-xs font-semibold text-emerald-600 self-start sm:self-center">Start →</span>
         </div>
-        <span className="text-[11px] font-semibold rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500 px-2 py-0.5 self-start">Coming soon</span>
-      </div>
+      </Link>
 
       <p className="text-sm text-slate-500">
         Curious about the task types? <Link to="/exam-formats" className="text-brand-600 hover:underline">Preview all exam formats →</Link>

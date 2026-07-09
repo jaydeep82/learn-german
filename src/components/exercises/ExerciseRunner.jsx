@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Flashcard from './Flashcard.jsx';
 import MultipleChoice from './MultipleChoice.jsx';
 import FillInBlank from './FillInBlank.jsx';
@@ -23,15 +23,38 @@ import { useApp } from '../../store/AppContext.jsx';
  * The vocabulary array is passed separately so flashcards can reference
  * `items: 'vocabulary'` instead of duplicating data.
  */
-export default function ExerciseRunner({ exercises, vocabulary = [], dayId, onFinish }) {
+export default function ExerciseRunner({ exercises, vocabulary = [], dayId, timeLimitSec, onFinish }) {
   const { addXP, recordAnswer, touchStreak } = useApp();
   const [idx, setIdx] = useState(0);
   const [score, setScore] = useState({ correct: 0, total: 0 });
+  const [remaining, setRemaining] = useState(timeLimitSec ?? null);
+  const finishedRef = useRef(false);
 
   const list = useMemo(() => exercises || [], [exercises]);
   const current = list[idx];
 
   useEffect(() => { touchStreak(); }, []); // bump streak on entry
+
+  // Optional countdown (mock exam). Tick every second; expiry handled below.
+  useEffect(() => {
+    if (!timeLimitSec) return undefined;
+    const t = setInterval(() => setRemaining((r) => (r == null ? r : r - 1)), 1000);
+    return () => clearInterval(t);
+  }, [timeLimitSec]);
+
+  // Fire onFinish exactly once — either at the end or when time runs out.
+  const finish = (result) => {
+    if (finishedRef.current) return;
+    finishedRef.current = true;
+    onFinish?.(result);
+  };
+
+  useEffect(() => {
+    if (timeLimitSec && remaining !== null && remaining <= 0) {
+      const ratio = score.total ? score.correct / score.total : 0;
+      finish({ ...score, ratio, timedOut: true });
+    }
+  }, [remaining, timeLimitSec]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!current) {
     return (
@@ -49,11 +72,15 @@ export default function ExerciseRunner({ exercises, vocabulary = [], dayId, onFi
     setScore(next);
     if (idx + 1 >= list.length) {
       const ratio = next.total ? next.correct / next.total : 0;
-      onFinish?.({ ...next, ratio });
+      finish({ ...next, ratio });
     } else {
       setIdx((i) => i + 1);
     }
   };
+
+  const mmss = remaining != null
+    ? `${Math.floor(Math.max(0, remaining) / 60)}:${String(Math.max(0, remaining) % 60).padStart(2, '0')}`
+    : null;
 
   const renderExercise = () => {
     switch (current.type) {
@@ -99,6 +126,10 @@ export default function ExerciseRunner({ exercises, vocabulary = [], dayId, onFi
         <span>Step {idx + 1} of {list.length}</span>
         <span aria-hidden>·</span>
         <span>{score.correct}/{score.total} correct</span>
+        {mmss && (
+          <span className={`ml-auto font-mono font-semibold tabular-nums ${remaining <= 60 ? 'text-rose-600' : 'text-slate-500'}`}
+            aria-label="Time remaining">⏱ {mmss}</span>
+        )}
       </div>
       <ProgressBar value={idx} max={list.length} label="Lesson progress" />
       {renderExercise()}
