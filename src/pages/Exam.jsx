@@ -9,7 +9,7 @@ const MODULES = [
   { to: '/lesen', emoji: '📖', de: 'Lesen', en: 'Reading', desc: 'Emails, adverts and signs — true/false and matching.', ready: true, tone: 'emerald' },
   { to: '/hoeren', emoji: '🎧', de: 'Hören', en: 'Listening', desc: 'Dialogues, announcements and messages — with audio.', ready: true, tone: 'blue' },
   { to: '/schreiben', emoji: '✍️', de: 'Schreiben', en: 'Writing', desc: 'Fill a form and write a short message.', ready: true, tone: 'violet' },
-  { emoji: '🗣️', de: 'Sprechen', en: 'Speaking', desc: 'Introduce yourself, ask & answer, make requests.', ready: false, tone: 'amber' },
+  { to: '/sprechen', emoji: '🗣️', de: 'Sprechen', en: 'Speaking', desc: 'Introduce yourself, ask & answer, make requests.', ready: true, tone: 'amber' },
 ];
 
 const TONE = {
@@ -54,7 +54,7 @@ export default function Exam() {
       <div className="card flex flex-col sm:flex-row sm:items-center gap-3">
         <div className="flex-1">
           <h2 className="font-bold">🏁 Full mock exam</h2>
-          <p className="text-sm text-slate-500">All four modules, timed and scored end-to-end. Arrives once every skill module is built.</p>
+          <p className="text-sm text-slate-500">All four skill modules are ready — next they come together as one timed, scored mock exam.</p>
         </div>
         <span className="text-[11px] font-semibold rounded-full bg-slate-200 dark:bg-slate-700 text-slate-500 px-2 py-0.5 self-start">Coming soon</span>
       </div>

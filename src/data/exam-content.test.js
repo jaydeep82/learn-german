@@ -3,6 +3,7 @@ import { EXAM_FORMATS } from './examFormats.js';
 import { LESEN_EXERCISES, LESEN_ITEM_COUNT, LESEN_PARTS } from './lesenModule.js';
 import { SCHREIBEN_EXERCISES, SCHREIBEN_ITEM_COUNT, SCHREIBEN_PARTS } from './schreibenModule.js';
 import { HOEREN_EXERCISES, HOEREN_ITEM_COUNT, HOEREN_PARTS } from './hoerenModule.js';
+import { SPRECHEN_EXERCISES, SPRECHEN_ITEM_COUNT, SPRECHEN_PARTS } from './sprechenModule.js';
 
 /**
  * Integrity tests for exam-format content (roadmap A1/A2). Guards that every
@@ -167,5 +168,39 @@ describe('Hören (Listening) module', () => {
     const teile = new Set(HOEREN_EXERCISES.map((e) => e.label));
     expect(teile.size).toBe(3);
     expect(HOEREN_PARTS).toHaveLength(3);
+  });
+});
+
+describe('Sprechen (Speaking) module', () => {
+  it('every exercise is a well-formed exam task', () => {
+    const bad = SPRECHEN_EXERCISES.map((ex, i) => ({ i, problems: validate(ex) })).filter((r) => r.problems.length);
+    expect(bad, JSON.stringify(bad)).toEqual([]);
+  });
+
+  it('only uses speaking cards', () => {
+    expect(SPRECHEN_EXERCISES.every((e) => e.type === 'speaking-card')).toBe(true);
+  });
+
+  it('every card has a keyword and a model answer', () => {
+    const bad = [];
+    SPRECHEN_EXERCISES.forEach((ex) => ex.cards.forEach((c) => {
+      if (!isNonEmptyString(c.keyword) || !isNonEmptyString(c.model)) bad.push(c);
+    }));
+    expect(bad).toEqual([]);
+  });
+
+  it('every exercise carries a Teil label', () => {
+    expect(SPRECHEN_EXERCISES.every((e) => /Sprechen · Teil [123]/.test(e.label))).toBe(true);
+  });
+
+  it('SPRECHEN_ITEM_COUNT matches the number of cards', () => {
+    const counted = SPRECHEN_EXERCISES.reduce((n, ex) => n + ex.cards.length, 0);
+    expect(SPRECHEN_ITEM_COUNT).toBe(counted);
+  });
+
+  it('covers all three Teile', () => {
+    const teile = new Set(SPRECHEN_EXERCISES.map((e) => e.label));
+    expect(teile.size).toBe(3);
+    expect(SPRECHEN_PARTS).toHaveLength(3);
   });
 });

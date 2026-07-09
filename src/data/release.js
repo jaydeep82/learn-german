@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.25.0';
+export const VERSION = '3.26.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.26.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Exam trainer · Sprechen (Speaking) — all four skills now live',
+    notes: [
+      'Fourth and final skill module: Sprechen (Speaking) — introduce yourself, ask questions from keyword cards, and make polite requests. Say each answer aloud, reveal a model answer with audio, and rate yourself.',
+      'The Exam trainer now covers the complete Goethe A1: Lesen, Schreiben, Hören and Sprechen are all open.',
+      'Next: the four modules come together into a single timed, scored mock exam.',
+    ],
+  },
   {
     version: '3.25.0',
     date: '2026-06-14',
