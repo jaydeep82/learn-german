@@ -2,6 +2,8 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { vocabByTopic, allVocab } from '../data/vocabulary.js';
 import { collections } from '../data/taggedVocab.js';
+import { useApp } from '../store/AppContext.jsx';
+import { masteryOf, collectionStats } from '../data/srs.js';
 import VocabCard from '../components/VocabCard.jsx';
 
 const courseCount = allVocab.length;
@@ -14,9 +16,37 @@ const SCOPES = [
   ...collections.map((c) => ({ key: c.key, label: `${c.emoji} ${c.tag}` })),
 ];
 
+/** Coverage bar for a word set: known (green) + learning (amber) of total. */
+function Coverage({ stats }) {
+  const pctOf = (n) => (stats.total ? (n / stats.total) * 100 : 0);
+  return (
+    <div className="mt-2">
+      <div className="flex items-center justify-between text-xs text-slate-500 mb-1">
+        <span>
+          <strong className="text-emerald-600 dark:text-emerald-400">{stats.known}</strong> known
+          {stats.learning > 0 && <> · <strong className="text-amber-600 dark:text-amber-400">{stats.learning}</strong> learning</>}
+          {' · '}{stats.new} to go
+        </span>
+        <span className="tabular-nums font-semibold">{stats.started} / {stats.total}</span>
+      </div>
+      <div className="h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden flex" role="progressbar"
+        aria-valuenow={stats.started} aria-valuemax={stats.total} aria-label="Words learned">
+        <div className="h-full bg-emerald-500" style={{ width: `${pctOf(stats.known)}%` }} />
+        <div className="h-full bg-amber-400" style={{ width: `${pctOf(stats.learning)}%` }} />
+      </div>
+    </div>
+  );
+}
+
 export default function Vocabulary() {
+  const { state, toggleKnown } = useApp();
+  const srs = state.srs;
   const [q, setQ] = useState('');
   const [scope, setScope] = useState('all');
+  const [hideKnown, setHideKnown] = useState(false);
+
+  const visible = (items) => (hideKnown ? items.filter((v) => masteryOf(srs, v.de) !== 'known') : items);
+  const cardProps = (v) => ({ mastery: masteryOf(srs, v.de), onToggleKnown: () => toggleKnown(v.de) });
 
   // Unified search across the course + every tagged collection, respecting scope.
   const results = useMemo(() => {
@@ -36,7 +66,7 @@ export default function Vocabulary() {
       <header className="flex flex-wrap items-end gap-3 justify-between">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold">Vocabulary</h1>
-          <p className="text-slate-500">{courseCount + taggedCount} words — the 50-day course plus the Goethe A1 word lists.</p>
+          <p className="text-slate-500">{courseCount + taggedCount} words — the 50-day course plus the Goethe A1 word lists. Tap the ○ to mark a word known.</p>
         </div>
         <input
           type="search"
@@ -48,23 +78,29 @@ export default function Vocabulary() {
         />
       </header>
 
-      {/* Scope filter chips */}
-      <div className="flex items-center gap-2 overflow-x-auto -mx-4 px-4">
-        {SCOPES.map((s) => (
-          <button
-            key={s.key}
-            type="button"
-            onClick={() => setScope(s.key)}
-            aria-pressed={scope === s.key}
-            className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition ${
-              scope === s.key
-                ? 'bg-brand-600 text-white'
-                : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:opacity-80'
-            }`}
-          >
-            {s.label}
-          </button>
-        ))}
+      {/* Scope filter chips + hide-known */}
+      <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-2 overflow-x-auto -mx-4 px-4 flex-1 min-w-0">
+          {SCOPES.map((s) => (
+            <button
+              key={s.key}
+              type="button"
+              onClick={() => setScope(s.key)}
+              aria-pressed={scope === s.key}
+              className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition ${
+                scope === s.key
+                  ? 'bg-brand-600 text-white'
+                  : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:opacity-80'
+              }`}
+            >
+              {s.label}
+            </button>
+          ))}
+        </div>
+        <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 cursor-pointer shrink-0">
+          <input type="checkbox" checked={hideKnown} onChange={(e) => setHideKnown(e.target.checked)} className="w-4 h-4 accent-brand-600" />
+          Hide known
+        </label>
       </div>
 
       {results ? (
@@ -79,6 +115,7 @@ export default function Vocabulary() {
                   <VocabCard
                     v={v}
                     layout={kind === 'course' ? v.layout : 'compact'}
+                    {...cardProps(v)}
                     badge={
                       kind === 'course'
                         ? <Link to={`/day/${v.day}`} className="text-xs text-brand-600 hover:underline shrink-0">D{v.day}</Link>
@@ -94,20 +131,24 @@ export default function Vocabulary() {
         <>
           {/* Course vocab — grouped by day */}
           {(scope === 'all' || scope === 'course') &&
-            vocabByTopic.map((t) => (
-              <section key={t.day} className="space-y-2" aria-labelledby={`v-${t.day}`}>
-                <h2 id={`v-${t.day}`} className="font-bold flex items-center gap-2">
-                  <span aria-hidden>{t.emoji}</span>
-                  <span>Day {t.day} · {t.title}</span>
-                  <Link to={`/day/${t.day}`} className="ml-auto text-xs text-brand-600 hover:underline">Open lesson →</Link>
-                </h2>
-                <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                  {t.items.map((v, i) => (
-                    <li key={`${v.de}-${i}`}><VocabCard v={v} layout={t.layout} /></li>
-                  ))}
-                </ul>
-              </section>
-            ))}
+            vocabByTopic.map((t) => {
+              const items = visible(t.items);
+              if (!items.length) return null;
+              return (
+                <section key={t.day} className="space-y-2" aria-labelledby={`v-${t.day}`}>
+                  <h2 id={`v-${t.day}`} className="font-bold flex items-center gap-2">
+                    <span aria-hidden>{t.emoji}</span>
+                    <span>Day {t.day} · {t.title}</span>
+                    <Link to={`/day/${t.day}`} className="ml-auto text-xs text-brand-600 hover:underline">Open lesson →</Link>
+                  </h2>
+                  <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {items.map((v, i) => (
+                      <li key={`${v.de}-${i}`}><VocabCard v={v} layout={t.layout} {...cardProps(v)} /></li>
+                    ))}
+                  </ul>
+                </section>
+              );
+            })}
 
           {/* Each tagged Goethe A1 collection — grouped by theme/letter */}
           {collections.map((c) =>
@@ -126,23 +167,28 @@ export default function Vocabulary() {
                   <p className="text-sm text-slate-500 mt-1">
                     {c.flat.length} words from the official <strong>{c.source}</strong> word list, grouped by theme.
                   </p>
+                  <Coverage stats={collectionStats(srs, c.flat)} />
                 </header>
 
-                {c.groups.map((g) => (
-                  <section key={g.title} className="space-y-2" aria-labelledby={`${c.key}-${g.title}`}>
-                    <h3 id={`${c.key}-${g.title}`} className="font-bold flex items-center gap-2">
-                      <span aria-hidden>{g.emoji}</span>
-                      <span>{g.title}</span>
-                      {g.titleDe && <span className="text-sm text-slate-400 font-normal">· {g.titleDe}</span>}
-                      <span className="ml-auto text-xs text-slate-400">{g.items.length}</span>
-                    </h3>
-                    <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                      {g.items.map((v, i) => (
-                        <li key={`${v.de}-${i}`}><VocabCard v={v} layout="compact" /></li>
-                      ))}
-                    </ul>
-                  </section>
-                ))}
+                {c.groups.map((g) => {
+                  const items = visible(g.items);
+                  if (!items.length) return null;
+                  return (
+                    <section key={g.title} className="space-y-2" aria-labelledby={`${c.key}-${g.title}`}>
+                      <h3 id={`${c.key}-${g.title}`} className="font-bold flex items-center gap-2">
+                        <span aria-hidden>{g.emoji}</span>
+                        <span>{g.title}</span>
+                        {g.titleDe && <span className="text-sm text-slate-400 font-normal">· {g.titleDe}</span>}
+                        <span className="ml-auto text-xs text-slate-400">{items.length}</span>
+                      </h3>
+                      <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        {items.map((v, i) => (
+                          <li key={`${v.de}-${i}`}><VocabCard v={v} layout="compact" {...cardProps(v)} /></li>
+                        ))}
+                      </ul>
+                    </section>
+                  );
+                })}
               </section>
             ) : null
           )}

@@ -20,6 +20,9 @@ export const INTERVALS = [0, 1, 2, 4, 9, 20, 45];
 export const MAX_LEVEL = INTERVALS.length - 1;
 export const GRADES = ['again', 'good', 'easy'];
 
+// A word at or above this level counts as "known" (mastered).
+export const KNOWN_LEVEL = 4;
+
 // Ordered, de-duplicated master word list — course (in day order) first, then
 // the youth and adult Goethe lists. New words are introduced in this order.
 export const ALL_WORDS = (() => {
@@ -82,6 +85,39 @@ export function dueCount(srs = {}, today) {
 /** How many words have entered the SRS at all (been reviewed at least once). */
 export function learningCount(srs = {}) {
   return Object.keys(srs).length;
+}
+
+/** Mastery of a single word: 'new' (unseen) · 'learning' · 'known'. */
+export function masteryOf(srs, de) {
+  const c = srs?.[de];
+  if (!c) return 'new';
+  return c.level >= KNOWN_LEVEL ? 'known' : 'learning';
+}
+
+/** A card representing a word the learner marked as already known. */
+export function knownCard(today, prev) {
+  const level = MAX_LEVEL - 1; // comfortably "known", scheduled well out
+  return {
+    level,
+    due: addDays(today, INTERVALS[level]),
+    reps: (prev?.reps || 0) + 1,
+    lapses: prev?.lapses || 0,
+    last: today,
+    known: true,
+  };
+}
+
+/** Coverage of a word set: how many are known / learning / new. */
+export function collectionStats(srs = {}, words = []) {
+  let known = 0;
+  let learning = 0;
+  for (const w of words) {
+    const m = masteryOf(srs, w.de);
+    if (m === 'known') known += 1;
+    else if (m === 'learning') learning += 1;
+  }
+  const total = words.length;
+  return { total, known, learning, new: total - known - learning, started: known + learning };
 }
 
 /**

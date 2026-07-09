@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.28.0';
+export const VERSION = '3.29.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.29.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Vocabulary · word mastery & collection progress',
+    notes: [
+      'Every word list now shows your coverage — e.g. “412 / 739 known” — with a progress bar, so the 1,400+ Goethe words feel like a finishable goal.',
+      'Tap the ○ on any word to mark it known (✓); tap again to unmark. Known words are scheduled far out in the daily review so you’re not drilled on what you already have.',
+      'New “Hide known” switch focuses the list on the words you still need to learn. Mastery is shared with the daily review — words you review climb from learning to known automatically.',
+    ],
+  },
   {
     version: '3.28.0',
     date: '2026-06-14',

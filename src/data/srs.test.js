@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import {
-  ALL_WORDS, WORD_BY_DE, INTERVALS, MAX_LEVEL,
+  ALL_WORDS, WORD_BY_DE, INTERVALS, MAX_LEVEL, KNOWN_LEVEL,
   todayStr, addDays, newCard, gradeCard, dueCount, learningCount, buildSession,
+  masteryOf, knownCard, collectionStats,
 } from './srs.js';
 
 const TODAY = '2026-07-09';
@@ -97,5 +98,39 @@ describe('SRS · queues', () => {
     const session = buildSession(many, { today: TODAY, newPerDay: 10, max: 12 });
     expect(session.length).toBe(12);
     expect(session.every((s) => s.kind === 'due')).toBe(true);
+  });
+});
+
+describe('SRS · mastery & coverage (B2)', () => {
+  it('masteryOf classifies new / learning / known', () => {
+    const srs = {
+      a: { level: 1 },              // learning
+      b: { level: KNOWN_LEVEL },    // known (threshold)
+      c: { level: MAX_LEVEL },      // known
+    };
+    expect(masteryOf(srs, 'a')).toBe('learning');
+    expect(masteryOf(srs, 'b')).toBe('known');
+    expect(masteryOf(srs, 'c')).toBe('known');
+    expect(masteryOf(srs, 'missing')).toBe('new');
+    expect(masteryOf(undefined, 'x')).toBe('new');
+  });
+
+  it('knownCard is at or above the known threshold and carries a flag', () => {
+    const c = knownCard(TODAY);
+    expect(c.level).toBeGreaterThanOrEqual(KNOWN_LEVEL);
+    expect(c.known).toBe(true);
+    expect(c.due).toBe(addDays(TODAY, INTERVALS[c.level]));
+  });
+
+  it('collectionStats counts known / learning / new and started', () => {
+    const words = [{ de: 'a' }, { de: 'b' }, { de: 'c' }, { de: 'd' }];
+    const srs = { a: { level: 5 }, b: { level: 2 }, c: { level: KNOWN_LEVEL } }; // a,c known; b learning; d new
+    const s = collectionStats(srs, words);
+    expect(s).toMatchObject({ total: 4, known: 2, learning: 1, new: 1, started: 3 });
+  });
+
+  it('collectionStats on an empty SRS reports all new', () => {
+    const words = [{ de: 'a' }, { de: 'b' }];
+    expect(collectionStats({}, words)).toMatchObject({ total: 2, known: 0, learning: 0, new: 2, started: 0 });
   });
 });

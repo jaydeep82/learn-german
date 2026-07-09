@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage.js';
 import { BADGES } from '../data/badges.js';
-import { gradeCard, todayStr } from '../data/srs.js';
+import { gradeCard, knownCard, todayStr, KNOWN_LEVEL } from '../data/srs.js';
 
 /**
  * Single source of truth for learner state. Persisted to localStorage so
@@ -124,6 +124,20 @@ export function AppProvider({ children }) {
     });
   }, [setState]);
 
+  /* Mastery: toggle a word between "known" and not-known (removed from the SRS). */
+  const toggleKnown = useCallback((de) => {
+    setState((s) => {
+      const srs = s.srs || {};
+      const cur = srs[de];
+      if (cur && cur.level >= KNOWN_LEVEL) {
+        const rest = { ...srs };
+        delete rest[de];
+        return { ...s, srs: rest };
+      }
+      return { ...s, srs: { ...srs, [de]: knownCard(todayStr(), cur) } };
+    });
+  }, [setState]);
+
   const resetAll = useCallback(() => {
     if (!confirm('Reset all progress, XP, badges and settings? This cannot be undone.')) return;
     setState(defaults);
@@ -146,8 +160,8 @@ export function AppProvider({ children }) {
   const value = useMemo(() => ({
     state, setState,
     addXP, touchStreak, recordAnswer, completeDay, updateSettings, resetAll,
-    reviewSrs, isUnlocked,
-  }), [state, setState, addXP, touchStreak, recordAnswer, completeDay, updateSettings, resetAll, reviewSrs, isUnlocked]);
+    reviewSrs, toggleKnown, isUnlocked,
+  }), [state, setState, addXP, touchStreak, recordAnswer, completeDay, updateSettings, resetAll, reviewSrs, toggleKnown, isUnlocked]);
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }

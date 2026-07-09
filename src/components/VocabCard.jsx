@@ -2,6 +2,31 @@ import AudioButton from './AudioButton.jsx';
 import Pron from './Pron.jsx';
 
 /**
+ * Small "known" toggle shown on the Vocabulary page (opt-in via onToggleKnown).
+ * Reflects the word's SRS mastery: new · learning · known.
+ */
+function MasteryToggle({ mastery, onToggle }) {
+  const map = {
+    new: { icon: '○', cls: 'text-slate-300 dark:text-slate-600 hover:text-emerald-500', title: 'Mark as known' },
+    learning: { icon: '🌱', cls: 'hover:opacity-80', title: 'Learning — tap to mark as known' },
+    known: { icon: '✓', cls: 'bg-emerald-500 text-white rounded-full hover:bg-emerald-600', title: 'Known — tap to unmark' },
+  };
+  const m = map[mastery] || map.new;
+  return (
+    <button
+      type="button"
+      onClick={(e) => { e.preventDefault(); e.stopPropagation(); onToggle(); }}
+      title={m.title}
+      aria-label={m.title}
+      aria-pressed={mastery === 'known'}
+      className={`shrink-0 w-6 h-6 flex items-center justify-center text-sm font-bold leading-none transition ${m.cls}`}
+    >
+      {m.icon}
+    </button>
+  );
+}
+
+/**
  * One vocabulary block. Two layouts:
  *   'compact'   — Option 1: audio on the left, word + details stacked,
  *                 example below a thin divider. (default — used by Day 1.)
@@ -15,8 +40,10 @@ import Pron from './Pron.jsx';
  *   layout   — 'compact' | 'spotlight'
  *   showHint — render the 💡 hint line (lesson intro only)
  *   badge    — optional node shown top-right (e.g. the "D2" day link)
+ *   mastery / onToggleKnown — optional; render the "known" toggle (Vocabulary page)
  */
-export default function VocabCard({ v, layout = 'compact', showHint = false, badge = null }) {
+export default function VocabCard({ v, layout = 'compact', showHint = false, badge = null, mastery, onToggleKnown = null }) {
+  const masteryEl = onToggleKnown ? <MasteryToggle mastery={mastery} onToggle={onToggleKnown} /> : null;
   if (layout === 'spotlight') {
     return (
       <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm">
@@ -32,7 +59,7 @@ export default function VocabCard({ v, layout = 'compact', showHint = false, bad
             <div className="flex items-center gap-2">
               <span className="font-extrabold text-lg leading-tight truncate">{v.de}</span>
               {v.emoji && <AudioButton text={v.de} size="sm" />}
-              {badge && <span className="ml-auto shrink-0">{badge}</span>}
+              {(badge || masteryEl) && <span className="ml-auto shrink-0 flex items-center gap-1.5">{badge}{masteryEl}</span>}
             </div>
             <Pron de={v.de} />
             <div className="text-sm text-slate-500 truncate">{v.en}</div>
@@ -76,7 +103,7 @@ export default function VocabCard({ v, layout = 'compact', showHint = false, bad
           </div>
         )}
       </div>
-      {badge}
+      {(badge || masteryEl) && <div className="shrink-0 flex flex-col items-end gap-1">{badge}{masteryEl}</div>}
     </div>
   );
 }
