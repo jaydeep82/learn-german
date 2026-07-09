@@ -5,8 +5,12 @@ A prioritized plan to turn **Deutsch30** from a strong daily study app into a fa
 practice in the **exact four exam formats**, plus the retention and polish that keep learners
 coming back.
 
-**Current state:** `v3.21.0` (live on AWS) · 2,407 words (979 course · 689 Fit-1 · 739 SD1) ·
-50-day course + grammar · 7 exercise types + Practice mode · 27 data-validation tests.
+**Current state:** `v3.27.0` (live on AWS) · **full A1 exam trainer — all four skills + a timed mock** ·
+2,407 words (979 course · 689 Fit-1 · 739 SD1) · 50-day course + grammar · Practice mode · CI + 59 tests.
+
+> **Progress — Track A is ✅ complete** (shipped v3.22.0 → v3.27.0). The headline gap below is closed:
+> learners can now practise every Goethe A1 skill in its real format and sit a full timed mock exam.
+> Tracks B–D (retention, UX, content) are the next priorities.
 
 **Legend** — Priority: **P0** Now · **P1** Next · **P2** Later ·  Effort: **S** / **M** / **L** ·
 Skills: 🎧 Hören · 📖 Lesen · ✍️ Schreiben · 🗣️ Sprechen
@@ -35,22 +39,25 @@ _Hören_, _Lesen_, _Schreiben_, or _Sprechen_ task in the real format, under tim
 60%.** So this roadmap leads with **exam-format practice**, then adds the retention and UX work
 that makes daily study stick.
 
+> ✅ **This gap is now closed** (Track A, v3.22.0–v3.27.0): every skill is practisable in the real
+> format, and a full timed mock scores you against 60%. Focus shifts to retention (Track B) next.
+
 ---
 
-## Track A · The exam trainer — practice the four formats
+## Track A · The exam trainer — ✅ COMPLETE
 
-The core of certification readiness. Build the task types once as reusable components, then
-assemble them into per-skill practice and a full timed mock.
+The core of certification readiness — built the task types once as reusable components, then
+assembled them into per-skill practice and a full timed mock. **All shipped, v3.22.0 → v3.27.0.**
 
-| # | Task | Pri | Effort | Skill | Why |
-|---|---|---|---|---|---|
-| A1 | **Exam-format exercise components** | P0 | M | — | New building blocks the rest of Track A depends on: picture MCQ, richtig/falsch, ad-matching, form-fill, word-card prompts. Extends the existing engine, so scoring/XP/streaks come for free. |
-| A2 | **Lesen (Reading) module** | P0 | M | 📖 | All three reading parts. No audio dependency → fastest exam module to ship first. |
-| A3 | **Schreiben (Writing) module** | P0 | M | ✍️ | Part 1 form-fill (auto-check); Part 2 ~30-word message with live word-count, checklist, and a model answer to compare against. |
-| A4 | **Reliable listening audio** | P1 | M | 🎧 | Browser speech synthesis is inconsistent (some devices lack a German voice) — fatal for a listening test. Pre-generate clips or ship a better voice. Prerequisite for A5. |
-| A5 | **Hören (Listening) module** | P0 | L | 🎧 | The three listening parts with real audio, each playable twice like the real exam. _Needs A4._ |
-| A6 | **Sprechen (Speaking) practice** | P1 | M | 🗣️ | Guided self-intro, keyword Q&A cards, request/picture cards — each with a model answer, spoken example, and record-yourself playback. |
-| A7 | **Full timed mock exam** | P0 | L | — | All four modules end-to-end with per-module timers, scored against the 60% pass mark, ending in an **“exam-ready?”** verdict + per-skill breakdown. The single most motivating feature. |
+| # | Task | Done | Skill | What shipped |
+|---|---|---|---|---|
+| A1 | **Exam-format exercise components** | ✅ v3.22 | — | Five reusable tasks (picture-MCQ, richtig/falsch, ad-match, form-fill, speaking-card) + a `/exam-formats` preview. Later joined by guided-writing (A3) and audio-aware variants (A4). |
+| A2 | **Lesen (Reading) module** | ✅ v3.23 | 📖 | `/lesen` — all three reading parts (emails, ad-matching, signs), scored with a 60% pass badge. Added the Exam hub + nav. |
+| A3 | **Schreiben (Writing) module** | ✅ v3.24 | ✍️ | `/schreiben` — form-fill (accent-tolerant) + a guided ~30-word message with live word-count and model comparison. |
+| A4 | **Reliable listening audio** | ✅ v3.25 | 🎧 | Hardened `useTTS` + `ListeningPlayer`: replay, slower playback, and a transcript fallback (auto when no German voice) so a listening task is never a dead end. _Browser voice for now; pre-generated clips are a future upgrade._ |
+| A5 | **Hören (Listening) module** | ✅ v3.25 | 🎧 | `/hoeren` — dialogues → picture, announcements → true/false, messages → MCQ, all on the reliable player. |
+| A6 | **Sprechen (Speaking) module** | ✅ v3.26 | 🗣️ | `/sprechen` — introduce yourself, keyword Q&A, polite requests; say aloud → model answer with audio → self-rate. |
+| A7 | **Full timed mock exam** | ✅ v3.27 | — | `/mock` — all four modules back to back with per-module countdowns; one overall score (skills weighted equally) vs the 60% pass mark, an “on track to pass?” verdict, and a per-skill breakdown. |
 
 ## Track B · Make it stick — retention & effectiveness
 
@@ -83,7 +90,7 @@ Fills the last content gaps and keeps the growing codebase safe to change.
 |---|---|---|---|---|
 | D1 | **Model texts & phrase bank** | P1 | S | Email/message templates and speaking chunks (greetings, asking, thanking) — raw material reused in Schreiben and Sprechen. |
 | D2 | **Grammar syllabus audit** | P1 | M | Check the 50-day grammar against the official A1 inventory (cases, tenses, prepositions, imperative, modals) and fill gaps. |
-| D3 | **Continuous integration** | P1 | S | GitHub Actions to run the test suite + build on every push — cheap insurance now that tests exist. |
+| D3 | **Continuous integration** ✅ | ✅ v3.22 | S | GitHub Actions runs the test suite + build on every push. _Done — shipped alongside A1._ |
 | D4 | **English example translations** | P2 | M | Many vocab examples lack an `exampleEn`; adding them helps true beginners and unlocks reverse (English→German) drills. |
 | D5 | **Tests for exercises & SRS · lint** | P2 | M | Extend coverage beyond data to exercise logic and the scheduler; add ESLint for consistency. |
 
@@ -94,11 +101,11 @@ Fills the last content gaps and keeps the growing codebase safe to change.
 Front-load the exam trainer with the quickest wins, defer what depends on audio, and keep the
 foundations moving alongside.
 
-1. **Foundations first (A1 + D3)** — build the exam-format components and wire up CI; everything else rides on these.
-2. **Ship reading & writing (A2, A3)** — no audio needed, so two real exam modules land fast and prove the format.
-3. **Make listening trustworthy (A4 → A5)** — fix audio, then build Hören on top of it.
-4. **Add speaking & the mock (A6, A7)** — complete all four skills, then the capstone timed exam.
-5. **Turn on retention (B1–B3)** — spaced repetition and the readiness dashboard, now that mock data exists to drive them.
+1. ~~**Foundations first (A1 + D3)** — build the exam-format components and wire up CI.~~ ✅ **done**
+2. ~~**Ship reading & writing (A2, A3)** — two real exam modules, no audio needed.~~ ✅ **done**
+3. ~~**Make listening trustworthy (A4 → A5)** — fix audio, then build Hören.~~ ✅ **done**
+4. ~~**Add speaking & the mock (A6, A7)** — all four skills, then the capstone timed exam.~~ ✅ **done**
+5. **Turn on retention (B1–B3)** ← **next** — spaced repetition and the readiness dashboard, now that mock data exists to drive them.
 6. **Polish & reach (C1–C6, D-track)** — PWA, accessibility, dashboards, and the remaining content depth.
 
 ---
