@@ -77,7 +77,7 @@ The everyday feel: installable, fast, motivating, usable by everyone.
 
 | # | Task | Pri | Effort | Why |
 |---|---|---|---|---|
-| C1 | **Offline & installable (PWA)** | P1 | M | A language app lives on the commute. Service worker + manifest so lessons and audio work offline and the app installs to the home screen. |
+| C1 | **Offline & installable (PWA)** ✅ | ✅ v3.31 | M | Done — vite-plugin-pwa: full-app precache (works offline incl. TTS audio), install to home screen (manifest + icons + iOS meta), silent auto-updates, deploy pipeline hardened (no-cache + invalidation for the service worker). |
 | C2 | **Accessibility pass** | P1 | M | Full keyboard nav, visible focus, ARIA on the exercise widgets, contrast checks — so screen-reader and keyboard users can complete every task. |
 | C3 | **Exam-date onboarding & goals** | P2 | S | Set a test date + daily goal; show a countdown and the pace needed to be ready in time. |
 | C4 | **Progress dashboard** | P2 | M | Accuracy trends, a streak calendar heat-map, and words-learned over time. |

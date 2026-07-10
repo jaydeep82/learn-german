@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.30.0';
+export const VERSION = '3.31.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.31.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Install the app & study offline (PWA)',
+    notes: [
+      'Deutsch30 is now an installable app: on your phone choose “Add to Home Screen” (or the install icon in the address bar on desktop) and it opens full-screen with its own icon.',
+      'The whole app — all 50 lessons, 2,400+ words, the exam trainer and daily review — is cached on your device, so it works fully offline: perfect for the commute. Audio keeps working offline too, since it uses your device’s own voice.',
+      'Updates install themselves silently on the next visit. Deploy pipeline hardened so new versions always reach installed apps.',
+    ],
+  },
   {
     version: '3.30.0',
     date: '2026-06-14',
