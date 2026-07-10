@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage.js';
 import { BADGES } from '../data/badges.js';
-import { gradeCard, knownCard, todayStr, KNOWN_LEVEL } from '../data/srs.js';
+import { gradeCard, knownCard, todayStr, KNOWN_LEVEL } from '../data/srsCore.js';
 
 /**
  * Single source of truth for learner state. Persisted to localStorage so

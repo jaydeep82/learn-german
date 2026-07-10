@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { allVocab, vocabByTopic } from '../data/vocabulary.js';
 import { collections } from '../data/taggedVocab.js';
 import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
@@ -50,11 +50,17 @@ function buildQuiz(testItems, distractorPool, count) {
 
 export default function Practice() {
   const { preset } = useParams();
+  const [searchParams] = useSearchParams();
   const initial = SOURCES.some((s) => s.key === preset) ? preset : 'adults';
 
+  // Deep link from the Vocabulary page: /practice/:key?group=<title>&mode=quiz
+  const initialSource = SOURCES.find((s) => s.key === initial);
+  const groupParam = searchParams.get('group');
+  const initialGroupIdx = groupParam ? initialSource.groups.findIndex((g) => g.title === groupParam) : -1;
+
   const [sourceKey, setSourceKey] = useState(initial);
-  const [groupIdx, setGroupIdx] = useState(-1); // -1 = all words
-  const [mode, setMode] = useState('flashcards'); // 'flashcards' | 'quiz'
+  const [groupIdx, setGroupIdx] = useState(initialGroupIdx); // -1 = all words
+  const [mode, setMode] = useState(searchParams.get('mode') === 'quiz' ? 'quiz' : 'flashcards');
   const [length, setLength] = useState(10);
   const [stage, setStage] = useState('setup'); // 'setup' | 'run' | 'done'
   const [exercises, setExercises] = useState(null);

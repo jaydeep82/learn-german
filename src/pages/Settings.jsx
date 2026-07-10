@@ -34,6 +34,17 @@ export default function Settings() {
           <span>Audio (TTS)</span>
           <input type="checkbox" checked={!!state.settings?.audio} onChange={set('audio')} className="h-5 w-5" />
         </label>
+        <label className="flex items-center justify-between gap-4">
+          <span>Speech speed <span className="text-slate-500 text-sm">(all 🔊 buttons)</span></span>
+          <select
+            value={state.settings?.speechRate || 'normal'}
+            onChange={set('speechRate')}
+            className="rounded-lg border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5"
+          >
+            <option value="normal">Normal</option>
+            <option value="slow">Slower 🐢</option>
+          </select>
+        </label>
         <p className="text-sm text-slate-500">
           {supported
             ? voice ? <>Using voice <strong>{voice.name}</strong> ({voice.lang}).</>

@@ -1,51 +1,70 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout.jsx';
-import Home from './pages/Home.jsx';
-import DayLesson from './pages/DayLesson.jsx';
-import Review from './pages/Review.jsx';
-import DailyReview from './pages/DailyReview.jsx';
-import Vocabulary from './pages/Vocabulary.jsx';
-import Practice from './pages/Practice.jsx';
-import Exam from './pages/Exam.jsx';
-import Lesen from './pages/Lesen.jsx';
-import Schreiben from './pages/Schreiben.jsx';
-import Hoeren from './pages/Hoeren.jsx';
-import Sprechen from './pages/Sprechen.jsx';
-import Mock from './pages/Mock.jsx';
-import Readiness from './pages/Readiness.jsx';
-import Progress from './pages/Progress.jsx';
-import ExamFormats from './pages/ExamFormats.jsx';
-import Grammar from './pages/Grammar.jsx';
-import Cheatsheet from './pages/Cheatsheet.jsx';
-import About from './pages/About.jsx';
-import Settings from './pages/Settings.jsx';
+
+/**
+ * Every page is a lazy route (roadmap C6): the entry bundle carries only the
+ * shell (Layout + AppContext + scheduling core), while heavyweight data —
+ * the 50-day curriculum, the 2,400-word lists, the exam modules — loads with
+ * the routes that use it. The PWA precaches all chunks, so offline and
+ * stale-deploy navigation keep working.
+ */
+const Home = lazy(() => import('./pages/Home.jsx'));
+const DayLesson = lazy(() => import('./pages/DayLesson.jsx'));
+const Review = lazy(() => import('./pages/Review.jsx'));
+const DailyReview = lazy(() => import('./pages/DailyReview.jsx'));
+const Vocabulary = lazy(() => import('./pages/Vocabulary.jsx'));
+const Practice = lazy(() => import('./pages/Practice.jsx'));
+const Exam = lazy(() => import('./pages/Exam.jsx'));
+const Lesen = lazy(() => import('./pages/Lesen.jsx'));
+const Schreiben = lazy(() => import('./pages/Schreiben.jsx'));
+const Hoeren = lazy(() => import('./pages/Hoeren.jsx'));
+const Sprechen = lazy(() => import('./pages/Sprechen.jsx'));
+const Mock = lazy(() => import('./pages/Mock.jsx'));
+const Readiness = lazy(() => import('./pages/Readiness.jsx'));
+const Progress = lazy(() => import('./pages/Progress.jsx'));
+const ExamFormats = lazy(() => import('./pages/ExamFormats.jsx'));
+const Grammar = lazy(() => import('./pages/Grammar.jsx'));
+const Cheatsheet = lazy(() => import('./pages/Cheatsheet.jsx'));
+const About = lazy(() => import('./pages/About.jsx'));
+const Settings = lazy(() => import('./pages/Settings.jsx'));
+
+function PageLoading() {
+  return (
+    <div className="flex items-center justify-center py-24" role="status" aria-label="Loading page">
+      <span className="text-3xl animate-pulse" aria-hidden>🇩🇪</span>
+    </div>
+  );
+}
 
 export default function App() {
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/day/:dayId" element={<DayLesson />} />
-        <Route path="/daily" element={<DailyReview />} />
-        <Route path="/review/:kind" element={<Review />} />
-        <Route path="/vocabulary" element={<Vocabulary />} />
-        <Route path="/practice" element={<Practice />} />
-        <Route path="/practice/:preset" element={<Practice />} />
-        <Route path="/exam" element={<Exam />} />
-        <Route path="/lesen" element={<Lesen />} />
-        <Route path="/schreiben" element={<Schreiben />} />
-        <Route path="/hoeren" element={<Hoeren />} />
-        <Route path="/sprechen" element={<Sprechen />} />
-        <Route path="/mock" element={<Mock />} />
-        <Route path="/readiness" element={<Readiness />} />
-        <Route path="/progress" element={<Progress />} />
-        <Route path="/exam-formats" element={<ExamFormats />} />
-        <Route path="/grammar" element={<Grammar />} />
-        <Route path="/cheatsheet/:slug" element={<Cheatsheet />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <Suspense fallback={<PageLoading />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/day/:dayId" element={<DayLesson />} />
+          <Route path="/daily" element={<DailyReview />} />
+          <Route path="/review/:kind" element={<Review />} />
+          <Route path="/vocabulary" element={<Vocabulary />} />
+          <Route path="/practice" element={<Practice />} />
+          <Route path="/practice/:preset" element={<Practice />} />
+          <Route path="/exam" element={<Exam />} />
+          <Route path="/lesen" element={<Lesen />} />
+          <Route path="/schreiben" element={<Schreiben />} />
+          <Route path="/hoeren" element={<Hoeren />} />
+          <Route path="/sprechen" element={<Sprechen />} />
+          <Route path="/mock" element={<Mock />} />
+          <Route path="/readiness" element={<Readiness />} />
+          <Route path="/progress" element={<Progress />} />
+          <Route path="/exam-formats" element={<ExamFormats />} />
+          <Route path="/grammar" element={<Grammar />} />
+          <Route path="/cheatsheet/:slug" element={<Cheatsheet />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Suspense>
     </Layout>
   );
 }

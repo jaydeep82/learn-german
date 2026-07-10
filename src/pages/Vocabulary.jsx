@@ -44,6 +44,9 @@ export default function Vocabulary() {
   const [q, setQ] = useState('');
   const [scope, setScope] = useState('all');
   const [hideKnown, setHideKnown] = useState(false);
+  const [groupSel, setGroupSel] = useState('all'); // group title, per selected collection
+
+  const pickScope = (key) => { setScope(key); setGroupSel('all'); };
 
   const visible = (items) => (hideKnown ? items.filter((v) => masteryOf(srs, v.de) !== 'known') : items);
   const cardProps = (v) => ({ mastery: masteryOf(srs, v.de), onToggleKnown: () => toggleKnown(v.de) });
@@ -85,7 +88,7 @@ export default function Vocabulary() {
             <button
               key={s.key}
               type="button"
-              onClick={() => setScope(s.key)}
+              onClick={() => pickScope(s.key)}
               aria-pressed={scope === s.key}
               className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-semibold transition ${
                 scope === s.key
@@ -102,6 +105,24 @@ export default function Vocabulary() {
           Hide known
         </label>
       </div>
+
+      {/* Theme/letter filter — when browsing a single collection */}
+      {!q.trim() && collections.some((c) => c.key === scope) && (
+        <div className="flex items-center gap-2">
+          <label htmlFor="group-filter" className="text-xs font-semibold text-slate-500 shrink-0">Jump to group</label>
+          <select
+            id="group-filter"
+            value={groupSel}
+            onChange={(e) => setGroupSel(e.target.value)}
+            className="rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5 text-sm w-full sm:w-80"
+          >
+            <option value="all">All groups</option>
+            {collections.find((c) => c.key === scope).groups.map((g) => (
+              <option key={g.title} value={g.title}>{g.emoji} {g.title} ({g.items.length})</option>
+            ))}
+          </select>
+        </div>
+      )}
 
       {results ? (
         <section className="card">
@@ -171,6 +192,7 @@ export default function Vocabulary() {
                 </header>
 
                 {c.groups.map((g) => {
+                  if (scope === c.key && groupSel !== 'all' && g.title !== groupSel) return null;
                   const items = visible(g.items);
                   if (!items.length) return null;
                   return (
@@ -180,6 +202,13 @@ export default function Vocabulary() {
                         <span>{g.title}</span>
                         {g.titleDe && <span className="text-sm text-slate-400 font-normal">· {g.titleDe}</span>}
                         <span className="ml-auto text-xs text-slate-400">{items.length}</span>
+                        <Link
+                          to={`/practice/${c.key}?group=${encodeURIComponent(g.title)}&mode=quiz`}
+                          className="text-xs font-semibold text-brand-600 hover:underline shrink-0"
+                          aria-label={`Quiz the group ${g.title}`}
+                        >
+                          Quiz →
+                        </Link>
                       </h3>
                       <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                         {items.map((v, i) => (

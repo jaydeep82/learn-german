@@ -6,11 +6,12 @@ export default function AudioButton({ text, label = 'Hear pronunciation', size =
   const { state } = useApp();
   if (!supported || !state.settings?.audio) return null;
 
+  const rate = state.settings?.speechRate === 'slow' ? 0.72 : 0.95;
   const sizes = { sm: 'h-7 w-7 text-sm', md: 'h-9 w-9 text-base', lg: 'h-11 w-11 text-lg' };
   return (
     <button
       type="button"
-      onClick={() => speak(text)}
+      onClick={() => speak(text, { rate })}
       aria-label={`${label}: ${text}`}
       title={label}
       className={`inline-flex items-center justify-center rounded-full bg-brand-50 text-brand-700 hover:bg-brand-100

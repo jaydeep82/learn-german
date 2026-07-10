@@ -8,8 +8,7 @@
  *     completion dates, skill-session dates, and each SRS card's last
  *     review date. A day with a log entry ignores the proxies.
  */
-import { todayStr } from './srs.js';
-import { INTERVALS, MAX_LEVEL } from './srs.js';
+import { todayStr, INTERVALS, MAX_LEVEL } from './srsCore.js';
 import { SKILLS } from './readiness.js';
 
 /** date -> intensity points, merged from the log + retro proxies. */

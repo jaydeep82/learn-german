@@ -71,9 +71,10 @@ Turns browsing into remembering, and tells each learner exactly what to study ne
 | B2 | **Per-word mastery & collection progress** | ✅ v3.29 | Coverage bars per collection (*“412 / 739 known”*), ○/✓ mark-as-known on every card, “Hide known” filter — all shared with the SRS. |
 | B3 | **Exam-readiness dashboard** | ✅ v3.30 | `/readiness` — every module/mock sitting recorded; recency-weighted (mock-boosted) %-ready gauge per skill, overall verdict, “Focus next” weakest-skill callout, vocab-memory stats. |
 
-## Track C · Experience — UX & polish
+## Track C · Experience — ✅ COMPLETE
 
 The everyday feel: installable, fast, motivating, usable by everyone.
+**All shipped, v3.31.0 → v3.35.0.**
 
 | # | Task | Pri | Effort | Why |
 |---|---|---|---|---|
@@ -81,8 +82,8 @@ The everyday feel: installable, fast, motivating, usable by everyone.
 | C2 | **Accessibility pass** ✅ | ✅ v3.32 | M | Done — match exercise rebuilt on real buttons (full keyboard), answer feedback announced via live regions, all German text tagged `lang="de"` for correct screen-reader pronunciation, German spell-check in writing fields, toggle states exposed, contrast bumps. (Focus rings, skip link, reduced-motion already existed.) |
 | C3 | **Exam-date onboarding & goals** ✅ | ✅ v3.33 | S | Done — set the exam date on the dashboard or in Settings; countdown card with lessons/day + new-words/day pace, readiness chip, final-week mock nudge, exam-day mode. |
 | C4 | **Progress dashboard** ✅ | ✅ v3.34 | M | Done — `/progress` (header streak/XP links to it): stat tiles, 16-week activity heat-map (new per-day log + retro reconstruction), per-session accuracy bars vs the 60% line, SRS memory-pipeline histogram. Hand-rolled charts, offline-friendly. |
-| C5 | **Vocabulary quality-of-life** | P2 | S | Within a collection: filter by theme/letter, “mark as known”, one-tap “quiz this group”. |
-| C6 | **Audio controls & performance** | P2 | M | Replay, slow-playback, guaranteed German-voice fallback; code-split the 1.2 MB bundle into lazy routes. |
+| C5 | **Vocabulary quality-of-life** ✅ | ✅ v3.35 | S | Done — per-collection theme/letter group filter; one-tap “Quiz →” on every group header deep-links into Practice (group + quiz mode preloaded). “Mark as known” had shipped with B2. |
+| C6 | **Audio controls & performance** ✅ | ✅ v3.35 | M | Done — global “Speech speed” setting slows every 🔊 button (listening player already had replay/slow/transcript from A4); all routes lazy-loaded with the SRS core split from word data → initial bundle 1.4 MB → 0.38 MB (−73%), full offline retained via PWA precache. |
 
 ## Track D · Content depth & engineering health
 
@@ -108,7 +109,8 @@ foundations moving alongside.
 3. ~~**Make listening trustworthy (A4 → A5)** — fix audio, then build Hören.~~ ✅ **done**
 4. ~~**Add speaking & the mock (A6, A7)** — all four skills, then the capstone timed exam.~~ ✅ **done**
 5. ~~**Turn on retention (B1–B3)** — spaced repetition, word mastery, and the readiness dashboard.~~ ✅ **done**
-6. **Polish & reach (C1–C6, D-track)** ← **next** — PWA, accessibility, dashboards, and the remaining content depth.
+6. ~~**Polish & reach (C1–C6)** — PWA, accessibility, goals, dashboards, QoL, performance.~~ ✅ **done**
+7. **Content depth (D1, D2, D4, D5)** ← **next** — phrase bank, grammar syllabus audit, example translations, lint/tests.
 
 ---
 

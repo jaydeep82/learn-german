@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.34.0';
+export const VERSION = '3.35.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.35.0',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Vocabulary shortcuts · slower speech · a much faster app',
+    notes: [
+      'Vocabulary: when browsing a collection, jump straight to any theme or letter with the new group filter — and every group header has a “Quiz →” that opens Practice preloaded with exactly those words in quiz mode.',
+      'Audio: new “Speech speed” setting (Settings → Slower 🐢) slows every 🔊 pronunciation button — great while your ear is still tuning in. The listening player keeps its own per-clip controls.',
+      'Performance: the app is now code-split — the initial download dropped by ~73% (1.4 MB → 0.38 MB); lesson and word data load with the pages that need them. Offline/installed use still precaches everything, so nothing changes on the PWA.',
+    ],
+  },
   {
     version: '3.34.0',
     date: '2026-06-14',
