@@ -34,7 +34,16 @@ const defaults = {
   badges: [],
   srs: {},
   skillResults: {},
+  activity: {},
   settings: { audio: true, kid: false, theme: 'system' },
+};
+
+/* Per-day activity log for the progress dashboard: { [date]: { answers, reviews, lessons } } */
+const bumpActivity = (activity = {}, key) => {
+  const t = todayStr();
+  const day = { ...(activity[t] || {}) };
+  day[key] = (day[key] || 0) + 1;
+  return { ...activity, [t]: day };
 };
 
 const AppContext = createContext(null);
@@ -93,6 +102,7 @@ export function AppProvider({ children }) {
         ...s.answered,
         [dayId]: { ...(s.answered?.[dayId] || {}), [idx]: correct ? 'correct' : 'wrong' },
       },
+      activity: bumpActivity(s.activity, 'answers'),
     }));
   }, [setState]);
 
@@ -109,6 +119,7 @@ export function AppProvider({ children }) {
             completedAt: today(),
           },
         },
+        activity: bumpActivity(s.activity, 'lessons'),
       };
     });
   }, [setState]);
@@ -121,7 +132,11 @@ export function AppProvider({ children }) {
   const reviewSrs = useCallback((de, grade) => {
     setState((s) => {
       const srs = s.srs || {};
-      return { ...s, srs: { ...srs, [de]: gradeCard(srs[de], grade, todayStr()) } };
+      return {
+        ...s,
+        srs: { ...srs, [de]: gradeCard(srs[de], grade, todayStr()) },
+        activity: bumpActivity(s.activity, 'reviews'),
+      };
     });
   }, [setState]);
 

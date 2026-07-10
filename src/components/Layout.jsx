@@ -36,8 +36,10 @@ export default function Layout({ children }) {
           </nav>
 
           <div className="ml-auto flex items-center gap-2">
-            <StreakIndicator className="hidden sm:inline-flex" />
-            <XPBadge className="hidden sm:inline-flex" />
+            <Link to="/progress" aria-label="Your progress" title="Your progress" className="hidden sm:flex items-center gap-2 hover:opacity-80">
+              <StreakIndicator />
+              <XPBadge />
+            </Link>
             <button
               className="btn-ghost px-2 py-1.5"
               aria-label={`Toggle ${state.settings?.kid ? 'adult' : 'kid'} mode`}

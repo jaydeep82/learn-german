@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.33.0';
+export const VERSION = '3.34.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.34.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Progress dashboard — heat-map, accuracy trend, memory pipeline',
+    notes: [
+      'New 📊 Progress page (tap your streak/XP in the header, or the link under Badges): six stat tiles, a GitHub-style study-activity heat-map of the last 16 weeks, your exam-practice accuracy per session against the 60% pass line, and a “memory pipeline” showing how many words sit at each spaced-repetition level.',
+      'The app now keeps a small per-day activity log (answers, reviews, lessons) on your device; earlier days are reconstructed from lesson and practice dates you already earned.',
+      'Charts are hand-drawn (no chart library), so the app stays light and works offline.',
+    ],
+  },
   {
     version: '3.33.0',
     date: '2026-06-14',

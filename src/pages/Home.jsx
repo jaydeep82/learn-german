@@ -226,7 +226,12 @@ export default function Home() {
       })}
 
       <section aria-labelledby="badges">
-        <h2 id="badges" className="text-xl sm:text-2xl font-bold mb-3">Badges</h2>
+        <div className="flex items-baseline gap-3 mb-3">
+          <h2 id="badges" className="text-xl sm:text-2xl font-bold">Badges</h2>
+          <Link to="/progress" className="ml-auto text-sm font-semibold text-brand-700 dark:text-brand-300 hover:underline">
+            📊 See your full progress →
+          </Link>
+        </div>
         <BadgeWall />
       </section>
     </div>
