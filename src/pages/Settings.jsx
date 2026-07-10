@@ -42,6 +42,25 @@ export default function Settings() {
         </p>
       </section>
 
+      <section className="card space-y-3">
+        <h2 className="font-bold">Exam goal</h2>
+        <label className="flex items-center justify-between gap-4">
+          <span>Goethe A1 exam date <span className="text-slate-500 text-sm">(drives the dashboard countdown & pace)</span></span>
+          <input
+            type="date"
+            value={state.settings?.examDate || ''}
+            onChange={set('examDate')}
+            className="rounded-lg border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-1.5"
+          />
+        </label>
+        {state.settings?.examDate && (
+          <button className="text-sm text-slate-500 underline hover:text-slate-700 dark:hover:text-slate-300"
+            onClick={() => updateSettings({ examDate: null })}>
+            Clear exam date
+          </button>
+        )}
+      </section>
+
       <section className="card">
         <h2 className="font-bold mb-2">Progress</h2>
         <p className="text-sm text-slate-500 mb-3">XP: {state.xp || 0} · Streak: {state.streak || 0} · Days passed: {Object.values(state.completed||{}).filter(c=>c.score>=0.7).length}</p>

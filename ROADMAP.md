@@ -79,7 +79,7 @@ The everyday feel: installable, fast, motivating, usable by everyone.
 |---|---|---|---|---|
 | C1 | **Offline & installable (PWA)** ✅ | ✅ v3.31 | M | Done — vite-plugin-pwa: full-app precache (works offline incl. TTS audio), install to home screen (manifest + icons + iOS meta), silent auto-updates, deploy pipeline hardened (no-cache + invalidation for the service worker). |
 | C2 | **Accessibility pass** ✅ | ✅ v3.32 | M | Done — match exercise rebuilt on real buttons (full keyboard), answer feedback announced via live regions, all German text tagged `lang="de"` for correct screen-reader pronunciation, German spell-check in writing fields, toggle states exposed, contrast bumps. (Focus rings, skip link, reduced-motion already existed.) |
-| C3 | **Exam-date onboarding & goals** | P2 | S | Set a test date + daily goal; show a countdown and the pace needed to be ready in time. |
+| C3 | **Exam-date onboarding & goals** ✅ | ✅ v3.33 | S | Done — set the exam date on the dashboard or in Settings; countdown card with lessons/day + new-words/day pace, readiness chip, final-week mock nudge, exam-day mode. |
 | C4 | **Progress dashboard** | P2 | M | Accuracy trends, a streak calendar heat-map, and words-learned over time. |
 | C5 | **Vocabulary quality-of-life** | P2 | S | Within a collection: filter by theme/letter, “mark as known”, one-tap “quiz this group”. |
 | C6 | **Audio controls & performance** | P2 | M | Replay, slow-playback, guaranteed German-voice fallback; code-split the 1.2 MB bundle into lazy routes. |

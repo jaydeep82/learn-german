@@ -3,6 +3,7 @@ import { useApp } from '../store/AppContext.jsx';
 import { days, weeks } from '../data/curriculum.js';
 import { dueCount, learningCount, todayStr } from '../data/srs.js';
 import { ProgressBar, BadgeWall, XPBadge, StreakIndicator } from '../components/ProgressUI.jsx';
+import ExamCountdown from '../components/ExamCountdown.jsx';
 
 function DayCard({ day, unlocked, score }) {
   const cls = unlocked
@@ -67,6 +68,8 @@ export default function Home() {
           <Link to="/vocabulary"     className="btn bg-white/10 text-white hover:bg-white/20">Vocabulary</Link>
         </div>
       </section>
+
+      <ExamCountdown />
 
       <Link to="/daily" className="block card bg-gradient-to-br from-amber-50 to-brand-50 dark:from-slate-900 dark:to-slate-900 hover:shadow-md transition">
         <div className="flex items-center gap-4">

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useApp } from '../store/AppContext.jsx';
 import { readinessReport, PASS_RATIO } from '../data/readiness.js';
+import { daysUntil } from '../data/examGoals.js';
 import { ALL_WORDS, collectionStats, dueCount, todayStr } from '../data/srs.js';
 
 /**
@@ -65,7 +66,14 @@ export default function Readiness() {
     <div className="space-y-6 max-w-3xl">
       <div>
         <Link to="/exam" className="text-sm text-slate-500 hover:underline">← Exam trainer</Link>
-        <h1 className="text-2xl sm:text-3xl font-extrabold mt-1">📈 Exam readiness</h1>
+        <h1 className="text-2xl sm:text-3xl font-extrabold mt-1 flex items-center gap-3 flex-wrap">
+          <span>📈 Exam readiness</span>
+          {state.settings?.examDate && daysUntil(state.settings.examDate, todayStr()) >= 0 && (
+            <span className="pill bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300 text-sm">
+              🎯 {daysUntil(state.settings.examDate, todayStr())} days to your exam
+            </span>
+          )}
+        </h1>
         <p className="text-slate-500 mt-1">
           How close you are to the Goethe A1, measured from your exam-format practice and mock results.
           Recent sessions count more; mock sittings count extra.

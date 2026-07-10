@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.32.0';
+export const VERSION = '3.33.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.33.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Exam-date goal — countdown & daily pace',
+    notes: [
+      'Set your Goethe A1 exam date right on the dashboard (or in Settings) and get a countdown card: days to go, how many lessons a day finish the course in time, and how many new words a day cover the full word list before the exam.',
+      'In the final week the card switches to exam mode — sit a timed mock and drill your weak spots; on exam day it wishes you viel Erfolg. 🍀',
+      'Your readiness % appears on the card, and the Readiness page shows the countdown too. Clear or change the date any time.',
+    ],
+  },
   {
     version: '3.32.0',
     date: '2026-06-14',
