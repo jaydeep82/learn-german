@@ -96,7 +96,7 @@ export default function DailyReview() {
       </div>
       <ProgressBar value={pos} max={queue.length} label="Review progress" />
 
-      <div className="flex justify-center">
+      <div className="flex justify-center" aria-live="polite">
         <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${
           card.kind === 'new'
             ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300'
@@ -106,13 +106,13 @@ export default function DailyReview() {
       </div>
 
       <div className="card min-h-[220px] flex flex-col items-center justify-center gap-3 text-center">
-        <div className="text-3xl sm:text-5xl font-bold tracking-tight">{card.de}</div>
+        <div lang="de" className="text-3xl sm:text-5xl font-bold tracking-tight">{card.de}</div>
         <Pron de={card.de} size="md" />
         <AudioButton text={card.de} size="lg" />
         {revealed && (
           <div className="mt-2 space-y-2">
             <div className="text-xl font-semibold text-brand-700 dark:text-brand-300">{card.en}</div>
-            {card.example && <p className="text-sm text-slate-500 italic">“{card.example}”</p>}
+            {card.example && <p lang="de" className="text-sm text-slate-500 italic">“{card.example}”</p>}
           </div>
         )}
       </div>

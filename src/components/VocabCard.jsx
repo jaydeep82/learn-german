@@ -57,7 +57,7 @@ export default function VocabCard({ v, layout = 'compact', showHint = false, bad
           )}
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
-              <span className="font-extrabold text-lg leading-tight truncate">{v.de}</span>
+              <span lang="de" className="font-extrabold text-lg leading-tight truncate">{v.de}</span>
               {v.emoji && <AudioButton text={v.de} size="sm" />}
               {(badge || masteryEl) && <span className="ml-auto shrink-0 flex items-center gap-1.5">{badge}{masteryEl}</span>}
             </div>
@@ -69,7 +69,7 @@ export default function VocabCard({ v, layout = 'compact', showHint = false, bad
         {v.example && (
           <div className="mt-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 px-3 py-2">
             <div className="flex items-start gap-2">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-200 flex-1">{v.example}</span>
+              <span lang="de" className="text-sm font-medium text-slate-700 dark:text-slate-200 flex-1">{v.example}</span>
               <AudioButton text={v.example} size="sm" />
             </div>
             <Pron de={v.example} />
@@ -87,7 +87,7 @@ export default function VocabCard({ v, layout = 'compact', showHint = false, bad
       <div className="flex-1 min-w-0">
         <div className="font-semibold truncate">
           {v.emoji && <span className="mr-1.5" aria-hidden>{v.emoji}</span>}
-          {v.de}
+          <span lang="de">{v.de}</span>
         </div>
         <Pron de={v.de} />
         <div className="text-sm text-slate-500 truncate">{v.en}</div>
@@ -95,7 +95,7 @@ export default function VocabCard({ v, layout = 'compact', showHint = false, bad
         {v.example && (
           <div className="mt-1.5 border-t border-slate-100 dark:border-slate-800 pt-1.5">
             <div className="flex items-start gap-1.5">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-200 flex-1">{v.example}</span>
+              <span lang="de" className="text-sm font-medium text-slate-700 dark:text-slate-200 flex-1">{v.example}</span>
               <AudioButton text={v.example} size="sm" />
             </div>
             <Pron de={v.example} />

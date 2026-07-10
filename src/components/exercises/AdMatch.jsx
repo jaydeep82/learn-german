@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SrStatus from '../SrStatus.jsx';
 
 /**
  * Goethe A1 advert-matching — used in Lesen Teil 2 (read a person's situation,
@@ -15,9 +16,10 @@ export default function AdMatch({ situation, options = [], answer, explain, onDo
 
   return (
     <div className="space-y-4">
+      <SrStatus>{decided ? (picked === answer ? 'Correct!' : 'Not quite — the right advert is highlighted.') : ''}</SrStatus>
       <div className="card bg-brand-50 dark:bg-slate-800">
         <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">Situation</p>
-        <p className="leading-relaxed">{situation}</p>
+        <p lang="de" className="leading-relaxed">{situation}</p>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-3" role="group" aria-label="Advert options">
@@ -41,11 +43,11 @@ export default function AdMatch({ situation, options = [], answer, explain, onDo
                 <span className="w-6 h-6 rounded-full bg-brand-600 text-white text-xs font-bold flex items-center justify-center uppercase">
                   {opt.key}
                 </span>
-                <span className="font-bold">{opt.title}</span>
+                <span lang="de" className="font-bold">{opt.title}</span>
                 {decided && isAnswer && <span className="ml-auto" aria-hidden>✅</span>}
                 {decided && isPicked && !isAnswer && <span className="ml-auto" aria-hidden>❌</span>}
               </div>
-              <p className="text-sm text-slate-600 dark:text-slate-300 whitespace-pre-line leading-relaxed">{opt.body}</p>
+              <p lang="de" className="text-sm text-slate-600 dark:text-slate-300 whitespace-pre-line leading-relaxed">{opt.body}</p>
             </button>
           );
         })}

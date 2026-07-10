@@ -51,7 +51,7 @@ export default function ListeningPlayer({ text, label = 'Recording' }) {
       )}
 
       {noVoice || showText ? (
-        <p className="text-sm whitespace-pre-line leading-relaxed text-slate-700 dark:text-slate-200">{text}</p>
+        <p lang="de" className="text-sm whitespace-pre-line leading-relaxed text-slate-700 dark:text-slate-200">{text}</p>
       ) : (
         <button type="button" className="text-xs text-slate-500 underline hover:text-slate-700 dark:hover:text-slate-300"
           onClick={() => setShowText(true)}>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AudioButton from '../AudioButton.jsx';
 import ListeningPlayer from '../ListeningPlayer.jsx';
+import SrStatus from '../SrStatus.jsx';
 
 export default function MultipleChoice({ q, options, answer, explain, audioText, onDone }) {
   const [picked, setPicked] = useState(null);
@@ -17,6 +18,7 @@ export default function MultipleChoice({ q, options, answer, explain, audioText,
 
   return (
     <div className="space-y-4">
+      <SrStatus>{decided ? (picked === answer ? 'Correct!' : `Not quite — the correct answer is ${answer}.`) : ''}</SrStatus>
       {audioText && <ListeningPlayer text={audioText} />}
       <div className="card">
         <div className="flex items-start gap-3">

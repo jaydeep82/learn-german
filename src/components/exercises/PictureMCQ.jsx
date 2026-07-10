@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ListeningPlayer from '../ListeningPlayer.jsx';
+import SrStatus from '../SrStatus.jsx';
 
 /**
  * Goethe A1 picture multiple-choice — used in Hören Teil 1 (listen to a short
@@ -17,9 +18,10 @@ export default function PictureMCQ({ q, audioText, options = [], answer, explain
 
   return (
     <div className="space-y-4">
+      <SrStatus>{decided ? (picked === answer ? 'Correct!' : 'Not quite — the correct picture is highlighted.') : ''}</SrStatus>
       {audioText && <ListeningPlayer text={audioText} />}
       <div className="card">
-        <h3 className="text-lg font-semibold">{q}</h3>
+        <h3 lang="de" className="text-lg font-semibold">{q}</h3>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3" role="group" aria-label="Picture options">
@@ -44,7 +46,7 @@ export default function PictureMCQ({ q, audioText, options = [], answer, explain
                   ? <img src={opt.img} alt={opt.label} className="max-h-20 max-w-full rounded-lg" />
                   : <span className="text-5xl" aria-hidden>{opt.emoji}</span>}
               </span>
-              <span className="text-sm font-medium text-center">{opt.label}</span>
+              <span lang="de" className="text-sm font-medium text-center">{opt.label}</span>
               {decided && isAnswer && <span aria-hidden>✅</span>}
               {decided && isPicked && !isAnswer && <span aria-hidden>❌</span>}
             </button>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SrStatus from '../SrStatus.jsx';
 
 /**
  * Goethe A1 form-fill — used in Schreiben Teil 1 (complete an application /
@@ -37,11 +38,12 @@ export default function FormFill({ title, context, fields = [], onDone }) {
 
   return (
     <form className="space-y-4" onSubmit={submit}>
-      {title && <h3 className="text-lg font-bold">{title}</h3>}
+      {title && <h3 lang="de" className="text-lg font-bold">{title}</h3>}
+      <SrStatus>{checked ? `Form checked: ${score} of ${fields.length} fields correct.` : ''}</SrStatus>
       {context && (
         <div className="card bg-brand-50 dark:bg-slate-800">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-1">Information</p>
-          <p className="whitespace-pre-line leading-relaxed">{context}</p>
+          <p lang="de" className="whitespace-pre-line leading-relaxed">{context}</p>
         </div>
       )}
 
@@ -55,6 +57,7 @@ export default function FormFill({ title, context, fields = [], onDone }) {
               <div>
                 <input
                   id={`ff-${f.name}`}
+                  lang="de"
                   value={values[f.name]}
                   onChange={(e) => setValues((v) => ({ ...v, [f.name]: e.target.value }))}
                   disabled={checked}

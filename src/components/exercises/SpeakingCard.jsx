@@ -29,12 +29,12 @@ export default function SpeakingCard({ instruction, cards = [], onDone }) {
   return (
     <div className="space-y-4">
       {instruction && <p className="text-sm text-slate-500">{instruction}</p>}
-      <div className="text-xs text-slate-400">Card {i + 1} / {cards.length}</div>
+      <div className="text-xs text-slate-500 dark:text-slate-400">Card {i + 1} / {cards.length}</div>
 
       <div className="card min-h-[160px] flex flex-col items-center justify-center gap-2 text-center
                       bg-gradient-to-br from-brand-50 to-white dark:from-slate-800 dark:to-slate-900">
         <span className="text-xs font-semibold uppercase tracking-widest text-brand-600">Sprechen</span>
-        <span className="text-3xl sm:text-4xl font-extrabold">{card.keyword}</span>
+        <span lang="de" className="text-3xl sm:text-4xl font-extrabold">{card.keyword}</span>
         {card.prompt && <p className="text-slate-500 max-w-sm">{card.prompt}</p>}
       </div>
 
@@ -45,7 +45,7 @@ export default function SpeakingCard({ instruction, cards = [], onDone }) {
       ) : (
         <div className="card bg-emerald-50 border-emerald-200 dark:bg-emerald-900/20 dark:border-emerald-700">
           <div className="flex items-start gap-3">
-            <p className="flex-1 font-medium">{card.model}</p>
+            <p lang="de" className="flex-1 font-medium">{card.model}</p>
             {card.model && <AudioButton text={card.model} />}
           </div>
         </div>

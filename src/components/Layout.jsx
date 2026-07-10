@@ -41,6 +41,7 @@ export default function Layout({ children }) {
             <button
               className="btn-ghost px-2 py-1.5"
               aria-label={`Toggle ${state.settings?.kid ? 'adult' : 'kid'} mode`}
+              aria-pressed={!!state.settings?.kid}
               title={`Toggle ${state.settings?.kid ? 'adult' : 'kid'} mode`}
               onClick={() => updateSettings({ kid: !state.settings?.kid })}
             >
@@ -49,6 +50,7 @@ export default function Layout({ children }) {
             <button
               className="btn-ghost px-2 py-1.5"
               aria-label="Toggle dark mode"
+              aria-pressed={state.settings?.theme === 'dark'}
               onClick={() =>
                 updateSettings({
                   theme: (state.settings?.theme === 'dark' ? 'light' : 'dark'),

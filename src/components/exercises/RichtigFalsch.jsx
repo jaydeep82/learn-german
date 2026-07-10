@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AudioButton from '../AudioButton.jsx';
 import ListeningPlayer from '../ListeningPlayer.jsx';
+import SrStatus from '../SrStatus.jsx';
 
 /**
  * Goethe A1 "richtig / falsch" task — used in Hören Teil 2 (announcements) and
@@ -30,13 +31,14 @@ export default function RichtigFalsch({ title, context, audioText, statements = 
   return (
     <div className="space-y-4">
       {title && <h3 className="text-lg font-bold">{title}</h3>}
+      <SrStatus>{checked ? `Checked: ${score} of ${statements.length} correct.` : ''}</SrStatus>
 
       {audioText && <ListeningPlayer text={audioText} />}
 
       {context && (
         <div className="card">
           <div className="flex items-start gap-3">
-            <p className="flex-1 whitespace-pre-line leading-relaxed">{context}</p>
+            <p lang="de" className="flex-1 whitespace-pre-line leading-relaxed">{context}</p>
             <AudioButton text={context} />
           </div>
         </div>
@@ -51,7 +53,7 @@ export default function RichtigFalsch({ title, context, audioText, statements = 
               ? 'bg-emerald-50 border-emerald-300 dark:bg-emerald-900/30 dark:border-emerald-700'
               : 'bg-rose-50 border-rose-300 dark:bg-rose-900/30 dark:border-rose-700') : ''}`}>
               <div className="flex items-center gap-3">
-                <p className="flex-1">{s.text}</p>
+                <p lang="de" className="flex-1">{s.text}</p>
                 <div className="flex gap-1 shrink-0">
                   {[{ v: true, l: 'Richtig' }, { v: false, l: 'Falsch' }].map(({ v, l }) => {
                     const active = mine === v;

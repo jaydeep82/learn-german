@@ -45,7 +45,7 @@ function SkillCard({ s }) {
       <div className="h-2.5 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
         <div className={`h-full rounded-full ${pass ? 'bg-emerald-500' : 'bg-amber-500'}`} style={{ width: `${pct}%` }} />
       </div>
-      <div className="flex items-center text-xs text-slate-400">
+      <div className="flex items-center text-xs text-slate-500 dark:text-slate-400">
         <span>{s.r.attempts} session{s.r.attempts === 1 ? '' : 's'}{s.r.mocks > 0 ? ` · ${s.r.mocks} mock` : ''} · last {s.r.last}</span>
         <Link to={s.to} className="ml-auto font-semibold text-brand-600 hover:underline">Practice →</Link>
       </div>

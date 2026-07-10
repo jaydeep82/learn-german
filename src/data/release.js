@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.31.0';
+export const VERSION = '3.32.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.32.0',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Accessibility pass — keyboard, screen readers, German pronunciation',
+    notes: [
+      'The match-the-pairs exercise is now fully keyboard-accessible: every tile is a real button you can Tab to and activate — drag & drop and tap still work as before.',
+      'Screen readers now announce answer feedback everywhere (correct/incorrect, match progress, form scores) via polite live regions — and all German text is tagged as German, so screen readers pronounce it with a German voice instead of mangling it in English.',
+      'Plus: writing fields spell-check in German, header toggles expose their on/off state, and low-contrast helper text was darkened. Focus rings, skip-to-content and reduced-motion were already in place.',
+    ],
+  },
   {
     version: '3.31.0',
     date: '2026-06-14',

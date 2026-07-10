@@ -110,7 +110,7 @@ export default function Mock() {
       <div className="space-y-4">
         <div className="flex items-center justify-between gap-3">
           <h1 className="text-xl font-extrabold">🏁 Mock exam · {mod.emoji} {mod.name}</h1>
-          <span className="text-xs text-slate-400">Module {modIdx + 1} of {MOCK_MODULES.length}</span>
+          <span className="text-xs text-slate-500 dark:text-slate-400">Module {modIdx + 1} of {MOCK_MODULES.length}</span>
         </div>
         <ExerciseRunner
           key={mod.key}

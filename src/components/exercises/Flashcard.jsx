@@ -25,7 +25,7 @@ export default function Flashcard({ items, onDone }) {
         className="w-full min-h-[200px] sm:min-h-[260px] card flex flex-col items-center justify-center gap-3 text-center hover:shadow-md transition"
         aria-label="Flip card"
       >
-        <div className="text-3xl sm:text-5xl font-bold tracking-tight">{flipped ? item.en : item.de}</div>
+        <div lang={flipped ? undefined : 'de'} className="text-3xl sm:text-5xl font-bold tracking-tight">{flipped ? item.en : item.de}</div>
         {!flipped && <Pron de={item.de} size="md" />}
         {item.hint && flipped && (
           <div className="text-sm text-slate-500 italic">{item.hint}</div>

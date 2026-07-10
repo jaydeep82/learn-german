@@ -78,7 +78,7 @@ The everyday feel: installable, fast, motivating, usable by everyone.
 | # | Task | Pri | Effort | Why |
 |---|---|---|---|---|
 | C1 | **Offline & installable (PWA)** ✅ | ✅ v3.31 | M | Done — vite-plugin-pwa: full-app precache (works offline incl. TTS audio), install to home screen (manifest + icons + iOS meta), silent auto-updates, deploy pipeline hardened (no-cache + invalidation for the service worker). |
-| C2 | **Accessibility pass** | P1 | M | Full keyboard nav, visible focus, ARIA on the exercise widgets, contrast checks — so screen-reader and keyboard users can complete every task. |
+| C2 | **Accessibility pass** ✅ | ✅ v3.32 | M | Done — match exercise rebuilt on real buttons (full keyboard), answer feedback announced via live regions, all German text tagged `lang="de"` for correct screen-reader pronunciation, German spell-check in writing fields, toggle states exposed, contrast bumps. (Focus rings, skip link, reduced-motion already existed.) |
 | C3 | **Exam-date onboarding & goals** | P2 | S | Set a test date + daily goal; show a countdown and the pace needed to be ready in time. |
 | C4 | **Progress dashboard** | P2 | M | Accuracy trends, a streak calendar heat-map, and words-learned over time. |
 | C5 | **Vocabulary quality-of-life** | P2 | S | Within a collection: filter by theme/letter, “mark as known”, one-tap “quiz this group”. |

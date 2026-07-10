@@ -48,11 +48,11 @@ export default function FillInBlank({ sentence, answer, hint, onDone }) {
       </div>
       {submitted && (
         <>
-          <div className={`card ${correct ? 'bg-emerald-50 border-emerald-300 dark:bg-emerald-900/30 dark:border-emerald-700'
+          <div role="status" className={`card ${correct ? 'bg-emerald-50 border-emerald-300 dark:bg-emerald-900/30 dark:border-emerald-700'
                                          : 'bg-rose-50 border-rose-300 dark:bg-rose-900/30 dark:border-rose-700 animate-shake'}`}>
             {correct
-              ? <span>✅ <strong>Genau!</strong></span>
-              : <span>❌ <strong>Almost!</strong> The correct answer was <em>{answer}</em>.</span>}
+              ? <span>✅ <strong lang="de">Genau!</strong></span>
+              : <span>❌ <strong>Almost!</strong> The correct answer was <em lang="de">{answer}</em>.</span>}
           </div>
           <button type="button" className="btn-primary w-full" onClick={next}>Next →</button>
         </>
