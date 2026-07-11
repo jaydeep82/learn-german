@@ -85,4 +85,13 @@ describe('Practice · buildQuiz', () => {
     const q = buildQuiz(items.slice(0, 1), items, 1)[0];
     expect(q.explain).toBe('Satz 0.');
   });
+
+  it('en-de direction reverses prompt and answer (reverse quiz)', () => {
+    for (const q of buildQuiz(items, items, 10, 'en-de')) {
+      expect(q.q).toMatch(/^word/);      // English prompt
+      expect(q.answer).toMatch(/^wort/); // German answer among options
+      expect(q.options).toContain(q.answer);
+      expect(new Set(q.options).size).toBe(q.options.length);
+    }
+  });
 });

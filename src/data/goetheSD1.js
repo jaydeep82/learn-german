@@ -95,17 +95,17 @@ const groups = [
 
   // ── 💶 CURRENCY ────────────────────────────────────────────────
   { title: 'Currency', titleDe: 'Währungen', emoji: '💶', items: [
-    { de: 'der Euro', en: 'euro', example: '1 Euro = 100 Cent' },
+    { de: 'der Euro', en: 'euro', example: '1 Euro = 100 Cent', exampleEn: '1 euro = 100 cents' },
     { de: 'der Cent', en: 'cent', emoji: '🪙' },
   ]},
 
   // ── 📏 MEASURES & WEIGHTS ──────────────────────────────────────
   { title: 'Measures & weights', titleDe: 'Maße und Gewichte', emoji: '📏', items: [
-    { de: 'der Meter (m)',        en: 'metre', example: 'ein Meter fünfzehn = 1,15 m' },
+    { de: 'der Meter (m)',        en: 'metre', example: 'ein Meter fünfzehn = 1,15 m', exampleEn: 'one metre fifteen = 1.15 m' },
     { de: 'der Zentimeter (cm)',  en: 'centimetre' },
-    { de: 'der Kilometer (km)',   en: 'kilometre', example: 'zweihundert Kilometer = 200 km' },
+    { de: 'der Kilometer (km)',   en: 'kilometre', example: 'zweihundert Kilometer = 200 km', exampleEn: 'two hundred kilometres = 200 km' },
     { de: 'der Quadratmeter (m²)', en: 'square metre' },
-    { de: 'das Grad (°)',         en: 'degree', example: 'minus ein Grad / plus vier Grad' },
+    { de: 'das Grad (°)',         en: 'degree', example: 'minus ein Grad / plus vier Grad', exampleEn: 'minus one degree / plus four degrees' },
     { de: 'das Prozent (%)',      en: 'percent' },
     { de: 'der Liter (l)',        en: 'litre' },
     { de: 'das Gramm (g)',        en: 'gram' },

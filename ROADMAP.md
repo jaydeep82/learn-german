@@ -5,13 +5,14 @@ A prioritized plan to turn **Deutsch30** from a strong daily study app into a fa
 practice in the **exact four exam formats**, plus the retention and polish that keep learners
 coming back.
 
-**Current state:** `v3.30.0` (live on AWS) · **full A1 exam trainer + retention layer** — all four skills,
-a timed mock, spaced repetition, word mastery, and a readiness dashboard · 2,407 words (979 course ·
-689 Fit-1 · 739 SD1) · 50-day course + grammar · Practice mode · CI + 88 tests.
+**Current state:** `v3.38.0` (live on AWS) · installable offline PWA · full A1 exam trainer (four skills +
+timed mock + readiness) · retention layer (SRS, mastery, goals, progress) · 2,407 words with translated
+examples · grammar checklist + phrase bank · CI (lint + 119 tests).
 
-> **Progress — Tracks A and B are ✅ complete** (v3.22.0 → v3.30.0). The headline gap below is closed,
-> and daily study now sticks: SRS review, per-word mastery, and an "am I ready?" gauge per skill.
-> Tracks C–D (UX polish, content depth) are the remaining priorities.
+> 🎉 **This roadmap is ✅ COMPLETE** — all four tracks shipped, v3.22.0 → v3.38.0 (17 releases).
+> The headline gap below is closed: learners can practise every Goethe A1 skill in its real format,
+> sit a timed mock against the 60% pass mark, retain vocabulary with spaced repetition, track their
+> readiness per skill, and study offline on the installed app. The table rows record what shipped where.
 
 **Legend** — Priority: **P0** Now · **P1** Next · **P2** Later ·  Effort: **S** / **M** / **L** ·
 Skills: 🎧 Hören · 📖 Lesen · ✍️ Schreiben · 🗣️ Sprechen
@@ -85,16 +86,17 @@ The everyday feel: installable, fast, motivating, usable by everyone.
 | C5 | **Vocabulary quality-of-life** ✅ | ✅ v3.35 | S | Done — per-collection theme/letter group filter; one-tap “Quiz →” on every group header deep-links into Practice (group + quiz mode preloaded). “Mark as known” had shipped with B2. |
 | C6 | **Audio controls & performance** ✅ | ✅ v3.35 | M | Done — global “Speech speed” setting slows every 🔊 button (listening player already had replay/slow/transcript from A4); all routes lazy-loaded with the SRS core split from word data → initial bundle 1.4 MB → 0.38 MB (−73%), full offline retained via PWA precache. |
 
-## Track D · Content depth & engineering health
+## Track D · Content depth & engineering health — ✅ COMPLETE
 
 Fills the last content gaps and keeps the growing codebase safe to change.
+**All shipped: D3 v3.22 · D1+D2 v3.36 · D5 v3.37 · D4 v3.38.**
 
 | # | Task | Pri | Effort | Why |
 |---|---|---|---|---|
 | D1 | **Model texts & phrase bank** ✅ | ✅ v3.36 | S | Done — `/phrases`: 7 situation sections (~45 phrases with audio) + 3 Schreiben-Teil-2 writing templates; linked from the Exam hub and the writing/speaking intros. Adversarially verified. |
 | D2 | **Grammar syllabus audit** ✅ | ✅ v3.36 | M | Done — course grammar extracted and audited against the official A1 inventory; `/checklist` maps all 39 syllabus points to lesson days and teaches the 4 gaps inline (ordinals & dates, time prepositions, impersonal es, irregular comparison). 6 audit findings fixed. |
 | D3 | **Continuous integration** ✅ | ✅ v3.22 | S | GitHub Actions runs the test suite + build on every push. _Done — shipped alongside A1._ |
-| D4 | **English example translations** | P2 | M | Many vocab examples lack an `exampleEn`; adding them helps true beginners and unlocks reverse (English→German) drills. |
+| D4 | **English example translations** ✅ | ✅ v3.38 | M | Done — all 1,138 missing `exampleEn` fields authored (youth 505 + adults 633; course was already complete), 80-sample independently audited (0 errors), regression test added; plus the 🔁 reverse EN→DE quiz mode in Practice. |
 | D5 | **Tests for exercises & SRS · lint** ✅ | ✅ v3.37 | M | Done — ESLint (react-hooks rules) added to the repo + CI, all findings fixed (incl. a keyed-remount cleanup in DayLesson); exercise-logic unit tests added (tolerant answer matching, quiz generator). SRS engine was already tested (B1). 116 tests. |
 
 ---
@@ -110,7 +112,7 @@ foundations moving alongside.
 4. ~~**Add speaking & the mock (A6, A7)** — all four skills, then the capstone timed exam.~~ ✅ **done**
 5. ~~**Turn on retention (B1–B3)** — spaced repetition, word mastery, and the readiness dashboard.~~ ✅ **done**
 6. ~~**Polish & reach (C1–C6)** — PWA, accessibility, goals, dashboards, QoL, performance.~~ ✅ **done**
-7. **Content depth (D1, D2, D4, D5)** ← **next** — phrase bank, grammar syllabus audit, example translations, lint/tests.
+7. ~~**Content depth (D1, D2, D4, D5)** — phrase bank, grammar syllabus audit, example translations, lint/tests.~~ ✅ **done — roadmap complete** 🎉
 
 ---
 

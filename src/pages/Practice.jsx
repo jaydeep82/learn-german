@@ -32,18 +32,22 @@ export function shuffle(arr) {
   return a;
 }
 
-// One multiple-choice spec per test item: German prompt, 4 English options.
+// One multiple-choice spec per test item. direction 'de-en' shows the German
+// word with English options; 'en-de' reverses it (recognise the German).
 // Exported for unit tests.
-export function buildQuiz(testItems, distractorPool, count) {
+export function buildQuiz(testItems, distractorPool, count, direction = 'de-en') {
+  const reverse = direction === 'en-de';
+  const promptOf = (x) => (reverse ? x.en : x.de);
+  const answerOf = (x) => (reverse ? x.de : x.en);
   const pool = shuffle(testItems).slice(0, count || testItems.length);
-  const allEn = [...new Set(distractorPool.map((x) => x.en))];
+  const allAnswers = [...new Set(distractorPool.map(answerOf))];
   return pool.map((it) => {
-    const distractors = shuffle(allEn.filter((e) => e !== it.en)).slice(0, 3);
+    const distractors = shuffle(allAnswers.filter((a) => a !== answerOf(it))).slice(0, 3);
     return {
       type: 'multiple-choice',
-      q: it.de,
-      options: shuffle([it.en, ...distractors]),
-      answer: it.en,
+      q: promptOf(it),
+      options: shuffle([answerOf(it), ...distractors]),
+      answer: answerOf(it),
       explain: it.example || undefined,
     };
   });
@@ -76,6 +80,8 @@ export default function Practice() {
     const items = shuffle(groupItems);
     if (mode === 'quiz') {
       setExercises(buildQuiz(items, source.flat, willUse));
+    } else if (mode === 'quiz-reverse') {
+      setExercises(buildQuiz(items, source.flat, willUse, 'en-de'));
     } else {
       // one flashcard deck; surface the example on the flipped side via `hint`
       const deck = items.slice(0, willUse).map((it) => ({ ...it, hint: it.example }));
@@ -89,7 +95,7 @@ export default function Practice() {
 
   if (stage === 'done') {
     const pct = Math.round(((result?.ratio) ?? 0) * 100);
-    const label = mode === 'quiz' ? 'correct' : 'knew';
+    const label = mode === 'flashcards' ? 'knew' : 'correct';
     return (
       <div className="card text-center">
         <div className="text-5xl mb-2" aria-hidden>{pct >= 80 ? '🏆' : pct >= 50 ? '👏' : '🌱'}</div>
@@ -111,7 +117,7 @@ export default function Practice() {
         <div className="flex items-center gap-3">
           <button className="text-sm text-slate-500 hover:underline" onClick={reset}>← Change set</button>
           <span className="text-sm text-slate-400">
-            {source.emoji} {source.tag} · {mode === 'quiz' ? 'German → English' : 'Flashcards'}
+            {source.emoji} {source.tag} · {mode === 'quiz' ? 'German → English' : mode === 'quiz-reverse' ? 'English → German' : 'Flashcards'}
           </span>
         </div>
         <ExerciseRunner
@@ -166,10 +172,11 @@ export default function Practice() {
       {/* 2 · mode */}
       <section className="space-y-2">
         <h2 className="font-bold text-sm uppercase tracking-wide text-slate-500">2 · Mode</h2>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-3 gap-3">
           {[
             { key: 'flashcards', emoji: '🃏', title: 'Flashcards', sub: 'Flip & self-rate' },
             { key: 'quiz', emoji: '✅', title: 'Quiz', sub: 'German → English' },
+            { key: 'quiz-reverse', emoji: '🔁', title: 'Reverse quiz', sub: 'English → German' },
           ].map((m) => (
             <button
               key={m.key}
@@ -211,7 +218,7 @@ export default function Practice() {
         onClick={start}
         disabled={available === 0}
       >
-        Start {mode === 'quiz' ? 'quiz' : 'flashcards'} — {willUse} word{willUse === 1 ? '' : 's'} →
+        Start {mode === 'flashcards' ? 'flashcards' : mode === 'quiz-reverse' ? 'reverse quiz' : 'quiz'} — {willUse} word{willUse === 1 ? '' : 's'} →
       </button>
     </div>
   );

@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.37.0';
+export const VERSION = '3.38.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.38.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'Every example translated + reverse quiz — the roadmap is complete',
+    notes: [
+      'All 1,138 Goethe example sentences that were German-only now carry an English translation — every word card in both A1 collections shows the example and what it means. An 80-sentence random sample was independently audited: zero mistranslations.',
+      'New 🔁 Reverse quiz mode in Practice: see the English, pick the right German — the harder direction that exam recall actually needs. Deep links and group quizzes support it too.',
+      'This closes the last item on the exam-readiness roadmap: exam trainer, retention, experience and content tracks are all complete. Viel Erfolg bei der Prüfung! 🎓',
+    ],
+  },
   {
     version: '3.37.0',
     date: '2026-06-14',

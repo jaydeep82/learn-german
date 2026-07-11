@@ -184,8 +184,8 @@ const groups = [
 
   // ── 📏 MEASURES & WEIGHTS ──────────────────────────────────────
   { title: 'Measures & weights', titleDe: 'Maße und Gewichte', emoji: '📏', items: [
-    { de: 'der Meter (m)',      en: 'metre', example: '1,50 m = ein Meter fünfzig' },
-    { de: 'der Kilometer (km)', en: 'kilometre', example: '2 km = zwei Kilometer' },
+    { de: 'der Meter (m)',      en: 'metre', example: '1,50 m = ein Meter fünfzig', exampleEn: '1.50 m = one metre fifty' },
+    { de: 'der Kilometer (km)', en: 'kilometre', example: '2 km = zwei Kilometer', exampleEn: '2 km = two kilometres' },
     { de: 'der Liter (L)',      en: 'litre' },
     { de: 'das Gramm (g)',      en: 'gram' },
     { de: 'das Kilo(gramm) (kg)', en: 'kilo(gram)' },
@@ -193,7 +193,7 @@ const groups = [
 
   // ── 💶 CURRENCY ────────────────────────────────────────────────
   { title: 'Currency', titleDe: 'Währungen', emoji: '💶', items: [
-    { de: 'der Euro', en: 'euro', example: '1 Euro = 100 Cent' },
+    { de: 'der Euro', en: 'euro', example: '1 Euro = 100 Cent', exampleEn: '1 euro = 100 cents' },
     { de: 'der Cent', en: 'cent', emoji: '🪙' },
   ]},
 

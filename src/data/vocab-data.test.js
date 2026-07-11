@@ -107,6 +107,11 @@ describe.each(collections)('Goethe collection · $key', (c) => {
   it('carries the collection tag on every flat item', () => {
     expect(c.flat.every((v) => v.tag === c.tag)).toBe(true);
   });
+
+  it('every example carries an English translation (exampleEn)', () => {
+    const missing = c.flat.filter((v) => v.example && !v.exampleEn).map((v) => v.de);
+    expect(missing).toEqual([]);
+  });
 });
 
 describe('course vocab structure', () => {
