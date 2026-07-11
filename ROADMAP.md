@@ -118,3 +118,11 @@ foundations moving alongside.
 
 *Priorities are a proposal — reorder to taste. Roadmap toward Goethe-Zertifikat A1
 (Start Deutsch 1 / Fit in Deutsch 1).*
+
+---
+
+## Post-roadmap additions
+
+| What | Shipped | Notes |
+|---|---|---|
+| **+7 fresh mock exam papers** (8 total) | v3.39 | Multi-paper mock system with a picker at `/mock`; papers 2–8 are fresh realistic sittings (Hören 13 · Lesen 13 · form + message · official Sprechen structure) across distinct scenarios. All content adversarially audited; 9 findings fixed. |

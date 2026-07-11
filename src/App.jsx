@@ -57,6 +57,7 @@ export default function App() {
           <Route path="/hoeren" element={<Hoeren />} />
           <Route path="/sprechen" element={<Sprechen />} />
           <Route path="/mock" element={<Mock />} />
+          <Route path="/mock/:paperId" element={<Mock />} />
           <Route path="/readiness" element={<Readiness />} />
           <Route path="/progress" element={<Progress />} />
           <Route path="/exam-formats" element={<ExamFormats />} />

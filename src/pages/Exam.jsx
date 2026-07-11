@@ -73,10 +73,10 @@ export default function Exam() {
       <Link to="/mock" className="block">
         <div className="card flex flex-col sm:flex-row sm:items-center gap-3 bg-gradient-to-br from-brand-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-md transition">
           <div className="flex-1">
-            <h2 className="font-bold">🏁 Full mock exam</h2>
-            <p className="text-sm text-slate-500">All four skills back to back, each timed — one overall score against the 60% pass mark.</p>
+            <h2 className="font-bold">🏁 Full mock exams · 8 papers</h2>
+            <p className="text-sm text-slate-500">Eight complete timed sittings — all four skills, one overall score against the 60% pass mark. Sit a fresh paper each time.</p>
           </div>
-          <span className="text-xs font-semibold text-emerald-600 self-start sm:self-center">Start →</span>
+          <span className="text-xs font-semibold text-emerald-600 self-start sm:self-center">Choose a paper →</span>
         </div>
       </Link>
 

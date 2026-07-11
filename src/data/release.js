@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.38.0';
+export const VERSION = '3.39.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.39.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: '8 full mock exams — seven fresh papers to sit',
+    notes: [
+      'The mock exam is now a set of eight complete papers: the classic plus seven fresh sittings — Im Alltag 🛒, Unterwegs & Arbeit 🧳, Familie & Freizeit ⚽, Gesundheit & Termine 🩺, Wohnen & Einkaufen 🏠, Schule & Lernen 📚 and Feste & Jahreszeiten 🎄. Pick a paper, sit it timed, and never repeat the same answers twice.',
+      'Every fresh paper matches the real exam shape: 13 listening items (dialogues → picture, announcements → richtig/falsch, phone messages), 13 reading items (texts, adverts, signs), a 5-field form plus a ~30-word message, and the official speaking structure.',
+      'All new content was adversarially audited (German correctness, answer keys incl. number/time traps, A1 level, cross-paper variety) — nine confirmed findings were fixed before release.',
+    ],
+  },
   {
     version: '3.38.0',
     date: '2026-06-14',

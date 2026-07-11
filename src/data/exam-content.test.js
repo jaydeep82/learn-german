@@ -4,7 +4,7 @@ import { LESEN_EXERCISES, LESEN_ITEM_COUNT, LESEN_PARTS } from './lesenModule.js
 import { SCHREIBEN_EXERCISES, SCHREIBEN_ITEM_COUNT, SCHREIBEN_PARTS } from './schreibenModule.js';
 import { HOEREN_EXERCISES, HOEREN_ITEM_COUNT, HOEREN_PARTS } from './hoerenModule.js';
 import { SPRECHEN_EXERCISES, SPRECHEN_ITEM_COUNT, SPRECHEN_PARTS } from './sprechenModule.js';
-import { MOCK_MODULES, MOCK_PASS_RATIO, MOCK_TOTAL_MINUTES, overallRatio } from './mockExam.js';
+import { MOCK_PAPERS, MOCK_MODULES, MOCK_PASS_RATIO, MOCK_TOTAL_MINUTES, overallRatio } from './mockExam.js';
 
 /**
  * Integrity tests for exam-format content (roadmap A1/A2). Guards that every
@@ -206,23 +206,51 @@ describe('Sprechen (Speaking) module', () => {
   });
 });
 
-describe('Full mock exam', () => {
-  it('includes all four skill modules in exam order', () => {
-    expect(MOCK_MODULES.map((m) => m.key)).toEqual(['hoeren', 'lesen', 'schreiben', 'sprechen']);
+describe('Full mock exams (8 papers)', () => {
+  it('offers eight papers with unique ids and titles', () => {
+    expect(MOCK_PAPERS).toHaveLength(8);
+    expect(new Set(MOCK_PAPERS.map((p) => p.id)).size).toBe(8);
+    expect(new Set(MOCK_PAPERS.map((p) => p.title)).size).toBe(8);
   });
 
-  it('every module has a positive time limit and a non-empty exercise list', () => {
-    const bad = MOCK_MODULES.filter((m) => !(m.minutes > 0) || !Array.isArray(m.exercises) || m.exercises.length === 0);
+  it.each(MOCK_PAPERS)('paper $id has the four skills in exam order, timed, non-empty', (paper) => {
+    expect(paper.modules.map((m) => m.key)).toEqual(['hoeren', 'lesen', 'schreiben', 'sprechen']);
+    const bad = paper.modules.filter((m) => !(m.minutes > 0) || !Array.isArray(m.exercises) || m.exercises.length === 0);
     expect(bad.map((m) => m.key)).toEqual([]);
   });
 
-  it('every mock exercise is a well-formed exam task', () => {
-    const bad = MOCK_MODULES.flatMap((m) => m.exercises).map((ex, i) => ({ i, problems: validate(ex) })).filter((r) => r.problems.length);
+  it.each(MOCK_PAPERS)('paper $id — every exercise is a well-formed exam task', (paper) => {
+    const bad = paper.modules.flatMap((m) => m.exercises).map((ex, i) => ({ i, problems: validate(ex) })).filter((r) => r.problems.length);
     expect(bad, JSON.stringify(bad)).toEqual([]);
   });
 
-  it('total time is the sum of the module minutes', () => {
-    expect(MOCK_TOTAL_MINUTES).toBe(MOCK_MODULES.reduce((n, m) => n + m.minutes, 0));
+  it.each(MOCK_PAPERS)('paper $id — every Hören task carries audio', (paper) => {
+    const hoeren = paper.modules.find((m) => m.key === 'hoeren');
+    expect(hoeren.exercises.every((e) => isNonEmptyString(e.audioText))).toBe(true);
+  });
+
+  it('papers 2 and 3 hit realistic item counts (Hören ≥ 13 · Lesen ≥ 13 scorable items)', () => {
+    const scorable = (exs) => exs.reduce((n, ex) => n + (ex.type === 'richtig-falsch' ? ex.statements.length : 1), 0);
+    for (const paper of MOCK_PAPERS.slice(1)) {
+      expect(scorable(paper.modules.find((m) => m.key === 'hoeren').exercises)).toBeGreaterThanOrEqual(13);
+      expect(scorable(paper.modules.find((m) => m.key === 'lesen').exercises)).toBeGreaterThanOrEqual(13);
+      // Schreiben: exactly the real shape — one form + one guided message
+      const schreiben = paper.modules.find((m) => m.key === 'schreiben').exercises;
+      expect(schreiben.map((e) => e.type)).toEqual(['form-fill', 'guided-writing']);
+    }
+  });
+
+  it('no two papers share Hören/Lesen/Schreiben content', () => {
+    const sig = (paper, key) => JSON.stringify(paper.modules.find((m) => m.key === key).exercises);
+    for (const key of ['hoeren', 'lesen', 'schreiben']) {
+      const sigs = MOCK_PAPERS.map((p) => sig(p, key));
+      expect(new Set(sigs).size).toBe(MOCK_PAPERS.length);
+    }
+  });
+
+  it('back-compat exports still describe paper 1', () => {
+    expect(MOCK_MODULES).toBe(MOCK_PAPERS[0].modules);
+    expect(MOCK_TOTAL_MINUTES).toBe(MOCK_PAPERS[0].modules.reduce((n, m) => n + m.minutes, 0));
   });
 
   it('overallRatio equal-weights the modules and pass mark is 60%', () => {
