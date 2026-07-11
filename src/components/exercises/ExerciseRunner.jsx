@@ -33,7 +33,7 @@ export default function ExerciseRunner({ exercises, vocabulary = [], dayId, time
   const list = useMemo(() => exercises || [], [exercises]);
   const current = list[idx];
 
-  useEffect(() => { touchStreak(); }, []); // bump streak on entry
+  useEffect(() => { touchStreak(); }, [touchStreak]); // bump streak on entry (stable callback)
 
   // Optional countdown (mock exam). Tick every second; expiry handled below.
   useEffect(() => {

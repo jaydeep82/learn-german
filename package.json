@@ -1,7 +1,7 @@
 {
   "name": "deutsch30",
   "private": true,
-  "version": "3.36.0",
+  "version": "3.37.0",
   "description": "Deutsch30 — interactive 50-day German learning web app for beginners (ages 5-50).",
   "type": "module",
   "scripts": {
@@ -10,6 +10,7 @@
     "preview": "vite preview --port 4173",
     "test": "vitest run",
     "test:watch": "vitest",
+    "lint": "eslint src",
     "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
@@ -18,8 +19,13 @@
     "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
+    "eslint": "^10.7.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
     "vite": "^5.4.8",

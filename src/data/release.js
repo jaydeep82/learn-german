@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.36.0';
+export const VERSION = '3.37.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.37.0',
+    date: '2026-06-14',
+    type: 'improvement',
+    title: 'Under the hood — linting, more tests, small fixes',
+    notes: [
+      'Added ESLint (with the React-hooks rules) to the codebase and CI; every push is now linted, tested and built automatically.',
+      'Fixed the handful of issues the linter surfaced — including a subtle one: navigating between lesson days now fully remounts the lesson, a cleaner reset than before.',
+      'New unit tests for the exercise logic: the tolerant answer matching used by the exam form task (umlauts, accents, multiple accepted answers) and the Practice quiz generator (answer always present, options unique, distractors valid). 116 tests total.',
+    ],
+  },
   {
     version: '3.36.0',
     date: '2026-06-14',

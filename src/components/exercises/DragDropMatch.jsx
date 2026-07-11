@@ -10,8 +10,8 @@ const shuffle = (arr) => arr.map((v) => [Math.random(), v]).sort((a, b) => a[0] 
  * real <button>, so Tab + Enter works and matches are announced politely.
  */
 export default function DragDropMatch({ pairs, onDone }) {
-  const [left, setLeft] = useState(() => shuffle(pairs.map((p, i) => ({ ...p, id: i }))));
-  const [right, setRight] = useState(() => shuffle(pairs.map((p, i) => ({ ...p, id: i }))));
+  const [left] = useState(() => shuffle(pairs.map((p, i) => ({ ...p, id: i }))));
+  const [right] = useState(() => shuffle(pairs.map((p, i) => ({ ...p, id: i }))));
   const [matched, setMatched] = useState({}); // id -> true
   const [pickedLeft, setPickedLeft] = useState(null);
   const [wrong, setWrong] = useState(0);

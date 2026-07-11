@@ -95,7 +95,7 @@ function pickReviewItems(kind, state) {
     .filter(([, perEx]) => Object.values(perEx).includes('wrong'))
     .map(([id]) => Number(id));
 
-  let pool = days;
+  let pool;
   if (/^week-(\d)$/.test(kind || '')) {
     const n = Number(kind.split('-')[1]);
     pool = days.filter((d) => d.week === n);

@@ -23,7 +23,7 @@ const SOURCES = [
 
 const LENGTHS = [10, 20, 0]; // 0 = all
 
-function shuffle(arr) {
+export function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -33,7 +33,8 @@ function shuffle(arr) {
 }
 
 // One multiple-choice spec per test item: German prompt, 4 English options.
-function buildQuiz(testItems, distractorPool, count) {
+// Exported for unit tests.
+export function buildQuiz(testItems, distractorPool, count) {
   const pool = shuffle(testItems).slice(0, count || testItems.length);
   const allEn = [...new Set(distractorPool.map((x) => x.en))];
   return pool.map((it) => {

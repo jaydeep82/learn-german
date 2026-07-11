@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../store/AppContext.jsx';
 import { buildSession, todayStr, INTERVALS } from '../data/srs.js';
@@ -25,9 +25,8 @@ export default function DailyReview() {
   const [revealed, setRevealed] = useState(false);
   const [stats, setStats] = useState({ reviewed: 0, again: 0, learned: 0 });
   const requeued = useRef(new Set());
-  const streaked = useRef(false);
 
-  if (!streaked.current) { streaked.current = true; touchStreak(); }
+  useEffect(() => { touchStreak(); }, [touchStreak]); // bump streak on entry (stable callback)
 
   const queue = [...session, ...extra];
   const card = queue[pos];

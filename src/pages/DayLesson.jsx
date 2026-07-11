@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { dayById, days } from '../data/curriculum.js';
 import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
@@ -8,16 +8,17 @@ import VocabCard from '../components/VocabCard.jsx';
 import GrammarItem from '../components/grammar/GrammarItem.jsx';
 import { useApp } from '../store/AppContext.jsx';
 
+// Decorative randomness, rolled once at module load — render stays pure and
+// the celebration layout is indistinguishable from a per-mount roll.
+const CONFETTI_PIECES = Array.from({ length: 40 }, (_, i) => ({
+  id: i,
+  left: Math.random() * 100,
+  delay: Math.random() * 600,
+  hue: Math.floor(Math.random() * 360),
+}));
+
 function Confetti() {
-  const pieces = useMemo(
-    () => Array.from({ length: 40 }, (_, i) => ({
-      id: i,
-      left: Math.random() * 100,
-      delay: Math.random() * 600,
-      hue: Math.floor(Math.random() * 360),
-    })),
-    []
-  );
+  const pieces = CONFETTI_PIECES;
   return (
     <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden>
       {pieces.map((p) => (
@@ -36,21 +37,20 @@ function Confetti() {
 }
 
 export default function DayLesson() {
+  // Keyed remount: navigating to a different day gets a fresh Lesson with
+  // clean state — no reset effect needed when React Router reuses the route.
   const { dayId } = useParams();
+  return <Lesson key={dayId} dayId={dayId} />;
+}
+
+function Lesson({ dayId }) {
   const day = dayById(dayId);
   const navigate = useNavigate();
   const { completeDay, isUnlocked } = useApp();
   const [stage, setStage] = useState('intro'); // intro | exercises | done
   const [result, setResult] = useState(null);
 
-  // Reset to the intro screen whenever the user navigates to a different
-  // day — otherwise React Router reuses this component and we'd still be
-  // showing the previous day's result/exercises.
-  useEffect(() => {
-    setStage('intro');
-    setResult(null);
-    window.scrollTo({ top: 0 });
-  }, [dayId]);
+  useEffect(() => { window.scrollTo({ top: 0 }); }, []); // fresh mount per day
 
   if (!day) {
     return <div className="card">Day not found. <Link to="/" className="text-brand-600">Back home</Link></div>;

@@ -95,7 +95,7 @@ Fills the last content gaps and keeps the growing codebase safe to change.
 | D2 | **Grammar syllabus audit** ✅ | ✅ v3.36 | M | Done — course grammar extracted and audited against the official A1 inventory; `/checklist` maps all 39 syllabus points to lesson days and teaches the 4 gaps inline (ordinals & dates, time prepositions, impersonal es, irregular comparison). 6 audit findings fixed. |
 | D3 | **Continuous integration** ✅ | ✅ v3.22 | S | GitHub Actions runs the test suite + build on every push. _Done — shipped alongside A1._ |
 | D4 | **English example translations** | P2 | M | Many vocab examples lack an `exampleEn`; adding them helps true beginners and unlocks reverse (English→German) drills. |
-| D5 | **Tests for exercises & SRS · lint** | P2 | M | Extend coverage beyond data to exercise logic and the scheduler; add ESLint for consistency. |
+| D5 | **Tests for exercises & SRS · lint** ✅ | ✅ v3.37 | M | Done — ESLint (react-hooks rules) added to the repo + CI, all findings fixed (incl. a keyed-remount cleanup in DayLesson); exercise-logic unit tests added (tolerant answer matching, quiz generator). SRS engine was already tested (B1). 116 tests. |
 
 ---
 

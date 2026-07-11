@@ -14,13 +14,14 @@ import SrStatus from '../SrStatus.jsx';
 
 // Compare tolerantly: keep the German ä→ae convention, then fold any remaining
 // accents (so "Gómez" matches "Gomez"), ignore case, punctuation and spacing.
-const norm = (s) =>
+// Exported for unit tests.
+export const norm = (s) =>
   (s || '').trim().toLowerCase()
     .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss')
     .normalize('NFD').replace(/\p{Diacritic}/gu, '')
     .replace(/[.,!?]/g, '').replace(/\s+/g, ' ');
 
-const accepts = (answer, value) =>
+export const accepts = (answer, value) =>
   (Array.isArray(answer) ? answer : [answer]).some((a) => norm(a) === norm(value));
 
 export default function FormFill({ title, context, fields = [], onDone }) {

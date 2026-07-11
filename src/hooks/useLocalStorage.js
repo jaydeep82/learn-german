@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function useLocalStorage(key, initial) {
   const [value, setValue] = useState(() => {
@@ -9,9 +9,6 @@ export default function useLocalStorage(key, initial) {
       return initial;
     }
   });
-
-  const ref = useRef(value);
-  ref.current = value;
 
   useEffect(() => {
     try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* quota or private mode */ }
