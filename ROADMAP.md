@@ -91,8 +91,8 @@ Fills the last content gaps and keeps the growing codebase safe to change.
 
 | # | Task | Pri | Effort | Why |
 |---|---|---|---|---|
-| D1 | **Model texts & phrase bank** | P1 | S | Email/message templates and speaking chunks (greetings, asking, thanking) — raw material reused in Schreiben and Sprechen. |
-| D2 | **Grammar syllabus audit** | P1 | M | Check the 50-day grammar against the official A1 inventory (cases, tenses, prepositions, imperative, modals) and fill gaps. |
+| D1 | **Model texts & phrase bank** ✅ | ✅ v3.36 | S | Done — `/phrases`: 7 situation sections (~45 phrases with audio) + 3 Schreiben-Teil-2 writing templates; linked from the Exam hub and the writing/speaking intros. Adversarially verified. |
+| D2 | **Grammar syllabus audit** ✅ | ✅ v3.36 | M | Done — course grammar extracted and audited against the official A1 inventory; `/checklist` maps all 39 syllabus points to lesson days and teaches the 4 gaps inline (ordinals & dates, time prepositions, impersonal es, irregular comparison). 6 audit findings fixed. |
 | D3 | **Continuous integration** ✅ | ✅ v3.22 | S | GitHub Actions runs the test suite + build on every push. _Done — shipped alongside A1._ |
 | D4 | **English example translations** | P2 | M | Many vocab examples lack an `exampleEn`; adding them helps true beginners and unlocks reverse (English→German) drills. |
 | D5 | **Tests for exercises & SRS · lint** | P2 | M | Extend coverage beyond data to exercise logic and the scheduler; add ESLint for consistency. |

@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.35.0';
+export const VERSION = '3.36.0';
 export const RELEASE_DATE = '2026-06-14';
 
 export const RELEASES = [
+  {
+    version: '3.36.0',
+    date: '2026-06-14',
+    type: 'feature',
+    title: 'A1 grammar checklist + phrase bank',
+    notes: [
+      '✅ Grammar checklist (/checklist, linked from Grammar and the Exam hub): the official Goethe A1 syllabus audited point by point against the course — 35 of 39 points link straight to the lesson days that teach them, and the remaining 4 (ordinals & dates, time prepositions, impersonal “es”, irregular comparison) are taught right on the page. The course now provably covers the whole exam grammar.',
+      '💬 Phrase bank (/phrases, linked from the Exam hub and the writing/speaking intros): ready-made A1 chunks for seven situations — greetings, introducing yourself, “I don’t understand”, polite requests, shopping, travel, appointments — plus three ~30-word writing templates matching Schreiben Teil 2, all with audio.',
+      'Both pages were adversarially verified; eight caught issues were fixed (e.g. a wrong “doch” example, a false day-mapping, a missing zero-article syllabus point, template signature conventions).',
+    ],
+  },
   {
     version: '3.35.0',
     date: '2026-06-14',

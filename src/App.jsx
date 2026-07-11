@@ -25,6 +25,8 @@ const Readiness = lazy(() => import('./pages/Readiness.jsx'));
 const Progress = lazy(() => import('./pages/Progress.jsx'));
 const ExamFormats = lazy(() => import('./pages/ExamFormats.jsx'));
 const Grammar = lazy(() => import('./pages/Grammar.jsx'));
+const Checklist = lazy(() => import('./pages/Checklist.jsx'));
+const Phrases = lazy(() => import('./pages/Phrases.jsx'));
 const Cheatsheet = lazy(() => import('./pages/Cheatsheet.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
 const Settings = lazy(() => import('./pages/Settings.jsx'));
@@ -59,6 +61,8 @@ export default function App() {
           <Route path="/progress" element={<Progress />} />
           <Route path="/exam-formats" element={<ExamFormats />} />
           <Route path="/grammar" element={<Grammar />} />
+          <Route path="/checklist" element={<Checklist />} />
+          <Route path="/phrases" element={<Phrases />} />
           <Route path="/cheatsheet/:slug" element={<Cheatsheet />} />
           <Route path="/about" element={<About />} />
           <Route path="/settings" element={<Settings />} />

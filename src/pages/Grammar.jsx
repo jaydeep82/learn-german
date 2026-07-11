@@ -38,6 +38,17 @@ export default function Grammar() {
         <p className="text-slate-500">Every rule in the course — grouped by week, with audio examples. Tap a week to jump or collapse.</p>
       </header>
 
+      <Link to="/checklist" className="block card bg-gradient-to-br from-emerald-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-md transition">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl" aria-hidden>✅</span>
+          <div className="flex-1">
+            <div className="font-bold">Goethe A1 grammar checklist</div>
+            <div className="text-sm text-slate-500">The official exam syllabus point by point — where each rule is taught, plus three extras covered right there.</div>
+          </div>
+          <span aria-hidden className="text-xl">→</span>
+        </div>
+      </Link>
+
       {/* Sticky jump-to-week tab bar */}
       <nav
         aria-label="Jump to week"

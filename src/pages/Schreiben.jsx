@@ -82,7 +82,10 @@ export default function Schreiben() {
       </ol>
 
       <button className="btn-primary w-full text-lg py-4" onClick={() => setStage('run')}>Start writing test →</button>
-      <p className="text-xs text-slate-400">Tip: in Teil 2, address all three points and aim for about 30 words.</p>
+      <p className="text-xs text-slate-400">
+        Tip: in Teil 2, address all three points and aim for about 30 words. Stuck for openers?{' '}
+        <Link to="/phrases" className="text-brand-600 font-semibold hover:underline">Use the writing templates →</Link>
+      </p>
     </div>
   );
 }

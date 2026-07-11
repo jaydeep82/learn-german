@@ -77,6 +77,7 @@ export default function Sprechen() {
 
       <div className="card bg-amber-50 border-amber-200 dark:bg-amber-900/20 dark:border-amber-700 text-sm">
         🗣️ Speak out loud — don’t just read. Then compare with the model and rate yourself honestly.
+        {' '}Warm up with the <Link to="/phrases" className="text-brand-600 font-semibold hover:underline">phrase bank →</Link>
       </div>
 
       <button className="btn-primary w-full text-lg py-4" onClick={() => setStage('run')}>Start speaking practice →</button>

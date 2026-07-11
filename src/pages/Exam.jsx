@@ -82,6 +82,8 @@ export default function Exam() {
 
       <p className="text-sm text-slate-500">
         Curious about the task types? <Link to="/exam-formats" className="text-brand-600 hover:underline">Preview all exam formats →</Link>
+        {' '}· Grammar covered? <Link to="/checklist" className="text-brand-600 hover:underline">A1 grammar checklist →</Link>
+        {' '}· Need the words? <Link to="/phrases" className="text-brand-600 hover:underline">Phrase bank →</Link>
       </p>
     </div>
   );
