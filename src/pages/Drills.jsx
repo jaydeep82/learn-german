@@ -7,7 +7,7 @@ import { FORMS_DRILL, formById, asExercise } from '../data/formsDrill.js';
 /**
  * Section drills — practise one exam task type at a time.
  *   /drills               → hub (one card per section)
- *   /drills/forms         → the 10 dedicated form tests (picker)
+ *   /drills/forms         → the 20 dedicated form tests (picker)
  *   /drills/forms/:formId → run one form
  *   /drills/:key          → run all tasks of a section, shuffled
  */
@@ -96,7 +96,7 @@ function FormsPicker() {
         <Link to="/drills" className="text-sm text-slate-500 hover:underline">← Section drills</Link>
         <h1 className="text-2xl sm:text-3xl font-extrabold mt-1">📋 Formulare — Schreiben Teil 1</h1>
         <p className="text-slate-500 mt-1">
-          Ten realistic forms, exactly like the exam sheet: read the text about a friend, then fill the five
+          Twenty realistic forms, exactly like the exam sheet: read the text about a friend, then fill the five
           numbered gaps — copy the details, and tick the right box where you have to think (“keine
           Kreditkarte” → <em>Bar</em>).
         </p>

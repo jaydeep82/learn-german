@@ -270,11 +270,11 @@ describe('Full mock exams (8 papers)', () => {
   });
 });
 
-describe('Forms drill (Schreiben Teil 1 · 10 tests)', () => {
-  it('offers ten forms with unique ids and titles', () => {
-    expect(FORMS_DRILL).toHaveLength(10);
-    expect(new Set(FORMS_DRILL.map((f) => f.id)).size).toBe(10);
-    expect(new Set(FORMS_DRILL.map((f) => f.title)).size).toBe(10);
+describe('Forms drill (Schreiben Teil 1 · 20 tests)', () => {
+  it('offers twenty forms with unique ids and titles', () => {
+    expect(FORMS_DRILL).toHaveLength(20);
+    expect(new Set(FORMS_DRILL.map((f) => f.id)).size).toBe(20);
+    expect(new Set(FORMS_DRILL.map((f) => f.title)).size).toBe(20);
   });
 
   it.each(FORMS_DRILL)('form $id is a well-formed form-fill exercise', (form) => {

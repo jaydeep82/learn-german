@@ -127,3 +127,4 @@ foundations moving alongside.
 |---|---|---|
 | **+7 fresh mock exam papers** (8 total) | v3.39 | Multi-paper mock system with a picker at `/mock`; papers 2–8 are fresh realistic sittings (Hören 13 · Lesen 13 · form + message · official Sprechen structure) across distinct scenarios. All content adversarially audited; 9 findings fixed. |
 | **Section drills** (per-Teil practice) | v3.40 | `/drills` hub: 10 new realistic Schreiben-Teil-1 form tests (real-sheet format — “(0)” example rows, numbered gaps, tick-box inference fields) + 6 drills aggregated from all mock papers (pictures, announcements, phone messages, texts, adverts, signs). Forms audited; 5 findings fixed. |
+| **+10 more form tests** (20 total) | v3.41 | Forms 11–20 in all-new scenarios: bank account, bike rental, campsite, newspaper order, music school, holiday flat, monthly travel card, lost & found, youth hostel, vet. 3-lens audit; 28 findings fixed (A1 wording, lenient verbatim-copy keys). |

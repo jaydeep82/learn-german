@@ -74,7 +74,7 @@ export default function Exam() {
         <div className="card flex flex-col sm:flex-row sm:items-center gap-3 hover:shadow-md transition">
           <div className="flex-1">
             <h2 className="font-bold">🎯 Section drills · one task type at a time</h2>
-            <p className="text-sm text-slate-500">Weak spot? Drill just that part — 10 realistic forms (Schreiben Teil 1), plus pictures, announcements, messages, texts, adverts and signs.</p>
+            <p className="text-sm text-slate-500">Weak spot? Drill just that part — 20 realistic forms (Schreiben Teil 1), plus pictures, announcements, messages, texts, adverts and signs.</p>
           </div>
           <span className="text-xs font-semibold text-emerald-600 self-start sm:self-center">Pick a section →</span>
         </div>

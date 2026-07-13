@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.40.0';
+export const VERSION = '3.41.0';
 export const RELEASE_DATE = '2026-07-13';
 
 export const RELEASES = [
+  {
+    version: '3.41.0',
+    date: '2026-07-13',
+    type: 'feature',
+    title: '10 more Schreiben-Teil-1 forms — 20 in total',
+    notes: [
+      'The Formulare drill doubles to twenty realistic form tests. Ten all-new scenarios: open a bank account 🏦, rent a bike 🚲, book a campsite 🏕️, order a newspaper 📰, join a music school 🎸, book a holiday flat 🏠, get a monthly travel card 🚆, report a lost bag at the Fundbüro 🧳, book a youth hostel 🛏️ and register at the vet 🐕.',
+      'Every form keeps the real exam sheet format: a text about a friend, pre-filled “(0)” example rows, five numbered gaps and tick-the-box inference fields — no computer → Online-Banking nein, “kein Auto, sie kommen mit dem Zug” → Parkplatz nein, works mornings → afternoon appointment.',
+      'All ten adversarially audited across three lenses (German, answer keys, exam realism): 28 findings fixed before release — above-A1 wording rewritten and answer keys widened to accept every defensible copy from the text (“in Bremen”, “am 2.5.1990”, “drei Jahre alt”, phone numbers without spaces …).',
+    ],
+  },
   {
     version: '3.40.0',
     date: '2026-07-13',
