@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.39.0';
-export const RELEASE_DATE = '2026-06-14';
+export const VERSION = '3.40.0';
+export const RELEASE_DATE = '2026-07-13';
 
 export const RELEASES = [
+  {
+    version: '3.40.0',
+    date: '2026-07-13',
+    type: 'feature',
+    title: 'Section drills — practice one exam part at a time',
+    notes: [
+      'New 🎯 Section drills hub (Exam → Section drills): weak on one task type? Drill just that part. Ten brand-new realistic Schreiben Teil 1 form tests, plus six aggregated drills — dialogues & pictures, announcements, phone messages, short texts, adverts and signs — pooled from all eight mock papers and shuffled fresh each run.',
+      'The form-filling task now mirrors the real exam sheet: pre-filled example rows marked “(0)”, the five scored gaps numbered (1)–(5), and tick-the-box fields that need inference — course time from “er hat nur am Abend Zeit”, payment from “hat keine Kreditkarte”, ja/nein.',
+      'Each of the 10 forms is a different real-life scenario: language school, travel agency, dentist, hotel, library card, swim club, parcel slip, cooking course, flight booking and home delivery. All keys adversarially audited; five findings fixed (ambiguous fields anchored, lenient answer variants added).',
+    ],
+  },
   {
     version: '3.39.0',
     date: '2026-06-14',

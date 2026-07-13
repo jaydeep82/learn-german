@@ -21,6 +21,7 @@ const Schreiben = lazy(() => import('./pages/Schreiben.jsx'));
 const Hoeren = lazy(() => import('./pages/Hoeren.jsx'));
 const Sprechen = lazy(() => import('./pages/Sprechen.jsx'));
 const Mock = lazy(() => import('./pages/Mock.jsx'));
+const Drills = lazy(() => import('./pages/Drills.jsx'));
 const Readiness = lazy(() => import('./pages/Readiness.jsx'));
 const Progress = lazy(() => import('./pages/Progress.jsx'));
 const ExamFormats = lazy(() => import('./pages/ExamFormats.jsx'));
@@ -58,6 +59,9 @@ export default function App() {
           <Route path="/sprechen" element={<Sprechen />} />
           <Route path="/mock" element={<Mock />} />
           <Route path="/mock/:paperId" element={<Mock />} />
+          <Route path="/drills" element={<Drills />} />
+          <Route path="/drills/forms/:formId" element={<Drills />} />
+          <Route path="/drills/:key" element={<Drills />} />
           <Route path="/readiness" element={<Readiness />} />
           <Route path="/progress" element={<Progress />} />
           <Route path="/exam-formats" element={<ExamFormats />} />

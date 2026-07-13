@@ -5,6 +5,8 @@ import { SCHREIBEN_EXERCISES, SCHREIBEN_ITEM_COUNT, SCHREIBEN_PARTS } from './sc
 import { HOEREN_EXERCISES, HOEREN_ITEM_COUNT, HOEREN_PARTS } from './hoerenModule.js';
 import { SPRECHEN_EXERCISES, SPRECHEN_ITEM_COUNT, SPRECHEN_PARTS } from './sprechenModule.js';
 import { MOCK_PAPERS, MOCK_MODULES, MOCK_PASS_RATIO, MOCK_TOTAL_MINUTES, overallRatio } from './mockExam.js';
+import { FORMS_DRILL, asExercise } from './formsDrill.js';
+import { SECTION_DRILLS } from './sectionDrills.js';
 
 /**
  * Integrity tests for exam-format content (roadmap A1/A2). Guards that every
@@ -53,8 +55,16 @@ function validate(spec) {
       if (new Set(names).size !== names.length) problems.push('duplicate field names');
       (spec.fields || []).forEach((f, i) => {
         if (!isNonEmptyString(f.label)) problems.push(`field ${i} has no label`);
+        if (f.prefilled != null) {
+          if (!isNonEmptyString(String(f.prefilled))) problems.push(`field ${i} has an empty prefilled value`);
+          return; // display-only, not scored
+        }
         const ans = Array.isArray(f.answer) ? f.answer : [f.answer];
         if (!ans.length || !ans.every(isNonEmptyString)) problems.push(`field ${i} has an empty answer`);
+        if (f.type === 'choice') {
+          if (!Array.isArray(f.options) || f.options.length < 2) problems.push(`choice field ${i} needs at least 2 options`);
+          else if (!ans.some((a) => f.options.includes(a))) problems.push(`choice field ${i}: answer not among options`);
+        }
       });
       break;
     }
@@ -257,5 +267,55 @@ describe('Full mock exams (8 papers)', () => {
     expect(MOCK_PASS_RATIO).toBe(0.6);
     expect(overallRatio([{ ratio: 0.5 }, { ratio: 0.7 }, { ratio: 0.6 }, { ratio: 0.8 }])).toBeCloseTo(0.65, 5);
     expect(overallRatio([])).toBe(0);
+  });
+});
+
+describe('Forms drill (Schreiben Teil 1 · 10 tests)', () => {
+  it('offers ten forms with unique ids and titles', () => {
+    expect(FORMS_DRILL).toHaveLength(10);
+    expect(new Set(FORMS_DRILL.map((f) => f.id)).size).toBe(10);
+    expect(new Set(FORMS_DRILL.map((f) => f.title)).size).toBe(10);
+  });
+
+  it.each(FORMS_DRILL)('form $id is a well-formed form-fill exercise', (form) => {
+    expect(validate(asExercise(form))).toEqual([]);
+    expect(isNonEmptyString(form.intro)).toBe(true);
+  });
+
+  it.each(FORMS_DRILL)('form $id matches the real sheet: ≥1 prefilled example row + exactly 5 scored gaps', (form) => {
+    const prefilled = form.fields.filter((f) => f.prefilled != null);
+    const scoredFields = form.fields.filter((f) => f.prefilled == null);
+    expect(prefilled.length).toBeGreaterThanOrEqual(1);
+    expect(scoredFields).toHaveLength(5);
+  });
+
+  it.each(FORMS_DRILL)('form $id includes at least one tick-the-box (inference) gap', (form) => {
+    expect(form.fields.some((f) => f.type === 'choice' && f.prefilled == null)).toBe(true);
+  });
+});
+
+describe('Section drills', () => {
+  it('covers the seven drillable sections with unique keys', () => {
+    expect(SECTION_DRILLS).toHaveLength(7);
+    expect(new Set(SECTION_DRILLS.map((d) => d.key)).size).toBe(7);
+  });
+
+  it('every aggregated drill has a healthy pool of tasks of only its own type', () => {
+    for (const d of SECTION_DRILLS) {
+      if (d.dedicated) continue;
+      expect(d.items.length, d.key).toBeGreaterThanOrEqual(8);
+      if (d.key === 'bilder') expect(d.items.every((e) => e.type === 'picture-mcq')).toBe(true);
+      if (d.key === 'durchsagen') expect(d.items.every((e) => e.type === 'richtig-falsch' && e.audioText)).toBe(true);
+      if (d.key === 'nachrichten') expect(d.items.every((e) => e.type === 'multiple-choice' && e.audioText)).toBe(true);
+      if (d.key === 'texte') expect(d.items.every((e) => e.type === 'richtig-falsch' && !e.audioText)).toBe(true);
+      if (d.key === 'anzeigen') expect(d.items.every((e) => e.type === 'ad-match')).toBe(true);
+      if (d.key === 'schilder') expect(d.items.every((e) => e.type === 'richtig-falsch' && !e.audioText)).toBe(true);
+    }
+  });
+
+  it('texte and schilder pools do not overlap', () => {
+    const texte = SECTION_DRILLS.find((d) => d.key === 'texte').items;
+    const schilder = new Set(SECTION_DRILLS.find((d) => d.key === 'schilder').items);
+    expect(texte.some((e) => schilder.has(e))).toBe(false);
   });
 });
