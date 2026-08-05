@@ -29,22 +29,54 @@ const catsBlock = html.match(/const CATS=\[([\s\S]*?)\];/)[1];
 const themes = [...catsBlock.matchAll(/\["([^"]+)","([^"]+)"\]/g)].map(([, de, en]) => ({ de, en }));
 
 /**
- * Corrections applied to the source sheet during import.
+ * Corrections applied to the source sheet during import, keyed by the source
+ * German sentence. Omit `de` to correct only the English gloss.
  *
- * The sign cards insert "bitte" into a dürfen-nicht prohibition ("Sie dürfen
- * hier bitte nicht rauchen."), which is not idiomatic German — "bitte" softens
- * a request, not a statement of what is forbidden. The sheet's own grammar box
- * ("The four sentence patterns") gives the correct model without it:
- * "Sie dürfen hier nicht rauchen." Keyed by the source German sentence.
+ * Each was confirmed by an adversarial review of all 465 request sentences.
+ * The build throws if any key stops matching, so a revised sheet can't silently
+ * drop a fix or keep a stale one.
  */
 const CORRECTIONS = {
-  'Man darf hier bitte nicht rauchen.': { de: 'Man darf hier nicht rauchen.', en: 'You must not smoke here.' },
+  // "bitte" softens a request, not a statement of what is forbidden. The sheet's
+  // own grammar box ("The four sentence patterns") models it without: "Sie dürfen
+  // hier nicht rauchen." The rauchen card also went to "Sie dürfen" — it was the
+  // only one of 465 lines using impersonal "man", which reads as an observation
+  // rather than a reply to the partner (its scripted answer is "In Ordnung.").
+  'Man darf hier bitte nicht rauchen.': { de: 'Sie dürfen hier nicht rauchen.', en: 'You must not smoke here.' },
   'Sie dürfen hier bitte nicht essen.': { de: 'Sie dürfen hier nicht essen.', en: 'You must not eat here.' },
   'Sie dürfen hier bitte nicht parken.': { de: 'Sie dürfen hier nicht parken.', en: 'You must not park here.' },
   'Sie dürfen hier bitte nicht schwimmen.': { de: 'Sie dürfen hier nicht schwimmen.', en: 'You must not swim here.' },
   'Sie dürfen hier bitte nicht Fahrrad fahren.': { de: 'Sie dürfen hier nicht Fahrrad fahren.', en: 'You must not cycle here.' },
   'Sie dürfen hier bitte nicht fotografieren.': { de: 'Sie dürfen hier nicht fotografieren.', en: 'You must not take photos here.' },
   'Sie dürfen hier bitte nicht telefonieren.': { de: 'Sie dürfen hier nicht telefonieren.', en: 'You must not make calls here.' },
+
+  // "putzen" is for scrubbable things (Fenster, Schuhe, Auto, Fahrrad — all kept).
+  // You don't scrub a bed or a jacket: a bed is "gemacht", a jacket "gewaschen".
+  'Bitte putzen Sie das Bett!': { de: 'Bitte kaufen Sie das Bett!', en: 'Please buy the bed.' },
+  'Bitte putzen Sie die Jacke!': { de: 'Bitte waschen Sie die Jacke!', en: 'Please wash the jacket.' },
+
+  // Every other "verboten" sign offers the alternative with "dort" (Bitte parken
+  // Sie dort! · Bitte schwimmen Sie dort!); this one told you to take the bike
+  // along, which isn't a reaction to "no cycling here".
+  'Bitte nehmen Sie das Fahrrad mit!': { de: 'Bitte fahren Sie dort Fahrrad!', en: 'Please cycle over there.' },
+
+  // English glosses that turned a definite German object into an indefinite one.
+  // Teil 3 is scored on the definite accusative, so the gloss must not teach "a".
+  'Bitte schicken Sie mir die E-Mail!': { en: 'Please send me the e-mail.' },
+  'Bitte lesen Sie die E-Mail!': { en: 'Please read the e-mail.' },
+  'Bitte schreiben Sie die E-Mail!': { en: 'Please write the e-mail.' },
+  'Bitte geben Sie mir den Stadtplan!': { en: 'Please give me the city map.' },
+  'Bitte kaufen Sie den Stadtplan!': { en: 'Please buy the city map.' },
+  'Bitte zeigen Sie mir den Stadtplan!': { en: 'Please show me the city map.' },
+  'Bitte bringen Sie mir das Glas Wein!': { en: 'Please bring me the glass of wine.' },
+  'Bitte geben Sie mir das Glas Wein!': { en: 'Please give me the glass of wine.' },
+  'Bitte trinken Sie das Glas Wein!': { en: 'Please drink the glass of wine.' },
+  'Bitte bringen Sie mir das Glas Wasser!': { en: 'Please bring me the glass of water.' },
+  'Bitte geben Sie mir das Glas Wasser!': { en: 'Please give me the glass of water.' },
+  'Bitte trinken Sie das Glas Wasser!': { en: 'Please drink the glass of water.' },
+  'Bitte holen Sie mir das Taxi!': { en: 'Please fetch me the taxi.' },
+  'Bitte bestellen Sie das Taxi!': { en: 'Please order the taxi.' },
+  'Bitte nehmen Sie das Taxi!': { en: 'Please take the taxi.' },
 };
 let corrected = 0;
 
@@ -68,8 +100,8 @@ const parsed = cards.map(({ cat: c, raw }) => {
     const [srcDe, srcEn, ans] = l.split('~');
     const fix = CORRECTIONS[srcDe];
     if (fix) corrected++;
-    const de = fix ? fix.de : srcDe;
-    const en = fix ? fix.en : srcEn;
+    const de = fix?.de ?? srcDe;
+    const en = fix?.en ?? srcEn;
     // Most requests point at the shared answer bank by key, but the sheet also
     // allows a one-off answer written inline as "German|English".
     if (answers[ans]) return { de, en, ans };

@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.43.0';
+export const VERSION = '3.43.1';
 export const RELEASE_DATE = '2026-07-13';
 
 export const RELEASES = [
+  {
+    version: '3.43.1',
+    date: '2026-07-13',
+    type: 'fix',
+    title: 'Teil 3 deck — 25 sentences corrected after a full review',
+    notes: [
+      'An adversarial review of all 465 Teil 3 requests found more imported-sheet slips, now fixed: “Bitte putzen Sie das Bett / die Jacke” (you make a bed and wash a jacket — putzen is for windows, shoes and bikes, which are untouched), and the “Fahrrad fahren verboten” sign now offers the alternative the way every other sign does: “Bitte fahren Sie dort Fahrrad!”',
+      'Fifteen English translations turned a definite German object indefinite — “Bitte geben Sie mir den Stadtplan!” read “a city map”. Teil 3 is scored on the definite accusative, so those now all read “the”: the city map, the e-mail, the glass of wine, the glass of water, the taxi.',
+      'The no-smoking card now matches the deck’s own model sentence (“Sie dürfen hier nicht rauchen.”) instead of being the single card in 465 phrased impersonally with “man”. Every correction is guarded by a test, so none can silently come back.',
+    ],
+  },
   {
     version: '3.43.0',
     date: '2026-07-13',

@@ -509,6 +509,20 @@ describe('Sprechen Teil 3 request deck', () => {
     }
   });
 
+  it('English glosses keep the German definite object definite', () => {
+    // Teil 3 is scored on the definite accusative (den Apfel), so a gloss must
+    // not teach "a": "Bitte geben Sie mir den Stadtplan!" is "the city map".
+    for (const c of T3_CARDS) {
+      for (const l of c.lines) {
+        const germanDefinite = /\b(den|die|das|dem|der)\s+\p{Lu}/u.test(l.de);
+        const englishIndefinite = /\b(a|an)\s+\w/i.test(l.en);
+        if (germanDefinite && englishIndefinite) {
+          expect.fail(`${c.word}: "${l.de}" glossed indefinitely as "${l.en}"`);
+        }
+      }
+    }
+  });
+
   it('advertised counts match the real deck (link cards must never drift)', () => {
     expect(T3_CARD_COUNT).toBe(T3_CARDS.length);
     expect(T3_THEME_COUNT).toBe(T3_THEMES.length);
