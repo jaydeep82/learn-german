@@ -7,6 +7,8 @@ import { SPRECHEN_EXERCISES, SPRECHEN_ITEM_COUNT, SPRECHEN_PARTS } from './sprec
 import { MOCK_PAPERS, MOCK_MODULES, MOCK_PASS_RATIO, MOCK_TOTAL_MINUTES, overallRatio } from './mockExam.js';
 import { FORMS_DRILL, asExercise } from './formsDrill.js';
 import { SECTION_DRILLS } from './sectionDrills.js';
+import { T2_CARDS, T2_THEMES, T2_GENDERS, T2_GRAMMAR, T2_PAIRS, cardsByTheme } from './sprechenTeil2.js';
+import { T2_CARD_COUNT, T2_THEME_COUNT, T2_QUESTION_COUNT } from './sprechenTeil2Meta.js';
 
 /**
  * Integrity tests for exam-format content (roadmap A1/A2). Guards that every
@@ -317,5 +319,90 @@ describe('Section drills', () => {
     const texte = SECTION_DRILLS.find((d) => d.key === 'texte').items;
     const schilder = new Set(SECTION_DRILLS.find((d) => d.key === 'schilder').items);
     expect(texte.some((e) => schilder.has(e))).toBe(false);
+  });
+});
+
+describe('Sprechen Teil 2 card deck', () => {
+  const GENS = new Set(T2_GENDERS.map((g) => g.key));
+
+  it('covers the 16 official themes, every one of them stocked', () => {
+    expect(T2_THEMES).toHaveLength(16);
+    expect(new Set(T2_THEMES.map((t) => t.de)).size).toBe(16);
+    for (const t of T2_THEMES) {
+      expect(isNonEmptyString(t.en), t.de).toBe(true);
+      expect(cardsByTheme(t.de).length, t.de).toBeGreaterThanOrEqual(5);
+    }
+  });
+
+  it.each(T2_CARDS)('card $cat/$word is complete and well-formed', (card) => {
+    expect(isNonEmptyString(card.word)).toBe(true);
+    expect(isNonEmptyString(card.gloss)).toBe(true);
+    expect(GENS.has(card.gen), `${card.word}: ${card.gen}`).toBe(true);
+    expect(T2_THEMES.some((t) => t.de === card.cat), card.cat).toBe(true);
+    expect(card.lines).toHaveLength(2);
+    for (const l of card.lines) {
+      for (const k of ['de', 'en', 'ade', 'aen']) expect(isNonEmptyString(l[k]), `${card.word}.${k}`).toBe(true);
+      // both prompts are questions; both model answers are statements
+      expect(l.de.trim().endsWith('?'), `${card.word}: "${l.de}"`).toBe(true);
+      expect(l.ade.trim().endsWith('?'), `${card.word}: "${l.ade}"`).toBe(false);
+    }
+    // Line 0 is the W-question — the W-word may follow a preposition
+    // ("Mit wem spielst du Karten?", "In welchem Stock wohnst du?").
+    expect(
+      /^(\p{L}+\s+)?(wo|was|wer|wem|wen|wie|wann|warum|woher|wohin|welch)/iu.test(card.lines[0].de),
+      card.lines[0].de,
+    ).toBe(true);
+  });
+
+  it('has no duplicate keyword inside a theme', () => {
+    for (const t of T2_THEMES) {
+      const words = cardsByTheme(t.de).map((c) => c.word);
+      expect(new Set(words).size, t.de).toBe(words.length);
+    }
+  });
+
+  it('flattens to two practice pairs per card', () => {
+    expect(T2_PAIRS).toHaveLength(T2_CARDS.length * 2);
+    expect(T2_PAIRS.filter((p) => p.kind === 'w')).toHaveLength(T2_CARDS.length);
+    expect(T2_PAIRS.filter((p) => p.kind === 'jn')).toHaveLength(T2_CARDS.length);
+  });
+
+  it('ships the grammar reference boxes with renderable token content', () => {
+    expect(T2_GRAMMAR.length).toBeGreaterThanOrEqual(12);
+    for (const box of T2_GRAMMAR) {
+      expect(isNonEmptyString(box.title)).toBe(true);
+      expect(box.tables?.length || box.items?.length, box.title).toBeGreaterThanOrEqual(1);
+      for (const tbl of box.tables || []) {
+        expect(tbl.rows.length, box.title).toBeGreaterThanOrEqual(1);
+        for (const row of tbl.rows) {
+          expect(row.c.length).toBeGreaterThanOrEqual(1);
+          for (const cell of row.c) expect(Array.isArray(cell.t)).toBe(true);
+        }
+      }
+    }
+  });
+
+  it('left no raw HTML or unresolved entities behind after the import', () => {
+    const suspicious = /[<>]|&[a-z]+;|&#\d+;/;
+    for (const c of T2_CARDS) {
+      const all = [c.word, c.gloss, ...c.lines.flatMap((l) => [l.de, l.en, l.ade, l.aen])].join(' ');
+      expect(suspicious.test(all), `${c.cat}/${c.word}: ${all}`).toBe(false);
+    }
+    for (const box of T2_GRAMMAR) {
+      const texts = [
+        box.title, box.subtitle,
+        ...(box.foot || []).map((t) => t.s),
+        ...(box.tables || []).flatMap((tb) => tb.rows.flatMap((r) => r.c.flatMap((c) => c.t.map((t) => t.s)))),
+      ].join(' ');
+      expect(suspicious.test(texts), box.title).toBe(false);
+    }
+  });
+});
+
+describe('Sprechen Teil 2 deck meta', () => {
+  it('advertised counts match the real deck (link cards must never drift)', () => {
+    expect(T2_CARD_COUNT).toBe(T2_CARDS.length);
+    expect(T2_THEME_COUNT).toBe(T2_THEMES.length);
+    expect(T2_QUESTION_COUNT).toBe(T2_PAIRS.length);
   });
 });

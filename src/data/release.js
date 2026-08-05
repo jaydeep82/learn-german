@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.41.0';
+export const VERSION = '3.42.0';
 export const RELEASE_DATE = '2026-07-13';
 
 export const RELEASES = [
+  {
+    version: '3.42.0',
+    date: '2026-07-13',
+    type: 'feature',
+    title: 'Sprechen Teil 2 card deck — 322 keywords, 644 ready questions',
+    notes: [
+      'New 🗂️ Teil 2 card deck (Sprechen → Teil 2 card deck): every keyword from the 16 official themes — Familie, Einkaufen, Essen und Trinken, Arbeit, Freizeit, Frühstück, Wohnen, Kleidung, Wetter, Verkehr, Tagesablauf, Gesundheit, Termine, Schule, Telefonieren and Formulare — each with a W-question, a Ja/Nein-question and a model answer for both.',
+      'Search across keywords, questions, answers and English meanings (umlauts match however you type them: Brötchen, Broetchen or Brotchen), filter by theme or by gender, and colour-coding shows der/die/das/Plural at a glance — the same palette as the printed sheet.',
+      'Two things paper can’t do: tap 🔊 to hear any question or answer, and switch on “Hide answers” to say your answer aloud first and reveal the model afterwards. The 12 grammar boxes (word order, possessives, the three cases, kein/nicht, separable verbs, W-words …) are built in.',
+    ],
+  },
   {
     version: '3.41.0',
     date: '2026-07-13',

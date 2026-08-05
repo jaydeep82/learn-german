@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
 import { useApp } from '../store/AppContext.jsx';
 import { SPRECHEN_PARTS, SPRECHEN_EXERCISES, SPRECHEN_ITEM_COUNT } from '../data/sprechenModule.js';
+import { T2_CARD_COUNT, T2_THEME_COUNT, T2_QUESTION_COUNT } from '../data/sprechenTeil2Meta.js';
 
 /**
  * Goethe A1 "Sprechen" (Speaking) module — roadmap A6.
@@ -74,6 +75,19 @@ export default function Sprechen() {
           </li>
         ))}
       </ol>
+
+      <Link to="/sprechen/karten" className="block">
+        <div className="card flex flex-col sm:flex-row sm:items-center gap-3 bg-gradient-to-br from-amber-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-md transition">
+          <div className="flex-1">
+            <h2 className="font-bold">🗂️ Teil 2 card deck · {T2_CARD_COUNT} keywords, {T2_QUESTION_COUNT} ready questions</h2>
+            <p className="text-sm text-slate-500">
+              Every keyword from the {T2_THEME_COUNT} official themes with a W-question, a Ja/Nein-question and model
+              answers — colour-coded by gender, searchable, with audio.
+            </p>
+          </div>
+          <span className="text-xs font-semibold text-emerald-600 self-start sm:self-center">Open the deck →</span>
+        </div>
+      </Link>
 
       <div className="card bg-amber-50 border-amber-200 dark:bg-amber-900/20 dark:border-amber-700 text-sm">
         🗣️ Speak out loud — don’t just read. Then compare with the model and rate yourself honestly.
