@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.42.0';
+export const VERSION = '3.43.0';
 export const RELEASE_DATE = '2026-07-13';
 
 export const RELEASES = [
+  {
+    version: '3.43.0',
+    date: '2026-07-13',
+    type: 'feature',
+    title: 'Sprechen Teil 3 request deck — 159 words, 465 model requests',
+    notes: [
+      'New 🙏 Teil 3 request deck (Sprechen → Teil 3 request deck): every picture word across the 7 themes — food, home, travel, work, everyday things, clothes and prohibition signs — with polite requests and the short replies that always work.',
+      'Each card shows the accusative form you actually have to say, and masculine cards carry a “der → den” warning: that one change is where Teil 3 is won or lost. Search covers German, English and the accusative; filter by theme or gender, including a Schild filter for the 12 sign cards.',
+      'Same tools as the Teil 2 deck: audio on every request and reply, a “Hide replies” mode to answer aloud first, and the grammar boxes built in. Seven prohibition sentences imported from the source sheet were corrected — “Sie dürfen hier bitte nicht rauchen” drops the bitte, matching the sheet’s own grammar box.',
+    ],
+  },
   {
     version: '3.42.0',
     date: '2026-07-13',

@@ -9,6 +9,8 @@ import { FORMS_DRILL, asExercise } from './formsDrill.js';
 import { SECTION_DRILLS } from './sectionDrills.js';
 import { T2_CARDS, T2_THEMES, T2_GENDERS, T2_GRAMMAR, T2_PAIRS, cardsByTheme } from './sprechenTeil2.js';
 import { T2_CARD_COUNT, T2_THEME_COUNT, T2_QUESTION_COUNT } from './sprechenTeil2Meta.js';
+import { T3_CARDS, T3_THEMES, T3_GENDERS, T3_GRAMMAR, T3_REQUESTS, T3_ANSWERS, t3CardsByTheme, t3AnswerOf } from './sprechenTeil3.js';
+import { T3_CARD_COUNT, T3_THEME_COUNT, T3_REQUEST_COUNT } from './sprechenTeil3Meta.js';
 
 /**
  * Integrity tests for exam-format content (roadmap A1/A2). Guards that every
@@ -404,5 +406,112 @@ describe('Sprechen Teil 2 deck meta', () => {
     expect(T2_CARD_COUNT).toBe(T2_CARDS.length);
     expect(T2_THEME_COUNT).toBe(T2_THEMES.length);
     expect(T2_QUESTION_COUNT).toBe(T2_PAIRS.length);
+  });
+});
+
+describe('Sprechen Teil 3 request deck', () => {
+  const GENS = new Set(T3_GENDERS.map((g) => g.key));
+
+  it('covers the seven themes, every one of them stocked', () => {
+    expect(T3_THEMES).toHaveLength(7);
+    expect(new Set(T3_THEMES.map((t) => t.de)).size).toBe(7);
+    for (const t of T3_THEMES) {
+      expect(isNonEmptyString(t.en), t.de).toBe(true);
+      expect(t3CardsByTheme(t.de).length, t.de).toBeGreaterThanOrEqual(5);
+    }
+  });
+
+  it.each(T3_CARDS)('card $cat/$word is complete and well-formed', (card) => {
+    expect(isNonEmptyString(card.word)).toBe(true);
+    expect(isNonEmptyString(card.gloss)).toBe(true);
+    expect(GENS.has(card.gen), `${card.word}: ${card.gen}`).toBe(true);
+    expect(T3_THEMES.some((t) => t.de === card.cat), card.cat).toBe(true);
+    expect(card.lines.length).toBeGreaterThanOrEqual(1);
+    for (const l of card.lines) {
+      expect(isNonEmptyString(l.de), `${card.word}.de`).toBe(true);
+      expect(isNonEmptyString(l.en), `${card.word}.en`).toBe(true);
+      // every request resolves to a reply, from the shared bank or its own override
+      const a = t3AnswerOf(l);
+      expect(a && isNonEmptyString(a.de) && isNonEmptyString(a.en), `${card.word}: "${l.de}" has no reply`).toBe(true);
+    }
+  });
+
+  it('every card except a sign carries its accusative form', () => {
+    for (const c of T3_CARDS) {
+      if (c.gen === 'sign') continue;
+      expect(isNonEmptyString(c.acc), `${c.cat}/${c.word}`).toBe(true);
+    }
+  });
+
+  it('masculine cards show the der → den change (the classic Teil 3 slip)', () => {
+    const masc = T3_CARDS.filter((c) => c.gen === 'der');
+    expect(masc.length).toBeGreaterThan(20);
+    for (const c of masc) expect(/\bden\b|\beinen\b/.test(c.acc), `${c.word} → ${c.acc}`).toBe(true);
+  });
+
+  it('non-masculine cards keep the article unchanged in the accusative', () => {
+    for (const c of T3_CARDS.filter((x) => x.gen === 'die' || x.gen === 'das')) {
+      expect(c.acc.startsWith(c.gen), `${c.word} → ${c.acc}`).toBe(true);
+    }
+  });
+
+  it('sign cards state a prohibition or instruction rather than an object request', () => {
+    const signs = T3_CARDS.filter((c) => c.gen === 'sign');
+    expect(signs.length).toBeGreaterThanOrEqual(10);
+    for (const s of signs) expect(/verboten|ausschalten|nicht/i.test(s.word + ' ' + s.lines[0].de), s.word).toBe(true);
+  });
+
+  it('flattens every request with its answer resolved', () => {
+    const counted = T3_CARDS.reduce((n, c) => n + c.lines.length, 0);
+    expect(T3_REQUESTS).toHaveLength(counted);
+    expect(T3_REQUESTS.every((r) => r.answer?.de && r.answer?.en)).toBe(true);
+  });
+
+  it('every bank answer is actually used, and used keys all exist', () => {
+    const used = new Set(T3_REQUESTS.filter((r) => r.ans).map((r) => r.ans));
+    for (const key of used) expect(T3_ANSWERS[key], key).toBeTruthy();
+    for (const key of Object.keys(T3_ANSWERS)) expect(used.has(key), `unused answer: ${key}`).toBe(true);
+  });
+
+  it('ships the grammar reference boxes with renderable token content', () => {
+    expect(T3_GRAMMAR.length).toBeGreaterThanOrEqual(5);
+    for (const box of T3_GRAMMAR) {
+      expect(isNonEmptyString(box.title)).toBe(true);
+      expect(box.tables?.length || box.items?.length, box.title).toBeGreaterThanOrEqual(1);
+    }
+  });
+
+  it('left no raw HTML or unresolved entities behind after the import', () => {
+    const suspicious = /[<>]|&[a-z]+;|&#\d+;/;
+    for (const c of T3_CARDS) {
+      const all = [c.word, c.gloss, c.acc, ...c.lines.flatMap((l) => [l.de, l.en])].join(' ');
+      expect(suspicious.test(all), `${c.cat}/${c.word}: ${all}`).toBe(false);
+    }
+    for (const box of T3_GRAMMAR) {
+      const texts = [
+        box.title,
+        ...(box.foot || []).map((t) => t.s),
+        ...(box.items || []).flatMap((i) => i.map((t) => t.s)),
+        ...(box.tables || []).flatMap((tb) => tb.rows.flatMap((r) => r.c.flatMap((c) => c.t.map((t) => t.s)))),
+      ].join(' ');
+      expect(suspicious.test(texts), box.title).toBe(false);
+    }
+  });
+
+  it('never softens a prohibition with "bitte" (imported-sheet fix)', () => {
+    // "bitte" softens a request, not a statement of what is forbidden; the deck's
+    // own grammar box models "Sie dürfen hier nicht rauchen." without it.
+    for (const c of T3_CARDS) {
+      for (const l of c.lines) {
+        const softened = /\bbitte\b/i.test(l.de) && /\b(dürfen|darf)\b/i.test(l.de);
+        expect(softened, `${c.word}: "${l.de}"`).toBe(false);
+      }
+    }
+  });
+
+  it('advertised counts match the real deck (link cards must never drift)', () => {
+    expect(T3_CARD_COUNT).toBe(T3_CARDS.length);
+    expect(T3_THEME_COUNT).toBe(T3_THEMES.length);
+    expect(T3_REQUEST_COUNT).toBe(T3_REQUESTS.length);
   });
 });
