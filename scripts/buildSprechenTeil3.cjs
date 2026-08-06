@@ -80,6 +80,65 @@ const CORRECTIONS = {
 };
 let corrected = 0;
 
+/**
+ * Picture for every card. Teil 3 is a PICTURE task — the examiner hands you a
+ * card with a drawing on it — but the source sheet is print-only and carries no
+ * images, so the deck supplies one per word (the same emoji-as-picture
+ * convention the vocabulary lists use). Sign cards get the prohibition symbol.
+ * Every word must be listed; the build throws on a gap.
+ */
+const ICONS = {
+  // Essen und Trinken
+  'Apfel': '🍎', 'Birne': '🍐', 'Tomate': '🍅', 'Brot': '🍞', 'Brötchen': '🥖',
+  'Würstchen': '🌭', 'Wurst': '🥓', 'Hähnchen': '🍗', 'Fleisch': '🥩', 'Fisch': '🐟',
+  'Ei': '🥚', 'Käse': '🧀', 'Obst': '🍏', 'Gemüse': '🥬', 'Suppe': '🍲',
+  'Pizza': '🍕', 'Eis': '🍦', 'Salz': '🧂', 'Zucker': '🍬', 'Frühstück': '🥐',
+  'Mittagessen': '🍛', 'Wasser': '💧', 'Glas Wasser': '🚰', 'Flasche': '🍶',
+  'Flasche Wasser': '💦', 'Flasche Saft': '🧃', 'Milch': '🥛', 'Milchflaschen': '🍼',
+  'Wein': '🍷', 'Bier': '🍺', 'Kaffee': '☕', 'Tee': '🍵', 'Getränke': '🍻',
+  'Teller': '🥘', 'Besteck': '🍴', 'Messer': '🔪', 'Gabel': '🍴', 'Speisekarte': '📜',
+  'kochen': '👨‍🍳', 'Erdbeeren': '🍓', 'Orange': '🍊', 'Zitrone': '🍋', 'Banane': '🍌',
+  'Trauben': '🍇', 'Kirschen': '🍒', 'Wassermelone': '🍉', 'Gurke': '🥒', 'Brokkoli': '🥦',
+  'Paprika': '🫑', 'Karotten': '🥕', 'Aubergine': '🍆', 'Zwiebel': '🧅', 'Salat': '🥗',
+  'Nudeln': '🍝', 'Burger': '🍔', 'Pommes': '🍟', 'Sandwich': '🥪', 'Kuchen': '🍰',
+  'Apfelsaft': '🍹', 'Cola': '🥤', 'Glas Wein': '🥂', 'Löffel': '🥄', 'Flaschenöffner': '🍾',
+
+  // Haus / Wohnung
+  'Tür': '🚪', 'Fenster': '🪟', 'Kühlschrank': '🧊', 'Stuhl': '🪑', 'Tisch': '🍽️',
+  'Bett': '🛏️', 'Lampe': '💡', 'Licht': '🔆', 'Fernseher': '📺', 'Radio': '📻',
+  'Heizung': '🌡️', 'Schlüssel': '🔑', 'Blumen': '💐', 'Sofa': '🛋️',
+
+  // Reisen / Verkehr
+  'Auto': '🚗', 'Fahrrad': '🚲', 'Taxi': '🚕', 'Bus': '🚌', 'Zug': '🚆',
+  'Fahrkarte': '🎫', 'Bahnhof': '🚉', 'Post': '📮', 'Bank': '🏦', 'Supermarkt': '🛒',
+  'Koffer': '🧳', 'Stadtplan': '🗺️', 'Krankenhaus': '🏥', 'Apotheke': '⚕️',
+  'Bushaltestelle': '🚏', 'Flughafen': '✈️', 'Pass': '🛂',
+
+  // Arbeit / Schule
+  'Computer': '🖥️', 'E-Mail': '📧', 'Brief': '✉️', 'Unterschrift': '✍️', 'Formular': '📋',
+  'Rechnung': '🧾', 'Termin': '📅', 'Terminzettel': '🗓️', 'Kugelschreiber': '🖊️',
+  'Bleistift': '✏️', 'Stift': '🖍️', 'Heft': '📓', 'Buch': '📕', 'Deutschbuch': '📗',
+  'Wörterbuch': '📖', 'Papier': '📄', 'Laptop': '💻', 'Drucker': '🖨️', 'Schere': '✂️',
+  'Lineal': '📏', 'Briefmarken': '🏷️',
+
+  // Alltag
+  'Tasche': '👜', 'Jacke': '🧥', 'Schuhe': '👟', 'Handschuhe': '🧤', 'Brille': '👓',
+  'Regenschirm': '☂️', 'Handy': '📱', 'Telefonnummer': '☎️', 'Zeitung': '📰', 'Foto': '🖼️',
+  'Ausweis': '🪪', 'Geld': '💶', 'Bargeld': '💵', 'Münzen': '🪙', 'Geschenk': '🎁',
+  'Uhr': '⌚', 'Hund': '🐕', 'CD': '💿', 'Adresse': '🏠', 'Kamera': '📷',
+  'Fotos': '📸', 'Musik': '🎵', 'Kopfschmerztabletten': '💊',
+
+  // Kleidung
+  'Hemd': '👔', 'T-Shirt': '👕', 'Rock': '👗', 'Pullover': '🧶', 'Mantel': '🥼',
+  'Anzug': '🤵', 'Mütze': '🧢', 'Schal': '🧣', 'Socken': '🧦',
+
+  // Verbote / Schilder
+  'Rauchen verboten': '🚭', 'Essen und Trinken verboten': '🚯', 'Eis essen verboten': '🍦',
+  'Parken verboten': '🅿️', 'Schwimmen verboten': '🏊', 'Fahrrad fahren verboten': '🚳',
+  'Fotografieren verboten': '📷', 'Telefonieren verboten': '📵', 'Handys ausschalten': '📴',
+  'Hunde verboten': '🐕', 'Sprechen verboten': '🤫', 'Fußball spielen verboten': '⚽',
+};
+
 // ── 3. cards (a c(...) call spans several lines) ────────────────────────
 const cards = [];
 let cat = '';
@@ -108,7 +167,10 @@ const parsed = cards.map(({ cat: c, raw }) => {
     const [cde, cen] = (ans || '').split('|');
     return { de, en, custom: { de: cde, en: cen } };
   });
-  return { cat: c, gen: head[0], word: head[1], gloss: head[2], acc: head[3] || '', lines };
+  const word = head[1];
+  const icon = ICONS[word];
+  if (!icon) throw new Error(`no ICONS entry for "${word}" — every card needs a picture`);
+  return { cat: c, gen: head[0], word, gloss: head[2], acc: head[3] || '', icon, lines };
 });
 
 // ── 4. grammar boxes (the four in .grammar plus the wide colour-code box) ─
@@ -196,7 +258,8 @@ fs.writeFileSync(OUT, `/**
  * The exam flow is: picture → word → article → ACCUSATIVE → request → answer,
  * and the accusative is where Teil 3 is won or lost (only "der" changes: der → den).
  *
- * Card shape: { cat, gen, word, gloss, acc, lines: [{ de, en, ans }] }
+ * Card shape: { cat, gen, word, gloss, acc, icon, lines: [{ de, en, ans }] }
+ *   icon = the card's picture (Teil 3 is a picture task; see ICONS in the script)
  *   acc  = the word in the accusative, as you must say it in a request
  *   ans  = key into T3_ANSWERS, the short reply that fits that request
  *          (a handful of lines carry a one-off custom: { de, en } instead)

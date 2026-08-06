@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.43.1';
+export const VERSION = '3.44.0';
 export const RELEASE_DATE = '2026-07-13';
 
 export const RELEASES = [
+  {
+    version: '3.44.0',
+    date: '2026-07-13',
+    type: 'feature',
+    title: 'Teil 3 cards get their picture',
+    notes: [
+      'Teil 3 is a picture task — the examiner hands you a card with a drawing — so every one of the 159 words now carries its own picture: 🍎 Apfel, 🚲 Fahrrad, 🧳 Koffer, 🚭 Rauchen verboten. The printed sheet had none.',
+      'The cards were redesigned to read like the real thing: the picture sits in a tinted tile coloured by gender, the word and its article lead, and the accusative you actually have to say gets its own line with the der → den warning beside it.',
+      'Requests are now numbered with their replies indented underneath, so a card scans top to bottom the way the exam runs: picture → word → article → accusative → request → answer.',
+    ],
+  },
   {
     version: '3.43.1',
     date: '2026-07-13',

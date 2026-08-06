@@ -18,27 +18,34 @@ const haystackOf = (c) => {
   return [c.word, c.gloss, c.acc, c.cat, ...c.lines.flatMap((l) => [l.de, l.en]), ...answers].join(' ');
 };
 
-function RequestLine({ line, hide }) {
+function RequestLine({ line, n, hide }) {
   const [shown, setShown] = useState(false);
   const answer = t3AnswerOf(line);
   const reveal = !hide || shown;
   return (
-    <li className="py-2.5 first:pt-0 last:pb-0">
-      <div className="flex items-start gap-2">
+    <li className="p-4 pl-5">
+      <div className="flex items-start gap-2.5">
+        <span
+          aria-hidden
+          className="shrink-0 mt-0.5 grid place-items-center w-5 h-5 rounded-full text-[11px] font-bold tabular-nums
+                     bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
+        >
+          {n}
+        </span>
         <div className="flex-1 min-w-0">
-          <span lang="de" className="font-semibold">{line.de}</span>
-          <span className="block text-xs text-slate-500">{line.en}</span>
+          <span lang="de" className="font-semibold text-slate-900 dark:text-slate-100">{line.de}</span>
+          <span className="block text-xs text-slate-500 mt-0.5">{line.en}</span>
         </div>
         <AudioButton text={line.de} size="sm" label="Hear the request" />
       </div>
 
       {answer && (
-        <div className="mt-1.5 pl-4">
+        <div className="mt-2 ml-7 pl-3 border-l-2 border-emerald-300 dark:border-emerald-700">
           {reveal ? (
             <div className="flex items-start gap-2">
-              <div className="flex-1 min-w-0 border-l-2 border-emerald-400 dark:border-emerald-600 pl-2.5">
-                <span lang="de" className="text-emerald-800 dark:text-emerald-300 font-medium">{answer.de}</span>
-                <span className="block text-xs text-slate-500">{answer.en}</span>
+              <div className="flex-1 min-w-0">
+                <span lang="de" className="text-emerald-700 dark:text-emerald-300 font-semibold">{answer.de}</span>
+                <span className="block text-xs text-slate-500 mt-0.5">{answer.en}</span>
               </div>
               <AudioButton text={answer.de} size="sm" label="Hear the reply" />
             </div>
@@ -46,7 +53,7 @@ function RequestLine({ line, hide }) {
             <button
               type="button"
               onClick={() => setShown(true)}
-              className="text-xs font-semibold text-brand-600 dark:text-brand-300 hover:underline border border-dashed border-slate-300 dark:border-slate-600 rounded px-2 py-1"
+              className="text-xs font-semibold text-brand-600 dark:text-brand-300 hover:underline"
             >
               Say it, then show the reply →
             </button>
@@ -59,32 +66,51 @@ function RequestLine({ line, hide }) {
 
 function Card({ card, hide }) {
   const g = GEN_STYLE[card.gen] || GEN_STYLE.verb;
-  const label = card.gen === 'pl' ? 'die (Pl.)' : card.gen === 'sign' ? 'Schild' : card.gen === 'verb' ? 'Verb' : card.gen;
+  const label = card.gen === 'pl' ? 'die · Plural' : card.gen === 'sign' ? 'Schild' : card.gen === 'verb' ? 'Verb' : card.gen;
   return (
-    <article className="card h-full relative overflow-hidden pl-5">
-      <span aria-hidden className={`absolute left-0 top-0 bottom-0 w-1.5 ${g.bar}`} />
-      <div className="flex items-baseline gap-2 flex-wrap">
-        <h3 lang="de" className={`font-extrabold text-lg ${g.text}`}>{card.word}</h3>
-        <span className={`text-[10px] font-bold uppercase tracking-wide rounded-full border px-2 py-0.5 ${g.chip} ${g.text}`}>
-          {label}
+    <article className="card h-full relative overflow-hidden !p-0">
+      <span aria-hidden className={`absolute left-0 top-0 bottom-0 w-1 ${g.bar}`} />
+
+      {/* Header — the picture card as the examiner hands it to you */}
+      <header className="flex items-start gap-3.5 p-4 pl-5">
+        <span
+          aria-hidden
+          className={`shrink-0 grid place-items-center w-14 h-14 rounded-2xl border text-3xl leading-none
+                      shadow-sm ${g.chip}`}
+        >
+          {card.icon}
         </span>
-        <span className="text-sm text-slate-500">{card.gloss}</span>
-      </div>
 
-      {/* The accusative is what you actually have to say — "der" is the trap. */}
-      {card.acc && (
-        <p className="mt-1.5 text-sm">
-          <span className="text-[10px] font-bold uppercase tracking-wide text-slate-400 mr-1.5">Akkusativ</span>
-          <span lang="de" className={`font-bold ${g.text}`}>{card.acc}</span>
-          {card.gen === 'der' && (
-            <span className="ml-2 text-[11px] text-rose-600 dark:text-rose-400 font-semibold">der → den</span>
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center gap-2 flex-wrap">
+            <h3 lang="de" className="font-extrabold text-xl leading-tight text-slate-900 dark:text-slate-50">
+              {card.word}
+            </h3>
+            <span className={`text-[10px] font-bold uppercase tracking-widest rounded-full border px-2 py-0.5 ${g.chip} ${g.text}`}>
+              {label}
+            </span>
+          </div>
+          <p className="text-sm text-slate-500 mt-0.5">{card.gloss}</p>
+
+          {/* The accusative is what you actually have to say — "der" is the trap. */}
+          {card.acc && (
+            <p className="mt-2 flex items-center gap-2 flex-wrap">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Akkusativ</span>
+              <span lang="de" className={`font-bold text-base ${g.text}`}>{card.acc}</span>
+              {card.gen === 'der' && (
+                <span className="text-[10px] font-bold uppercase tracking-wide rounded px-1.5 py-0.5
+                                 bg-rose-50 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300">
+                  der → den
+                </span>
+              )}
+            </p>
           )}
-        </p>
-      )}
+        </div>
+      </header>
 
-      <ul className="divide-y divide-slate-100 dark:divide-slate-800 mt-2">
-        {card.lines.map((l) => <RequestLine key={l.de} line={l} hide={hide} />)}
-      </ul>
+      <ol className="border-t border-slate-100 dark:border-slate-800 divide-y divide-slate-100 dark:divide-slate-800">
+        {card.lines.map((l, i) => <RequestLine key={l.de} line={l} n={i + 1} hide={hide} />)}
+      </ol>
     </article>
   );
 }

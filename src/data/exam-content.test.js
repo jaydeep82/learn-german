@@ -509,6 +509,15 @@ describe('Sprechen Teil 3 request deck', () => {
     }
   });
 
+  it('every card carries a picture — Teil 3 is a picture task', () => {
+    for (const c of T3_CARDS) {
+      expect(isNonEmptyString(c.icon), `${c.cat}/${c.word} has no icon`).toBe(true);
+      // an emoji, not stray text that slipped in from the sheet
+      expect(c.icon.length, `${c.word}: ${JSON.stringify(c.icon)}`).toBeLessThanOrEqual(8);
+      expect(/\p{Extended_Pictographic}/u.test(c.icon), `${c.word}: ${c.icon}`).toBe(true);
+    }
+  });
+
   it('English glosses keep the German definite object definite', () => {
     // Teil 3 is scored on the definite accusative (den Apfel), so a gloss must
     // not teach "a": "Bitte geben Sie mir den Stadtplan!" is "the city map".
