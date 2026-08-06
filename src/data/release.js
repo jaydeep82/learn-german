@@ -11,10 +11,20 @@
  * in sync.
  */
 
-export const VERSION = '3.44.0';
+export const VERSION = '3.44.1';
 export const RELEASE_DATE = '2026-07-13';
 
 export const RELEASES = [
+  {
+    version: '3.44.1',
+    date: '2026-07-13',
+    type: 'fix',
+    title: 'New versions now appear on the first visit, not the second',
+    notes: [
+      'The app is offline-capable, so it was serving you its cached copy while the new version installed quietly in the background — which meant every update stayed invisible until you loaded the page a second time. A fresh deploy could look like it had never happened.',
+      'Now the app reloads itself the moment the new version takes over, so what you see is always the current build. It only does this in the first seconds after opening, so it can never interrupt you mid-exercise — and never on a first-ever visit, where there is nothing to update.',
+    ],
+  },
   {
     version: '3.44.0',
     date: '2026-07-13',
