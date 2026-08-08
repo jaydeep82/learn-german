@@ -17,18 +17,60 @@ import { T2_CARDS, T2_THEMES, T2_GENDERS, T2_GRAMMAR } from '../data/sprechenTei
 const haystackOf = (c) =>
   [c.word, c.gloss, c.cat, ...c.lines.flatMap((l) => [l.de, l.en, l.ade, l.aen])].join(' ');
 
-function QaLine({ line, kind, hide }) {
-  const [shown, setShown] = useState(false);
-  const reveal = !hide || shown;
+/** Cover for a hidden line: says what to produce, reveals on click. */
+function Reveal({ label, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="text-xs font-semibold text-brand-600 dark:text-brand-300 hover:underline
+                 border border-dashed border-slate-300 dark:border-slate-600 rounded px-2 py-1"
+    >
+      {label}
+    </button>
+  );
+}
+
+function QaLine({ line, kind, hidden }) {
+  const [showQ, setShowQ] = useState(false);
+  const [showA, setShowA] = useState(false);
+  const revealQ = !hidden.prompt || showQ;
+  // The answer can only appear once the question does — otherwise a covered
+  // question is given away by the model answer sitting right underneath it.
+  const revealA = revealQ && (!hidden.reply || showA);
+
+  // The badge stays: in the exam you know which kind of question is wanted,
+  // you just have to build it. Everything else — the German, the English and
+  // the model answer — is covered by this one control.
+  const badge = (
+    <span
+      aria-hidden
+      className="mt-0.5 text-[10px] font-bold uppercase tracking-wide rounded px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 shrink-0"
+    >
+      {kind === 'w' ? 'W' : 'Ja/Nein'}
+    </span>
+  );
+
+  if (!revealQ) {
+    return (
+      <li className="py-2.5 first:pt-0 last:pb-0">
+        <div className="flex items-start gap-2">
+          {badge}
+          <div className="flex-1 min-w-0">
+            <Reveal
+              label={kind === 'w' ? 'Ask a W-question, then check →' : 'Ask a Ja/Nein-question, then check →'}
+              onClick={() => setShowQ(true)}
+            />
+          </div>
+        </div>
+      </li>
+    );
+  }
+
   return (
     <li className="py-2.5 first:pt-0 last:pb-0">
       <div className="flex items-start gap-2">
-        <span
-          aria-hidden
-          className="mt-0.5 text-[10px] font-bold uppercase tracking-wide rounded px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 shrink-0"
-        >
-          {kind === 'w' ? 'W' : 'Ja/Nein'}
-        </span>
+        {badge}
         <div className="flex-1 min-w-0">
           <span lang="de" className="font-semibold">{line.de}</span>
           <span className="block text-xs text-slate-500">{line.en}</span>
@@ -37,7 +79,7 @@ function QaLine({ line, kind, hide }) {
       </div>
 
       <div className="mt-1.5 pl-8">
-        {reveal ? (
+        {revealA ? (
           <div className="flex items-start gap-2">
             <div className="flex-1 min-w-0 border-l-2 border-emerald-400 dark:border-emerald-600 pl-2.5">
               <span lang="de" className="text-emerald-800 dark:text-emerald-300 font-medium">{line.ade}</span>
@@ -46,20 +88,14 @@ function QaLine({ line, kind, hide }) {
             <AudioButton text={line.ade} size="sm" label="Hear the answer" />
           </div>
         ) : (
-          <button
-            type="button"
-            onClick={() => setShown(true)}
-            className="text-xs font-semibold text-brand-600 dark:text-brand-300 hover:underline border border-dashed border-slate-300 dark:border-slate-600 rounded px-2 py-1"
-          >
-            Say it, then show the answer →
-          </button>
+          <Reveal label="Say it, then show the answer →" onClick={() => setShowA(true)} />
         )}
       </div>
     </li>
   );
 }
 
-function Card({ card, hide }) {
+function Card({ card, hidden }) {
   const g = GEN_STYLE[card.gen] || GEN_STYLE.verb;
   const article = card.gen === 'pl' ? 'die (Pl.)' : card.gen === 'verb' ? 'Verb' : card.gen;
   return (
@@ -74,7 +110,7 @@ function Card({ card, hide }) {
       </div>
       <ul className="divide-y divide-slate-100 dark:divide-slate-800 mt-2">
         {card.lines.map((l, i) => (
-          <QaLine key={l.de} line={l} kind={i === 0 ? 'w' : 'jn'} hide={hide} />
+          <QaLine key={l.de} line={l} kind={i === 0 ? 'w' : 'jn'} hidden={hidden} />
         ))}
       </ul>
     </article>
@@ -110,7 +146,7 @@ export default function SprechenKarten() {
         </>
       }
     >
-      {(card, hide) => <Card card={card} hide={hide} />}
+      {(card, hidden) => <Card card={card} hidden={hidden} />}
     </DeckShell>
   );
 }

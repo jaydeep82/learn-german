@@ -18,20 +18,50 @@ const haystackOf = (c) => {
   return [c.word, c.gloss, c.acc, c.cat, ...c.lines.flatMap((l) => [l.de, l.en]), ...answers].join(' ');
 };
 
-function RequestLine({ line, n, hide }) {
-  const [shown, setShown] = useState(false);
+function RequestLine({ line, n, hidden }) {
+  const [showReq, setShowReq] = useState(false);
+  const [showAns, setShowAns] = useState(false);
   const answer = t3AnswerOf(line);
-  const reveal = !hide || shown;
+  const revealReq = !hidden.prompt || showReq;
+  // The reply can only appear once the request does — otherwise a covered
+  // request is given away by the model reply sitting right underneath it.
+  const revealAns = revealReq && (!hidden.reply || showAns);
+
+  const num = (
+    <span
+      aria-hidden
+      className="shrink-0 mt-0.5 grid place-items-center w-5 h-5 rounded-full text-[11px] font-bold tabular-nums
+                 bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
+    >
+      {n}
+    </span>
+  );
+
+  if (!revealReq) {
+    return (
+      <li className="p-4 pl-5">
+        <div className="flex items-start gap-2.5">
+          {num}
+          <div className="flex-1 min-w-0">
+            {/* Picture + word + accusative are still on the card — that's the prompt. */}
+            <button
+              type="button"
+              onClick={() => setShowReq(true)}
+              className="text-xs font-semibold text-brand-600 dark:text-brand-300 hover:underline
+                         border border-dashed border-slate-300 dark:border-slate-600 rounded px-2 py-1"
+            >
+              Make a request, then check →
+            </button>
+          </div>
+        </div>
+      </li>
+    );
+  }
+
   return (
     <li className="p-4 pl-5">
       <div className="flex items-start gap-2.5">
-        <span
-          aria-hidden
-          className="shrink-0 mt-0.5 grid place-items-center w-5 h-5 rounded-full text-[11px] font-bold tabular-nums
-                     bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
-        >
-          {n}
-        </span>
+        {num}
         <div className="flex-1 min-w-0">
           <span lang="de" className="font-semibold text-slate-900 dark:text-slate-100">{line.de}</span>
           <span className="block text-xs text-slate-500 mt-0.5">{line.en}</span>
@@ -41,7 +71,7 @@ function RequestLine({ line, n, hide }) {
 
       {answer && (
         <div className="mt-2 ml-7 pl-3 border-l-2 border-emerald-300 dark:border-emerald-700">
-          {reveal ? (
+          {revealAns ? (
             <div className="flex items-start gap-2">
               <div className="flex-1 min-w-0">
                 <span lang="de" className="text-emerald-700 dark:text-emerald-300 font-semibold">{answer.de}</span>
@@ -52,7 +82,7 @@ function RequestLine({ line, n, hide }) {
           ) : (
             <button
               type="button"
-              onClick={() => setShown(true)}
+              onClick={() => setShowAns(true)}
               className="text-xs font-semibold text-brand-600 dark:text-brand-300 hover:underline"
             >
               Say it, then show the reply →
@@ -64,7 +94,7 @@ function RequestLine({ line, n, hide }) {
   );
 }
 
-function Card({ card, hide }) {
+function Card({ card, hidden }) {
   const g = GEN_STYLE[card.gen] || GEN_STYLE.verb;
   const label = card.gen === 'pl' ? 'die · Plural' : card.gen === 'sign' ? 'Schild' : card.gen === 'verb' ? 'Verb' : card.gen;
   return (
@@ -109,7 +139,7 @@ function Card({ card, hide }) {
       </header>
 
       <ol className="border-t border-slate-100 dark:border-slate-800 divide-y divide-slate-100 dark:divide-slate-800">
-        {card.lines.map((l, i) => <RequestLine key={l.de} line={l} n={i + 1} hide={hide} />)}
+        {card.lines.map((l, i) => <RequestLine key={l.de} line={l} n={i + 1} hidden={hidden} />)}
       </ol>
     </article>
   );
@@ -137,7 +167,8 @@ export default function SprechenBitten() {
       haystackOf={haystackOf}
       keyOf={(c) => `${c.cat}-${c.word}`}
       searchPlaceholder="Suchen: Wort, Bitte, Antwort oder englische Bedeutung"
-      hideLabel="Hide replies"
+      hidePromptLabel="Hide requests"
+      hideReplyLabel="Hide replies"
       footer={
         <>
           Previous part: <Link to="/sprechen/karten" className="text-brand-600 font-semibold hover:underline">🗂️ Teil 2 — Fragen</Link>
@@ -146,7 +177,7 @@ export default function SprechenBitten() {
         </>
       }
     >
-      {(card, hide) => <Card card={card} hide={hide} />}
+      {(card, hidden) => <Card card={card} hidden={hidden} />}
     </DeckShell>
   );
 }

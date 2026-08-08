@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.44.1';
+export const VERSION = '3.45.0';
 export const RELEASE_DATE = '2026-07-13';
 
 export const RELEASES = [
+  {
+    version: '3.45.0',
+    date: '2026-07-13',
+    type: 'feature',
+    title: 'Hide the questions too — practise the way the exam works',
+    notes: [
+      'Both speaking decks now have a “Hide questions” switch beside “Hide answers”. Tick it and the whole exchange goes: the German question, its English, the model answer and its English — leaving just the keyword and whether a W- or a Ja/Nein-question is wanted. That is exactly what the exam gives you: a keyword, and you build the rest yourself.',
+      'On the Teil 3 deck the same switch hides the requests and their replies, leaving the picture, the word and its accusative as your prompt.',
+      'Each line reveals on its own and brings its answer back with it, so you can check one and keep the rest covered.',
+    ],
+  },
   {
     version: '3.44.1',
     date: '2026-07-13',

@@ -126,13 +126,17 @@ export function GrammarBox({ box }) {
 export default function DeckShell({
   backTo, backLabel, title, intro,
   cards, themes, genders, grammar,
-  haystackOf, keyOf, searchPlaceholder, hideLabel = 'Hide answers',
+  haystackOf, keyOf, searchPlaceholder,
+  hidePromptLabel = 'Hide questions', hideReplyLabel = 'Hide answers',
   footer, children,
 }) {
   const [q, setQ] = useState('');
   const [theme, setTheme] = useState('');
   const [gen, setGen] = useState('');
-  const [hide, setHide] = useState(false);
+  // Two independent covers. Hiding the prompt is the real exam drill — you get
+  // only the keyword (or the picture) and have to produce the sentence yourself.
+  const [hidePrompt, setHidePrompt] = useState(false);
+  const [hideReply, setHideReply] = useState(false);
   const [showGrammar, setShowGrammar] = useState(false);
   const [limit, setLimit] = useState(PAGE);
 
@@ -195,10 +199,14 @@ export default function DeckShell({
               {g.label}
             </button>
           ))}
-          <span className="ml-auto flex items-center gap-3">
+          <span className="ml-auto flex items-center gap-3 flex-wrap">
             <label className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300 cursor-pointer">
-              <input type="checkbox" checked={hide} onChange={(e) => setHide(e.target.checked)} className="rounded" />
-              {hideLabel}
+              <input type="checkbox" checked={hidePrompt} onChange={(e) => setHidePrompt(e.target.checked)} className="rounded" />
+              {hidePromptLabel}
+            </label>
+            <label className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300 cursor-pointer">
+              <input type="checkbox" checked={hideReply} onChange={(e) => setHideReply(e.target.checked)} className="rounded" />
+              {hideReplyLabel}
             </label>
             <button type="button" onClick={() => setShowGrammar((v) => !v)}
               className="text-sm font-semibold text-brand-600 dark:text-brand-300 hover:underline">
@@ -227,7 +235,7 @@ export default function DeckShell({
         </div>
       ) : (
         <div className="grid md:grid-cols-2 gap-3">
-          {visible.map((c) => <div key={keyOf(c)}>{children(c, hide)}</div>)}
+          {visible.map((c) => <div key={keyOf(c)}>{children(c, { prompt: hidePrompt, reply: hideReply })}</div>)}
         </div>
       )}
 
