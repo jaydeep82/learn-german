@@ -622,6 +622,42 @@ describe('Schreiben Teil 2 e-mail deck', () => {
     }
   });
 
+  it('varies the writer across the six names, evenly and per the register rule', () => {
+    const NAMES = ['Karan Solanki', 'Jaydeep Patel', 'Sujal Bandhara', 'Hem Gajjar', 'Umang Bhanderi', 'Kevin Adroja'];
+    const firsts = NAMES.map((n) => n.split(' ')[0]);
+    const used = {};
+    for (const t of EMAIL_TASKS) {
+      expect(NAMES, `${t.id} writer`).toContain(t.writer);
+      used[t.writer] = (used[t.writer] || 0) + 1;
+
+      // The sheet's own rule: formell signs with the full name, informell with the first.
+      const signature = t.model[t.model.length - 1].de.split('\n')[1];
+      const signatureEn = t.model[t.model.length - 1].en.split('\n')[1];
+      const expected = t.register === 'formell' ? t.writer : t.writer.split(' ')[0];
+      expect(signature, `${t.id} signs de`).toBe(expected);
+      expect(signatureEn, `${t.id} signs en`).toBe(expected);
+
+      // and a self-introduction has to name the same person who signs it
+      const intro = t.model.find((m) => /mein Name ist/.test(m.de));
+      if (intro) expect(intro.de, `${t.id} intro`).toContain(t.writer);
+    }
+    expect(Object.keys(used).sort(), 'every name used').toEqual([...NAMES].sort());
+    const counts = Object.values(used);
+    expect(Math.max(...counts) - Math.min(...counts), 'even spread').toBeLessThanOrEqual(2);
+    expect(firsts.length).toBe(6);
+  });
+
+  it('never signs a mail with a name the task gives to someone else', () => {
+    for (const t of EMAIL_TASKS) {
+      const first = t.writer.split(' ')[0];
+      // strip the signature itself, then the writer's name must not appear as a third party
+      const body = t.model.slice(0, -1).map((m) => m.de).join(' ');
+      const others = body.replace(new RegExp(`mein Name ist ${t.writer}`, 'g'), '');
+      const clash = new RegExp(`\\b${first}\\b`).test(others);
+      expect(clash, `${t.id}: writer ${first} also appears as another person`).toBe(false);
+    }
+  });
+
   it('advertised counts match the real deck', () => {
     expect(EMAIL_TASK_COUNT).toBe(EMAIL_TASKS.length);
     expect(EMAIL_SENTENCE_COUNT).toBe(EMAIL_SENTENCES.reduce((n, g) => n + g.items.length, 0));

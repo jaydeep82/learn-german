@@ -258,6 +258,64 @@ const tasks = starts.map((s, si) => {
   };
 });
 
+// ── vary the writer's name across the deck ──────────────────────────────
+/**
+ * The sheet signs every model e-mail as one of two people. These names are
+ * spread over the 94 tasks instead, so the deck reads like different people
+ * writing — and the learner sees the rule in action: formell signs with the
+ * full name, informell with the first name only.
+ *
+ * The assignment is balanced (each name used 15–16 times) and deterministic:
+ * shuffled with a fixed seed, so re-running this script produces byte-identical
+ * output instead of a diff every build.
+ */
+const NAMES = [
+  'Karan Solanki', 'Jaydeep Patel', 'Sujal Bandhara',
+  'Hem Gajjar', 'Umang Bhanderi', 'Kevin Adroja',
+];
+const WRITER_TOKENS = ['Karan Solanki', 'Hem Gajjar', 'Karan', 'Hem']; // longest first
+
+const balanced = tasks.map((_, i) => NAMES[i % NAMES.length]);
+let seed = 20260713;
+const rnd = () => { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; };
+for (let i = balanced.length - 1; i > 0; i--) {           // seeded Fisher–Yates
+  const j = Math.floor(rnd() * (i + 1));
+  [balanced[i], balanced[j]] = [balanced[j], balanced[i]];
+}
+
+const firstOf = (n) => n.split(' ')[0];
+tasks.forEach((t, i) => {
+  let full = balanced[i];
+  // Don't sign a mail with a name the task already gives to someone else
+  // ("Meine Kollegen heißen Keval und Umang" would otherwise sign as Umang).
+  // The writer's own name is stripped first — it is about to be replaced, so
+  // counting it as "someone else" would push nearly every task to the fallback.
+  const others = WRITER_TOKENS.reduce(
+    (acc, tok) => acc.replace(new RegExp(`\\b${tok}\\b`, 'g'), ' '),
+    [t.situation, ...t.points, ...t.model.map((m) => m.de)].join(' '),
+  );
+  if (new RegExp(`\\b${firstOf(full)}\\b`).test(others)) {
+    const alt = NAMES.find((n) => !new RegExp(`\\b${firstOf(n)}\\b`).test(others));
+    if (alt) full = alt;
+  }
+  const first = firstOf(full);
+  // The sheet's own rule: full name when writing formell, first name when du.
+  const signature = t.register === 'formell' ? full : first;
+
+  const swap = (s) => {
+    let out = s;
+    for (const tok of WRITER_TOKENS) {
+      const replacement = tok.includes(' ') ? full : first;
+      out = out.replace(new RegExp(`\\b${tok}\\b`, 'g'), replacement);
+    }
+    // and make the sign-off obey the register, whatever the sheet had
+    return out.replace(/(\n)(.+)$/, (m, nl, name) => (WRITER_TOKENS.some((w) => name.startsWith(firstOf(w)))
+      || NAMES.some((n) => name === n || name === firstOf(n)) ? nl + signature : m));
+  };
+  t.model = t.model.map((m) => ({ ...m, de: swap(m.de), en: swap(m.en) }));
+  t.writer = full;
+});
+
 // ── validate ────────────────────────────────────────────────────────────
 const problems = [];
 tasks.forEach((t) => {

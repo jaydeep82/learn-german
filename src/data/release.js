@@ -11,10 +11,20 @@
  * in sync.
  */
 
-export const VERSION = '3.47.0';
+export const VERSION = '3.48.0';
 export const RELEASE_DATE = '2026-07-13';
 
 export const RELEASES = [
+  {
+    version: '3.48.0',
+    date: '2026-07-13',
+    type: 'change',
+    title: 'The e-mail tasks are written by six different people',
+    notes: [
+      'The 94 model e-mails were all signed by the same two people. They are now spread evenly over six writers — Karan Solanki, Jaydeep Patel, Sujal Bandhara, Hem Gajjar, Umang Bhanderi and Kevin Adroja — 15 or 16 tasks each.',
+      'The register rule comes with it, so you see it in action on every card: a formell e-mail signs with the full name, an informell one with the first name only, and a “mein Name ist …” introduction always names the person who signs at the bottom.',
+    ],
+  },
   {
     version: '3.47.0',
     date: '2026-07-13',
