@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AudioButton from '../components/AudioButton.jsx';
 import SrStatus from '../components/SrStatus.jsx';
+import VideoLesson from '../components/VideoLesson.jsx';
 import { EMAIL_TASKS, EMAIL_COMPARE, EMAIL_SENTENCES, EMAIL_GRAMMAR } from '../data/schreibenEmails.js';
 
 /**
@@ -253,6 +254,13 @@ export default function SchreibenEmails() {
           <span className={REG.informell.text}>informell (du)</span>: pick one and keep it from the greeting to the sign-off.
         </p>
       </div>
+
+      <VideoLesson
+        id="nS4zv05ZSic"
+        title="Writing a letter or e-mail — the whole task explained"
+        channel="Five Minute German"
+        blurb="Watch how the part is marked and three e-mails written from scratch, before you work through the tasks below."
+      />
 
       {/* ── reference tabs ── */}
       <div className="card space-y-3">

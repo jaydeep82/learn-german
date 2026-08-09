@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.46.0';
+export const VERSION = '3.47.0';
 export const RELEASE_DATE = '2026-07-13';
 
 export const RELEASES = [
+  {
+    version: '3.47.0',
+    date: '2026-07-13',
+    type: 'feature',
+    title: 'A video lesson on the e-mail task',
+    notes: [
+      'The Teil 2 e-mail page now opens with a video walkthrough from Five Minute German — how the part is marked, and three e-mails written from scratch — so you can watch it explained before working through the 94 tasks.',
+      'Watch it at three sizes: inline, a wider “Bigger” view, or true fullscreen. The player’s own fullscreen button works too.',
+      'Nothing loads from YouTube until you press play, so the page stays fast and the embed can’t track you for simply opening it.',
+    ],
+  },
   {
     version: '3.46.0',
     date: '2026-07-13',
