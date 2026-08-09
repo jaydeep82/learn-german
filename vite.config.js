@@ -31,6 +31,11 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
         // The app bundle is ~1.2 MB; leave growth headroom past Workbox's 2 MiB default.
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
+        // Serves the shell offline for any deep link. Note this registers a
+        // NavigationRoute BEFORE anything in runtimeCaching, and Workbox matches
+        // in registration order — so a network-first navigation route added
+        // below would never fire. Freshness after a deploy is handled in
+        // main.jsx instead, by reloading once when the new worker takes over.
         navigateFallback: '/index.html',
         runtimeCaching: [
           {
