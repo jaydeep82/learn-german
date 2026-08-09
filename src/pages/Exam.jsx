@@ -94,6 +94,7 @@ export default function Exam() {
         Curious about the task types? <Link to="/exam-formats" className="text-brand-600 hover:underline">Preview all exam formats →</Link>
         {' '}· Grammar covered? <Link to="/checklist" className="text-brand-600 hover:underline">A1 grammar checklist →</Link>
         {' '}· Need the words? <Link to="/phrases" className="text-brand-600 hover:underline">Phrase bank →</Link>
+        {' '}· Writing Teil 2? <Link to="/schreiben/emails" className="text-brand-600 hover:underline">E-Mail tasks →</Link>
         {' '}· Speaking? <Link to="/sprechen/karten" className="text-brand-600 hover:underline">Teil 2 question deck →</Link>
         {' '}<Link to="/sprechen/bitten" className="text-brand-600 hover:underline">Teil 3 request deck →</Link>
       </p>

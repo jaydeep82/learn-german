@@ -11,6 +11,8 @@ import { T2_CARDS, T2_THEMES, T2_GENDERS, T2_GRAMMAR, T2_PAIRS, cardsByTheme } f
 import { T2_CARD_COUNT, T2_THEME_COUNT, T2_QUESTION_COUNT } from './sprechenTeil2Meta.js';
 import { T3_CARDS, T3_THEMES, T3_GENDERS, T3_GRAMMAR, T3_REQUESTS, T3_ANSWERS, t3CardsByTheme, t3AnswerOf } from './sprechenTeil3.js';
 import { T3_CARD_COUNT, T3_THEME_COUNT, T3_REQUEST_COUNT } from './sprechenTeil3Meta.js';
+import { EMAIL_TASKS, EMAIL_COMPARE, EMAIL_SENTENCES, EMAIL_GRAMMAR } from './schreibenEmails.js';
+import { EMAIL_TASK_COUNT, EMAIL_SENTENCE_COUNT, EMAIL_FORMELL_COUNT, EMAIL_INFORMELL_COUNT } from './schreibenEmailsMeta.js';
 
 /**
  * Integrity tests for exam-format content (roadmap A1/A2). Guards that every
@@ -536,5 +538,93 @@ describe('Sprechen Teil 3 request deck', () => {
     expect(T3_CARD_COUNT).toBe(T3_CARDS.length);
     expect(T3_THEME_COUNT).toBe(T3_THEMES.length);
     expect(T3_REQUEST_COUNT).toBe(T3_REQUESTS.length);
+  });
+});
+
+describe('Schreiben Teil 2 e-mail deck', () => {
+  it('carries all 94 tasks, numbered 1..94, each with a register', () => {
+    expect(EMAIL_TASKS).toHaveLength(94);
+    EMAIL_TASKS.forEach((t, i) => expect(t.id, `position ${i}`).toBe(i + 1));
+    for (const t of EMAIL_TASKS) expect(['formell', 'informell']).toContain(t.register);
+  });
+
+  it.each(EMAIL_TASKS)('task $id "$title" is complete', (t) => {
+    for (const k of ['title', 'titleEn', 'situation', 'situationEn']) {
+      expect(isNonEmptyString(t[k]), `${t.id}.${k}`).toBe(true);
+    }
+    expect(t.points.length, `${t.id} points`).toBeGreaterThanOrEqual(1);
+    expect(t.points.every(isNonEmptyString)).toBe(true);
+    // a model e-mail is at least a greeting, a body and a sign-off
+    expect(t.model.length, `${t.id} model`).toBeGreaterThanOrEqual(3);
+    for (const m of t.model) {
+      expect(isNonEmptyString(m.de), `${t.id} model de`).toBe(true);
+      expect(isNonEmptyString(m.en), `${t.id} model en`).toBe(true);
+    }
+  });
+
+  it('every model e-mail opens with a greeting and ends with a sign-off', () => {
+    for (const t of EMAIL_TASKS) {
+      const first = t.model[0].de;
+      const last = t.model[t.model.length - 1].de;
+      expect(/^(Guten Tag|Sehr geehrte|Hallo|Liebe|Lieber)/.test(first), `${t.id}: "${first}"`).toBe(true);
+      expect(/(Grüße|Grüßen|Gruß)/.test(last), `${t.id}: "${last}"`).toBe(true);
+    }
+  });
+
+  it('register matches the greeting the model actually uses', () => {
+    for (const t of EMAIL_TASKS) {
+      const first = t.model[0].de;
+      if (/^(Sehr geehrte)/.test(first)) expect(t.register, `${t.id}`).toBe('formell');
+      if (/^(Liebe |Lieber |Hallo)/.test(first)) expect(t.register, `${t.id}`).toBe('informell');
+    }
+  });
+
+  it('left no PDF artefacts behind after the import', () => {
+    const suspicious = /[<>]|&[a-z]+;|[ \t]{2,}|·\s*Schreiben Teil 2/;
+    for (const t of EMAIL_TASKS) {
+      const all = [t.title, t.titleEn, t.situation, t.situationEn, ...t.points,
+        ...t.model.flatMap((m) => [m.de, m.en])].join(' | ');
+      expect(suspicious.test(all), `${t.id}: ${all.slice(0, 120)}`).toBe(false);
+    }
+  });
+
+  it('breaks the sign-off onto its own line, like a real e-mail', () => {
+    const signed = EMAIL_TASKS.filter((t) => /\n/.test(t.model[t.model.length - 1].de));
+    expect(signed.length, 'tasks with a two-line sign-off').toBeGreaterThan(80);
+    for (const t of signed) {
+      const [greet, name] = t.model[t.model.length - 1].de.split('\n');
+      expect(/Grüße|Grüßen/.test(greet), `${t.id}: ${greet}`).toBe(true);
+      expect(isNonEmptyString(name), `${t.id}: no name after sign-off`).toBe(true);
+    }
+  });
+
+  it('ships the reference sections the sheet promises', () => {
+    expect(EMAIL_COMPARE.length).toBeGreaterThanOrEqual(6);
+    for (const g of EMAIL_COMPARE) {
+      expect(isNonEmptyString(g.group)).toBe(true);
+      expect(g.rows.length).toBeGreaterThanOrEqual(1);
+      for (const r of g.rows) {
+        expect(isNonEmptyString(r.label), `${g.group} label`).toBe(true);
+        expect(isNonEmptyString(r.formell.de), `${g.group}/${r.label} formell`).toBe(true);
+        expect(isNonEmptyString(r.informell.de), `${g.group}/${r.label} informell`).toBe(true);
+      }
+    }
+    // the sheet advertises 28 reusable sentences
+    expect(EMAIL_SENTENCES.reduce((n, g) => n + g.items.length, 0)).toBe(28);
+    for (const g of EMAIL_SENTENCES) for (const s of g.items) {
+      expect(isNonEmptyString(s.de) && isNonEmptyString(s.en), `${g.group}`).toBe(true);
+    }
+    expect(EMAIL_GRAMMAR.length).toBeGreaterThanOrEqual(4);
+    for (const g of EMAIL_GRAMMAR) for (const r of g.rows) {
+      for (const k of ['pattern', 'ruleDe', 'ruleEn', 'exampleDe', 'exampleEn']) {
+        expect(isNonEmptyString(r[k]), `${g.group}/${r.pattern}.${k}`).toBe(true);
+      }
+    }
+  });
+
+  it('advertised counts match the real deck', () => {
+    expect(EMAIL_TASK_COUNT).toBe(EMAIL_TASKS.length);
+    expect(EMAIL_SENTENCE_COUNT).toBe(EMAIL_SENTENCES.reduce((n, g) => n + g.items.length, 0));
+    expect(EMAIL_FORMELL_COUNT + EMAIL_INFORMELL_COUNT).toBe(EMAIL_TASKS.length);
   });
 });

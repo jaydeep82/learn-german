@@ -11,10 +11,21 @@
  * in sync.
  */
 
-export const VERSION = '3.45.0';
+export const VERSION = '3.46.0';
 export const RELEASE_DATE = '2026-07-13';
 
 export const RELEASES = [
+  {
+    version: '3.46.0',
+    date: '2026-07-13',
+    type: 'feature',
+    title: 'Schreiben Teil 2 — 94 e-mail tasks with model answers',
+    notes: [
+      'New 📧 Teil 2 e-mail deck (Schreiben → Teil 2 e-mails): 94 real exam tasks, each with its situation, the three points your e-mail has to cover, and a complete model e-mail translated line by line — 56 formell and 38 informell, filterable and searchable in German or English.',
+      'The cheat sheet is built in, one tap away: Anrede & Gruß with formell beside informell for every situation, 28 sentences that fit almost any task, and the grammar Teil 2 is marked on — verb position, weil and denn, cases after prepositions, kein vs nicht.',
+      'Tick “Hide model answers” to write yours first and reveal the model afterwards, and tap 🔊 to hear a whole e-mail read aloud.',
+    ],
+  },
   {
     version: '3.45.0',
     date: '2026-07-13',

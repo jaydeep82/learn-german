@@ -18,6 +18,7 @@ const Practice = lazy(() => import('./pages/Practice.jsx'));
 const Exam = lazy(() => import('./pages/Exam.jsx'));
 const Lesen = lazy(() => import('./pages/Lesen.jsx'));
 const Schreiben = lazy(() => import('./pages/Schreiben.jsx'));
+const SchreibenEmails = lazy(() => import('./pages/SchreibenEmails.jsx'));
 const Hoeren = lazy(() => import('./pages/Hoeren.jsx'));
 const Sprechen = lazy(() => import('./pages/Sprechen.jsx'));
 const SprechenKarten = lazy(() => import('./pages/SprechenKarten.jsx'));
@@ -57,6 +58,7 @@ export default function App() {
           <Route path="/exam" element={<Exam />} />
           <Route path="/lesen" element={<Lesen />} />
           <Route path="/schreiben" element={<Schreiben />} />
+          <Route path="/schreiben/emails" element={<SchreibenEmails />} />
           <Route path="/hoeren" element={<Hoeren />} />
           <Route path="/sprechen" element={<Sprechen />} />
           <Route path="/sprechen/karten" element={<SprechenKarten />} />

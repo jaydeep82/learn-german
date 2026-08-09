@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ExerciseRunner from '../components/exercises/ExerciseRunner.jsx';
 import { useApp } from '../store/AppContext.jsx';
 import { SCHREIBEN_PARTS, SCHREIBEN_EXERCISES, SCHREIBEN_ITEM_COUNT } from '../data/schreibenModule.js';
+import { EMAIL_TASK_COUNT, EMAIL_SENTENCE_COUNT } from '../data/schreibenEmailsMeta.js';
 
 /**
  * Goethe A1 "Schreiben" (Writing) module — roadmap A3.
@@ -80,6 +81,31 @@ export default function Schreiben() {
           </li>
         ))}
       </ol>
+
+      <Link to="/drills/forms" className="block">
+        <div className="card flex flex-col sm:flex-row sm:items-center gap-3 bg-gradient-to-br from-emerald-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-md transition">
+          <div className="flex-1">
+            <h2 className="font-bold">📋 Teil 1 form drills · 20 realistic forms</h2>
+            <p className="text-sm text-slate-500">
+              Read about a friend, then fill the five numbered gaps — copy the details and tick the right box.
+            </p>
+          </div>
+          <span className="text-xs font-semibold text-emerald-600 self-start sm:self-center">Open the drills →</span>
+        </div>
+      </Link>
+
+      <Link to="/schreiben/emails" className="block">
+        <div className="card flex flex-col sm:flex-row sm:items-center gap-3 bg-gradient-to-br from-violet-50 to-white dark:from-slate-800 dark:to-slate-900 hover:shadow-md transition">
+          <div className="flex-1">
+            <h2 className="font-bold">📧 Teil 2 e-mails · {EMAIL_TASK_COUNT} tasks with model answers</h2>
+            <p className="text-sm text-slate-500">
+              Every task with a full model e-mail translated line by line, plus formell/informell openings and
+              sign-offs, {EMAIL_SENTENCE_COUNT} reusable sentences and the grammar Teil 2 is marked on.
+            </p>
+          </div>
+          <span className="text-xs font-semibold text-emerald-600 self-start sm:self-center">Open the deck →</span>
+        </div>
+      </Link>
 
       <button className="btn-primary w-full text-lg py-4" onClick={() => setStage('run')}>Start writing test →</button>
       <p className="text-xs text-slate-400">
